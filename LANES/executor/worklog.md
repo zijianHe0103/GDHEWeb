@@ -26,3 +26,8 @@ Each execution records:
 - result:
 - risks:
 - next:
+
+### 2026-07-22T07:53:15Z - lane_registered
+- session: 019f88cf-fd7d-7dc1-95f5-98684d793dfb
+- replaces:
+- action: registered session to lane

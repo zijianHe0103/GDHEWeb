@@ -2,7 +2,7 @@
 accepted_at: 2026-07-22T04:55:39Z
 
 task_id: TASK-001
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [planner]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-001
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-22T04:45:59Z
-git_status: FORMAL_COMMIT
+git_status: PUSHED
 document_impact: RESOLVED
 project_type: software
 
@@ -106,7 +106,7 @@ RESOLVED：任务卡、项目状态、任务看板、活动日志和 planner wor
 
 ## 当前状态
 
-AWAITING_USER
+CLOSED
 
 ## 恢复入口
 
@@ -114,7 +114,7 @@ AWAITING_USER
 
 ## 下一步
 
-用户已使用精确口令完成正式验收并授权本地正式提交；提交生成后只等待独立 push 口令。
+TASK-001 已验收、正式提交并推送到 `origin/codex/TASK-001-github-remote-initialization`，现已归档。
 
 审查和验证完成后，使用 `task_transition.py prepare-awaiting-user` 进入验收等待；需要修订时使用 `task_transition.py reopen`。
 
@@ -141,6 +141,7 @@ AWAITING_USER
 - 2026-07-22T04:45:59Z：为同步任务正文、项目叙述和看板状态，使用受控 `reopen` 进入文档修订；未修改 Git remote 或交付内容。
 - 2026-07-22T04:55:39Z：收到精确口令 `确认 TASK-001 完成并生成正式提交`，`task_accept.py` 验收成功；本 turn 获得 formal commit 授权，不包含 push。
 - 2026-07-22T04:57:03Z：因治理门禁要求正式提交位于任务匹配分支，创建本地分支 `codex/TASK-001-github-remote-initialization` 并准备正式初始提交。
+- 2026-07-22：正式提交 `a81ba288627eca71d38b27253f177899f4b3f121` 已推送到同名远程任务分支；开始 TASK-002 前将本任务置为 `CLOSED` 并归档。
 
 ## Execution Artifacts
 

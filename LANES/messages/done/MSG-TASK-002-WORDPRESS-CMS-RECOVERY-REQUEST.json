@@ -1,0 +1,23 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-002-WORDPRESS-CMS-RECOVERY-REQUEST",
+  "type": "status_update",
+  "from_lane": "wordpress_cms",
+  "to_lane": "planner",
+  "task_id": "TASK-002",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-22T08:13:29Z",
+  "requires_response_to": "MSG-TASK-002-WORDPRESS-CMS-ARCHITECTURE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Stop hook reports TASK-002 is IN_PROGRESS and requests recovery entries in TASKS/ACTIVE and PROJECT/STATE.md. Those paths are planner-owned and outside wordpress_cms write scope, so this lane did not modify them. The completed artifact, validation, risks, response ID and next step are recorded in LANES/wordpress_cms/worklog.md; please synchronize the planner-owned task and project recovery entries before planner stops.",
+  "context_files": [
+    "LANES/wordpress_cms/worklog.md",
+    "TASKS/ARTIFACTS/TASK-002/WORDPRESS_CMS_API_EVIDENCE.md"
+  ],
+  "expected_artifacts": [],
+  "notes": "",
+  "done_at": "2026-07-22T08:16:28Z",
+  "updated_at": "2026-07-22T08:16:28Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-002-ADVERSARIAL-REVIEW",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-002",
+  "issue_id": null,
+  "priority": "P0",
+  "created_at": "2026-07-22T08:25:08Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "对 TASK-002 做独立只读对抗审查。逐项核对已确认验收标准与禁止范围；挑战 REST-first 对 WPGraphQL-first、Polylang Pro 对 WPML 的裁决是否有充分一手证据和可逆门；检查 ACF Pro/许可证表述、wp-admin 唯一后台、九语言独立发布、当前页切换、缺失译文、hreflang 闭包、RTL、SEO 权威、Preview/Webhook/cache、媒体、询盘安全、部署与错误恢复；检查是否过度设计、是否暗示未验证能力、是否越界初始化或修改 WordPress。阅读 execution、validation、diff summary 与三个专业证据。只写审查报告和 reviewer worklog，不直接修复业务交付物。报告必须给出 PASS/FAIL/BLOCKED、P0/P1/P2、验收映射、证据缺口和唯一建议；完成后 ack 本消息并发送 review_response 给 planner。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-002-headless-wordpress-nextjs-architecture-contract.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-004-headless-wordpress-nextjs-contract.md",
+    "TASKS/ARTIFACTS/TASK-002/EVIDENCE_SYNTHESIS.md",
+    "TASKS/ARTIFACTS/TASK-002/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-002/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-002/DIFF_OR_OUTPUT_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-002/FRONTEND_ARCHITECTURE_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-002/WORDPRESS_CMS_API_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-002/LOCALIZATION_SEO_EVIDENCE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-002/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "No commit, push, frontend initialization, plugin installation, CMS or database mutation is authorized.",
+  "done_at": "2026-07-22T08:36:37Z",
+  "updated_at": "2026-07-22T08:36:37Z"
+}

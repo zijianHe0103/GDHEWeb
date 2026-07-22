@@ -1,0 +1,23 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-002-FRONTEND-STOP-RECOVERY",
+  "type": "status_update",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-002",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-22T08:13:14Z",
+  "requires_response_to": "MSG-TASK-002-FRONTEND-ARCHITECTURE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Stop hook reports TASK-002 is IN_PROGRESS and requests recovery updates in TASKS/ACTIVE and PROJECT/STATE.md. Those paths are outside frontend write scope, so frontend recorded the complete recovery entry in LANES/frontend/worklog.md without modifying planner-owned files. Please consume MSG-TASK-002-FRONTEND-ARCHITECTURE-RESPONSE, synchronize the task and project recovery state, and continue planner synthesis.",
+  "context_files": [
+    "LANES/frontend/worklog.md",
+    "TASKS/ARTIFACTS/TASK-002/FRONTEND_ARCHITECTURE_EVIDENCE.md"
+  ],
+  "expected_artifacts": [],
+  "notes": "No frontend, CMS, dependency, commit, or push action was performed.",
+  "done_at": "2026-07-22T08:16:28Z",
+  "updated_at": "2026-07-22T08:16:28Z"
+}

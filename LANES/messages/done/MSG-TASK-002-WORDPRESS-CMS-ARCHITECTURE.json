@@ -1,0 +1,28 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-002-WORDPRESS-CMS-ARCHITECTURE",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-002",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-22T08:01:35Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Produce an evidence-backed WordPress CMS and API architecture analysis for confirmed TASK-002 only. Make a clear REST versus WPGraphQL versus controlled-combination recommendation; define wp-admin responsibilities, CPT and taxonomy model, shared fields, ACF or ACF Pro and native fields boundaries, versioned field export, permissions, preview authentication, media, webhook and cache invalidation, SEO exposure, inquiries and upload boundaries, errors and recovery. Recheck the local WordPress baseline read-only and use current official primary documentation with source URLs and access date. Do not install plugins, change WordPress, database, users, themes, or frontend. Write only the expected artifact and your lane worklog, then send a concise execution_response to planner through lane_message.py.",
+  "context_files": [
+    "AGENTS.md",
+    "TASKS/ACTIVE/TASK-002-headless-wordpress-nextjs-architecture-contract.md",
+    "PROJECT/CONSTRAINTS.md",
+    "MEMORY/DECISIONS/ADR-001-headless-wordpress.md",
+    "PROJECT/QUALITY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-002/WORDPRESS_CMS_API_EVIDENCE.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-22T08:12:13Z",
+  "updated_at": "2026-07-22T08:12:13Z"
+}

@@ -2,7 +2,7 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-git_mode: FORMAL_COMMIT
+git_mode: DIRTY
 created_at: 2026-07-22T03:58:17Z
 
 ## 治理标记

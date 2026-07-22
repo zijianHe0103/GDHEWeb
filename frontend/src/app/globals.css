@@ -1,0 +1,44 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f2;
+  color: #171717;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+section {
+  width: min(100%, 42rem);
+  padding: 2.5rem;
+  border: 1px solid #d7d7d2;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1;
+}
+
+p:last-child {
+  margin: 1.5rem 0 0;
+  line-height: 1.6;
+  color: #555550;
+}

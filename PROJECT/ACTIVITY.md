@@ -454,3 +454,250 @@ schema_version: DPG-LANES-1.0.0
 - lane: planner
 - task: TASK-002
 - summary: Exact TASK-002 acceptance phrase received; accepted architecture, governance state, and evidence prepared for one local formal commit. Push remains unauthorized.
+
+### 2026-07-22T09:51:19Z - task_pushed
+- type: task_pushed
+- lane: planner
+- task: TASK-002
+- summary: Formal commit 1cf97ce837e9f4621a63fad736c84a9bdb028a5a was pushed to origin/codex/TASK-002-headless-architecture-contract; local and remote divergence is 0/0.
+
+### 2026-07-22T09:51:19Z - task_003_intake_created
+- type: task_003_intake_created
+- lane: planner
+- task: TASK-003
+- summary: Closed and archived pushed TASK-002, created the isolated Next.js and TypeScript frontend foundation requirement card, and stopped before frontend initialization pending exact confirmation.
+
+### 2026-07-22T10:19:12Z - task_003_requirements_confirmed
+- type: task_003_requirements_confirmed
+- lane: planner
+- task: TASK-003
+- summary: Exact requirement confirmation received; TASK-003 moved from AWAITING_REQUIREMENT_CONFIRMATION to READY without expanding scope or modifying frontend/CMS.
+
+### 2026-07-22T10:21:33Z - task_003_frontend_dispatched
+- type: task_003_frontend_dispatched
+- lane: planner
+- task: TASK-003
+- summary: Queued MSG-TASK-003-FRONTEND-FOUNDATION, dry-run resolved the registered frontend session, and moved TASK-003 from READY to IN_PROGRESS.
+
+### 2026-07-22T10:48:12Z - task_003_frontend_intake_validated
+- type: task_003_frontend_intake_validated
+- lane: planner
+- task: TASK-003
+- summary: Accepted the frontend execution handoff and Node.js 24 correction, independently reran the full toolchain and scope checks, resolved document impact, and prepared independent review dispatch.
+
+### 2026-07-22T11:10:03Z - task_003_entered_review
+- type: task_003_entered_review
+- lane: planner
+- task: TASK-003
+- summary: Queued MSG-TASK-003-ADVERSARIAL-REVIEW, resolved the registered reviewer session in dry-run, and moved TASK-003 from IN_PROGRESS to UNDER_REVIEW.
+
+### 2026-07-22T12:09:25Z - task_003_review_failed_needs_revision
+- type: task_003_review_failed_needs_revision
+- lane: planner
+- task: TASK-003
+- summary: Round 1 returned FAIL with two P1 toolchain risks and two P2 consistency findings; recorded a narrow NEEDS_REVISION recovery entry without entering AWAITING_USER.
+
+### 2026-07-22T12:53:04Z - task_003_revision_dispatched
+- type: task_003_revision_dispatched
+- lane: planner
+- task: TASK-003
+- summary: Verified and provisioned the official Node.js 24.18.0 temporary runtime, then dispatched the narrow toolchain and Next Image optimizer revision to frontend.
+
+### 2026-07-22T10:21:17Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-003
+- summary: message queued for frontend
+
+### 2026-07-22T10:35:45Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-FOUNDATION moved to done
+
+### 2026-07-22T10:35:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T10:40:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T10:45:40Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T10:45:41Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-FOUNDATION-RESPONSE moved to done
+
+### 2026-07-22T10:45:41Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-NODE24-VALIDATION moved to done
+
+### 2026-07-22T10:49:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-STOP-RECOVERY moved to done
+
+### 2026-07-22T10:49:50Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-003
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-22T12:08:44Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW moved to done
+
+### 2026-07-22T12:08:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T12:09:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW-RESPONSE moved to done
+
+### 2026-07-22T12:09:19Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T12:51:10Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-22T12:52:51Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-003
+- summary: message queued for frontend
+
+### 2026-07-22T13:05:40Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-REVISION-R1 moved to done
+
+### 2026-07-22T13:05:40Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T13:06:47Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-FRONTEND-REVISION-R1-RESPONSE moved to done
+
+### 2026-07-22T13:10:29Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-003
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-22T13:11:03Z - TASK-003 Round 1 revision validated and Round 2 dispatched
+
+- type: task_review_dispatched
+- lane: planner
+- task: TASK-003
+- summary: Planner acknowledged the frontend revision response, passed an independent clean-copy Node.js 24.18.0/npm 11.16.0 validation including the real image optimizer path, and dispatched MSG-TASK-003-ADVERSARIAL-REVIEW-R2 to the registered reviewer session.
+- state: `NEEDS_REVISION` -> `UNDER_REVIEW`; Git remains `DIRTY`; no commit or push.
+
+### 2026-07-22T13:19:44Z - TASK-003 Round 2 review passed
+
+- type: task_review_passed
+- lane: planner
+- task: TASK-003
+- summary: Planner acknowledged the final Round 2 PASS response with P0=0, P1=0, P2=0 and recorded the reviewer stop-recovery entry in planner-owned task and project state.
+- state: remains `UNDER_REVIEW` pending final validation and checked `prepare-awaiting-user`; not accepted, committed, or pushed.
+
+### 2026-07-22T13:24:43Z - TASK-003 acceptance narrative synchronized
+
+- type: task_acceptance_preparation
+- lane: planner
+- task: TASK-003
+- summary: Final frontend and governance validation passed; the first checked prepare-awaiting-user succeeded at 13:24:23Z, then a controlled reopen at 13:24:43Z allowed only Board and human-readable acceptance-state synchronization before the final identical checked transition.
+- state: business delivery and final review unchanged; acceptance remains `NOT_ACCEPTED`; no commit or push.
+
+### 2026-07-22T13:18:19Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-22T13:18:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T13:18:50Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-22T13:19:15Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-003
+- summary: message queued for planner
+
+### 2026-07-22T13:20:52Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-003
+- summary: message MSG-TASK-003-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-22T13:24:23Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-003
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-22T13:24:43Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-003
+- summary: Synchronize the human-readable board, task narrative, project narrative, final validation snapshot, and planner handoff after the first checked prepare-awaiting-user transition; no business deliverable or review verdict changes.
+
+### 2026-07-22T13:26:36Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-003
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-22T14:18:19Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-003
+- summary: TASK-003 accepted by exact user phrase; git commit/push/merge not performed.
+
+### 2026-07-22T14:18:19Z - TASK-003 formal commit authorized
+
+- type: formal_commit_authorized
+- lane: planner
+- task: TASK-003
+- summary: Exact user acceptance authorized one local formal commit after fresh staged validation; push, merge, archive and later implementation remain unauthorized.

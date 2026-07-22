@@ -1,0 +1,25 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-003-ADVERSARIAL-REVIEW-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-003",
+  "issue_id": null,
+  "priority": "P0",
+  "created_at": "2026-07-22T12:09:19Z",
+  "requires_response_to": "MSG-TASK-003-ADVERSARIAL-REVIEW-RESPONSE",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Stop-hook recovery request. TASK-003 is UNDER_REVIEW after the controlled Round 1 FAIL response. Reviewer write scope excludes TASKS/ACTIVE and PROJECT/STATE. Please record the FAIL recovery entry in both planner-owned files: P1 Node 24.14.0 predates the official 24.17.0 High security fixes; P1 sharp 0.35.3 crosses Next 16.2.11's declared ^0.34.5 range without a real Next Image optimizer fixture; P2 npm 10.8.2 path reproducibility; P2 document-impact narrative mismatch. Preserve the narrow revision scope, no frontend product expansion, no CMS work, no commit/push/merge/accept/close, and set the unique next step to supported Node patch plus override closure, fresh validation and Round 2 review.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-003-nextjs-typescript-frontend-foundation.md",
+    "PROJECT/STATE.md"
+  ],
+  "notes": "Reviewer did not edit planner-owned state or repair business deliverables.",
+  "done_at": "2026-07-22T12:51:10Z",
+  "updated_at": "2026-07-22T12:51:10Z"
+}

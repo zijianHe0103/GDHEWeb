@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-003-FRONTEND-REVISION-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-003",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-22T12:52:51Z",
+  "requires_response_to": "MSG-TASK-003-ADVERSARIAL-REVIEW-RESPONSE",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Perform only the Round 1 narrow toolchain revision for TASK-003. You own frontend/**, TASKS/ARTIFACTS/TASK-003 execution artifacts except the canonical reviewer report, and LANES/frontend/**. Preserve planner/reviewer files and do not revert other edits. Read the Round 1 report fully. Official Node dist index currently reports Node 24.18.0 LTS with bundled npm 11.16.0. Planner downloaded and SHA-256 verified the official macOS arm64 runtime at /tmp/gdhe-node-24.18.0.CMUEIu/node-v24.18.0-darwin-arm64; use it for revision validation without installing globally or copying runtime into the repository. Update .nvmrc, engines, packageManager, @types/node and lockfile coherently to the secure runtime/toolchain. For the sharp 0.35.3 override, do not merely repeat build/audit: add a minimal repeatable test-only Next Image optimizer HTTP fixture that actually invokes the optimizer through Next, verifies success/content type and records platform/arch. Keep it out of the production UI and clean temporary fixture output. Document the tested platform matrix, Next upstream declared sharp range, why the override remains temporary, an explicit recheck/removal gate, and exact setup commands that reproduce the selected bundled npm via normal Node 24.18.0 installation. Update README and execution/validation/diff artifacts, including the earlier FAIL history and new fresh results. Run npm ci, lint, typecheck from a clean no-.next condition, real Vitest, build, image optimizer fixture, root HTTP smoke, audit, dependency tree, engine/package-manager/lock parity, secrets/scope/governance checks. Do not modify CMS, task/project state, the adversarial report, homepage scope, deployment, commit, push, merge, accept or close. Ack this request and send an execution_response to planner when complete.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-003-nextjs-typescript-frontend-foundation.md",
+    "TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-003/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-003/TEST_OR_VALIDATION_LOG.md",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "frontend/README.md"
+  ],
+  "expected_artifacts": [
+    "frontend/",
+    "TASKS/ARTIFACTS/TASK-003/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-003/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-003/DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-22T13:05:40Z",
+  "updated_at": "2026-07-22T13:05:40Z"
+}

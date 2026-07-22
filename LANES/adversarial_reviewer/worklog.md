@@ -129,3 +129,51 @@ Each execution records:
 - result: recovery request queued to planner with the canonical final review report as context and the active task plus project state as expected planner-owned artifacts
 - risks: reviewer must not directly mutate planner-owned task or project state; final PASS is not user acceptance or Git authorization
 - next: planner records the Round 2 PASS recovery entry, resolves document impact, reruns final validation, and performs the controlled prepare-awaiting-user transition
+
+### 2026-07-22T12:07:30Z - TASK-003 adversarial review round 1
+
+- task: TASK-003
+- message: MSG-TASK-003-ADVERSARIAL-REVIEW
+- action: independently restored the reviewer lane, read the complete request context and frontend handoffs, inspected source, configuration, lockfile and artifacts, then reran the toolchain, HTTP, registry, scope, secret, Git and governance checks without modifying business deliverables
+- files_read: project and lane resume state; TASK-003; accepted architecture and constraints; frontend source, config, lockfile, README and env example; execution, validation and diff artifacts; frontend handoff and response messages; official Next.js, Node.js and Sharp primary sources
+- files_changed: TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md; LANES/adversarial_reviewer/worklog.md
+- artifacts: TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md
+- validation: explicit bundled Node 24.14.0 plus npm CLI 10.8.2 path; fresh npm ci, lint, typecheck, one real Vitest test, production build, zero-package-vulnerability audit, dependency explain and HTTP 200 marker smoke passed; clean-copy typecheck passed without prior .next; governance, registry and messages valid; WordPress checksum passed; no forbidden Git paths or TASK-003 commit
+- result: FAIL; P0 none; P1 outdated Node 24.14.0 predates official 24.17.0 High security fixes; P1 Sharp 0.35.3 crosses Next declared 0.34 range without a real image optimizer fixture; P2 npm exact-path reproducibility documentation; P2 document-impact metadata and narrative mismatch
+- risks: package audit does not cover the Node runtime; the current placeholder does not exercise Next Image or Sharp integration; reviewer-scope hook blocked a temporary image fixture and no result was invented
+- next: acknowledge the review request and send controlled FAIL review_response to planner; planner performs narrow toolchain revision and requests Round 2
+
+### 2026-07-22T12:09:23Z - TASK-003 stop-hook recovery routed to planner
+
+- task: TASK-003
+- message: MSG-TASK-003-ADVERSARIAL-REVIEW-STOP-RECOVERY
+- action: preserved reviewer write scope and sent a controlled P0 recovery request because the stop hook observed TASK-003 as UNDER_REVIEW after the Round 1 FAIL response
+- files_changed: LANES/adversarial_reviewer/worklog.md
+- result: recovery request queued with the canonical FAIL report and planner-owned active task plus project state as expected artifacts
+- risks: reviewer must not directly modify planner-owned state or repair the Node and Sharp findings
+- next: planner records the FAIL recovery entry and narrow revision entry, then dispatches implementation correction and Round 2 review without expanding business scope
+
+### 2026-07-22T13:16:04Z - TASK-003 adversarial review round 2
+
+- task: TASK-003
+- message: MSG-TASK-003-ADVERSARIAL-REVIEW-R2
+- action: independently reviewed the complete Round 1 history, revision response, updated source, lockfile, README, tests and artifacts; challenged the official Node and npm bundle claim and the temporary cross-range Sharp override; reran the full acceptance suite in a clean disposable copy without editing business deliverables
+- files_read: R2 request; active task; canonical Round 1 report; frontend revision response and worklog; updated package metadata, lockfile, README, environment contract, application source and optimizer fixture; all TASK-003 execution artifacts; official Node 24.18.0 release evidence and distribution archive metadata
+- files_changed: TASKS artifacts TASK-003 canonical adversarial review report; adversarial reviewer worklog
+- artifacts: canonical review report with preserved Round 1 history and appended Round 2 final section
+- validation: official archive checksum matched its official list; archive and extracted runtime both contained Node 24.18.0 with npm 11.16.0; clean npm ci, lint, typecheck, two Vitest tests, build, real image optimizer, zero-vulnerability audit, dependency tree and production HTTP smoke passed; fixture cleanup, engine parity, one lockfile, env and secret boundary, CMS scope, Git status and governance checks passed
+- result: PASS; P0 none; P1 none; P2 none; both Round 1 P1 and both Round 1 P2 findings closed
+- residual_risks: Sharp 0.35.3 remains outside Next 16.2.11 upstream compatibility range and is validated only on darwin arm64; README blocks all untested deployment platforms and defines an upstream recheck and removal gate; npm allow-scripts notices and the PostCSS override require future upgrade or deployment revalidation
+- boundaries: no frontend, active task, project state, CMS, local runtime, commit, push, merge, acceptance or closure mutation by reviewer
+- message_status: R2 request acknowledged as done; controlled PASS review response queued to planner with requires response set to the R2 request
+- next: planner acknowledges the response, performs final validation and owns any checked transition toward user acceptance
+
+### 2026-07-22T13:19:00Z - TASK-003 Round 2 stop recovery routed to planner
+
+- task: TASK-003
+- message: MSG-TASK-003-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY
+- action: preserved reviewer write scope and sent a controlled recovery request because the final PASS response is queued while planner-owned task and project state remain UNDER_REVIEW
+- files_changed: adversarial reviewer worklog; controlled lane messages only
+- result: recovery request queued with the canonical PASS report and planner-owned state files as context
+- risks: reviewer must not directly mutate planner-owned state; PASS is not user acceptance or Git authorization
+- next: planner acknowledges both messages, records the Round 2 recovery entry and performs final checked transition work

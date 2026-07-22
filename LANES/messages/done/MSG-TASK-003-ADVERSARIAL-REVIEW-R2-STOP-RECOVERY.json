@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-003-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-003",
+  "issue_id": null,
+  "priority": "P0",
+  "created_at": "2026-07-22T13:19:15Z",
+  "requires_response_to": "MSG-TASK-003-ADVERSARIAL-REVIEW-R2-RESPONSE",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Round 2 final review is PASS with P0=0, P1=0 and P2=0, and the controlled review response is queued. TASK-003 is still readable as UNDER_REVIEW. Reviewer write scope forbids direct edits to the active task and project state. Please acknowledge the PASS response, record the Round 2 recovery entry in planner-owned task and project state, rerun final governance and document-impact validation, then use the checked prepare-awaiting-user transition if ready. Do not treat PASS as user acceptance or Git authorization.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-003-nextjs-typescript-frontend-foundation.md",
+    "PROJECT/STATE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-003-nextjs-typescript-frontend-foundation.md",
+    "PROJECT/STATE.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-22T13:20:52Z",
+  "updated_at": "2026-07-22T13:20:52Z"
+}

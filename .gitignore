@@ -1,0 +1,31 @@
+# macOS and local runtime files
+.DS_Store
+*.log
+*.pid
+/.local/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# WordPress is installed locally as a runtime dependency. Track only GDHE-owned
+# CMS extensions; do not track core, wp-config.php, uploads, caches, or vendors.
+/cms/*
+!/cms/wp-content/
+/cms/wp-content/*
+!/cms/wp-content/plugins/
+!/cms/wp-content/mu-plugins/
+/cms/wp-content/plugins/*
+!/cms/wp-content/plugins/gdhe-site/
+!/cms/wp-content/plugins/gdhe-site/**
+/cms/wp-content/mu-plugins/*
+!/cms/wp-content/mu-plugins/gdhe-*.php
+
+# Frontend dependencies and generated output
+node_modules/
+.next/
+.nuxt/
+.output/
+dist/
+coverage/

@@ -1,0 +1,180 @@
+{
+  "schema": "DPG-LANES-1.0.0",
+  "project": "独立站",
+  "created_at": "2026-07-22T03:58:17Z",
+  "updated_at": "2026-07-22T04:34:19Z",
+  "lanes": {
+    "planner": {
+      "purpose": "Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.",
+      "lane_type": "planner",
+      "current_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+      "previous_sessions": [],
+      "status": "registered",
+      "write_scope": [
+        "PROJECT/**",
+        "TASKS/**",
+        "MEMORY/**",
+        "LANES/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/planner/worklog.md",
+      "workspace": "LANES/planner/workspace",
+      "inbox": "LANES/planner/inbox",
+      "outbox": "LANES/planner/outbox",
+      "sessions_dir": "LANES/planner/sessions",
+      "requires_adversarial_review": false,
+      "last_seen": "2026-07-22T03:58:55Z",
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:55Z"
+    },
+    "executor": {
+      "purpose": "Execute assigned work, produce deliverables, write execution reports, and request adversarial review.",
+      "lane_type": "executor",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "TASKS/ARTIFACTS/**",
+        "LANES/executor/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/executor/worklog.md",
+      "workspace": "LANES/executor/workspace",
+      "inbox": "LANES/executor/inbox",
+      "outbox": "LANES/executor/outbox",
+      "sessions_dir": "LANES/executor/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:17Z"
+    },
+    "adversarial_reviewer": {
+      "purpose": "Challenge assumptions, inspect omissions and risk, verify evidence, and return PASS/FAIL/P0/P1/P2 findings.",
+      "lane_type": "adversarial_reviewer",
+      "current_session": "task001_adversarial_review",
+      "previous_sessions": [
+        "/root/task001_adversarial_review"
+      ],
+      "status": "registered",
+      "write_scope": [
+        "TASKS/ARTIFACTS/*/ADVERSARIAL_REVIEW_REPORT.md",
+        "LANES/adversarial_reviewer/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/adversarial_reviewer/worklog.md",
+      "workspace": "LANES/adversarial_reviewer/workspace",
+      "inbox": "LANES/adversarial_reviewer/inbox",
+      "outbox": "LANES/adversarial_reviewer/outbox",
+      "sessions_dir": "LANES/adversarial_reviewer/sessions",
+      "requires_adversarial_review": false,
+      "last_seen": "2026-07-22T04:34:19Z",
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T04:34:19Z"
+    },
+    "frontend": {
+      "purpose": "Own the independent TypeScript frontend, reusable UI, routing, CMS data access, frontend tests, and frontend documentation.",
+      "lane_type": "specialist",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "LANES/frontend/**",
+        "frontend/**",
+        "docs/frontend/**",
+        "TASKS/ARTIFACTS/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/frontend/worklog.md",
+      "workspace": "LANES/frontend/workspace",
+      "inbox": "LANES/frontend/inbox",
+      "outbox": "LANES/frontend/outbox",
+      "sessions_dir": "LANES/frontend/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:17Z"
+    },
+    "wordpress_cms": {
+      "purpose": "Own GDHE WordPress content models, custom CMS extensions, controlled APIs, permissions, and CMS documentation without editing WordPress core.",
+      "lane_type": "specialist",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "LANES/wordpress_cms/**",
+        "cms/wp-content/plugins/gdhe-site/**",
+        "cms/wp-content/mu-plugins/gdhe-*.php",
+        "docs/cms/**",
+        "TASKS/ARTIFACTS/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/wordpress_cms/worklog.md",
+      "workspace": "LANES/wordpress_cms/workspace",
+      "inbox": "LANES/wordpress_cms/inbox",
+      "outbox": "LANES/wordpress_cms/outbox",
+      "sessions_dir": "LANES/wordpress_cms/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:17Z"
+    },
+    "localization_seo": {
+      "purpose": "Own multilingual routing and publication contracts, translation linkage, hreflang, RTL, metadata, Schema, and localization/SEO validation artifacts.",
+      "lane_type": "specialist",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "LANES/localization_seo/**",
+        "docs/i18n-seo/**",
+        "TASKS/ARTIFACTS/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/localization_seo/worklog.md",
+      "workspace": "LANES/localization_seo/workspace",
+      "inbox": "LANES/localization_seo/inbox",
+      "outbox": "LANES/localization_seo/outbox",
+      "sessions_dir": "LANES/localization_seo/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:17Z"
+    },
+    "visual_qa": {
+      "purpose": "Own reference-site comparison evidence, four-viewport screenshots, accessibility, interaction, performance, and graded visual-difference reports.",
+      "lane_type": "specialist",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "LANES/visual_qa/**",
+        "QA/**",
+        "TASKS/ARTIFACTS/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/visual_qa/worklog.md",
+      "workspace": "LANES/visual_qa/workspace",
+      "inbox": "LANES/visual_qa/inbox",
+      "outbox": "LANES/visual_qa/outbox",
+      "sessions_dir": "LANES/visual_qa/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-22T03:58:17Z",
+      "updated_at": "2026-07-22T03:58:17Z"
+    }
+  }
+}

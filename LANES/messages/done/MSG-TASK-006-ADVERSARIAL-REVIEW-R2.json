@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-ADVERSARIAL-REVIEW-R2",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T07:10:20Z",
+  "requires_response_to": "MSG-TASK-006-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Perform TASK-006 Round 2 independent read-only review, limited to the two Round 1 P2 corrections and refreshed remote facts. Verify current PROJECT/STATE and active-task artifact/review/main narratives are truthful; verify the original five pre-intake record paths, active TASK-005 to archive mapping, Git baseline/current hashes, explicit absence of pre-intake dirty-file exact hash, and content/event-chain preservation without archive-index substitution. Reproduce template/plugin/70-test/governance/strict/message/diff/zero-product checks as needed. Refresh live Git facts: local main and origin/main should both be c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9 and remote HEAD/default main, created externally by the user after Round 1. Confirm no TASK-006 formal commit, task-branch push or merge. Preserve Round 1 history. Update only TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md, reviewer lane records and controlled response. Return final PASS/FAIL/BLOCKED with P0/P1/P2 counts via review_response linked to this request. Do not repair deliverables or perform Git/external operations.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "User wants prompt final delivery after review; do not weaken or bypass the PASS gate.",
+  "done_at": "2026-07-23T07:13:39Z",
+  "updated_at": "2026-07-23T07:13:39Z"
+}

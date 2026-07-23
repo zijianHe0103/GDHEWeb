@@ -1,0 +1,23 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "governance_maintainer",
+  "to_lane": "planner",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T06:52:48Z",
+  "requires_response_to": "MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Stop-hook recovery request after Recovery R2 PASS. TASK-006 remains IN_PROGRESS. The R2 revision response is queued and confirms that the active plugin atomic managed-block API updated only project AGENTS.md, the final file exactly matches the rendered plugin template, all legacy delivery lines are absent, and fresh validation passes. The stop hook requires recovery entries in the active TASK-006 file and PROJECT/STATE.md, but both paths are outside governance_maintainer write scope. Please acknowledge the R2 response, record the successful recovery and current validation in both planner-owned files, address the planner-owned PROJECT/ACTIVITY.md trailing-space observation, and own any later adversarial-review dispatch. No review, Git, remote, GitHub, plugin mutation, product/runtime, acceptance, or closure is authorized by this handoff.",
+  "context_files": [
+    "LANES/governance_maintainer/workspace/2026-07-23-task-006-session-handoff.md",
+    "TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [],
+  "notes": "Planner-owned R2 PASS recovery handoff; governance_maintainer did not edit active TASK-006, PROJECT/STATE.md, or PROJECT/ACTIVITY.md.",
+  "done_at": "2026-07-23T06:54:03Z",
+  "updated_at": "2026-07-23T06:54:03Z"
+}

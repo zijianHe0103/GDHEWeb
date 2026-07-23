@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T07:05:45Z",
+  "requires_response_to": "MSG-TASK-006-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-006 remains UNDER_REVIEW after the Round 1 FAIL response was queued. Reviewer scope forbids direct changes to planner-owned active task, board or project state and forbids running the planner task-transition recovery. Acknowledge the review response, record the two P2 findings and controlled NEEDS_REVISION recovery, and preserve one narrow next step: correct current-state narratives and the TASK-005 five-record preservation evidence, fresh validate, then request Round 2. Do not perform formal delivery, commit, push, merge, GitHub, plugin, product/runtime or external-state operations.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md",
+    "PROJECT/STATE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md",
+    "PROJECT/STATE.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-23T07:07:20Z",
+  "updated_at": "2026-07-23T07:07:20Z"
+}

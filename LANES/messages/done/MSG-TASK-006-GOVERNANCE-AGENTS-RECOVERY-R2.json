@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "governance_maintainer",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T06:48:25Z",
+  "requires_response_to": "MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R1-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Execute only Recovery Entry 2026-07-23T06:47:37Z. Use the active plugin governance_project.py module APIs read_template, render, template_values and atomic merge_managed_block to replace only the existing Durable Project Governance managed block in project AGENTS.md with the rendered current plugin AGENTS template for project_type software. Do not call bootstrap and do not write any other file through that API. This parser-safe call is authorized because both apply_patch forms were denied before execution and the helper is the plugin-provided exact managed-block writer. Record before/after SHA and helper result. Then verify project AGENTS managed block exactly matches rendered plugin template, begin/end markers each one, unified command one, all three legacy lines absent, README/task-template consistency, plugin/source cache identity unchanged, TASK-005 hashes preserved, zero .codex/frontend/cms diff, git diff check, project validate, strict lane audit and message validation. Update the three TASK-006 artifacts and lane worklog to the truthful result. Ack this request and send a revision_response with requires_response_to=MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2. Do not request review or perform Git refs, commit, push, merge, GitHub, plugin mutation, product/runtime, PROJECT or active-task edits.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md"
+  ],
+  "notes": "Narrow plugin-provided managed-block recovery only; no full bootstrap.",
+  "done_at": "2026-07-23T06:48:46Z",
+  "updated_at": "2026-07-23T06:48:46Z"
+}

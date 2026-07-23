@@ -2,7 +2,7 @@
   "schema": "DPG-LANES-1.0.0",
   "project": "独立站",
   "created_at": "2026-07-22T03:58:17Z",
-  "updated_at": "2026-07-23T01:16:18Z",
+  "updated_at": "2026-07-23T06:29:33Z",
   "lanes": {
     "planner": {
       "purpose": "Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.",
@@ -28,6 +28,35 @@
       "last_seen": "2026-07-22T03:58:55Z",
       "created_at": "2026-07-22T03:58:17Z",
       "updated_at": "2026-07-22T03:58:55Z"
+    },
+    "governance_maintainer": {
+      "purpose": "Synchronize project-managed governance templates with the verified active plugin while preserving user content and producing TASK-006 delivery evidence.",
+      "lane_type": "specialist",
+      "current_session": "019f8da9-8538-7532-ae96-5cdc13d4dbe6",
+      "previous_sessions": [],
+      "status": "registered",
+      "write_scope": [
+        "LANES/governance_maintainer/**",
+        "TASKS/ARTIFACTS/TASK-006/**",
+        "TASKS/ACTIVE/TASK_TEMPLATE.md",
+        "AGENTS.md",
+        "README.md",
+        ".codex/rules/GIT_GOVERNANCE.rules",
+        ".codex/config.toml",
+        ".codex/agents/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/governance_maintainer/worklog.md",
+      "workspace": "LANES/governance_maintainer/workspace",
+      "inbox": "LANES/governance_maintainer/inbox",
+      "outbox": "LANES/governance_maintainer/outbox",
+      "sessions_dir": "LANES/governance_maintainer/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": "2026-07-23T06:29:33Z",
+      "created_at": "2026-07-23T06:28:58Z",
+      "updated_at": "2026-07-23T06:29:33Z"
     },
     "executor": {
       "purpose": "Execute assigned work, produce deliverables, write execution reports, and request adversarial review.",

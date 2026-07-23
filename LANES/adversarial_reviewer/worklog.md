@@ -290,3 +290,66 @@ Each execution records:
 - message_status: closure request acknowledged as done; controlled PASS review_response queued to planner and requires acknowledgement of the closure request
 - stop_recovery: controlled recovery request queued because planner-owned task/project state remain UNDER_REVIEW; reviewer did not edit them
 - next: planner acknowledges both messages, records PASS recovery, performs final validation and owns any checked transition
+
+### 2026-07-23T07:03:05Z - TASK-006 adversarial review round 1
+
+- task: TASK-006
+- message: MSG-TASK-006-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, independently reviewed template synchronization, managed-block preservation, combined delivery semantics, same-schema upgrade interpretation, parser recovery, dynamic lane scope, TASK-005 record preservation, local main ancestry, remote/default boundary and zero product/runtime scope
+- files_read: full governance resume chain; TASK-006 active task; AGENTS, README and task template; all TASK-006 execution artifacts; governance_maintainer lane, session, handoff, worklog and controlled messages; active plugin source/cache manifests, templates, task-accept flow, tests and scripts; current Git and remote state
+- files_changed: TASK-006 canonical adversarial review report; adversarial reviewer worklog; current reviewer session record; controlled request acknowledgement
+- validation: AGENTS rendered-template exact with matching SHA; source/cache recursive parity and clean source HEAD; 70 plugin tests; same-schema dry-run actions empty with truthful interpretation; project/message/strict/diff checks pass; legacy current-template commands zero; local main and TASK-006 branch at TASK-005 SHA with TASK-001 through TASK-005 ancestry; live remote main and TASK-006 branch absent; GitHub default unchanged; `.codex`, frontend, cms and local runtime diff/status empty
+- result: FAIL; P0 none; P1 none; P2 two
+- p2_1: project current unresolved narrative still says local main does not exist and project templates remain old, while active task execution artifacts and review sections still say not generated/not started
+- p2_2: the claimed five-record TASK-005 preservation hash matrix lists archive index instead of the actual active-task record migrated to the TASK-005 archive path, so exact five-record preservation is not reproducible as stated
+- passed_boundaries: combined command/readme impact, managed-block preservation, parser-safe R2 authorization, dynamic-lane minimum scope, current Task-005 history content, local main baseline, remote/default non-mutation and no premature delivery
+- boundaries: no deliverable repair, task transition, commit, ref mutation, push, merge, GitHub change, plugin write, product/runtime or external-state mutation
+- message_status: review request acknowledged as done; controlled FAIL review_response queued to planner and requires acknowledgement of the Round 1 request
+- stop_recovery: controlled recovery request queued because planner-owned task/project state remain UNDER_REVIEW; reviewer did not edit them or run task transition
+- next: planner acknowledges both messages, records NEEDS_REVISION recovery and dispatches only the two narrow corrections
+
+### 2026-07-23T07:16:14Z - TASK-006 adversarial review round 2 final
+
+- task: TASK-006
+- message: MSG-TASK-006-ADVERSARIAL-REVIEW-R2
+- action: acknowledged the final configured review request first, preserved Round 1 history, independently rechecked both P2 corrections, refreshed local and remote main facts, and reran template, plugin, governance, diff and zero-product acceptance gates
+- files_read: Round 2 request; current project state and board; active TASK-006; Round 1 canonical report; updated execution, validation and diff evidence; archived TASK-005 task; planner activity and worklog; active plugin source and cache; current Git and GitHub facts
+- files_changed: TASK-006 canonical adversarial review report; adversarial reviewer worklog; current reviewer session record; controlled request acknowledgement
+- validation: P2-2 closed with the exact original five paths, active-to-archive mapping, reproduced baseline and archive hashes, explicit absence of a pre-intake dirty hash and content/event-chain evidence; rendered AGENTS exact; source/cache parity; 70 tests; dry-run, project, message, strict and diff checks pass; local main and origin main match TASK-005 SHA; remote HEAD and default branch are main; no TASK-006 remote branch, formal commit, push or merge; zero product/runtime diff
+- result: FAIL; P0 none; P1 none; P2 one
+- p2: active TASK-006 current-status paragraph still says remote main has not been created and the default branch has not changed, contradicting both current project facts and independent live verification
+- boundaries: no deliverable repair, task transition, commit, ref mutation, push, merge, GitHub change, plugin write, product/runtime or external-state mutation
+- message_status: Round 2 request acknowledged as done; controlled final FAIL review_response queued to planner
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: planner acknowledges the final response, records NEEDS_REVISION, applies only the current-status narrative correction through an authorized lane, and seeks explicit user authorization before any additional closure review
+
+### 2026-07-23T07:18:40Z - TASK-006 Round 2 stop-hook boundary confirmed
+
+- hook_request: update the active task and project state with a recovery entry before stopping
+- scope_decision: not executed because both targets are planner-owned and outside adversarial_reviewer write scope
+- controlled_recovery: MSG-TASK-006-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY already queued with the exact residual P2, NEEDS_REVISION recovery requirement and unique next step
+- boundary: reviewer did not edit planner state or bypass the configured two-round review limit
+- next: planner acknowledges the final response and recovery request, then owns the recovery entry and authorized narrow correction
+
+### 2026-07-23T07:27:04Z - TASK-006 user-authorized closure review
+
+- task: TASK-006
+- message: MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW
+- authorization: user explicitly authorized one additional independent closure review after the configured two rounds
+- action: acknowledged the closure request first, preserved both prior FAIL rounds, independently verified the sole Round 2 P2 correction, five-record evidence, recovery history, current state, templates, plugin tests, governance checks, live refs/default and zero product scope
+- files_read: closure request; current project state and board; active TASK-006; canonical Round 1 and Round 2 report; execution, validation and diff evidence; archived TASK-005 record; planner recovery and authorization history; active plugin source and cache; current Git and GitHub facts
+- files_changed: TASK-006 canonical adversarial review report; adversarial reviewer worklog; current reviewer session record; controlled request acknowledgement
+- validation: corrected current-status paragraph matches live local main, origin main and default main facts while preserving no-TASK-006-delivery boundary; five-record baseline/archive hashes reproduced; rendered AGENTS exact; source/cache parity; 70 tests; dry-run, project, message, strict and diff checks pass; no TASK-006 remote branch; zero product/runtime diff
+- result: PASS; P0 none; P1 none; P2 none
+- boundaries: no deliverable repair, task transition, acceptance, commit, ref mutation, push, merge, GitHub change, plugin write, product/runtime or external-state mutation
+- message_status: closure request acknowledged as done; controlled PASS review_response queued to planner
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: planner acknowledges both controlled messages and owns recovery, final validation, Planner Final Summary and checked prepare-awaiting-user
+
+### 2026-07-23T07:29:03Z - TASK-006 closure stop-hook boundary confirmed
+
+- hook_request: update the active task and project state with a recovery entry before stopping
+- scope_decision: not executed because both targets are planner-owned and outside adversarial_reviewer write scope
+- controlled_recovery: MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-STOP-RECOVERY is queued with closure PASS, zero findings and the checked closeout next step
+- boundary: reviewer did not edit planner state, perform acceptance or execute Git or external-state operations
+- next: planner acknowledges the PASS response and recovery request, then owns the required state entries and checked transition

@@ -1,0 +1,23 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "governance_maintainer",
+  "to_lane": "planner",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T06:42:27Z",
+  "requires_response_to": "MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Stop-hook recovery request. TASK-006 remains IN_PROGRESS. The governance_maintainer execution response is queued with result BLOCKED: all controlled synchronization work and artifacts are complete except the single stale legacy merge-command line at AGENTS.md:88, which the active hook misclassifies because of its angle-bracket placeholder. The stop hook requests recovery entries in the active TASK-006 file and PROJECT/STATE.md, but both paths are outside this lane's registered write scope. Please acknowledge the execution response, record the exact blocked recovery entry in both planner-owned files, remove only AGENTS.md:88 through a planner-authorized path, and rerun the recorded validation before any adversarial review. Preserve that no Git refs, commit, push, merge, GitHub settings, plugin source/cache, product code, WordPress, database, runtime, acceptance, or closure is authorized.",
+  "context_files": [
+    "LANES/governance_maintainer/workspace/2026-07-23-task-006-session-handoff.md",
+    "TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [],
+  "notes": "Planner-owned recovery handoff; governance_maintainer did not edit TASKS/ACTIVE/TASK-006 or PROJECT/STATE.md.",
+  "done_at": "2026-07-23T06:47:37Z",
+  "updated_at": "2026-07-23T06:47:37Z"
+}

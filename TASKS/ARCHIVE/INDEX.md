@@ -18,3 +18,7 @@ schema_version: DPG-LANES-1.0.0
   - 任务文件：`TASKS/ARCHIVE/TASK-004-english-wordpress-cms-scf-rest-foundation.md`
   - Commit：`8f8ce2121916e4c764af86aaa04e2a9b83da2a28`
   - Remote branch：`origin/codex/TASK-004-english-cms-scf-foundation`
+- `TASK-005` 更新实施路线图并制定英语版 API/DTO/Fixture 与前端接入任务边界 — `CLOSED` / `PUSHED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-005-roadmap-api-integration-boundaries.md`
+  - Commit：`c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9`
+  - Remote branch：`origin/codex/TASK-005-roadmap-api-integration-boundaries`

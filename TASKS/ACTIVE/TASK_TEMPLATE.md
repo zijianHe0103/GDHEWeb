@@ -11,6 +11,7 @@ acceptance_state: NOT_ACCEPTED
 recovery_recorded_at:
 git_status: DIRTY
 document_impact: NOT_APPLICABLE
+readme_impact: NOT_APPLICABLE
 project_type: software
 
 ## 原始请求
@@ -23,43 +24,47 @@ project_type: software
 
 ## 目标
 
-- TODO
+-
 
 ## 非目标
 
-- TODO
+-
 
 ## 交付物
 
-- TODO
+-
 
 ## 验收标准
 
-- TODO
+-
 
 ## 允许修改范围
 
-- TODO
+-
 
 ## 禁止修改范围
 
-- TODO
+-
 
 ## 约束
 
-- TODO
+-
 
 ## 假设和待确认事项
 
-- TODO
+-
 
 ## 验证计划
 
-- TODO
+-
 
 ## 文档影响
 
 使用 `NONE`、`RESOLVED` 或 `NOT_APPLICABLE`。需要修改文档时，先完成文档影响处理，再把本字段置为 `RESOLVED`。
+
+## README 影响
+
+任务影响使用方式、功能或流程时，更新项目根目录 `README.md`，并将 `readme_impact` 置为 `UPDATED`。其他任务使用 `NOT_APPLICABLE`。
 
 ## 分支和 Worktree
 
@@ -85,6 +90,14 @@ DRAFT
 这是 `human-required` 聊天等待点：正常结束 turn，不用 Stop block 续跑。此口令不是系统 `PermissionRequest`，不能代替工具权限审批。
 
 审查和验证完成后，使用 `task_transition.py prepare-awaiting-user` 进入验收等待；需要修订时使用 `task_transition.py reopen`。
+
+正式交付只接受以下精确口令：
+
+```text
+确认 TASK-XXX 完成并提交到远端
+```
+
+收到口令后，完成本地正式提交，立即推送当前任务分支，再合并到 `main` 并推送 `main`；远端 `main` 包含该任务提交后，正式交付才算完成。
 
 ## Lane Plan
 

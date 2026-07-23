@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "governance_maintainer",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T06:29:48Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Execute only the confirmed TASK-006 governance-template synchronization scope. Read the full task and lane resume sources first. Reverify active plugin source/cache version, SHA, parity, tests, compile status, and project upgrade dry-run. Produce a controlled template-drift inventory before editing. Update only registered write-scope files: AGENTS.md and README.md managed blocks, TASKS/ACTIVE/TASK_TEMPLATE.md, and only .codex delivery templates proven stale. Preserve all user content outside managed blocks and do not touch TASK-005 records, PROJECT state, product code, WordPress, database, Git refs, remotes, GitHub settings, plugin source/cache, commit, push, or merge. Use apply_patch for edits. Produce TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md, TEST_OR_VALIDATION_LOG.md, and DIFF_OR_OUTPUT_SUMMARY.md plus lane worklog. Validate governance, strict lane audit, messages, JSON, exact scope, managed-block preservation, old-command removal from current templates, whitespace and git diff. Then ack the request and send an execution_response to planner with requires_response_to=MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC. Do not request adversarial review directly; planner will inspect first.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md"
+  ],
+  "notes": "Local main creation, remote delivery, merge, push, and GitHub default-branch change are explicitly excluded from this execution lane and remain planner/user-gated.",
+  "done_at": "2026-07-23T06:31:40Z",
+  "updated_at": "2026-07-23T06:31:40Z"
+}

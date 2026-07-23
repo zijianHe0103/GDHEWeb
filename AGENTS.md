@@ -80,11 +80,11 @@ Git 状态：`NO_GIT`, `DIRTY`, `WIP_CHECKPOINTED`, `FORMAL_COMMIT`, `PUSHED`, `
 
 ## 用户验收和 Git 命令
 
-不要把 casual approval 当作最终验收。正式 Git 操作必须使用精确口令：
+不要把 casual approval 当作最终验收。正式交付使用精确口令：
 
-- `确认 TASK-XXX 完成并生成正式提交`
-- `推送 TASK-XXX`
-- `合并 TASK-XXX 到 <TARGET_BRANCH>`
+- `确认 TASK-XXX 完成并提交到远端`
+
+收到正式交付口令后，使用中文完整记录本次任务的任务内容、主要变更、验证结果和文档更新。完成本地正式提交后，立即将当前任务分支推送到 GitHub 远端；推送成功后将任务分支合并到 `main`，并立即推送 `main`。
 
 禁止 force push、删除分支或 worktree、`reset --hard`、rebase 未知历史，或在 detached HEAD 上提交。
 
@@ -99,6 +99,8 @@ dispatch、planner、executor、dynamic lane 或 automation 都不得自动调�
 ## 文档同步
 
 每个实质性任务必须记录文档影响：`NONE`、`RESOLVED` 或 `NOT_APPLICABLE`。只要行为、数据、流程、研究结论、业务规则或使用方法改变，文档影响不能是 `NONE`，并且必须在正式验收前处理完成。
+
+任务影响使用方式、功能或流程时，更新项目根目录 `README.md`，并将 `readme_impact` 置为 `UPDATED`；其他任务使用 `NOT_APPLICABLE`。
 
 ## 会话交接
 

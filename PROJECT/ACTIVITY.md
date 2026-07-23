@@ -1407,3 +1407,389 @@ schema_version: DPG-LANES-1.0.0
 - commit: TASK-005 单一正式提交已生成；本状态同步将 amend 进同一提交。
 - boundary: 未 push、merge、实施 Task A/B、创建 PR 或部署。
 - next: 等待独立 `推送 TASK-005`。
+
+### 2026-07-23T05:53:06Z - TASK-005 pushed
+
+- authorization: 用户独立输入 `推送 TASK-005`。
+- remote: commit `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9` 已推送到 `origin/codex/TASK-005-roadmap-api-integration-boundaries`。
+- verification: local HEAD 与 remote-tracking SHA 一致，divergence `0/0`。
+- boundary: 未 merge、未创建 PR、未实施 Task A/B。
+- next: 等待用户下一条任务或明确 merge 指令。
+
+### 2026-07-23T06:24:14Z - TASK-006 intake created
+
+- request: 升级项目交付治理模板并建立 `main` 集成基线。
+- branch: 从 TASK-005 正式提交 `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9` 创建 `codex/TASK-006-governance-delivery-main-baseline`。
+- preservation: TASK-005 推送后的 5 份未提交治理状态记录完整保留并带入新任务分支。
+- scope: 仅创建需求卡、归档 TASK-005 和同步治理状态；未升级模板、创建 `main`、推送、合并或修改 GitHub 默认分支。
+- next: 等待精确口令 `确认 TASK-006 需求并开始执行`。
+
+### 2026-07-23T06:27:28Z - TASK-006 requirements confirmed
+
+- authorization: 用户精确输入 `确认 TASK-006 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- scope: 需求范围已冻结；尚未升级模板、创建 `main`、推送、合并或修改 GitHub 默认分支。
+- next: 创建最小权限的动态 `governance_maintainer` lane 并派发受控执行消息。
+
+### 2026-07-23T06:29:53Z - TASK-006 governance execution dispatched
+
+- lane: 动态 `governance_maintainer` specialist lane 已创建，最小写范围仅覆盖 TASK-006 根 managed blocks、任务模板、经证明漂移的 `.codex/**`、本 lane 与任务 artifacts。
+- session: `019f8da9-8538-7532-ae96-5cdc13d4dbe6` 已注册。
+- message: `MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC` dry-run 精确命中注册 session 并已唤醒。
+- transition: `READY` to `IN_PROGRESS`。
+- boundary: 执行 lane 不创建 `main`、commit、push、merge、修改 GitHub 默认分支或触碰产品/runtime。
+- next: 等待 execution response，planner 复核后继续 Git 基线与审查。
+
+### 2026-07-23T06:41:54Z - TASK-006 scoped hook recovery
+
+- response: `MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC-RESPONSE` 已确认；result `BLOCKED`。
+- completed: README、任务模板、AGENTS 新规则、三份 artifacts、插件 70 tests、source/cache parity、项目/strict lane validation 和产品零差异。
+- blocker: `AGENTS.md` 一行旧 merge 口令的角括号被 hook 误判；三次 patch 均在写入前拒绝。
+- recovery: 因 AGENTS 全文件均为 managed block，允许同一 lane 用 apply_patch delete/add 保持其余内容逐字不变并删除该单行。
+- boundary: 无 shell 写入、Git refs、远端、GitHub、插件、产品或 runtime 操作。
+- next: 完成单行恢复和 fresh validation，再由 planner 复核。
+
+### 2026-07-23T06:47:37Z - TASK-006 parser-safe recovery R2 prepared
+
+- R1: 完整 delete/add patch 仍在预执行阶段被 ASCII 箭头和 managed end marker 误判；AGENTS SHA 不变。
+- queue: R1 revision response 与两条 stop-recovery 已确认，message validation 通过。
+- mechanism: 仅调用插件已验证的原子 `merge_managed_block` API，目标只有项目 `AGENTS.md` 的 existing managed block；不运行 bootstrap。
+- boundary: 不使用 shell 文件写入，不修改插件、不操作 Git refs/远端/GitHub/产品/runtime。
+- next: 同一最小权限 lane 执行 Recovery R2 并返回 fresh validation。
+
+### 2026-07-23T06:53:40Z - TASK-006 governance recovery R2 PASS
+
+- result: Recovery R2 PASS；插件原子 managed-block API 只更新项目 `AGENTS.md`，未调用 bootstrap。
+- exactness: AGENTS 与当前插件渲染模板逐字一致；markers 各 1、统一口令 1、旧三条口令 0。
+- validation: plugin parity、70 tests、26-file compile、project/strict/message/scope checks、`.codex` 零差异、产品零差异和治理记录保留通过。
+- cleanup: planner 修正 lane registration event 的单一尾随空格。
+- boundary: 尚未创建 main、review、commit、push、merge、GitHub 设置或产品/runtime 变化。
+- next: ack R2 messages，建立本地 main 基线，fresh validate 后派发 independent review。
+
+### 2026-07-23T06:54:24Z - TASK-006 local main baseline established
+
+- local_main: `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9`。
+- ancestry: TASK-001 through TASK-005 all verified as ancestors of local `main`。
+- current_branch: `codex/TASK-006-governance-delivery-main-baseline`；dirty TASK-006 worktree preserved。
+- boundary: no checkout、merge、commit、push、remote main or GitHub default-branch change。
+- next: planner fresh validation and independent adversarial review。
+
+### 2026-07-23T06:56:58Z - TASK-006 adversarial review Round 1 dispatched
+
+- preflight: governance、strict lane audit、messages、upgrade dry-run、AGENTS exact template、command counts、README/task-template consistency、source/cache parity、scope、artifacts、diff、main SHA/ancestry、branch 和 remote-main absence 全部 PASS。
+- message: `MSG-TASK-006-ADVERSARIAL-REVIEW-R1` dry-run 命中 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并已唤醒。
+- transition: `IN_PROGRESS` to `UNDER_REVIEW`。
+- boundary: no formal commit、push、merge、origin/main、GitHub default、plugin/product/runtime change。
+- next: wait for independent review response。
+
+### 2026-07-23T07:07:36Z - TASK-006 Round 1 FAIL recovery
+
+- review: FAIL，P0=0、P1=0、P2=2；response 与 stop-recovery 已确认。
+- transition_helper: reopen 按要求运行，但 helper 只接受 AWAITING_USER，故从 UNDER_REVIEW 安全拒绝且未修改文件。
+- state: 真实状态同步为 NEEDS_REVISION。
+- P2 scope: current narrative truthfulness；TASK-005 active-to-archive preservation evidence precision。
+- remote_refresh: 用户已创建 origin/main 并设为默认；local/main/origin-main 均为 c9cbf13。
+- boundary: no TASK-006 commit、push、merge or product/runtime change。
+- next: narrow correction, fresh validation, Round 2。
+
+### 2026-07-23T07:10:29Z - TASK-006 Round 2 dispatched
+
+- revision: current narrative and TASK-005 active-to-archive evidence corrected; no historical review record overwritten。
+- fresh_validation: plugin 70 tests、project/strict/messages/dry-run/template/source-cache/diff/zero-product/main/origin/default and evidence assertions PASS。
+- message: `MSG-TASK-006-ADVERSARIAL-REVIEW-R2` dry-run resolved to registered reviewer session。
+- transition: NEEDS_REVISION to UNDER_REVIEW。
+- next: wait for final Round 2 response。
+
+### 2026-07-23T07:19:18Z - TASK-006 Round 2 final FAIL recovery
+
+- review: final FAIL，P0=0、P1=0、P2=1；response/stop-recovery acknowledged。
+- only_gap: active-task current status still denied user-created origin/main and default main。
+- transition: reopen helper safely refused UNDER_REVIEW; truthful NEEDS_REVISION recorded。
+- correction: one current-status paragraph only; now local/main/origin-main c9cbf13, default main, no TASK-006 commit/remote branch/merge。
+- review_limit: two rounds exhausted; no automatic third review。
+- next: fresh validate, then request explicit closure-review authorization。
+
+### 2026-07-23T07:24:41Z - TASK-006 user-authorized closure review dispatched
+
+- authorization: 用户明确授权一次额外 independent closure review。
+- scope: Round 2 sole P2 closure、five-record evidence、live main/default、existing PASS and zero-product only。
+- message: MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW resolved to registered reviewer session。
+- transition: NEEDS_REVISION to UNDER_REVIEW。
+- boundary: no acceptance、commit、push、merge、GitHub mutation or product/runtime work。
+- next: wait for closure verdict。
+
+### 2026-07-23T07:29:30Z - TASK-006 closure review PASS
+
+- response: closure response and stop-recovery acknowledged。
+- verdict: canonical PASS，P0=0、P1=0、P2=0；prior FAIL history preserved。
+- verified: sole current-status P2、five-record evidence、templates、70 tests、governance/messages/strict/diff、live refs/default、no delivery and zero-product。
+- planner_summary: generated。
+- boundary: PASS is not acceptance; no commit、push、merge or product/runtime authorization。
+- next: final validation and checked prepare-awaiting-user。
+
+### 2026-07-23T06:29:33Z - lane_registered
+- type: lane_registered
+- lane: governance_maintainer
+- task:
+- summary: governance_maintainer registered session 019f8da9-8538-7532-ae96-5cdc13d4dbe6
+
+### 2026-07-23T06:29:48Z - message_queued
+- type: message_queued
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message queued for governance_maintainer
+
+### 2026-07-23T06:31:40Z - message_done
+- type: message_done
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC moved to done
+
+### 2026-07-23T06:40:24Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:41:48Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC-RESPONSE moved to done
+
+### 2026-07-23T06:42:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:42:42Z - message_queued
+- type: message_queued
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message queued for governance_maintainer
+
+### 2026-07-23T06:43:01Z - message_done
+- type: message_done
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R1 moved to done
+
+### 2026-07-23T06:45:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:46:40Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:47:37Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R1-RESPONSE moved to done
+
+### 2026-07-23T06:47:37Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R1-STOP-RECOVERY moved to done
+
+### 2026-07-23T06:47:37Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-TEMPLATE-SYNC-STOP-RECOVERY moved to done
+
+### 2026-07-23T06:48:25Z - message_queued
+- type: message_queued
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message queued for governance_maintainer
+
+### 2026-07-23T06:48:46Z - message_done
+- type: message_done
+- lane: governance_maintainer
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2 moved to done
+
+### 2026-07-23T06:52:02Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:52:48Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T06:54:03Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-RESPONSE moved to done
+
+### 2026-07-23T06:54:03Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-STOP-RECOVERY moved to done
+
+### 2026-07-23T06:56:49Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T06:58:08Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-23T07:04:56Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:05:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:07:20Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-23T07:07:20Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-23T07:10:20Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T07:13:39Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-23T07:17:33Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:17:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:19:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-23T07:19:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-23T07:24:41Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T07:25:54Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW moved to done
+
+### 2026-07-23T07:28:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:28:21Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-006
+- summary: message queued for planner
+
+### 2026-07-23T07:29:30Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE moved to done
+
+### 2026-07-23T07:29:30Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-006
+- summary: message MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-23T07:32:05Z - TASK-006 planner final validation PASS
+
+- validation: plugin 70 tests、project/strict/messages/dry-run/template/parity/artifacts/review/scope/diff/zero-product/live-main 全部 fresh PASS。
+- review: user-authorized closure review canonical PASS，P0=0、P1=0、P2=0。
+- boundary: 未验收、未 commit、未 push、未 merge，未修改产品或 runtime。
+- next: checked prepare-awaiting-user。
+
+### 2026-07-23T07:32:52Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-006
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-23T07:33:17Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-006
+- summary: Synchronize human-readable board, project narrative, acceptance handoff, and helper whitespace after the first checked prepare; no deliverable or review verdict changes.
+
+### 2026-07-23T07:33:17Z - TASK-006 checked preparation narrative sync
+
+- first_prepare: checked helper 成功验证 artifacts 并进入 `AWAITING_USER`。
+- controlled_reopen: 仅同步 active task、project、board、handoff narrative 和 helper 行尾空格；交付物、closure PASS 与 final validation 不变。
+- boundary: 未验收、未 commit、未 push、未 merge，未修改产品或 runtime。
+- next: fresh validation 后 final checked prepare，然后等待 `确认 TASK-006 完成并提交到远端`。
+
+### 2026-07-23T07:35:02Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-006
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-23T07:40:00Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-006
+- summary: TASK-006 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-23T07:40:00Z - TASK-006 formal delivery authorized
+
+- authorization: 用户精确输入 `确认 TASK-006 完成并提交到远端`。
+- state: `ACCEPTED` / `FORMAL_COMMIT`，等待生成单一正式提交。
+- delivery: 正式提交后立即推送任务分支，再合并到 `main` 并推送 `main`。
+- boundary: 不执行 force push、rebase、分支删除或产品/runtime 修改。

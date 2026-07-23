@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T07:24:41Z",
+  "requires_response_to": "MSG-TASK-006-ADVERSARIAL-REVIEW-R2-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "User explicitly authorized one additional independent closure review for TASK-006. Perform one read-only closure review only. Verify the Round 2 sole P2 is closed: the active-task current-status paragraph must truthfully state local main and origin/main at c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9, GitHub default main, and no TASK-006 formal commit, remote task branch or merge. Reconfirm Round 1 P2-2 evidence remains truthful, canonical recovery entries exist, current project/task/board state is coherent, template/plugin/70-tests/governance/strict/message/diff/zero-product checks remain valid, and live Git refs/default branch still match. Preserve Round 1 and Round 2 FAIL history. Write only TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md, reviewer lane records and controlled response. Return PASS/FAIL/BLOCKED with P0/P1/P2 counts. Do not repair deliverables or perform acceptance, commit, push, merge, GitHub, plugin, product/runtime or external operations.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "This is the single user-authorized closure review beyond the configured two rounds.",
+  "done_at": "2026-07-23T07:25:54Z",
+  "updated_at": "2026-07-23T07:25:54Z"
+}

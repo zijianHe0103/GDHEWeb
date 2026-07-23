@@ -1,0 +1,26 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T07:28:21Z",
+  "requires_response_to": "MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-006 remains UNDER_REVIEW after the user-authorized closure PASS. Reviewer scope forbids edits to planner-owned active task and project state. Planner must acknowledge the PASS response and this recovery request, record closure PASS with zero findings, preserve both prior FAIL rounds, complete final validation and Planner Final Summary, then use the checked prepare-awaiting-user transition. PASS is not acceptance and does not authorize commit, push, merge, GitHub change or product/runtime work.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md",
+    "PROJECT/STATE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-23T07:29:30Z",
+  "updated_at": "2026-07-23T07:29:30Z"
+}

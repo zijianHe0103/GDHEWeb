@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-006-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-006",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-23T06:56:49Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Perform an independent read-only adversarial review of TASK-006. Read the full task, AGENTS.md, README.md, TASKS/ACTIVE/TASK_TEMPLATE.md, PROJECT state/board/activity, lane registry/policy, governance_maintainer lane records/messages/handoff, all TASK-006 execution artifacts, current Git diff/status/refs and active plugin source/cache evidence. Challenge: template exactness and managed-block preservation; unified delivery command and readme_impact consistency; any stale legacy commands; truthfulness of same-schema upgrade actions=[] interpretation; parser-recovery authorization and scope; TASK-005 post-push record preservation; dynamic lane minimal scope; local main exactly at c9cbf13 with TASK-001..005 ancestry; remote main/default branch still unchanged; no premature commit/push/merge/GitHub/product/runtime operation; final delivery gates and documentation impact. Reproduce key validation. Write only TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md and reviewer lane records/messages. Return PASS/FAIL/BLOCKED with P0/P1/P2 counts via review_response requiring this message. Do not fix deliverables or perform Git/external operations.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-006-governance-delivery-main-baseline.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Formal commit, task-branch push, merge/push main and GitHub default change remain future user-gated delivery steps; review the readiness and current local baseline, do not execute them.",
+  "done_at": "2026-07-23T06:58:08Z",
+  "updated_at": "2026-07-23T06:58:08Z"
+}

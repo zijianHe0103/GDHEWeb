@@ -2,7 +2,7 @@
 accepted_at: 2026-07-23T05:47:23Z
 
 task_id: TASK-005
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-005
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-23T05:42:43Z
-git_status: FORMAL_COMMIT
+git_status: PUSHED
 document_impact: RESOLVED
 project_type: software
 
@@ -155,7 +155,7 @@ project_type: software
 
 `AWAITING_USER`
 
-用户已正式验收 TASK-005；单一正式提交已生成。当前等待独立 push 授权，尚未 push 或 merge。
+用户已正式验收 TASK-005；正式提交 `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9` 已推送到 `origin/codex/TASK-005-roadmap-api-integration-boundaries`。尚未 merge。
 
 ## 恢复入口
 
@@ -163,13 +163,13 @@ project_type: software
 
 ## 下一步
 
-等待用户独立输入 `推送 TASK-005`；不得实施 Task A/Task B、提前 push、merge 或 close。
+TASK-005 已完成验收、正式提交和推送。等待用户创建下一任务或明确 merge 指令；不得自动实施 Task A/Task B 或 merge。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 任务拆分、权威路线综合、状态同步与最终汇报 | `PROJECT/**`、`TASKS/**`、`docs/architecture/**`、`LANES/planner/**`，以及本任务明确列出的三份 decision 状态文件 | roadmap/boundary synthesis、validation、planner summary | accepted; formal commit generated; awaiting push authorization |
+| planner | 任务拆分、权威路线综合、状态同步与最终汇报 | `PROJECT/**`、`TASKS/**`、`docs/architecture/**`、`LANES/planner/**`，以及本任务明确列出的三份 decision 状态文件 | roadmap/boundary synthesis、validation、planner summary | accepted and pushed; awaiting next user instruction |
 | wordpress_cms | 只读复核 CMS/API 现场，定义 DTO/Fixture 后续实施边界 | `TASKS/ARTIFACTS/TASK-005/**`、`LANES/wordpress_cms/**` | `API_DTO_FIXTURE_BOUNDARY.md` | execution complete; response acknowledged |
 | frontend | 只读复核 Next.js 现场，定义 server-only 接入后续实施边界 | `TASKS/ARTIFACTS/TASK-005/**`、`LANES/frontend/**` | `FRONTEND_INTEGRATION_BOUNDARY.md` | execution and P2 reference correction complete; responses acknowledged |
 | adversarial_reviewer | 独立只读审查路线、拆分、遗漏和越界 | `TASKS/ARTIFACTS/TASK-005/ADVERSARIAL_REVIEW_REPORT.md`、`LANES/adversarial_reviewer/**` | PASS/FAIL/BLOCKED review | closure PASS; P0=0, P1=0, P2=0; response acknowledged |
@@ -288,6 +288,12 @@ project_type: software
 
 - 2026-07-23T05:49:21Z：提交前 governance、strict lane audit、messages/JSON、canonical PASS、acceptance state、staged scope、secret、forbidden paths、whitespace 与 `git diff --cached --check` 全部通过。
 - TASK-005 单一正式提交已生成；当前只等待独立 `推送 TASK-005` 授权。
+
+## Push
+
+- 2026-07-23T05:53:06Z：正式提交 `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9` 已推送到 `origin/codex/TASK-005-roadmap-api-integration-boundaries`。
+- 本地 HEAD 与 remote-tracking SHA 一致，divergence 为 `0/0`。
+- 未 merge、未创建 PR、未实施 Task A/B。
 
 ## Recovery Entry 2026-07-23T05:42:43Z
 

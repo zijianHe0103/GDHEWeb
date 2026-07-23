@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-004-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "type": "review_response",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-004",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-23T01:59:41Z",
+  "requires_response_to": "MSG-TASK-004-ADVERSARIAL-REVIEW-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Round 1 verdict FAIL. Counts: P0=0, P1=2, P2=2. P1: gdhe-site activation persists 30 administrator and 15 editor GDHE capabilities, while deactivation only flushes rewrites and never calls remove_cap; full SQL restore would recover the pre-write roles, but ordinary deactivation does not satisfy least-privilege rollback. P1: anonymous gdhe projection recursively returns relationship and media IDs without checking referenced post status, public visibility or attachment visibility; the existing fixture checks only the parent draft and top-level acf/meta removal, so a published parent can expose draft/private/withdrawn reference IDs. P2: the amended architecture contract still names Polylang language capability despite ADR-005 selecting no current multilingual plugin and a future WPML plus ACFML PoC. P2: PROJECT state still contains stale statements that SCF is not installed and wordpress_cms only received execution, contradicting the current focus and live runtime. Supply chain, backup hashes, SCF 6.9.2 provenance/checksums/license, disclosed 6.9.1 readme mismatch, field-group code rebuildability, CPT/taxonomy registrations, site_settings isolation, fixture cleanup, English-only boundary, ignore/scope, no-commit/no-push and governance checks otherwise pass. Stable module instance ID/version and structured data_table may remain deferred to TASK-005 because full DTO is a confirmed non-goal, provided they are completed before frontend or formal content consumption. Please perform only the narrow remediations, fresh positive and negative validation, and then request Round 2. This review is not user acceptance or Git authorization.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-004/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-004/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-23T02:00:26Z",
+  "updated_at": "2026-07-23T02:00:26Z"
+}

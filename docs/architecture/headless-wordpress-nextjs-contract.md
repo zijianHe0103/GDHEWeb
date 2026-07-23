@@ -1,10 +1,10 @@
 # GDHE Headless WordPress + Next.js 架构契约
 
-status: proposed-for-TASK-002-acceptance
-date: 2026-07-22
-scope: architecture-only
+status: accepted-by-TASK-002-with-TASK-004-amendment-pending-acceptance
+date: 2026-07-23
+scope: architecture contract plus implemented CMS foundation amendment
 supersedes: `docs/reference-site-analysis.md` 中 WordPress + Elementor 的实施建议
-authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003 与本契约
+authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、待 TASK-004 验收的 ADR-005 与本契约
 
 ## 0. 决策摘要
 
@@ -14,8 +14,8 @@ authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003 与本契约
 | 内容后台 | 现有 WordPress；`wp-admin` 是唯一最终内容管理后台 |
 | 页面渲染 | 已发布营销内容采用静态生成/ISR；搜索、预览和其他请求态页面动态渲染 |
 | 数据 API | **REST-first 受控组合**：WordPress 核心 REST + GDHE 自有 `/gdhe/v1` 归一化端点；本阶段不采用 WPGraphQL |
-| 内容模型 | CPT/Taxonomy 由 GDHE Site Plugin 以 PHP 注册；固定字段优先；有限、版本化的页面模块使用 ACF Pro |
-| 多语言 | 推荐 Polylang Pro；九种语言分别对应独立 WordPress 内容实体和独立发布状态；禁用机器翻译发布流程 |
+| 内容模型 | CPT/Taxonomy 由 GDHE Site Plugin 注册；SCF 提供字段运行时；版本化 JSON 是字段事实源；模块集合受控 |
+| 多语言 | 当前只启用英语 `/`；WPML Multilingual CMS + ACFML 延后到生产英语站监控稳定三个月后的独立 PoC |
 | SEO 编辑 | 推荐 Yoast SEO，编辑人员在 `wp-admin` 维护 SEO 数据 |
 | SEO 输出 | Next.js 是公开 HTML 的唯一输出权威；生成 canonical、hreflang、OG、Schema、Sitemap、robots |
 | 预览 | WordPress 生成短时签名预览链接；Next.js Draft Mode；草稿数据只经服务端认证读取 |
@@ -24,7 +24,7 @@ authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003 与本契约
 | 询盘与 CAD | 通过独立受控 intake API 和隔离对象存储；机密文件不得进入公开 Media Library |
 | 参考边界 | 复用 RapidDirect 的公开信息架构和体验模式，不复制其源码、主题、品牌资产或文案 |
 
-这是一份实施契约，不是项目初始化结果。本任务不创建 `frontend/`，不安装 npm 或 WordPress 插件，也不修改数据库。
+本契约最初由 TASK-002 接受。TASK-003 已建立最小 Next.js 基础；TASK-004 已实现英语 CMS/SCF 最小基础。未明确标记为“已实现”的 DTO、预览、Webhook、多语言、SEO、询盘和部署能力仍只是后续契约，不得据此宣称已完成。
 
 ## 1. 证据快照与版本口径
 
@@ -40,6 +40,14 @@ authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003 与本契约
 - Next.js 尚未初始化；官方文档在本次核验时处于 `16.2.x` 稳定线，精确补丁号须在初始化当天重新查询并锁定。
 
 版本号会变化，因此本契约只冻结能力和边界，不把当前补丁号写成长期硬约束。
+
+TASK-004 于 2026-07-23 形成的实施快照：
+
+- WordPress 7.0.2、PHP 8.3.32、MySQL 8.4.10 保持可用；Core checksum 和数据库检查通过。
+- 官方 Secure Custom Fields 6.9.2 已核验、安装并激活；插件 checksum 通过。包内 `readme.txt` 的 `Stable tag: 6.9.1` 与官方 API/主插件头 6.9.2 不一致，作为上游元数据问题保留。
+- GDHE 自有 `gdhe-site` 0.1.1 已激活；Schema 为 1.0.0，当前仅启用 `en`。Round 1 窄修订已加入停用时精确撤销 capability 矩阵，以及匿名/`view` 投影对非公开 relationship/media 引用的 fail-closed 过滤。
+- ACF、ACF Pro、WPML、ACFML、Polylang 与 WPGraphQL 均未安装。
+- 实施和回滚证据位于 `TASKS/ARTIFACTS/TASK-004/` 与 `docs/cms/`；第三方运行时和数据库备份保持 Git 忽略。
 
 ### 1.2 证据原则
 
@@ -129,7 +137,7 @@ src/app/
 - 页面、布局、CMS 请求、Metadata 和 JSON-LD 默认使用 Server Components。
 - Mega Menu、移动导航、Tabs、Accordion、Carousel、文件选择等确需状态或浏览器 API 的小组件才使用 Client Components。
 - CMS 地址、预览凭据、Webhook Secret 和 API 凭据仅存在于 server-only 数据层，禁止进入 `NEXT_PUBLIC_*`。
-- 组件只消费归一化 DTO，不直接依赖 WordPress、ACF、Polylang 或 Yoast 的原始响应形状。
+- 组件只消费归一化 DTO，不直接依赖 WordPress、SCF、未来多语言插件或 Yoast 的原始响应形状。
 
 ### 3.4 建议模块边界
 
@@ -171,7 +179,7 @@ src/
 | 案例 | `case_study` CPT | 挑战、方案、过程、结果、获授权媒体 | Services、Industries、Materials |
 | 客户评价（Testimonials） | `testimonial` CPT | 引语、姓名/职务、来源和使用授权 | 可选关联 Service/Case |
 | 博客 | 原生 `post` | 长文、作者、分类、日期、封面 | Services、Materials、Cases |
-| 每语言站点设置 | 非公开 `site_settings` CPT | Header CTA、Footer、联系信息、社交链接 | Polylang 译文组 |
+| 当前英语站点设置 | 非公开 `site_settings` CPT | Header CTA、Footer、联系信息、社交链接 | 当前仅 `en`；未来多语言任务再定义译文关联 |
 
 建议 Taxonomy：
 
@@ -183,18 +191,16 @@ src/
 
 ### 4.3 共享字段
 
-所有可路由内容至少提供：
+TASK-004 已实现并冻结的英语 Schema 1.0.0 共享字段为：
 
 - `schema_version`
 - `template_key`
-- `locale` 与不可变的 `translation_group_id`（由 GDHE Site Plugin 持久化，多语言适配层只读取和校验）
-- 标题、slug、摘要、发布/修改时间、作者（适用时）
-- Hero：eyebrow、H1、lead、媒体、主/次 CTA
-- 内容模块 `modules[]`
-- 关系字段：相关 Services、Industries、Materials、Finishes、Cases、Posts
-- SEO 编辑数据：标题、描述、OG 图、robots 覆盖
-- Breadcrumb 所需父级或 Hub 关系
-- 内容所有者、来源/授权说明（案例、评价和媒体适用）
+- `summary`
+- Hero：eyebrow、H1、lead、媒体引用、主/次 CTA
+- 关系字段：Services、Industries、Materials、Finishes、Cases
+- 受控内容模块 `modules[]`
+
+标题、slug、摘要、发布/修改时间和作者仍由 WordPress Core 字段提供。以下字段属于后续 Schema/DTO 任务，不得当作 TASK-004 已实现：`locale`、不可变 `translation_group_id`、SEO 编辑数据、Breadcrumb Hub、来源/授权说明和 Posts 关系。启用多语言前必须用新 Schema 与迁移说明加入语言字段，不能在前端临时推导。
 
 正文原则：
 
@@ -204,24 +210,25 @@ src/
 
 ### 4.4 有限页面模块
 
-首期允许的模块类型：
+英语 Schema 1.0.0 当前只允许：
 
-`hero`、`stats`、`card_grid`、`split_media`、`logo_strip`、`process_steps`、`tabs`、`accordion`、`testimonial_slider`、`resource_cards`、`data_table`、`cta_banner`、`rich_text`。
+`hero`、`rich_text`、`card_grid`、`split_media`、`accordion`、`data_table`、`cta_banner`。
 
-每个模块必须有稳定 `type`、`id`、`schemaVersion` 和明确字段；禁止在 `wp-admin` 直接输入 CSS、JavaScript、任意类名或组件路径。增加/删除模块类型属于代码和契约变更，不是普通内容编辑。
+`stats`、`logo_strip`、`process_steps`、`tabs`、`testimonial_slider` 与 `resource_cards` 仍是未来候选，不属于当前 Schema。增加、删除或重命名模块必须升级 Schema 并提供迁移/回滚说明。
 
-### 4.5 ACF / ACF Pro 决策
+每个公开模块最终必须有稳定 `type`、instance `id`、`schemaVersion` 和明确字段；禁止在 `wp-admin` 输入 CSS、JavaScript、任意类名或组件路径。TASK-004 已冻结 layout 名称和顶层 Schema，但尚未形成最终页面 DTO；instance ID/version 与 `data_table` 的结构化行列校验必须在前端首次消费前由后续 DTO/fixture 任务完成，不能由组件索引或自由文本隐式代替。
 
-目标方案推荐 **ACF Pro**，因为已确认的信息架构需要重复字段、有限页面模块、图集与可复用字段组，分别对应 Repeater、Flexible Content、Gallery、Clone 类能力。正式采购/安装前仍须用最小字段矩阵证明至少一项 Pro 能力确实被使用，并通过 autosave、revision、preview 与 Local JSON 同步 PoC。约束如下：
+### 4.5 SCF 字段层决策
 
-- 固定业务字段优先使用固定 Field Group；Flexible Content 仅用于上述有限模块，不做无限页面生成器。
-- CPT/Taxonomy 仍由自有 PHP 注册，ACF 只负责字段编辑体验。
-- Field Group 启用 REST 时只暴露前端需要的字段。
-- ACF Local JSON 存放在未来 `gdhe-site/acf-json/` 并进入 Git；生产禁止直接产生未同步的字段漂移。
-- 字段删除/改名需要迁移脚本、回滚说明和 schema version，不允许静默破坏旧内容。
-- ACF Pro 是商业许可证，许可证密钥不得入库；购买前不安装。
+ADR-005 以已验证的 WordPress.org **Secure Custom Fields（SCF）** 替代 ADR-004 的 ACF Pro 实施建议。TASK-004 固定安装包为 6.9.2，并验证 Repeater、Flexible Content、关系、图片、链接、revision、autosave、preview 和 REST 投影所需的当前能力。约束如下：
 
-无商业许可证的可行替代是：原生注册 meta + Block Editor + 自有管理 UI，或 ACF Free 的固定字段。它可实现核心能力，但会增加 Repeaters/模块编辑和验证开发量，不能被描述为零成本等价替换。
+- 固定业务字段优先使用固定 Field Group；Flexible Content 仅用于七种已列模块，不做无限页面生成器。
+- CPT、Taxonomy、capability 和公开投影仍由 `gdhe-site` 注册；SCF 只提供字段运行时和编辑体验。
+- `gdhe-site/config/field-groups.v1.json` 是可重建的版本化事实源；SCF UI 不得产生未同步的生产字段漂移。
+- 匿名响应不直接暴露 SCF 的通用 `acf` 容器或 Core `meta` 容器，只返回显式 allowlist 的 `gdhe` 投影。
+- 字段删除、改名或响应形状变化需要新 Schema、迁移和回滚说明。
+- SCF 只能从 WordPress 官方渠道安装；固定包、checksum、兼容性和备份门在每次更新任务中重新核实。不得修改 SCF 源码或将第三方运行时纳入 Git。
+- ACF 与 ACF Pro 当前不采购、不安装，也不得与 SCF 并装。
 
 ## 5. API 契约
 
@@ -230,16 +237,16 @@ src/
 | 评估项 | WordPress REST | WPGraphQL |
 |---|---|---|
 | WordPress Core 内建 | 是 | 否，需要插件 |
-| Polylang 官方语言/译文响应 | Pro 直接支持 | 需要另一层集成或自定义解析 |
-| Yoast 官方 Headless API | 直接提供 REST JSON | 需要额外 GraphQL 适配 |
-| ACF | 官方 REST opt-in | 需要 WPGraphQL for ACF |
+| 未来语言/译文响应 | WPML/ACFML 与 GDHE REST adapter 待 PoC | 需要 WPML GraphQL 等额外插件链 |
+| Yoast 官方 Headless API（未来候选） | 直接提供 REST JSON | 需要额外 GraphQL 适配 |
+| SCF | 当前通过 GDHE allowlisted REST 投影实测 | GraphQL 兼容链尚未 PoC |
 | 深层关系一次查询 | 需归一化端点 | 强项 |
 | 缓存与发布事件映射 | 资源/路径语义直接 | 需维护查询与实体依赖映射 |
 | 当前项目复杂度 | 足够且依赖更少 | 现阶段收益不足以抵消插件链 |
 
 frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用途”的有力备选，理由是深层关系、字段选择和类型生成；localization_seo Lane 则指出它会把多语言方案推向 WPML GraphQL，并增加 ACF、多语言与 SEO 扩展的兼容链。本契约没有忽略该分歧，完整裁决见 `TASKS/ARTIFACTS/TASK-002/EVIDENCE_SYNTHESIS.md`。
 
-**决定：**首期采用 WordPress REST，不安装 WPGraphQL。当前已有 Core REST、Polylang Pro、Yoast 与 ACF 的厂商 REST 路径，而尚无代表页面 fixture 或性能数据证明 GraphQL 插件链具有净收益。数据访问层保留 adapter 边界；只有在真实页面查询出现无法通过批量 REST、`_fields`、`_embed` 或有限 `/gdhe/v1` 合理解决的可测瓶颈，或业务明确需要 WPML GraphQL 工作流时，才用新 ADR 重新评估 WPGraphQL。不得在组件中临时混入第二套数据协议。
+**决定：**首期采用 WordPress REST，不安装 WPGraphQL。TASK-004 已实测 Core REST、GDHE allowlisted 字段投影和 `/gdhe/v1/schema`；WPML/ACFML、Yoast 与完整 DTO 尚未安装或实现。数据访问层保留 adapter 边界；只有在真实页面查询出现无法通过批量 REST、`_fields`、`_embed` 或有限 `/gdhe/v1` 合理解决的可测瓶颈，或未来业务明确需要 WPML GraphQL 工作流时，才用新 ADR 重新评估 WPGraphQL。不得在组件中临时混入第二套数据协议。
 
 下一阶段的 API fixture 任务必须用首页、Service 详情、Case 详情和 Material 详情四个代表页面建立同一组 REST 与候选 GraphQL 基准。测试从与 CMS 同部署区域运行，保留 WordPress 正常 object cache、绕过 Next.js 数据缓存；每个 fixture 预热后测量 200 次、并发 20。以下任一条件成立即**强制启动 GraphQL PoC 和新 ADR**，而不是直接在生产引入：
 
@@ -252,14 +259,18 @@ frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用
 
 ### 5.2 端点层级
 
+0. 当前已实现的最小边界
+   - `GET /wp-json/gdhe/v1/schema`：匿名只读，只返回 Schema 1.0.0、当前 `en`、公开/内部类型名、Taxonomy、字段/模块 allowlist 和明确 deferred 标记。
+   - 六种公开 CPT 的 Core REST item 响应增加 `gdhe` allowlist；通用 `acf` 和 `meta` 容器被移除。
+   - `site_settings` 无公开 Core REST route；匿名只读仅允许已发布内容。
 1. 核心 `/wp-json/wp/v2/*`
    - 简单 CPT/Taxonomy 集合、媒体、作者等标准资源。
    - 通过 `_fields` 限制响应，避免前端取得无关字段。
-2. Polylang Pro REST
-   - `lang` 筛选、`lang`/`translations` 响应字段、语言清单。
-3. Yoast REST
-   - 读取 `yoast_head_json` 的编辑结果；不使用其只读 API写数据。
-4. GDHE `/wp-json/gdhe/v1/*`
+2. 未来 WPML/ACFML adapter（未实现）
+   - 语言筛选、译文关系和字段翻译行为必须由三个月后的 PoC 固定；不能预设未验证的 REST 形状。
+3. 未来 Yoast REST（未实现）
+   - 如后续安装，读取 `yoast_head_json` 的编辑结果；不使用其只读 API 写数据。
+4. GDHE `/wp-json/gdhe/v1/*` 后续端点（均未实现）
    - `GET /resolve?locale=&path=`：将公开路径解析为归一化内容。
    - `GET /collection/{type}?locale=&page=&filters=`：稳定分页和筛选。
    - `GET /navigation?locale=`：规范化当前语言的 Header/Mega Menu/Footer。
@@ -339,32 +350,27 @@ interface ContentEnvelope {
 
 ### 6.1 插件与编辑流程
 
-| 候选 | 适配点 | 主要成本 | 结论 |
-|---|---|---|---|
-| Polylang Pro | 官方 REST 语言/译文能力、语言权限、CPT/Taxonomy、菜单与 ACF Pro 集成 | 商业许可；需验证九语言发布、字段规则和 REST 输出 | **REST-first 首选** |
-| WPML Multilingual CMS + WPML GraphQL | 翻译面板、语言对、角色和官方 GraphQL 扩展完整 | 商业套件与多个扩展；更大的兼容、升级和预览 PoC 面 | WPGraphQL-first 时的主要备选 |
-| MultilingualPress | 每语言独立站 | 依赖 Multisite，九站运维与 API 聚合复杂 | 不选 |
-| 自研关系模型 | 完全控制 | 需自建编辑 UI、权限、迁移和长期维护 | 当前不选 |
+当前阶段只启用英语，不安装 WPML、ACFML、Polylang 或机器翻译插件，不创建任何非英语内容或公开入口。ADR-002 的九语言范围是未来发布目标，不是当前运行状态。
 
-推荐 **Polylang Pro**：它与已裁决的 REST-first 边界直接匹配，并由厂商提供语言筛选、译文 ID 映射和语言端点。它是年度商业许可证，采购前必须重新核实价格、兼容版本，并用 English/French/Arabic 的 Service fixture 验证独立发布、撤回、字段翻译、权限与 REST 响应。Polylang 与 WPML 不得并装；若未来必须采用 WPML 的翻译任务编排，应同时用新 ADR 复核 API 方向。
+未来生产英语站正式上线并连续监控稳定三个月后，再创建独立任务评估并采购 **WPML Multilingual CMS + ACFML**。三个月从生产监控起算，不从 TASK-004 验收或本地安装起算。PoC 至少覆盖 English/French/Arabic Service fixture、SCF 字段兼容、独立发布/撤回、RTL、REST 译文关系、权限、preview、升级和回滚；未通过不得启用公开语言路由。WPML 与其他多语言插件不得并装，WPGraphQL 也不因选择 WPML 自动启用。
 
-稳定译文组 ID 不依赖 Polylang 未承诺的内部结构，也不使用会随内容变化的最小 post ID。GDHE Site Plugin 注册受保护 meta `_gdhe_translation_group_uuid`：
+稳定译文组 ID 不依赖未来多语言插件未承诺的内部结构，也不使用会随内容变化的最小 post ID。多语言 PoC 中由 GDHE Site Plugin 注册受保护 meta `_gdhe_translation_group_uuid`：
 
 - 首个语言实体创建时生成 UUID v4；创建或关联 sibling 时复制同一值；匿名 Core REST 不直接暴露该 meta。
-- `/gdhe/v1` 只在所有 Polylang sibling 拥有同一 UUID 且 locale 唯一时返回 `translationGroupId`；不一致时 fail closed 并记录治理错误。
+- `/gdhe/v1` 只在所有插件关联 sibling 拥有同一 UUID 且 locale 唯一时返回 `translationGroupId`；不一致时 fail closed 并记录治理错误。
 - 删除英语源文不改变其他 sibling 的 UUID；拆组、合组或重连必须由有权限的显式迁移操作完成，同时失效旧组、新组、路由、hreflang 和 Sitemap。
 - 既有内容迁移时一次性生成并持久化 UUID；前端不得从 slug、标题、URL 或当前 sibling 集合计算组 ID。
 
 编辑流程：
 
 1. 英语是源文，先创建并完成基本字段。
-2. 目标语言通过 Polylang 创建为独立 post，不与英语共享 `post_status`。
+2. 目标语言通过已验证的 WPML 流程创建为独立内容实体，不与英语共享 `post_status`。
 3. 初始复制仅用于建立结构；译文文本、slug、SEO、OG 图和关系均可独立编辑。
 4. 译文由 Draft → Pending Review → Publish 独立推进；没有自动发布联动。
 5. 不配置 DeepL 或其他机器翻译服务；机器翻译不是项目正式流程。
 6. 英语更新不会自动覆盖已发布译文；编辑界面应提示译文可能过期，但是否重新发布由人工决定。
 
-ACF 翻译行为初始规则：
+SCF + ACFML 的候选翻译行为（必须由未来 PoC 证实）：
 
 - 文本与模块子字段使用独立翻译或 Translate Once，避免源文后续覆盖译文。
 - 图片的 attachment ID 可 Copy Once 作为译文起点；同一媒体引用内的 `alt`、caption 和 decorative 标记使用 Translate Once，并由目标语言编辑人员独立复核。编辑人员之后可以按语言替换 attachment ID。
@@ -373,6 +379,8 @@ ACF 翻译行为初始规则：
 - 关系字段优先映射到目标语言已发布实体；目标关系不存在时为空并提示，而不是链接回英语内容。
 
 ### 6.2 语言切换
+
+以下规则只在未来多语言任务启用；当前英语站不渲染语言切换入口，也不构造其他语言 URL。
 
 - API 返回当前翻译组中**已发布**版本的 `locale → publicPath` 映射。
 - 切换器只显示可公开译文；缺失/草稿译文默认隐藏，不显示会跳首页的假链接。
@@ -391,7 +399,7 @@ ACF 翻译行为初始规则：
 
 ### 7.1 权威边界
 
-- Yoast SEO 提供 `wp-admin` 编辑、SEO/可读性提示和 REST 中的 `yoast_head_json`。
+- Yoast SEO 仍是未来编辑层候选，尚未安装；如后续采用，它提供 `wp-admin` 编辑、SEO/可读性提示和 REST 中的 `yoast_head_json`。
 - Next.js 不直接注入 Yoast 的 `yoast_head` HTML blob，以免输出 CMS 域名、重复标签或未经验证的脚本。
 - Next.js 从归一化 `SeoDocument` 生成最终 Metadata；canonical、公开 URL、hreflang 和 Schema 必须以公开站域名为准。
 - 公开 HTML 只能有一套 canonical、robots、OG 和 JSON-LD 输出权威。
@@ -408,6 +416,8 @@ Yoast Free 足以作为首期候选；Premium 只有在重定向管理、内部�
 - 索引策略：公开已发布页面默认 `index,follow`；预览、搜索结果、Staging 和内部页面 `noindex`。
 
 ### 7.3 hreflang
+
+当前只启用英语，因此不输出非英语 alternate 或未发布语言的 hreflang。以下规则在未来真实译文发布后启用：
 
 - 每个已发布译文页面输出相同的、双向闭合的 alternate 集合，包含自身。
 - `x-default` 指向该翻译组的英语 URL；英语是已确认的默认和源语言。
@@ -511,12 +521,12 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
 
 ## 10. 媒体契约
 
-- WordPress Media Library 只存可公开的品牌、工厂、服务、案例和文章媒体。首期明确保持 **Polylang Media module 关闭**，并在首批内容/媒体导入前冻结该设置；不依赖翻译 attachment，也不在内容建立后静默切换模块。
+- WordPress Media Library 只存可公开的品牌、工厂、服务、案例和文章媒体。当前英语阶段不安装多语言媒体模块；未来 WPML/ACFML PoC 必须在首批译文/媒体导入前冻结 attachment 与字段翻译策略，不得在内容建立后静默切换。
 - attachment 只作为二进制、MIME、宽高、尺寸、credit 和授权信息的事实源。WordPress attachment 的全局 `alt_text` 只可作为编辑提示，不能直接成为公开多语言 alt 的 fallback。
 - 每次公开媒体使用都保存于当前语言内容实体的结构化 `MediaReference`：attachment ID、`alt`、caption、decorative。它是**唯一**本地化模型，不再同时维护 attachment sibling 方案。
 - ACF Image/Gallery 关系的 attachment ID 可 Copy Once 作为初始选择；`alt` 与 caption 子字段 Translate Once。目标译文发布前必须人工复核，源文更新不得覆盖它们。
 - 非装饰图必须有当前语言、当前上下文的非空 `alt`；装饰图必须 `decorative=true` 且 `alt=""`。必需字段不满足时阻止发布；已存在的异常公开数据由 API schema fail closed，不能回退英语 alt、文件名或 attachment 全局 alt。
-- 如果图片内含文字或市场内容，目标语言内容实体直接选择另一 attachment；不要求两个物理文件建立 Polylang 媒体译文关系。
+- 如果图片内含文字或市场内容，未来目标语言内容实体直接选择另一 attachment；不预设两个物理文件必须建立某个插件的媒体译文关系。
 - API 用当前内容引用与 attachment 二进制元数据组合返回 `MediaReference`。同一 attachment 在不同页面、语言或上下文可拥有不同 alt，这是设计目标而非重复数据错误。
 - Next.js 公共图片组件统一处理比例、`sizes`、优先级、懒加载和错误占位；远程图片仅允许精确 HTTPS 主机/路径模式。
 - 视频使用封面和延迟加载；大视频优先外部流媒体/CDN，WordPress 只存元数据和授权封面。
@@ -538,7 +548,7 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
 ## 12. 安全、权限与隐私
 
 - 编辑角色按最小权限划分：Administrator 管系统；Editor/语言编辑只管理获授权内容和语言。
-- Polylang 语言 capability 用于限制编辑人员的语言范围；机器翻译 capability 不授予。
+- 当前没有语言专属 capability。未来 WPML/ACFML PoC 必须验证最小权限的语言/翻译角色；机器翻译或自动发布 capability 不授予。
 - 匿名 API 只读已发布字段；预览端点用 `current_user_can`/等效 capability，而不是只检查“已登录”。
 - 所有 WordPress 输入先验证再清理，输出按上下文延迟转义；富文本使用明确 HTML allowlist。
 - Preview、Webhook、Intake 使用不同 secret 和撤销机制；所有 secret 通过环境变量/主机 secret store 管理。
@@ -567,11 +577,11 @@ uploads.example.com    私有上传服务，不公开列目录
 
 ## 14. 后续实施顺序
 
-TASK-002 验收后，建议依次创建独立任务：
+当前实施进度与建议顺序：
 
-1. **基础初始化任务**：重新核实稳定版本和许可证，初始化 Next.js + TypeScript；建立环境变量、lint/typecheck/test，不开发首页。
-2. **CMS Schema 基础任务**：创建 `gdhe-site` 插件骨架，注册最小 CPT/Taxonomy、字段导出和只读 API；安装插件前备份并设回滚门。
-3. **API/Fixture 契约任务**：实现 DTO、运行时 schema、代表页面 fixture 和 REST contract tests。
+1. **基础初始化任务（TASK-003 已完成）**：Next.js + TypeScript 最小基础已建立；未开发首页或 CMS 集成。
+2. **CMS Schema 基础任务（TASK-004 待验收）**：英语 SCF/`gdhe-site`、最小 schema、备份门和 fixture 验证已完成；仍需 adversarial review 与用户验收。
+3. **API/Fixture 契约任务（下一候选）**：实现稳定 DTO、module instance ID/version、结构化 `data_table`、代表页面 fixture 和 REST contract tests；不得在该任务提前实现完整前端页面。
 4. **全局壳层任务**：设计令牌、Header、Mega Menu、移动导航、Footer、图片组件、语言骨架。
 5. **首页小批次任务**：每次 1～3 个模块，按 1440/1024/768/390 截图对照并等待确认。
 6. **页面模板任务**：Services、Industries、Materials、Finishes、Cases、Blog、About、Contact。
@@ -598,7 +608,19 @@ TASK-002 验收后，建议依次创建独立任务：
 | 建议目录、DTO 示例、后续顺序 | 3.4、5.3、14 |
 | 本任务未初始化项目 | 0、16 |
 
+TASK-004 amendment 追踪：
+
+| TASK-004 要求 | 契约位置 |
+|---|---|
+| SCF 取代 ACF Pro、官方供应链与版本化字段 | 1.1、4.5、ADR-005 |
+| 英语唯一启用、WPML/ACFML 延后三个月 | 0、6、ADR-005 |
+| 已实现 CPT/Taxonomy/字段/七模块 | 4.2～4.4 |
+| 最小 `/gdhe/v1/schema` 与 allowlisted REST | 5.2 |
+| 后续 DTO/预览/Webhook/多语言不越界 | 5、6、8、9、14 |
+
 ## 16. 本任务未执行的事项
+
+本节记录 TASK-002 当时的历史边界；TASK-003/004 的后续实现状态以第 1 节快照和各自任务证据为准。
 
 - 未创建 `frontend/` 或任何 Next.js/TypeScript 文件。
 - 未运行 npm、pnpm、yarn、bun 或 `create-next-app`。
@@ -610,7 +632,7 @@ TASK-002 验收后，建议依次创建独立任务：
 ## 17. 不阻塞本契约但需后续确认
 
 - 公开域名、CMS 域名、部署平台和 CDN。
-- Polylang Pro 与 ACF Pro 的采购授权；Yoast Free/Premium 的最终版本。
+- 生产英语站上线日与三个月稳定监控证据；之后才评估 WPML Multilingual CMS、ACFML 和 SCF 兼容性。Yoast Free/Premium 的最终版本仍待确认。
 - 包管理器和 Next.js 精确补丁版。
 - 正式品牌资产、内容清单、编辑角色和翻译负责人。
 - 邮件、CRM、对象存储、扫描服务、Cookie/Analytics 和数据保留政策。
@@ -645,6 +667,14 @@ TASK-002 验收后，建议依次创建独立任务：
 - [ACF REST API integration](https://www.advancedcustomfields.com/resources/wp-rest-api-integration/)
 - [ACF Local JSON](https://www.advancedcustomfields.com/resources/local-json/)
 - [ACF Pro features and licensing](https://www.advancedcustomfields.com/pro/)
+
+TASK-004 新增证据，访问日期为 2026-07-23：
+
+- [Secure Custom Fields plugin](https://wordpress.org/plugins/secure-custom-fields/)
+- [Secure Custom Fields developer documentation](https://developer.wordpress.org/secure-custom-fields/)
+- [Secure Custom Fields installation](https://developer.wordpress.org/secure-custom-fields/welcome/installation/)
+- [WordPress Secure Custom Fields GitHub repository](https://github.com/WordPress/secure-custom-fields)
+- [WordPress.org SCF plugin API](https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=secure-custom-fields)
 
 ### 多语言与 SEO
 

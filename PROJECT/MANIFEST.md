@@ -24,7 +24,7 @@ created_at: 2026-07-22T03:58:17Z
 
 ## 交付物边界
 
-- 未来的 frontend 目录：独立 TypeScript 前端，当前尚未初始化。
+- `frontend/`：已完成 Next.js App Router + TypeScript 基础初始化，尚未开发正式公开页面或 CMS 数据消费层。
 - 本地 CMS 目录：WordPress 运行时；Git 只跟踪经确认的 GDHE 自有插件或 MU Plugin。
 - 文档目录：参考研究和将来的技术契约。
 - 未来的 QA 目录：四视口截图、差异报告和质量证据。

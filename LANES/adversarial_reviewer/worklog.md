@@ -177,3 +177,58 @@ Each execution records:
 - result: recovery request queued with the canonical PASS report and planner-owned state files as context
 - risks: reviewer must not directly mutate planner-owned state; PASS is not user acceptance or Git authorization
 - next: planner acknowledges both messages, records the Round 2 recovery entry and performs final checked transition work
+
+## 2026-07-23
+
+### 2026-07-23T01:55:55Z - TASK-004 adversarial review round 1
+
+- task: TASK-004
+- message: MSG-TASK-004-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the formal request, independently reviewed the active task, CMS implementation, versioned configuration, execution artifacts, backup evidence, CMS documentation, ADR amendment, architecture contract, controlled message history and live WordPress state without changing business deliverables or CMS runtime
+- files_read: governance resume set; TASK-004; all declared request context; GDHE plugin PHP and JSON; four CMS docs; ADR-004 and proposed ADR-005; synchronized architecture contract; backup metadata and snapshots; wordpress_cms response and worklog; official WordPress.org SCF sources
+- files_changed: TASKS/ARTIFACTS/TASK-004/ADVERSARIAL_REVIEW_REPORT.md; LANES/adversarial_reviewer/worklog.md; controlled request acknowledgement
+- artifacts: TASK-004 canonical adversarial review report
+- validation: WordPress 7.0.2, PHP 8.3.32, MySQL 8.4.10, SCF 6.9.2 and GDHE Site 0.1.0 verified; Core, SCF and DB integrity passed; backup and package hashes independently matched; official SCF source, compatibility, GPL and 6.9.1 readme mismatch verified; PHP and JSON passed; two local field groups loaded with no DB field-group posts; real schema, empty public collection and internal route HTTP checks passed; fixture residue zero; exact role capability matrix, ignored runtime, scope, Git and governance checks passed
+- result: FAIL; P0 none; P1 plugin deactivation leaves persistent GDHE role capabilities; P1 public relationship and media IDs lack published and visibility filtering; P2 stale Polylang capability sentence in the amended contract; P2 stale SCF-not-installed narrative in project state
+- deferred_decision: stable module instance ID and version plus structured data table may remain gated to TASK-005 because full DTO is a confirmed non-goal and no frontend consumer exists; they must be completed before formal content consumption or publication using that shape
+- limitations: no destructive restore, plugin deactivation or new draft/private fixture was performed by the read-only reviewer; findings rely on reachable code paths, current roles, the pre-write dump and explicit negative-fixture gaps
+- boundaries: no implementation, CMS runtime, task state, ADR, architecture, commit, push, merge, acceptance or closure change by reviewer
+- message_status: R1 request acknowledged as done; controlled FAIL review response queued to planner with requires response set to the R1 request
+- next: planner acknowledges the response and owns the checked reopen, narrow revision and Round 2 dispatch
+
+### 2026-07-23T01:58:30Z - TASK-004 Round 1 stop recovery routed to planner
+
+- task: TASK-004
+- message: MSG-TASK-004-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY
+- action: preserved reviewer write scope and sent a controlled recovery request because the FAIL response is queued while planner-owned task and project state remain UNDER_REVIEW
+- files_changed: adversarial reviewer worklog; controlled lane messages only
+- result: recovery request queued with the canonical FAIL report and planner-owned state files as context
+- risks: reviewer must not directly mutate planner-owned state or implement the findings; FAIL is not user acceptance or Git authorization
+- next: planner acknowledges both messages, performs the checked reopen, records the narrow revision entry and dispatches correction before Round 2
+
+### 2026-07-23T02:29:53Z - TASK-004 adversarial review round 2 final
+
+- task: TASK-004
+- message: MSG-TASK-004-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, acknowledged the final review request, preserved the Round 1 audit trail, independently reviewed both P1 remediations, both P2 narrative corrections, original acceptance mapping, revised implementation, revision evidence, backup manifests, runtime state, official SCF source, cleanup, Git scope, secrets and governance without changing business deliverables or CMS runtime
+- files_read: full governance resume set; TASK-004; Round 1 canonical review; revision report and controlled response; planner validation; execution and validation evidence; GDHE plugin and all versioned configuration; CMS docs; proposed ADR-005; amended architecture contract; ignored backup manifests and snapshots; current WordPress runtime
+- files_changed: TASKS artifact canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: WordPress 7.0.2, PHP 8.3.32, MySQL 8.4.10, SCF 6.9.2 and GDHE Site 0.1.1 verified; Core, SCF and 12 table DB integrity passed; all GDHE PHP and JSON passed; exact active role matrix 28 and 14; six public plus one internal CPT and four taxonomies matched; two local field groups with zero database field records; schema dispatch 200 and internal route 404; revision backup hash and JSON snapshots verified; fixture and postmeta residue zero; Service count zero; ignored runtime, tracked scope, secret scan, message, registry, project, strict lane audit and Git diff checks passed
+- p1_closure: deactivation now removes the exact versioned capability matrix and activation reapplies it; revision lifecycle evidence shows 28 and 14 active, zero and zero inactive, then 28 and 14 restored; public relationship and media references fail closed for anonymous and view contexts while authorized edit retains permitted editorial references, with credible published, draft, private, withdrawn and media positive or negative fixtures
+- p2_closure: current Polylang capability assumption removed from the architecture contract; project state no longer claims SCF is absent or execution merely requested
+- result: PASS; P0 none; P1 none; P2 none
+- deferred_decision: stable module instance ID and per-module version plus structured data table remain gated to TASK-005 before any frontend consumption and are not TASK-004 findings
+- limitations: reviewer did not repeat plugin deactivation, activation, destructive restore or CMS fixture writes; intermediate mutable states were cross-checked through code, immutable backup evidence, execution fixture records, current restored state and planner reproduction
+- boundaries: no business implementation, CMS mutation, task state, project state, ADR, architecture, commit, push, merge, acceptance or closure change by reviewer
+- message_status: R2 request acknowledged as done; controlled PASS review response queued to planner with requires response set to the R2 request
+- next: send controlled final review response; planner owns state synchronization, final validation and any checked transition toward user acceptance
+
+### 2026-07-23T02:31:59Z - TASK-004 Round 2 stop recovery routed to planner
+
+- task: TASK-004
+- message: MSG-TASK-004-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY
+- action: preserved reviewer write scope and sent a controlled recovery request because TASK-004 is UNDER_REVIEW while the final PASS response awaits planner acknowledgement
+- files_changed: adversarial reviewer worklog and controlled lane message only
+- result: recovery request queued with the canonical PASS report and planner-owned state targets as context
+- risks: reviewer must not directly mutate planner-owned task or project state; PASS is not user acceptance or Git authorization
+- next: planner acknowledges the final review response and recovery request, records the Round 2 recovery entry, then owns final validation and checked acceptance preparation

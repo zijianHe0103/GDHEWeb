@@ -1,0 +1,21 @@
+{
+  "administrator": [
+    "edit_gdhe_content", "read_gdhe_content", "delete_gdhe_content",
+    "edit_gdhe_contents", "edit_others_gdhe_contents", "publish_gdhe_contents",
+    "read_private_gdhe_contents", "delete_gdhe_contents", "delete_private_gdhe_contents",
+    "delete_published_gdhe_contents", "delete_others_gdhe_contents",
+    "edit_private_gdhe_contents", "edit_published_gdhe_contents", "create_gdhe_contents",
+    "edit_gdhe_setting", "read_gdhe_setting", "delete_gdhe_setting",
+    "edit_gdhe_settings", "edit_others_gdhe_settings", "publish_gdhe_settings",
+    "read_private_gdhe_settings", "delete_gdhe_settings", "delete_private_gdhe_settings",
+    "delete_published_gdhe_settings", "delete_others_gdhe_settings",
+    "edit_private_gdhe_settings", "edit_published_gdhe_settings", "create_gdhe_settings"
+  ],
+  "editor": [
+    "edit_gdhe_content", "read_gdhe_content", "delete_gdhe_content",
+    "edit_gdhe_contents", "edit_others_gdhe_contents", "publish_gdhe_contents",
+    "read_private_gdhe_contents", "delete_gdhe_contents", "delete_private_gdhe_contents",
+    "delete_published_gdhe_contents", "delete_others_gdhe_contents",
+    "edit_private_gdhe_contents", "edit_published_gdhe_contents", "create_gdhe_contents"
+  ]
+}

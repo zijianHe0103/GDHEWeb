@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "locale": {
+    "default": "en",
+    "enabled": ["en"],
+    "futureAdapter": true
+  },
+  "publicTypes": ["service", "industry", "material", "surface_finish", "case_study", "testimonial"],
+  "internalTypes": ["site_settings"],
+  "taxonomies": ["service_family", "manufacturing_process", "material_family", "finish_family"],
+  "fields": ["schema_version", "template_key", "summary", "hero", "relationships", "modules"],
+  "moduleTypes": ["hero", "rich_text", "card_grid", "split_media", "accordion", "data_table", "cta_banner"],
+  "boundaries": {
+    "readOnly": true,
+    "publishedOnlyForAnonymous": true,
+    "fullPageDtoDeferred": true,
+    "routeResolutionDeferred": true,
+    "previewBridgeDeferred": true
+  }
+}

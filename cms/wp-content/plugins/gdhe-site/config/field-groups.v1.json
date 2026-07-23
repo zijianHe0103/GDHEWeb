@@ -1,0 +1,209 @@
+[
+  {
+    "key": "group_gdhe_content_schema_v1",
+    "title": "GDHE Content Schema v1",
+    "fields": [
+      {
+        "key": "field_gdhe_schema_version",
+        "label": "Schema Version",
+        "name": "schema_version",
+        "type": "text",
+        "required": 1,
+        "default_value": "1.0.0",
+        "readonly": 1
+      },
+      {
+        "key": "field_gdhe_template_key",
+        "label": "Template Key",
+        "name": "template_key",
+        "type": "select",
+        "required": 1,
+        "choices": {
+          "standard": "Standard",
+          "service": "Service",
+          "industry": "Industry",
+          "material": "Material",
+          "surface_finish": "Surface Finish",
+          "case_study": "Case Study",
+          "testimonial": "Testimonial"
+        },
+        "default_value": "standard",
+        "return_format": "value",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_gdhe_summary",
+        "label": "Summary",
+        "name": "summary",
+        "type": "textarea",
+        "required": 1,
+        "maxlength": 320,
+        "rows": 4,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_gdhe_hero",
+        "label": "Hero",
+        "name": "hero",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_hero_eyebrow", "label": "Eyebrow", "name": "eyebrow", "type": "text", "maxlength": 80},
+          {"key": "field_gdhe_hero_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+          {"key": "field_gdhe_hero_lead", "label": "Lead", "name": "lead", "type": "textarea", "maxlength": 320, "rows": 4, "new_lines": "br"},
+          {"key": "field_gdhe_hero_media", "label": "Media Reference", "name": "media_reference", "type": "image", "return_format": "id", "preview_size": "medium", "library": "all"},
+          {"key": "field_gdhe_hero_primary_cta", "label": "Primary CTA", "name": "primary_cta", "type": "link", "return_format": "array"},
+          {"key": "field_gdhe_hero_secondary_cta", "label": "Secondary CTA", "name": "secondary_cta", "type": "link", "return_format": "array"}
+        ]
+      },
+      {
+        "key": "field_gdhe_relationships",
+        "label": "Relationships",
+        "name": "relationships",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_related_services", "label": "Related Services", "name": "services", "type": "relationship", "post_type": ["service"], "filters": ["search"], "return_format": "id"},
+          {"key": "field_gdhe_related_industries", "label": "Related Industries", "name": "industries", "type": "relationship", "post_type": ["industry"], "filters": ["search"], "return_format": "id"},
+          {"key": "field_gdhe_related_materials", "label": "Related Materials", "name": "materials", "type": "relationship", "post_type": ["material"], "filters": ["search"], "return_format": "id"},
+          {"key": "field_gdhe_related_finishes", "label": "Related Surface Finishes", "name": "surface_finishes", "type": "relationship", "post_type": ["surface_finish"], "filters": ["search"], "return_format": "id"},
+          {"key": "field_gdhe_related_cases", "label": "Related Case Studies", "name": "case_studies", "type": "relationship", "post_type": ["case_study"], "filters": ["search"], "return_format": "id"}
+        ]
+      },
+      {
+        "key": "field_gdhe_modules",
+        "label": "Controlled Modules",
+        "name": "modules",
+        "type": "flexible_content",
+        "button_label": "Add controlled module",
+        "min": 0,
+        "max": 20,
+        "layouts": {
+          "layout_gdhe_hero": {
+            "key": "layout_gdhe_hero",
+            "name": "hero",
+            "label": "Hero",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_hero_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+              {"key": "field_gdhe_module_hero_lead", "label": "Lead", "name": "lead", "type": "textarea", "maxlength": 320, "rows": 4},
+              {"key": "field_gdhe_module_hero_media", "label": "Media Reference", "name": "media_reference", "type": "image", "return_format": "id"},
+              {"key": "field_gdhe_module_hero_primary", "label": "Primary CTA", "name": "primary_cta", "type": "link", "return_format": "array"},
+              {"key": "field_gdhe_module_hero_secondary", "label": "Secondary CTA", "name": "secondary_cta", "type": "link", "return_format": "array"}
+            ]
+          },
+          "layout_gdhe_rich_text": {
+            "key": "layout_gdhe_rich_text",
+            "name": "rich_text",
+            "label": "Rich Text",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_rich_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_rich_body", "label": "Body", "name": "body", "type": "wysiwyg", "required": 1, "tabs": "all", "toolbar": "basic", "media_upload": 0}
+            ]
+          },
+          "layout_gdhe_card_grid": {
+            "key": "layout_gdhe_card_grid",
+            "name": "card_grid",
+            "label": "Card Grid",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_cards_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_cards_items", "label": "Cards", "name": "items", "type": "repeater", "min": 1, "max": 12, "layout": "row", "button_label": "Add card", "sub_fields": [
+                {"key": "field_gdhe_module_card_title", "label": "Title", "name": "title", "type": "text", "required": 1, "maxlength": 100},
+                {"key": "field_gdhe_module_card_summary", "label": "Summary", "name": "summary", "type": "textarea", "maxlength": 240, "rows": 3},
+                {"key": "field_gdhe_module_card_link", "label": "Link", "name": "link", "type": "link", "return_format": "array"}
+              ]}
+            ]
+          },
+          "layout_gdhe_split_media": {
+            "key": "layout_gdhe_split_media",
+            "name": "split_media",
+            "label": "Split Media",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_split_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_split_body", "label": "Body", "name": "body", "type": "wysiwyg", "toolbar": "basic", "media_upload": 0},
+              {"key": "field_gdhe_module_split_media", "label": "Media Reference", "name": "media_reference", "type": "image", "required": 1, "return_format": "id"},
+              {"key": "field_gdhe_module_split_position", "label": "Media Position", "name": "media_position", "type": "select", "choices": {"left": "Left", "right": "Right"}, "default_value": "right", "return_format": "value"}
+            ]
+          },
+          "layout_gdhe_accordion": {
+            "key": "layout_gdhe_accordion",
+            "name": "accordion",
+            "label": "Accordion",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_accordion_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_accordion_items", "label": "Items", "name": "items", "type": "repeater", "min": 1, "max": 20, "layout": "row", "button_label": "Add item", "sub_fields": [
+                {"key": "field_gdhe_module_accordion_question", "label": "Question", "name": "question", "type": "text", "required": 1, "maxlength": 180},
+                {"key": "field_gdhe_module_accordion_answer", "label": "Answer", "name": "answer", "type": "wysiwyg", "required": 1, "toolbar": "basic", "media_upload": 0}
+              ]}
+            ]
+          },
+          "layout_gdhe_data_table": {
+            "key": "layout_gdhe_data_table",
+            "name": "data_table",
+            "label": "Data Table",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_table_caption", "label": "Caption", "name": "caption", "type": "text", "required": 1, "maxlength": 160},
+              {"key": "field_gdhe_module_table_data", "label": "Table Data", "name": "table_data", "type": "textarea", "instructions": "Enter one row per line and separate cells with a vertical bar.", "required": 1, "rows": 8}
+            ]
+          },
+          "layout_gdhe_cta_banner": {
+            "key": "layout_gdhe_cta_banner",
+            "name": "cta_banner",
+            "label": "CTA Banner",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_cta_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+              {"key": "field_gdhe_module_cta_body", "label": "Body", "name": "body", "type": "textarea", "maxlength": 320, "rows": 4},
+              {"key": "field_gdhe_module_cta_primary", "label": "Primary CTA", "name": "primary_cta", "type": "link", "required": 1, "return_format": "array"}
+            ]
+          }
+        }
+      }
+    ],
+    "location": [
+      [{"param": "post_type", "operator": "==", "value": "post"}],
+      [{"param": "post_type", "operator": "==", "value": "page"}],
+      [{"param": "post_type", "operator": "==", "value": "service"}],
+      [{"param": "post_type", "operator": "==", "value": "industry"}],
+      [{"param": "post_type", "operator": "==", "value": "material"}],
+      [{"param": "post_type", "operator": "==", "value": "surface_finish"}],
+      [{"param": "post_type", "operator": "==", "value": "case_study"}],
+      [{"param": "post_type", "operator": "==", "value": "testimonial"}]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Versioned GDHE English content schema. Do not edit in the SCF UI.",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_gdhe_site_settings_v1",
+    "title": "GDHE Site Settings v1",
+    "fields": [
+      {"key": "field_gdhe_settings_schema_version", "label": "Schema Version", "name": "schema_version", "type": "text", "required": 1, "default_value": "1.0.0", "readonly": 1},
+      {"key": "field_gdhe_settings_locale", "label": "Enabled Locale", "name": "enabled_locale", "type": "text", "required": 1, "default_value": "en", "readonly": 1},
+      {"key": "field_gdhe_settings_contact_cta", "label": "Contact CTA", "name": "contact_cta", "type": "link", "return_format": "array"}
+    ],
+    "location": [[{"param": "post_type", "operator": "==", "value": "site_settings"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Internal English-only site settings. Not exposed through public REST.",
+    "show_in_rest": 0
+  }
+]

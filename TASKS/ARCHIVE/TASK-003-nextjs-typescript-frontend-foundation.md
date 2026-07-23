@@ -2,7 +2,7 @@
 accepted_at: 2026-07-22T14:18:19Z
 
 task_id: TASK-003
-status: ACCEPTED
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-003
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-22T13:24:43Z
-git_status: FORMAL_COMMIT
+git_status: PUSHED
 document_impact: RESOLVED
 project_type: software
 
@@ -118,7 +118,7 @@ RESOLVED：`frontend/README.md`、执行/验证/差异证据和项目状态已�
 
 ## 当前状态
 
-ACCEPTED
+CLOSED
 
 ## 恢复入口
 
@@ -126,7 +126,7 @@ ACCEPTED
 
 ## 下一步
 
-用户已于 `2026-07-22T14:18:19Z` 使用精确口令完成验收并授权生成本地正式提交。当前执行最终 staged validation 与单一 formal commit；push 仍需后续单独口令 `推送 TASK-003`。
+已完成；正式提交 `65f50093da88dd0b47dca10b836d5aab8818de7d` 已推送至 `origin/codex/TASK-003-nextjs-foundation`，本地与远端 divergence 为 `0/0`。
 
 ## Lane Plan
 
@@ -166,6 +166,7 @@ ACCEPTED
 - 2026-07-22T13:22:42Z：planner 使用官方 Node.js 24.18.0/npm 11.16.0 从无 `.next` 状态重跑最终 `npm ci`、lint、clean typecheck、2 项测试、build、真实 image optimizer、audit、依赖树、根路径 HTTP/content smoke、scope/secret/governance/message/Git checks，全部通过。
 - 2026-07-22T13:24:23Z：首次受控 `prepare-awaiting-user` 验证 artifacts、review PASS、validation 与 document impact 后成功；13:24:43Z 按治理钩子受控 reopen，仅同步 Board、任务/项目人类可读叙述和最终快照，不改变业务交付物或审查结论。同步后再次运行同一受控转换。
 - 2026-07-22T14:18:19Z：收到精确口令 `确认 TASK-003 完成并生成正式提交`；`task_accept.py` 原子验收成功，`acceptance_state` 更新为 `ACCEPTED`。本 turn 仅授权本地 formal commit，不授权 push、merge、归档或开始 TASK-004。
+- 2026-07-22T14:24:55Z：收到精确口令 `推送 TASK-003`；正式提交 `65f50093da88dd0b47dca10b836d5aab8818de7d` 已推送至同名远程分支，本地与远端 divergence 为 `0/0`。
 
 ## Execution Artifacts
 

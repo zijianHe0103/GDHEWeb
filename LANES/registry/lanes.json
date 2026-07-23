@@ -2,7 +2,7 @@
   "schema": "DPG-LANES-1.0.0",
   "project": "独立站",
   "created_at": "2026-07-22T03:58:17Z",
-  "updated_at": "2026-07-22T07:53:16Z",
+  "updated_at": "2026-07-23T01:16:18Z",
   "lanes": {
     "planner": {
       "purpose": "Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.",
@@ -112,9 +112,11 @@
       "write_scope": [
         "LANES/wordpress_cms/**",
         "cms/wp-content/plugins/gdhe-site/**",
+        "cms/wp-content/plugins/secure-custom-fields/**",
         "cms/wp-content/mu-plugins/gdhe-*.php",
         "docs/cms/**",
-        "TASKS/ARTIFACTS/**"
+        "TASKS/ARTIFACTS/**",
+        ".local/backups/TASK-004/**"
       ],
       "read_scope": [
         "**"
@@ -127,7 +129,7 @@
       "requires_adversarial_review": true,
       "last_seen": "2026-07-22T07:53:16Z",
       "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:16Z"
+      "updated_at": "2026-07-23T01:16:18Z"
     },
     "localization_seo": {
       "purpose": "Own multilingual routing and publication contracts, translation linkage, hreflang, RTL, metadata, Schema, and localization/SEO validation artifacts.",

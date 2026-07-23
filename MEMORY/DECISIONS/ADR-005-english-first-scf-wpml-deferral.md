@@ -1,9 +1,11 @@
 # ADR-005：英语优先、SCF 字段层与 WPML 延后
 
-status: proposed-for-TASK-004-acceptance
+status: accepted
 date: 2026-07-23
 task: TASK-004
 supersedes_in_part: ADR-004 decisions 5 and 6
+accepted_at: 2026-07-23T03:26:54Z
+accepted_commit: 8f8ce2121916e4c764af86aaa04e2a9b83da2a28
 
 ## 背景
 
@@ -45,4 +47,4 @@ ADR-004 已接受 Headless WordPress + Next.js、REST-first、`gdhe-site` 自有
 
 ## 状态门
 
-本 ADR 随 TASK-004 提交用户验收；在收到项目规定的正式验收口令前保持 `proposed-for-TASK-004-acceptance`，不等同于用户已接受、正式提交或推送。
+本 ADR 已随 TASK-004 于 2026-07-23T03:26:54Z 由用户使用项目规定的正式验收口令接受，并包含在正式提交 `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 中；该提交已推送至 `origin/codex/TASK-004-english-cms-scf-foundation`。生产英语站的三个月稳定监控仍从未来正式上线日计算，不从本 ADR 的接受日期计算。

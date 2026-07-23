@@ -1,10 +1,10 @@
 # GDHE Headless WordPress + Next.js 架构契约
 
-status: accepted-by-TASK-002-with-TASK-004-amendment-pending-acceptance
+status: accepted-by-TASK-002-with-accepted-TASK-004-amendment
 date: 2026-07-23
 scope: architecture contract plus implemented CMS foundation amendment
 supersedes: `docs/reference-site-analysis.md` 中 WordPress + Elementor 的实施建议
-authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、待 TASK-004 验收的 ADR-005 与本契约
+authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、已随 TASK-004 接受的 ADR-005 与本契约
 
 ## 0. 决策摘要
 
@@ -577,19 +577,66 @@ uploads.example.com    私有上传服务，不公开列目录
 
 ## 14. 后续实施顺序
 
-当前实施进度与建议顺序：
+本节是实施路线的单一权威；任务状态仍以 `PROJECT/STATE.md` 和 `TASKS/BOARD.md` 为准。以下“候选任务”只有在用户创建并确认后才成为正式 TASK。
 
-1. **基础初始化任务（TASK-003 已完成）**：Next.js + TypeScript 最小基础已建立；未开发首页或 CMS 集成。
-2. **CMS Schema 基础任务（TASK-004 待验收）**：英语 SCF/`gdhe-site`、最小 schema、备份门和 fixture 验证已完成；仍需 adversarial review 与用户验收。
-3. **API/Fixture 契约任务（下一候选）**：实现稳定 DTO、module instance ID/version、结构化 `data_table`、代表页面 fixture 和 REST contract tests；不得在该任务提前实现完整前端页面。
-4. **全局壳层任务**：设计令牌、Header、Mega Menu、移动导航、Footer、图片组件、语言骨架。
-5. **首页小批次任务**：每次 1～3 个模块，按 1440/1024/768/390 截图对照并等待确认。
-6. **页面模板任务**：Services、Industries、Materials、Finishes、Cases、Blog、About、Contact。
-7. **九语言/SEO 任务**：真实译文流程、RTL、Metadata、hreflang、Schema、Sitemap、robots、404。
-8. **询盘任务**：只有在格式、容量、保留期、邮件/CRM、对象存储和隐私政策确认后实施。
-9. **最终 QA**：性能、可访问性、安全、浏览器、发布/预览/缓存和恢复演练。
+### 14.1 已完成基础
 
-每项仍走独立 task-intake、需求确认、执行、验证、对抗审查和用户验收门。
+1. **TASK-001 Git/GitHub 初始化 — 已验收并推送。**
+2. **TASK-002 Headless 架构契约 — 已验收并推送。** 确立 Next.js 公开前端、WordPress `wp-admin` 唯一内容后台和 REST-first。
+3. **TASK-003 Next.js + TypeScript 基础 — 已验收并推送。** 只建立最小 App Router 工程、工具链、测试和图片优化验证；没有 CMS 消费或正式页面。
+4. **TASK-004 英语 CMS Schema + SCF + GDHE REST 基础 — 已验收并推送。** 已完成英语内容类型、分类法、代码定义字段、七个模块名、能力矩阵、最小 `/gdhe/v1/schema` 和受控 Core REST 投影；完整 DTO、路由解析、模块稳定 ID/版本和结构化 `data_table` 未实现。
+5. **TASK-005 路线图与边界 — 当前规划任务。** 只冻结后续 API/DTO/Fixture 与 Next.js CMS 接入边界，不实现产品代码。
+
+### 14.2 下一候选 A：英语版 API/DTO/Fixture 实施
+
+该任务由 WordPress/GDHE 插件侧拥有，必须先于正式前端消费完成：
+
+- **A1 — Schema 与迁移基础**：冻结 page/error/module Schema，持久化 module instance ID 与 per-module version，把 `data_table` 迁移为结构化数据，并完成 dry-run、幂等、歧义处理和隔离回滚证据。
+- **A2 — 公开 API、Fixture 与交接**：在 A1 通过中间检查后实现最小端点、四类 Fixture、发布/引用/错误契约矩阵、benchmark、清理和不可变交接包。
+
+- 把 WordPress Core、SCF 和数据库形状归一化为版本化公开 DTO；前端不得依赖原始响应。
+- 冻结 page envelope、错误 envelope、collection、navigation、route manifest 及七类模块的机器可读 Schema。
+- 为每个模块持久化稳定 instance ID 和 per-module `schemaVersion`；禁止使用数组索引、标题或内容哈希充当身份。
+- 把 `data_table` 从 textarea 占位形状迁移为有列键、行和单元格校验的结构化数据，并提供 dry-run、幂等、回滚和歧义处理证据。
+- 只实现经代表页面证明必要的最小 `resolve`、`collection`、`navigation` 和 `route-manifest` 端点。
+- 用 Home、Service、Case Study 和 Material 四类可清理英语 fixture 覆盖 publish、draft、private、404、引用可见性、Schema 错误和清理负例。
+- 交付 REST contract tests、golden JSON、兼容/迁移/回滚、benchmark、fixture manifest 和零残留证明。
+- 继续采用 REST-first；只有第 5.1 节量化门满足时，才创建独立 WPGraphQL PoC 和新 ADR。
+
+完成门：A1 只形成可回退的中间检查点，不授权前端正式消费。只有 A2 最终独立审查通过，DTO/模块/table/fixture/负例/清理全部有机器可验证证据，并向前端交付固定契约版本、Fixture revision 与校验值后，候选 B 才可开始正式消费。该任务不得修改 Next.js 页面、组件或正式视觉。
+
+### 14.3 下一候选 B：Next.js 英语版 CMS 接入
+
+该任务只消费候选 A 已冻结并通过审查的公开契约：
+
+- 在 `src/lib/cms/` 建立 server-only transport、运行时 validator、adapter、typed errors 和 cache-tag helper；组件不得读取原始 WordPress/SCF JSON。
+- `WORDPRESS_API_URL` 仅在服务端读取；CMS origin、cookie、Application Password、nonce 和未来 preview secret 不得进入浏览器或 `NEXT_PUBLIC_*`。
+- 明确 path normalization、权威 404、timeout、429、上游失败、非 JSON 和不兼容 Schema 的不同处理；不得把上游错误伪装成 404 或回首页。
+- 通过一个刻意技术性的入口或 harness，证明真实 Next.js production server 经服务端 HTTP 消费已审核英语 fixture，并验证 404 与非 404 错误。
+- 建立 validator、adapter、transport、deduplication、route、server-only 隔离、contract sample 和 live E2E 测试。
+- 技术证明可先使用 `no-store`；生产 ISR 时长、stale retention、Preview、Webhook 和 tag invalidation 留给独立任务。
+
+前置门：候选 A 的 DTO Schema、模块 ID/版本、结构化 `data_table`、四类 fixture、错误矩阵、发布/引用负例、清理和审查均通过。该任务不得实现正式首页、Header、Footer 或视觉系统。
+
+### 14.4 英语公开站实施
+
+候选 A、B 通过后，按以下顺序推进：
+
+1. **全局壳层任务**：设计令牌、字体、容器、按钮、图片组件、Header、Mega Menu、移动导航、Footer 和仅英语的语言入口占位。
+2. **首页小批次任务**：每次 1～3 个模块；在 1440/1024/768/390 px 截图，对严重/明显/细节差异分级并等待确认。
+3. **页面模板任务**：Services、Industries、Materials、Surface Finishes、Cases、Blog、About、Contact；优先复用模板和公共组件。
+4. **英语 SEO 任务**：Metadata、canonical、Open Graph、Breadcrumb、Schema、Sitemap、robots、404 和图片 alt；Next.js 是唯一公开 SEO 输出权威。
+5. **询盘任务**：只有在字段、文件格式/容量、病毒扫描、对象存储、保留期、邮件/CRM、隐私和删除流程确认后实施。
+6. **Preview/Webhook/缓存任务**：冻结认证、签名、防重放、Draft Mode、tag 映射、重试、观测和恢复；不得用占位 secret 或未验证 stale 行为冒充完成。
+
+### 14.5 多语言与发布
+
+- WPML/ACFML 仍推迟到生产英语站连续稳定监控三个月后采购和独立 PoC；在此之前不输出非英语 URL、切换入口或 hreflang。
+- PoC 通过后再逐步加入法语、德语、西班牙语、简体中文、阿拉伯语 RTL、印地语、日语和葡萄牙语；译文独立审核和发布，缺失译文不公开。
+- 最终 QA 覆盖性能、可访问性、安全、浏览器、四视口、SEO、发布/预览/缓存、备份和恢复演练。
+- 域名、托管商和生产部署继续需要独立确认，不在路线图中写死。
+
+每一阶段仍走独立 task-intake、需求确认、lane execution、validation、adversarial review、用户验收、formal commit 和独立 push 门。TASK-005 的专业边界证据位于 `TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md` 与 `TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md`。
 
 ## 15. 验收追踪
 

@@ -3,7 +3,7 @@
 status: accepted
 date: 2026-07-22
 task: TASK-002
-amended_by: ADR-005（等待 TASK-004 用户验收）
+amended_by: ADR-005
 
 ## 背景
 
@@ -77,6 +77,6 @@ ADR-001 已确认公开站采用独立前端、WordPress 作为 Headless CMS，`
 
 ## 实施状态更新（2026-07-23）
 
-ADR-005 提议只替代本 ADR 第 5、6 项中的实施建议：当前字段层采用已验证的 WordPress.org SCF，不采购/安装 ACF Pro；当前仅启用英语，WPML Multilingual CMS + ACFML 延后到生产英语站监控稳定三个月后的独立 PoC，不采用 Polylang 作为当前默认。该替代随 TASK-004 等待用户验收。
+ADR-005 已随 TASK-004 于 2026-07-23T03:26:54Z 接受，并包含在已推送的正式提交 `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 中。它只替代本 ADR 第 5、6 项中的实施建议：当前字段层采用已验证的 WordPress.org SCF，不采购/安装 ACF Pro；当前仅启用英语，WPML Multilingual CMS + ACFML 延后到生产英语站监控稳定三个月后的独立 PoC，不采用 Polylang 作为当前默认。
 
 本 ADR 的 Next.js、WordPress `wp-admin`、REST-first、`gdhe-site`、SEO 单一公开输出、预览、Webhook/缓存、媒体、询盘与 WPGraphQL 量化重评门保持有效。

@@ -135,3 +135,28 @@ Each execution records:
 - next: send execution_response requiring MSG-TASK-004-WORDPRESS-CMS-REVISION-R1; planner requests Round 2 independent review
 - planner_intervention: acknowledge response and dispatch Round 2
 - adversarial_reviewer_intervention: independently validate both remediations and issue Round 2 verdict
+
+### 2026-07-23T04:34:28Z - TASK-005 API/DTO/Fixture boundary analysis
+
+- task: TASK-005
+- message: MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY
+- action: acknowledged the confirmed request; performed a read-only review of the accepted architecture/ADR boundary, TASK-004 final review and planner validation, current GDHE schema/field/REST implementation, and CMS documentation; defined the future English API/DTO/Fixture implementation boundary
+- files_read: TASK-005; architecture contract sections 3 through 6 and 14; ADR-004; ADR-005; TASK-004 final adversarial review and planner validation; docs/cms CONTENT_MODEL and REST_CONTRACT; gdhe-site schema, content model, field groups, and REST implementation
+- files_changed: TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md; LANES/wordpress_cms/worklog.md; controlled acknowledgement under LANES/messages/done
+- artifact: TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md
+- result: separated verified TASK-004 state from future work; froze ownership/versioning, module ID/version, structured data_table migration, minimal endpoints, four representative fixtures, positive/negative visibility, errors, contract tests, cleanup, compatibility/rollback, REST benchmark gates, frontend handoff, and non-goals
+- runtime_changes: none; WordPress, database, users, content, plugins, themes, cms/**, docs/architecture/**, frontend/**, and external state remained read-only
+- risks: Task A must not expose raw Core REST/SCF shapes or allow Task B consumption before the DTO/module/table/fixture gates pass; preview, webhook, cache invalidation, multilingual, SEO, inquiry, deployment, and GraphQL remain separately gated
+- validation: Markdown headings and required-topic coverage PASS; `git diff --check` PASS for the changed tracked file; no TASK-005 change under cms/**, frontend/**, or docs/architecture/**; lane-message validation PASS
+- response: MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY-RESPONSE queued to planner with requires_response_to set to the original request
+- next: await planner synthesis and independent review
+- planner_intervention: integrate this boundary with the frontend lane artifact without copying a competing roadmap authority
+- adversarial_reviewer_intervention: challenge endpoint minimality, compatibility, publication negatives, migration/rollback, cleanup, and the Task A to Task B handoff gate
+
+### 2026-07-23 - TASK-005 stop-hook recovery handoff
+
+- task: TASK-005
+- trigger: stop hook requested recovery entries in TASKS/ACTIVE and PROJECT/STATE.md after the wordpress_cms execution response was queued
+- lane_state: API/DTO/Fixture boundary artifact, validation, acknowledgement, worklog, and controlled execution_response are complete
+- scope_boundary: this dispatch explicitly prohibits wordpress_cms from modifying planner files; TASKS/ACTIVE and PROJECT/STATE.md therefore remain planner-owned and were not edited by this lane
+- next: planner acknowledges MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY-RESPONSE and records the TASK-005 recovery entry in the active task and PROJECT/STATE.md before continuing synthesis/review

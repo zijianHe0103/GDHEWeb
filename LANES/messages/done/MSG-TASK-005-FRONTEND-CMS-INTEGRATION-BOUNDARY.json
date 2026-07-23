@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-005",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-23T04:33:26Z",
+  "requires_response_to": "",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Analyze confirmed TASK-005 Next.js CMS integration boundary only. You are not alone in the repository: preserve all planner and other lane edits and do not revert them. Read the active task, architecture contract sections 2, 3, 5, 8, 9 and 14, ADR-004, ADR-005, TASK-003 README/foundation, TASK-004 REST contract and final review, and the current frontend source/environment contract. This is a read-only product-code task: do not modify frontend/**, cms/**, WordPress, database, docs/architecture/** or external state. Produce only TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md and your lane worklog. Define the future English Next.js integration implementation boundary: server-only CMS client/adapter, DTO types and runtime validation, route consumption, timeout/error/not-found semantics, secret and browser isolation, minimal technical end-to-end proof, request deduplication and caching interfaces, preview/webhook/cache invalidation deferral gates, tests, fixture assumptions and explicit non-goals. State exactly what must be frozen by the API/DTO/Fixture task before frontend consumption, and keep formal homepage/global-shell work out of scope. Distinguish verified current foundation from future work, cite evidence by file/section, validate scope and Markdown. Then ack this request and send an execution_response to planner with requires_response_to set to this message. Do not commit, push, merge, accept or close TASK-005.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-005-roadmap-api-integration-boundaries.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-004-headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-005-english-first-scf-wpml-deferral.md",
+    "frontend/README.md",
+    "frontend/package.json",
+    "frontend/.env.example",
+    "docs/cms/REST_CONTRACT.md",
+    "TASKS/ARTIFACTS/TASK-004/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md"
+  ],
+  "notes": "",
+  "done_at": "2026-07-23T04:34:13Z",
+  "updated_at": "2026-07-23T04:34:13Z"
+}

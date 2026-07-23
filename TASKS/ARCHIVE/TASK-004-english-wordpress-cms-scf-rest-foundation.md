@@ -2,7 +2,7 @@
 accepted_at: 2026-07-23T03:26:54Z
 
 task_id: TASK-004
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-004
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-23T02:36:12Z
-git_status: FORMAL_COMMIT
+git_status: PUSHED
 document_impact: RESOLVED
 project_type: software
 
@@ -235,11 +235,11 @@ TASK-004 已完成英语版 Headless WordPress CMS 基础，并通过两轮独�
 - 当前只启用英语。WPML/ACFML 仍延后到未来生产英语站连续稳定监控三个月后的独立 PoC；未创建其他语言入口或 hreflang。
 - 完整 DTO、module instance ID/version、结构化 `data_table`、route resolution、preview bridge、Webhook、SEO、询盘、前端消费与部署均未在本任务伪装完成，继续属于后续任务。
 
-用户验收已由 helper 记录；随后用户在独立 turn 输入精确提交口令，TASK-004 单一正式提交已生成。尚未推送，未授权合并或开始 TASK-005。
+用户验收已由 helper 记录；随后用户分别输入独立精确提交和推送口令。TASK-004 单一正式提交 `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送到 `origin/codex/TASK-004-english-cms-scf-foundation`；未授权合并或开始 TASK-005。
 
 ## User Acceptance
 
-验收 helper 已于 `2026-07-23T03:26:54Z` 记录 TASK-004 为 `ACCEPTED`。用户随后在独立 turn 输入 `确认 TASK-004 完成并生成正式提交`，Git 门禁通过并生成单一正式提交。推送仍需后续独立口令 `推送 TASK-004`；未授权合并或开始后续任务。
+验收 helper 已于 `2026-07-23T03:26:54Z` 记录 TASK-004 为 `ACCEPTED`。用户随后分别输入独立精确提交和推送口令；正式提交 `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送，local/remote divergence 为 `0/0`。未授权合并或开始后续任务。
 
 ## Recovery Entry 2026-07-23T02:01:07Z
 

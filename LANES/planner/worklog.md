@@ -434,3 +434,118 @@ Each execution records:
 - validation: staged diff、PHP lint、JSON parse、Core/SCF checksum、DB、governance validate 与 strict lane audit fresh PASS；无未暂存修改。
 - commit: TASK-004 单一正式提交已生成；仅同步正式提交状态并 amend 进同一提交，不改变 CMS 业务代码、Schema 或审查证据。
 - next: 等待独立 `推送 TASK-004`；不 push、merge 或开始 TASK-005。
+
+### 2026-07-23T04:11:59Z - TASK-004 pushed
+
+- authorization: 用户独立输入 `推送 TASK-004`，current-turn push 授权记录成功。
+- remote: `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送到 `origin/codex/TASK-004-english-cms-scf-foundation`，upstream tracking 已建立。
+- verification: local HEAD 与 remote-tracking SHA 一致，divergence `0/0`。
+- boundary: 未 merge、未创建 PR、未开始 TASK-005；停止并等待用户下一条指令。
+
+### 2026-07-23T04:26:20Z - TASK-005 intake created
+
+- previous_task: TASK-004 已接受并推送 commit `8f8ce2121916e4c764af86aaa04e2a9b83da2a28`；切换前 divergence `0/0`，消息与 issue 队列为空。
+- branch: `codex/TASK-005-roadmap-api-integration-boundaries`。
+- intake: 路线图继续以现有架构契约第 14 节为单一权威，不创建相互竞争的重复总路线文档。
+- boundary: TASK-005 只更新规划与边界；后续 API/DTO/Fixture 实施和 Next.js CMS 接入拆为两个独立任务。本 turn 未修改架构交付物、WordPress、数据库或前端代码。
+- lane_plan: 需求确认后由 `wordpress_cms` 和 `frontend` 分别提交边界证据，planner 综合，`adversarial_reviewer` 独立审查。
+- next: 等待精确口令 `确认 TASK-005 需求并开始执行`。
+
+### 2026-07-23T04:32:27Z - TASK-005 requirements confirmed
+
+- received: 用户精确输入 `确认 TASK-005 需求并开始执行`。
+- transition: TASK-005 从 `AWAITING_REQUIREMENT_CONFIRMATION` 转为 `READY`。
+- frozen_scope: 只更新路线图和两个后续实施边界；不修改 WordPress、数据库、插件运行态或 `frontend/**` 产品代码。
+- next: 创建 `wordpress_cms` API/DTO/Fixture boundary request 和 `frontend` CMS integration boundary request，dry-run 后唤醒已注册会话。
+
+### 2026-07-23T04:34:01Z - TASK-005 boundary analysis dispatched
+
+- messages: 创建 `MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY` 与 `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY`。
+- dry_run: frontend message 解析到已注册 session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`；wordpress session 从 registry 精确解析为 `019f88d0-05f9-7213-abad-e8b1ada660b5`。
+- dispatch: 两个既有独立 Codex 会话均已唤醒，要求先 ack queue message，再只写指定 artifact/worklog 并回传 execution_response。
+- transition: TASK-005 从 `READY` 转为 `IN_PROGRESS`。
+- next: 等待两个受控 response，复核证据后由 planner 综合路线图与任务边界。
+
+### 2026-07-23T04:43:16Z - TASK-005 boundary execution and recovery consumed
+
+- wordpress: `API_DTO_FIXTURE_BOUNDARY.md` 与 execution_response 已检查并确认。
+- frontend: `FRONTEND_INTEGRATION_BOUNDARY.md` 首版技术边界成立，但 evidence map 有四个错误引用；已通过受控 P2 revision 修正，替代/修订 response 已确认。
+- recovery: 两个 lane stop-recovery message 已确认；task/project recovery entry 已写入。
+- synthesis: 架构契约第 14 节更新为单一权威路线，明确 completed foundations、Task A API/DTO/Fixture、Task B frontend integration、英语站、多语言和最终 QA 顺序；`ROADMAP_AND_BOUNDARY_SYNTHESIS.md` 已生成。
+- next: 完成标准 execution/validation/diff/planner artifacts 和 fresh scope/reference checks，然后派发 independent review。
+
+### 2026-07-23T04:45:59Z - TASK-005 adversarial review Round 1 dispatched
+
+- deliverables: 架构契约 section 14、两个专业边界、planner synthesis、execution、validation 与 diff summary 已完成。
+- fresh_validation: governance、strict lane audit、messages、JSON、scope、reference existence、stale wording、headings、whitespace 与 diff check 全部通过；`frontend/**`、`cms/**` diff 为零。
+- review: `MSG-TASK-005-ADVERSARIAL-REVIEW-R1` dry-run 命中 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并成功唤醒。
+- transition: TASK-005 从 `IN_PROGRESS` 转为 `UNDER_REVIEW`。
+- next: 等待 review_response；不得提前修复、验收、提交或推送。
+
+### 2026-07-23T04:51:57Z - TASK-005 Round 1 FAIL recovery
+
+- response: 已确认 Round 1 `FAIL` response 与 stop-recovery；P0=0、P1=0、P2=1。
+- review_result: 技术路线、A/B 依赖、REST-first、fixtures、server-only、安全和延后门均通过；唯一 P2 为 stale current-state/ADR acceptance metadata 和不可复现的旧 stale scan。
+- transition: `task_transition.py reopen` 因当前为 `UNDER_REVIEW` 而安全拒绝，未发生 helper mutation；planner 同步真实状态为 `NEEDS_REVISION`。
+- narrow_scope: 三份 decision 文件只同步已发生的 TASK-004 acceptance/commit/push 状态，不改变业务决策；PROJECT/task/board 同步 Round 1 事实。
+- roadmap: 接受 reviewer 的交付建议，将未来 Task A 分为 A1 Schema/migration 与 A2 API/fixture/handoff；A1 不解锁 Task B。
+- product_boundary: `frontend/**`、`cms/**`、WordPress、数据库、插件运行态和外部状态均未修改。
+- next: fresh exact-file stale scan、治理与 scope 验证，然后 Round 2。
+
+### 2026-07-23T04:56:09Z - TASK-005 Round 2 dispatched
+
+- revision_validation: exact-file stale status、active execution/review sections、governance validate、strict lane audit、lane messages、TASK-005 JSON、zero product diff、whitespace、required artifacts 和 diff check 全部 PASS。
+- review_message: `MSG-TASK-005-ADVERSARIAL-REVIEW-R2` 已排队，dry-run 命中注册 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，同一会话已唤醒。
+- transition: `NEEDS_REVISION` to `UNDER_REVIEW`。
+- next: 等待 final response；不实施、验收、commit、push 或 merge。
+
+### 2026-07-23T05:01:06Z - TASK-005 Round 2 final FAIL recovery
+
+- response: final FAIL response 与 stop-recovery 已 ack；P0=0、P1=0、P2=1。
+- exact_gap: PROJECT current unresolved 仍写 P2 正在修订；architecture status/authority 仍写 TASK-004 amendment 或 ADR-005 pending acceptance。
+- correction: 仅同步这两处 current-state metadata，并在 validation log 撤回第二次不完整 scan PASS。
+- transition: `UNDER_REVIEW` to `NEEDS_REVISION`；不实施 Task A/B。
+- review_limit: 已使用 max two rounds；planner 不把自验替代独立 PASS，也不擅自派发第三轮。
+- next: exact-pattern fresh validation 后等待用户授权额外 closure review。
+
+### 2026-07-23T05:33:16Z - TASK-005 user-authorized closure review dispatched
+
+- authorization: 用户明确授权一次额外 independent closure review；无 Task A/B 或 Git 授权。
+- preflight: expanded stale scan、project/message validation、strict lane audit、zero product/runtime diff、empty open TASK-005 messages 和 diff check PASS。
+- message: `MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW` 已 dry-run 到 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并唤醒。
+- transition: `NEEDS_REVISION` to `UNDER_REVIEW`。
+- next: 等待 closure verdict。
+
+### 2026-07-23T05:39:49Z - TASK-005 closure PASS recovery
+
+- response: closure review response 与 stop-recovery 已 ack；canonical verdict PASS，P0/P1/P2 all zero。
+- reviewer_evidence: Round 2 two-line defect closed, expanded scan current-semantic zero, state sources consistent, accepted decision unchanged, A1/A2 gate preserved, zero product/runtime diff and governance PASS。
+- boundary: no Task A/B implementation, acceptance, commit, push, merge or close authorization。
+- next: fresh final validation, planner summary, checked prepare-awaiting-user。
+
+### 2026-07-23T05:41:42Z - TASK-005 planner final validation PASS
+
+- checks: governance valid; strict audit zero; messages and JSON valid; no open TASK-005 messages; canonical PASS 0/0/0; state sources consistent; expanded stale scan zero; A1/A2 gates present; nine artifacts non-empty; zero product/runtime diff; whitespace/diff/branch/HEAD PASS。
+- artifact: `TASKS/ARTIFACTS/TASK-005/PLANNER_SUMMARY.md` created。
+- boundary: no implementation, acceptance, commit, push, merge or close。
+- next: checked prepare-awaiting-user。
+
+### 2026-07-23T05:42:43Z - TASK-005 checked preparation narrative sync
+
+- first_prepare: helper 于 05:42:26Z 成功进入 AWAITING_USER。
+- controlled_reopen: 仅为同步 current narrative、board 和 helper-generated whitespace 回到 NEEDS_REVISION；deliverables/review/validation unchanged。
+- next: final validation and final checked prepare, then wait for exact acceptance instruction。
+
+### 2026-07-23T05:47:23Z - TASK-005 accepted and formal commit authorized
+
+- acceptance: task_accept check ready and exact-phrase accept succeeded。
+- cleanup: helper-generated blank-lane trailing whitespace and duplicate Board Accepted heading normalized。
+- boundary: authorization is formal commit only; no push, merge, Task A/B implementation or deployment。
+- next: fresh validation, exact staging and one formal commit。
+
+### 2026-07-23T05:49:21Z - TASK-005 formal commit generated
+
+- validation: governance/message/audit, review 0/0/0, accepted state, staged scope, secrets, forbidden paths, whitespace and cached diff PASS。
+- commit: one formal TASK-005 commit generated; this status sync is amended into that same commit。
+- boundary: no push, merge, Task A/B, PR or deployment。
+- next: wait for exact `推送 TASK-005`。

@@ -111,3 +111,41 @@ Each execution records:
 - next: ack revision request and send execution_response referencing the three updated artifacts
 - message_result: revision request acknowledged as done; `MSG-TASK-003-FRONTEND-REVISION-R1-RESPONSE` queued to planner with `requires_response_to` set to the revision request
 - unique_next_step: planner consumes the response and dispatches independent Round 2 review; frontend waits for a governed follow-up
+
+## 2026-07-23
+
+### 2026-07-23T12:36:39+08:00 - TASK-005 frontend CMS integration boundary
+
+- task: TASK-005
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY
+- message_ack: exact queued request read first and acknowledged through lane_message.py before evidence work
+- action: produced read-only frontend planning evidence for the future English Next.js CMS consumption boundary; distinguished verified TASK-003/TASK-004 foundations from unimplemented DTO, routing, caching, preview and Webhook work
+- files_read: AGENTS.md; project manifest, state, coordination, lanes, policy, constraints, quality, activity and board; frontend lane/worklog; TASK-005; accepted architecture contract sections 2, 3, 5, 8, 9 and 14; ADR-004; ADR-005; TASK-003 archive and current frontend README, environment example, source and tests; TASK-004 archive, REST contract, content model, planner validation and final Round 2 review; exact lane message
+- files_changed: TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md; LANES/frontend/worklog.md
+- artifact: TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md
+- result: specified server-only transport, runtime validation and adapter layers; route/error/not-found semantics; secret isolation; request deduplication and cache interfaces; preview/Webhook deferral gates; minimal real HTTP technical E2E; test matrix; explicit non-goals; and the exact API/DTO/Fixture freeze required before frontend consumption
+- product_code_boundary: frontend/**, cms/** and docs/architecture/** remained read-only; no product code, dependency, environment, CMS content or architecture contract was modified
+- planner_boundary: TASKS/ACTIVE/** and PROJECT/** remained read-only; planner/reviewer artifacts were not modified
+- validation: lane_message.py validate returned valid true; git diff check passed; heading and whitespace scans passed; the artifact and worklog are the only direct frontend-lane content edits; pre-existing planner, WordPress lane, registry, task-state and archive changes were preserved; frontend/**, cms/** and docs/architecture/** remained read-only
+- evidence_map_correction: after planner identified stale filenames and nonexistent section labels, corrected ADR-004, ADR-005 and TASK-004 archive paths plus TASK-005 heading references to exact live files and headings; verified every corrected file exists and every cited heading matches; no research or implementation scope was added
+- controlled_revision: read and acknowledged `MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION`; confirmed the artifact change is limited to its four requested evidence-map reference corrections and does not alter technical conclusions
+- risks: current TASK-004 projection is intentionally not the final frontend DTO; module instance IDs, per-module versions and structured data_table remain hard gates; exact timeout/retry/cache APIs and runtime validation library require a later confirmed implementation task
+- message_result: initial `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE` was queued immediately before the planner correction arrived; validated replacement `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE-R1` is now queued to planner, explicitly supersedes the initial response, and retains `requires_response_to: MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY`
+- revision_message_result: `MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION-RESPONSE` queued to planner with `requires_response_to: MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION`
+- next: wait for planner intake or an independently governed review/revision request
+- planner_intervention: freeze and review the upstream API/DTO/Fixture contract before dispatching frontend implementation; keep formal homepage/global shell, preview and Webhook/cache invalidation separate
+
+### 2026-07-23T12:42:27+08:00 - TASK-005 stop recovery handoff
+
+- task_state_observed: IN_PROGRESS
+- completed_in_lane: frontend integration-boundary artifact delivered; four controlled evidence-reference corrections applied and validated; original execution request and controlled correction request acknowledged
+- remaining_project_work: planner must acknowledge the corrected frontend responses, combine frontend and WordPress boundary evidence, synchronize planner-owned task/project recovery state, and dispatch independent adversarial review
+- validation: exact reference files and headings exist; stale references are absent; Markdown headings, whitespace, git diff check, product-code read-only scope, and lane-message validation passed
+- affected_files: TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md; LANES/frontend/worklog.md; controlled lane messages and registry events created by lane_message.py
+- unresolved: the API/DTO/Fixture contract is not yet frozen; module instance IDs, per-module versions and structured data_table remain frontend-consumption gates; planner has not yet acknowledged the corrected responses
+- git_state: DIRTY shared worktree; no commit, push, merge, acceptance, or closure performed by frontend lane
+- scope_block: TASKS/ACTIVE/**, PROJECT/STATE.md and PROJECT/ACTIVITY.md are planner-owned and outside this frontend request's write scope, so this lane did not modify them
+- recovery_entry: planner should consume `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE-R1` and `MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION-RESPONSE`, then record the project-level recovery entry
+- recovery_message: `MSG-TASK-005-FRONTEND-STOP-RECOVERY` queued to planner and requires acknowledgement of the corrected evidence-reference response
+- unique_next_step: planner acknowledges both corrected frontend responses and writes TASK-005 and PROJECT/STATE.md recovery state before review dispatch

@@ -232,3 +232,61 @@ Each execution records:
 - result: recovery request queued with the canonical PASS report and planner-owned state targets as context
 - risks: reviewer must not directly mutate planner-owned task or project state; PASS is not user acceptance or Git authorization
 - next: planner acknowledges the final review response and recovery request, records the Round 2 recovery entry, then owns final validation and checked acceptance preparation
+
+### 2026-07-23T04:48:08Z - TASK-005 adversarial review round 1
+
+- task: TASK-005
+- message: MSG-TASK-005-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the formal request, independently reviewed the roadmap authority, Task A and Task B boundaries, specialist evidence, planner synthesis, execution and validation claims, accepted-task evidence, ADR state, Git scope and controlled messages without repairing business deliverables
+- files_read: full governance resume set; TASK-005 active task; architecture contract including section 14; API and frontend boundary artifacts; synthesis, execution, validation and diff artifacts; TASK-004 canonical final review; ADR-004 and ADR-005; specialist and correction messages; current Git and governance state
+- files_changed: TASK-005 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: all named evidence files exist; architecture section 14 has one stated roadmap authority; Task A to Task B gate, DTO/module/table/fixture/error/cleanup, server-only/error/E2E and deferred boundaries are complete; no frontend, cms or local runtime diff; Git diff check, project, registry, message and strict lane audit pass
+- result: FAIL; P0 none; P1 none; P2 one current-state consistency family
+- p2: ADR-005, ADR-004 amendment and decision index still say TASK-004 awaits acceptance despite accepted and pushed status; project state and active task contain stale pre-execution or pre-review narratives; validation log incorrectly reports stale-status scan PASS
+- task_a_breadth: recommend A1 schema and migration foundation followed by A2 endpoints, fixtures, contract matrix, benchmark, cleanup and immutable handoff; Task B remains blocked until A2 final independent review and exact version plus checksums
+- limitations: ADR status correction intersects a prior accepted task and is outside TASK-005 current confirmed write scope; reviewer did not broaden scope or modify planner, architecture, specialist, ADR, CMS or frontend files
+- boundaries: no implementation, runtime, task state, project state, ADR, architecture, commit, push, merge, acceptance or closure change by reviewer
+- message_status: R1 request acknowledged as done; controlled FAIL review response queued to planner with requires response set to the R1 request
+- next: send controlled FAIL response; planner owns authorized narrow documentation-state recovery and Round 2 dispatch
+
+### 2026-07-23T04:49:47Z - TASK-005 Round 1 stop recovery routed to planner
+
+- task: TASK-005
+- message: MSG-TASK-005-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY
+- action: preserved reviewer write scope and sent a controlled recovery request because TASK-005 remains UNDER_REVIEW while the Round 1 FAIL response awaits planner acknowledgement
+- files_changed: adversarial reviewer worklog and controlled lane message only
+- result: recovery request queued with the canonical FAIL report and planner-owned state targets as context
+- risks: reviewer must not directly mutate active task, project state, ADR metadata or accepted prior-task records; FAIL is not implementation or Git authorization
+- next: planner acknowledges both messages, records NEEDS_REVISION recovery, obtains an authorized path for the ADR status correction, synchronizes current narratives and requests Round 2
+
+### 2026-07-23T04:58:08Z - TASK-005 adversarial review round 2 final
+
+- task: TASK-005
+- message: MSG-TASK-005-ADVERSARIAL-REVIEW-R2
+- action: acknowledged the final review request, preserved Round 1 history, independently reviewed the narrow metadata correction, exact current-state stale scan, A1 and A2 final handoff gate, product scope, Git evidence and governance state
+- files_read: Round 1 canonical report; Round 1 revision report; active task; project state; board; ADR-004; ADR-005; decision index; architecture section 14 and authority metadata; roadmap synthesis; validation log; current diff and message state
+- files_changed: TASK-005 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: ADR-005, ADR-004 amendment and decision index metadata synchronized without accepted decision substance changes; A1 remains an intermediate checkpoint and Task B remains blocked until A2 final independent review plus exact version, fixture revision and checksums; frontend, cms and local runtime diff zero; no newer product/runtime files since Round 1; Git diff check, project validation and message validation pass; strict lane audit was zero issues before response send and afterward reports only the expected queued response awaiting planner
+- result: FAIL; P0 none; P1 none; P2 one current-state consistency family remains
+- p2: project current unresolved narrative still says the P2 is being revised while the focus says it is closed; architecture authority metadata still says ADR-005 awaits TASK-004 acceptance; both files are in the claimed exact scan set, so the replacement stale-status PASS is not reproducible
+- historical_boundary: old recovery entries are retained audit history and were not counted as current-state defects
+- boundaries: no business deliverable repair, Task A or Task B implementation, WordPress or database mutation, product code change, commit, push, merge, acceptance or closure
+- message_status: R2 request acknowledged as done; controlled final FAIL review_response queued to planner and requires acknowledgement of the R2 request
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit either file
+- next: planner acknowledges both controlled messages, records NEEDS_REVISION recovery and owns any narrow documentation-state correction
+
+### 2026-07-23T05:36:34Z - TASK-005 user-authorized closure review
+
+- task: TASK-005
+- message: MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW
+- authorization: user explicitly authorized one additional independent closure review after the configured two rounds
+- action: read and acknowledged the closure request first, restored the registered reviewer lane, preserved both prior FAIL rounds, independently reproduced the expanded rejected-pattern scan, current-state consistency, accepted-decision diff, A1/A2 final gate and zero product/runtime scope
+- files_read: closure request; active task; project state; board; architecture authority metadata and section 14; ADR-004; ADR-005; decision index; roadmap synthesis; execution, validation, diff and Round 1 revision artifacts; canonical review history; controlled messages; current Git state
+- files_changed: TASK-005 canonical adversarial review report; adversarial reviewer worklog; current reviewer session record; controlled request acknowledgement
+- validation: Round 2 architecture authority and project current wording defects closed; expanded scan has zero current-semantic matches, with one whole-file hit confined to a timestamped historical recovery entry; active task, project and board all UNDER_REVIEW; accepted decision substance unchanged; A1 is intermediate only and Task B remains blocked until A2 final independent review plus exact contract version, fixture revision and checksums; frontend, cms and local runtime diff/status/newer-file checks empty; HEAD and branch unchanged; Git diff check, project validation, controlled-message validation and strict lane audit pass
+- result: PASS; P0 none; P1 none; P2 none
+- evidence_boundary: execution and diff artifacts retain the pre-authorization NEEDS_REVISION evidence snapshot; active task, project state and board are the mutually consistent current fact sources
+- boundaries: no deliverable repair, Task A or Task B implementation, WordPress/database/runtime mutation, planner state edit, commit, push, merge, acceptance or closure
+- message_status: closure request acknowledged as done; controlled PASS review_response queued to planner and requires acknowledgement of the closure request
+- stop_recovery: controlled recovery request queued because planner-owned task/project state remain UNDER_REVIEW; reviewer did not edit them
+- next: planner acknowledges both messages, records PASS recovery, performs final validation and owns any checked transition

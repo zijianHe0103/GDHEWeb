@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE-R1",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-005",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-23T04:40:46Z",
+  "requires_response_to": "MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Replacement execution response: the TASK-005 frontend integration-boundary artifact is complete and its evidence map now uses the exact live TASK-005 headings, ADR-004 filename, ADR-005 filename, and TASK-004 archive filename. This response supersedes MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE. Scope remains read-only for frontend, CMS, architecture, active-task, and planner files.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md"
+  ],
+  "notes": "Validated all referenced files and named headings, removed the four stale references, passed git diff check and Markdown heading scans, and received lane_message.py valid true. Direct content writes remain limited to the expected artifact and LANES/frontend/worklog.md. No new task, product-code change, commit, push, merge, accept, or close action.",
+  "done_at": "2026-07-23T04:42:42Z",
+  "updated_at": "2026-07-23T04:42:42Z"
+}

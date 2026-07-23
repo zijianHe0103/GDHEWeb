@@ -1054,3 +1054,356 @@ schema_version: DPG-LANES-1.0.0
 - fresh verification 再次通过：staged diff、PHP/JSON、WordPress Core、SCF checksum、数据库与治理审计均无失败；没有未暂存修改。
 - TASK-004 单一正式提交已生成；本条记录与项目/任务/看板状态通过 amend 纳入同一提交，不改变业务交付物。
 - next: 等待独立口令 `推送 TASK-004`；不合并，不开始 TASK-005。
+
+### 2026-07-23T04:11:59Z - TASK-004 pushed
+
+- 用户在独立 current turn 输入精确口令 `推送 TASK-004`，push 授权已由治理钩子记录。
+- `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送到 `origin/codex/TASK-004-english-cms-scf-foundation` 并建立 upstream tracking。
+- 本地 HEAD 与 remote-tracking SHA 完全一致，divergence 为 `0/0`。
+- 未 merge，未创建 PR，未开始 TASK-005；下一步等待用户指令。
+
+### 2026-07-23T04:26:20Z - TASK-005 intake created
+
+- previous_task: TASK-004 formal commit `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送，切换前 local/remote divergence `0/0`；无 pending/blocked/failed lane message、无活动 issue、非 detached HEAD。
+- branch: 创建 `codex/TASK-005-roadmap-api-integration-boundaries`；TASK-004 同步为 `CLOSED` / `PUSHED` 并归档。
+- intake: 创建“更新实施路线图并制定英语版 API/DTO/Fixture 与前端接入任务边界”需求卡。
+- scope: 本 turn 只建立治理任务；没有修改架构契约、WordPress、数据库、插件运行态、`frontend/**` 或外部状态。
+- next: 等待精确口令 `确认 TASK-005 需求并开始执行`。
+
+### 2026-07-23T04:32:27Z - TASK-005 requirements confirmed
+
+- 用户精确输入 `确认 TASK-005 需求并开始执行`。
+- TASK-005 从 `AWAITING_REQUIREMENT_CONFIRMATION` 转为 `READY`；路线图、API/DTO/Fixture 和前端接入边界已冻结。
+- 尚未修改架构契约、WordPress、数据库或前端产品代码。
+- next: 创建并 dry-run 两个独立 execution request，派发到 `wordpress_cms` 与 `frontend`。
+
+### 2026-07-23T04:34:01Z - TASK-005 boundary analysis dispatched
+
+- 创建 `MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY` 与 `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY`。
+- frontend request dry-run 成功解析到 session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`；两个已注册会话均已通过线程消息唤醒。
+- 两个 lane 只允许写各自边界 artifact 与 worklog，不得修改 `cms/**`、`frontend/**`、架构正文或外部状态。
+- TASK-005 转为 `IN_PROGRESS`；next 为等待两个受控 execution response。
+
+### 2026-07-23T04:43:16Z - TASK-005 execution responses and recovery acknowledged
+
+- `wordpress_cms` 与 `frontend` 分别完成 API/DTO/Fixture 和 Next.js CMS 接入边界 artifact；原 execution response 均已确认。
+- planner 发现 frontend evidence map 有四个错误引用，创建 P2 correction；修正、替代 response 和 correction response 已验证并确认。
+- 两个 lane stop-recovery handoff 已确认，活动任务与项目状态已记录恢复入口。
+- scope: 无 `cms/**`、`frontend/**` 产品代码、WordPress、数据库或外部状态变更。
+- next: planner 完成路线图综合与验证，再派发独立 adversarial review。
+
+### 2026-07-23T04:45:59Z - TASK-005 adversarial review Round 1 dispatched
+
+- planner 已更新架构契约第 14 节，生成路线图/边界 synthesis、execution、validation 和 diff summary。
+- fresh governance、strict lane audit、message JSON、scope、reference、stale wording、heading、whitespace 和 diff checks 全部通过。
+- `MSG-TASK-005-ADVERSARIAL-REVIEW-R1` dry-run 命中 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并已唤醒。
+- TASK-005 转为 `UNDER_REVIEW`；next 为等待受控 review_response。
+
+### 2026-07-23T04:33:13Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-005
+- summary: message queued for wordpress_cms
+
+### 2026-07-23T04:33:26Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-005
+- summary: message queued for frontend
+
+### 2026-07-23T04:34:13Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY moved to done
+
+### 2026-07-23T04:34:28Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-005
+- summary: message MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY moved to done
+
+### 2026-07-23T04:38:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:39:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:39:48Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:39:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-WORDPRESS-API-DTO-FIXTURE-BOUNDARY-RESPONSE moved to done
+
+### 2026-07-23T04:40:32Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE moved to done
+
+### 2026-07-23T04:40:46Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:40:49Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-005
+- summary: message queued for frontend
+
+### 2026-07-23T04:41:12Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION moved to done
+
+### 2026-07-23T04:41:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:42:42Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE-R1 moved to done
+
+### 2026-07-23T04:42:42Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION-RESPONSE moved to done
+
+### 2026-07-23T04:42:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:43:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-WORDPRESS-CMS-STOP-RECOVERY moved to done
+
+### 2026-07-23T04:43:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-FRONTEND-STOP-RECOVERY moved to done
+
+### 2026-07-23T04:45:38Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T04:46:25Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-23T04:49:24Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:49:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-23T04:49:56Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T04:51:57Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-23T04:51:57Z - TASK-005 Round 1 FAIL recovery
+
+- response: `MSG-TASK-005-ADVERSARIAL-REVIEW-R1-RESPONSE` 与 reviewer stop-recovery 均已确认；verdict `FAIL`，P0=0、P1=0、P2=1。
+- finding: 技术路线和边界全部通过；唯一 P2 是 TASK-004 验收后的 ADR/current-state 元数据未同步，首次 stale-status scan 因文件集不完整而错误报告 PASS。
+- transition: `task_transition.py reopen` 从 `UNDER_REVIEW` 按规则安全拒绝；未伪造 `AWAITING_USER`，任务真实状态同步为 `NEEDS_REVISION`。
+- correction_scope: 仅将 `MEMORY/DECISIONS.md`、ADR-004 amendment 注记和 ADR-005 状态门加入 TASK-005 明确写域，只记录既有 TASK-004 acceptance/commit/push，不修改已接受的决策内容。
+- delivery: 将 reviewer 的 Task A 分批建议纳入路线，A1 是 Schema/migration 中间门，A2 是 API/fixture/handoff 最终门；Task B 仍阻塞到 A2 final PASS 和精确版本/校验值。
+- next: 重跑精确 current-state 文件集、scope、governance 和 message validation，再请求 Round 2。
+
+### 2026-07-23T04:56:09Z - TASK-005 Round 2 dispatched
+
+- revision: ADR acceptance metadata、项目/任务当前叙述和首次验证错误声称已窄范围修订；A1/A2 分批建议已纳入且不减弱 A2 final handoff gate。
+- fresh_validation: exact current-state stale scan、active execution/review sections、governance、strict lane audit、messages、JSON、scope、whitespace、required artifacts 和 `git diff --check` 全部通过。
+- review: `MSG-TASK-005-ADVERSARIAL-REVIEW-R2` dry-run 精确解析到 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并成功唤醒。
+- transition: TASK-005 从 `NEEDS_REVISION` 转回 `UNDER_REVIEW`。
+- next: 等待 final review response；不实施 Task A/B，不验收、提交、推送或合并。
+
+### 2026-07-23T05:01:06Z - TASK-005 Round 2 final FAIL recovery
+
+- response: Round 2 final response 与 reviewer stop-recovery 已确认；P0=0、P1=0、P2=1。
+- passed: ADR acceptance metadata、A1/A2 handoff gate、零产品/runtime 变化和治理范围通过。
+- remaining: `PROJECT/STATE.md` 当前 unresolved 叙述和架构契约顶部 authority metadata 两处 stale wording；replacement scan 的 pattern set 没有覆盖它们。
+- transition: TASK-005 从 `UNDER_REVIEW` 恢复为 `NEEDS_REVISION`，只修两处当前叙述并撤回不真实的 fresh PASS。
+- gate: `max_rounds: 2` 已用完；planner 不绕过独立 PASS 门、不自行制造第三轮。
+- next: fresh validate 精确修正，等待用户是否授权额外 closure review。
+
+### 2026-07-23T05:33:16Z - TASK-005 user-authorized closure review dispatched
+
+- authorization: 用户明确输入 `授权 TASK-005 进行一次额外独立 closure review`；只增加一次 review，不扩展产品或 Git 权限。
+- preflight: expanded stale pattern、governance、strict lane audit、messages、zero `frontend/**`/`cms/**`/`.local/**` diff、empty TASK-005 open messages 和 `git diff --check` 全部通过。
+- review: `MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW` 已排队，dry-run 精确解析到 reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` 并唤醒。
+- transition: TASK-005 从 `NEEDS_REVISION` 转为 `UNDER_REVIEW`。
+- next: 等待单轮 closure response；不实施 Task A/B，不验收、commit、push、merge 或 close。
+
+### 2026-07-23T05:39:49Z - TASK-005 closure review PASS recovery
+
+- response: closure review response 与 stop-recovery 已确认；canonical `PASS`，P0=0、P1=0、P2=0。
+- review: 两处 Round 2 current-state defect 闭环；expanded scan、state consistency、decision unchanged、A1/A2 gate、zero product/runtime diff 和 governance 均通过；历史 FAIL 保留。
+- boundary: PASS 不等于用户验收，不授权 Task A/B、commit、push、merge、accept 或 close。
+- next: planner fresh final validation、Planner Summary 和 checked `prepare-awaiting-user`。
+
+### 2026-07-23T05:41:42Z - TASK-005 planner final validation PASS
+
+- validation: governance、strict lane audit、messages/JSON/open queue、canonical PASS counts、state consistency、expanded stale scan、A1/A2 gates、nine artifacts、zero product/runtime diff、whitespace、branch 和 HEAD 全部 fresh PASS。
+- summary: `PLANNER_SUMMARY.md` 已生成；document impact `RESOLVED`。
+- boundary: 未实施 Task A/B，未用户验收、commit、push、merge 或 close。
+- next: checked `prepare-awaiting-user`。
+
+### 2026-07-23T04:55:55Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T04:57:20Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-23T04:59:18Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T05:00:14Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T05:01:06Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-23T05:01:06Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-23T05:33:33Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-23T05:33:54Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW moved to done
+
+### 2026-07-23T05:38:32Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T05:39:01Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-005
+- summary: message queued for planner
+
+### 2026-07-23T05:39:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE moved to done
+
+### 2026-07-23T05:39:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-005
+- summary: message MSG-TASK-005-ADVERSARIAL-CLOSURE-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-23T05:42:26Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-005
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-23T05:42:43Z - TASK-005 checked preparation narrative sync
+
+- first_prepare: checked helper 成功验证 artifacts 并进入 `AWAITING_USER`。
+- controlled_reopen: 仅同步 active task、project、board 和 handoff narrative；交付物、canonical PASS 与 final validation 未改变。
+- boundary: 未验收、未实施 Task A/B、未 commit、push、merge 或 close。
+- next: fresh validation 后 final checked prepare，然后等待正式验收口令。
+
+### 2026-07-23T05:42:43Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-005
+- summary: Synchronize human-readable active-task, board and project handoff narrative after the successful checked prepare; remove helper-generated trailing whitespace
+
+### 2026-07-23T05:43:57Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-005
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-23T05:47:23Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-005
+- summary: TASK-005 accepted by exact user phrase; git commit/push/merge not performed.
+
+### 2026-07-23T05:47:23Z - TASK-005 formal commit authorized
+
+- authorization: 用户精确输入 `确认 TASK-005 完成并生成正式提交`；授权仅限本 turn 的 TASK-005 formal commit。
+- acceptance: `task_accept.py check` ready true；accept 成功，accepted_at 为 2026-07-23T05:47:23Z。
+- boundary: 未授权 push、merge、Task A/B、PR 或部署。
+- next: clean helper whitespace、fresh validation、stage exact scope and create one formal commit。
+
+### 2026-07-23T05:49:21Z - TASK-005 formal commit generated
+
+- validation: governance、strict audit、messages/JSON、canonical PASS、acceptance、staged scope、secret、forbidden paths、whitespace 和 cached diff 全部通过。
+- commit: TASK-005 单一正式提交已生成；本状态同步将 amend 进同一提交。
+- boundary: 未 push、merge、实施 Task A/B、创建 PR 或部署。
+- next: 等待独立 `推送 TASK-005`。

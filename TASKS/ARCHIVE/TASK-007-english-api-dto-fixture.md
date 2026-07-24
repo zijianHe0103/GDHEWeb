@@ -2,7 +2,7 @@
 accepted_at: 2026-07-24T15:16:22Z
 
 task_id: TASK-007
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-007
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-24T11:29:16Z
-git_status: DIRTY
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -175,7 +175,7 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED`。用户已于 `2026-07-24T15:16:22Z` 使用精确口令授权正式交付；Forest-aligned Schema 3 final review 与 Planner final validation 均为 `PASS`。
+`CLOSED / MERGED`。用户已于 `2026-07-24T15:16:22Z` 使用精确口令验收；正式提交 `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9` 已推送任务分支、快进集成并推送到远端 `main`，最终本地/远端 divergence 为 `0/0`。
 
 ## 恢复入口
 
@@ -183,13 +183,13 @@ project_type: software
 
 ## 下一步
 
-创建一个中文正式提交，立即推送当前 TASK-007 分支，随后将其合并到 `main` 并推送 `main`；完成前不启动产品前端、GraphQL、多语言或部署。
+任务已归档。后续前端消费必须在独立任务中按冻结 Schema 和 handoff checksum 小步实施，不把 TASK-007 的 CMS/API 完成状态误称为可浏览网站完成。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 冻结 A3 Forest-aligned contract、分批门禁、综合验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、必要时 `README.md` | task state、A3 gate、planner summary | ACCEPTED; formal commit and remote delivery authorized |
+| planner | 冻结 A3 Forest-aligned contract、分批门禁、综合验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、必要时 `README.md` | task state、A3 gate、planner summary | CLOSED / MERGED |
 | wordpress_cms | A3 Schema 3 产品模型、迁移、REST/Fixture/Golden/benchmark/cleanup 与 CMS 文档 | GDHE plugin、`docs/cms/**`、TASK-007 artifacts、lane records、受控 backup path | implementation、A3 evidence、refrozen handoff | migration P1 and two P2 revision complete; response acked |
 | frontend | A3 后只读审计 Schema 3 是否可作为 server-only consumer contract；不写产品代码 | TASK-007 artifacts、lane records | revised consumer handoff audit | narrow re-audit PASS; P0=0, P1=0, P2=3 deferred |
 | adversarial_reviewer | A3 后独立审查迁移/回滚、公开安全、产品合同、benchmark、cleanup 和前端消费门 | review report、reviewer lane records | new PASS/FAIL/BLOCKED review | A3 Round 2 final PASS; P0=0, P1=0, P2=0 |

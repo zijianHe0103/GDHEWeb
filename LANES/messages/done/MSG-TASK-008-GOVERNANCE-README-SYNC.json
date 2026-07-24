@@ -1,0 +1,34 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-008-GOVERNANCE-README-SYNC",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "governance_maintainer",
+  "task_id": "TASK-008",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-07-24T17:28:26Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Perform one TASK-008 documentation sync only. Read the root README managed rule, active task, frontend README and Planner checkpoint. Preserve the managed governance block byte-for-byte. Add the smallest clear root README section or paragraph that tells developers the frontend now owns an offline TASK-007 /resolve contract snapshot and that it is verified from frontend/ with npm run verify:cms-contract; state that this is not a WordPress connection, DTO adapter or visible page, and point detailed behavior to frontend/README.md. Do not change frontend, CMS, dependencies, task state, task artifacts other than a brief README_SYNC_REPORT.md, or any other documentation. Validate the exact README diff, managed block parity, Markdown, project/messages/strict lane and diff check. Update governance_maintainer worklog, ack, and send a linked execution_response. Do not commit, push, merge, accept, close, deploy or begin TASK-009.",
+  "context_files": [
+    "README.md",
+    "TASKS/ACTIVE/TASK-008-frontend-cms-contract-snapshot.md",
+    "frontend/README.md",
+    "TASKS/ARTIFACTS/TASK-008/PLANNER_CHECKPOINT.md",
+    "LANES/governance_maintainer/LANE.md"
+  ],
+  "expected_artifacts": [
+    "README.md",
+    "TASKS/ARTIFACTS/TASK-008/README_SYNC_REPORT.md"
+  ],
+  "notes": "Narrow documentation gate only; preserve the managed governance block exactly.",
+  "dispatched_at": "2026-07-24T17:28:38Z",
+  "delivery_key": "MSG-TASK-008-GOVERNANCE-README-SYNC:019f8da9-8538-7532-ae96-5cdc13d4dbe6",
+  "target_session": "019f8da9-8538-7532-ae96-5cdc13d4dbe6",
+  "delivery_id": "019f8da9-8538-7532-ae96-5cdc13d4dbe6",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-24T17:29:03Z",
+  "updated_at": "2026-07-24T17:29:03Z"
+}

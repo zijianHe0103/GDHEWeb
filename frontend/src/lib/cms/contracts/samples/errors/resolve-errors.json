@@ -1,0 +1,28 @@
+{
+  "gdhe_invalid_schema": {
+    "apiVersion": "1",
+    "code": "gdhe_invalid_schema",
+    "message": "Unsupported content schema version.",
+    "status": 400,
+    "requestId": "40000000-0000-4000-8000-000000000001",
+    "details": [
+      {
+        "field": "schema",
+        "code": "gdhe_invalid_schema"
+      }
+    ]
+  },
+  "gdhe_not_found": {
+    "apiVersion": "1",
+    "code": "gdhe_not_found",
+    "message": "Content was not found.",
+    "status": 404,
+    "requestId": "40000000-0000-4000-8000-000000000001",
+    "details": [
+      {
+        "field": "path",
+        "code": "gdhe_not_found"
+      }
+    ]
+  }
+}

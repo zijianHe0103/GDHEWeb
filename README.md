@@ -36,3 +36,7 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 当前公开内容模型包括原生 `page`/`post`，以及 `product`、`market`、`reference`、`support_article`、`download`；`site_settings` 不公开。
 
 前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
+
+### 前端离线合同快照
+
+前端现已在 `frontend/` 内持有 TASK-007 `/resolve` 合同的离线快照；从 `frontend/` 运行 `npm run verify:cms-contract` 验证。它不是 WordPress 连接、DTO Adapter 或可见页面；详细行为见 [`frontend/README.md`](frontend/README.md#cms-contract-snapshot)。

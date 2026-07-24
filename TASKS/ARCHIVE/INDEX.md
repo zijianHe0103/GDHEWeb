@@ -27,3 +27,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`4c52e5da4dd9a132a1f019affadc34892bb325df`
   - Remote branch：`origin/codex/TASK-006-governance-delivery-main-baseline`
   - Main：`origin/main` at `4c52e5da4dd9a132a1f019affadc34892bb325df`
+- `TASK-007` 英语版 API / DTO / Fixture 实施与 Forest 产品模型修订 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-007-english-api-dto-fixture.md`
+  - Commit：`8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`
+  - Remote branch：`origin/codex/TASK-007-english-api-dto-fixture`
+  - Main：`origin/main` at `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`

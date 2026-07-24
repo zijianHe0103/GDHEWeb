@@ -153,3 +153,23 @@ Each execution records:
 - response: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC-RESPONSE`
 - requires_response_to: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC`
 - response_result: queued for planner
+
+## 2026-07-25
+
+### TASK-008 root README offline-contract pointer PASS; report scope blocked
+
+- task: TASK-008
+- request: `MSG-TASK-008-GOVERNANCE-README-SYNC`
+- delivery_key: `MSG-TASK-008-GOVERNANCE-README-SYNC:019f8da9-8538-7532-ae96-5cdc13d4dbe6`
+- ack: dispatched message acknowledged before editing
+- scope: root `README.md` and this lane worklog only
+- README_change: added one narrow subsection identifying the frontend-owned offline TASK-007 `/resolve` contract snapshot, its `frontend/` verification command, explicit non-goals, and the `frontend/README.md` detail pointer
+- managed_block_sha256_before: `9cc49048641154677989f8bf264f12c905ea8c043e72008a4444832de9eb0be8`
+- managed_block_sha256_after: `9cc49048641154677989f8bf264f12c905ea8c043e72008a4444832de9eb0be8`
+- validation: exact README diff PASS; required wording and local link PASS; fenced Markdown structure PASS; `git diff --check -- README.md` PASS; project validate PASS; message validate PASS; strict lane audit PASS with zero issues
+- blocked_artifact: `TASKS/ARTIFACTS/TASK-008/README_SYNC_REPORT.md` was not written because the live machine registry limits this lane's artifact scope to `TASKS/ARTIFACTS/TASK-006/**`
+- safety: no frontend, CMS, dependency, task state, other documentation, Git, acceptance, deployment, or TASK-009 change
+- response: `MSG-TASK-008-GOVERNANCE-README-SYNC-RESPONSE`
+- requires_response_to: `MSG-TASK-008-GOVERNANCE-README-SYNC`
+- response_result: queued for planner with README PASS and the artifact scope blocker
+- next: planner must either authorize the TASK-008 report path in the machine registry and redispatch that artifact only, or remove the report expectation

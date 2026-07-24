@@ -1,0 +1,130 @@
+{
+  "manifestVersion": "1",
+  "sourceTask": "TASK-007",
+  "apiVersion": "1",
+  "contentSchemaVersion": "3.0.0",
+  "roots": [
+    "error.schema.json",
+    "page.v3.schema.json"
+  ],
+  "schemas": [
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/content-reference.schema.json",
+      "snapshotPath": "schemas/content-reference.schema.json",
+      "sha256": "fcdb3996a0dd0ea6c51bcd0cf66b848200316f9ee3669aec4e7fa064e983fe6b"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/error.schema.json",
+      "snapshotPath": "schemas/error.schema.json",
+      "sha256": "96063d71f1ce5922dfbaa4573a6d313184ac76b22c7e11826d2963400c538272"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/file-reference.schema.json",
+      "snapshotPath": "schemas/file-reference.schema.json",
+      "sha256": "a45bc23d20d23aad4d4c0ebd1fcbc8e799ab7c83c76074c27d4564d443c455cd"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/link.schema.json",
+      "snapshotPath": "schemas/link.schema.json",
+      "sha256": "0bb0691103f845c0477caaf862f07b90c3d102fdbd18afba95fd6c1b4c4772a0"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/media-reference.schema.json",
+      "snapshotPath": "schemas/media-reference.schema.json",
+      "sha256": "a707e83f5fb0b484c78ae8437fc2aef89881828072c18fd1fc0a3310774e9ab2"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/accordion.schema.json",
+      "snapshotPath": "schemas/modules/accordion.schema.json",
+      "sha256": "d12eb7342b9186838c2199717d3da81cc8ced56619119a45c5db6a0f05165703"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/card-grid.schema.json",
+      "snapshotPath": "schemas/modules/card-grid.schema.json",
+      "sha256": "b8939aa67a86b90e612bbd488b414582f78099bd2fb0ee0fed2c67a95d1343cf"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/cta-banner.schema.json",
+      "snapshotPath": "schemas/modules/cta-banner.schema.json",
+      "sha256": "051f8793d39a4cb9f746e42d4e26d9ffc31a9945e698362befa724368445f57a"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/data-table.schema.json",
+      "snapshotPath": "schemas/modules/data-table.schema.json",
+      "sha256": "e2ab2f0135da7dfad1f7fd267a31534f73f022aff6bbf4eac87982bb7e89bfe7"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/hero.schema.json",
+      "snapshotPath": "schemas/modules/hero.schema.json",
+      "sha256": "e36aad90041a3a58745c4b75c4bd6f3723e7a1e08915930d551ff3e3d4c4e4ab"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/rich-text.schema.json",
+      "snapshotPath": "schemas/modules/rich-text.schema.json",
+      "sha256": "0efad56e9601e74ff810c59feb201a4f292da84b01e5e37fc23c3400a1e11e1f"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/modules/split-media.schema.json",
+      "snapshotPath": "schemas/modules/split-media.schema.json",
+      "sha256": "4f2ab970e8f56c7e8c951c9f1eefec3a922f51732cf4f5e9125c566d59edfd68"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/page.v3.schema.json",
+      "snapshotPath": "schemas/page.v3.schema.json",
+      "sha256": "b1e4c3f41be6ccfed36aa8108157f43cce66a98b96916892b92e1053956b8791"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json",
+      "snapshotPath": "schemas/public-path.schema.json",
+      "sha256": "9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/safe-html.schema.json",
+      "snapshotPath": "schemas/safe-html.schema.json",
+      "sha256": "a611c3830c90f17d3edd4fab57a5127e738f3b7b5ee5f8d02bedbe5d67a61ea0"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json",
+      "snapshotPath": "schemas/uuid-v4.schema.json",
+      "sha256": "59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"
+    }
+  ],
+  "samples": {
+    "errors": {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-007/ERROR_CONTRACT_FIXTURES.json",
+      "sourceSha256": "d7f35521b9378bce5f3ee370cf3da279d9c1725c376072a3ed4998fb939cfd58",
+      "selectors": [
+        "gdhe_invalid_schema",
+        "gdhe_not_found"
+      ],
+      "snapshotPath": "samples/errors/resolve-errors.json",
+      "sha256": "c13c4fd0187a08251d3fad44f5c8cfa8421c44a0be627a7bf891fcac97b29de3",
+      "expected": [
+        {
+          "code": "gdhe_invalid_schema",
+          "status": 400
+        },
+        {
+          "code": "gdhe_not_found",
+          "status": 404
+        }
+      ]
+    },
+    "success": [
+      {
+        "name": "page",
+        "type": "page",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-home.json",
+        "snapshotPath": "samples/success/resolve-home.json",
+        "sha256": "380c48ae413eadc948c7cecb238d71cef42ab44b8bd67feebafe13dc780e4df0"
+      },
+      {
+        "name": "product",
+        "type": "product",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-product-alpha.json",
+        "snapshotPath": "samples/success/resolve-product-alpha.json",
+        "sha256": "d304c7690e5a565504a861af5cd858fe93c835f93313602148ee6c809fba375f"
+      }
+    ]
+  }
+}

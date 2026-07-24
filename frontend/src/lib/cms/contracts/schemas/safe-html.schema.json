@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/safe-html.schema.json",
+  "title": "GDHE CMS-sanitized Safe HTML",
+  "description": "HTML sanitized by the GDHE CMS public allowlist before DTO serialization.",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 20000
+}

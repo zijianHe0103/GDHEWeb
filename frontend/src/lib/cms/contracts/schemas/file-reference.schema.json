@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/file-reference.schema.json",
+  "title": "GDHE Public File Reference",
+  "type": "object",
+  "required": ["id", "url", "filename", "mimeType", "bytes"],
+  "properties": {
+    "id": {"$ref": "uuid-v4.schema.json"},
+    "url": {"type": "string", "format": "uri"},
+    "filename": {"type": "string", "minLength": 1, "maxLength": 255},
+    "mimeType": {"type": "string", "minLength": 1, "maxLength": 120},
+    "bytes": {"type": "integer", "minimum": 1}
+  },
+  "additionalProperties": false
+}

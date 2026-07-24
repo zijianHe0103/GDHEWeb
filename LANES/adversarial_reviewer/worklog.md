@@ -425,3 +425,19 @@ Each execution records:
 - boundaries: no business deliverable repair, runtime mutation, Planner-state edit, frontend, multilingual, GraphQL, Git, acceptance or deployment
 - message_status: Round 2 request acknowledged as done; controlled final PASS review_response queued with requires_response_to set to the Round 2 request
 - next: Planner acknowledges the response and owns recovery, final validation and any checked transition
+
+### 2026-07-24T17:25:35Z - TASK-008 adversarial review round 1
+
+- task: TASK-008
+- message: MSG-TASK-008-ADVERSARIAL-REVIEW-R1
+- action: acknowledged the formal request first, restored the registered reviewer lane, then independently reviewed the frozen design and plan, frontend snapshot/verifier/tests/README, all execution evidence, Planner checkpoint and TASK-007 authority without repairing deliverables
+- files_read: full reviewer resume chain; TASK-008 active task and all artifacts; manifest, 20-file contract tree, verifier, focused tests, package and README; TASK-007 archived task, handoff/error/Golden/Schema authorities; current governance and Git scope
+- files_changed: TASK-008 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: independent roots traversal found the exact 16/16/16 closure and no collection/navigation/route-manifest files; 18 direct Schema/success entries had source/snapshot byte and hash parity; Page/Product and deterministic two-error identities matched; fixed Node 24.18.0/npm 11.16.0 parity, lint, typecheck, 9 tests and build passed; lockfile current/HEAD hash matched; app/CMS/env/config/TASK-007 authority diff was empty; secrets/internal IDs/runtime imports absent; project, messages, strict lane and diff checks passed
+- authority_binding_regression: exact canonical Schema mapping, exact ordered Page/Product identities and exact error source/snapshot/selectors close the initial same-byte rogue-source P1; manifest-only changes cannot redirect roots, authority or frozen sample identities
+- limitation: an extra temporary mutation matrix was blocked before execution because the write-scope hook could not prove inline writes stayed in the system temporary directory; reviewer did not bypass the hook or claim that matrix as evidence
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- boundaries: no product repair, Planner-state edit, CMS/database/runtime mutation, dependency/lockfile/app/env/TASK-007 authority change, Git/remote/deployment/acceptance operation, Transport/Validator/DTO/page work or TASK-009
+- message_status: Round 1 request acknowledged as done; controlled PASS review_response queued to Planner with requires response set to the original request
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: Planner acknowledges the PASS response and recovery request, then owns recovery, final validation and checked acceptance preparation

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/modules/data-table.schema.json",
+  "type": "object",
+  "required": ["id", "type", "schemaVersion", "data"],
+  "properties": {
+    "id": {"$ref": "../uuid-v4.schema.json"},
+    "type": {"const": "data_table"},
+    "schemaVersion": {"const": "1.0.0"},
+    "data": {
+      "type": "object",
+      "required": ["caption", "columns", "rows"],
+      "properties": {
+        "caption": {"type": "string", "minLength": 1, "maxLength": 160},
+        "columns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": ["key", "label"],
+            "properties": {
+              "key": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,47}$"},
+              "label": {"type": "string", "minLength": 1, "maxLength": 120}
+            },
+            "additionalProperties": false
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "required": ["id", "cells"],
+            "properties": {
+              "id": {"$ref": "../uuid-v4.schema.json"},
+              "cells": {"type": "object", "maxProperties": 12, "additionalProperties": {"type": "string", "maxLength": 500}}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

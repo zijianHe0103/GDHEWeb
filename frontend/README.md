@@ -75,3 +75,17 @@ npm audit --audit-level=high
 ```
 
 Remove the Sharp override only when the selected Next.js release declares a range containing an advisory-free Sharp version. Delete the override, regenerate the lockfile with the pinned Node/npm pair, then require fresh `npm ci`, lint, typecheck, tests, build, audit, root HTTP smoke, and image optimizer fixture on every intended deployment platform. Until that gate passes, the override remains temporary and untested platforms remain blocked.
+
+## CMS contract snapshot
+
+TASK-008 freezes the smallest frontend-owned copy of the TASK-007 `/resolve` contract under `src/lib/cms/contracts/`. The CMS Schema files, TASK-007 Golden files, and TASK-007 error fixtures remain authoritative; `manifest.json` records their repository-relative paths and SHA-256 values.
+
+Run the offline parity check with the pinned Node.js runtime:
+
+```sh
+npm run verify:cms-contract
+```
+
+The verifier uses only Node.js built-ins. It fails closed for missing, extra or tampered snapshot files, unsafe paths, unknown or remote Schema references, incomplete local `$ref` closure, source drift, and error-bundle reconstruction drift.
+
+This snapshot does not connect to WordPress, read environment variables, add a runtime Schema validator or DTO adapter, or create a visible page. Future runtime code must consume the local normalized contract without importing `cms/` or `TASKS/`.

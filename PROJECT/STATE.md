@@ -2,14 +2,92 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-007
+current_task: TASK-008
 task_state: ACCEPTED
 git_state: DIRTY
-last_updated: 2026-07-24T15:16:22Z
+last_updated: 2026-07-24T17:58:37Z
 
 ## 当前焦点
 
-`TASK-006` 已完成远端交付。`TASK-007` 已由用户精确验收并授权正式交付：Forest-aligned A3 Round 2 final 与 Planner final validation 均为 `PASS`，P0=0、P1=0、P2=0；当前执行正式提交、任务分支推送、合并到 `main` 和 `main` 推送。
+`TASK-008` 已由用户精确验收并授权正式交付：frontend contract snapshot、authority-binding R1、独立 adversarial review、README 同步和 Planner final validation 均 PASS，P0=0、P1=0、P2=0。当前执行正式提交、任务分支推送、合并到 `main` 和推送 `main`，不启动 TASK-009。
+
+## TASK-008 Intake 2026-07-24T16:52:29Z
+
+- user_direction: 每个 TASK 设计完成后先实际完成、验证和收口，再根据结果调整下一任务。
+- scope: 只冻结 `/resolve` 成功/错误 Schema 传递闭包、最小样例、manifest 和 checksum parity。
+- boundary: 不实现 Transport、Ajv Validator、DTO Adapter、页面、WordPress Fixture、数据库写入或后续任务。
+- branch: `codex/TASK-008-frontend-cms-contract-snapshot` from clean synchronized `main` `8a3e4f2`。
+- next: 等待 `确认 TASK-008 需求并开始执行`。
+
+## TASK-008 Requirement Confirmation 2026-07-24T16:57:40Z
+
+- authorization: 用户精确输入 `确认 TASK-008 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- unchanged_scope: 只冻结 `/resolve` 成功/错误 Schema 传递闭包、最小样例、manifest 和 checksum parity。
+- boundary: 不实现 Transport、Ajv Validator、DTO Adapter、可见页面、WordPress Fixture、数据库写入或后续任务。
+- next: 在 TASK-008 artifacts 中冻结设计和测试优先实施计划，再向已注册 `frontend` lane 派发受控 execution request。
+
+## TASK-008 Frontend Execution Dispatched 2026-07-24T17:01:32Z
+
+- design: `TASKS/ARTIFACTS/TASK-008/DESIGN.md` 已冻结 16-file Schema 闭包、2 个成功样例、2 个错误样例、manifest 和 fail-closed parity。
+- plan: `TASKS/ARTIFACTS/TASK-008/IMPLEMENTATION_PLAN.md` 已按测试先行拆成 5 个实施步骤。
+- message: `MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT` 已 validate、dry-run 并通过 Codex thread bridge 派发到注册 `frontend` session。
+- transition: `READY` -> `IN_PROGRESS`。
+- boundary: 不实现 Transport、Validator、Adapter、页面、CMS/数据库写入、Git 交付或 TASK-009。
+- next: 等待关联 execution response，Planner 独立校验后才允许 adversarial review。
+
+## TASK-008 Planner Checkpoint P1 2026-07-24T17:15:41Z
+
+- received: 初始 frontend execution response 已 validate 并由 Planner ack。
+- independent_pass: Node/npm 版本、parity、lint、typecheck、全量 8 tests 和 production build 均 PASS。
+- p1: manifest 只校验安全相对路径与 checksum，未把 Schema、Page/Product、错误 bundle 的来源身份硬绑定；将 `error.schema.json` 来源换成同字节 `.rogue` 文件仍意外 PASS。
+- evidence: 临时仓库复现 `{unexpectedPass:true}`，正式快照未被修改。
+- revision: `MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1` 已派发，只允许精确 authority path mapping、RED regression 和 fresh validation。
+- boundary: 不扩大到 Transport、Validator、DTO、页面、CMS/数据库、Git 或 TASK-009。
+- next: 等待 R1 execution response，重跑替换负例和完整验证后才允许 independent adversarial review。
+
+## TASK-008 Planner Checkpoint PASS and Review Dispatched 2026-07-24T17:21:42Z
+
+- response: authority-binding R1 execution response 已 validate 并由 Planner ack。
+- exploit_regression: Planner 原 `.rogue` 临时仓库利用现在明确拒绝，错误为 canonical schema authority mismatch。
+- validation: Node/npm、parity、lint、typecheck、9 tests、build、20-file inventory、lockfile SHA、禁改范围、secret/internal-ID、治理、messages、strict lane 和 diff check PASS。
+- documentation: TASK-008 developer flow documented；`document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- review: `MSG-TASK-008-ADVERSARIAL-REVIEW-R1` 已派发到注册 reviewer session。
+- boundary: PASS 仅允许 final validation，不等于验收；未 commit、push、merge、部署或创建 TASK-009。
+- next: 等待独立 verdict。
+
+## TASK-008 Adversarial PASS Recovery 2026-07-24T17:27:55Z
+
+- response: Round 1 review response 已 validate 并由 Planner ack。
+- verdict: final `PASS`，P0=0、P1=0、P2=0；Planner final validation allowed。
+- recovery: reviewer 无权修改 planner-owned task/project/board；stop-recovery request 已 ack，本段为 canonical recovery。
+- documentation_gate: 项目根 README 的 managed rule 要求新增开发命令有根入口；只允许补一个 TASK-008 offline parity 指针。
+- boundary: 不改产品合同、snapshot、verifier、测试、CMS、依赖或页面；未验收、未 Git 交付、未部署、未创建 TASK-009。
+- next: 完成根 README 窄同步，重跑 final validation，再执行 checked `prepare-awaiting-user`。
+
+## TASK-008 Final Validation PASS 2026-07-24T17:32:00Z
+
+- readme: 根 README offline contract pointer 已完成；managed block SHA 前后相同。
+- final_validation: Node 24.18.0、npm 11.16.0、parity、lint、typecheck、9 tests、build、20-file inventory、lockfile/current-HEAD parity、scope、secret/internal-ID、project、messages、strict lane 和 diff check PASS。
+- summary: `TASKS/ARTIFACTS/TASK-008/PLANNER_SUMMARY.md` 已生成。
+- verdict: adversarial final PASS，P0=0、P1=0、P2=0 保持有效。
+- boundary: NOT_ACCEPTED；未 commit、push、merge、部署或创建 TASK-009。
+- next: 只运行 checked `prepare-awaiting-user`。
+
+## TASK-008 Acceptance View Synchronization 2026-07-24T17:33:22Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 2026-07-24T17:32:46Z PASS。
+- controlled_reopen: 只为同步 TASK/PROJECT/BOARD 人类可读视图；产品交付物、final adversarial PASS、final validation、NOT_ACCEPTED 和 DIRTY Git 边界不变。
+- boundary: 未 commit、push、merge、部署或创建 TASK-009。
+- next: fresh governance/readiness check 后再次运行 checked `prepare-awaiting-user`。
+
+## TASK-008 Formal Delivery Authorized 2026-07-24T17:58:37Z
+
+- authorization: 用户精确输入 `确认 TASK-008 完成并提交到远端`，`task_accept.py check/accept` 均成功。
+- acceptance: `ACCEPTED`；final adversarial `PASS`，P0=0、P1=0、P2=0。
+- delivery: 创建一个包含完整中文说明的正式提交；推送任务分支；快进合并到 `main`；推送 `main` 并验证远端包含任务提交。
+- boundary: 不 force push、不 rebase、不删除分支/worktree，不部署或创建 TASK-009。
 
 ## TASK-007 A3 Independent Review Dispatched 2026-07-24T10:55:51Z
 
@@ -36,17 +114,17 @@ last_updated: 2026-07-24T15:16:22Z
 - Next.js 16.2.11 App Router + TypeScript 基础工程已完成，仍不包含首页、Header、Mega Menu、Footer、正式视觉系统或 CMS 集成。
 - 官方 SCF 6.9.2 与 `gdhe-site` 0.4.2 已安装并激活，供应链、checksum、字段能力和 WordPress/PHP 兼容性已核实；Forest-aligned Schema 3 consumer gate 已通过，Schema 2 仅保留为历史回归基线。
 - 用户已选择“英语优先”：WPML Multilingual CMS 与 ACFML 推迟到未来生产英语站稳定运行三个月后再采购、PoC 和启用；当前只保留技术扩展点，不输出其他语言入口。
-- TASK-007 已实现并验证 Forest-aligned Schema 3 英语 REST Fixture、完整 DTO、route resolution、稳定错误与缓存 header；A3 final review 和 checked acceptance preparation 已通过，尚未用户验收或 Git 交付。
+- TASK-007 已实现并验证 Forest-aligned Schema 3 英语 REST Fixture、完整 DTO、route resolution、稳定错误与缓存 header，并已正式验收、提交、推送和合并到远端 `main`。
 - GDHE 正式品牌素材、产品内容、公司介绍、联系方式和 SEO 文案尚未入库。
 - `planner`、`executor`、`adversarial_reviewer`、`frontend`、`wordpress_cms`、`localization_seo`、`visual_qa` 均已注册真实 Codex thread ID；6 个工作会话已只读验证并进入待命。
-- 当前分支为 `codex/TASK-007-english-api-dto-fixture`，从已同步的 `main` 提交 `4c52e5d` 创建。
-- 本地 `main`、`origin/main` 与 `origin/codex/TASK-006-governance-delivery-main-baseline` 均指向 `4c52e5da4dd9a132a1f019affadc34892bb325df`；GitHub 默认分支为 `main`。
+- 当前分支为 `codex/TASK-008-frontend-cms-contract-snapshot`，从已同步的 `main` 提交 `8a3e4f2` 创建。
+- 本地 `main`、`origin/main`、TASK-007 本地与远端任务分支均指向 `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`；GitHub 默认分支为 `main`。
 - 治理钩子会把隐藏相对路径 `.local/...` 规范化为 `local/...`，导致与注册 scope 不一致；本任务只允许使用已实测匹配的工作区绝对路径写入 `.local/backups/TASK-004/**`，不修改治理插件代码。
 - SCF 官方 API、ZIP 包名和主插件头为 6.9.2，但包内 `readme.txt` 的 Stable tag 为 6.9.1；该上游元数据不一致已记录，安装包 checksum 与官方插件 checksum 均通过。
 
 ## 下一步
 
-创建中文正式提交，立即推送 TASK-007 分支，合并到 `main` 并推送 `main`；完成前不启动产品前端、GraphQL、多语言或部署。
+完成正式提交、任务分支推送、快进合并到 `main`、推送 `main` 和远端祖先关系验证。
 
 ## TASK-007 Formal Delivery Authorized 2026-07-24T15:16:22Z
 

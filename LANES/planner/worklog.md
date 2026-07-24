@@ -954,3 +954,81 @@ Each execution records:
 - state: ACCEPTED / DIRTY；Forest Schema 3 final PASS，P0=0、P1=0、P2=0。
 - delivery: create one Chinese formal commit，push task branch，merge into main，push main and verify remote ancestry。
 - boundary: no force push、rebase、branch/worktree deletion、frontend、GraphQL、multilingual or deployment。
+
+### 2026-07-24T16:52:29Z - TASK-007 closed; TASK-008 intake
+
+- delivery_verified: TASK-007 task branch、local main、origin task branch 与 origin/main 均为 `8a3e4f2`，divergence `0/0`，工作区干净。
+- user_direction: 不连续设计后续任务；每个小 TASK 先实际完成、验证和收口，再调整下一步。
+- switch: TASK-007 归档为 `CLOSED / MERGED`；创建 `codex/TASK-008-frontend-cms-contract-snapshot`。
+- intake: TASK-008 只冻结 `/resolve` 合同快照、最小样例、manifest 和 checksum parity；不实现 Transport、Validator、Adapter 或页面。
+- gate: `AWAITING_REQUIREMENT_CONFIRMATION`；等待精确口令 `确认 TASK-008 需求并开始执行`。
+
+### 2026-07-24T16:57:40Z - TASK-008 requirement confirmed
+
+- authorization: 用户精确输入 `确认 TASK-008 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- scope: 仍只包含 `/resolve` Schema 传递闭包、最小成功/错误样例、manifest、checksum parity、测试和 frontend README。
+- boundary: 不实现 Transport、Validator、Adapter、页面、CMS/数据库写入或 TASK-009。
+- next: 在 `TASKS/ARTIFACTS/TASK-008/` 冻结设计与测试优先计划，校验后派发 frontend execution。
+
+### 2026-07-24T17:01:32Z - TASK-008 frontend execution dispatched
+
+- design: 冻结 16-file `/resolve` Schema 闭包、Product/Page 样例、两个错误样例、manifest 和 fail-closed parity。
+- plan: 以测试先行拆成测试 RED、verifier、snapshot、README/command 和完整验证 5 步。
+- message: `MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT` 已 validate、dry-run、Codex thread bridge 发送并标记 `dispatched`。
+- transition: `READY` to `IN_PROGRESS`。
+- boundary: 不实现 Transport、Validator、Adapter、页面、CMS/数据库修改、Git 交付或 TASK-009。
+- next: 等待关联 execution response，Planner 独立校验后才允许 adversarial review。
+
+### 2026-07-24T17:15:41Z - TASK-008 Planner checkpoint P1
+
+- response: 初始 frontend execution response 已 validate 并由 Planner ack。
+- independent_pass: Node 24.18.0、npm 11.16.0、parity、lint、typecheck、8/8 tests 和 build PASS。
+- reproduced_p1: 临时仓库把 error Schema 的 manifest `sourcePath` 改成同字节 `.rogue` 文件后 verifier 仍返回 PASS，证明 checksum 与路径安全未绑定权威身份。
+- revision: `MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1` 已受控派发，只修 Schema 路径映射、Page/Product 固定身份、错误来源/快照路径和对应 RED regression。
+- boundary: 正式快照未在复现中修改；不扩大到后续前端集成、页面、CMS、Git 或 TASK-009。
+- next: 等待 R1 response，Planner 重跑利用负例和完整矩阵后才允许 review。
+
+### 2026-07-24T17:21:42Z - TASK-008 Planner checkpoint PASS; review dispatched
+
+- response: authority-binding R1 execution response validated and acknowledged。
+- regression: Planner 原 `.rogue` authority substitution 现在明确拒绝。
+- validation: Node/npm、parity、lint、typecheck、9/9 tests、build、20-file inventory、lockfile、scope、secret/internal-ID、project、messages、strict lane 和 diff check PASS。
+- docs: document impact RESOLVED；frontend README impact UPDATED。
+- transition: `IN_PROGRESS` to `UNDER_REVIEW`。
+- review: `MSG-TASK-008-ADVERSARIAL-REVIEW-R1` 已 validate、dry-run、发送并标记 dispatched。
+- boundary: 未验收、未 Git 交付、未部署、未创建 TASK-009。
+- next: 等待独立 verdict；PASS 后只允许 final validation。
+
+### 2026-07-24T17:27:55Z - TASK-008 adversarial final PASS recovery
+
+- response: Round 1 PASS response and reviewer stop-recovery request validated and acknowledged。
+- verdict: final PASS；P0=0、P1=0、P2=0；Planner final validation allowed。
+- recovery: canonical task/project recovery 已记录；reviewer 未越权改 planner state。
+- docs_gate: 根 README managed rule 要求新增 developer command 有入口，只允许一个 parity pointer。
+- boundary: no product, CMS, dependency, page, Git delivery, acceptance, deployment or TASK-009。
+- next: dispatch narrow README sync，then final validation and checked prepare-awaiting-user。
+
+### 2026-07-24T17:32:00Z - TASK-008 final validation PASS
+
+- readme: root offline-contract pointer PASS；managed block byte-identical；response acknowledged。
+- validation: Node 24.18.0、npm 11.16.0、parity、lint、typecheck、9/9 tests、build、20-file inventory、lockfile/current-HEAD、scope、secret/internal-ID、project、messages、strict lane and diff PASS。
+- summary: `PLANNER_SUMMARY.md` generated。
+- verdict: adversarial final PASS，P0=0、P1=0、P2=0。
+- boundary: NOT_ACCEPTED；no commit/push/merge/deploy/TASK-009。
+- next: checked prepare-awaiting-user only。
+
+### 2026-07-24T17:33:22Z - TASK-008 acceptance-view synchronization
+
+- first_prepare: checked prepare PASS at 2026-07-24T17:32:46Z。
+- controlled_reopen: narrative-only TASK/PROJECT/BOARD synchronization。
+- unchanged: product deliverables、final PASS、final validation、NOT_ACCEPTED and DIRTY Git boundary。
+- next: fresh governance/readiness validation，repeat checked prepare，then wait exact formal phrase。
+
+### 2026-07-24T17:58:37Z - TASK-008 formal delivery authorized
+
+- authorization: exact phrase `确认 TASK-008 完成并提交到远端` accepted by `task_accept.py`。
+- acceptance: ACCEPTED；final PASS，P0=0、P1=0、P2=0。
+- delivery: one formal Chinese commit，push task branch，fast-forward merge into main，push main，verify remote ancestry。
+- boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-009。
+- next: run final delivery integrity checks，then execute the authorized Git chain。

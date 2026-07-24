@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/modules/rich-text.schema.json",
+  "type": "object",
+  "required": ["id", "type", "schemaVersion", "data"],
+  "properties": {
+    "id": {"$ref": "../uuid-v4.schema.json"},
+    "type": {"const": "rich_text"},
+    "schemaVersion": {"const": "1.0.0"},
+    "data": {
+      "type": "object",
+      "required": ["safeHtml"],
+      "properties": {
+        "heading": {"type": "string", "maxLength": 120},
+        "safeHtml": {"$ref": "../safe-html.schema.json"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

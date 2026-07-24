@@ -266,3 +266,41 @@ Each execution records:
 - validation: artifact headings/counts, whitespace, secrets, prohibited frontend diff, resume-packet residue, project, messages and strict lane audit passed before response creation
 - message_result: `MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2`
 - next: Planner acknowledges the response and owns the next governed gate
+
+### 2026-07-25T01:11:27+08:00 - TASK-008 frontend CMS contract snapshot
+
+- task: TASK-008
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT
+- message_ack: exact dispatched request read and acknowledged before implementation
+- tdd_red: focused Vitest exited 1 because the required verifier module did not exist; failure was intentional and not a test syntax error
+- action: created the exact page.v3/error 16-file local-ref closure, byte-identical Page/Product Golden samples, deterministic gdhe_invalid_schema/gdhe_not_found bundle, sorted TASK-007 manifest, Node-built-in verifier, six-case temporary-repository Vitest suite, package script and README contract section
+- verifier: fails closed on invalid manifest metadata, unsafe/duplicate paths, missing/extra/tampered files, source drift, incomplete/remote/unknown/escaping refs, error reconstruction drift and sample version/type/code/status mismatch
+- validation: focused test 1 file/6 tests PASS; parity PASS for 16 schemas, 2 success and 2 errors; lint PASS; typecheck PASS; full tests 3 files/8 tests PASS; Next build PASS with only existing root and not-found routes; git diff check PASS
+- lockfile: unchanged SHA-256 fa5938d44418ccd8ba750edd8e78baa579a0417a661d404df6d129092ed526a0
+- files_changed: frontend/src/lib/cms/contracts/**; frontend/scripts/verify-cms-contract.mjs; frontend/tests/cms-contract-snapshot.test.ts; frontend/package.json; frontend/README.md; TASKS/ARTIFACTS/TASK-008/EXECUTION_REPORT.md; TEST_OR_VALIDATION_LOG.md; DIFF_OR_OUTPUT_SUMMARY.md; LANES/frontend/worklog.md; controlled message/event records
+- boundaries: no dependencies, package-lock, src/app, env, CMS, WordPress, database, TASK-007 authority, transport, runtime validator, DTO, adapter, page, TASK-009, review, Git delivery, acceptance, closure or deployment
+- shared_worktree: preserved all planner and other-lane governance changes without reverting them
+- next: send execution_response requiring MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT; planner owns independent validation and any adversarial review dispatch
+- message_result: MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT-RESPONSE queued to planner with requires_response_to MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT
+- unique_next_step: planner acknowledges the response and independently validates the snapshot before deciding whether to dispatch adversarial review
+
+### 2026-07-25T01:18:50+08:00 - TASK-008 authority identity binding revision R1
+
+- task: TASK-008
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1
+- transition_gate: controlled task_transition reopen was attempted first as instructed and correctly returned no-op/error because reopen requires AWAITING_USER while TASK-008 remains IN_PROGRESS; no task or project state was manually changed
+- message_ack: exact dispatched P1 request and all context files read; request acknowledged and moved to done
+- planner_finding: an identically hashed rogue Schema source path passed because the verifier bound bytes and path safety but not the frozen authority identity
+- tdd_red: focused suite produced 1 failed and 6 passed; the new authority substitution case resolved unexpectedly instead of rejecting
+- minimal_fix: derive every canonical Schema authority source from its schemas/** snapshot path; bind the exact Page/Product name/type/source/snapshot pair; bind exact error source and snapshot paths
+- focused_green: 1 file and 7 tests passed; all previous six tests remain
+- authority_matrix: 11/11 temporary-repository substitutions rejected across Schema source, Page/Product name/type/source/snapshot and error source/snapshot; temporary roots removed
+- full_validation: parity PASS; lint PASS; typecheck PASS; full Vitest 3 files/9 tests PASS; Next build PASS with only existing root/not-found routes; scope and diff checks PASS
+- lockfile: unchanged SHA-256 fa5938d44418ccd8ba750edd8e78baa579a0417a661d404df6d129092ed526a0
+- files_changed_in_revision: frontend/tests/cms-contract-snapshot.test.ts; frontend/scripts/verify-cms-contract.mjs; TASKS/ARTIFACTS/TASK-008/EXECUTION_REPORT.md; TEST_OR_VALIDATION_LOG.md; DIFF_OR_OUTPUT_SUMMARY.md; LANES/frontend/worklog.md; controlled message/event records
+- boundaries: no manifest/snapshot data, dependencies, package-lock, src/app, env, CMS, TASK-007 authority, transport, runtime validator, DTO, page, TASK-009, review, Git delivery, acceptance, closure or deployment
+- next: send linked execution_response; Planner independently reproduces the authority substitution check before any adversarial review
+- message_result: MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1-RESPONSE queued to Planner with requires_response_to MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1
+- unique_next_step: Planner acknowledges the response and independently reruns the identical-byte rogue authority substitution before review dispatch

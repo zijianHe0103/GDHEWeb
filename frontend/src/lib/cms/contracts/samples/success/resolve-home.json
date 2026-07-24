@@ -1,0 +1,79 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "id": "31000000-0000-4000-8000-000000000001",
+    "type": "page",
+    "templateKey": "standard",
+    "locale": "en",
+    "publicPath": "/",
+    "title": "TASK-007 A3 Home",
+    "excerpt": "Synthetic product portfolio home.",
+    "publishedAt": "2026-07-24T01:30:00+00:00",
+    "modifiedAt": "2026-07-24T01:30:00+00:00",
+    "modules": [
+        {
+            "id": "33000000-0000-4000-8000-000000000001",
+            "type": "rich_text",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Synthetic product portfolio",
+                "safeHtml": "<p>Structured synthetic GDHE-domain fixture content.</p>"
+            }
+        }
+    ],
+    "relations": {
+        "products": [
+            {
+                "id": "31000000-0000-4000-8000-000000000002",
+                "type": "product",
+                "title": "GDHE Flow Control Alpha",
+                "publicPath": "/products/task-007-a3-flow-control-alpha/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000003",
+                "type": "product",
+                "title": "GDHE Flow Control Beta",
+                "publicPath": "/products/task-007-a3-flow-control-beta/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000004",
+                "type": "product",
+                "title": "GDHE Flow Control Gamma",
+                "publicPath": "/products/task-007-a3-flow-control-gamma/"
+            }
+        ],
+        "markets": [
+            {
+                "id": "31000000-0000-4000-8000-000000000005",
+                "type": "market",
+                "title": "Controlled Water Systems",
+                "publicPath": "/markets/task-007-a3-controlled-water-systems/"
+            }
+        ],
+        "references": [
+            {
+                "id": "31000000-0000-4000-8000-000000000006",
+                "type": "reference",
+                "title": "Coastal Research Facility",
+                "publicPath": "/references/task-007-a3-coastal-research-facility/"
+            }
+        ],
+        "support_articles": [
+            {
+                "id": "31000000-0000-4000-8000-000000000007",
+                "type": "support_article",
+                "title": "Configure Flow Control",
+                "publicPath": "/support/configuration/task-007-a3-configure-flow-control/"
+            }
+        ],
+        "downloads": [
+            {
+                "id": "31000000-0000-4000-8000-000000000008",
+                "type": "download",
+                "title": "Flow Control Data Sheet",
+                "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/"
+            }
+        ]
+    },
+    "details": {}
+}

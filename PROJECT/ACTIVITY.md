@@ -2567,3 +2567,222 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-007
 - summary: TASK-007 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-24T16:52:29Z - TASK-007 closed; TASK-008 intake
+
+- type: task_intake_created
+- lane: planner
+- task: TASK-008
+- summary: TASK-007 remote delivery was reconciled as CLOSED/MERGED; TASK-008 was created as a minimal resolve-contract snapshot and checksum-parity task, awaiting exact requirement confirmation before any frontend deliverable change.
+
+### 2026-07-24T16:57:40Z - TASK-008 requirement confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-008
+- summary: Exact user phrase received; TASK-008 moved from AWAITING_REQUIREMENT_CONFIRMATION to READY without scope expansion. Freeze the artifact design/plan, then dispatch only the frontend contract snapshot implementation.
+
+### 2026-07-24T17:01:32Z - TASK-008 frontend execution dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-008
+- summary: DESIGN and TDD implementation plan frozen; MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT sent through the registered Codex thread bridge. TASK-008 moved READY to IN_PROGRESS; no later integration or page task was started.
+
+### 2026-07-24T17:15:41Z - TASK-008 Planner checkpoint P1
+
+- type: narrow_revision_dispatched
+- lane: frontend
+- task: TASK-008
+- summary: Initial execution response was acknowledged and the full normal matrix passed, but Planner reproduced an unexpected PASS after substituting a same-byte rogue Schema authority path. MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1 was dispatched for exact source-identity binding and one regression test only.
+
+### 2026-07-24T17:21:42Z - TASK-008 Planner checkpoint PASS; review dispatched
+
+- type: review_dispatched
+- lane: adversarial_reviewer
+- task: TASK-008
+- summary: Authority R1 response acknowledged; Planner exploit regression and full validation passed. TASK-008 moved to UNDER_REVIEW and MSG-TASK-008-ADVERSARIAL-REVIEW-R1 was dispatched. No acceptance, Git delivery, visible page or TASK-009 occurred.
+
+### 2026-07-24T17:27:55Z - TASK-008 adversarial final PASS recovery
+
+- type: review_response_acknowledged
+- lane: planner
+- task: TASK-008
+- summary: Round 1 final PASS with P0=0, P1=0, P2=0 and stop-recovery handoff were acknowledged. Planner recorded canonical recovery; only a root README parity-command pointer remains before final validation and checked acceptance preparation.
+
+### 2026-07-24T17:32:00Z - TASK-008 final validation PASS
+
+- type: final_validation
+- lane: planner
+- task: TASK-008
+- summary: Root README sync and fresh final validation passed; Planner Summary was generated. TASK-008 remains NOT_ACCEPTED and the only next action is checked prepare-awaiting-user.
+
+### 2026-07-24T17:33:22Z - TASK-008 acceptance-view synchronization
+
+- type: task_reopened
+- lane: planner
+- task: TASK-008
+- summary: First checked prepare passed. Task was reopened only to synchronize human-readable TASK/PROJECT/BOARD views; deliverables, final PASS, NOT_ACCEPTED and no-Git-delivery boundaries are unchanged.
+
+### 2026-07-24T17:00:47Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-008
+- summary: message queued for frontend
+
+### 2026-07-24T17:01:26Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT dispatched to frontend
+
+### 2026-07-24T17:01:39Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT moved to done
+
+### 2026-07-24T17:13:33Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-008
+- summary: message queued for planner
+
+### 2026-07-24T17:14:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-CONTRACT-SNAPSHOT-RESPONSE moved to done
+
+### 2026-07-24T17:15:31Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-008
+- summary: message queued for frontend
+
+### 2026-07-24T17:15:41Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1 dispatched to frontend
+
+### 2026-07-24T17:16:15Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1 moved to done
+
+### 2026-07-24T17:19:42Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-008
+- summary: message queued for planner
+
+### 2026-07-24T17:20:32Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-008
+- summary: message MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1-RESPONSE moved to done
+
+### 2026-07-24T17:21:31Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-008
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-24T17:21:42Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-008
+- summary: message MSG-TASK-008-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-24T17:21:53Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-008
+- summary: message MSG-TASK-008-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-24T17:26:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-008
+- summary: message queued for planner
+
+### 2026-07-24T17:26:48Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-008
+- summary: message queued for planner
+
+### 2026-07-24T17:27:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-008
+- summary: message MSG-TASK-008-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-24T17:27:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-008
+- summary: message MSG-TASK-008-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-24T17:28:26Z - message_queued
+- type: message_queued
+- lane: governance_maintainer
+- task: TASK-008
+- summary: message queued for governance_maintainer
+
+### 2026-07-24T17:28:38Z - message_dispatched
+- type: message_dispatched
+- lane: governance_maintainer
+- task: TASK-008
+- summary: message MSG-TASK-008-GOVERNANCE-README-SYNC dispatched to governance_maintainer
+
+### 2026-07-24T17:29:03Z - message_done
+- type: message_done
+- lane: governance_maintainer
+- task: TASK-008
+- summary: message MSG-TASK-008-GOVERNANCE-README-SYNC moved to done
+
+### 2026-07-24T17:31:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-008
+- summary: message queued for planner
+
+### 2026-07-24T17:31:41Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-008
+- summary: message MSG-TASK-008-GOVERNANCE-README-SYNC-RESPONSE moved to done
+
+### 2026-07-24T17:32:46Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-008
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T17:33:22Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-008
+- summary: Synchronize the human-readable task, project and board views after the checked AWAITING_USER transition; deliverables, final PASS and NOT_ACCEPTED state are unchanged.
+
+### 2026-07-24T17:34:25Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-008
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T17:58:37Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-008
+- summary: TASK-008 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-24T17:58:37Z - TASK-008 formal delivery authorized
+
+- type: formal_delivery_authorized
+- lane: planner
+- task: TASK-008
+- summary: Exact user phrase accepted by task_accept.py. Create one formal Chinese commit, push the task branch, fast-forward merge into main, push main and verify remote ancestry. No deployment or TASK-009.

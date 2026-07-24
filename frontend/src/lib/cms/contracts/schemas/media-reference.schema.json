@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/media-reference.schema.json",
+  "title": "GDHE Media Reference",
+  "type": "object",
+  "required": ["id", "url", "mimeType", "width", "height", "alt", "decorative"],
+  "properties": {
+    "id": {"$ref": "uuid-v4.schema.json"},
+    "url": {"type": "string", "format": "uri"},
+    "mimeType": {"type": "string", "pattern": "^image/"},
+    "width": {"type": "integer", "minimum": 1},
+    "height": {"type": "integer", "minimum": 1},
+    "alt": {"type": "string", "maxLength": 300},
+    "caption": {"type": "string", "maxLength": 500},
+    "decorative": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

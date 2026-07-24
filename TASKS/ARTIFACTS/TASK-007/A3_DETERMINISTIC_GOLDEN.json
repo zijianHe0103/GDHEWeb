@@ -1,0 +1,181 @@
+{
+  "evidenceVersion": "TASK-007-A3-DETERMINISM-2",
+  "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+  "migrationRuntimeValidation": {
+    "evidenceVersion": "TASK-007-A3-MIGRATION-RUNTIME-R1",
+    "inventoryCount": 1,
+    "dryRunZeroWrite": true,
+    "applyChanged": true,
+    "repeatedApplyNoOp": true,
+    "exactRollback": true,
+    "repeatedRollbackNoOp": true,
+    "ambiguousRefused": true,
+    "failureInjectionResults": [
+      {
+        "stage": "post_update",
+        "errorCode": "gdhe_a3_apply_failed",
+        "snapshotRestored": true,
+        "backupMetaRemoved": true
+      },
+      {
+        "stage": "path_readback",
+        "errorCode": "gdhe_a3_apply_failed",
+        "snapshotRestored": true,
+        "backupMetaRemoved": true
+      },
+      {
+        "stage": "template_readback",
+        "errorCode": "gdhe_a3_apply_failed",
+        "snapshotRestored": true,
+        "backupMetaRemoved": true
+      },
+      {
+        "stage": "relations_readback",
+        "errorCode": "gdhe_a3_apply_failed",
+        "snapshotRestored": true,
+        "backupMetaRemoved": true
+      }
+    ]
+  },
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 15,
+  "goldenHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+        "posts": {
+          "home": 1193,
+          "company": 1194,
+          "news": 1195,
+          "product_alpha": 1196,
+          "product_beta": 1197,
+          "product_gamma": 1198,
+          "market": 1199,
+          "reference": 1200,
+          "support": 1201,
+          "download": 1202,
+          "draft": 1203,
+          "private": 1204,
+          "pending": 1205,
+          "trash": 1206,
+          "invalid_template": 1207,
+          "mismatched_template": 1208,
+          "invalid_module": 1209,
+          "invalid_path": 1210
+        },
+        "attachments": {
+          "download": 1212
+        },
+        "terms": {
+          "category": 200,
+          "series": 201,
+          "installation": 202,
+          "support": 203,
+          "document": 204
+        }
+      },
+      "schemaValid": true,
+      "goldenSha256": {
+        "collection-product-page-1.json": "083f8216dddac96f3ae88336aed78ec60074348be6ec40d5c426aadc04b245e3",
+        "collection-product-page-2.json": "f8186825adecde878a25a483b0aa664d0ac4ecf3b69d8b3f5c4bef18f2168ea6",
+        "collection-product-page-3-empty.json": "0d233019bc0f88d3640813d740f3f9b7ee27cbad9ec46f616a3bd25f500ddc59",
+        "navigation.json": "bb8ecb48a0d1d6d2ed2db2d9c0c885303be3b925c5fc54518fdbfef1bf585ee5",
+        "resolve-company.json": "4f7900e79c946e2314570a845a5bb5a0dca926632ce8486e3b2acb24d30eac24",
+        "resolve-download.json": "2ba3ac351467cddfe2729d0fbac1909b21266949a65d0c7a2c2743e67af3a7ae",
+        "resolve-home.json": "380c48ae413eadc948c7cecb238d71cef42ab44b8bd67feebafe13dc780e4df0",
+        "resolve-market.json": "1ad9816169ab91ae0d5f289b5d88d0ced17406a9dfc33acce5f3d312e68cef06",
+        "resolve-news.json": "cbf7450847bd958fae6342e7f069fb399149fbc048f07a2b12b0b564ceca86d3",
+        "resolve-product-alpha.json": "d304c7690e5a565504a861af5cd858fe93c835f93313602148ee6c809fba375f",
+        "resolve-product-beta.json": "cdaaab08e50cb66325549fec87f2a856299ccdf5a81a66ac38edaa446be4a551",
+        "resolve-product-gamma.json": "caf5156c2c669eee01d2d8874e3294ca5da3c58724d080e426f216ca7a338aa5",
+        "resolve-reference.json": "e95241363cdeb5573252501dfbc6901b011c43c9af3ce8a7608cd1bb4ad73d28",
+        "resolve-support.json": "c6ffd641c51098089fe78e1f0d5b115ccaa7f6fc80544b075f6e6173eba03ee8",
+        "route-manifest.json": "884e46c63bb67511158245aef870bae566be0a778c6d4ef6bd651f3e5d54110b"
+      },
+      "cleanup": {
+        "posts": 18,
+        "attachments": 1,
+        "terms": 5,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+        "posts": {
+          "home": 1213,
+          "company": 1214,
+          "news": 1215,
+          "product_alpha": 1216,
+          "product_beta": 1217,
+          "product_gamma": 1218,
+          "market": 1219,
+          "reference": 1220,
+          "support": 1221,
+          "download": 1222,
+          "draft": 1223,
+          "private": 1224,
+          "pending": 1225,
+          "trash": 1226,
+          "invalid_template": 1227,
+          "mismatched_template": 1228,
+          "invalid_module": 1229,
+          "invalid_path": 1230
+        },
+        "attachments": {
+          "download": 1232
+        },
+        "terms": {
+          "category": 205,
+          "series": 206,
+          "installation": 207,
+          "support": 208,
+          "document": 209
+        }
+      },
+      "schemaValid": true,
+      "goldenSha256": {
+        "collection-product-page-1.json": "083f8216dddac96f3ae88336aed78ec60074348be6ec40d5c426aadc04b245e3",
+        "collection-product-page-2.json": "f8186825adecde878a25a483b0aa664d0ac4ecf3b69d8b3f5c4bef18f2168ea6",
+        "collection-product-page-3-empty.json": "0d233019bc0f88d3640813d740f3f9b7ee27cbad9ec46f616a3bd25f500ddc59",
+        "navigation.json": "bb8ecb48a0d1d6d2ed2db2d9c0c885303be3b925c5fc54518fdbfef1bf585ee5",
+        "resolve-company.json": "4f7900e79c946e2314570a845a5bb5a0dca926632ce8486e3b2acb24d30eac24",
+        "resolve-download.json": "2ba3ac351467cddfe2729d0fbac1909b21266949a65d0c7a2c2743e67af3a7ae",
+        "resolve-home.json": "380c48ae413eadc948c7cecb238d71cef42ab44b8bd67feebafe13dc780e4df0",
+        "resolve-market.json": "1ad9816169ab91ae0d5f289b5d88d0ced17406a9dfc33acce5f3d312e68cef06",
+        "resolve-news.json": "cbf7450847bd958fae6342e7f069fb399149fbc048f07a2b12b0b564ceca86d3",
+        "resolve-product-alpha.json": "d304c7690e5a565504a861af5cd858fe93c835f93313602148ee6c809fba375f",
+        "resolve-product-beta.json": "cdaaab08e50cb66325549fec87f2a856299ccdf5a81a66ac38edaa446be4a551",
+        "resolve-product-gamma.json": "caf5156c2c669eee01d2d8874e3294ca5da3c58724d080e426f216ca7a338aa5",
+        "resolve-reference.json": "e95241363cdeb5573252501dfbc6901b011c43c9af3ce8a7608cd1bb4ad73d28",
+        "resolve-support.json": "c6ffd641c51098089fe78e1f0d5b115ccaa7f6fc80544b075f6e6173eba03ee8",
+        "route-manifest.json": "884e46c63bb67511158245aef870bae566be0a778c6d4ef6bd651f3e5d54110b"
+      },
+      "cleanup": {
+        "posts": 18,
+        "attachments": 1,
+        "terms": 5,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskUploads": 0
+      }
+    }
+  ]
+}

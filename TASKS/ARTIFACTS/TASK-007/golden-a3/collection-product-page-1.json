@@ -1,0 +1,25 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "locale": "en",
+    "type": "product",
+    "sort": "title_asc",
+    "filter": "product_category:flow-control",
+    "page": 1,
+    "perPage": 2,
+    "total": 3,
+    "items": [
+        {
+            "id": "31000000-0000-4000-8000-000000000002",
+            "type": "product",
+            "title": "GDHE Flow Control Alpha",
+            "publicPath": "/products/task-007-a3-flow-control-alpha/"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000003",
+            "type": "product",
+            "title": "GDHE Flow Control Beta",
+            "publicPath": "/products/task-007-a3-flow-control-beta/"
+        }
+    ]
+}

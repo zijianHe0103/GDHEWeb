@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T04:56:35Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "独立审查 TASK-007 全部交付。先确认原消息。审查 A1 Schema 2.0.0 与 module schema、迁移幂等和精确回滚、备份恢复；A2 匿名只读 REST、UUIDv4、safeHtml 安全、严格模块和 path/link/error/header contract、四端点 DTO、13 份 Golden 与两轮 determinism、collection filter sort pagination total 不变量、benchmark、cleanup 和零残留；核对 README 与 docs、frontend consumer audit、GraphQL 未来 PoC 隔离、生产媒体 origin deferred P2、scope 和治理。不得修改业务交付物或修复问题。只能写 TASKS/ARTIFACTS/TASK-007/ADVERSARIAL_REVIEW_REPORT.md、adversarial_reviewer lane worklog 与受控 response。给出 PASS FAIL BLOCKED、P0 P1 P2、精确证据和是否允许 Planner 进入最终验证。不要 commit push merge accept close。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-007-english-api-dto-fixture.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Frontend consumer gate PASS. Review is independent and read-only over product delivery.",
+  "done_at": "2026-07-24T04:57:28Z",
+  "updated_at": "2026-07-24T04:57:28Z"
+}

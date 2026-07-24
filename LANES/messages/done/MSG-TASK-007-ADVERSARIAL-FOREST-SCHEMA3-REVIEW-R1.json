@@ -1,0 +1,40 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T10:55:13Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "执行 TASK-007 Forest-aligned Schema 3 新一轮独立对抗审查。先确认原消息。权威分工必须保持：RapidDirect 仅负责前端工程/视觉/交互/SEO/转化参考，Forest Group 负责产品目录与产品信息组织参考，GDHE 真实资料是最终内容权威。独立审查 public native page/post 加 product、market、reference、support_article、download，internal site_settings，五个 taxonomies、结构化 Product details、双向 relations、canonical directory、legacy Schema 2 inventory/dry-run/fail-closed/idempotent/exact rollback 和不可变备份。审查匿名 REST 安全、UUIDv4、safeHtml、严格 type/template pairing、eligible collection/total、errors/headers/files、19-file transitive Schema closure、55 handoff checksums、13 Golden 两轮 determinism、数据库 ID 隔离、1600-request benchmark p95 2001.839ms 仅作为未来独立 GraphQL/cache PoC trigger、cleanup 与零残留、Core/SCF/DB、docs/README 和 scope/governance。复核 frontend 首轮 FAIL 的 2 个 P1 已关闭，narrow re-audit PASS；明确评估 3 个 deferred P2：原生 Post/非根 Page 正例、machine Schema HTTPS video、production media origin/Next Image allowlist，不能静默忽略。不得修改业务交付物或修复问题；只能更新 TASKS/ARTIFACTS/TASK-007/ADVERSARIAL_REVIEW_REPORT.md、adversarial_reviewer worklog 并发送 requires_response_to 指向本消息的 review_response。输出 PASS/FAIL/BLOCKED、P0/P1/P2、精确证据和是否允许 Planner 进入 final validation。不要启动 frontend、GraphQL、多语言、Git、验收或部署。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-007-english-api-dto-fixture.md",
+    "TASKS/ARTIFACTS/TASK-007/FOREST_PRODUCT_MODEL_REVISION.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_REAUDIT_R2.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_PRE_REVIEW_VALIDATION.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256",
+    "README.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "A3 consumer gate and fresh pre-review validation PASS. Review remains independent and read-only; PASS would authorize final validation only.",
+  "dispatched_at": "2026-07-24T10:55:45Z",
+  "delivery_key": "MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-24T10:56:05Z",
+  "updated_at": "2026-07-24T10:56:05Z"
+}

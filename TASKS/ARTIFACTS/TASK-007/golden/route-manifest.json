@@ -1,0 +1,43 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "2.0.0",
+    "locale": "en",
+    "routes": [
+        {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "type": "page",
+            "publicPath": "/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        },
+        {
+            "id": "10000000-0000-4000-8000-000000000003",
+            "type": "case_study",
+            "publicPath": "/case-studies/task-007-a2-aerospace-bracket/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        },
+        {
+            "id": "10000000-0000-4000-8000-000000000004",
+            "type": "material",
+            "publicPath": "/materials/task-007-a2-aluminum-6061/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        },
+        {
+            "id": "10000000-0000-4000-8000-000000000002",
+            "type": "service",
+            "publicPath": "/services/task-007-a2-precision-machining/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        },
+        {
+            "id": "10000000-0000-4000-8000-000000000009",
+            "type": "service",
+            "publicPath": "/services/task-007-a2-shared-alpha/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        },
+        {
+            "id": "10000000-0000-4000-8000-00000000000a",
+            "type": "service",
+            "publicPath": "/services/task-007-a2-shared-beta/",
+            "modifiedAt": "2026-07-23T06:55:00+00:00"
+        }
+    ]
+}

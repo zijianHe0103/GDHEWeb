@@ -1,0 +1,63 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "id": "31000000-0000-4000-8000-000000000007",
+    "type": "support_article",
+    "templateKey": "support_article",
+    "locale": "en",
+    "publicPath": "/support/configuration/task-007-a3-configure-flow-control/",
+    "title": "Configure Flow Control",
+    "excerpt": "Synthetic support fixture.",
+    "publishedAt": "2026-07-24T01:30:00+00:00",
+    "modifiedAt": "2026-07-24T01:30:00+00:00",
+    "modules": [
+        {
+            "id": "33000000-0000-4000-8000-000000000007",
+            "type": "rich_text",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Synthetic support",
+                "safeHtml": "<p>Structured synthetic GDHE-domain fixture content.</p>"
+            }
+        }
+    ],
+    "relations": {
+        "products": [
+            {
+                "id": "31000000-0000-4000-8000-000000000002",
+                "type": "product",
+                "title": "GDHE Flow Control Alpha",
+                "publicPath": "/products/task-007-a3-flow-control-alpha/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000003",
+                "type": "product",
+                "title": "GDHE Flow Control Beta",
+                "publicPath": "/products/task-007-a3-flow-control-beta/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000004",
+                "type": "product",
+                "title": "GDHE Flow Control Gamma",
+                "publicPath": "/products/task-007-a3-flow-control-gamma/"
+            }
+        ],
+        "markets": [],
+        "references": [],
+        "support_articles": [],
+        "downloads": [
+            {
+                "id": "31000000-0000-4000-8000-000000000008",
+                "type": "download",
+                "title": "Flow Control Data Sheet",
+                "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/"
+            }
+        ]
+    },
+    "details": {
+        "topic": "configuration",
+        "problemOrGoal": "Configure the synthetic flow-control fixture.",
+        "instructionsSafeHtml": "<ol>\n<li>Confirm the synthetic interface.</li>\n<li>Apply the test setting.</li>\n</ol>",
+        "videoUrl": "https://media.gdhe.example/fixtures/support-configuration.mp4"
+    }
+}

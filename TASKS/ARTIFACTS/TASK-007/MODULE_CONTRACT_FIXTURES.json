@@ -1,0 +1,180 @@
+{
+    "fixtureVersion": "TASK-007-A2-R3",
+    "valid": [
+        {
+            "id": "00000000-0000-4000-8000-000000000007",
+            "type": "accordion",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Contract questions",
+                "items": [
+                    {
+                        "question": "Is the answer safe?",
+                        "safeHtml": "<p>Yes <em>after CMS sanitization</em>.</p>body{display:none}"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "type": "card_grid",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Contract cards",
+                "items": [
+                    {
+                        "title": "Precision machining",
+                        "summary": "Canonical internal route.",
+                        "link": {
+                            "title": "View service",
+                            "url": "/services/task-007-a2-precision-machining/",
+                            "target": "_self"
+                        }
+                    },
+                    {
+                        "title": "External policy",
+                        "summary": "Allowlisted HTTPS route.",
+                        "link": {
+                            "title": "Open policy",
+                            "url": "https://example.com/policy",
+                            "target": "_blank"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "00000000-0000-4000-8000-000000000006",
+            "type": "split_media",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Sanitized split media",
+                "media_reference": {
+                    "id": "20000000-0000-4000-8000-000000000001",
+                    "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a2-home.png",
+                    "mimeType": "image/png",
+                    "width": 1,
+                    "height": 1,
+                    "alt": "Synthetic TASK-007 fixture pixel",
+                    "caption": "",
+                    "decorative": false
+                },
+                "media_position": "right",
+                "safeHtml": "<p>Allowed <strong>copy</strong>alert(2)<a href=\"alert(3)\">unsafe</a></p>"
+            }
+        },
+        {
+            "id": "00000000-0000-4000-8000-000000000008",
+            "type": "cta_banner",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Start a controlled request",
+                "body": "Plain-text CTA supporting copy.",
+                "primary_cta": {
+                    "title": "Contact GDHE",
+                    "url": "mailto:sales@example.com",
+                    "target": "_self"
+                }
+            }
+        }
+    ],
+    "invalid": [
+        {
+            "schema": "accordion.schema.json",
+            "instance": {
+                "id": "00000000-0000-4000-8000-000000000007",
+                "type": "accordion",
+                "schemaVersion": "1.0.0",
+                "data": {
+                    "heading": "Contract questions",
+                    "items": [
+                        {
+                            "question": "Is the answer safe?"
+                        }
+                    ]
+                }
+            },
+            "expectedValid": false
+        },
+        {
+            "schema": "card-grid.schema.json",
+            "instance": {
+                "id": "00000000-0000-4000-8000-000000000005",
+                "type": "card_grid",
+                "schemaVersion": "1.0.0",
+                "data": {
+                    "heading": "Contract cards",
+                    "items": [
+                        {
+                            "title": "Precision machining",
+                            "summary": "Canonical internal route.",
+                            "link": {
+                                "title": "View service",
+                                "url": "javascript:alert(1)",
+                                "target": "_self"
+                            }
+                        },
+                        {
+                            "title": "External policy",
+                            "summary": "Allowlisted HTTPS route.",
+                            "link": {
+                                "title": "Open policy",
+                                "url": "https://example.com/policy",
+                                "target": "_blank"
+                            }
+                        }
+                    ]
+                }
+            },
+            "expectedValid": false
+        },
+        {
+            "schema": "split-media.schema.json",
+            "instance": {
+                "id": "00000000-0000-4000-8000-000000000006",
+                "type": "split_media",
+                "schemaVersion": "1.0.0",
+                "data": {
+                    "heading": "Sanitized split media",
+                    "media_reference": {
+                        "id": "20000000-0000-4000-8000-000000000001",
+                        "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a2-home.png",
+                        "mimeType": "image/png",
+                        "width": 1,
+                        "height": 1,
+                        "alt": "Synthetic TASK-007 fixture pixel",
+                        "caption": "",
+                        "decorative": false
+                    },
+                    "media_position": "center",
+                    "safeHtml": "<p>Allowed <strong>copy</strong>alert(2)<a href=\"alert(3)\">unsafe</a></p>"
+                }
+            },
+            "expectedValid": false
+        },
+        {
+            "schema": "cta-banner.schema.json",
+            "instance": {
+                "id": "00000000-0000-4000-8000-000000000008",
+                "type": "cta_banner",
+                "schemaVersion": "1.0.0",
+                "data": {
+                    "heading": "Start a controlled request",
+                    "body": "Plain-text CTA supporting copy.",
+                    "primary_cta": {
+                        "title": "Contact GDHE",
+                        "url": "mailto:sales@example.com",
+                        "target": "popup"
+                    }
+                }
+            },
+            "expectedValid": false
+        }
+    ],
+    "runtimeInvalidErrorCodes": [
+        "gdhe_module_link_invalid",
+        "gdhe_split_media_invalid",
+        "gdhe_accordion_item_invalid",
+        "gdhe_module_link_invalid"
+    ]
+}

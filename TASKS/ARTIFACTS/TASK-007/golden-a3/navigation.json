@@ -1,0 +1,31 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "locale": "en",
+    "items": [
+        {
+            "id": "31000000-0000-4000-8000-000000000001",
+            "label": "TASK-007 A3 Home",
+            "publicPath": "/",
+            "children": []
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000002",
+            "label": "GDHE Flow Control Alpha",
+            "publicPath": "/products/task-007-a3-flow-control-alpha/",
+            "children": []
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000003",
+            "label": "GDHE Flow Control Beta",
+            "publicPath": "/products/task-007-a3-flow-control-beta/",
+            "children": []
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000004",
+            "label": "GDHE Flow Control Gamma",
+            "publicPath": "/products/task-007-a3-flow-control-gamma/",
+            "children": []
+        }
+    ]
+}

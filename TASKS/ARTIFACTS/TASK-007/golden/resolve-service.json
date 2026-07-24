@@ -1,0 +1,79 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "2.0.0",
+    "id": "10000000-0000-4000-8000-000000000002",
+    "type": "service",
+    "templateKey": "service",
+    "locale": "en",
+    "publicPath": "/services/task-007-a2-precision-machining/",
+    "title": "TASK-007 A2 Precision Machining",
+    "excerpt": "Deterministic service fixture.",
+    "publishedAt": "2026-07-23T06:55:00+00:00",
+    "modifiedAt": "2026-07-23T06:55:00+00:00",
+    "featuredMedia": {
+        "id": "20000000-0000-4000-8000-000000000002",
+        "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a2-service.png",
+        "mimeType": "image/png",
+        "width": 1,
+        "height": 1,
+        "alt": "Synthetic TASK-007 fixture pixel",
+        "caption": "",
+        "decorative": false
+    },
+    "modules": [
+        {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "type": "hero",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Precision machining service",
+                "lead": "Deterministic English TASK-007 fixture content.",
+                "media_reference": {
+                    "id": "20000000-0000-4000-8000-000000000002",
+                    "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a2-service.png",
+                    "mimeType": "image/png",
+                    "width": 1,
+                    "height": 1,
+                    "alt": "Synthetic TASK-007 fixture pixel",
+                    "caption": "",
+                    "decorative": false
+                },
+                "primary_cta": {
+                    "title": "View details",
+                    "url": "/case-studies/task-007-a2-aerospace-bracket/",
+                    "target": "_self"
+                }
+            }
+        },
+        {
+            "id": "00000000-0000-4000-8000-000000000002",
+            "type": "rich_text",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Service evidence",
+                "safeHtml": "<p>Deterministic machining scope.</p>"
+            }
+        }
+    ],
+    "relations": {
+        "services": [],
+        "industries": [],
+        "materials": [
+            {
+                "id": "10000000-0000-4000-8000-000000000004",
+                "type": "material",
+                "title": "TASK-007 A2 Aluminum 6061",
+                "publicPath": "/materials/task-007-a2-aluminum-6061/"
+            }
+        ],
+        "surface_finishes": [],
+        "case_studies": [
+            {
+                "id": "10000000-0000-4000-8000-000000000003",
+                "type": "case_study",
+                "title": "TASK-007 A2 Aerospace Bracket",
+                "publicPath": "/case-studies/task-007-a2-aerospace-bracket/"
+            }
+        ]
+    }
+}

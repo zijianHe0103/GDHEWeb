@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/navigation.schema.json",
+  "title": "GDHE Navigation",
+  "type": "object",
+  "required": ["apiVersion", "schemaVersion", "locale", "items"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "3.0.0"},
+    "locale": {"const": "en"},
+    "items": {"type": "array", "maxItems": 100, "items": {"$ref": "#/$defs/level1"}}
+  },
+  "$defs": {
+    "base": {
+      "type": "object",
+      "required": ["id", "label", "publicPath", "children"],
+      "properties": {
+        "id": {"$ref": "uuid-v4.schema.json"},
+        "label": {"type": "string", "minLength": 1, "maxLength": 120},
+        "publicPath": {"$ref": "public-path.schema.json"},
+        "children": {}
+      },
+      "additionalProperties": false
+    },
+    "leaf": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"children": {"type": "array", "maxItems": 0}}}
+      ]
+    },
+    "level2": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"children": {"type": "array", "maxItems": 20, "items": {"$ref": "#/$defs/leaf"}}}}
+      ]
+    },
+    "level1": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"children": {"type": "array", "maxItems": 20, "items": {"$ref": "#/$defs/level2"}}}}
+      ]
+    }
+  },
+  "additionalProperties": false
+}

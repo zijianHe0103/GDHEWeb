@@ -1,0 +1,10 @@
+{
+    "root": true,
+    "canonical": true,
+    "doubleSlash": false,
+    "dotSegment": false,
+    "uppercase": false,
+    "encodedSeparator": false,
+    "query": false,
+    "fragment": false
+}

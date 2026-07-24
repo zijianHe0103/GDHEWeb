@@ -132,3 +132,24 @@ Each execution records:
 - recovery_request: `MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-STOP-RECOVERY`
 - requires_response_to: `MSG-TASK-006-GOVERNANCE-AGENTS-RECOVERY-R2-RESPONSE`
 - queue_result: sent and awaiting planner handling
+
+## 2026-07-24
+
+### 10:50 - TASK-007 README Schema 3 mechanical sync PASS
+
+- task: TASK-007
+- request: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC`
+- delivery_key: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC:019f8da9-8538-7532-ae96-5cdc13d4dbe6`
+- ack: dispatched message acknowledged before editing
+- scope: root `README.md` local public API section only, plus this lane worklog
+- README_changes: resolve example updated from Schema 2 to Schema 3; one concise public content-model sentence added
+- public_model: native `page` and `post`, plus `product`, `market`, `reference`, `support_article`, and `download`; `site_settings` remains non-public
+- preserved: startup command, endpoint set, managed governance block, existing consumer constraints, CMS/frontend/PROJECT/TASKS business files, plugin, Git, acceptance, and deployment state
+- managed_block_sha256_before: `9cc49048641154677989f8bf264f12c905ea8c043e72008a4444832de9eb0be8`
+- managed_block_sha256_after: `9cc49048641154677989f8bf264f12c905ea8c043e72008a4444832de9eb0be8`
+- validation: `git diff --check -- README.md` PASS; README Schema 2 example matches 0; Schema 3 example and content-model sentence present
+- next: send execution response linked to the request; planner owns subsequent TASK-007 gates
+
+- response: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC-RESPONSE`
+- requires_response_to: `MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC`
+- response_result: queued for planner

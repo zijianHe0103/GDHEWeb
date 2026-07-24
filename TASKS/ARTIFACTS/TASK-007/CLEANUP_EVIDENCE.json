@@ -1,0 +1,54 @@
+{
+  "evidenceVersion": "TASK-007-A2-CLEANUP-R4",
+  "verifiedAt": "2026-07-24T05:19:19Z",
+  "fixtureVersion": "TASK-007-A2-R3",
+  "cleanupCommand": {
+    "reportedPosts": 10,
+    "reportedAttachments": 4,
+    "reportedTerms": 3,
+    "reportedUploadsFallback": 0
+  },
+  "zeroResidue": {
+    "taskPosts": 0,
+    "taskRevisions": 0,
+    "taskPostmeta": 0,
+    "taskRelationships": 0,
+    "taskTerms": 0,
+    "taskAttachments": 0,
+    "taskUploads": 0,
+    "taskUsers": 0,
+    "fixtureManifestOptions": 0,
+    "benchmarkProcesses": 0,
+    "benchmarkListeners": 0
+  },
+  "deterministicRevision": {
+    "completeLifecycleRounds": 2,
+    "goldenFilesPerRound": 13,
+    "goldenHashesIdentical": true,
+    "databaseIdsChangedBetweenRounds": true,
+    "publicContractUsesDatabaseIds": false
+  },
+  "baselineRestored": {
+    "posts": {
+      "page": {
+        "draft": 1,
+        "publish": 1
+      },
+      "post": {
+        "auto-draft": 1,
+        "publish": 1
+      },
+      "wp_navigation": {
+        "publish": 1
+      }
+    },
+    "postmeta": 2,
+    "termRelationships": 1,
+    "terms": 1,
+    "users": 1
+  },
+  "databaseCheck": {
+    "tables": 12,
+    "status": "PASS"
+  }
+}

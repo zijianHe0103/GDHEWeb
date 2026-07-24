@@ -1,0 +1,183 @@
+{
+    "testVersion": "TASK-007-A2-CONTRACT-R5",
+    "anonymous": true,
+    "positiveCount": 13,
+    "negativeCount": 24,
+    "negativeMatrix": {
+        "publication-draft": {
+            "status": 404,
+            "code": "gdhe_not_found"
+        },
+        "publication-private": {
+            "status": 404,
+            "code": "gdhe_not_found"
+        },
+        "publication-pending": {
+            "status": 404,
+            "code": "gdhe_not_found"
+        },
+        "publication-trash": {
+            "status": 404,
+            "code": "gdhe_not_found"
+        },
+        "nonexistent": {
+            "status": 404,
+            "code": "gdhe_not_found"
+        },
+        "invalid-locale": {
+            "status": 400,
+            "code": "gdhe_invalid_locale"
+        },
+        "invalid-path": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-path-dot": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-path-uppercase": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-path-encoded-separator": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-path-query": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-path-fragment": {
+            "status": 400,
+            "code": "gdhe_invalid_path"
+        },
+        "invalid-schema": {
+            "status": 400,
+            "code": "gdhe_invalid_schema"
+        },
+        "invalid-type": {
+            "status": 400,
+            "code": "gdhe_invalid_collection_type"
+        },
+        "invalid-filter": {
+            "status": 400,
+            "code": "gdhe_invalid_filter"
+        },
+        "invalid-sort": {
+            "status": 400,
+            "code": "gdhe_invalid_sort"
+        },
+        "invalid-page": {
+            "status": 400,
+            "code": "gdhe_invalid_pagination"
+        },
+        "invalid-per-page-zero": {
+            "status": 400,
+            "code": "gdhe_invalid_pagination"
+        },
+        "invalid-per-page-high": {
+            "status": 400,
+            "code": "gdhe_invalid_pagination"
+        },
+        "route-conflict": {
+            "status": 409,
+            "code": "gdhe_route_conflict"
+        },
+        "content-invariant": {
+            "status": 500,
+            "code": "gdhe_contract_invariant"
+        },
+        "collection-unknown-template-excluded": {
+            "excluded": true,
+            "total": 3
+        },
+        "collection-invalid-module-excluded": {
+            "excluded": true,
+            "total": 3
+        },
+        "collection-invalid-canonical-path-excluded": {
+            "excluded": true,
+            "total": 3
+        }
+    },
+    "failClosed": {
+        "reference": true,
+        "media": true,
+        "module": true,
+        "table": true,
+        "link": true,
+        "template": true,
+        "path": true
+    },
+    "safeHtml": {
+        "authority": "CMS wp_kses explicit allowlist",
+        "maliciousCases": 8,
+        "passed": true
+    },
+    "conditionalRequest": {
+        "endpointCount": 4,
+        "etag": true,
+        "notModifiedStatus": 304
+    },
+    "collectionDeterminism": {
+        "fixtureVersion": "TASK-007-A2-R3",
+        "publishedFilteredTotal": 3,
+        "pageSizes": [
+            2,
+            1,
+            0
+        ],
+        "crossPageTotals": [
+            3,
+            3,
+            3
+        ],
+        "totalInvariant": true,
+        "validPerPageBoundaries": [
+            1,
+            100
+        ],
+        "invalidPerPageBoundaries": [
+            0,
+            101
+        ],
+        "sorts": [
+            "title_asc",
+            "modified_desc"
+        ],
+        "tieBreak": "post_name ASC",
+        "filterEchoed": true,
+        "sortEchoed": true,
+        "ineligiblePublishedCandidates": [
+            "unknown-template",
+            "invalid-module",
+            "invalid-canonical-path"
+        ],
+        "ineligibleCandidatesExcluded": true,
+        "everyItemResolveAccepted": true
+    },
+    "publicBounds": {
+        "uuidVersion": 4,
+        "navigationMaxItems": 100,
+        "navigationMaxDepth": 3,
+        "routeMaxItems": 5000,
+        "relationGroups": 5,
+        "relationItemsPerGroup": 20
+    },
+    "goldenSha256": {
+        "resolve-home.json": "8c8377a1397d34d33fb41aec5f2a2a2baabc64ad8ce2d79c3e2a9aedb572feea",
+        "resolve-service.json": "66b52d527e7ae8991ea435a4f4c8288d3f003aa44af1d470e0a7ae685c2eb1fb",
+        "resolve-case-study.json": "969c3cc42a0497ef14449a6105334786918a6bf62812d56668c88af9541eee95",
+        "resolve-material.json": "86c3463b3bb64c041cf071544771e658e1a2cfb93491ff6e735c8cc75a5b8e56",
+        "collection-service.json": "99050780bde8e162ac1872909d2a189b6625291ce124d8ab4e50a7d42761f277",
+        "collection-service-page-2.json": "f92b5b0986d4d3d10ff1daa12a3c814fa904f50055836e9f16863ab31fd5af26",
+        "collection-service-page-3-empty.json": "c13895539889bc0e2f20693e905d6bb166cf8064e3a776b876e1eb60a6a66250",
+        "collection-service-modified.json": "e9715a7dbe7cf9cd3838db9e715bbf2c2c7b733af826751f2f07d87c49aa8f76",
+        "collection-service-per-page-1.json": "dc996d29d36ff1cf03c23bc56d842d40298f1f11ab63e324ee45250bdfb78f7c",
+        "collection-case-study.json": "8061a814ad7bdc245b27a39e16a298625cdb5d7c3bcad6a3ad8bc2f51736a1ac",
+        "collection-material.json": "806d85a06c50ae575eef8d4d726bc0caf6cd491f8edd4ef8e572e25953b5987d",
+        "navigation.json": "b5e185edbd6ab13b5acf671f111c8045bd5f0a942b01d5fc084a4cd10233c584",
+        "route-manifest.json": "d3da63884d2a7e66789a06a8367f2b66e8aae25473b3e3fc633f60ef8f1f3d3f"
+    }
+}

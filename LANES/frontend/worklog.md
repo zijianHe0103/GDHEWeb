@@ -149,3 +149,120 @@ Each execution records:
 - recovery_entry: planner should consume `MSG-TASK-005-FRONTEND-CMS-INTEGRATION-BOUNDARY-RESPONSE-R1` and `MSG-TASK-005-FRONTEND-EVIDENCE-REFERENCE-CORRECTION-RESPONSE`, then record the project-level recovery entry
 - recovery_message: `MSG-TASK-005-FRONTEND-STOP-RECOVERY` queued to planner and requires acknowledgement of the corrected evidence-reference response
 - unique_next_step: planner acknowledges both corrected frontend responses and writes TASK-005 and PROJECT/STATE.md recovery state before review dispatch
+
+## 2026-07-24
+
+### 2026-07-24T10:29:20+08:00 - TASK-007 frontend read-only consumer audit
+
+- task: TASK-007
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-007-FRONTEND-READONLY-CONSUMER-AUDIT
+- message_ack: exact queued execution request read first and acknowledged through lane_message.py
+- action: audited frozen API 1, Content Schema 2.0.0, Module Schema 1.0.0, persisted UUIDv4 identity, nine Golden files, four endpoints, error/cache/route behavior and deferred boundaries for future server-only Next.js consumption
+- files_read: AGENTS.md; project manifest/state/coordination/lanes/policy/shared/constraints/activity/board; frontend lane/worklog and current read-only foundation; TASK-007 active task and exact message; TASK-005 frontend boundary; architecture contract; TASK-007 handoff, determinism, runtime, schema, benchmark, cleanup, execution and validation artifacts; all nine Golden; all 14 JSON Schemas; relevant GDHE public API/module/sanitizer/test code; CMS REST contract
+- files_changed: TASKS/ARTIFACTS/TASK-007/FRONTEND_CONSUMER_AUDIT.md; LANES/frontend/worklog.md
+- artifact: TASKS/ARTIFACTS/TASK-007/FRONTEND_CONSUMER_AUDIT.md
+- audit_verdict: FAIL; P0=1, P1=5, P2=3
+- passed_boundaries: fixed versions/checksums; two-lifecycle 9/9 deterministic Golden; persisted public UUIDv4; anonymous normalized REST DTO; no Core REST/SCF/postmeta/database-ID/credential dependency in public Schema/Golden; published-only/error-code baseline; explicit preview/webhook/GraphQL adoption/multilingual/product-UI deferral
+- p0: WYSIWYG-backed module HTML reaches the new public DTO through gdhe_normalize_public_modules without the existing wp_kses_post sanitizer, while the contract does not declare safe HTML versus plain text
+- p1: strict link/CTA/template and four missing module samples; canonical publicPath Schema mismatch; missing frozen error/header/cache matrix; one-item collection evidence cannot prove sorting/pagination; architecture GraphQL comparison gate triggered by all four p95 values
+- p2: navigation/route/relations size and depth limits; machine Schema says UUID but not UUIDv4; production media origin and Next Image allowlist remain an implementation gate
+- validation: handoff 10/10 checksums, 14/14 Schema hashes, 9/9 Golden hashes, sensitive-field scan, deterministic-ID evidence, module coverage, open-object scan and route/limit scan completed read-only; Markdown headings and finding counts, exact references, secret scan, prohibited frontend scope, git diff check, project validation and lane-message validation passed; strict lane audit had no issues before response creation and reports only the expected medium pending-queue notice after this execution_response was queued
+- product_code_boundary: frontend/**, dependencies, tests and environment files remained read-only; CMS, architecture, active task and planner files remained read-only
+- transient_scope_note: lane_resume generated a resume packet under LANES/frontend/workspace as part of the governance skill; it was immediately deleted before audit output so no extra final file remains
+- boundaries: no adapter implementation, GraphQL, adversarial review, task transition, commit, push, merge, acceptance or closure
+- message_result: `MSG-TASK-007-FRONTEND-READONLY-CONSUMER-AUDIT-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-READONLY-CONSUMER-AUDIT`
+- next: wait for Planner routing; do not start implementation, GraphQL or review
+- planner_intervention: return P0/P1 to the owning contract Lane, govern the triggered GraphQL comparison as a separate PoC/ADR, and request a narrow frontend re-audit before adversarial review
+
+### 2026-07-24T12:41:48+08:00 - TASK-007 R3 frontend consumer re-audit
+
+- task: TASK-007
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-007-FRONTEND-CONSUMER-READAUDIT-R2
+- message_ack: exact queued request read and acknowledged through lane_message.py before evidence work
+- action: re-audited every Round 1 P0/P1/P2 against R3 code, 18 schemas, 13 Golden, error/module/header/path/collection fixtures, frozen checksums and CMS contract tests
+- files_changed: TASKS/ARTIFACTS/TASK-007/FRONTEND_CONSUMER_AUDIT.md; LANES/frontend/worklog.md
+- current_verdict: FAIL; P0=0, P1=1, P2=1
+- closed: safeHtml authority and malicious-content evidence; all seven module machine contracts; strict link/CTA/template; shared canonical publicPath; ten canonical errors; four-endpoint 200/304/error transport matrix; applicable UUIDv4 and payload bounds
+- open_p1: `collection-service-page-3-empty.json` freezes total 0 while the same filter/sort has total 3 on pages 1 and 2; public-api.php reads the drifting terminal-query found_posts value, and a2-contract-test.php does not assert total invariance across pages
+- deferred_p2: production media origin and Next Image allowlist remain a documented deployment gate
+- graphql_boundary: benchmark threshold is correctly isolated as a future Planner-owned PoC/ADR; no GraphQL authorization, installation, implementation or adoption is implied
+- cms_isolation: public Golden/error/module fixtures contain no WordPress numeric IDs, Core REST, SCF, postmeta, database structures, user data or credentials; two lifecycle hashes remain 13/13 identical despite changed internal IDs
+- validation: 46/46 handoff checksums, all JSON parsing, frozen Draft 2020-12 report for 13 success/10 error/8 module fixtures, 7/7 module coverage, path/header/security evidence and prohibited frontend scope checks completed
+- product_code_boundary: frontend/**, dependencies, tests and environment files remained read-only
+- boundaries: no adapter, GraphQL, adversarial review, task transition, commit, push, merge, acceptance or closure
+- message_result: `MSG-TASK-007-FRONTEND-CONSUMER-READAUDIT-R2-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-CONSUMER-READAUDIT-R2`
+- next: Planner routes the single open P1 to the CMS owner; stabilize collection total across page 1/page 2/terminal empty page, regenerate affected frozen evidence, then request a single-finding frontend re-audit
+
+### 2026-07-24T12:53:05+08:00 - TASK-007 collection total single-finding re-audit
+
+- task: TASK-007
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-007-FRONTEND-COLLECTION-TOTAL-READAUDIT-R3
+- message_ack: exact queued request read and acknowledged through lane_message.py before evidence work
+- action: re-audited only the remaining collection total P1; did not reopen any closed finding
+- files_changed: TASKS/ARTIFACTS/TASK-007/FRONTEND_CONSUMER_AUDIT.md; LANES/frontend/worklog.md
+- current_verdict: PASS; P0=0, P1=0, P2=1
+- collection_result: same Service type, filter and title_asc sort now freeze totals 3/3/3 and item lengths 2/1/0 across page 1, page 2 and terminal page 3
+- runtime_evidence: public-api.php uses a same-constraint count query when a terminal page reports zero found_posts; a2-contract-test.php explicitly asserts item lengths and cross-page totals
+- frozen_evidence: COLLECTION_DETERMINISM.json records pageSizes 2/1/0, crossPageTotals 3/3/3 and totalInvariant true
+- checksum_validation: complete 46/46 handoff set passed; terminal Golden and collection evidence hashes match the frozen set
+- deferred_p2: production media origin and Next Image allowlist remain the existing non-blocking deployment P2
+- graphql_boundary: future Planner-owned PoC/ADR only; no GraphQL authorization or implementation
+- product_code_boundary: frontend/**, dependencies, tests and environment files remained read-only
+- boundaries: no adapter, adversarial review, task transition, commit, push, merge, acceptance or closure
+- message_result: `MSG-TASK-007-FRONTEND-COLLECTION-TOTAL-READAUDIT-R3-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-COLLECTION-TOTAL-READAUDIT-R3`
+- next: only Planner may consume this PASS and route TASK-007 into the next governed gate
+
+### 2026-07-24T18:21:45+08:00 - TASK-007 A3 Forest Schema 3 frontend consumer audit
+
+- task: TASK-007
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT
+- message_ack: exact queued request read and acknowledged through lane_message.py before evidence work
+- action: audited the Forest-aligned Schema 3 immutable handoff for future server-only Next.js consumption without designing or implementing an adapter
+- files_read: all nine message context files; A3 manifest, checkpoint, 32-entry handoff checksum, runtime/schema/determinism/benchmark/cleanup/header evidence, 13 Golden documents, Schema 3 registry and schemas, CMS normalizers/public API/tests, frontend foundation README and frontend lane authority
+- files_changed: TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md; LANES/frontend/worklog.md
+- artifact: TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md
+- current_verdict: FAIL; P0=0, P1=2, P2=3
+- passed: versions; seven public types and internal site_settings isolation; current type/template/path Goldens; Product taxonomy slugs and structured details; five relations; public file DTO; navigation; route manifest; collection totals 3/3/3 and item counts 2/1/0; UUIDv4; safeHtml; errors/headers/cache; publication fail-closed; 13/13 two-lifecycle determinism; zero cleanup residue; no WordPress database IDs or raw CMS keys in current Goldens
+- p1_template_pairing: runtime validates only global known-template membership, while Schema 3 requires matching templates for the five structured types; a known wrong Product template is Schema-invalid but is not rejected by the runtime condition or covered by the unknown-template negative
+- p1_checksum_closure: all 32 named handoff hashes pass, but only five schema/config authorities are directly frozen; the validator loads the full transitive Schema graph, and the manifest's whole-plugin stream digest has no frozen reproduction algorithm or exact file list
+- p2_fixture_coverage: no positive native Post or non-root Company/Contact/hub Page Golden; Home proves the shared Page envelope, so this is recorded as a non-blocking evidence gap
+- p2_https_schema: Product and Support video normalization is HTTPS-only, but their machine Schema fields accept a generic URI
+- p2_deployment: production media HTTPS origin and Next Image allowlist remain a deployment gate
+- benchmark_boundary: independent p95 2001.839 ms exceeds the 500 ms trigger and creates only a future separately governed Planner-owned GraphQL/cache PoC and ADR candidate; GraphQL is not authorized or adopted
+- validation: 32/32 handoff entries passed; all scoped JSON parsed; frozen 13-document Schema report passed; runtime summary, determinism, benchmark and cleanup assertions passed; current resolve relation/type/template/path matrix passed; forbidden public-key scan returned zero; project and message validation passed; post-response strict lane audit reports only the expected pending-queue notice for the controlled response
+- product_code_boundary: frontend/**, dependencies, tests and environment files remained read-only; no CMS or product implementation was modified
+- boundaries: no adapter, GraphQL, multilingual, page, component, site shell, visual, adversarial review, task transition, commit, push, merge, acceptance or deployment
+- message_result: `MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT`
+- next: Planner should acknowledge the response, return the two P1 findings to the CMS contract owner and request a narrow frontend re-audit only after regenerated immutable evidence passes
+
+### 2026-07-24T18:43:45+08:00 - TASK-007 A3 Schema 3 P1 frontend re-audit Round 2
+
+- task: TASK-007
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2
+- message_ack: exact dispatched request and all eight context files read before acknowledgement; request moved to done through lane_message.py
+- action: re-audited only the two Round 1 P1 findings and their direct version, Golden, determinism, collection and cleanup regression boundaries
+- files_changed: TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_REAUDIT_R2.md; LANES/frontend/worklog.md
+- artifact: TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_REAUDIT_R2.md
+- current_verdict: PASS; P0=0, P1=0; Round 1 P2=3 retained as deferred and non-blocking
+- p1_template_pairing: fresh isolated PHP matrix accepted seven valid Page/Post/structured-type pairs and rejected all 35 known mismatches; current runtime gates the shared envelope before resolve, collection, navigation and route-manifest exposure
+- p1_mismatch_evidence: frozen runtime returns gdhe_contract_invariant for a published Product carrying the known Market template; contract assertions exclude it from three collection pages, navigation and route manifest; mismatch path appears in none of the 13 positive Goldens
+- collection_regression: Product totals remain 3/3/3 and item counts remain 2/1/0
+- p1_schema_graph: independent read-only Node traversal reproduced five roots, recursive non-fragment local ref resolution, 19 sorted POSIX-relative files and actual SHA-256 values; validation JSON, manifest and handoff agree on all 19 paths and hashes
+- checksum_validation: complete 55-entry handoff verification passed
+- golden_regression: actual files, runtime summary and both deterministic rounds all match the 13-hash Round 1 baseline; database IDs changed between rounds and publicContractUsesDatabaseIds remains false
+- live_readonly_checks: gdhe-site is active 0.4.1; fixture marker postmeta, fixture option and five synthetic terms are zero; frozen posts/meta/terms/options/uploads and temporary user/process/listener residue are zero
+- version_boundary: REST API 1, Content Schema 3.0.0, Module Schema 1.0.0 and fixture TASK-007-A3-P1-R1 agree across code and artifacts
+- deferred_p2: native Post/non-root Page positive coverage, machine-Schema HTTPS video constraint and production media HTTPS origin/Next Image allowlist remain unchanged and non-blocking
+- benchmark_boundary: frozen p95 2001.839 ms remains above 500 ms and only authorizes a future separately governed Planner-owned GraphQL/cache PoC and ADR candidate
+- read_only_method: no CMS fixture lifecycle was created by frontend; current code, frozen runtime evidence, actual hashes and live zero-residue state were independently checked
+- product_code_boundary: frontend/** remained read-only; no CMS, dependency, environment or product implementation was modified
+- transient_scope_note: project-resume generated one frontend resume packet; it was read and immediately removed before final output, leaving no extra final file
+- boundaries: no adapter, page, GraphQL, multilingual, adversarial review, task transition, Git, acceptance or deployment
+- validation: artifact headings/counts, whitespace, secrets, prohibited frontend diff, resume-packet residue, project, messages and strict lane audit passed before response creation
+- message_result: `MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2-RESPONSE` queued to Planner with `requires_response_to: MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2`
+- next: Planner acknowledges the response and owns the next governed gate

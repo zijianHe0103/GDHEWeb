@@ -1,0 +1,37 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-WORDPRESS-A1-SCHEMA-MIGRATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-23T08:38:54Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Execute TASK-007 A1 only. Resume the registered wordpress_cms lane and read all context files. Before any database, content, plugin, or fixture write, create and verify a new timestamped backup under the exact absolute path /Users/arron/Storage/Personal/ObsidianWorkSpace/茂洋/独立站/.local/backups/TASK-007/<timestamp>; use the absolute path because the known hook normalizes hidden relative paths. Do not overwrite TASK-004 backups. Capture SQL, GDHE plugin/config state, versions, checksums, initial object counts, restore readability, and rollback plan. Reverify live WordPress/PHP/MySQL/SCF/GDHE versions and checksums. Implement only A1: machine-readable versioned page/error/reference and seven-module schemas; persistent stable module instance IDs and per-module schemaVersion; structured data_table authoring/normalization; migration inventory, no-write dry-run, explicit ambiguous-record handling, apply/idempotence/rollback, reorder/copy identity tests, and fail-closed negative validation. Use only task-marked synthetic temporary data in an isolated or recoverable local environment and clean it completely. Update GDHE-owned plugin code and docs/cms only. Produce A1 checkpoint/execution/validation/diff artifacts and update the wordpress_cms worklog. Do not implement A2 resolve/collection/navigation/route-manifest endpoints, four-fixture suite, benchmark, immutable frontend handoff, Preview, Webhook, cache invalidation, SEO, multilingual, inquiry, deployment, frontend code, WordPress Core, SCF source, themes, or third-party plugins. Do not commit, push, merge, accept, close, or mark A1 as permission for frontend consumption. Send an execution_response with requires_response_to set to this message. If backup or rollback validation cannot pass, stop before mutation and return BLOCKED with exact evidence.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-007-english-api-dto-fixture.md",
+    "TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-004-headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-005-english-first-scf-wpml-deferral.md",
+    "docs/cms/CONTENT_MODEL.md",
+    "docs/cms/REST_CONTRACT.md",
+    "docs/cms/OPERATIONS_AND_ROLLBACK.md",
+    "cms/wp-content/plugins/gdhe-site/config/schema.v1.json",
+    "cms/wp-content/plugins/gdhe-site/config/field-groups.v1.json",
+    "LANES/wordpress_cms/LANE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/A1_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-007/A1_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/A1_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-007/A1_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "A1 intermediate gate only. Planner acknowledgement and independent checkpoint validation are required before any A2 dispatch. Use exact absolute backup paths; no real business content.",
+  "done_at": "2026-07-23T08:40:08Z",
+  "updated_at": "2026-07-23T08:40:08Z"
+}

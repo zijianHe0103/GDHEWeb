@@ -16,3 +16,23 @@
 
 任务影响使用方式、功能或流程时，更新本文件并将任务字段 `readme_impact` 置为 `UPDATED`；其他任务使用 `NOT_APPLICABLE`。
 <!-- END DURABLE_PROJECT_GOVERNANCE -->
+
+## 本地 WordPress 与英语公开 API
+
+WordPress 位于 `cms/`，继续作为唯一内容管理后台；`gdhe-site` 提供英语版、匿名只读、版本化的前端 DTO。启动本地 CMS：
+
+```sh
+wp server --path=cms --host=127.0.0.1 --port=8080
+```
+
+后台地址为 `http://127.0.0.1:8080/wp-admin/`。公开 API 基线：
+
+- `/wp-json/gdhe/v1/schema`
+- `/wp-json/gdhe/v1/resolve?locale=en&path=/&schema=3.0.0`
+- `/wp-json/gdhe/v1/collection/{type}?locale=en`
+- `/wp-json/gdhe/v1/navigation?locale=en`
+- `/wp-json/gdhe/v1/route-manifest?locale=en`
+
+当前公开内容模型包括原生 `page`/`post`，以及 `product`、`market`、`reference`、`support_article`、`download`；`site_settings` 不公开。
+
+前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。

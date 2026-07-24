@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "apiVersion": "1",
+  "moduleSchemaVersion": "1.0.0",
+  "locale": {
+    "default": "en",
+    "enabled": ["en"],
+    "futureAdapter": true
+  },
+  "publicTypes": ["service", "industry", "material", "surface_finish", "case_study", "testimonial"],
+  "internalTypes": ["site_settings"],
+  "taxonomies": ["service_family", "manufacturing_process", "material_family", "finish_family"],
+  "fields": ["schema_version", "template_key", "summary", "hero", "relationships", "modules"],
+  "moduleTypes": ["hero", "rich_text", "card_grid", "split_media", "accordion", "data_table", "cta_banner"],
+  "jsonSchemas": {
+    "page": "config/schemas/page.schema.json",
+    "error": "config/schemas/error.schema.json",
+    "contentReference": "config/schemas/content-reference.schema.json",
+    "mediaReference": "config/schemas/media-reference.schema.json",
+    "uuidV4": "config/schemas/uuid-v4.schema.json",
+    "publicPath": "config/schemas/public-path.schema.json",
+    "link": "config/schemas/link.schema.json",
+    "safeHtml": "config/schemas/safe-html.schema.json",
+    "collection": "config/schemas/collection.schema.json",
+    "navigation": "config/schemas/navigation.schema.json",
+    "routeManifest": "config/schemas/route-manifest.schema.json",
+    "modules": "config/schemas/modules"
+  },
+  "boundaries": {
+    "readOnly": true,
+    "publishedOnlyForAnonymous": true,
+    "fullPageDtoSchemaFrozen": true,
+    "fullPageDtoDeferred": false,
+    "a1SchemaAndMigrationComplete": true,
+    "a2PublicEndpointsDeferred": false,
+    "routeResolutionDeferred": false,
+    "previewBridgeDeferred": true
+  },
+  "endpoints": {
+    "resolve": "/wp-json/gdhe/v1/resolve",
+    "collection": "/wp-json/gdhe/v1/collection/{type}",
+    "navigation": "/wp-json/gdhe/v1/navigation",
+    "routeManifest": "/wp-json/gdhe/v1/route-manifest"
+  }
+}

@@ -353,3 +353,75 @@ Each execution records:
 - controlled_recovery: MSG-TASK-006-ADVERSARIAL-CLOSURE-REVIEW-STOP-RECOVERY is queued with closure PASS, zero findings and the checked closeout next step
 - boundary: reviewer did not edit planner state, perform acceptance or execute Git or external-state operations
 - next: planner acknowledges the PASS response and recovery request, then owns the required state entries and checked transition
+
+### 2026-07-24T05:03:02Z - TASK-007 adversarial review round 1
+
+- task: TASK-007
+- message: MSG-TASK-007-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, then independently reviewed A1 Schema and migration rollback, both backup sets, A2 public REST implementation, frozen DTOs and schemas, Golden determinism, collection behavior, benchmark, cleanup, frontend consumer audit, documentation, scope and current governance facts without repairing business deliverables
+- files_read: full governance resume chain; TASK-007 active task; TASK-005 API and frontend boundaries; all TASK-007 artifacts; GDHE plugin schemas, implementation and tests; CMS docs and root README; backup manifests and rollback plans; current local WordPress and database state
+- files_changed: TASK-007 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: 46 handoff checksums matched; 18 schemas, 13 Goldens, 10 errors, 8 module fixtures and 5 boundary negatives passed read-only validation; 54 public IDs were lowercase UUIDv4; no forbidden Golden keys or dangerous safeHtml; PHP lint and Python compile passed; WordPress 7.0.2, PHP 8.3.32, SCF 6.9.2, gdhe-site 0.3.3, Core and SCF checksums, 12-table DB check and current zero TASK residue passed; project, message, strict lane and diff checks passed before response
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- p1: collection filters candidates only by published status, schema meta and UUID, then emits lightweight references without full template or module contract validation; invalid-path candidates can also remain in found total after being omitted from items; existing content-invariant negative tests cover resolve only, so collection can expose an item that resolve rejects or report a misleading total
+- p2: PROJECT current unresolved text still says REST fixture, full DTO, route resolution and caching are unimplemented or unvalidated; TASK-007 current Validation Evidence still says there is no product implementation validation despite extensive A1 and A2 runtime evidence
+- passed_boundaries: A1 schema, structured table, stable IDs, migration idempotence and exact rollback; backups; anonymous read-only transport; UUID, safeHtml, path, link, error and header contracts; valid-dataset Golden determinism and collection total; benchmark; cleanup; deferred GraphQL and production-media separation; no frontend or external-state expansion
+- limitations: reviewer did not rerun mutation-heavy fixture lifecycle, migration or determinism scripts because the formal review is read-only over business deliverables and runtime; execution evidence was cross-checked through source, frozen checksums, immutable artifacts and current clean runtime
+- boundaries: no business deliverable repair, runtime mutation, planner-state edit, frontend or GraphQL implementation, commit, push, merge, acceptance or closure
+- message_status: Round 1 request acknowledged as done; controlled FAIL review_response queued to planner with requires response set to the original request
+- next: planner acknowledges the response, owns NEEDS_REVISION recovery, dispatches only the two narrow remediations, fresh validates and requests Round 2
+
+### 2026-07-24T05:29:23Z - TASK-007 adversarial review round 2 final
+
+- task: TASK-007
+- message: MSG-TASK-007-ADVERSARIAL-REVIEW-R2
+- action: acknowledged the final configured review request first, preserved Round 1 history, independently reviewed the collection eligible-set implementation and negatives, both current-fact corrections, frozen handoff, schemas, determinism, runtime cleanup, benchmark and deferred boundaries
+- files_read: Round 2 request; canonical Round 1 report; R4 execution response; active task; project state; handoff manifest; runtime, collection, determinism, cleanup and validation evidence; implementation and R5 tests; CMS docs; current runtime and Git scope
+- files_changed: TASK-007 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement; three transient Python bytecode cache files were created by reviewer validation, disclosed, and precisely removed by Planner in the same review turn
+- validation: Round 1 P1 closed by one complete-envelope and unique-route eligible set feeding both total and pagination; three published invalid candidate classes excluded; all returned items resolve to matching UUID; Round 1 P2 current facts synchronized; 46 handoff checksums, 18 schemas, 13 Goldens, 10 errors, 8 module fixtures, 5 boundary negatives, 54 UUIDs, safeHtml scan, two-lifecycle evidence, WordPress/Core/SCF/plugin/DB/zero residue, project, messages, strict lane and diff checks otherwise pass
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- round1_closure: collection eligible-content P1 PASS; project and task current-facts P2 PASS
+- transient_scope_event: reviewer `python3 -m py_compile` created three untracked files under the GDHE plugin test `__pycache__`; exact reviewer cleanup was rejected by write scope, the event was immediately disclosed, Planner deleted only those files, and reviewer then verified the directory and all `.pyc` files absent
+- response_correction: the initially queued FAIL response was marked failed before Planner acknowledgement because it described the now-resolved transient state; the canonical report and replacement response use the verified current PASS state
+- boundaries: no CMS business repair, Planner state edit, fixture or migration write, frontend or GraphQL implementation, commit, push, merge, acceptance or closure
+- message_status: Round 2 request acknowledged as done; superseded transient-state FAIL response was first marked failed, then the stop hook identified it as actionable and reviewer ACKed it into done while retaining failure history; controlled final PASS replacement remains queued to Planner with requires response set to the Round 2 request
+- final_audit: controlled messages valid; strict lane audit reports only the expected queued final PASS response
+- next: Planner acknowledges the final PASS response and owns review recovery, final validation and any checked transition
+
+### 2026-07-24T11:00:29Z - TASK-007 Forest-aligned Schema 3 adversarial review round 1
+
+- task: TASK-007
+- message: MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1
+- action: acknowledged the new Forest-aligned Schema 3 request first, restored the registered reviewer lane, and independently reviewed authority boundaries, Schema 3 content model, migration/rollback, anonymous REST, deterministic handoff, frontend P1 closure, deferred P2 items, runtime integrity, docs and scope without repairing deliverables
+- files_read: full reviewer resume chain; active TASK-007; Forest revision contract; all requested A3 execution, checkpoint, P1 revision, frontend audit/re-audit, pre-review, handoff and README context; current plugin Schema/runtime/migration/tests; CMS docs; immutable A3 backup and current runtime state
+- files_changed: TASK-007 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: 55 handoff checksums PASS; 19-file transitive Schema closure PASS; fresh read-only Draft 2020-12 validation rc 0; 13 Golden parse and schema PASS; 69 scanned IDs all UUIDv4; zero forbidden internal keys or dangerous safeHtml; two rounds have different database IDs and identical 13 hashes; A3 backup 6 checksums PASS; PHP lint and JSON parse PASS; WordPress 7.0.2, gdhe-site 0.4.1, SCF 6.9.2, Core/SCF checksums, 12-table DB check and current TASK residue all PASS
+- frontend_p1_closure: exact seven-pair type/template enforcement and known-mismatch exclusion PASS; five-root 19-file Schema authority and 55-file reproducible handoff PASS; narrow frontend re-audit PASS independently confirmed
+- result: FAIL; P0 none; P1 one; P2 two; Planner final validation not allowed
+- p1: A3 migration apply writes public path, template and remapped relations without checking their results, then verifies only post type, schema version and marker; an early post-update failure also leaves the just-written backup meta, and no A3 apply/idempotence/exact-rollback runtime test closes the non-zero legacy path
+- p2_1: the 13 Golden and both lifecycle manifests contain root Home Page but no native Post or non-root Page positive
+- p2_2: Product and Support runtime only emit HTTPS video URLs, while the machine Schema accepts generic URI schemes
+- deferred_nonfinding: production media HTTPS origin and Next Image remote allowlist remain an explicit future frontend/deployment gate outside TASK-007; evaluated but not counted
+- passed_boundaries: RapidDirect/Forest/GDHE authority split; public and internal types; five taxonomies; structured Product data and relations; canonical routes; eligible collection totals; anonymous security; errors/headers/file DTO; backup/inventory; checksums; determinism; database-ID isolation; 1600-request benchmark evidence as future PoC trigger only; cleanup; Core/SCF/DB; docs/README; zero frontend/GraphQL/multilingual/deployment expansion
+- boundaries: no business deliverable repair, runtime or database mutation, Planner-state edit, frontend/GraphQL implementation, Git action, acceptance or deployment
+- message_status: request acknowledged as done; controlled FAIL review_response queued with requires_response_to set to the original request
+- next: Planner acknowledges the response, owns NEEDS_REVISION recovery and dispatches only the one P1 and two P2 narrow corrections
+
+### 2026-07-24T11:23:33Z - TASK-007 Forest-aligned Schema 3 adversarial review round 2 final
+
+- task: TASK-007
+- message: MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R2
+- action: acknowledged the configured final request first, restored the registered reviewer lane, preserved Round 1 history and independently reviewed the migration P1, both task-local P2 closures and all previously passing Schema 3 boundaries without repairing deliverables
+- files_read: full reviewer resume chain; Round 2 request; canonical Round 1 report; revision execution and Planner checkpoint; migration runtime, contract, Schema, determinism, cleanup and handoff evidence; active task; current migration, fixtures, contract/schema tests, docs, backup and runtime state
+- files_changed: TASK-007 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: migration code reads back type, Schema, path, template, five relation groups and marker; four injected failures restore an equal immutable snapshot and remove backup/marker; test covers six disposable records, apply/repeated apply, rollback/repeated rollback and ambiguity; 61 checksums PASS; immutable backup 6 checksums PASS; fresh read-only Schema rc 0; 15 current hashes equal both determinism rounds; both rounds use different DB IDs; company/news route identity PASS; 75 public IDs all UUIDv4; zero forbidden internal keys or dangerous safeHtml; PHP 17/17, JSON 45, WordPress/Core/SCF/plugin/12-table DB, inventory and zero residue PASS
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- p1_closure: atomic migration write/read-back, snapshot restore, four failure stages, idempotence, ambiguity and zero residue PASS
+- p2_1_closure: native non-root Page and native Post anonymous resolve, route manifest, stable UUID, 15 Golden and two-round determinism PASS
+- p2_2_closure: Product and Support HTTPS-only machine Schema, HTTPS positives and HTTP/FTP negatives PASS
+- regression: 19-file Schema, eligible collection totals 3/3/3 and items 2/1/0, public security, backup, cleanup, Core/SCF/DB, docs, scope and governance PASS
+- deferred_boundaries: production media origin and Next Image allowlist remain a future deployment gate; GraphQL/cache remains only a future PoC trigger
+- limitations: reviewer did not rerun mutation-heavy migration or fixture lifecycles; it independently cross-checked implementation, tests, immutable evidence, separate Planner runtime checkpoint and current zero residue
+- boundaries: no business deliverable repair, runtime mutation, Planner-state edit, frontend, multilingual, GraphQL, Git, acceptance or deployment
+- message_status: Round 2 request acknowledged as done; controlled final PASS review_response queued with requires_response_to set to the Round 2 request
+- next: Planner acknowledges the response and owns recovery, final validation and any checked transition

@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "wordpress_cms",
+  "to_lane": "planner",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T10:36:38Z",
+  "requires_response_to": "MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "A3 Schema 3 consumer P1 narrow revision is execution-complete. gdhe-site is 0.4.1; REST API 1, Content Schema 3.0.0 and Module Schema 1.0.0 are unchanged. Runtime now enforces public type/template pairing. A published Product using the known market template returns gdhe_contract_invariant and is excluded from collection items/total, navigation and route manifest; valid Product totals remain 3/3/3 with items 2/1/0. The Draft 2020-12 validator now recursively loads and reports the exact 19-file transitive authority graph, and every graph file is individually frozen in HANDOFF_CHECKSUMS.sha256 with reproducible manifest instructions. Two different-DB-ID lifecycles passed with all 13 positive Golden hashes unchanged and final zero residue. PHP/JSON, Schema, Core/SCF/DB, handoff and governance checks pass. Planner independent p95 2001.839 ms trigger remains recorded; no benchmark rerun or GraphQL work. Please acknowledge and independently validate before any frontend re-audit.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256",
+    "TASKS/ARTIFACTS/TASK-007/A3_CONTRACT_RUNTIME_SUMMARY.json",
+    "TASKS/ARTIFACTS/TASK-007/A3_SCHEMA_VALIDATION.json",
+    "TASKS/ARTIFACTS/TASK-007/A3_DETERMINISTIC_GOLDEN.json",
+    "TASKS/ARTIFACTS/TASK-007/A3_CLEANUP_EVIDENCE.json"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256"
+  ],
+  "notes": "Narrow two-P1 closure only. No frontend/root README/review/Git/acceptance/closure. Deferred P2 findings remain recorded.",
+  "done_at": "2026-07-24T10:37:10Z",
+  "updated_at": "2026-07-24T10:37:10Z"
+}

@@ -1,0 +1,109 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "id": "31000000-0000-4000-8000-000000000002",
+    "type": "product",
+    "templateKey": "product",
+    "locale": "en",
+    "publicPath": "/products/task-007-a3-flow-control-alpha/",
+    "title": "GDHE Flow Control Alpha",
+    "excerpt": "Synthetic flow-control product alpha.",
+    "publishedAt": "2026-07-24T01:30:00+00:00",
+    "modifiedAt": "2026-07-24T01:30:00+00:00",
+    "modules": [
+        {
+            "id": "33000000-0000-4000-8000-000000000002",
+            "type": "rich_text",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Synthetic product details",
+                "safeHtml": "<p>Structured synthetic GDHE-domain fixture content.</p>"
+            }
+        }
+    ],
+    "relations": {
+        "products": [],
+        "markets": [
+            {
+                "id": "31000000-0000-4000-8000-000000000005",
+                "type": "market",
+                "title": "Controlled Water Systems",
+                "publicPath": "/markets/task-007-a3-controlled-water-systems/"
+            }
+        ],
+        "references": [
+            {
+                "id": "31000000-0000-4000-8000-000000000006",
+                "type": "reference",
+                "title": "Coastal Research Facility",
+                "publicPath": "/references/task-007-a3-coastal-research-facility/"
+            }
+        ],
+        "support_articles": [
+            {
+                "id": "31000000-0000-4000-8000-000000000007",
+                "type": "support_article",
+                "title": "Configure Flow Control",
+                "publicPath": "/support/configuration/task-007-a3-configure-flow-control/"
+            }
+        ],
+        "downloads": [
+            {
+                "id": "31000000-0000-4000-8000-000000000008",
+                "type": "download",
+                "title": "Flow Control Data Sheet",
+                "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/"
+            }
+        ]
+    },
+    "details": {
+        "model": "Flow Control Alpha",
+        "productCode": "FC-ALPHA",
+        "categories": [
+            "flow-control"
+        ],
+        "series": [
+            "synthetic-series"
+        ],
+        "installationTypes": [
+            "deck-mounted"
+        ],
+        "positioning": "Synthetic GDHE-domain product used only for contract validation.",
+        "features": [
+            "Stable synthetic flow control for alpha"
+        ],
+        "specifications": [
+            {
+                "key": "nominal_flow",
+                "label": "Nominal flow",
+                "value": "12",
+                "unit": "L/min"
+            }
+        ],
+        "articleNumbers": [
+            {
+                "number": "GDHE-A3-ALPHA",
+                "region": "Global"
+            }
+        ],
+        "finishes": [
+            {
+                "code": "SF-01",
+                "label": "Synthetic silver",
+                "color": "silver"
+            }
+        ],
+        "installation": "Install on a synthetic controlled-water test assembly.",
+        "control": "Manual synthetic control.",
+        "compatibility": [
+            "GDHE synthetic control interface"
+        ],
+        "gallery": [],
+        "videoUrl": "https://media.gdhe.example/fixtures/product-alpha.mp4",
+        "inquiryCta": {
+            "title": "Request product information",
+            "url": "/contact/",
+            "target": "_self"
+        }
+    }
+}

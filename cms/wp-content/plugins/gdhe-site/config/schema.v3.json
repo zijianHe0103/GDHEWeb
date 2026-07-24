@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "3.0.0",
+  "apiVersion": "1",
+  "moduleSchemaVersion": "1.0.0",
+  "locale": {
+    "default": "en",
+    "enabled": ["en"],
+    "futureAdapter": true
+  },
+  "publicTypes": ["product", "market", "reference", "support_article", "download"],
+  "internalTypes": ["site_settings"],
+  "taxonomies": ["product_category", "product_series", "installation_type", "support_topic", "document_type"],
+  "fields": [
+    "schema_version",
+    "template_key",
+    "summary",
+    "hero",
+    "relationships",
+    "modules",
+    "product_details",
+    "market_details",
+    "reference_details",
+    "support_details",
+    "download_details"
+  ],
+  "relationshipKeys": ["products", "markets", "references", "support_articles", "downloads"],
+  "moduleTypes": ["hero", "rich_text", "card_grid", "split_media", "accordion", "data_table", "cta_banner"],
+  "jsonSchemas": {
+    "page": "config/schemas/page.v3.schema.json",
+    "error": "config/schemas/error.schema.json",
+    "contentReference": "config/schemas/content-reference.schema.json",
+    "mediaReference": "config/schemas/media-reference.schema.json",
+    "fileReference": "config/schemas/file-reference.schema.json",
+    "uuidV4": "config/schemas/uuid-v4.schema.json",
+    "publicPath": "config/schemas/public-path.schema.json",
+    "link": "config/schemas/link.schema.json",
+    "safeHtml": "config/schemas/safe-html.schema.json",
+    "collection": "config/schemas/collection.v3.schema.json",
+    "navigation": "config/schemas/navigation.schema.json",
+    "routeManifest": "config/schemas/route-manifest.schema.json",
+    "modules": "config/schemas/modules"
+  },
+  "boundaries": {
+    "readOnly": true,
+    "publishedOnlyForAnonymous": true,
+    "fullPageDtoSchemaFrozen": true,
+    "eligibleCollectionsFailClosed": true,
+    "databaseIdentifiersPublic": false,
+    "previewBridgeDeferred": true,
+    "graphqlDeferred": true
+  },
+  "endpoints": {
+    "resolve": "/wp-json/gdhe/v1/resolve",
+    "collection": "/wp-json/gdhe/v1/collection/{type}",
+    "navigation": "/wp-json/gdhe/v1/navigation",
+    "routeManifest": "/wp-json/gdhe/v1/route-manifest"
+  }
+}

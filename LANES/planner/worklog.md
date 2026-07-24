@@ -13,6 +13,160 @@ Each execution records:
 - next step
 - whether planner or adversarial reviewer intervention is needed
 
+### 2026-07-24T02:01:26Z - TASK-007 A2 independent checkpoint needs revision
+
+- response: `MSG-TASK-007-WORDPRESS-A2-PUBLIC-API-FIXTURE-HANDOFF-RESPONSE` validated and acknowledged.
+- static_validation: backup hash/bytes, PHP, JSON, 9 Golden schemas, WordPress/PHP/SCF/GDHE versions, Core/SCF checksums and database all passed.
+- runtime_rerun: fixture create and contract suite passed 9 positive and 14 negative cases, then schema validation passed.
+- p1: all 9 Golden hashes drifted because normalized public DTOs still expose WordPress auto-increment post and attachment IDs; the frozen handoff simultaneously says fixture database IDs are not frontend contracts.
+- cleanup: planner rerun removed 8 posts, 4 attachments and 3 terms; database check passed.
+- gate: no frontend audit or review. Dispatch only a narrow stable-public-ID and two-lifecycle deterministic-Golden revision.
+
+### 2026-07-24T02:20:17Z - TASK-007 A2 independent checkpoint PASS
+
+- response: deterministic-Golden revision response validated and acknowledged.
+- independent_determinism: fresh two-lifecycle run used different WordPress IDs but produced exact 9/9 frozen Golden hashes; schema and cleanup passed in both rounds.
+- independent_http: 800 measured requests after four warmups at concurrency 20, zero errors; p95 remains above the separate GraphQL comparison gate.
+- integrity: plugin checksum stream, complete handoff checksum set, PHP, Core/SCF checksums, 12-table database, zero residue, project governance, strict lane audit, messages and diff check all passed.
+- docs: root README now records local CMS startup and the English GDHE API/UUID boundary.
+- gate: dispatch frontend read-only consumer audit only; no frontend product code, review, acceptance or Git delivery.
+
+### 2026-07-24T02:36:14Z - TASK-007 frontend consumer audit FAIL
+
+- response: read-only frontend audit response validated and acknowledged; prohibited frontend scope remained unchanged.
+- verdict: FAIL with P0=1, P1=5 and P2=3.
+- confirmed_p0: public WYSIWYG HTML reaches normalized DTO modules without a frozen sanitization or structured-text authority.
+- cms_revision: strict link/CTA/template and remaining module fixtures, shared canonical path, error/cache/header samples, multi-item collection determinism, plus applicable UUIDv4/size limits.
+- separate_gate: benchmark-triggered GraphQL comparison becomes a future PoC/ADR candidate only; no GraphQL work is authorized in TASK-007.
+- next: dispatch narrow CMS revision, then frontend read-only re-audit before adversarial review.
+
+### 2026-07-24T04:10:09Z - TASK-007 CMS consumer-contract R2 checkpoint PASS
+
+- response: CMS R2 response validated and acknowledged.
+- independent_static: handoff checksum set, PHP, Python, 18 schemas, 13 DTOs, 10 error bodies, 8 module fixtures and boundary negatives passed.
+- independent_runtime: fresh two-lifecycle run changed database IDs but preserved exact 13/13 frozen Golden hashes with zero residue after each cleanup.
+- security: public WYSIWYG is CMS-sanitized and exposed only as safeHtml; malicious tag, event attribute and protocol cases passed.
+- integrity: plugin stream, Core/SCF, database, scope, governance, strict lane, messages and diff checks passed.
+- next: frontend read-only re-audit only.
+
+### 2026-07-24T04:44:00Z - TASK-007 frontend re-audit R2 single P1
+
+- response: re-audit response validated and acknowledged; verdict FAIL, P0=0, P1=1, P2=1.
+- closed: safeHtml, seven modules, link/CTA/template, canonical paths, errors/headers, UUIDv4 and bounds.
+- remaining: collection page 1/2 total is 3 but terminal empty page total is 0 for the same filter and sort; current test checks only page 1.
+- deferred: production media origin remains a deployment P2; GraphQL stays a separate future PoC/ADR.
+- next: narrow CMS total-invariance fix, then single-finding frontend re-audit.
+
+### 2026-07-24T04:55:24Z - TASK-007 consumer gate PASS
+
+- responses: CMS collection-total revision and frontend R3 single-finding response validated and acknowledged.
+- planner_checkpoint: same filter/sort totals are 3/3/3 with item lengths 2/1/0; fresh two-lifecycle run preserved 13/13 hashes with changed internal WordPress IDs and zero residue.
+- frontend_verdict: PASS with P0=0, P1=0 and P2=1 deferred.
+- checksum: complete 46/46 frozen handoff set and explicit runtime cross-page invariant passed.
+- deferred: production media origin remains a deployment gate; GraphQL remains a separate future Planner-owned PoC/ADR.
+- gate: independent adversarial review only; no adapter, acceptance or Git delivery.
+- next: dispatch one comprehensive TASK-007 adversarial review to the registered reviewer session.
+
+### 2026-07-24T04:55:24Z - TASK-007 adversarial review Round 1 dispatched
+
+- message: `MSG-TASK-007-ADVERSARIAL-REVIEW-R1` queued for the registered adversarial_reviewer lane.
+- scope: A1/A2 schema and migration, rollback, public REST security and contracts, deterministic Golden fixtures, collection total, benchmark, cleanup, documentation, consumer gate and governance.
+- transition: IN_PROGRESS to UNDER_REVIEW.
+- boundary: reviewer is read-only over business delivery; no preemptive fix, acceptance, commit, push, merge or closure.
+- next: wait for the controlled review response.
+
+### 2026-07-24T05:05:29Z - TASK-007 adversarial review Round 1 FAIL recovery
+
+- response: `MSG-TASK-007-ADVERSARIAL-REVIEW-R1-RESPONSE` validated and acknowledged.
+- verdict: FAIL with P0=0, P1=1 and P2=1; Planner final validation is not allowed.
+- p1: collection does not apply the full template/module/path content contract to candidate eligibility, so it can return an item that resolve rejects or count an omitted invalid-path item.
+- p2: synchronized the two current-state narratives only; historical records and deferred boundaries remain unchanged.
+- transition: UNDER_REVIEW to NEEDS_REVISION.
+- boundary: no frontend, GraphQL, acceptance or Git delivery.
+- next: dispatch the narrow collection eligible-content revision to wordpress_cms, fresh validate, then request Round 2.
+
+### 2026-07-24T05:23:30Z - TASK-007 collection eligibility R4 checkpoint PASS
+
+- response: `MSG-TASK-007-WORDPRESS-COLLECTION-ELIGIBILITY-R4-RESPONSE` validated and acknowledged.
+- independent_runtime: Planner reran two complete fixture/contract/schema/Golden/cleanup lifecycles; internal WordPress IDs changed and exact 13/13 Golden hashes remained identical.
+- contract: published unknown-template, invalid-module and invalid-canonical-path candidates were excluded from collection items and total; valid pages remained totals 3/3/3 and items 2/1/0; every returned item resolved anonymously to the same UUID.
+- integrity: original frozen artifact snapshot restored after the independent run; handoff checksums, PHP, 18 schemas, 24 negatives, 12-table DB, zero residue, governance, message, strict lane and diff checks passed.
+- transition: NEEDS_REVISION to UNDER_REVIEW.
+- boundary: no frontend, GraphQL, acceptance, commit, push or merge.
+- next: dispatch adversarial review Round 2 and wait for the controlled final configured verdict.
+
+### 2026-07-24T05:36:01Z - TASK-007 adversarial review Round 2 final PASS
+
+- response: `MSG-TASK-007-ADVERSARIAL-REVIEW-R2-RESPONSE-FINAL` validated and acknowledged.
+- verdict: final PASS with P0=0, P1=0 and P2=0; Planner final validation allowed.
+- closure: Round 1 collection eligible-content P1 and current-facts P2 independently closed; prior migration, security, contract, determinism, benchmark, cleanup, consumer, documentation, scope and governance PASS boundaries regressed successfully.
+- transient_cleanup: reviewer compile check created three untracked bytecode files outside reviewer write scope; Planner removed exactly those files in the same review turn and reviewer verified no bytecode residue. The unacknowledged transient FAIL response was controlledly superseded while preserving history.
+- artifacts: canonical review report updated; `PLANNER_SUMMARY.md` generated.
+- boundary: review PASS is not user acceptance and does not authorize frontend, GraphQL, commit, push, merge, accept or close.
+- next: fresh final validation and checked `prepare-awaiting-user`.
+
+### 2026-07-24T07:41:58Z - TASK-007 controlled acceptance-view synchronization
+
+- first_prepare: checked `prepare-awaiting-user` passed at 07:40:57Z.
+- controlled_reopen: helper reopened AWAITING_USER to NEEDS_REVISION solely because the write hook correctly blocks direct narrative changes while waiting for the user.
+- scope: synchronize only current task/project/board narrative and record the transition; no deliverable, review verdict, runtime, frontend, GraphQL or Git change.
+- next: rerun final validation and checked `prepare-awaiting-user`; then wait for exact `确认 TASK-007 完成并提交到远端`.
+
+### 2026-07-24T09:19:20Z - TASK-007 Forest-aligned A3 revision authorized
+
+- authorization: 用户明确确认将 TASK-007 退回修订，并按 Forest Group 产品目录逻辑重构 CMS 内容模型。
+- transition: checked reopen 已将 `AWAITING_USER` 退回 `NEEDS_REVISION`；Schema 2 Round 2 PASS 保留为技术回归基线，不再是当前业务合同的 final verdict。
+- contract: `TASKS/ARTIFACTS/TASK-007/FOREST_PRODUCT_MODEL_REVISION.md` 冻结 RapidDirect/Forest/GDHE 三类权威边界、目标目录、Schema 3 类型/分类法、迁移、关系、Fixture 和验证门。
+- boundary: 本轮只准备并派发 `wordpress_cms` A3；不实施 Next.js 页面、Header/Mega Menu/Footer、视觉、多语言、GraphQL、部署或 Git 交付。
+- next: 验证治理状态与消息队列后，向注册的 `wordpress_cms` session 派发 A3 execution request。
+
+### 2026-07-24T09:21:50Z - TASK-007 A3 dispatched
+
+- message: `MSG-TASK-007-WORDPRESS-FOREST-PRODUCT-MODEL-A3` validate/dry-run PASS，并经 Codex thread bridge 投递至注册 `wordpress_cms` session。
+- live: 目标 thread 已 active，首条进度确认将先恢复 lane、读取合同、inventory Schema 2，并在任何数据库 mutation 前创建和验证新的 TASK-007 不可变备份。
+- gate: CMS execution response 与 Planner independent checkpoint 前，frontend re-audit、adversarial review、产品前端和 Git 交付全部阻塞。
+- next: wait for controlled ack/response；若 backup、migration 或 rollback 门失败，保持 NEEDS_REVISION 并接收 BLOCKED evidence。
+
+### 2026-07-24T10:12:34Z - TASK-007 A3 Planner checkpoint PASS
+
+- response: A3 execution response validated and acknowledged。
+- independent_runtime: fresh two-lifecycle determinism used different database IDs and matched 13/13 Golden hashes；totals `3/3/3`、items `2/1/0`；each cleanup zero residue。
+- independent_benchmark: fresh lifecycle、1,600 origin requests、concurrency 20、p50 858.246 ms、p95 2001.839 ms、error rate 0；future GraphQL/cache comparison trigger remains deferred。
+- integrity: immutable backup/checksums、PHP/JSON、Core/SCF、12-table DB、inventory、public DTO、handoff checksums、secret、governance/messages/strict/diff PASS。
+- correction: independent evidence refresh changed benchmark/determinism artifact hashes；manifest and `HANDOFF_CHECKSUMS.sha256` were truthfully refrozen and verify clean。
+- gate: authorize frontend read-only re-audit only；no frontend implementation、GraphQL、review bypass、acceptance or Git delivery。
+
+### 2026-07-24T10:14:36Z - TASK-007 Schema 3 frontend read-only re-audit dispatched
+
+- message: `MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT` validate/dry-run PASS and delivered to the registered frontend session。
+- scope: inspect frozen DTO/schema/checksum/Golden/route/relation/file/error/cache/performance evidence only；`frontend/**` remains read-only。
+- gate: no adversarial review until the controlled audit response is acknowledged and independently checked；no frontend implementation、GraphQL、acceptance or Git delivery。
+- next: wait for PASS/FAIL with P0/P1/P2 and process the controlled execution response。
+
+### 2026-07-24T10:25:54Z - TASK-007 Schema 3 frontend consumer audit FAIL
+
+- response: validated and acknowledged；verdict FAIL，P0=0、P1=2、P2=3；frontend product code unchanged。
+- p1: runtime known-template membership does not enforce structured type/template pairing；complete transitive Schema graph is not directly/reproducibly frozen。
+- independently_confirmed: public runtime uses one global template allowlist while page Schema defines per-type const pairs；handoff directly checksums only three Schema files although validator loads the broader graph。
+- passed: 13 Golden、collection invariants、UUID/safeHtml/errors/cache、publication boundary、database-ID isolation、determinism、cleanup and named checksums。
+- gate: one CMS P1 revision only，then Planner checkpoint and narrow frontend re-audit；no adversarial review、frontend implementation、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T10:28:57Z - TASK-007 Schema 3 consumer P1 revision dispatched
+
+- message: `MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1` validate/dry-run PASS and delivered to registered wordpress_cms session。
+- scope: runtime structured type/template pairing plus known-mismatch negative；complete transitive Schema checksum closure and reproducible manifest algorithm only。
+- preserved: Schema 3 business model、13 valid Golden hashes、benchmark trigger、P2 findings、frontend/root README/Core/SCF/themes remain unchanged unless directly required by the two P1s。
+- gate: Planner checkpoint and narrow frontend re-audit required before adversarial review；no product frontend、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T10:38:57Z - TASK-007 Schema 3 consumer P1 Planner checkpoint PASS
+
+- response: CMS P1 execution response validated and acknowledged。
+- p1_1: known Product/market-template mismatch rejected by resolve and excluded from collection/navigation/route manifest；valid totals/items unchanged。
+- p1_2: exact 19-file transitive Schema graph and deterministic traversal/checksum algorithm agree across schema report、manifest and handoff。
+- independent_runtime: two lifecycles with changed DB IDs matched all 13 baseline Golden hashes；each cleanup zero residue。
+- integrity: plugin 0.4.1、PHP/JSON、Core/SCF/DB、handoff checksum、governance/messages/strict/diff PASS；Planner determinism hash truthfully refrozen。
+- gate: narrow frontend re-audit only；no adversarial review、frontend implementation、GraphQL、acceptance or Git delivery。
+
 ## 2026-07-22
 
 ### 03:58 - lane initialized
@@ -691,3 +845,112 @@ Each execution records:
 - state: ACCEPTED / FORMAL_COMMIT。
 - delivery: create one formal commit, push task branch, merge to main, push main, verify remote refs。
 - boundary: no force push, rebase, branch deletion or product/runtime change。
+
+### 2026-07-23T08:27:33Z - TASK-006 delivered; TASK-007 intake
+
+- delivered: TASK-006 task branch and main remote refs all at `4c52e5d`; remote HEAD is main。
+- switch: clean workspace, no open lane message or issue; created `codex/TASK-007-english-api-dto-fixture`。
+- intake: one task with A1 schema/migration checkpoint and A2 public API/fixture/handoff final gate。
+- dependency: frontend formal consumption remains blocked until A2 final review and immutable version/checksum handoff。
+- boundary: governance intake only; no WordPress, database, fixture, plugin or frontend implementation。
+- next: wait for `确认 TASK-007 需求并开始执行`。
+
+### 2026-07-23T08:37:24Z - TASK-007 requirements confirmed
+
+- received: exact requirement confirmation。
+- transition: AWAITING_REQUIREMENT_CONFIRMATION to READY。
+- scope: one task, A1 schema/migration checkpoint then A2 API/fixture/handoff final gate。
+- lane_scope: add exact `.local/backups/TASK-007/**` for new backup and migration evidence only。
+- boundary: prepare and dispatch A1 only; no A2/frontend consumption before A1 gate。
+- next: render/validate lane registry and queue A1 execution request。
+
+### 2026-07-23T08:39:28Z - TASK-007 A1 dispatched
+
+- message: A1 execution request valid and dry-run resolved to registered wordpress_cms session。
+- live: prompt sent; target Codex thread is active。
+- transition: READY to IN_PROGRESS。
+- boundary: A1 only; no A2 endpoints, four-fixture benchmark/handoff, frontend implementation or Git delivery。
+- next: wait for ack, backup gate and A1 execution response。
+
+### 2026-07-23T14:48:53Z - TASK-007 A1 planner checkpoint PASS
+
+- independent_validation: immutable backup bytes/hash、9 PHP lint、22 JSON parse、14 Draft 2020-12 schemas、WordPress/PHP/SCF/GDHE versions、Core/SCF checksums、12-table DB check。
+- runtime_rerun: 14 schema files、36 assertions、cleanup true。
+- independent_residue: fixture 0、migration markers 0、task fixture revisions 0。
+- scope: A2 routes absent；frontend/Core/SCF source/themes diff empty。
+- governance: project、strict lane、messages and diff check PASS。
+- gate: A1 PASS authorizes A2 dispatch only；frontend consumer audit remains blocked。
+- next: create and dispatch the controlled A2 execution request to the registered wordpress_cms session。
+
+### 2026-07-24T10:49:23Z - TASK-007 A3 consumer gate and README documentation PASS
+
+- frontend_response: narrow re-audit acknowledged；verdict PASS，P0=0、P1=0、P2=3 deferred。
+- contract: 7 valid type/template pairs accepted、35 mismatches rejected；19-file Schema graph four-way parity、55/55 checksums、13 Golden unchanged and zero residue。
+- readme_response: Schema 3 resolve example and public/internal content-type boundary synchronized；managed governance block unchanged。
+- documentation: document impact RESOLVED；README impact UPDATED。
+- next: fresh validation，then dispatch the new A3 independent adversarial review；no product frontend、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T10:55:51Z - TASK-007 A3 independent review dispatched
+
+- pre_review_validation: 55/55 handoff、16 PHP、scoped JSON、Core/SCF、12-table DB、backup、zero residue、secret scan、governance/messages/diff PASS。
+- transition: NEEDS_REVISION to UNDER_REVIEW。
+- message: MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1 validated、dry-run resolved and dispatched to registered reviewer session。
+- scope: Forest Schema 3 product model、migration/rollback、public security、consumer P1 closure、three deferred P2、determinism、benchmark、cleanup、docs and governance。
+- next: await independent verdict；no frontend、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T11:03:37Z - TASK-007 A3 adversarial Round 1 FAIL recovery
+
+- response: MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1-RESPONSE validated and acknowledged。
+- verdict: FAIL；P0=0、P1=1、P2=2；Planner final validation blocked。
+- p1: migration apply lacks complete public path/template/remapped-relation verification, early-failure backup cleanup and non-zero apply/idempotence/exact-rollback runtime proof。
+- p2: native Post/non-root Page positive coverage and HTTPS-only video machine Schema。
+- nonfinding: production media HTTPS origin and Next Image allowlist remain a future deployment gate。
+- transition: reopen helper safely refused UNDER_REVIEW before mutation because it only accepts AWAITING_USER；Planner synchronized NEEDS_REVISION and recorded recovery。
+- next: dispatch only these three narrow corrections to wordpress_cms，then fresh validate and request A3 Round 2。
+
+### 2026-07-24T11:05:30Z - TASK-007 A3 Round 1 narrow revision dispatched
+
+- message: MSG-TASK-007-WORDPRESS-FOREST-SCHEMA3-REVIEW-R1-FIX validated、dry-run resolved and dispatched to registered wordpress_cms session。
+- scope: migration fail-closed/read-back/early-failure cleanup/non-zero runtime proof；native Post/non-root Page positives；HTTPS-only video machine Schema。
+- evidence: require updated runtime tests、15 Golden expectation、two-lifecycle determinism、refrozen handoff、cleanup、Core/SCF/DB、docs and governance。
+- boundary: no frontend、GraphQL、multilingual、Git、acceptance or deployment。
+- next: await execution response and independently validate before Round 2。
+
+### 2026-07-24T11:18:36Z - TASK-007 A3 Round 1 revision Planner checkpoint PASS
+
+- response: CMS narrow revision response validated and acknowledged；gdhe-site 0.4.2。
+- migration_runtime: fresh non-zero inventory/dry-run/apply/repeated apply/exact rollback/repeated rollback/ambiguity and four injected failures PASS with exact snapshot restore and zero backup/marker residue。
+- contract_runtime: fresh Fixture/anonymous contract/Schema lifecycle PASS；native company Page and news Post resolve and appear in route manifest；cleanup zero。
+- machine_schema: Product HTTP and Support FTP video negatives rejected；HTTPS positives pass。
+- determinism: actual 15 Golden hashes match both frozen rounds with changed database IDs；61/61 handoff and 19 Schema PASS。
+- integrity: 17 PHP、JSON、Core/SCF、12-table DB、backup、zero residue、frontend zero diff、governance/messages/strict/diff PASS。
+- transition: NEEDS_REVISION to UNDER_REVIEW；only A3 Round 2 authorized。
+
+### 2026-07-24T11:20:10Z - TASK-007 A3 Round 2 dispatched
+
+- message: MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R2 validated、dry-run resolved and dispatched to registered reviewer session。
+- review_scope: one migration P1 and two P2 closure plus regression of 61 checksums、19 Schema、15 Golden、collection、security、integrity、docs and governance。
+- boundary: final configured A3 review round；PASS only permits Planner final validation，not acceptance、Git、frontend、GraphQL or deployment。
+- next: await independent final verdict。
+
+### 2026-07-24T11:26:00Z - TASK-007 A3 Round 2 final PASS and final validation
+
+- response: final review response validated and acknowledged；canonical PASS，P0=0、P1=0、P2=0。
+- final_validation: 61/61 handoff、6/6 backup、15/15 actual/frozen parity、19 Schema、migration matrix、17 PHP、JSON、Core/SCF、12-table DB、zero residue、secret、frontend zero diff、governance/messages/strict/diff PASS。
+- summary: Planner Final Summary rewritten for Forest-aligned Schema 3 and gdhe-site 0.4.2。
+- boundary: PASS is not user acceptance；no commit、push、merge、frontend、GraphQL、multilingual or deployment。
+- next: checked prepare-awaiting-user，then wait for exact formal delivery phrase。
+
+### 2026-07-24T11:29:16Z - TASK-007 acceptance-view synchronization
+
+- first_prepare: checked prepare-awaiting-user passed at 2026-07-24T11:28:24Z。
+- controlled_reopen: human-readable TASK/PROJECT/BOARD sync and helper trailing-whitespace cleanup only。
+- unchanged: deliverables、Forest Schema 3 final PASS、final validation、NOT_ACCEPTED and DIRTY Git boundary。
+- next: rerun governance/diff，repeat checked prepare，then wait for exact formal delivery phrase。
+
+### 2026-07-24T15:16:22Z - TASK-007 formal delivery authorized
+
+- authorization: exact phrase accepted by task_accept.py after readiness check。
+- state: ACCEPTED / DIRTY；Forest Schema 3 final PASS，P0=0、P1=0、P2=0。
+- delivery: create one Chinese formal commit，push task branch，merge into main，push main and verify remote ancestry。
+- boundary: no force push、rebase、branch/worktree deletion、frontend、GraphQL、multilingual or deployment。

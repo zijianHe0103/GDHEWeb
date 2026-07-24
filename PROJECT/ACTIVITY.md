@@ -1793,3 +1793,777 @@ schema_version: DPG-LANES-1.0.0
 - state: `ACCEPTED` / `FORMAL_COMMIT`，等待生成单一正式提交。
 - delivery: 正式提交后立即推送任务分支，再合并到 `main` 并推送 `main`。
 - boundary: 不执行 force push、rebase、分支删除或产品/runtime 修改。
+
+### 2026-07-23T08:27:33Z - TASK-006 delivered and TASK-007 intake created
+
+- delivery: TASK-006 commit `4c52e5d` 已推送任务分支、fast-forward 合并并推送到远端 `main`；GitHub default 为 `main`。
+- switch_check: 本地/远端 main、远端 TASK-006 分支 SHA 一致，工作区干净，无 pending/blocked/failed message 或未完成 issue。
+- branch: 创建 `codex/TASK-007-english-api-dto-fixture`。
+- intake: TASK-007 承载 A1 Schema/迁移与 A2 公开 API/Fixture/交接两个批次；A1 不授权前端消费。
+- scope_boundary: 只创建任务卡和治理切换；未修改 WordPress、数据库、Fixture、插件或前端。
+- next: 等待 `确认 TASK-007 需求并开始执行`。
+
+### 2026-07-23T08:37:24Z - TASK-007 requirements confirmed
+
+- received: 用户精确输入 `确认 TASK-007 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- frozen_scope: 一个任务内 A1 Schema/迁移 checkpoint 与 A2 公开 API/Fixture/交接 final gate；A1 不授权 frontend 消费。
+- lane_scope: 为 `wordpress_cms` 增加 `.local/backups/TASK-007/**`，仅允许新建本任务备份和迁移证据，不得改写 TASK-004 备份。
+- boundary: 当前只准备 A1 dispatch；尚未修改 WordPress、数据库、Fixture、插件或前端。
+- next: render/validate lane registry，创建并 dry-run A1 execution request。
+
+### 2026-07-23T08:39:28Z - TASK-007 A1 dispatched
+
+- message: `MSG-TASK-007-WORDPRESS-A1-SCHEMA-MIGRATION` validate 与 dry-run 通过，解析到注册 CMS session `019f88d0-05f9-7213-abad-e8b1ada660b5`。
+- live_dispatch: 同一受控 prompt 已发送到独立 `wordpress_cms` thread，目标状态为 active。
+- transition: `READY` to `IN_PROGRESS`。
+- scope: A1 backup/schema/module-ID/data-table/migration only；A2 endpoints/four-fixture/benchmark/handoff 与 frontend consumption 均未授权。
+- next: 等待 CMS ack、备份前门和 A1 execution response。
+
+### 2026-07-23T08:38:54Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-23T08:40:08Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A1-SCHEMA-MIGRATION moved to done
+
+### 2026-07-23T09:11:52Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-23T09:12:35Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A1-SCHEMA-MIGRATION-RESPONSE moved to done
+
+### 2026-07-23T09:13:01Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-23T09:13:30Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A1-STOP-RECOVERY moved to done
+
+### 2026-07-23T14:48:53Z - TASK-007 A1 planner checkpoint PASS
+
+- independent_validation: backup、PHP、JSON Schema、WordPress/SCF/DB、runtime migration、cleanup、scope and governance all passed。
+- result: `A1_CHECKPOINT_PASS` recorded；A2 controlled dispatch is now allowed。
+- boundary: frontend consumer audit、adversarial review、acceptance and Git delivery remain blocked。
+- next: dispatch A2 to the registered wordpress_cms session。
+
+### 2026-07-23T14:50:17Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T01:29:38Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A2-PUBLIC-API-FIXTURE-HANDOFF dispatched to wordpress_cms
+
+### 2026-07-24T01:30:29Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A2-PUBLIC-API-FIXTURE-HANDOFF moved to done
+
+### 2026-07-24T01:57:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T02:00:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A2-PUBLIC-API-FIXTURE-HANDOFF-RESPONSE moved to done
+
+### 2026-07-24T02:01:26Z - TASK-007 A2 planner checkpoint needs revision
+
+- response: A2 execution response validated and acknowledged。
+- passed: backup、PHP/JSON、9 Golden schemas、WordPress/PHP/SCF/GDHE、Core/SCF checksum、database、9 positive and 14 negative contract cases。
+- p1: second fixture lifecycle changed WordPress post/attachment IDs and therefore all 9 Golden hashes；frozen immutable handoff is not reproducible。
+- contradiction: public schemas require database IDs while the handoff declares fixture database IDs are not frontend contracts。
+- cleanup: planner rerun removed 8 posts、4 attachments and 3 terms；database check PASS。
+- gate: A2 narrow revision only；frontend audit、review、acceptance and Git delivery remain blocked。
+
+### 2026-07-24T02:20:17Z - TASK-007 A2 planner checkpoint PASS
+
+- revision: public DTO IDs are now persisted UUIDv4；WordPress IDs are internal only。
+- independent_determinism: two new lifecycles used different database IDs and produced exact 9/9 frozen Golden hashes。
+- independent_http: 800 origin requests、concurrency 20、zero errors；GraphQL comparison remains a separate future gate。
+- integrity: PHP、Schema、handoff/plugin checksums、Core/SCF、12-table DB、zero residue、scope and governance PASS。
+- docs: root README local CMS/API usage synchronized。
+- gate: authorize only frontend read-only consumer audit；no product frontend、review、acceptance or Git delivery。
+
+### 2026-07-24T02:36:14Z - TASK-007 frontend consumer audit FAIL
+
+- response: frontend read-only audit response acknowledged；`frontend/**` unchanged。
+- verdict: FAIL；P0=1、P1=5、P2=3。
+- p0: public WYSIWYG HTML lacks frozen sanitization or structured-text authority。
+- cms_revision: module/link/template、canonical path、error/cache/header、multi-item collection and applicable limits。
+- graphql: threshold-triggered comparison recorded as a separate future PoC/ADR only。
+- gate: no adversarial review or frontend implementation；CMS revision then frontend re-audit。
+
+### 2026-07-24T04:10:09Z - TASK-007 CMS consumer-contract R2 checkpoint PASS
+
+- response: CMS R2 response acknowledged。
+- independent: 18 schemas、13 deterministic Golden、10 errors、8 modules、safeHtml、path/header/collection and zero residue PASS。
+- integrity: handoff/plugin checksums、Core/SCF、12-table DB、scope and governance PASS。
+- gate: frontend read-only re-audit only；no review、frontend implementation、GraphQL or Git delivery。
+
+### 2026-07-24T04:44:00Z - TASK-007 frontend re-audit R2 FAIL
+
+- verdict: P0=0、P1=1、P2=1。
+- remaining_p1: same collection filter/sort reports total 3 on page 1/2 but total 0 on terminal page 3。
+- closed: original safeHtml/module/path/error/header/UUID/bound findings。
+- next: single CMS total-invariance fix and single-finding frontend re-audit。
+
+### 2026-07-24T02:02:33Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T02:04:17Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A2-DETERMINISTIC-GOLDEN-REVISION moved to done
+
+### 2026-07-24T02:15:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T02:16:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-A2-DETERMINISTIC-GOLDEN-REVISION-RESPONSE moved to done
+
+### 2026-07-24T02:22:14Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-007
+- summary: message queued for frontend
+
+### 2026-07-24T02:22:50Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-READONLY-CONSUMER-AUDIT moved to done
+
+### 2026-07-24T02:35:02Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T02:36:08Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-READONLY-CONSUMER-AUDIT-RESPONSE moved to done
+
+### 2026-07-24T02:37:20Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T02:38:51Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-CONSUMER-CONTRACT-REVISION-R2 moved to done
+
+### 2026-07-24T03:03:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T03:04:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-CONSUMER-CONTRACT-REVISION-R2-RESPONSE moved to done
+
+### 2026-07-24T04:11:20Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-007
+- summary: message queued for frontend
+
+### 2026-07-24T04:20:23Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-CONSUMER-READAUDIT-R2 moved to done
+
+### 2026-07-24T04:43:35Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T04:43:57Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-CONSUMER-READAUDIT-R2-RESPONSE moved to done
+
+### 2026-07-24T04:44:46Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T04:45:34Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-COLLECTION-TOTAL-INVARIANCE-R3 moved to done
+
+### 2026-07-24T04:49:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T04:50:13Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-COLLECTION-TOTAL-INVARIANCE-R3-RESPONSE moved to done
+
+### 2026-07-24T04:50:54Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-007
+- summary: message queued for frontend
+
+### 2026-07-24T04:51:35Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-COLLECTION-TOTAL-READAUDIT-R3 moved to done
+
+### 2026-07-24T04:54:23Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T04:55:02Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-COLLECTION-TOTAL-READAUDIT-R3-RESPONSE moved to done
+
+### 2026-07-24T04:55:24Z - TASK-007 consumer gate PASS
+
+- cms_fix: collection totals 3/3/3 and item lengths 2/1/0 across page 1, page 2 and terminal page 3。
+- frontend_reaudit: PASS，P0=0、P1=0、P2=1 deferred；46/46 frozen checksums and runtime invariant passed。
+- gate: independent adversarial review only；no adapter、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T04:55:24Z - TASK-007 adversarial review Round 1 dispatched
+
+- message: `MSG-TASK-007-ADVERSARIAL-REVIEW-R1` queued to the registered reviewer lane。
+- transition: IN_PROGRESS to UNDER_REVIEW。
+- boundary: reviewer is read-only over business delivery；no acceptance or Git delivery。
+
+### 2026-07-24T05:05:29Z - TASK-007 adversarial review Round 1 FAIL recovery
+
+- verdict: FAIL，P0=0、P1=1、P2=1；response acknowledged。
+- p1: collection eligible items and total are not governed by the same full public content contract。
+- p2: two current-state narratives synchronized without rewriting history。
+- transition: UNDER_REVIEW to NEEDS_REVISION。
+- next: narrow CMS revision, fresh validation and Round 2；no frontend、GraphQL、acceptance or Git delivery。
+
+### 2026-07-24T04:56:35Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-24T04:57:28Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-24T05:04:43Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T05:05:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-24T05:06:41Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T05:08:22Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-COLLECTION-ELIGIBILITY-R4 moved to done
+
+### 2026-07-24T05:21:18Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T05:22:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-COLLECTION-ELIGIBILITY-R4-RESPONSE moved to done
+
+### 2026-07-24T05:23:30Z - TASK-007 collection eligibility R4 checkpoint PASS
+
+- response: CMS R4 execution response validated and acknowledged。
+- independent_runtime: two complete Planner lifecycles changed internal database IDs while preserving exact 13/13 Golden hashes。
+- contract: three published ineligible candidates excluded；totals 3/3/3、items 2/1/0、every returned item resolve accepted。
+- integrity: frozen checksums、PHP、Schema、database、zero residue、governance、messages、strict lane and diff checks PASS。
+- transition: NEEDS_REVISION to UNDER_REVIEW；Round 2 only，no acceptance or Git delivery。
+
+### 2026-07-24T05:36:01Z - TASK-007 adversarial review Round 2 final PASS
+
+- verdict: canonical PASS，P0=0、P1=0、P2=0；final response acknowledged。
+- closure: Round 1 P1/P2 and all prior PASS boundaries independently revalidated。
+- transient_cleanup: three reviewer-generated bytecode files precisely removed by Planner and verified absent；superseded response history retained。
+- gate: Planner Final Summary generated；final validation and checked prepare-awaiting-user only。
+
+### 2026-07-24T05:26:15Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-24T05:26:57Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-24T05:30:39Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T05:31:30Z - message_failed
+- type: message_failed
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R2-RESPONSE moved to failed
+
+### 2026-07-24T05:32:36Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T05:34:05Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-24T05:34:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-REVIEW-R2-RESPONSE-FINAL moved to done
+
+### 2026-07-24T07:40:57Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-007
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T07:41:58Z - TASK-007 controlled acceptance-view synchronization
+
+- first_prepare: checked transition passed。
+- controlled_reopen: AWAITING_USER to NEEDS_REVISION solely to synchronize human-readable task/project/board views。
+- boundary: deliverables、canonical PASS、runtime and Git unchanged。
+- next: repeat final validation and checked prepare，then wait for exact formal delivery instruction。
+
+### 2026-07-24T07:41:58Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-007
+- summary: Synchronize human-readable task, project and board narrative after checked AWAITING_USER transition; no deliverable or verdict change.
+
+### 2026-07-24T07:43:42Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-007
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T09:15:22Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-007
+- summary: User changed the authoritative business reference: retain RapidDirect only for technical and visual implementation, and revise CMS directory/content model to Forest Group product logic before acceptance.
+
+### 2026-07-24T09:19:20Z - TASK-007 Forest-aligned A3 revision contract frozen
+
+- type: task_revision_planned
+- lane: planner
+- task: TASK-007
+- summary: Synchronized NEEDS_REVISION state and froze the Forest-aligned Schema 3 directory, content-model, migration, Fixture and validation contract; CMS dispatch is the only next execution step.
+
+### 2026-07-24T09:21:14Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T09:21:50Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-PRODUCT-MODEL-A3 dispatched to wordpress_cms
+
+### 2026-07-24T10:12:34Z - TASK-007 A3 Planner checkpoint PASS
+
+- type: checkpoint_passed
+- lane: planner
+- task: TASK-007
+- summary: Independently reran Schema 3 determinism, benchmark, backup, checksums, database residue and governance checks; only frontend read-only consumer re-audit is authorized next.
+
+### 2026-07-24T09:22:38Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-PRODUCT-MODEL-A3 moved to done
+
+### 2026-07-24T10:04:05Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T10:05:47Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-PRODUCT-MODEL-A3-RESPONSE moved to done
+
+### 2026-07-24T10:25:54Z - TASK-007 Schema 3 frontend consumer audit FAIL
+
+- type: checkpoint_failed
+- lane: planner
+- task: TASK-007
+- summary: Frontend read-only audit returned P0=0, P1=2 and P2=3; only runtime type/template pairing and complete reproducible Schema checksum closure are authorized for CMS revision.
+
+### 2026-07-24T10:14:04Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-007
+- summary: message queued for frontend
+
+### 2026-07-24T10:14:25Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT dispatched to frontend
+
+### 2026-07-24T10:15:00Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT moved to done
+
+### 2026-07-24T10:23:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T10:25:28Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT-RESPONSE moved to done
+
+### 2026-07-24T10:27:16Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T10:27:38Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1 dispatched to wordpress_cms
+
+### 2026-07-24T10:29:08Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1 moved to done
+
+### 2026-07-24T10:36:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T10:37:10Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1-RESPONSE moved to done
+
+### 2026-07-24T10:39:55Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-007
+- summary: message queued for frontend
+
+### 2026-07-24T10:40:17Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2 dispatched to frontend
+
+### 2026-07-24T10:41:00Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2 moved to done
+
+### 2026-07-24T10:45:07Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T10:46:31Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2-RESPONSE moved to done
+
+### 2026-07-24T10:46:45Z - message_queued
+- type: message_queued
+- lane: governance_maintainer
+- task: TASK-007
+- summary: message queued for governance_maintainer
+
+### 2026-07-24T10:47:02Z - message_dispatched
+- type: message_dispatched
+- lane: governance_maintainer
+- task: TASK-007
+- summary: message MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC dispatched to governance_maintainer
+
+### 2026-07-24T10:47:37Z - message_done
+- type: message_done
+- lane: governance_maintainer
+- task: TASK-007
+- summary: message MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC moved to done
+
+### 2026-07-24T10:48:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T10:49:19Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-GOVERNANCE-README-SCHEMA3-SYNC-RESPONSE moved to done
+
+### 2026-07-24T10:49:23Z - TASK-007 A3 consumer gate and documentation PASS
+
+- type: checkpoint_passed
+- lane: planner
+- task: TASK-007
+- summary: Narrow frontend re-audit closed both Schema 3 P1 findings with P0=0/P1=0; root README and CMS documentation are synchronized, so fresh validation may precede the new independent adversarial review.
+
+### 2026-07-24T10:55:51Z - TASK-007 A3 independent adversarial review dispatched
+
+- type: review_dispatched
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: Fresh validation passed and the Forest-aligned Schema 3 review request was delivered to the registered reviewer session; product frontend, GraphQL, acceptance and Git delivery remain blocked.
+
+### 2026-07-24T11:03:37Z - TASK-007 A3 adversarial Round 1 FAIL recovery
+
+- type: task_reopened_after_review
+- lane: planner
+- task: TASK-007
+- summary: A3 Round 1 returned P0=0/P1=1/P2=2; the reopen helper safely refused the unsupported UNDER_REVIEW transition, so Planner recorded truthful NEEDS_REVISION recovery and limited the next execution to three narrow CMS corrections.
+
+### 2026-07-24T11:05:30Z - TASK-007 A3 Round 1 narrow revision dispatched
+
+- type: revision_dispatched
+- lane: wordpress_cms
+- task: TASK-007
+- summary: The migration P1 and two task-local P2 corrections were dispatched as one narrow CMS revision; all frontend, GraphQL, multilingual, Git, acceptance and deployment work remains blocked.
+
+### 2026-07-24T11:18:36Z - TASK-007 A3 Round 1 revision checkpoint PASS
+
+- type: checkpoint_passed
+- lane: planner
+- task: TASK-007
+- summary: Independent migration failure recovery, fresh 15-Golden contract lifecycle, HTTPS video Schema, checksum, integrity and zero-residue checks passed; only A3 Round 2 review is authorized.
+
+### 2026-07-24T11:20:10Z - TASK-007 A3 Round 2 dispatched
+
+- type: review_dispatched
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: The configured final Forest Schema 3 review round was delivered after the narrow revision checkpoint passed; acceptance, Git delivery and product frontend remain blocked.
+
+### 2026-07-24T11:26:00Z - TASK-007 A3 Round 2 final PASS
+
+- type: review_passed
+- lane: planner
+- task: TASK-007
+- summary: Forest Schema 3 final review returned P0=0/P1=0/P2=0 and Planner final validation passed; only the checked transition to AWAITING_USER remains before user acceptance.
+
+### 2026-07-24T10:55:13Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-24T10:55:45Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-24T10:56:05Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1 moved to done
+
+### 2026-07-24T11:02:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T11:03:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-24T11:05:01Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message queued for wordpress_cms
+
+### 2026-07-24T11:05:25Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-SCHEMA3-REVIEW-R1-FIX dispatched to wordpress_cms
+
+### 2026-07-24T11:05:45Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-SCHEMA3-REVIEW-R1-FIX moved to done
+
+### 2026-07-24T11:16:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T11:16:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-WORDPRESS-FOREST-SCHEMA3-REVIEW-R1-FIX-RESPONSE moved to done
+
+### 2026-07-24T11:20:16Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-24T11:20:42Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-24T11:20:59Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R2 moved to done
+
+### 2026-07-24T11:24:49Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-007
+- summary: message queued for planner
+
+### 2026-07-24T11:25:46Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-007
+- summary: message MSG-TASK-007-ADVERSARIAL-FOREST-SCHEMA3-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-24T11:28:24Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-007
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T11:29:16Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-007
+- summary: Synchronize human-readable TASK/PROJECT/BOARD views and remove the helper-generated trailing whitespace after the checked AWAITING_USER transition; deliverables and final PASS remain unchanged.
+
+### 2026-07-24T11:30:21Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-007
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-24T15:16:22Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-007
+- summary: TASK-007 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

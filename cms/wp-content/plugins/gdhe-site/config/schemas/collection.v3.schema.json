@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/collection.schema.json",
+  "title": "GDHE Schema 3 Collection",
+  "type": "object",
+  "required": ["apiVersion", "schemaVersion", "locale", "type", "sort", "filter", "page", "perPage", "total", "items"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "3.0.0"},
+    "locale": {"const": "en"},
+    "type": {"enum": ["post", "product", "market", "reference", "support_article", "download"]},
+    "sort": {"enum": ["modified_desc", "title_asc"]},
+    "filter": {"type": ["string", "null"], "maxLength": 160},
+    "page": {"type": "integer", "minimum": 1},
+    "perPage": {"type": "integer", "minimum": 1, "maximum": 100},
+    "total": {"type": "integer", "minimum": 0},
+    "items": {"type": "array", "maxItems": 100, "items": {"$ref": "content-reference.schema.json"}}
+  },
+  "additionalProperties": false
+}

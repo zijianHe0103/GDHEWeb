@@ -8,8 +8,9 @@ function gdhe_register_rest_api(): void
 {
     $route = gdhe_load_json_config('config/rest-route.json');
     register_rest_route('gdhe/v1', '/schema', $route);
+    gdhe_register_public_api_routes();
 
-    $schema = gdhe_load_json_config('config/schema.v1.json');
+    $schema = gdhe_load_json_config('config/schema.v3.json');
     $public_types = isset($schema['publicTypes']) ? $schema['publicTypes'] : array();
     $field = gdhe_load_json_config('config/rest-field.json');
 
@@ -21,7 +22,7 @@ function gdhe_register_rest_api(): void
 
 function gdhe_rest_schema()
 {
-    return rest_ensure_response(gdhe_load_json_config('config/schema.v1.json'));
+    return rest_ensure_response(gdhe_load_json_config('config/schema.v3.json'));
 }
 
 function gdhe_rest_content(array $object, string $field_name = '', $request = null): array
@@ -31,13 +32,41 @@ function gdhe_rest_content(array $object, string $field_name = '', $request = nu
         return array();
     }
 
-    $allowlist = array('schema_version', 'template_key', 'summary', 'hero', 'relationships', 'modules');
+    $allowlist = array(
+        'schema_version',
+        'template_key',
+        'summary',
+        'hero',
+        'relationships',
+        'modules',
+        'product_details',
+        'market_details',
+        'reference_details',
+        'support_details',
+        'download_details',
+    );
     $content = array();
 
     foreach ($allowlist as $field_name) {
         $value = get_field($field_name, $post_id, true);
-        if (!gdhe_rest_is_authorized_edit_context($request, $post_id)) {
+        $authorized_edit = gdhe_rest_is_authorized_edit_context($request, $post_id);
+        if (!$authorized_edit) {
             $value = gdhe_filter_public_references($field_name, $value);
+            if (str_ends_with($field_name, '_details')) {
+                $expected_field = array();
+                $expected_field['product'] = 'product_details';
+                $expected_field['market'] = 'market_details';
+                $expected_field['reference'] = 'reference_details';
+                $expected_field['support_article'] = 'support_details';
+                $expected_field['download'] = 'download_details';
+                $post_type = (string) get_post_type($post_id);
+                $value = ($expected_field[$post_type] ?? '') === $field_name
+                    ? gdhe_normalize_type_details($post_type, $post_id)
+                    : null;
+            }
+        }
+        if ($field_name === 'modules' && !$authorized_edit) {
+            $value = gdhe_normalize_public_modules($value);
         }
         $content[$field_name] = gdhe_rest_sanitize_value($value);
     }

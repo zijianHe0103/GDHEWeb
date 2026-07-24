@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/content-reference.schema.json",
+  "title": "GDHE Content Reference",
+  "type": "object",
+  "required": ["id", "type", "title", "publicPath"],
+  "properties": {
+    "id": {"$ref": "uuid-v4.schema.json"},
+    "type": {"enum": ["page", "post", "product", "market", "reference", "support_article", "download"]},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "publicPath": {"$ref": "public-path.schema.json"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+  "finalCleanup": {
+    "posts": 18,
+    "attachments": 1,
+    "terms": 5,
+    "uploadsReportedByCommand": 0
+  },
+  "residue": {
+    "taskPosts": 0,
+    "taskPostmeta": 0,
+    "taskTerms": 0,
+    "taskOptions": 0,
+    "taskUploads": 0
+  },
+  "integrity": {
+    "wordpressCoreChecksums": "PASS",
+    "secureCustomFieldsChecksums": "PASS",
+    "databaseTablesChecked": 12,
+    "databaseCheck": "PASS"
+  },
+  "temporaryUsersCreated": 0,
+  "temporaryProcessesCreated": 0,
+  "temporaryListenersCreated": 0,
+  "existingLegacyAutoDraftPreserved": 1
+}

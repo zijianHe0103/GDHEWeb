@@ -1,0 +1,226 @@
+{
+  "validator": "jsonschema Draft202012Validator",
+  "fixtureVersion": "TASK-007-A2-R3",
+  "validatedCount": 13,
+  "errorFixtureCount": 10,
+  "moduleFixtureCount": 8,
+  "valid": true,
+  "results": [
+    {
+      "golden": "resolve-home.json",
+      "schema": "page.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-service.json",
+      "schema": "page.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-case-study.json",
+      "schema": "page.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-material.json",
+      "schema": "page.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-service.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-service-page-2.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-service-page-3-empty.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-service-modified.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-service-per-page-1.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-case-study.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-material.json",
+      "schema": "collection.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "navigation.json",
+      "schema": "navigation.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "route-manifest.json",
+      "schema": "route-manifest.schema.json",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "errorResults": [
+    {
+      "fixture": "gdhe_contract_invariant",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_collection_type",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_filter",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_locale",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_pagination",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_path",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_schema",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_invalid_sort",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_not_found",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "fixture": "gdhe_route_conflict",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "moduleResults": [
+    {
+      "schema": "accordion.schema.json",
+      "expectedValid": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "card-grid.schema.json",
+      "expectedValid": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "split-media.schema.json",
+      "expectedValid": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "cta-banner.schema.json",
+      "expectedValid": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "accordion.schema.json",
+      "expectedValid": false,
+      "valid": false,
+      "errors": [
+        "'safeHtml' is a required property"
+      ]
+    },
+    {
+      "schema": "card-grid.schema.json",
+      "expectedValid": false,
+      "valid": false,
+      "errors": [
+        "'javascript:alert(1)' is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "schema": "split-media.schema.json",
+      "expectedValid": false,
+      "valid": false,
+      "errors": [
+        "'center' is not one of ['left', 'right']"
+      ]
+    },
+    {
+      "schema": "cta-banner.schema.json",
+      "expectedValid": false,
+      "valid": false,
+      "errors": [
+        "'popup' is not one of ['_self', '_blank']"
+      ]
+    }
+  ],
+  "boundaryResults": [
+    {
+      "fixture": "uuid-v4",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "relation-max-items",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "navigation-max-items",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "navigation-max-depth",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "route-max-items",
+      "expectedValid": false,
+      "valid": false
+    }
+  ],
+  "publicPathSchemaMatrixValid": true
+}

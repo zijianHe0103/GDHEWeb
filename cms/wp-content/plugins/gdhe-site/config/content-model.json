@@ -1,73 +1,61 @@
 {
   "postTypes": {
-    "service": {
-      "labels": {"name": "Services", "singular_name": "Service", "add_new_item": "Add Service", "edit_item": "Edit Service"},
+    "product": {
+      "labels": {"name": "Products", "singular_name": "Product", "add_new_item": "Add Product", "edit_item": "Edit Product"},
       "public": true,
       "show_in_rest": true,
-      "rest_base": "services",
+      "rest_base": "products",
       "has_archive": true,
-      "rewrite": {"slug": "services"},
-      "menu_icon": "dashicons-hammer",
+      "rewrite": {"slug": "products"},
+      "menu_icon": "dashicons-products",
       "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
       "capability_type": ["gdhe_content", "gdhe_contents"],
       "map_meta_cap": true
     },
-    "industry": {
-      "labels": {"name": "Industries", "singular_name": "Industry", "add_new_item": "Add Industry", "edit_item": "Edit Industry"},
+    "market": {
+      "labels": {"name": "Markets", "singular_name": "Market", "add_new_item": "Add Market", "edit_item": "Edit Market"},
       "public": true,
       "show_in_rest": true,
-      "rest_base": "industries",
+      "rest_base": "markets",
       "has_archive": true,
-      "rewrite": {"slug": "industries"},
+      "rewrite": {"slug": "markets"},
       "menu_icon": "dashicons-building",
       "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
       "capability_type": ["gdhe_content", "gdhe_contents"],
       "map_meta_cap": true
     },
-    "material": {
-      "labels": {"name": "Materials", "singular_name": "Material", "add_new_item": "Add Material", "edit_item": "Edit Material"},
+    "reference": {
+      "labels": {"name": "References", "singular_name": "Reference", "add_new_item": "Add Reference", "edit_item": "Edit Reference"},
       "public": true,
       "show_in_rest": true,
-      "rest_base": "materials",
+      "rest_base": "references",
       "has_archive": true,
-      "rewrite": {"slug": "materials"},
-      "menu_icon": "dashicons-admin-tools",
-      "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
-      "capability_type": ["gdhe_content", "gdhe_contents"],
-      "map_meta_cap": true
-    },
-    "surface_finish": {
-      "labels": {"name": "Surface Finishes", "singular_name": "Surface Finish", "add_new_item": "Add Surface Finish", "edit_item": "Edit Surface Finish"},
-      "public": true,
-      "show_in_rest": true,
-      "rest_base": "surface-finishes",
-      "has_archive": true,
-      "rewrite": {"slug": "surface-finishes"},
-      "menu_icon": "dashicons-art",
-      "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
-      "capability_type": ["gdhe_content", "gdhe_contents"],
-      "map_meta_cap": true
-    },
-    "case_study": {
-      "labels": {"name": "Case Studies", "singular_name": "Case Study", "add_new_item": "Add Case Study", "edit_item": "Edit Case Study"},
-      "public": true,
-      "show_in_rest": true,
-      "rest_base": "case-studies",
-      "has_archive": true,
-      "rewrite": {"slug": "case-studies"},
+      "rewrite": {"slug": "references"},
       "menu_icon": "dashicons-portfolio",
       "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
       "capability_type": ["gdhe_content", "gdhe_contents"],
       "map_meta_cap": true
     },
-    "testimonial": {
-      "labels": {"name": "Testimonials", "singular_name": "Testimonial", "add_new_item": "Add Testimonial", "edit_item": "Edit Testimonial"},
+    "support_article": {
+      "labels": {"name": "Support Articles", "singular_name": "Support Article", "add_new_item": "Add Support Article", "edit_item": "Edit Support Article"},
       "public": true,
       "show_in_rest": true,
-      "rest_base": "testimonials",
-      "has_archive": false,
-      "rewrite": {"slug": "testimonials"},
-      "menu_icon": "dashicons-format-quote",
+      "rest_base": "support-articles",
+      "has_archive": true,
+      "rewrite": {"slug": "support"},
+      "menu_icon": "dashicons-sos",
+      "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
+      "capability_type": ["gdhe_content", "gdhe_contents"],
+      "map_meta_cap": true
+    },
+    "download": {
+      "labels": {"name": "Downloads", "singular_name": "Download", "add_new_item": "Add Download", "edit_item": "Edit Download"},
+      "public": true,
+      "show_in_rest": true,
+      "rest_base": "downloads",
+      "has_archive": true,
+      "rewrite": {"slug": "downloads"},
+      "menu_icon": "dashicons-download",
       "supports": ["title", "excerpt", "thumbnail", "revisions", "custom-fields"],
       "capability_type": ["gdhe_content", "gdhe_contents"],
       "map_meta_cap": true
@@ -86,21 +74,25 @@
     }
   },
   "taxonomies": {
-    "service_family": {
-      "object_type": ["service"],
-      "args": {"labels": {"name": "Service Families", "singular_name": "Service Family"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "service-families", "rewrite": {"slug": "service-family"}}
+    "product_category": {
+      "object_type": ["product"],
+      "args": {"labels": {"name": "Product Categories", "singular_name": "Product Category"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "product-categories", "rewrite": {"slug": "product-category"}}
     },
-    "manufacturing_process": {
-      "object_type": ["service", "material", "surface_finish", "case_study"],
-      "args": {"labels": {"name": "Manufacturing Processes", "singular_name": "Manufacturing Process"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "manufacturing-processes", "rewrite": {"slug": "manufacturing-process"}}
+    "product_series": {
+      "object_type": ["product"],
+      "args": {"labels": {"name": "Product Series", "singular_name": "Product Series"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "product-series", "rewrite": {"slug": "product-series"}}
     },
-    "material_family": {
-      "object_type": ["material"],
-      "args": {"labels": {"name": "Material Families", "singular_name": "Material Family"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "material-families", "rewrite": {"slug": "material-family"}}
+    "installation_type": {
+      "object_type": ["product"],
+      "args": {"labels": {"name": "Installation Types", "singular_name": "Installation Type"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "installation-types", "rewrite": {"slug": "installation-type"}}
     },
-    "finish_family": {
-      "object_type": ["surface_finish"],
-      "args": {"labels": {"name": "Finish Families", "singular_name": "Finish Family"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "finish-families", "rewrite": {"slug": "finish-family"}}
+    "support_topic": {
+      "object_type": ["support_article"],
+      "args": {"labels": {"name": "Support Topics", "singular_name": "Support Topic"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "support-topics", "rewrite": {"slug": "support-topic"}}
+    },
+    "document_type": {
+      "object_type": ["download"],
+      "args": {"labels": {"name": "Document Types", "singular_name": "Document Type"}, "public": true, "hierarchical": true, "show_in_rest": true, "rest_base": "document-types", "rewrite": {"slug": "document-type"}}
     }
   }
 }

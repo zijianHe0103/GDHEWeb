@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/page.schema.json",
+  "title": "GDHE Schema 3 English Content Envelope",
+  "type": "object",
+  "required": ["apiVersion", "schemaVersion", "id", "type", "templateKey", "locale", "publicPath", "title", "publishedAt", "modifiedAt", "modules", "relations", "details"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "3.0.0"},
+    "id": {"$ref": "uuid-v4.schema.json"},
+    "type": {"enum": ["page", "post", "product", "market", "reference", "support_article", "download"]},
+    "templateKey": {"enum": ["standard", "product", "market", "reference", "support_article", "download"]},
+    "locale": {"const": "en"},
+    "publicPath": {"$ref": "public-path.schema.json"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "excerpt": {"type": "string", "maxLength": 500},
+    "publishedAt": {"type": "string", "format": "date-time"},
+    "modifiedAt": {"type": "string", "format": "date-time"},
+    "featuredMedia": {"$ref": "media-reference.schema.json"},
+    "modules": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "oneOf": [
+          {"$ref": "modules/hero.schema.json"},
+          {"$ref": "modules/rich-text.schema.json"},
+          {"$ref": "modules/card-grid.schema.json"},
+          {"$ref": "modules/split-media.schema.json"},
+          {"$ref": "modules/accordion.schema.json"},
+          {"$ref": "modules/data-table.schema.json"},
+          {"$ref": "modules/cta-banner.schema.json"}
+        ]
+      }
+    },
+    "relations": {
+      "type": "object",
+      "required": ["products", "markets", "references", "support_articles", "downloads"],
+      "properties": {
+        "products": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}},
+        "markets": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}},
+        "references": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}},
+        "support_articles": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}},
+        "downloads": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}}
+      },
+      "additionalProperties": false
+    },
+    "details": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"enum": ["page", "post"]}}},
+      "then": {"properties": {"templateKey": {"const": "standard"}, "details": {"maxProperties": 0}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "product"}}},
+      "then": {"properties": {"templateKey": {"const": "product"}, "details": {"$ref": "#/$defs/productDetails"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "market"}}},
+      "then": {"properties": {"templateKey": {"const": "market"}, "details": {"$ref": "#/$defs/marketDetails"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "reference"}}},
+      "then": {"properties": {"templateKey": {"const": "reference"}, "details": {"$ref": "#/$defs/referenceDetails"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "support_article"}}},
+      "then": {"properties": {"templateKey": {"const": "support_article"}, "details": {"$ref": "#/$defs/supportDetails"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "download"}}},
+      "then": {"properties": {"templateKey": {"const": "download"}, "details": {"$ref": "#/$defs/downloadDetails"}}}
+    }
+  ],
+  "$defs": {
+    "stringList": {"type": "array", "maxItems": 30, "items": {"type": "string", "minLength": 1, "maxLength": 500}},
+    "linkOrNull": {"oneOf": [{"$ref": "link.schema.json"}, {"type": "null"}]},
+    "productDetails": {
+      "type": "object",
+      "required": ["model", "productCode", "categories", "series", "installationTypes", "positioning", "features", "specifications", "articleNumbers", "finishes", "installation", "control", "compatibility", "gallery", "videoUrl", "inquiryCta"],
+      "properties": {
+        "model": {"type": "string", "minLength": 1, "maxLength": 120},
+        "productCode": {"type": "string", "minLength": 1, "maxLength": 80},
+        "categories": {"type": "array", "minItems": 1, "maxItems": 20, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}},
+        "series": {"type": "array", "minItems": 1, "maxItems": 20, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}},
+        "installationTypes": {"type": "array", "minItems": 1, "maxItems": 20, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}},
+        "positioning": {"type": "string", "maxLength": 320},
+        "features": {"$ref": "#/$defs/stringList"},
+        "specifications": {"type": "array", "minItems": 1, "maxItems": 50, "items": {"$ref": "#/$defs/specification"}},
+        "articleNumbers": {"type": "array", "minItems": 1, "maxItems": 30, "items": {"$ref": "#/$defs/articleNumber"}},
+        "finishes": {"type": "array", "maxItems": 30, "items": {"$ref": "#/$defs/finish"}},
+        "installation": {"type": "string", "minLength": 1, "maxLength": 500},
+        "control": {"type": "string", "maxLength": 500},
+        "compatibility": {"$ref": "#/$defs/stringList"},
+        "gallery": {"type": "array", "maxItems": 20, "items": {"$ref": "media-reference.schema.json"}},
+        "videoUrl": {"type": ["string", "null"], "format": "uri", "pattern": "^https://"},
+        "inquiryCta": {"$ref": "#/$defs/linkOrNull"}
+      },
+      "additionalProperties": false
+    },
+    "specification": {
+      "type": "object",
+      "required": ["key", "label", "value"],
+      "properties": {
+        "key": {"type": "string", "minLength": 1, "maxLength": 64},
+        "label": {"type": "string", "minLength": 1, "maxLength": 120},
+        "value": {"type": "string", "minLength": 1, "maxLength": 240},
+        "unit": {"type": "string", "maxLength": 32}
+      },
+      "additionalProperties": false
+    },
+    "articleNumber": {
+      "type": "object",
+      "required": ["number", "region"],
+      "properties": {
+        "number": {"type": "string", "minLength": 1, "maxLength": 80},
+        "region": {"type": "string", "minLength": 1, "maxLength": 80}
+      },
+      "additionalProperties": false
+    },
+    "finish": {
+      "type": "object",
+      "required": ["code", "label"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1, "maxLength": 80},
+        "label": {"type": "string", "minLength": 1, "maxLength": 120},
+        "color": {"type": "string", "maxLength": 80}
+      },
+      "additionalProperties": false
+    },
+    "marketDetails": {
+      "type": "object",
+      "required": ["benefits", "requirements", "cta"],
+      "properties": {
+        "benefits": {"$ref": "#/$defs/stringList"},
+        "requirements": {"$ref": "#/$defs/stringList"},
+        "cta": {"$ref": "#/$defs/linkOrNull"}
+      },
+      "additionalProperties": false
+    },
+    "referenceDetails": {
+      "type": "object",
+      "required": ["location", "challenge", "solutionSafeHtml", "results", "cta"],
+      "properties": {
+        "location": {"type": "string", "minLength": 1, "maxLength": 180},
+        "challenge": {"type": "string", "minLength": 1, "maxLength": 500},
+        "solutionSafeHtml": {"$ref": "safe-html.schema.json"},
+        "results": {"$ref": "#/$defs/stringList"},
+        "cta": {"$ref": "#/$defs/linkOrNull"}
+      },
+      "additionalProperties": false
+    },
+    "supportDetails": {
+      "type": "object",
+      "required": ["topic", "problemOrGoal", "instructionsSafeHtml", "videoUrl"],
+      "properties": {
+        "topic": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "problemOrGoal": {"type": "string", "minLength": 1, "maxLength": 500},
+        "instructionsSafeHtml": {"$ref": "safe-html.schema.json"},
+        "videoUrl": {"type": ["string", "null"], "format": "uri", "pattern": "^https://"}
+      },
+      "additionalProperties": false
+    },
+    "downloadDetails": {
+      "type": "object",
+      "required": ["documentType", "version", "date", "locale", "file", "description"],
+      "properties": {
+        "documentType": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "version": {"type": "string", "minLength": 1, "maxLength": 80},
+        "date": {"type": "string", "format": "date"},
+        "locale": {"const": "en"},
+        "file": {"$ref": "file-reference.schema.json"},
+        "description": {"type": "string", "maxLength": 500}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

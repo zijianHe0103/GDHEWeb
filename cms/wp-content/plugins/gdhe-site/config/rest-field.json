@@ -1,7 +1,7 @@
 {
   "get_callback": "gdhe_rest_content",
   "schema": {
-    "description": "GDHE public content fields for schema version 1.0.0.",
+    "description": "GDHE public content fields for schema version 2.0.0.",
     "type": "object",
     "context": ["view", "edit"],
     "readonly": true

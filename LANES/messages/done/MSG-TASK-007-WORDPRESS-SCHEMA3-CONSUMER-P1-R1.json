@@ -1,0 +1,38 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T10:27:16Z",
+  "requires_response_to": "MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "只修复 A3 frontend consumer audit 的两个 CMS P1，不扩展产品前端或业务模型。P1-1：在公开 envelope/eligible collection 的同一 runtime 合同中强制 Schema 3 结构化类型与 template 配对，至少 product/product、market/market、reference/reference、support_article/support_article、download/download；已知但错配的 template 必须 fail closed。增加已发布 Product 使用已知 market template 的负例，证明 resolve 拒绝，并且不进入 collection items/total、navigation 或 route manifest。保持有效 Product totals 3/3/3、items 2/1/0。P1-2：将 a3-schema-validate.py 实际加载并用于当前 Golden 权威的完整传递 Schema 图逐文件写入 HANDOFF_CHECKSUMS.sha256，包含共享 schemas、navigation、route manifest 和七个 module schemas；manifest 必须给出精确相对路径清单与可复现生成/验证算法，不得只依赖不可复现 whole-plugin digest。将 gdhe-site bump 到 0.4.1，Fixture/contract evidence 做窄 revision 标记；Content Schema 保持 3.0.0，REST API/Module Schema 不变。重跑完整 contract、Draft 2020-12 Schema、两轮不同 DB ID determinism、known-mismatch exclusion、cleanup、PHP/JSON、Core/SCF/DB、handoff checksum 和治理验证；正例 DTO 未改变时不得无故更改其 13 Golden hashes。现有 benchmark 可保留，但 refrozen checksum 必须真实；不重复或掩盖 p95 2001.839 ms 的未来 PoC trigger。更新 A3 reports/manifest/docs 中受影响内容并新增 A3_P1_REVISION_REPORT.md，发送 requires_response_to 指向本消息的 execution_response。P2 native Post/Page coverage、HTTPS video Schema 和 production media origin 保持记录但不在本轮强行修复。禁止修改 frontend、Root README、WordPress Core、SCF source、theme、GraphQL、多语言、真实内容、部署、review、Git、验收或关闭。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256",
+    "TASKS/ARTIFACTS/TASK-007/A3_PLANNER_CHECKPOINT.md",
+    "cms/wp-content/plugins/gdhe-site/config/schema.v3.json",
+    "cms/wp-content/plugins/gdhe-site/config/schemas/page.v3.schema.json",
+    "cms/wp-content/plugins/gdhe-site/tests/a3-schema-validate.py",
+    "LANES/wordpress_cms/LANE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256"
+  ],
+  "notes": "Exact two-P1 closure only. After Planner checkpoint, a narrow frontend re-audit is required before adversarial review.",
+  "dispatched_at": "2026-07-24T10:27:38Z",
+  "delivery_key": "MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1:019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "target_session": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_id": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-24T10:29:08Z",
+  "updated_at": "2026-07-24T10:29:08Z"
+}

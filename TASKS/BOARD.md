@@ -1,7 +1,7 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-006
+current_task: TASK-007
 
 ## 活动任务
 
@@ -17,7 +17,7 @@ current_task: TASK-006
 
 ## 等待推送
 
-- `TASK-006` 升级项目交付治理模板并建立 main 集成基线 — `ACCEPTED` / `FORMAL_COMMIT`
+- `TASK-007` 英语版 API / DTO / Fixture 实施 — `ACCEPTED` / `DIRTY`（正式提交、任务分支推送、合并与 main 推送已授权）
 
 ## 已暂停
 
@@ -25,6 +25,7 @@ current_task: TASK-006
 
 ## 最近关闭
 
+- `TASK-006` 升级项目交付治理模板并建立 main 集成基线 — `CLOSED` / `MERGED`
 - `TASK-005` 更新实施路线图并制定英语版 API/DTO/Fixture 与前端接入任务边界 — `CLOSED` / `PUSHED`
 - `TASK-004` 英语版 WordPress CMS Schema + SCF + GDHE REST API 基础 — `CLOSED` / `PUSHED`
 - `TASK-003` Next.js + TypeScript 前端基础初始化 — `CLOSED` / `PUSHED`
@@ -39,3 +40,8 @@ current_task: TASK-006
 - TASK-004: ACCEPTED at 2026-07-23T03:26:54Z
 - TASK-005: ACCEPTED at 2026-07-23T05:47:23Z
 - TASK-006: ACCEPTED at 2026-07-23T07:40:00Z
+- TASK-007: ACCEPTED at 2026-07-24T15:16:22Z
+
+## Accepted
+
+- TASK-007: ACCEPTED at 2026-07-24T15:16:22Z

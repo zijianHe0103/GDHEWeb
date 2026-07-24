@@ -31,6 +31,7 @@ specialist
 - `docs/cms/**`
 - `TASKS/ARTIFACTS/**`
 - `.local/backups/TASK-004/**`（仅限 TASK-004 新建的备份、插件状态快照与校验文件；不得改写既有备份）
+- `.local/backups/TASK-007/**`（仅限 TASK-007 新建的备份、迁移 inventory、插件/config 状态快照与校验文件；不得改写既有 TASK-004 备份）
 
 ## Read Scope
 

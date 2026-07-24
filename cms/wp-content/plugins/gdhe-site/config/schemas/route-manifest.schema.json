@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v3/route-manifest.schema.json",
+  "title": "GDHE Route Manifest",
+  "type": "object",
+  "required": ["apiVersion", "schemaVersion", "locale", "routes"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "3.0.0"},
+    "locale": {"const": "en"},
+    "routes": {
+      "type": "array",
+      "maxItems": 5000,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "publicPath", "modifiedAt"],
+        "properties": {
+          "id": {"$ref": "uuid-v4.schema.json"},
+          "type": {"enum": ["page", "post", "product", "market", "reference", "support_article", "download"]},
+          "publicPath": {"$ref": "public-path.schema.json"},
+          "modifiedAt": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

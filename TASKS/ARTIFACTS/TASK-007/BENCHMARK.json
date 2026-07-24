@@ -1,0 +1,81 @@
+{
+  "benchmarkVersion": "TASK-007-A2-BENCHMARK-R3",
+  "fixtureVersion": "TASK-007-A2-R3",
+  "baseUrl": "http://127.0.0.1:8097",
+  "warmed": true,
+  "warmupRequestCount": 4,
+  "requestsPerFixture": 200,
+  "concurrency": 20,
+  "originRequestCount": 800,
+  "requestGraph": {
+    "nodes": [
+      "benchmark-client",
+      "wordpress-rest",
+      "gdhe-resolver",
+      "scf-normalizer",
+      "mysql-media"
+    ],
+    "edges": [
+      [
+        "benchmark-client",
+        "wordpress-rest"
+      ],
+      [
+        "wordpress-rest",
+        "gdhe-resolver"
+      ],
+      [
+        "gdhe-resolver",
+        "scf-normalizer"
+      ],
+      [
+        "scf-normalizer",
+        "mysql-media"
+      ]
+    ]
+  },
+  "fixtures": {
+    "home": {
+      "publicPath": "/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 3662,
+      "p50Milliseconds": 651.568,
+      "p95Milliseconds": 736.152,
+      "errorRate": 0.0
+    },
+    "service": {
+      "publicPath": "/services/task-007-a2-precision-machining/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1823,
+      "p50Milliseconds": 650.593,
+      "p95Milliseconds": 703.311,
+      "errorRate": 0.0
+    },
+    "caseStudy": {
+      "publicPath": "/case-studies/task-007-a2-aerospace-bracket/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1831,
+      "p50Milliseconds": 640.337,
+      "p95Milliseconds": 663.399,
+      "errorRate": 0.0
+    },
+    "material": {
+      "publicPath": "/materials/task-007-a2-aluminum-6061/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1787,
+      "p50Milliseconds": 642.742,
+      "p95Milliseconds": 696.761,
+      "errorRate": 0.0
+    }
+  },
+  "aggregate": {
+    "requestCount": 800,
+    "p50Milliseconds": 647.517,
+    "p95Milliseconds": 699.596,
+    "errorRate": 0.0
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "locale": "en",
+    "routes": [
+        {
+            "id": "31000000-0000-4000-8000-000000000001",
+            "type": "page",
+            "publicPath": "/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000011",
+            "type": "page",
+            "publicPath": "/company/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000008",
+            "type": "download",
+            "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000005",
+            "type": "market",
+            "publicPath": "/markets/task-007-a3-controlled-water-systems/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000012",
+            "type": "post",
+            "publicPath": "/news/task-007-a3-product-update/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000002",
+            "type": "product",
+            "publicPath": "/products/task-007-a3-flow-control-alpha/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000003",
+            "type": "product",
+            "publicPath": "/products/task-007-a3-flow-control-beta/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000004",
+            "type": "product",
+            "publicPath": "/products/task-007-a3-flow-control-gamma/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000006",
+            "type": "reference",
+            "publicPath": "/references/task-007-a3-coastal-research-facility/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        },
+        {
+            "id": "31000000-0000-4000-8000-000000000007",
+            "type": "support_article",
+            "publicPath": "/support/configuration/task-007-a3-configure-flow-control/",
+            "modifiedAt": "2026-07-24T01:30:00+00:00"
+        }
+    ]
+}

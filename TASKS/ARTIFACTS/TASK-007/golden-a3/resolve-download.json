@@ -1,0 +1,71 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "3.0.0",
+    "id": "31000000-0000-4000-8000-000000000008",
+    "type": "download",
+    "templateKey": "download",
+    "locale": "en",
+    "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/",
+    "title": "Flow Control Data Sheet",
+    "excerpt": "Synthetic download fixture.",
+    "publishedAt": "2026-07-24T01:30:00+00:00",
+    "modifiedAt": "2026-07-24T01:30:00+00:00",
+    "modules": [
+        {
+            "id": "33000000-0000-4000-8000-000000000008",
+            "type": "rich_text",
+            "schemaVersion": "1.0.0",
+            "data": {
+                "heading": "Synthetic download",
+                "safeHtml": "<p>Structured synthetic GDHE-domain fixture content.</p>"
+            }
+        }
+    ],
+    "relations": {
+        "products": [
+            {
+                "id": "31000000-0000-4000-8000-000000000002",
+                "type": "product",
+                "title": "GDHE Flow Control Alpha",
+                "publicPath": "/products/task-007-a3-flow-control-alpha/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000003",
+                "type": "product",
+                "title": "GDHE Flow Control Beta",
+                "publicPath": "/products/task-007-a3-flow-control-beta/"
+            },
+            {
+                "id": "31000000-0000-4000-8000-000000000004",
+                "type": "product",
+                "title": "GDHE Flow Control Gamma",
+                "publicPath": "/products/task-007-a3-flow-control-gamma/"
+            }
+        ],
+        "markets": [
+            {
+                "id": "31000000-0000-4000-8000-000000000005",
+                "type": "market",
+                "title": "Controlled Water Systems",
+                "publicPath": "/markets/task-007-a3-controlled-water-systems/"
+            }
+        ],
+        "references": [],
+        "support_articles": [],
+        "downloads": []
+    },
+    "details": {
+        "documentType": "data-sheet",
+        "version": "1.0.0",
+        "date": "2026-07-24",
+        "locale": "en",
+        "file": {
+            "id": "32000000-0000-4000-8000-000000000001",
+            "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a3-flow-control-data-sheet.pdf",
+            "filename": "task-007-a3-flow-control-data-sheet.pdf",
+            "mimeType": "application/pdf",
+            "bytes": 58
+        },
+        "description": "Synthetic product data sheet for contract validation."
+    }
+}

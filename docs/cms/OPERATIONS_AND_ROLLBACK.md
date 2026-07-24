@@ -51,6 +51,85 @@ Run recovery only after explicit authorization and only for an actual failure. K
 
 The database import and plugin removal commands were deliberately not executed during TASK-004 because they are destructive on a healthy environment.
 
+## TASK-007 A3 backup and migration
+
+The immutable pre-A3 snapshot is:
+
+`.local/backups/TASK-007/A3-20260724T092322Z/`
+
+It contains the SQL export, complete pre-A3 `gdhe-site` copy, plugin manifest, initial counts, Schema 2 inventory, rollback plan, manifest and checksums. The SQL is 1,121,762 bytes with SHA-256 `15f779ed70fe4cdd8c2a51eef4850c169d9f84255a315f6621ff05c323ef7101`; it contains 12 table definitions, 10 insert groups and the completion marker. The 41-file plugin snapshot checksum stream is `f87176cac871fb25f3d2916486724f229084d615e9f61aec32b69095c0d60a2a`. Do not modify or overwrite this directory.
+
+The inventory proved a no-content migration: the only legacy row is one empty `service` auto-draft, classified as ephemeral. No real legacy post, term, relationship, route, option or migration marker was written.
+
+Use the Schema 3 migration command in this order:
+
+```sh
+wp --path=cms gdhe a3-migrate inventory
+wp --path=cms gdhe a3-migrate dry-run --ids=POST_ID
+wp --path=cms gdhe a3-migrate apply --ids=POST_ID
+wp --path=cms gdhe a3-migrate rollback --ids=POST_ID
+```
+
+Apply and rollback require an explicit ID allowlist. `industry` and `case_study` have deterministic target types. `service` requires `_gdhe_a3_target_type=product` and `_gdhe_a3_product_classification=confirmed`. Ambiguous types are refused. Apply captures exact post, raw meta and term relationships, then exactly reads back the Schema 3 type, version, canonical path, matching template, all five remapped relation arrays and marker. Any failed write or read-back restores and verifies the complete snapshot; early post-update failure also removes the newly written backup meta. Repeated apply and repeated rollback are no-ops.
+
+The runtime migration test uses only disposable synthetic legacy records. It covers non-zero inventory, dry-run zero-write, apply, repeated apply, exact rollback, repeated rollback, ambiguity refusal and injected post-update/path/template/relation failures. Every injected failure must restore the byte-equivalent snapshot and leave no migration marker or backup meta.
+
+The synthetic fixture lifecycle is:
+
+```sh
+wp --path=cms gdhe a3-fixtures create
+wp --path=cms gdhe a3-fixtures show
+wp --path=cms eval-file cms/wp-content/plugins/gdhe-site/tests/a3-contract-test.php
+python3 cms/wp-content/plugins/gdhe-site/tests/a3-schema-validate.py
+python3 cms/wp-content/plugins/gdhe-site/tests/a3-benchmark.py \
+  http://127.0.0.1:8080 \
+  TASKS/ARTIFACTS/TASK-007/A3_BENCHMARK.json
+wp --path=cms gdhe a3-fixtures cleanup
+```
+
+`create` refuses an existing manifest. `cleanup` removes only A3-marked posts, revisions/meta/relationships, the temporary attachment/upload, five synthetic terms and its option. Final verification must prove zero A3 posts, marker meta, terms, option and uploads before handoff.
+
+## TASK-007 A1 migration
+
+The immutable pre-A1 backup is:
+
+`.local/backups/TASK-007/20260723T084057Z/`
+
+It contains `database.sql`, `gdhe-site-before/`, `plugins.json`, `BACKUP_MANIFEST.md` and `ROLLBACK_PLAN.md`. The SQL export is 145,805 bytes with SHA-256 `ceacdee32b0210d6ff52fc61f2ff9fb5ffec3a238df13414721c02254871b05c`; it contains 12 table definitions, 9 insert groups and a completion marker. The backup path is ignored by Git. Do not overwrite it or any TASK-004 backup.
+
+Use the A1 command in this order:
+
+```sh
+wp --path=cms gdhe a1-migrate inventory
+wp --path=cms gdhe a1-migrate dry-run --ids=POST_ID
+wp --path=cms gdhe a1-migrate apply --ids=POST_ID
+wp --path=cms gdhe a1-migrate rollback --ids=POST_ID
+```
+
+`apply` and `rollback` require an explicit ID allowlist. Inventory and dry-run never write. Apply refuses any record classified as ambiguous, snapshots the exact raw module and content-schema meta, writes schema v2 through SCF, strictly reads it back, removes only migrated legacy table fields and records migration version `2.0.0`. Repeated apply is a no-op. Rollback restores the exact captured meta bytes and removes the A1 migration markers; repeated rollback is a no-op.
+
+Before a real apply, keep the full-site backup immutable, review every inventory record, resolve ambiguous records manually, and retain the generated per-post rollback snapshot until the migration is accepted. A1 validation used only a draft post titled `TASK-007 A1 TEMP MIGRATION`, then deleted it and confirmed no task marker or migration meta remained.
+
+## TASK-007 A2 fixtures and rollback
+
+The immutable pre-A2 backup is:
+
+`.local/backups/TASK-007/A2-20260723T145000Z/`
+
+It contains `database.sql`, the complete pre-A2 `gdhe-site-before/` copy, `plugins.json`, `initial-counts.json`, `BACKUP_MANIFEST.md`, `ROLLBACK_PLAN.md` and SHA-256 checksums. Do not overwrite this directory.
+
+The A2 fixture commands are intentionally explicit:
+
+```sh
+wp gdhe a2-fixtures create --path=cms
+wp gdhe a2-fixtures show --path=cms
+wp gdhe a2-fixtures cleanup --path=cms
+```
+
+`create` refuses to run when a fixture manifest already exists. It creates only the deterministic `TASK-007-A2-R3` Home, Service, Case Study and Material representatives, two additional published Service collection records, publication-state negatives, synthetic one-pixel media and three TASK-scoped terms. Every public content and media object receives a fixed UUIDv4; WordPress database IDs remain internal cleanup handles. The Home fixture covers all seven module types and deliberately includes malicious authoring HTML that must be removed by the public sanitizer. `cleanup` force-deletes only database IDs in the fixture manifest and performs a marker/file fallback sweep. Always prove zero matching posts, revisions, postmeta, relationships, terms, attachments, uploads, users and temporary processes afterward.
+
+If A2 rollback is required, first clean fixtures, deactivate `gdhe-site`, restore `database.sql`, replace only `gdhe-site` with `gdhe-site-before/`, reactivate it, and repeat database, Core, SCF and plugin-manifest verification. Do not restore on a healthy database merely to demonstrate the procedure.
+
 ## Routine verification
 
 Use WP-CLI to verify:

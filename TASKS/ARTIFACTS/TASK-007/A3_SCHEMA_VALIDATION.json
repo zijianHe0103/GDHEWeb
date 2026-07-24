@@ -1,0 +1,179 @@
+{
+  "validator": "jsonschema Draft202012Validator",
+  "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+  "schemaGraphRoots": [
+    "page.v3.schema.json",
+    "collection.v3.schema.json",
+    "navigation.schema.json",
+    "route-manifest.schema.json",
+    "error.schema.json"
+  ],
+  "schemaGraphFiles": [
+    "collection.v3.schema.json",
+    "content-reference.schema.json",
+    "error.schema.json",
+    "file-reference.schema.json",
+    "link.schema.json",
+    "media-reference.schema.json",
+    "modules/accordion.schema.json",
+    "modules/card-grid.schema.json",
+    "modules/cta-banner.schema.json",
+    "modules/data-table.schema.json",
+    "modules/hero.schema.json",
+    "modules/rich-text.schema.json",
+    "modules/split-media.schema.json",
+    "navigation.schema.json",
+    "page.v3.schema.json",
+    "public-path.schema.json",
+    "route-manifest.schema.json",
+    "safe-html.schema.json",
+    "uuid-v4.schema.json"
+  ],
+  "schemaGraphSha256": {
+    "collection.v3.schema.json": "5d40aee06755c3709193861e077f6261c007c89dc7b2c7255c1ab364213d0691",
+    "content-reference.schema.json": "fcdb3996a0dd0ea6c51bcd0cf66b848200316f9ee3669aec4e7fa064e983fe6b",
+    "error.schema.json": "96063d71f1ce5922dfbaa4573a6d313184ac76b22c7e11826d2963400c538272",
+    "file-reference.schema.json": "a45bc23d20d23aad4d4c0ebd1fcbc8e799ab7c83c76074c27d4564d443c455cd",
+    "link.schema.json": "0bb0691103f845c0477caaf862f07b90c3d102fdbd18afba95fd6c1b4c4772a0",
+    "media-reference.schema.json": "a707e83f5fb0b484c78ae8437fc2aef89881828072c18fd1fc0a3310774e9ab2",
+    "modules/accordion.schema.json": "d12eb7342b9186838c2199717d3da81cc8ced56619119a45c5db6a0f05165703",
+    "modules/card-grid.schema.json": "b8939aa67a86b90e612bbd488b414582f78099bd2fb0ee0fed2c67a95d1343cf",
+    "modules/cta-banner.schema.json": "051f8793d39a4cb9f746e42d4e26d9ffc31a9945e698362befa724368445f57a",
+    "modules/data-table.schema.json": "e2ab2f0135da7dfad1f7fd267a31534f73f022aff6bbf4eac87982bb7e89bfe7",
+    "modules/hero.schema.json": "e36aad90041a3a58745c4b75c4bd6f3723e7a1e08915930d551ff3e3d4c4e4ab",
+    "modules/rich-text.schema.json": "0efad56e9601e74ff810c59feb201a4f292da84b01e5e37fc23c3400a1e11e1f",
+    "modules/split-media.schema.json": "4f2ab970e8f56c7e8c951c9f1eefec3a922f51732cf4f5e9125c566d59edfd68",
+    "navigation.schema.json": "d9ad3898180eb9d92850d12620ddf48f2ae9789e174ca709b8a0c2ecad1bac82",
+    "page.v3.schema.json": "b1e4c3f41be6ccfed36aa8108157f43cce66a98b96916892b92e1053956b8791",
+    "public-path.schema.json": "9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce",
+    "route-manifest.schema.json": "2d6035972448469814da1143903482ce391c1b9c17b677a47e589dac197815b4",
+    "safe-html.schema.json": "a611c3830c90f17d3edd4fab57a5127e738f3b7b5ee5f8d02bedbe5d67a61ea0",
+    "uuid-v4.schema.json": "59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"
+  },
+  "validatedCount": 15,
+  "valid": true,
+  "results": [
+    {
+      "golden": "resolve-company.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-download.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-home.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-market.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-news.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-product-alpha.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-product-beta.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-product-gamma.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-reference.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "resolve-support.json",
+      "schema": "page.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-product-page-1.json",
+      "schema": "collection.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-product-page-2.json",
+      "schema": "collection.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "collection-product-page-3-empty.json",
+      "schema": "collection.v3.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "navigation.json",
+      "schema": "navigation.schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "route-manifest.json",
+      "schema": "route-manifest.schema.json",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "boundaryResults": [
+    {
+      "fixture": "uuid-v4",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "relation-max-items",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "required-product-code",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "database-id-additional-property",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "product-video-http",
+      "expectedValid": false,
+      "valid": false
+    },
+    {
+      "fixture": "support-video-non-https",
+      "expectedValid": false,
+      "valid": false
+    }
+  ]
+}

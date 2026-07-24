@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T10:39:55Z",
+  "requires_response_to": "MSG-TASK-007-WORDPRESS-SCHEMA3-CONSUMER-P1-R1-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "执行 TASK-007 A3 narrow frontend read-only re-audit，只复核首轮两个 P1 与直接回归边界。P1-1：确认 runtime 强制 page/post/structured type 与 template 配对；known Product/market-template mismatch 在 resolve 返回 gdhe_contract_invariant，并从 collection items/total、navigation、route manifest 排除；有效 totals 3/3/3、items 2/1/0。P1-2：确认 a3-schema-validate.py 从五个 roots 递归得到的 19-file transitive graph 与 A3_SCHEMA_VALIDATION、manifest 和 HANDOFF_CHECKSUMS 逐项一致；复现 traversal/checksum 算法并运行完整 checksum verification。确认 13 positive Golden hashes 与首轮 baseline 不变、两轮 DB IDs 改变、零残留、plugin 0.4.1 与版本边界一致。frontend/** 继续只读。输出 PASS/FAIL 与 P0/P1/P2；首轮 P2 保持 deferred，不要扩展为本轮阻断，除非修订引入新回归。写 A3_FRONTEND_CONSUMER_REAUDIT_R2.md 和 frontend worklog，并发送 requires_response_to 指向本消息的 execution_response。不要启动 adversarial review、frontend adapter/页面、GraphQL、多语言、Git、验收或部署。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-007/A3_P1_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256",
+    "TASKS/ARTIFACTS/TASK-007/A3_CONTRACT_RUNTIME_SUMMARY.json",
+    "TASKS/ARTIFACTS/TASK-007/A3_SCHEMA_VALIDATION.json",
+    "TASKS/ARTIFACTS/TASK-007/A3_DETERMINISTIC_GOLDEN.json"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_REAUDIT_R2.md"
+  ],
+  "notes": "Two-P1 closure only. PASS authorizes independent adversarial review, not frontend implementation.",
+  "dispatched_at": "2026-07-24T10:40:17Z",
+  "delivery_key": "MSG-TASK-007-FRONTEND-SCHEMA3-P1-READAUDIT-R2:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-24T10:41:00Z",
+  "updated_at": "2026-07-24T10:41:00Z"
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/page.schema.json",
+  "title": "GDHE English Content Envelope",
+  "type": "object",
+  "required": ["apiVersion", "schemaVersion", "id", "type", "templateKey", "locale", "publicPath", "title", "publishedAt", "modifiedAt", "modules", "relations"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "2.0.0"},
+    "id": {"$ref": "uuid-v4.schema.json"},
+    "type": {"enum": ["page", "post", "service", "industry", "material", "surface_finish", "case_study", "testimonial"]},
+    "templateKey": {"enum": ["standard", "service", "industry", "material", "surface_finish", "case_study", "testimonial"]},
+    "locale": {"const": "en"},
+    "publicPath": {"$ref": "public-path.schema.json"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "excerpt": {"type": "string", "maxLength": 500},
+    "publishedAt": {"type": "string", "format": "date-time"},
+    "modifiedAt": {"type": "string", "format": "date-time"},
+    "featuredMedia": {"$ref": "media-reference.schema.json"},
+    "modules": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "oneOf": [
+          {"$ref": "modules/hero.schema.json"},
+          {"$ref": "modules/rich-text.schema.json"},
+          {"$ref": "modules/card-grid.schema.json"},
+          {"$ref": "modules/split-media.schema.json"},
+          {"$ref": "modules/accordion.schema.json"},
+          {"$ref": "modules/data-table.schema.json"},
+          {"$ref": "modules/cta-banner.schema.json"}
+        ]
+      }
+    },
+    "relations": {
+      "type": "object",
+      "maxProperties": 5,
+      "propertyNames": {"enum": ["services", "industries", "materials", "surface_finishes", "case_studies"]},
+      "additionalProperties": {"type": "array", "maxItems": 20, "items": {"$ref": "content-reference.schema.json"}}
+    }
+  },
+  "additionalProperties": false
+}

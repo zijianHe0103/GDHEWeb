@@ -1,0 +1,37 @@
+{
+    "fixtureVersion": "TASK-007-A2-R3",
+    "publishedFilteredTotal": 3,
+    "pageSizes": [
+        2,
+        1,
+        0
+    ],
+    "crossPageTotals": [
+        3,
+        3,
+        3
+    ],
+    "totalInvariant": true,
+    "validPerPageBoundaries": [
+        1,
+        100
+    ],
+    "invalidPerPageBoundaries": [
+        0,
+        101
+    ],
+    "sorts": [
+        "title_asc",
+        "modified_desc"
+    ],
+    "tieBreak": "post_name ASC",
+    "filterEchoed": true,
+    "sortEchoed": true,
+    "ineligiblePublishedCandidates": [
+        "unknown-template",
+        "invalid-module",
+        "invalid-canonical-path"
+    ],
+    "ineligibleCandidatesExcluded": true,
+    "everyItemResolveAccepted": true
+}

@@ -1,0 +1,30 @@
+{
+    "resolve-home.json": {
+        "status": 200,
+        "cacheControl": "public, max-age=60",
+        "etagPresent": true,
+        "requestIdPresent": true
+    },
+    "collection-product-page-1.json": {
+        "status": 200,
+        "cacheControl": "public, max-age=60",
+        "etagPresent": true,
+        "requestIdPresent": true
+    },
+    "navigation.json": {
+        "status": 200,
+        "cacheControl": "public, max-age=60",
+        "etagPresent": true,
+        "requestIdPresent": true
+    },
+    "route-manifest.json": {
+        "status": 200,
+        "cacheControl": "public, max-age=60",
+        "etagPresent": true,
+        "requestIdPresent": true
+    },
+    "conditionalResolve": {
+        "status": 304,
+        "etagPresent": true
+    }
+}

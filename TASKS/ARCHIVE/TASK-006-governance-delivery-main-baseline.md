@@ -2,7 +2,7 @@
 accepted_at: 2026-07-23T07:40:00Z
 
 task_id: TASK-006
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [governance_maintainer]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-006
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-23T07:33:17Z
-git_status: FORMAL_COMMIT
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -307,6 +307,14 @@ project_type: software
 `ACCEPTED` at 2026-07-23T07:40:00Z
 
 - 用户已输入精确口令 `确认 TASK-006 完成并提交到远端`；授权本地正式提交、任务分支推送、合并到 `main` 和推送 `main`。
+
+## Formal Delivery
+
+- Commit：`4c52e5da4dd9a132a1f019affadc34892bb325df`。
+- Remote task branch：`origin/codex/TASK-006-governance-delivery-main-baseline`。
+- Local/remote `main`：均为 `4c52e5da4dd9a132a1f019affadc34892bb325df`。
+- GitHub default branch：`main`。
+- 2026-07-23T08:27:33Z 切换检查确认工作区干净、任务分支和 `main` 远端完成条件已满足；TASK-006 关闭归档。
 
 ## Recovery Entry 2026-07-23T07:33:17Z
 

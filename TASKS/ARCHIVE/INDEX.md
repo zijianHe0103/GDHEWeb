@@ -22,3 +22,8 @@ schema_version: DPG-LANES-1.0.0
   - 任务文件：`TASKS/ARCHIVE/TASK-005-roadmap-api-integration-boundaries.md`
   - Commit：`c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9`
   - Remote branch：`origin/codex/TASK-005-roadmap-api-integration-boundaries`
+- `TASK-006` 升级项目交付治理模板并建立 main 集成基线 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-006-governance-delivery-main-baseline.md`
+  - Commit：`4c52e5da4dd9a132a1f019affadc34892bb325df`
+  - Remote branch：`origin/codex/TASK-006-governance-delivery-main-baseline`
+  - Main：`origin/main` at `4c52e5da4dd9a132a1f019affadc34892bb325df`

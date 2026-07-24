@@ -1,0 +1,27 @@
+{
+    "fixtureVersion": "TASK-007-A2-R3",
+    "createdAt": "2026-07-24T05:19:19+00:00",
+    "posts": {
+        "home": 755,
+        "service": 756,
+        "case": 757,
+        "material": 758,
+        "service_alpha": 759,
+        "service_beta": 760,
+        "draft": 761,
+        "private": 762,
+        "pending": 763,
+        "trash": 764
+    },
+    "attachments": {
+        "home": 766,
+        "service": 767,
+        "case": 768,
+        "material": 769
+    },
+    "terms": {
+        "serviceFamily": 101,
+        "materialFamily": 102,
+        "process": 103
+    }
+}

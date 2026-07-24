@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/link.schema.json",
+  "title": "GDHE Public Link",
+  "type": "object",
+  "required": ["title", "url", "target"],
+  "properties": {
+    "title": {"type": "string", "minLength": 1, "maxLength": 120},
+    "url": {
+      "type": "string",
+      "maxLength": 500,
+      "oneOf": [
+        {"$ref": "public-path.schema.json"},
+        {"pattern": "^(?:https?://|mailto:|tel:)[^\\s]+$"}
+      ]
+    },
+    "target": {"enum": ["_self", "_blank"]}
+  },
+  "additionalProperties": false
+}

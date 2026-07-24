@@ -1,0 +1,19 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "2.0.0",
+    "locale": "en",
+    "type": "service",
+    "sort": "title_asc",
+    "filter": "service_family:task-007-a2-cnc",
+    "page": 2,
+    "perPage": 2,
+    "total": 3,
+    "items": [
+        {
+            "id": "10000000-0000-4000-8000-00000000000a",
+            "type": "service",
+            "title": "TASK-007 A2 Shared Service",
+            "publicPath": "/services/task-007-a2-shared-beta/"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "evidenceVersion": "TASK-007-A3-MIGRATION-RUNTIME-R1",
+    "inventoryCount": 1,
+    "dryRunZeroWrite": true,
+    "applyChanged": true,
+    "repeatedApplyNoOp": true,
+    "exactRollback": true,
+    "repeatedRollbackNoOp": true,
+    "ambiguousRefused": true,
+    "failureInjectionResults": [
+        {
+            "stage": "post_update",
+            "errorCode": "gdhe_a3_apply_failed",
+            "snapshotRestored": true,
+            "backupMetaRemoved": true
+        },
+        {
+            "stage": "path_readback",
+            "errorCode": "gdhe_a3_apply_failed",
+            "snapshotRestored": true,
+            "backupMetaRemoved": true
+        },
+        {
+            "stage": "template_readback",
+            "errorCode": "gdhe_a3_apply_failed",
+            "snapshotRestored": true,
+            "backupMetaRemoved": true
+        },
+        {
+            "stage": "relations_readback",
+            "errorCode": "gdhe_a3_apply_failed",
+            "snapshotRestored": true,
+            "backupMetaRemoved": true
+        }
+    ]
+}

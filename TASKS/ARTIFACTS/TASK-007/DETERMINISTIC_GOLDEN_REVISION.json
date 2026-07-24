@@ -1,0 +1,127 @@
+{
+  "evidenceVersion": "TASK-007-A2-DETERMINISM-R5",
+  "fixtureVersion": "TASK-007-A2-R3",
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 13,
+  "goldenHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-007-A2-R3",
+        "createdAt": "2026-07-24T05:19:15+00:00",
+        "posts": {
+          "home": 729,
+          "service": 730,
+          "case": 731,
+          "material": 732,
+          "service_alpha": 733,
+          "service_beta": 734,
+          "draft": 735,
+          "private": 736,
+          "pending": 737,
+          "trash": 738
+        },
+        "attachments": {
+          "home": 740,
+          "service": 741,
+          "case": 742,
+          "material": 743
+        },
+        "terms": {
+          "serviceFamily": 98,
+          "materialFamily": 99,
+          "process": 100
+        }
+      },
+      "schemaValid": true,
+      "goldenSha256": {
+        "collection-case-study.json": "8061a814ad7bdc245b27a39e16a298625cdb5d7c3bcad6a3ad8bc2f51736a1ac",
+        "collection-material.json": "806d85a06c50ae575eef8d4d726bc0caf6cd491f8edd4ef8e572e25953b5987d",
+        "collection-service-modified.json": "e9715a7dbe7cf9cd3838db9e715bbf2c2c7b733af826751f2f07d87c49aa8f76",
+        "collection-service-page-2.json": "f92b5b0986d4d3d10ff1daa12a3c814fa904f50055836e9f16863ab31fd5af26",
+        "collection-service-page-3-empty.json": "c13895539889bc0e2f20693e905d6bb166cf8064e3a776b876e1eb60a6a66250",
+        "collection-service-per-page-1.json": "dc996d29d36ff1cf03c23bc56d842d40298f1f11ab63e324ee45250bdfb78f7c",
+        "collection-service.json": "99050780bde8e162ac1872909d2a189b6625291ce124d8ab4e50a7d42761f277",
+        "navigation.json": "b5e185edbd6ab13b5acf671f111c8045bd5f0a942b01d5fc084a4cd10233c584",
+        "resolve-case-study.json": "969c3cc42a0497ef14449a6105334786918a6bf62812d56668c88af9541eee95",
+        "resolve-home.json": "8c8377a1397d34d33fb41aec5f2a2a2baabc64ad8ce2d79c3e2a9aedb572feea",
+        "resolve-material.json": "86c3463b3bb64c041cf071544771e658e1a2cfb93491ff6e735c8cc75a5b8e56",
+        "resolve-service.json": "66b52d527e7ae8991ea435a4f4c8288d3f003aa44af1d470e0a7ae685c2eb1fb",
+        "route-manifest.json": "d3da63884d2a7e66789a06a8367f2b66e8aae25473b3e3fc633f60ef8f1f3d3f"
+      },
+      "cleanup": {
+        "posts": 10,
+        "attachments": 4,
+        "terms": 3,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-007-A2-R3",
+        "createdAt": "2026-07-24T05:19:19+00:00",
+        "posts": {
+          "home": 755,
+          "service": 756,
+          "case": 757,
+          "material": 758,
+          "service_alpha": 759,
+          "service_beta": 760,
+          "draft": 761,
+          "private": 762,
+          "pending": 763,
+          "trash": 764
+        },
+        "attachments": {
+          "home": 766,
+          "service": 767,
+          "case": 768,
+          "material": 769
+        },
+        "terms": {
+          "serviceFamily": 101,
+          "materialFamily": 102,
+          "process": 103
+        }
+      },
+      "schemaValid": true,
+      "goldenSha256": {
+        "collection-case-study.json": "8061a814ad7bdc245b27a39e16a298625cdb5d7c3bcad6a3ad8bc2f51736a1ac",
+        "collection-material.json": "806d85a06c50ae575eef8d4d726bc0caf6cd491f8edd4ef8e572e25953b5987d",
+        "collection-service-modified.json": "e9715a7dbe7cf9cd3838db9e715bbf2c2c7b733af826751f2f07d87c49aa8f76",
+        "collection-service-page-2.json": "f92b5b0986d4d3d10ff1daa12a3c814fa904f50055836e9f16863ab31fd5af26",
+        "collection-service-page-3-empty.json": "c13895539889bc0e2f20693e905d6bb166cf8064e3a776b876e1eb60a6a66250",
+        "collection-service-per-page-1.json": "dc996d29d36ff1cf03c23bc56d842d40298f1f11ab63e324ee45250bdfb78f7c",
+        "collection-service.json": "99050780bde8e162ac1872909d2a189b6625291ce124d8ab4e50a7d42761f277",
+        "navigation.json": "b5e185edbd6ab13b5acf671f111c8045bd5f0a942b01d5fc084a4cd10233c584",
+        "resolve-case-study.json": "969c3cc42a0497ef14449a6105334786918a6bf62812d56668c88af9541eee95",
+        "resolve-home.json": "8c8377a1397d34d33fb41aec5f2a2a2baabc64ad8ce2d79c3e2a9aedb572feea",
+        "resolve-material.json": "86c3463b3bb64c041cf071544771e658e1a2cfb93491ff6e735c8cc75a5b8e56",
+        "resolve-service.json": "66b52d527e7ae8991ea435a4f4c8288d3f003aa44af1d470e0a7ae685c2eb1fb",
+        "route-manifest.json": "d3da63884d2a7e66789a06a8367f2b66e8aae25473b3e3fc633f60ef8f1f3d3f"
+      },
+      "cleanup": {
+        "posts": 10,
+        "attachments": 4,
+        "terms": 3,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskUploads": 0
+      }
+    }
+  ]
+}

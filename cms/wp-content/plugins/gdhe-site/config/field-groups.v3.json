@@ -1,0 +1,322 @@
+[
+  {
+    "key": "group_gdhe_content_schema_v3",
+    "title": "GDHE Content Schema v3",
+    "fields": [
+      {
+        "key": "field_gdhe_schema_version",
+        "label": "Schema Version",
+        "name": "schema_version",
+        "type": "text",
+        "required": 1,
+        "default_value": "3.0.0",
+        "readonly": 1
+      },
+      {
+        "key": "field_gdhe_template_key",
+        "label": "Template Key",
+        "name": "template_key",
+        "type": "select",
+        "required": 1,
+        "choices": {
+          "standard": "Standard",
+          "product": "Product",
+          "market": "Market",
+          "reference": "Reference",
+          "support_article": "Support Article",
+          "download": "Download"
+        },
+        "default_value": "standard",
+        "return_format": "value",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_gdhe_summary",
+        "label": "Summary",
+        "name": "summary",
+        "type": "textarea",
+        "required": 1,
+        "maxlength": 320,
+        "rows": 4,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_gdhe_hero",
+        "label": "Hero",
+        "name": "hero",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_hero_eyebrow", "label": "Eyebrow", "name": "eyebrow", "type": "text", "maxlength": 80},
+          {"key": "field_gdhe_hero_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+          {"key": "field_gdhe_hero_lead", "label": "Lead", "name": "lead", "type": "textarea", "maxlength": 320, "rows": 4, "new_lines": "br"},
+          {"key": "field_gdhe_hero_media", "label": "Media Reference", "name": "media_reference", "type": "image", "return_format": "id", "preview_size": "medium", "library": "all"},
+          {"key": "field_gdhe_hero_primary_cta", "label": "Primary CTA", "name": "primary_cta", "type": "link", "return_format": "array"},
+          {"key": "field_gdhe_hero_secondary_cta", "label": "Secondary CTA", "name": "secondary_cta", "type": "link", "return_format": "array"}
+        ]
+      },
+      {
+        "key": "field_gdhe_relationships",
+        "label": "Relationships",
+        "name": "relationships",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_related_products", "label": "Related Products", "name": "products", "type": "relationship", "post_type": ["product"], "filters": ["search"], "return_format": "id", "max": 50},
+          {"key": "field_gdhe_related_markets", "label": "Related Markets", "name": "markets", "type": "relationship", "post_type": ["market"], "filters": ["search"], "return_format": "id", "max": 50},
+          {"key": "field_gdhe_related_references", "label": "Related References", "name": "references", "type": "relationship", "post_type": ["reference"], "filters": ["search"], "return_format": "id", "max": 50},
+          {"key": "field_gdhe_related_support_articles", "label": "Related Support Articles", "name": "support_articles", "type": "relationship", "post_type": ["support_article"], "filters": ["search"], "return_format": "id", "max": 50},
+          {"key": "field_gdhe_related_downloads", "label": "Related Downloads", "name": "downloads", "type": "relationship", "post_type": ["download"], "filters": ["search"], "return_format": "id", "max": 50}
+        ]
+      },
+      {
+        "key": "field_gdhe_product_details",
+        "label": "Product Details",
+        "name": "product_details",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_product_model", "label": "Model", "name": "model", "type": "text", "required": 1, "maxlength": 120},
+          {"key": "field_gdhe_product_code", "label": "Product Code", "name": "product_code", "type": "text", "required": 1, "maxlength": 80},
+          {"key": "field_gdhe_product_positioning", "label": "Positioning", "name": "positioning", "type": "textarea", "maxlength": 320, "rows": 4},
+          {"key": "field_gdhe_product_features", "label": "Features", "name": "features", "type": "repeater", "min": 1, "max": 20, "sub_fields": [
+            {"key": "field_gdhe_product_feature", "label": "Feature", "name": "value", "type": "text", "required": 1, "maxlength": 180}
+          ]},
+          {"key": "field_gdhe_product_specs", "label": "Specifications", "name": "specifications", "type": "repeater", "min": 1, "max": 50, "sub_fields": [
+            {"key": "field_gdhe_product_spec_key", "label": "Key", "name": "key", "type": "text", "required": 1, "maxlength": 64},
+            {"key": "field_gdhe_product_spec_label", "label": "Label", "name": "label", "type": "text", "required": 1, "maxlength": 120},
+            {"key": "field_gdhe_product_spec_value", "label": "Value", "name": "value", "type": "text", "required": 1, "maxlength": 240},
+            {"key": "field_gdhe_product_spec_unit", "label": "Unit", "name": "unit", "type": "text", "maxlength": 32}
+          ]},
+          {"key": "field_gdhe_product_article_numbers", "label": "Article / Order Numbers", "name": "article_numbers", "type": "repeater", "min": 1, "max": 30, "sub_fields": [
+            {"key": "field_gdhe_product_article_number", "label": "Number", "name": "number", "type": "text", "required": 1, "maxlength": 80},
+            {"key": "field_gdhe_product_article_region", "label": "Region", "name": "region", "type": "text", "required": 1, "maxlength": 80}
+          ]},
+          {"key": "field_gdhe_product_finishes", "label": "Colors / Finishes", "name": "finishes", "type": "repeater", "max": 30, "sub_fields": [
+            {"key": "field_gdhe_product_finish_code", "label": "Code", "name": "code", "type": "text", "required": 1, "maxlength": 80},
+            {"key": "field_gdhe_product_finish_label", "label": "Label", "name": "label", "type": "text", "required": 1, "maxlength": 120},
+            {"key": "field_gdhe_product_finish_color", "label": "Color", "name": "color", "type": "text", "maxlength": 80}
+          ]},
+          {"key": "field_gdhe_product_installation", "label": "Installation", "name": "installation", "type": "textarea", "required": 1, "maxlength": 500, "rows": 4},
+          {"key": "field_gdhe_product_control", "label": "Operating / Control", "name": "control", "type": "textarea", "maxlength": 500, "rows": 4},
+          {"key": "field_gdhe_product_compatibility", "label": "Compatibility", "name": "compatibility", "type": "repeater", "max": 30, "sub_fields": [
+            {"key": "field_gdhe_product_compatibility_value", "label": "Requirement", "name": "value", "type": "text", "required": 1, "maxlength": 180}
+          ]},
+          {"key": "field_gdhe_product_gallery", "label": "Gallery", "name": "gallery", "type": "gallery", "return_format": "id", "max": 20},
+          {"key": "field_gdhe_product_video", "label": "Video URL", "name": "video_url", "type": "url", "maxlength": 500},
+          {"key": "field_gdhe_product_inquiry", "label": "Inquiry CTA", "name": "inquiry_cta", "type": "link", "return_format": "array"}
+        ]
+      },
+      {
+        "key": "field_gdhe_market_details",
+        "label": "Market Details",
+        "name": "market_details",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_market_benefits", "label": "Benefits", "name": "benefits", "type": "repeater", "min": 1, "max": 20, "sub_fields": [{"key": "field_gdhe_market_benefit", "label": "Benefit", "name": "value", "type": "text", "required": 1, "maxlength": 180}]},
+          {"key": "field_gdhe_market_requirements", "label": "Requirements", "name": "requirements", "type": "repeater", "max": 20, "sub_fields": [{"key": "field_gdhe_market_requirement", "label": "Requirement", "name": "value", "type": "text", "required": 1, "maxlength": 180}]},
+          {"key": "field_gdhe_market_cta", "label": "CTA", "name": "cta", "type": "link", "return_format": "array"}
+        ]
+      },
+      {
+        "key": "field_gdhe_reference_details",
+        "label": "Reference Details",
+        "name": "reference_details",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_reference_location", "label": "Location", "name": "location", "type": "text", "required": 1, "maxlength": 180},
+          {"key": "field_gdhe_reference_challenge", "label": "Challenge", "name": "challenge", "type": "textarea", "required": 1, "maxlength": 500},
+          {"key": "field_gdhe_reference_solution", "label": "Solution", "name": "solution", "type": "wysiwyg", "required": 1, "toolbar": "basic", "media_upload": 0},
+          {"key": "field_gdhe_reference_results", "label": "Results", "name": "results", "type": "repeater", "max": 20, "sub_fields": [{"key": "field_gdhe_reference_result", "label": "Result", "name": "value", "type": "text", "required": 1, "maxlength": 180}]},
+          {"key": "field_gdhe_reference_gallery", "label": "Gallery", "name": "gallery", "type": "gallery", "return_format": "id", "max": 20},
+          {"key": "field_gdhe_reference_cta", "label": "CTA", "name": "cta", "type": "link", "return_format": "array"}
+        ]
+      },
+      {
+        "key": "field_gdhe_support_details",
+        "label": "Support Details",
+        "name": "support_details",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_support_goal", "label": "Problem / Goal", "name": "problem_or_goal", "type": "textarea", "required": 1, "maxlength": 500},
+          {"key": "field_gdhe_support_instructions", "label": "Instructions", "name": "instructions", "type": "wysiwyg", "required": 1, "toolbar": "basic", "media_upload": 0},
+          {"key": "field_gdhe_support_video", "label": "Video URL", "name": "video_url", "type": "url", "maxlength": 500}
+        ]
+      },
+      {
+        "key": "field_gdhe_download_details",
+        "label": "Download Details",
+        "name": "download_details",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {"key": "field_gdhe_download_version", "label": "Document Version", "name": "version", "type": "text", "required": 1, "maxlength": 80},
+          {"key": "field_gdhe_download_date", "label": "Document Date", "name": "date", "type": "date_picker", "required": 1, "return_format": "Y-m-d"},
+          {"key": "field_gdhe_download_locale", "label": "Document Locale", "name": "locale", "type": "text", "required": 1, "default_value": "en", "maxlength": 16},
+          {"key": "field_gdhe_download_file", "label": "Public File", "name": "file", "type": "file", "required": 1, "return_format": "id", "library": "all"},
+          {"key": "field_gdhe_download_description", "label": "Description", "name": "description", "type": "textarea", "maxlength": 500, "rows": 4}
+        ]
+      },
+      {
+        "key": "field_gdhe_modules",
+        "label": "Controlled Modules",
+        "name": "modules",
+        "type": "flexible_content",
+        "button_label": "Add controlled module",
+        "min": 0,
+        "max": 20,
+        "layouts": {
+          "layout_gdhe_hero": {
+            "key": "layout_gdhe_hero",
+            "name": "hero",
+            "label": "Hero",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_hero_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_hero_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_hero_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+              {"key": "field_gdhe_module_hero_lead", "label": "Lead", "name": "lead", "type": "textarea", "maxlength": 320, "rows": 4},
+              {"key": "field_gdhe_module_hero_media", "label": "Media Reference", "name": "media_reference", "type": "image", "return_format": "id"},
+              {"key": "field_gdhe_module_hero_primary", "label": "Primary CTA", "name": "primary_cta", "type": "link", "return_format": "array"},
+              {"key": "field_gdhe_module_hero_secondary", "label": "Secondary CTA", "name": "secondary_cta", "type": "link", "return_format": "array"}
+            ]
+          },
+          "layout_gdhe_rich_text": {
+            "key": "layout_gdhe_rich_text",
+            "name": "rich_text",
+            "label": "Rich Text",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_rich_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_rich_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_rich_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_rich_body", "label": "Body", "name": "body", "type": "wysiwyg", "required": 1, "tabs": "all", "toolbar": "basic", "media_upload": 0}
+            ]
+          },
+          "layout_gdhe_card_grid": {
+            "key": "layout_gdhe_card_grid",
+            "name": "card_grid",
+            "label": "Card Grid",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_cards_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_cards_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_cards_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_cards_items", "label": "Cards", "name": "items", "type": "repeater", "min": 1, "max": 12, "layout": "row", "button_label": "Add card", "sub_fields": [
+                {"key": "field_gdhe_module_card_title", "label": "Title", "name": "title", "type": "text", "required": 1, "maxlength": 100},
+                {"key": "field_gdhe_module_card_summary", "label": "Summary", "name": "summary", "type": "textarea", "maxlength": 240, "rows": 3},
+                {"key": "field_gdhe_module_card_link", "label": "Link", "name": "link", "type": "link", "return_format": "array"}
+              ]}
+            ]
+          },
+          "layout_gdhe_split_media": {
+            "key": "layout_gdhe_split_media",
+            "name": "split_media",
+            "label": "Split Media",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_split_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_split_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_split_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_split_body", "label": "Body", "name": "body", "type": "wysiwyg", "toolbar": "basic", "media_upload": 0},
+              {"key": "field_gdhe_module_split_media", "label": "Media Reference", "name": "media_reference", "type": "image", "required": 1, "return_format": "id"},
+              {"key": "field_gdhe_module_split_position", "label": "Media Position", "name": "media_position", "type": "select", "choices": {"left": "Left", "right": "Right"}, "default_value": "right", "return_format": "value"}
+            ]
+          },
+          "layout_gdhe_accordion": {
+            "key": "layout_gdhe_accordion",
+            "name": "accordion",
+            "label": "Accordion",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_accordion_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_accordion_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_accordion_heading", "label": "Heading", "name": "heading", "type": "text", "maxlength": 120},
+              {"key": "field_gdhe_module_accordion_items", "label": "Items", "name": "items", "type": "repeater", "min": 1, "max": 20, "layout": "row", "button_label": "Add item", "sub_fields": [
+                {"key": "field_gdhe_module_accordion_question", "label": "Question", "name": "question", "type": "text", "required": 1, "maxlength": 180},
+                {"key": "field_gdhe_module_accordion_answer", "label": "Answer", "name": "answer", "type": "wysiwyg", "required": 1, "toolbar": "basic", "media_upload": 0}
+              ]}
+            ]
+          },
+          "layout_gdhe_data_table": {
+            "key": "layout_gdhe_data_table",
+            "name": "data_table",
+            "label": "Data Table",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_table_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_table_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_table_caption", "label": "Caption", "name": "caption", "type": "text", "required": 1, "maxlength": 160},
+              {"key": "field_gdhe_module_table_columns_v2", "label": "Columns", "name": "columns", "type": "repeater", "required": 1, "min": 1, "max": 12, "layout": "table", "button_label": "Add column", "sub_fields": [
+                {"key": "field_gdhe_module_table_column_key_v2", "label": "Key", "name": "key", "type": "text", "required": 1, "maxlength": 48},
+                {"key": "field_gdhe_module_table_column_label_v2", "label": "Label", "name": "label", "type": "text", "required": 1, "maxlength": 120}
+              ]},
+              {"key": "field_gdhe_module_table_rows_v2", "label": "Rows", "name": "rows", "type": "repeater", "required": 1, "min": 1, "max": 100, "layout": "row", "button_label": "Add row", "sub_fields": [
+                {"key": "field_gdhe_module_table_row_id_v2", "label": "Row ID", "name": "row_id", "type": "text", "readonly": 1},
+                {"key": "field_gdhe_module_table_cells_v2", "label": "Cells", "name": "cells", "type": "repeater", "required": 1, "min": 1, "max": 12, "layout": "table", "button_label": "Add cell", "sub_fields": [
+                  {"key": "field_gdhe_module_table_cell_column_key_v2", "label": "Column Key", "name": "column_key", "type": "text", "required": 1, "maxlength": 48},
+                  {"key": "field_gdhe_module_table_cell_value_v2", "label": "Value", "name": "value", "type": "text", "maxlength": 500}
+                ]}
+              ]}
+            ]
+          },
+          "layout_gdhe_cta_banner": {
+            "key": "layout_gdhe_cta_banner",
+            "name": "cta_banner",
+            "label": "CTA Banner",
+            "display": "block",
+            "sub_fields": [
+              {"key": "field_gdhe_module_cta_id_v2", "label": "Module ID", "name": "module_id", "type": "text", "readonly": 1},
+              {"key": "field_gdhe_module_cta_schema_version_v2", "label": "Module Schema Version", "name": "module_schema_version", "type": "text", "default_value": "1.0.0", "readonly": 1},
+              {"key": "field_gdhe_module_cta_heading", "label": "Heading", "name": "heading", "type": "text", "required": 1, "maxlength": 120},
+              {"key": "field_gdhe_module_cta_body", "label": "Body", "name": "body", "type": "textarea", "maxlength": 320, "rows": 4},
+              {"key": "field_gdhe_module_cta_primary", "label": "Primary CTA", "name": "primary_cta", "type": "link", "required": 1, "return_format": "array"}
+            ]
+          }
+        }
+      }
+    ],
+    "location": [
+      [{"param": "post_type", "operator": "==", "value": "post"}],
+      [{"param": "post_type", "operator": "==", "value": "page"}],
+      [{"param": "post_type", "operator": "==", "value": "product"}],
+      [{"param": "post_type", "operator": "==", "value": "market"}],
+      [{"param": "post_type", "operator": "==", "value": "reference"}],
+      [{"param": "post_type", "operator": "==", "value": "support_article"}],
+      [{"param": "post_type", "operator": "==", "value": "download"}]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Versioned GDHE English content schema v3 with Forest-aligned product data, stable module identity, and structured relations. Do not edit in the SCF UI.",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_gdhe_site_settings_v1",
+    "title": "GDHE Site Settings v1",
+    "fields": [
+      {"key": "field_gdhe_settings_schema_version", "label": "Schema Version", "name": "schema_version", "type": "text", "required": 1, "default_value": "1.0.0", "readonly": 1},
+      {"key": "field_gdhe_settings_locale", "label": "Enabled Locale", "name": "enabled_locale", "type": "text", "required": 1, "default_value": "en", "readonly": 1},
+      {"key": "field_gdhe_settings_contact_cta", "label": "Contact CTA", "name": "contact_cta", "type": "link", "return_format": "array"}
+    ],
+    "location": [[{"param": "post_type", "operator": "==", "value": "site_settings"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Internal English-only site settings. Not exposed through public REST.",
+    "show_in_rest": 0
+  }
+]

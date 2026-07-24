@@ -1,0 +1,117 @@
+{
+  "benchmarkVersion": "TASK-007-A3-BENCHMARK-1",
+  "fixtureVersion": "TASK-007-A3-1.0.0",
+  "baseUrl": "http://127.0.0.1:8080",
+  "warmed": true,
+  "warmupRequestCount": 8,
+  "requestsPerFixture": 200,
+  "concurrency": 20,
+  "originRequestCount": 1600,
+  "requestGraph": {
+    "nodes": [
+      "benchmark-client",
+      "wordpress-rest",
+      "gdhe-resolver",
+      "scf-normalizer",
+      "mysql-media"
+    ],
+    "edges": [
+      [
+        "benchmark-client",
+        "wordpress-rest"
+      ],
+      [
+        "wordpress-rest",
+        "gdhe-resolver"
+      ],
+      [
+        "gdhe-resolver",
+        "scf-normalizer"
+      ],
+      [
+        "scf-normalizer",
+        "mysql-media"
+      ]
+    ]
+  },
+  "fixtures": {
+    "home": {
+      "publicPath": "/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1783,
+      "p50Milliseconds": 1950.435,
+      "p95Milliseconds": 2336.901,
+      "errorRate": 0.0
+    },
+    "productAlpha": {
+      "publicPath": "/products/task-007-a3-flow-control-alpha/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 2168,
+      "p50Milliseconds": 1024.975,
+      "p95Milliseconds": 1915.254,
+      "errorRate": 0.0
+    },
+    "productBeta": {
+      "publicPath": "/products/task-007-a3-flow-control-beta/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 2161,
+      "p50Milliseconds": 896.58,
+      "p95Milliseconds": 984.239,
+      "errorRate": 0.0
+    },
+    "productGamma": {
+      "publicPath": "/products/task-007-a3-flow-control-gamma/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 2168,
+      "p50Milliseconds": 809.977,
+      "p95Milliseconds": 911.913,
+      "errorRate": 0.0
+    },
+    "market": {
+      "publicPath": "/markets/task-007-a3-controlled-water-systems/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1600,
+      "p50Milliseconds": 836.771,
+      "p95Milliseconds": 978.624,
+      "errorRate": 0.0
+    },
+    "reference": {
+      "publicPath": "/references/task-007-a3-coastal-research-facility/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1769,
+      "p50Milliseconds": 803.346,
+      "p95Milliseconds": 881.007,
+      "errorRate": 0.0
+    },
+    "supportArticle": {
+      "publicPath": "/support/configuration/task-007-a3-configure-flow-control/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1559,
+      "p50Milliseconds": 810.466,
+      "p95Milliseconds": 888.931,
+      "errorRate": 0.0
+    },
+    "download": {
+      "publicPath": "/downloads/task-007-a3-flow-control-data-sheet/",
+      "requestCount": 200,
+      "originRequestCount": 200,
+      "payloadBytes": 1714,
+      "p50Milliseconds": 835.789,
+      "p95Milliseconds": 967.618,
+      "errorRate": 0.0
+    }
+  },
+  "aggregate": {
+    "requestCount": 1600,
+    "p50Milliseconds": 858.246,
+    "p95Milliseconds": 2001.839,
+    "errorRate": 0.0
+  }
+}

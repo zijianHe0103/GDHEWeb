@@ -1,0 +1,42 @@
+{
+    "resolve": {
+        "successStatus": 200,
+        "notModifiedStatus": 304,
+        "cacheControl": "public, max-age=60",
+        "etag": "required",
+        "lastModified": "required",
+        "contentType200": "application/json; charset=UTF-8",
+        "contentType304": "omitted",
+        "requestIdHeader": "uuid-v4"
+    },
+    "collection": {
+        "successStatus": 200,
+        "notModifiedStatus": 304,
+        "cacheControl": "public, max-age=60",
+        "etag": "required",
+        "lastModified": "omitted",
+        "contentType200": "application/json; charset=UTF-8",
+        "contentType304": "omitted",
+        "requestIdHeader": "uuid-v4"
+    },
+    "navigation": {
+        "successStatus": 200,
+        "notModifiedStatus": 304,
+        "cacheControl": "public, max-age=60",
+        "etag": "required",
+        "lastModified": "omitted",
+        "contentType200": "application/json; charset=UTF-8",
+        "contentType304": "omitted",
+        "requestIdHeader": "uuid-v4"
+    },
+    "routeManifest": {
+        "successStatus": 200,
+        "notModifiedStatus": 304,
+        "cacheControl": "public, max-age=60",
+        "etag": "required",
+        "lastModified": "omitted",
+        "contentType200": "application/json; charset=UTF-8",
+        "contentType304": "omitted",
+        "requestIdHeader": "uuid-v4"
+    }
+}

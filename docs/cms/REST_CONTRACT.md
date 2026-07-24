@@ -1,49 +1,74 @@
-# Minimal REST contract
+# GDHE REST contract
 
-## Schema discovery
+The transport remains `/wp-json/gdhe/v1`; every current response advertises Content Schema `3.0.0`.
 
-`GET /wp-json/gdhe/v1/schema` is anonymous, read-only and versioned. It returns:
+## Endpoints
 
-- `schemaVersion: 1.0.0`
-- default and enabled locale `en`
-- six public post types
-- four public taxonomies
-- the field and controlled-module allowlists
-- explicit markers showing that full page DTOs, route resolution and preview bridging are deferred
+- `GET /schema`
+- `GET /resolve?locale=en&path=/canonical/path/&schema=3.0.0`
+- `GET /collection/{type}?locale=en&page=1&per_page=10&sort=modified_desc&filter=taxonomy:slug`
+- `GET /navigation?locale=en`
+- `GET /route-manifest?locale=en`
 
-The endpoint contains no users, credentials, plugin configuration or internal settings.
+Collections allow `post`, `product`, `market`, `reference`, `support_article` and `download`. Filters are allowlisted as `product_category` for products, `support_topic` for support articles and `document_type` for downloads. Sort is `modified_desc` or `title_asc`, with slug as the deterministic tie-break.
 
-## Public content projection
+All candidates pass the same complete envelope and unique canonical-route checks as `resolve` before pagination. `items` and `total` therefore use one eligible set. The A3 P1 revision freezes page sizes `2/1/0` and invariant totals `3/3/3` while excluding published unknown-template, known-but-mismatched-template, invalid-module and invalid-path candidates. The known Product/Market-template mismatch is also excluded from navigation and the route manifest.
 
-The Core REST item endpoints for the six public GDHE types contain a `gdhe` object with exactly these keys:
+## Page envelope
 
-- `schema_version`
-- `template_key`
-- `summary`
-- `hero`
-- `relationships`
-- `modules`
+The normalized envelope contains:
 
-SCF's generic `acf` container and Core's `meta` container are removed from responses for these GDHE types. This prevents `_acf_changed` and unreviewed future meta registrations from bypassing the explicit projection.
+- `apiVersion`, `schemaVersion`, UUIDv4 `id`
+- `type`, closed `templateKey`, `locale`, canonical `publicPath`
+- title, optional excerpt, published/modified timestamps
+- optional public media
+- controlled modules
+- the five fixed relationship arrays
+- type-specific `details`
 
-Reference visibility fails closed for anonymous and all `view` contexts:
+Product `details` expose structured features, specifications, article numbers, finishes, installation/control/compatibility, gallery, HTTPS-only video and inquiry CTA. Support video is also HTTPS-only. Reference and support rich text is exposed only through `solutionSafeHtml` or `instructionsSafeHtml`.
 
-- Relationship IDs remain only when the referenced post is `publish` and its post type is publicly viewable.
-- Draft, private, pending/withdrawn, deleted and internal references are removed.
-- Image attachment IDs remain only when the attachment is an image with a public URL and is attached to a published, publicly viewable parent.
-- Unattached images and images attached to draft/private/non-public parents are returned as `null`.
+Download `details.file` is `{id, url, filename, mimeType, bytes}`. Its `id` is UUIDv4. WordPress attachment IDs and internal filesystem paths never appear.
 
-An authenticated request using `context=edit` retains editorial references only when the current user can edit the parent content item. This is an editing boundary, not an anonymous DTO guarantee.
+## Canonical paths
 
-Draft authorization remains Core REST's responsibility. The fixtures proved an anonymous draft request returns `401 rest_forbidden`, an administrator receives `200`, and an anonymous published request receives `200`. Round 1 additionally proved that a published parent exposed only its published relationship and public media to anonymous/`view` requests while authorized `edit` retained published, draft, private and pending references plus public/non-public editorial media.
+- page: explicitly stored path
+- post: `/news/{slug}/`
+- product: `/products/{slug}/`
+- market: `/markets/{slug}/`
+- reference: `/references/{slug}/`
+- support article: `/support/{support-topic}/{slug}/`, with exactly one topic
+- download: `/downloads/{slug}/`
 
-## Deferred boundaries
+Root `/` and lowercase slash-terminated ASCII slug paths are valid. Double slashes, dot segments, uppercase, encoded separators, query strings, fragments, missing trailing slash and paths longer than 500 bytes are invalid.
 
-This endpoint is not the final frontend DTO. The following remain separate tasks:
+## Headers and errors
 
-- route resolution and route manifest
-- collection endpoints and navigation
-- preview bridge and signed preview authentication
-- webhook and cache invalidation
-- inquiry/upload APIs
-- multilingual URLs, switching and hreflang
+Successful responses use `ETag`, `Cache-Control: public, max-age=60`, JSON Content-Type and UUIDv4 `X-GDHE-Request-ID`; resolve also uses `Last-Modified`. A matching `If-None-Match` returns `304`. Errors use `Cache-Control: no-store`.
+
+Stable application codes remain:
+
+| HTTP | Code |
+|---:|---|
+| 400 | `gdhe_invalid_locale` |
+| 400 | `gdhe_invalid_path` |
+| 400 | `gdhe_invalid_schema` |
+| 400 | `gdhe_invalid_collection_type` |
+| 400 | `gdhe_invalid_filter` |
+| 400 | `gdhe_invalid_sort` |
+| 400 | `gdhe_invalid_pagination` |
+| 404 | `gdhe_not_found` |
+| 409 | `gdhe_route_conflict` |
+| 500 | `gdhe_contract_invariant` |
+
+Transport/auth/proxy statuses such as 401, 403, 429, 502 and 503 are not remapped to application errors.
+
+## Frozen boundaries
+
+- REST API `1`
+- Content Schema `3.0.0`
+- Module Schema `1.0.0`
+- Fixture `TASK-007-A3-REVIEW-R1`
+- 15 Golden files under `TASKS/ARTIFACTS/TASK-007/golden-a3/`, including native Post and non-root Page resolve positives
+
+The Draft 2020-12 schemas are registered by `config/schema.v3.json`. Two complete fixture lifecycles with different WordPress database IDs produced identical 15/15 Golden hashes. GraphQL is not installed, implemented or adopted.

@@ -1,0 +1,126 @@
+{
+    "gdhe_not_found": {
+        "apiVersion": "1",
+        "code": "gdhe_not_found",
+        "message": "Content was not found.",
+        "status": 404,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_not_found"
+            }
+        ]
+    },
+    "gdhe_invalid_locale": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_locale",
+        "message": "Only the English locale is available.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "locale",
+                "code": "gdhe_invalid_locale"
+            }
+        ]
+    },
+    "gdhe_invalid_path": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_path",
+        "message": "Path must be a canonical English public path.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_invalid_path"
+            }
+        ]
+    },
+    "gdhe_invalid_schema": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_schema",
+        "message": "Unsupported content schema version.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "schema",
+                "code": "gdhe_invalid_schema"
+            }
+        ]
+    },
+    "gdhe_invalid_collection_type": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_collection_type",
+        "message": "Collection type is not allowed.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "type",
+                "code": "gdhe_invalid_collection_type"
+            }
+        ]
+    },
+    "gdhe_invalid_filter": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_filter",
+        "message": "Filter value is not allowed.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "filter",
+                "code": "gdhe_invalid_filter"
+            }
+        ]
+    },
+    "gdhe_invalid_sort": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_sort",
+        "message": "Sort value is not allowed.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "sort",
+                "code": "gdhe_invalid_sort"
+            }
+        ]
+    },
+    "gdhe_invalid_pagination": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "gdhe_route_conflict": {
+        "apiVersion": "1",
+        "code": "gdhe_route_conflict",
+        "message": "The canonical path is not unique.",
+        "status": 409,
+        "requestId": "40000000-0000-4000-8000-000000000001",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_route_conflict"
+            }
+        ]
+    },
+    "gdhe_contract_invariant": {
+        "apiVersion": "1",
+        "code": "gdhe_contract_invariant",
+        "message": "Content does not satisfy the public contract.",
+        "status": 500,
+        "requestId": "40000000-0000-4000-8000-000000000001"
+    }
+}

@@ -104,7 +104,7 @@ dispatch、planner、executor、dynamic lane 或 automation 都不得自动调�
 
 ## 会话交接
 
-停止前更新当前 lane `worklog.md`、相关活动任务、`PROJECT/ACTIVITY.md` 和 `PROJECT/STATE.md`：当前状态、已完成工作、剩余工作、验证结果、受影响文件、未解决问题、Git 状态和唯一下一步。
+仅在显式暂停任务、切换任务、替换 lane session 或准备跨会话 handoff 时，更新当前 lane `worklog.md`、相关活动任务、`PROJECT/ACTIVITY.md` 和 `PROJECT/STATE.md`：当前状态、已完成工作、剩余工作、验证结果、受影响文件、未解决问题、Git 状态和唯一下一步。正常 turn 结束不要求改写治理文件；若事实状态没有变化，不得仅为结束 turn 写 recovery 或 handoff。
 
 ## 禁止行为
 

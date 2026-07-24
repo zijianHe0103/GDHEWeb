@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/modules/cta-banner.schema.json",
+  "type": "object",
+  "required": ["id", "type", "schemaVersion", "data"],
+  "properties": {
+    "id": {"$ref": "../uuid-v4.schema.json"},
+    "type": {"const": "cta_banner"},
+    "schemaVersion": {"const": "1.0.0"},
+    "data": {
+      "type": "object",
+      "required": ["heading", "primary_cta"],
+      "properties": {
+        "heading": {"type": "string", "minLength": 1, "maxLength": 120},
+        "body": {"type": "string", "maxLength": 320},
+        "primary_cta": {"$ref": "../link.schema.json"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

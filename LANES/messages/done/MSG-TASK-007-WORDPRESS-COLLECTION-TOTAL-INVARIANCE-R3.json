@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-WORDPRESS-COLLECTION-TOTAL-INVARIANCE-R3",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-24T04:44:46Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Fix the single remaining frontend re-audit P1 only. For the same collection type, filter and sort, total must remain the complete filtered result count on page 1, page 2 and a terminal empty page; current frozen Service page 1/2 total is 3 while page 3 total is 0. Correct the WP_Query or collection response logic without changing unrelated contracts. Add explicit runtime assertions that total is invariant across page 1, page 2 and terminal empty page and that items lengths are 2, 1 and 0. Regenerate affected collection Golden, collection determinism evidence, Schema/runtime evidence, handoff manifest and checksums; run complete contract/schema/two-lifecycle determinism/cleanup and zero-residue checks. Keep API/schema versions coherent and bump only the implementation/fixture revision if required. Do not modify frontend or root README; do not start GraphQL, adversarial review, Git delivery, acceptance or closure. Send a controlled execution_response linked to this request.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-007/FRONTEND_CONSUMER_AUDIT.md",
+    "TASKS/ARTIFACTS/TASK-007/golden/collection-service.json",
+    "TASKS/ARTIFACTS/TASK-007/golden/collection-service-page-2.json",
+    "TASKS/ARTIFACTS/TASK-007/golden/collection-service-page-3-empty.json",
+    "cms/wp-content/plugins/gdhe-site/includes/public-api.php",
+    "cms/wp-content/plugins/gdhe-site/tests/a2-contract-test.php"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/TEST_OR_VALIDATION_LOG.md"
+  ],
+  "notes": "All other Round 1 findings are closed. After Planner verification, frontend performs one single-finding read-only re-audit.",
+  "done_at": "2026-07-24T04:45:34Z",
+  "updated_at": "2026-07-24T04:45:34Z"
+}

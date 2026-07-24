@@ -1,0 +1,37 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-007",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-24T10:14:04Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "执行 TASK-007 A3 frontend read-only consumer re-audit。先 ack 本消息并读取全部 context files。只读审计 Forest-aligned Schema 3 冻结 handoff 是否足够让未来 Next.js server-only consumer 构建 Products、Markets、References、Support、Downloads、Company/Contact hubs；不得修改 frontend/** 或产品实现。验证 public page/post/product/market/reference/support_article/download 类型、template、canonical path、Product taxonomy slugs、structured details、五组 relations、public file DTO、navigation、route manifest、collection sort/filter/page/total、UUIDv4、safeHtml、errors/headers/cache、publication fail-closed、Schema/checksum/Golden determinism 和 cleanup evidence。逐项核对 A3_PLANNER_CHECKPOINT 与 HANDOFF_CHECKSUMS.sha256；确认 WordPress database IDs、raw SCF/meta 和内部 site_settings 未泄漏。评估现有 Next.js 16 App Router 基础未来如何仅消费 normalized DTO，不设计或实现 adapter。明确记录独立 benchmark p95 2001.839 ms 已超过 500 ms 架构比较触发线：这只形成未来单独 GraphQL/cache PoC/ADR candidate，不得在本任务采用。继续保留 production media HTTPS origin/Next Image allowlist 为部署门。输出 PASS/FAIL 与 P0/P1/P2；任何影响未来消费的合同缺口必须列为阻断，不能用前端 workaround 掩盖。写 A3_FRONTEND_CONSUMER_AUDIT.md 与 frontend worklog，并发送 requires_response_to 指向本消息的 execution_response。不要启动 adversarial review、GraphQL、多语言、页面、组件、Header/Mega Menu/Footer、视觉、Git、验收或部署。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-007-english-api-dto-fixture.md",
+    "TASKS/ARTIFACTS/TASK-007/FOREST_PRODUCT_MODEL_REVISION.md",
+    "TASKS/ARTIFACTS/TASK-007/CONTRACT_AND_HANDOFF_MANIFEST.md",
+    "TASKS/ARTIFACTS/TASK-007/HANDOFF_CHECKSUMS.sha256",
+    "TASKS/ARTIFACTS/TASK-007/A3_PLANNER_CHECKPOINT.md",
+    "docs/cms/CONTENT_MODEL.md",
+    "docs/cms/REST_CONTRACT.md",
+    "frontend/README.md",
+    "LANES/frontend/LANE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md"
+  ],
+  "notes": "Read-only consumer gate only. A PASS authorizes independent adversarial review, not frontend implementation.",
+  "dispatched_at": "2026-07-24T10:14:25Z",
+  "delivery_key": "MSG-TASK-007-FRONTEND-FOREST-SCHEMA3-READAUDIT:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-24T10:15:00Z",
+  "updated_at": "2026-07-24T10:15:00Z"
+}

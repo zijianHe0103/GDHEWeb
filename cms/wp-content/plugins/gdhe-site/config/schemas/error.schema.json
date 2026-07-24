@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/v2/error.schema.json",
+  "title": "GDHE Error",
+  "type": "object",
+  "required": ["apiVersion", "code", "message", "status", "requestId"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "code": {"type": "string", "pattern": "^gdhe_[a-z0-9_]+$"},
+    "message": {"type": "string", "minLength": 1, "maxLength": 300},
+    "status": {"type": "integer", "minimum": 400, "maximum": 599},
+    "requestId": {"$ref": "uuid-v4.schema.json"},
+    "details": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["field", "code"],
+        "properties": {
+          "field": {"type": "string", "maxLength": 100},
+          "code": {"type": "string", "maxLength": 100}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

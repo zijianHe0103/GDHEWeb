@@ -1,59 +1,75 @@
 # CMS content model
 
-Schema version: `1.0.0`
+Content Schema: `3.0.0`
+Module Schema: `1.0.0`
 
-## Post types
+## Public content
 
-| Type | Public | Core REST | Purpose |
-| --- | --- | --- | --- |
-| `service` | yes | `services` | Manufacturing service pages |
-| `industry` | yes | `industries` | Industry pages |
-| `material` | yes | `materials` | Material pages |
-| `surface_finish` | yes | `surface-finishes` | Surface-finish pages |
-| `case_study` | yes | `case-studies` | Case studies |
-| `testimonial` | yes | `testimonials` | Testimonials |
-| `site_settings` | no | disabled | Internal settings records |
+| Type | Canonical path | Purpose |
+|---|---|---|
+| Native `page` | explicitly stored | Home, hubs, company, contact and curated landing pages |
+| Native `post` | `/news/{slug}/` | News and editorial content |
+| `product` | `/products/{slug}/` | Product and system detail |
+| `market` | `/markets/{slug}/` | Market/application solution |
+| `reference` | `/references/{slug}/` | Project/reference story |
+| `support_article` | `/support/{topic}/{slug}/` | Technical support and instructions |
+| `download` | `/downloads/{slug}/` | Public document metadata and file |
 
-Native `post` and `page` remain available. All GDHE types support revisions and custom fields. The six public types share the `gdhe_content` capability family. Administrators and editors can manage public GDHE content; only administrators receive the internal `gdhe_setting` capabilities.
-
-The capability matrix is also the lifecycle boundary. Plugin activation applies exactly the administrator/editor capabilities in `config/capabilities.json`; plugin deactivation removes exactly that matrix. Round 1 validation proved counts of 28/14 while active, 0/0 after deactivation and 28/14 after reactivation. No user record is changed.
+`site_settings` remains internal and has no public route.
 
 ## Taxonomies
 
-- `service_family` applies to services.
-- `manufacturing_process` applies to services, materials, surface finishes and case studies.
-- `material_family` applies to materials.
-- `finish_family` applies to surface finishes.
+| Taxonomy | Object |
+|---|---|
+| `product_category` | `product` |
+| `product_series` | `product` |
+| `installation_type` | `product` |
+| `support_topic` | `support_article` |
+| `document_type` | `download` |
 
-All four taxonomies are hierarchical, public and enabled in Core REST.
+Markets remain editorial content rather than a product taxonomy.
 
-## Versioned fields
+## Common and structured fields
 
-`config/field-groups.v1.json` is the rebuildable source for SCF local field groups. The main content group defines:
+Every public record uses the common Schema 3 fields:
 
-- `schema_version`
-- `template_key`
-- `summary`
-- `hero`, including primary/secondary CTAs and a media reference
-- `relationships`
-- `modules`
+- `schema_version`, `template_key`, `summary`, `hero`
+- `relationships` with only `products`, `markets`, `references`, `support_articles`, `downloads`
+- up to 20 controlled modules from the existing seven-layout Module Schema
 
-The only module layout names in schema v1 are:
+Product details are structured, not a free-form specification blob:
 
-- `hero`
-- `rich_text`
-- `card_grid`
-- `split_media`
-- `accordion`
-- `data_table`
-- `cta_banner`
+- model and product code
+- positioning and bounded feature list
+- ordered specifications with key, label, value and optional unit
+- article/order numbers with region
+- colors/finishes
+- installation and operating/control information
+- compatibility
+- gallery, HTTPS video and strict inquiry CTA
 
-Changing a field name, field key, module name or public shape after consumption requires a new schema version plus migration and rollback instructions. The SCF UI may be used to inspect the generated groups, but it is not the authoritative definition.
+Market details include benefits, requirements and CTA. Reference details include location, challenge, CMS-sanitized solution HTML, results and CTA. Support details include one support topic, problem/goal, CMS-sanitized instructions and optional HTTPS video. Download details include one document type, version, issue date, locale `en`, a public file DTO and description.
 
-## Publication rules
+Relations supply bidirectional consumption. A related record appears publicly only when it is published, viewable, carries a UUIDv4 public identifier, has a valid unique canonical path and satisfies its complete Schema 3 envelope.
 
-- English (`en`) is the only enabled locale.
-- Drafts remain visible only to authorized editors.
-- Anonymous Core REST requests can read published public types only.
-- `site_settings` has no public route.
-- Temporary fixtures must carry an explicit TASK marker and be deleted with their revisions after validation.
+## Publication and safety
+
+- Anonymous output is English and published-only.
+- Template keys are `standard`, `product`, `market`, `reference`, `support_article` and `download`.
+- Templates are paired to public types: Page/Post use `standard`; Product, Market, Reference, Support Article and Download use their matching template keys. Unknown and known-but-mismatched templates fail closed, as do invalid modules, paths, identifiers, relations, media and files.
+- Public WYSIWYG values are emitted only as `safeHtml` after the GDHE `wp_kses` allowlist.
+- Public IDs are UUIDv4. WordPress post, attachment and term IDs are internal.
+- Navigation is curated; content types and taxonomies do not automatically become menu truth.
+
+## Legacy migration
+
+The A3 inventory found no real Schema 2 business content. One empty `service` auto-draft is preserved as ephemeral and is not migrated.
+
+For any future non-zero legacy inventory:
+
+- `industry` may map to `market`.
+- `case_study` may map to `reference`.
+- `service` maps to `product` only with explicit `product` and `confirmed` classification markers.
+- `material`, `surface_finish`, `testimonial` and every unclassified record remain ambiguous and are refused.
+
+`gdhe a3-migrate` supports read-only inventory/dry-run and explicit-ID apply/rollback. Apply stores an exact post/meta/term-relationship snapshot and reads back the target type, Schema version, canonical path, matching template, all five remapped relation arrays and marker. Any write/read-back failure restores and verifies the complete snapshot, including removal of partial marker and backup meta. Repeated apply and rollback are idempotent.

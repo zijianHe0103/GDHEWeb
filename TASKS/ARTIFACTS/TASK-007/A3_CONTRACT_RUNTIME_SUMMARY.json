@@ -1,0 +1,53 @@
+{
+    "fixtureVersion": "TASK-007-A3-REVIEW-R1",
+    "schemaVersion": "3.0.0",
+    "goldenChecksums": {
+        "resolve-home.json": "380c48ae413eadc948c7cecb238d71cef42ab44b8bd67feebafe13dc780e4df0",
+        "resolve-company.json": "4f7900e79c946e2314570a845a5bb5a0dca926632ce8486e3b2acb24d30eac24",
+        "resolve-news.json": "cbf7450847bd958fae6342e7f069fb399149fbc048f07a2b12b0b564ceca86d3",
+        "resolve-product-alpha.json": "d304c7690e5a565504a861af5cd858fe93c835f93313602148ee6c809fba375f",
+        "resolve-product-beta.json": "cdaaab08e50cb66325549fec87f2a856299ccdf5a81a66ac38edaa446be4a551",
+        "resolve-product-gamma.json": "caf5156c2c669eee01d2d8874e3294ca5da3c58724d080e426f216ca7a338aa5",
+        "resolve-market.json": "1ad9816169ab91ae0d5f289b5d88d0ced17406a9dfc33acce5f3d312e68cef06",
+        "resolve-reference.json": "e95241363cdeb5573252501dfbc6901b011c43c9af3ce8a7608cd1bb4ad73d28",
+        "resolve-support.json": "c6ffd641c51098089fe78e1f0d5b115ccaa7f6fc80544b075f6e6173eba03ee8",
+        "resolve-download.json": "2ba3ac351467cddfe2729d0fbac1909b21266949a65d0c7a2c2743e67af3a7ae",
+        "collection-product-page-1.json": "083f8216dddac96f3ae88336aed78ec60074348be6ec40d5c426aadc04b245e3",
+        "collection-product-page-2.json": "f8186825adecde878a25a483b0aa664d0ac4ecf3b69d8b3f5c4bef18f2168ea6",
+        "collection-product-page-3-empty.json": "0d233019bc0f88d3640813d740f3f9b7ee27cbad9ec46f616a3bd25f500ddc59",
+        "navigation.json": "bb8ecb48a0d1d6d2ed2db2d9c0c885303be3b925c5fc54518fdbfef1bf585ee5",
+        "route-manifest.json": "884e46c63bb67511158245aef870bae566be0a778c6d4ef6bd651f3e5d54110b"
+    },
+    "collectionTotals": [
+        3,
+        3,
+        3
+    ],
+    "collectionItemCounts": [
+        2,
+        1,
+        0
+    ],
+    "negativeMatrix": {
+        "publication-draft": "gdhe_not_found",
+        "publication-private": "gdhe_not_found",
+        "publication-pending": "gdhe_not_found",
+        "publication-trash": "gdhe_not_found",
+        "known-template-mismatch": "gdhe_contract_invariant",
+        "nonexistent": "gdhe_not_found",
+        "locale": "gdhe_invalid_locale",
+        "path": "gdhe_invalid_path",
+        "schema": "gdhe_invalid_schema",
+        "type": "gdhe_invalid_collection_type",
+        "filter": "gdhe_invalid_filter",
+        "sort": "gdhe_invalid_sort",
+        "page": "gdhe_invalid_pagination"
+    },
+    "fileDto": {
+        "id": "32000000-0000-4000-8000-000000000001",
+        "url": "http://127.0.0.1:8080/wp-content/uploads/2026/07/task-007-a3-flow-control-data-sheet.pdf",
+        "filename": "task-007-a3-flow-control-data-sheet.pdf",
+        "mimeType": "application/pdf",
+        "bytes": 58
+    }
+}

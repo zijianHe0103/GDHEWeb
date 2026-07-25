@@ -2,14 +2,126 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-008
+current_task: TASK-009
 task_state: ACCEPTED
 git_state: DIRTY
-last_updated: 2026-07-24T17:58:37Z
+last_updated: 2026-07-25T17:16:01Z
 
 ## 当前焦点
 
-`TASK-008` 已由用户精确验收并授权正式交付：frontend contract snapshot、authority-binding R1、独立 adversarial review、README 同步和 Planner final validation 均 PASS，P0=0、P1=0、P2=0。当前执行正式提交、任务分支推送、合并到 `main` 和推送 `main`，不启动 TASK-009。
+`TASK-009` 已由用户精确验收并授权正式交付：server-only `/resolve` Transport、两轮窄修订、独立 adversarial review、README 同步和 Planner final validation 均 PASS，P0=0、P1=0、P2=0。当前执行正式提交、任务分支推送、快进合并到 `main` 和推送 `main`；不部署或启动 TASK-010。
+
+## TASK-009 Formal Delivery Authorized 2026-07-25T17:16:01Z
+
+- authorization: 用户精确输入 `确认 TASK-009 完成并提交到远端`，`task_accept.py check/accept` 均成功。
+- acceptance: `ACCEPTED`；final adversarial `PASS`，P0=0、P1=0、P2=0。
+- delivery: 创建一个包含完整中文说明的正式提交；推送任务分支；快进合并到 `main`；推送 `main` 并验证远端包含任务提交。
+- boundary: 不 force push、不 rebase、不删除分支/worktree，不部署或创建 TASK-010。
+- next: 完成交付前完整性检查，然后执行已授权 Git 链。
+
+## TASK-009 Prepared for User Acceptance 2026-07-25T16:46:19Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 2026-07-25T16:45:36Z PASS。
+- controlled_reopen: 只为同步 Board 和人类可读 acceptance-state 叙述；产品交付物、final PASS、validation、`NOT_ACCEPTED` 和 `DIRTY` 边界不变。
+- final_prepare: 同步完成后 fresh checked `prepare-awaiting-user` 再次 PASS。
+- state: `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- boundary: review、tests 和 checked transition 不等于用户验收；未 commit/push/merge/deploy，未启动 Validator、Adapter、页面、CMS 或 TASK-010。
+- next: 等待精确口令 `确认 TASK-009 完成并提交到远端`。
+
+## TASK-009 Round 2 PASS and Final Validation 2026-07-25T16:44:05Z
+
+- review: Round 2 response 与 reviewer recovery request 已 validate/ack；最终 `PASS / P0=0 / P1=0 / P2=0`，Round 1 P1/P2 均关闭。
+- final_validation: Node 24.18.0、npm 11.16.0、focused 60/60、full 69/69、contract parity、lint、typecheck、production build、server-only、single-fetch、package/lock、protected scope、residue、leakage、messages 和 DPG checks PASS。
+- summary: `TASKS/ARTIFACTS/TASK-009/PLANNER_SUMMARY.md` 已生成。
+- boundary: `NOT_ACCEPTED / DIRTY`；未 commit/push/merge/deploy，未启动 Validator、Adapter、页面、CMS 或 TASK-010。
+- next: 等待精确口令 `确认 TASK-009 完成并提交到远端`。
+
+## TASK-009 R3 Planner Checkpoint PASS and Round 2 Gate 2026-07-25T16:35:03Z
+
+- response: frontend R3 execution response 已 validate/ack；deep-import export regression RED 为 1 failed/58 passed，修复后 focused 60/60、full 69/69。
+- p1_closed: production source 不再包含 `requestResolvedPath`、`baseUrl`、`timeoutMs` 或替代 injection seam；public/deep import 均只暴露同一个 `resolveCmsPath(path, signal?)`。
+- independent_validation: contract parity、lint、typecheck、full tests、production build、public/deep Client Component negatives、package/lock checksum、禁止范围、residue、leakage、project/messages/strict lane 和 diff PASS。
+- p2_closed: active task current-state、next、messages、artifacts、review 和 validation 段落已按 R3 与 Round 2 gate 再次同步，历史记录保留。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- boundary: 未验收、未 Git/部署、未启动 Validator、Adapter、页面、CMS 或 TASK-010。
+- next: 等待 adversarial Round 2 verdict；只复核 Round 1 P1/P2 及直接回归边界。
+
+## TASK-009 Adversarial Round 1 FAIL Recovery 2026-07-25T16:26:36Z
+
+- response: review response 与 reviewer recovery request 已 validate/ack。
+- verdict: `FAIL`，P0=0、P1=1、P2=1；Planner final validation 不允许。
+- p1: `transport.ts` 生产 export `requestResolvedPath()` 接受 caller-controlled `baseUrl/timeoutMs`，server-side deep import 可绕过唯一 public entry、环境拥有的 CMS origin 和冻结 5000 ms timeout。
+- p2: active task current-state、next、messages、artifacts、review 和 validation 段落停留在早期 blocker 状态；本次 recovery 已只同步这些 current-state 入口，保留全部时间戳历史。
+- transition_helper: `task_transition.py reopen` 按其 AWAITING_USER-only 前置条件安全拒绝且无 mutation；Planner 直接记录 `UNDER_REVIEW` -> `NEEDS_REVISION` recovery。
+- boundary: 只允许 P1 测试 seam/production export 修订和 P2 narrative sync；不启动 Validator、Adapter、页面、CMS、部署、Git 或 TASK-010。
+- next: 派发一次 frontend deep-import surface R3；fresh validation 后请求 adversarial Round 2。
+
+## TASK-009 Planner Checkpoint PASS and Review Gate 2026-07-25T16:18:40Z
+
+- response: frontend R2 response 已 validate/ack；P1 的三个无端口 loopback RED 与 `url.port !== ""` 最小修复证据完整。
+- independent_validation: focused 58/58、full 67/67、contract parity、lint、typecheck、production build、package/lock checksum、禁止范围、server-only markers、泄漏、临时目录、project/messages/strict lane 和 diff check PASS。
+- documentation: frontend README 已更新；根 README 最小 Transport 指针已由 Planner 同步；`document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- boundary: review 只读；未验收、未 commit/push/merge/deploy，未创建 TASK-010。
+- next: 派发独立 adversarial review，等待 PASS/FAIL/P0/P1/P2 verdict。
+
+## TASK-009 DPG Hook Repair and Resume 2026-07-25T15:48:23Z
+
+- authorization: 用户明确授权修复 DPG Hook 并恢复 TASK-009。
+- fix_1: `command_string()` 支持 Codex App freeform string `tool_input`，并兼容 dict 的 `command/cmd/input/patch`。
+- fix_2: `write_like_command()` 只在首个命令 token 的 basename 为 `apply_patch` 时判定 shell patch，不再因普通参数文字出现该词而误判。
+- fix_3: `tool_write_paths()` 对真实 patch payload 只解析 patch 文件头，不再把 TypeScript `=>` 等补丁正文当作 shell 重定向。
+- tdd: 三条新回归分别复现 freeform path loss、helper prompt false-positive 与 TypeScript arrow false redirection；修复后聚焦 7/7 和完整 83/83 tests PASS。
+- runtime: 源插件、新缓存与当前线程兼容缓存 hook/test 字节一致；frontend 实际 scope 探针允许 `frontend/**`、拒绝 `PROJECT/**`，helper prompt 与完整 arrow-function patch 探针放行。
+- plugin: Codex 已安装并启用 `0.2.0+codex.20260725151602`；旧线程固定路径已恢复为同内容兼容缓存。
+- transition: `PAUSED` -> `IN_PROGRESS`；保留原 RED 与部分合规文件。
+- boundary: 未实现产品功能、未开始 review、未 commit/push/merge/deploy，未创建 TASK-010。
+- next: 发送与原 execution request 关联的 frontend continuation，从缺少 config module 的 RED 继续。
+
+## TASK-009 Planner Checkpoint P1 2026-07-25T16:13:43Z
+
+- response: frontend R1 execution response 已 validate 并由 Planner ack；55/55 focused、64/64 full、contract parity、lint、typecheck 和 production build 已独立重跑 PASS。
+- p1: `parseWordPressApiUrl()` 的 loopback HTTP allowlist 未要求 `url.port` 非空，当前会接受无显式端口的 localhost、IPv4 loopback 和 IPv6 loopback REST base，不满足活动任务“本地明文 HTTP 使用显式端口”的验收边界。
+- reproduced: Node 24 对三个无端口 URL 均返回 `port=""`，而当前 predicate 对三者均为 `acceptedByCurrentPredicate=true`。
+- revision: 只允许新增三个无端口拒绝 RED、要求 HTTP loopback 显式端口的最小实现与对应 frontend README 文字；其余 Transport、错误、测试和禁止范围保持不变。
+- gate: adversarial review 暂不允许；任务保持 `IN_PROGRESS / NOT_ACCEPTED / DIRTY`。
+- next: 派发一次关联 frontend R2 revision，收到 response 后重跑配置负例和完整门禁。
+
+## TASK-009 DPG Hook Blocker 2026-07-25T05:09:30Z
+
+- frontend_result: BLOCKED；未声称 execution PASS，未生成标准 execution response 或 review request。
+- preserved: TDD RED、Vitest server-only alias/stub、测试 import 骨架、最小 error class 和 frontend worklog。
+- root_cause_1: `command_string()` 只接受 dict 的 `command/cmd`，对 Codex App freeform patch 输入返回空字符串，导致 write target 为空。
+- root_cause_2: `write_like_command()` 以任意命令文本包含 `apply_patch` 判断为写命令，使受控 helper 的 blocker prompt 被误判且没有路径。
+- verification: 源插件和当前缓存 hook 字节一致；Planner 探针复现 `freeform_command_length=0`、`paths=[]` 和 `helper_write_like=true`。
+- protected_scope: package/lock、`src/app`、contract snapshot、CMS、数据库和环境文件无差异。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`；无 review、Git、部署或 TASK-010。
+- next: 等待用户授权精确 DPG 修复；修复验证通过后恢复同一 TASK-009。
+
+## TASK-009 Frontend Execution Dispatched 2026-07-25T04:58:39Z
+
+- message: `MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT` 已 validate、dry-run 并通过 Codex 线程桥投递到注册 frontend session。
+- transition: `READY` -> `IN_PROGRESS`。
+- scope: server-only config、fixed resolve URL、single anonymous GET、timeout、single JSON parse、metadata、typed errors、真实 Next.js client-import 负例和文档。
+- boundary: 不改 dependency/lockfile、`src/app`、contract snapshot、CMS/数据库；不实现 Validator、Adapter、页面、live E2E、cache/retry、Git 或后续任务。
+- next: 等待 ack 和 execution response；Planner 独立 checkpoint PASS 前不得派发 review。
+
+## TASK-009 Requirement Confirmation 2026-07-25T04:55:14Z
+
+- authorization: 用户精确输入 `确认 TASK-009 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- design: 冻结 REST base 安全规则、canonical path、固定 `/resolve` URL、单次 GET、5000 ms timeout、一次性 JSON 解析、allowlisted metadata、typed errors 和 server-only build gate。
+- tdd: `IMPLEMENTATION_PLAN.md` 将实现拆为 config/path、HTTP/protocol、status/timeout/leakage、server-only build 和完整验证的 RED-GREEN 小循环。
+- boundary: 不实现 Runtime Validator、DTO Adapter、React route/page、live WordPress E2E、CMS/数据库写入、依赖变更、cache/retry 或后续任务。
+- next: 校验设计/计划与 scope 后派发一次受控 frontend execution request。
+
+## TASK-009 Intake 2026-07-25T04:49:22Z
+
+- delivery_baseline: 本地 `main`、`origin/main` 与远端 TASK-008 分支均为 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`，intake 前工作区干净。
+- branch: 从同步 `main` 创建 `codex/TASK-009-server-only-resolve-transport`。
+- scope: 只实现 server-only config、固定 `/resolve` URL builder、单次匿名 GET、有界超时、一次性 JSON 解析、受控 metadata 和 typed configuration/transport/protocol/HTTP errors。
+- boundary: 网络 JSON 仍为 `unknown`；不实现运行时 Validator、DTO Adapter、React route/page、真实 WordPress E2E、CMS/数据库修改、依赖变更、缓存、重试或后续任务。
+- next: 等待 `确认 TASK-009 需求并开始执行`。
 
 ## TASK-008 Intake 2026-07-24T16:52:29Z
 
@@ -108,23 +220,25 @@ last_updated: 2026-07-24T17:58:37Z
 - `TASK-004` 已验收，正式提交 `8f8ce2121916e4c764af86aaa04e2a9b83da2a28` 已推送到 `origin/codex/TASK-004-english-cms-scf-foundation` 并归档；切换前本地/远端 divergence 为 `0/0`。
 - `TASK-005` 已验收，正式提交 `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9` 已推送到 `origin/codex/TASK-005-roadmap-api-integration-boundaries` 并归档；TASK-001 至 TASK-005 历史完全线性。
 - `TASK-006` 已验收，正式提交 `4c52e5da4dd9a132a1f019affadc34892bb325df` 已推送任务分支、合并并推送到 `origin/main` 后归档；GitHub 默认分支为 `main`。
+- `TASK-007` 已验收，正式提交 `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9` 已推送任务分支、合并并推送到 `origin/main` 后归档。
+- `TASK-008` 已验收，正式提交 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d` 已推送任务分支、合并并推送到 `origin/main` 后归档。
 
 ## 未解决问题
 
-- Next.js 16.2.11 App Router + TypeScript 基础工程已完成，仍不包含首页、Header、Mega Menu、Footer、正式视觉系统或 CMS 集成。
+- Next.js 16.2.11 App Router + TypeScript 基础和 TASK-008 离线 CMS 合同快照已完成，仍不包含运行时 Transport、Validator、Adapter、首页、Header、Mega Menu、Footer 或正式视觉系统。
 - 官方 SCF 6.9.2 与 `gdhe-site` 0.4.2 已安装并激活，供应链、checksum、字段能力和 WordPress/PHP 兼容性已核实；Forest-aligned Schema 3 consumer gate 已通过，Schema 2 仅保留为历史回归基线。
 - 用户已选择“英语优先”：WPML Multilingual CMS 与 ACFML 推迟到未来生产英语站稳定运行三个月后再采购、PoC 和启用；当前只保留技术扩展点，不输出其他语言入口。
 - TASK-007 已实现并验证 Forest-aligned Schema 3 英语 REST Fixture、完整 DTO、route resolution、稳定错误与缓存 header，并已正式验收、提交、推送和合并到远端 `main`。
 - GDHE 正式品牌素材、产品内容、公司介绍、联系方式和 SEO 文案尚未入库。
 - `planner`、`executor`、`adversarial_reviewer`、`frontend`、`wordpress_cms`、`localization_seo`、`visual_qa` 均已注册真实 Codex thread ID；6 个工作会话已只读验证并进入待命。
-- 当前分支为 `codex/TASK-008-frontend-cms-contract-snapshot`，从已同步的 `main` 提交 `8a3e4f2` 创建。
-- 本地 `main`、`origin/main`、TASK-007 本地与远端任务分支均指向 `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`；GitHub 默认分支为 `main`。
+- 当前分支为 `codex/TASK-009-server-only-resolve-transport`，从已同步的 `main` 提交 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d` 创建。
+- 本地 `main`、`origin/main` 与远端 TASK-008 分支均指向 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`；GitHub 默认分支为 `main`。
 - 治理钩子会把隐藏相对路径 `.local/...` 规范化为 `local/...`，导致与注册 scope 不一致；本任务只允许使用已实测匹配的工作区绝对路径写入 `.local/backups/TASK-004/**`，不修改治理插件代码。
 - SCF 官方 API、ZIP 包名和主插件头为 6.9.2，但包内 `readme.txt` 的 Stable tag 为 6.9.1；该上游元数据不一致已记录，安装包 checksum 与官方插件 checksum 均通过。
 
 ## 下一步
 
-完成正式提交、任务分支推送、快进合并到 `main`、推送 `main` 和远端祖先关系验证。
+等待用户授权修复 DPG Hook 的 freeform patch 目标解析和命令参数误判。不得通过关闭 write-scope、shell 写入或 Planner 代写 frontend 产品代码绕过。
 
 ## TASK-007 Formal Delivery Authorized 2026-07-24T15:16:22Z
 

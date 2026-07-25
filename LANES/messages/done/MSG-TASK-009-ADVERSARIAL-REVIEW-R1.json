@@ -1,0 +1,42 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-009-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-009",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T16:19:39Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Independently review confirmed TASK-009 only. This is read-only product review: do not fix frontend or planner-owned files. Challenge server-only isolation including deep imports and the real Client Component build negative; REST-base and canonical-path fail-closed allowlists including explicit loopback HTTP ports; fixed English Schema 3 resolve URL; exactly one anonymous no-store GET with redirect refusal and bounded timeout through body read; single JSON parse and allowlisted metadata; stable configuration/transport/protocol/HTTP error semantics including 404, 429, timeout, caller abort and network; origin/credential/raw-body leakage controls; loopback test realism, cleanup and no hidden retries; package/lock, src/app, contract, CMS and environment zero-diff; execution evidence, root/frontend documentation and governance consistency. Reproduce critical tests and inspect implementation rather than trusting lane claims. Report PASS or FAIL with P0/P1/P2 counts in TASKS/ARTIFACTS/TASK-009/ADVERSARIAL_REVIEW_REPORT.md, update only reviewer worklog, acknowledge this request and send a linked review_response. P0/P1/P2 must all be zero for PASS. Do not accept, commit, push, merge, deploy or start later work.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-009-server-only-resolve-transport.md",
+    "TASKS/ARTIFACTS/TASK-009/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-009/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-009/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-009/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-009/DIFF_OR_OUTPUT_SUMMARY.md",
+    "frontend/src/lib/cms/server/config.ts",
+    "frontend/src/lib/cms/server/resolve-url.ts",
+    "frontend/src/lib/cms/server/transport.ts",
+    "frontend/src/lib/cms/server/errors.ts",
+    "frontend/src/lib/cms/server/index.ts",
+    "frontend/tests/cms-transport.test.ts",
+    "frontend/README.md",
+    "README.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-009/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Independent review after Planner checkpoint PASS. Review is read-only outside reviewer-owned report/worklog. No acceptance or Git authorization.",
+  "dispatched_at": "2026-07-25T16:20:01Z",
+  "delivery_key": "MSG-TASK-009-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T16:20:34Z",
+  "updated_at": "2026-07-25T16:20:34Z"
+}

@@ -2,7 +2,7 @@
 accepted_at: 2026-07-24T17:58:37Z
 
 task_id: TASK-008
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, governance_maintainer]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-008
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-24T17:33:22Z
-git_status: DIRTY
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -141,7 +141,7 @@ project_type: software
 
 ## 当前状态
 
-用户已输入精确正式交付口令；`acceptance_state` 已受控更新为 `ACCEPTED`。当前执行正式提交、任务分支推送、合并到 `main` 和推送 `main`。
+`CLOSED / MERGED`。用户已于 `2026-07-24T17:58:37Z` 使用精确口令验收；正式提交 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d` 已推送任务分支、快进集成并推送到远端 `main`。2026-07-25 创建 TASK-009 前再次验证本地 `main`、`origin/main` 与远端 TASK-008 分支均指向该提交，工作区干净。
 
 ## 恢复入口
 
@@ -149,15 +149,15 @@ project_type: software
 
 ## 下一步
 
-创建包含中文任务内容、主要变更、验证结果和文档更新的正式提交；随后推送任务分支、快进合并到 `main` 并推送 `main`。不部署或创建 TASK-009。
+任务已归档。后续只允许在独立任务中逐层实现 Transport、Validator、Adapter 和可见技术验证页面，不把本任务的离线合同快照误称为运行时 CMS 接入。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 冻结需求、维护门禁、综合验证、派发审查与最终汇报 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**`、本任务两份设计/计划文档 | task state、spec/plan、planner summary | ACCEPTED; formal delivery authorized |
-| frontend | 按测试优先实现最小合同快照、manifest、parity 脚本、测试和 frontend README | 本任务允许的 `frontend/**`、TASK-008 artifacts、lane records | snapshot implementation、execution/validation evidence | execution and R1 complete |
-| governance_maintainer | 仅按根 README 治理规则补充 TASK-008 离线验证入口 | `README.md`、lane records | one README pointer and response | complete |
+| planner | 冻结需求、维护门禁、综合验证、派发审查与最终汇报 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**`、本任务两份设计/计划文档 | task state、spec/plan、planner summary | CLOSED / MERGED |
+| frontend | 按测试优先实现最小合同快照、manifest、parity 脚本、测试和 frontend README | 本任务允许的 `frontend/**`、TASK-008 artifacts、lane records | snapshot implementation、execution/validation evidence | CLOSED / MERGED |
+| governance_maintainer | 仅按根 README 治理规则补充 TASK-008 离线验证入口 | `README.md`、lane records | one README pointer and response | CLOSED / MERGED |
 | adversarial_reviewer | 只读挑战快照最小性、闭包完整性、checksum、篡改失败和范围隔离 | TASK-008 review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | final PASS; P0/P1/P2=0 |
 
 ## Messages
@@ -182,6 +182,7 @@ project_type: software
 - 2026-07-24T17:32:00Z：根 README 同步完成；Planner fresh final validation 对 parity、lint、typecheck、9 tests、build、20-file inventory、lockfile、范围、secret/internal-ID、治理/messages/strict lane/diff 全部 PASS；`PLANNER_SUMMARY.md` 已生成。
 - 2026-07-24T17:32:46Z：首次 checked `prepare-awaiting-user` PASS；随后仅为同步人类可读状态视图执行受控 reopen，交付物、verdict 与 `NOT_ACCEPTED` 不变。
 - 2026-07-24T17:58:37Z：用户精确输入 `确认 TASK-008 完成并提交到远端`；`task_accept.py accept` 成功，正式提交、任务分支推送、合并到 `main` 和推送 `main` 已授权。
+- 2026-07-25T04:49:22Z：创建 TASK-009 前重新核对正式交付；本地 `main`、`origin/main` 和远端 TASK-008 分支均为 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`，工作区干净，TASK-008 同步为 `CLOSED / MERGED` 并归档。
 
 ## Execution Artifacts
 
@@ -206,6 +207,7 @@ Round 1 final：`PASS`，P0=0、P1=0、P2=0；Planner final validation allowed�
 - Planner 独立验证：Node `24.18.0`、npm `11.16.0`、parity、lint、typecheck、9/9 tests 和 build PASS。
 - authority identity 利用在修订前意外 PASS、修订后明确拒绝；20-file inventory、lockfile SHA、禁改目录、secret/internal-ID、治理、messages、strict lane 和 diff check 均 PASS。
 - Final fresh validation：Node `24.18.0`、npm `11.16.0`、parity、lint、typecheck、9/9 tests、build、README、20-file inventory、lockfile/current-HEAD parity、禁改范围、secret/internal-ID、project/messages/strict lane/diff 全部 PASS。
+- 归档前交付复核：远端 `main` 与远端 TASK-008 分支均为正式提交 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`；本地 `main` 同步且工作区干净。
 
 ## Planner Final Summary
 

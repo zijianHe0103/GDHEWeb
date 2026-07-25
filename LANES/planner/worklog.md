@@ -1032,3 +1032,125 @@ Each execution records:
 - delivery: one formal Chinese commit，push task branch，fast-forward merge into main，push main，verify remote ancestry。
 - boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-009。
 - next: run final delivery integrity checks，then execute the authorized Git chain。
+
+### 2026-07-25T04:49:22Z - TASK-008 closed; TASK-009 intake
+
+- delivery_verified: local main、origin/main and remote TASK-008 branch all point to `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`; intake began from a clean workspace。
+- switch: TASK-008 synchronized as `CLOSED / MERGED` and archived；created `codex/TASK-009-server-only-resolve-transport` from synchronized main。
+- intake: only server-only configuration、fixed `/resolve` URL builder、single anonymous GET、bounded timeout、unknown JSON handoff、controlled response metadata and typed configuration/transport/protocol/HTTP errors。
+- boundary: no Validator、DTO Adapter、React route/page、live WordPress E2E、CMS/database mutation、dependency change、cache/retry、Git delivery or TASK-010。
+- next: wait for exact phrase `确认 TASK-009 需求并开始执行`。
+
+### 2026-07-25T04:55:14Z - TASK-009 requirements confirmed
+
+- authorization: exact phrase `确认 TASK-009 需求并开始执行` received。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- design: frozen config/path allowlist、fixed resolve URL、one GET、5000 ms timeout、single JSON parse、controlled metadata、typed errors and real Next.js server-only negative build。
+- tdd: frozen RED-GREEN steps for config/path、HTTP/protocol、status/timeout/leakage、server-only build and full validation。
+- scope_clarification: one dependency-free `frontend/vitest.config.ts` may map `server-only` to a test stub only；Next.js production build remains the isolation authority。
+- boundary: no Validator、DTO Adapter、page、live CMS E2E、CMS/database、dependency、cache/retry、Git delivery or TASK-010。
+- next: validate scope and dispatch one controlled execution request to registered frontend session。
+
+### 2026-07-25T04:58:39Z - TASK-009 frontend execution dispatched
+
+- message: `MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT` valid、dry-run resolved to registered frontend session and delivered through Codex thread bridge。
+- transition: `READY` to `IN_PROGRESS`。
+- scope: TDD server-only config/path、fixed resolve URL、one GET、timeout、single JSON parse、metadata、typed errors、real Next.js client-import negative and docs。
+- boundary: no dependency/lock、src/app、contracts、CMS/database、Validator、Adapter、page、live E2E、cache/retry、Git or TASK-010。
+- next: wait for ack and linked execution response，then perform independent Planner checkpoint before review。
+
+### 2026-07-25T05:09:30Z - TASK-009 paused by DPG hook parser blocker
+
+- frontend_result: Codex thread returned BLOCKED after ACK and one valid missing-config RED；no execution PASS or standard response artifact。
+- compliant_partial: vitest config、server-only stub、test import skeleton and minimal error class remain；the one early workaround-written test was deleted and recreated through apply_patch。
+- root_cause_1: current hook command_string ignores freeform tool_input，so apply_patch path extraction sees empty command and no target。
+- root_cause_2: write_like_command treats any argument text containing apply_patch as a write command，blocking controlled lane-message helper prompts with no write path。
+- reproduced: `freeform_command_length=0`、`paths=[]`、`helper_write_like=true`、`helper_paths=[]`；source and active cache hook are byte-identical。
+- protected: package/lock、src/app、contracts、CMS/database/env unchanged；diff、project and strict lane checks PASS。
+- transition: TASK-009 set to `PAUSED / NOT_ACCEPTED / DIRTY` with canonical recovery。
+- authority_needed: explicit user authorization to patch and test DPG source plus current cache；do not disable write scope or use write workarounds。
+- next: after authorization，repair the two parser cases，verify parity/tests，then resume the same frontend task from preserved RED。
+
+### 2026-07-25T15:48:23Z - TASK-009 DPG hook repaired and execution resumed
+
+- authorization: 用户明确授权修复 DPG Hook 并恢复 TASK-009。
+- tdd: 新增 freeform patch scope、helper prompt false-positive 与 TypeScript arrow false-redirection 三条回归；修复前均精确 FAIL，修复后聚焦 7/7 与完整 83/83 PASS。
+- implementation: `command_string()` 接受 string tool_input 与 dict command aliases；write-like detection 只识别真实首 token `apply_patch`；patch payload 不再进入 shell redirection parser。
+- runtime: 源插件、新安装缓存和当前线程兼容缓存一致；frontend allow/deny/helper/arrow-patch 四个真实项目探针 PASS。
+- plugin: `durable-project-governance@codex-local` 已安装并启用版本 `0.2.0+codex.20260725151602`。
+- transition: TASK-009 `PAUSED` to `IN_PROGRESS`；原 RED 与部分合规文件保留。
+- boundary: no product implementation、review、Git、deployment or TASK-010。
+- next: send linked frontend continuation and wait for standard execution response。
+
+### 2026-07-25T16:13:43Z - TASK-009 Planner checkpoint P1
+
+- response: R1 execution response validated and acknowledged。
+- independent_pass: Node 24.18.0、npm 11.16.0、contract parity、lint、typecheck、64/64 tests and production build PASS。
+- p1: config HTTP loopback allowlist checks only hostname; it does not require a non-empty explicit port。
+- reproduced: localhost、127.0.0.1 and `[::1]` without ports all have `url.port=""` and pass the current predicate。
+- revision_scope: three missing-port RED cases、one minimal explicit-port predicate and matching frontend README wording only。
+- protected: Transport/status/timeout/server-only behavior、package/lock、src/app、contracts、CMS and environment files remain unchanged。
+- gate: no adversarial review until R2 response and fresh full validation。
+- next: dispatch linked frontend R2 revision。
+
+### 2026-07-25T16:18:40Z - TASK-009 Planner checkpoint PASS; review allowed
+
+- response: R2 execution response validated and acknowledged；explicit-port P1 closed。
+- independent_validation: focused 58/58、full 67/67、contract parity、lint、typecheck、build、package/lock checksum、protected scope、server-only markers、leakage、temp residue、project/messages/strict lane and diff PASS。
+- docs: frontend README complete；root README minimal pointer added；document impact RESOLVED and README impact UPDATED。
+- transition: `IN_PROGRESS` to `UNDER_REVIEW`。
+- boundary: no acceptance、Git delivery、deployment、Validator、Adapter、page or TASK-010。
+- next: dispatch independent adversarial review and wait verdict。
+
+### 2026-07-25T16:26:36Z - TASK-009 adversarial Round 1 FAIL recovery
+
+- responses: review FAIL response and reviewer recovery request validated and acknowledged。
+- verdict: FAIL；P0=0、P1=1、P2=1；Planner final validation blocked。
+- p1: exported production requestResolvedPath permits server-side deep import with caller baseUrl/timeoutMs。
+- p2: active-task current-state sections stale；Planner synchronized current state only and preserved timestamped history。
+- transition_helper: reopen safely refused because helper is AWAITING_USER-only；no mutation。
+- transition: direct controlled `UNDER_REVIEW` to `NEEDS_REVISION` recovery recorded。
+- boundary: only production export/test-seam correction、fresh validation and Round 2；no other product or delivery scope。
+- next: dispatch frontend R3 deep-import surface revision。
+
+### 2026-07-25T16:35:03Z - TASK-009 R3 checkpoint PASS; Round 2 allowed
+
+- response: R3 execution response validated and acknowledged。
+- p1_closed: production runtime export is only resolveCmsPath(path, signal?)；no requestResolvedPath/baseUrl/timeoutMs seam remains。
+- p2_closed: active task current-state sections synchronized to R3 and Round 2 gate。
+- independent_validation: focused 60/60、full 69/69、parity、lint、typecheck、build、public/deep Client negatives、package/lock、scope、residue、leakage、project/messages/strict lane and diff PASS。
+- transition: `NEEDS_REVISION` to `UNDER_REVIEW`。
+- boundary: no acceptance、Git、deployment or later features。
+- next: dispatch narrow adversarial Round 2。
+
+### 2026-07-25T16:38:20Z - TASK-009 adversarial Round 2 dispatched
+
+- message: `MSG-TASK-009-ADVERSARIAL-REVIEW-R2` validated、dry-run resolved to the registered reviewer session、delivered through the Codex thread bridge and marked dispatched。
+- scope: only Round 1 production deep-import P1、current-state P2 and direct regressions。
+- boundary: no final validation before verdict；no acceptance、Git、deployment、later features or TASK-010。
+- next: wait for the linked Round 2 review response。
+
+### 2026-07-25T16:44:05Z - TASK-009 Round 2 PASS and final validation
+
+- responses: Round 2 PASS response and reviewer recovery request validated and acknowledged。
+- verdict: final PASS；P0=0、P1=0、P2=0；Round 1 P1/P2 closed。
+- final_validation: Node 24.18.0、npm 11.16.0、focused 60/60、full 69/69、parity、lint、typecheck、build、server-only/fetch surface、package/lock、protected scope、residue、leakage、messages、project/strict lane and diff PASS。
+- summary: `TASKS/ARTIFACTS/TASK-009/PLANNER_SUMMARY.md` generated。
+- boundary: NOT_ACCEPTED / DIRTY；no Git、deployment、Validator、Adapter、page、CMS or TASK-010。
+- next: checked `prepare-awaiting-user` only。
+
+### 2026-07-25T16:46:19Z - TASK-009 acceptance view synchronization
+
+- first_prepare: checked `prepare-awaiting-user` PASS at 16:45:36Z。
+- controlled_reopen: only Board and human-readable acceptance-state synchronization；product deliverables、final PASS、validation、NOT_ACCEPTED and DIRTY boundaries unchanged。
+- final_prepare: fresh checked `prepare-awaiting-user` repeated after synchronization and PASS。
+- state: AWAITING_USER / NOT_ACCEPTED / DIRTY。
+- next: wait for exact `确认 TASK-009 完成并提交到远端`。
+
+### 2026-07-25T17:16:01Z - TASK-009 formal delivery authorized
+
+- authorization: exact phrase `确认 TASK-009 完成并提交到远端` accepted by `task_accept.py`。
+- acceptance: ACCEPTED；final PASS，P0=0、P1=0、P2=0。
+- delivery: one formal Chinese commit，push task branch，fast-forward merge into `main`，push `main`，verify remote ancestry。
+- boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-010。
+- next: run final delivery integrity checks，then execute the authorized Git chain。

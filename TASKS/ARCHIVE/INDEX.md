@@ -32,3 +32,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`
   - Remote branch：`origin/codex/TASK-007-english-api-dto-fixture`
   - Main：`origin/main` at `8a3e4f26d148e64d301a508e69c1e4a28ad3b9e9`
+- `TASK-008` 前端 CMS Contract Snapshot 与校验基线 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-008-frontend-cms-contract-snapshot.md`
+  - Commit：`ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`
+  - Remote branch：`origin/codex/TASK-008-frontend-cms-contract-snapshot`
+  - Main：`origin/main` at `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`

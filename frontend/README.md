@@ -32,9 +32,9 @@ Open `http://localhost:3000`. The example values are deliberately non-production
 ## Environment contract
 
 - `NEXT_PUBLIC_SITE_URL`: public canonical site origin. Only this variable is exposed to browser code.
-- `WORDPRESS_API_URL`: server-side WordPress REST API base URL reserved for later data-access work.
+- `WORDPRESS_API_URL`: server-only WordPress REST API base consumed by the CMS Transport. Use a REST base ending exactly in `/wp-json`, such as `http://127.0.0.1:8080/wp-json` locally or `https://cms.example.com/wp-json` in production.
 
-This task does not consume either variable at runtime.
+Cleartext HTTP is accepted only for `localhost`, `127.0.0.1`, and IPv6 loopback with an explicit port, such as `:8080`. Non-loopback CMS origins require HTTPS. Credentials, query strings, fragments, non-HTTP protocols, and non-REST base paths fail closed before a request is sent.
 
 ## Validation
 
@@ -89,3 +89,22 @@ npm run verify:cms-contract
 The verifier uses only Node.js built-ins. It fails closed for missing, extra or tampered snapshot files, unsafe paths, unknown or remote Schema references, incomplete local `$ref` closure, source drift, and error-bundle reconstruction drift.
 
 This snapshot does not connect to WordPress, read environment variables, add a runtime Schema validator or DTO adapter, or create a visible page. Future runtime code must consume the local normalized contract without importing `cms/` or `TASKS/`.
+
+## Server-only CMS Transport
+
+`src/lib/cms/server/` provides the server-only network boundary for the fixed English Schema 3 `/gdhe/v1/resolve` endpoint. Its public entry accepts only a canonical public path and an optional caller `AbortSignal`; origin, endpoint, locale and schema cannot be overridden.
+
+Each call performs one anonymous `GET` with `Accept: application/json`, `no-store`, redirect refusal, a 5000 ms timeout and no retry. JSON is parsed once and remains `unknown`. Only status, content type, request ID, ETag, Last-Modified and Retry-After metadata cross the boundary.
+
+Configuration, timeout, caller abort, network, protocol and HTTP status failures use typed errors without exposing the CMS origin or raw response body through messages or serialization. A 404 is classified as `not_found`, but this layer does not call Next.js `notFound()`.
+
+This Transport is not a runtime Schema Validator, DTO Adapter, cache, Preview path, visible CMS page or live WordPress E2E. Run its isolated loopback test and the normal gates with:
+
+```sh
+npm test -- tests/cms-transport.test.ts
+npm run verify:cms-contract
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```

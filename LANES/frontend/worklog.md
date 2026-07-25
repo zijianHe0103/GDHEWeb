@@ -304,3 +304,102 @@ Each execution records:
 - next: send linked execution_response; Planner independently reproduces the authority substitution check before any adversarial review
 - message_result: MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1-RESPONSE queued to Planner with requires_response_to MSG-TASK-008-FRONTEND-AUTHORITY-BINDING-R1
 - unique_next_step: Planner acknowledges the response and independently reruns the identical-byte rogue authority substitution before review dispatch
+
+### 2026-07-25T13:04:00+08:00 - TASK-009 apply_patch governance blocker
+
+- task: TASK-009
+- task_state_observed: READY at dispatch, then IN_PROGRESS by governance state
+- message: MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT
+- message_ack: exact request and all frozen context files were read before acknowledgement
+- switch_gate: TASK-008 is formally accepted, merged and archived; TASK-009 is on its dedicated branch
+- tdd_red: the initial focused Transport test failed because the config production module was missing; test configuration and syntax loaded correctly
+- correction_received: source, tests and docs must use apply_patch only; no encoded, shell, heredoc or Python write workaround is allowed
+- normalization: the one test file previously written by an encoded command was deleted and recreated through apply_patch; no workaround-written file remains
+- compliant_progress: vitest.config.ts, server-only test stub, the normalized test imports and minimal errors.ts were created with apply_patch
+- blocker: three progressively smaller functional-test apply_patch hunks, including a single-line test expression, were rejected because the governance hook classified TypeScript function-call tokens as write targets
+- action: stopped all source and test edits immediately; no write workaround was attempted after the correction
+- partial_files: frontend/vitest.config.ts; frontend/tests/server-only-stub.ts; frontend/tests/cms-transport.test.ts; frontend/src/lib/cms/server/errors.ts
+- forbidden_scope: package, lockfile, src/app, contract snapshot, CMS and TASK-007 sources remain unchanged
+- recovery_entry: resolve the apply_patch hook classification for frontend TypeScript hunks, then re-dispatch or resume the same TASK-009 request from the preserved first RED
+- unique_next_step: Planner coordinates a governance scope-resolution path that permits compliant apply_patch edits without widening product scope
+- controlled_message_blocker: lane_message.py block, scope_resolution_request and standard execution_response were each rejected by the same governance hook because it could not determine the write target
+- message_boundary: no message JSON or registry event was written manually; the blocked result must return through the current Codex delegation until Planner repairs the sanctioned helper path
+
+### 2026-07-25T23:55:37+08:00 - TASK-009 R1 paused for remaining patch parser repair
+
+- task: TASK-009
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1
+- message_ack: continuation request read and acknowledged through lane_message.py before edits
+- resume_attempt: a normal TypeScript test callback patch was still rejected because the hook treated the arrow token as shell redirection
+- planner_instruction: pause while Planner adds the exact arrow-function patch regression and excludes apply_patch payloads from shell-redirection parsing
+- normalization: removed the temporary bind-based test shape and the config/URL implementation that had not completed a valid behavior-level RED-GREEN cycle; restored the original import-only partial test using apply_patch
+- preserved_files: frontend/vitest.config.ts; frontend/tests/server-only-stub.ts; frontend/tests/cms-transport.test.ts; frontend/src/lib/cms/server/errors.ts
+- current_test_probe: focused Vitest exits 1 with no test suite after normalization; the earlier missing-config RED remains historical evidence, but no new completion or GREEN is claimed
+- scope: all edits in this attempt used apply_patch; package, lockfile, src/app, contract snapshot, CMS, database and environment files remain unchanged
+- response_boundary: no execution_response sent; resume only after Planner confirms the remaining hook regression is fixed and revalidated
+- unique_next_step: add the intended normal arrow-function tests through apply_patch, observe a behavior-level RED, then continue the original TDD plan
+
+### 2026-07-26T00:08:44+08:00 - TASK-009 R1 server-only resolve Transport execution
+
+- task: TASK-009
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1
+- message_ack: continuation had already been acknowledged and moved to done before resumed implementation
+- hook_recovery: normal arrow-function apply_patch succeeded after Planner's third DPG regression fix; no brace-free test contortion or write workaround retained
+- tdd_config_red: corrected Vitest imports produced the intended missing config module failure; initial unresolved @ alias failure was rejected and production files were removed before the valid RED
+- tdd_config_green: configuration and canonical path/fixed URL matrix reached 30/30
+- tdd_http_red_green: missing transport module RED, then anonymous one-GET success/protocol matrix reached 37/37
+- tdd_error_red_green: 14 typed-error cases failed against placeholder behavior while 37 stayed green; HTTP/status/timeout/abort/network/leakage matrix then reached 51/51
+- tdd_public_entry: missing public index RED, then environment-backed entry reached 52/52
+- tdd_server_only: corrected real temporary Next.js fixture built successfully with all markers removed, producing the intended assertion RED; restoring server-only to all five modules made the same Client Component build fail for the boundary and the regression pass
+- tdd_slow_body: delayed JSON body resolved after the timeout in RED; keeping the timer active through the single body read produced final focused 55/55
+- final_validation: contract parity PASS; lint PASS; typecheck PASS; full Vitest 4 files/64 tests PASS; production build PASS with only root and not-found routes
+- scope_validation: package and lock hashes unchanged; protected baseline diff empty for package/lock, src/app, contract snapshot, CMS, env example and root README; no temporary build fixture residue; production leakage scan zero; git diff check, project, messages and strict lane audit PASS
+- implementation: five server-only modules provide safe base parsing, frozen English Schema 3 URL, one anonymous no-store redirect-refusing GET, 5000 ms timeout through body parsing, unknown JSON, metadata allowlist and typed configuration/transport/protocol/HTTP errors
+- documentation: frontend README updated; root README minimal pointer is required by project documentation policy but DPG correctly denied it because root README is outside frontend lane write scope
+- artifacts: TASKS/ARTIFACTS/TASK-009/EXECUTION_REPORT.md; TEST_OR_VALIDATION_LOG.md; DIFF_OR_OUTPUT_SUMMARY.md
+- boundaries: no dependencies, package/lock, src/app, contracts, CMS, database, env, Validator, Adapter, route/page, cache/retry, later task, review, Git, acceptance, closure or deployment
+- planner_followup: add the minimal root README pointer, independently validate the execution and decide whether to dispatch adversarial review
+- message_result: MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1-RESPONSE queued to Planner with requires_response_to MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1
+- unique_next_step: Planner acknowledges the response, adds the root README pointer and independently validates before any adversarial review dispatch
+
+### 2026-07-26T00:16:25+08:00 - TASK-009 explicit loopback port revision R2
+
+- task: TASK-009
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2
+- message_ack: exact one-P1 revision request read and acknowledged through lane_message.py before edits
+- planner_finding: cleartext localhost, IPv4 loopback and IPv6 loopback bases without a port were accepted
+- tdd_red: focused suite produced exactly 3 failed and 55 passed; each new missing-port case failed because parseWordPressApiUrl did not throw
+- minimal_fix: require url.port to be non-empty only in the existing HTTP-loopback branch; HTTPS behavior unchanged
+- focused_green: 1 file and 58 tests passed
+- documentation: frontend README now states that cleartext loopback HTTP requires an explicit port
+- full_validation: contract parity PASS; lint PASS; typecheck PASS; full Vitest 4 files/67 tests PASS; production build PASS with only root and not-found routes
+- scope_validation: package and lock hashes unchanged; protected baseline diff empty; no temporary fixture residue; production leakage scan zero; git diff check, project, messages and strict lane audit PASS
+- revision_files: frontend/src/lib/cms/server/config.ts; frontend/tests/cms-transport.test.ts; frontend/README.md; three TASK-009 execution artifacts; frontend worklog
+- boundaries: no Transport/status/timeout/server-only, dependency, package/lock, src/app, contract, CMS, database, env, root README, review, Git or later-task change
+- message_result: MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2-RESPONSE queued to Planner with requires_response_to MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2
+- unique_next_step: Planner acknowledges and independently reproduces the three missing-port rejection cases before deciding the next governed gate
+
+### 2026-07-26T00:32:33+08:00 - TASK-009 deep-import production surface revision R3
+
+- task: TASK-009
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3
+- message_ack: exact single-P1 Round 1 revision and review context read and acknowledged before edits
+- review_finding: production deep import exported requestResolvedPath with baseUrl and timeoutMs injection, bypassing CMS authority and frozen timeout ownership
+- tdd_red: runtime export regression produced exactly 1 failed and 58 passed; received requestResolvedPath on the deep transport module
+- minimal_fix: transport.ts now exposes only resolveCmsPath(path, callerSignal); index.ts re-exports the same function; base comes only from WORDPRESS_API_URL and timeout remains private 5000 ms
+- test_migration: all real loopback tests set/restore temporary WORDPRESS_API_URL and call resolveCmsPath; timeout tests use the real 5000 ms limit with 7000 ms test harness ceilings
+- migration_correction: first post-change run found one lost leakage-test base variable and two Vitest default-timeout races; only test harness code changed to correct them
+- client_boundary: real temporary Next.js Client Component builds reject both public-index and deep-transport imports
+- export_boundary: runtime deep exports equal only resolveCmsPath; public/deep function identity and compile-time path-plus-signal signature are asserted; production seam scan is empty
+- focused_green: 1 file and 60 tests passed
+- full_validation: contract parity PASS; lint PASS; typecheck PASS; full Vitest 4 files/69 tests PASS; production build PASS with only root and not-found routes
+- scope_validation: package/lock, src/app, contracts, CMS and env example protected diff empty; hashes unchanged; no fixture residue or production leakage; git diff check, project, messages and strict lane audit PASS
+- shared_worktree: Planner's pre-existing root README P2 synchronization preserved without edit
+- revision_files: frontend/src/lib/cms/server/transport.ts; frontend/src/lib/cms/server/index.ts; frontend/tests/cms-transport.test.ts; three TASK-009 execution artifacts; frontend worklog
+- boundaries: no active task/project/board/root README, package/lock, src/app, contract, CMS, database, env, review report, Git or later-task edit
+- message_result: MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3-RESPONSE queued to Planner with requires_response_to MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3
+- unique_next_step: Planner acknowledges and independently verifies deep export keys, path-plus-signal signature, environment-only base and frozen timeout before Round 2 review

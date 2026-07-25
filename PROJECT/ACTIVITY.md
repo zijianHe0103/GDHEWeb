@@ -2786,3 +2786,321 @@ schema_version: DPG-LANES-1.0.0
 - lane: planner
 - task: TASK-008
 - summary: Exact user phrase accepted by task_accept.py. Create one formal Chinese commit, push the task branch, fast-forward merge into main, push main and verify remote ancestry. No deployment or TASK-009.
+
+### 2026-07-25T04:49:22Z - TASK-008 delivery reconciled and archived
+
+- type: task_closed
+- lane: planner
+- task: TASK-008
+- summary: Verified local main, origin/main and the remote TASK-008 branch at formal commit ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d; synchronized CLOSED / MERGED and archived the task before new intake.
+
+### 2026-07-25T04:49:22Z - TASK-009 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-009
+- summary: Created server-only resolve transport and typed error boundary on codex/TASK-009-server-only-resolve-transport; awaiting exact requirement confirmation, with no frontend implementation or execution dispatch.
+
+### 2026-07-25T04:55:14Z - TASK-009 requirements confirmed
+
+- type: requirement_confirmed
+- lane: planner
+- task: TASK-009
+- summary: Exact requirement phrase received; transitioned to READY and froze the server-only transport design and TDD implementation plan. No frontend implementation or dispatch yet.
+
+### 2026-07-25T04:58:11Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-009
+- summary: message queued for frontend
+
+### 2026-07-25T04:58:39Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT dispatched to frontend
+
+### 2026-07-25T04:58:39Z - TASK-009 frontend execution dispatched
+
+- type: execution_dispatched
+- lane: frontend
+- task: TASK-009
+- summary: Controlled request delivered through the Codex thread bridge; task is IN_PROGRESS pending ack and linked execution response. No review, Validator, Adapter, page, CMS mutation or Git action is authorized.
+
+### 2026-07-25T05:09:30Z - TASK-009 paused by DPG hook parser blocker
+
+- type: task_paused
+- lane: planner
+- task: TASK-009
+- summary: Frontend returned BLOCKED after preserving a valid RED. Planner reproduced freeform patch target loss and helper prompt false-positive; task awaits explicit authority to repair the DPG source and cache, with no review or Git delivery.
+
+### 2026-07-25T04:59:44Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT moved to done
+
+### 2026-07-25T15:48:23Z - TASK-009 DPG hook repaired and resumed
+
+- type: task_resumed
+- lane: planner
+- task: TASK-009
+- summary: User-authorized freeform patch parsing, helper prompt classification and TypeScript arrow false-redirection fixes passed 7 focused and 83 full DPG tests; plugin 0.2.0+codex.20260725151602 is installed, current compatibility cache is restored, and TASK-009 resumed from its preserved RED without scope expansion.
+
+### 2026-07-25T16:13:43Z - TASK-009 Planner checkpoint P1
+
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-009
+- summary: Existing execution gates independently passed, but the current config predicate accepts loopback HTTP bases without explicit ports; a narrow RED-GREEN revision is required before adversarial review.
+
+### 2026-07-25T16:18:40Z - TASK-009 Planner checkpoint PASS
+
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-009
+- summary: R2 explicit-port P1 is closed; independent focused/full tests, parity, lint, typecheck, build, scope, leakage, documentation and governance gates passed, allowing adversarial review.
+
+### 2026-07-25T16:26:36Z - TASK-009 adversarial Round 1 FAIL recovery
+
+- type: review_failed_needs_revision
+- lane: planner
+- task: TASK-009
+- summary: Round 1 returned FAIL with one production deep-import authority/timeout P1 and one stale-current-state P2; Planner recorded direct NEEDS_REVISION recovery after the AWAITING_USER-only reopen helper safely refused.
+
+### 2026-07-25T16:35:03Z - TASK-009 R3 checkpoint PASS
+
+- type: revision_checkpoint_pass
+- lane: planner
+- task: TASK-009
+- summary: Production base/timeout deep-import seam is removed, active-task current state is synchronized, and fresh 60/60 focused, 69/69 full, build, scope and governance gates allow narrow adversarial Round 2.
+
+### 2026-07-25T15:51:10Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-009
+- summary: message queued for frontend
+
+### 2026-07-25T15:52:04Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1 dispatched to frontend
+
+### 2026-07-25T15:52:46Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1 moved to done
+
+### 2026-07-25T16:10:23Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:11:24Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-RESOLVE-TRANSPORT-R1-RESPONSE moved to done
+
+### 2026-07-25T16:14:36Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-009
+- summary: message queued for frontend
+
+### 2026-07-25T16:15:01Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2 dispatched to frontend
+
+### 2026-07-25T16:15:17Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2 moved to done
+
+### 2026-07-25T16:17:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:17:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-EXPLICIT-LOOPBACK-PORT-R2-RESPONSE moved to done
+
+### 2026-07-25T16:19:39Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T16:20:01Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-25T16:20:34Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-25T16:24:54Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:25:02Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:25:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-25T16:25:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-25T16:28:26Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-009
+- summary: message queued for frontend
+
+### 2026-07-25T16:28:51Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3 dispatched to frontend
+
+### 2026-07-25T16:29:26Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3 moved to done
+
+### 2026-07-25T16:33:34Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:34:04Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3-RESPONSE moved to done
+
+### 2026-07-25T16:37:50Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T16:38:15Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-25T16:38:29Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-25T16:40:54Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:41:02Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-009
+- summary: message queued for planner
+
+### 2026-07-25T16:41:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-25T16:41:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-009
+- summary: message MSG-TASK-009-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-25T16:44:05Z - TASK-009 Round 2 PASS and final validation
+
+- Round 2 final verdict `PASS / P0=0 / P1=0 / P2=0`; response and recovery handoff acknowledged。
+- Planner fresh validation passed: focused 60/60、full 69/69、parity、lint、typecheck、build、scope、checksums、residue、leakage and governance。
+- `PLANNER_SUMMARY.md` generated；task remains `UNDER_REVIEW / NOT_ACCEPTED / DIRTY` pending checked `prepare-awaiting-user` only。
+
+### 2026-07-25T16:46:19Z - TASK-009 acceptance view synchronization
+
+- First checked `prepare-awaiting-user` passed at 16:45:36Z。
+- Controlled reopen changed no product deliverable or verdict；it allowed only Board and human-readable waiting-state synchronization。
+- Fresh checked transition repeated after synchronization；final state `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- No commit、push、merge、deployment、later feature or TASK-010；waiting exact formal delivery phrase。
+
+### 2026-07-25T16:45:36Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-009
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-25T16:46:19Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-009
+- summary: Synchronize Board and human-readable acceptance-state narratives after the first checked prepare-awaiting-user transition; product deliverables, final PASS review, validation, NOT_ACCEPTED and DIRTY boundaries remain unchanged.
+
+### 2026-07-25T16:47:07Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-009
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-25T16:47:35Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-009
+- summary: Final git diff check found three trailing spaces on empty governance event lane fields generated by controlled transitions; product deliverables and final PASS evidence are unchanged.
+
+### 2026-07-25T16:50:59Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-009
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-25T17:16:01Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-009
+- summary: TASK-009 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-25T17:16:01Z - TASK-009 formal delivery authorized
+
+- Exact phrase `确认 TASK-009 完成并提交到远端` accepted by the controlled helper。
+- Final PASS P0/P1/P2=0、validation and documentation gates remain valid。
+- Authorized chain: formal commit、task-branch push、fast-forward merge to `main`、push `main` and remote ancestry verification。
+- No deployment、later feature or TASK-010。

@@ -441,3 +441,36 @@ Each execution records:
 - message_status: Round 1 request acknowledged as done; controlled PASS review_response queued to Planner with requires response set to the original request
 - stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
 - next: Planner acknowledges the PASS response and recovery request, then owns recovery, final validation and checked acceptance preparation
+
+### 2026-07-25T16:23:30Z - TASK-009 adversarial review round 1
+
+- task: TASK-009
+- message: MSG-TASK-009-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, then independently reviewed the frozen Transport design, implementation, real tests, execution evidence, root/frontend documentation, protected scope and current governance without repairing deliverables
+- files_read: full reviewer resume chain; TASK-009 active task and all standard artifacts; config, URL builder, errors, transport, public index, Vitest config/stub and focused tests; root/frontend README; TASK-008 frozen path/contract authority; current Git and governance
+- files_changed: TASK-009 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: fixed Node 24.18.0/npm 11.16.0 focused 58/58, full 67/67, contract parity, lint, typecheck and production build passed; real loopback/status/timeout/abort/network and temporary Client Component build negative ran; package/lock current/HEAD hashes matched; app/contracts/CMS/env/TASK-008 authority diff empty; no temp residue; project/messages/strict lane/diff checks passed
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- p1: production deep import of exported requestResolvedPath accepts caller-controlled baseUrl and timeoutMs, bypassing the unique public entry, environment-owned CMS origin and frozen 5000 ms timeout; the permanent focused test directly proves the bypass compiles and runs
+- p2: active task current-status, next, messages, execution-artifacts, adversarial-review and validation-evidence sections remain at the early blocker/partial-file state despite UNDER_REVIEW metadata, complete R2 evidence and dispatched/acknowledged review
+- passed_boundaries: Client Component server-only rejection and per-module markers; explicit-port loopback/HTTPS config; frozen canonical path/English Schema 3 URL; one anonymous no-store GET; redirect refusal; timeout through body; one JSON parse; metadata allowlist; typed protocol/HTTP/transport semantics; leakage controls; realistic cleanup; no retry; protected scope; root/frontend docs
+- boundaries: no frontend or planner-owned repair, runtime/CMS/database/external mutation, Git/remote/deployment/acceptance action, Validator/Adapter/page work or TASK-010
+- message_status: Round 1 request acknowledged as done; controlled FAIL review_response queued to Planner with requires response set to the original request
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: Planner acknowledges the FAIL response and recovery request, then owns NEEDS_REVISION recovery and only the two narrow corrections before Round 2
+
+### 2026-07-25T16:40:06Z - TASK-009 adversarial review round 2 final
+
+- task: TASK-009
+- message: MSG-TASK-009-ADVERSARIAL-REVIEW-R2
+- action: acknowledged the final narrow request first, preserved the Round 1 audit trail and independently reviewed only the production deep-import P1, active-task current-state P2 and their direct regressions
+- files_read: Round 2 request; canonical Round 1 report; current task/project/board; R3 execution, validation and diff evidence; production transport/index; focused tests; root/frontend docs; current protected scope and governance
+- files_changed: TASK-009 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: production scan has no requestResolvedPath, baseUrl, timeoutMs, InternalTransportOptions or equivalent explicit seam; deep runtime keys equal resolveCmsPath only and public/deep functions are identical; base comes only from WORDPRESS_API_URL and private timeout is 5000 ms; fixed Node/npm focused 60/60, full 69/69, parity, lint, typecheck and build passed; public/deep Client build negatives ran; package/lock hashes, protected scope, leakage, residue, project/messages/strict/diff passed
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- p1_closure: tests now exercise the real public resolve surface through scoped environment setup; no production caller-controlled base/timeout seam remains; fixed timeout is exercised through delayed header and body responses
+- p2_closure: active task current status, next, messages, artifacts, review and validation sections consistently describe UNDER_REVIEW, R3 closure and Round 2 gate while all timestamped blocker/recovery/Round 1 history remains
+- boundaries: no product or planner-owned repair, test/environment/CMS/database/package/contract mutation, Git/remote/deployment/acceptance action or later work
+- message_status: Round 2 request acknowledged as done; controlled final PASS review_response queued to Planner with requires response set to the Round 2 request
+- stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: Planner acknowledges the final PASS response and recovery request, then owns recovery, final validation and checked acceptance preparation

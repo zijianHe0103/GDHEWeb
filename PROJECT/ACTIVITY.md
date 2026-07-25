@@ -3104,3 +3104,355 @@ schema_version: DPG-LANES-1.0.0
 - Final PASS P0/P1/P2=0、validation and documentation gates remain valid。
 - Authorized chain: formal commit、task-branch push、fast-forward merge to `main`、push `main` and remote ancestry verification。
 - No deployment、later feature or TASK-010。
+
+### 2026-07-25T17:25:35Z - TASK-009 delivered; TASK-010 intake
+
+- Verified local `main`、`origin/main` and remote TASK-009 branch at `dd07662698744b90a0c810a0d1f9342109eb1a22` with a clean pre-intake worktree。
+- Archived TASK-009 as `CLOSED / MERGED` and created branch `codex/TASK-010-cms-runtime-schema-validator` from synchronized `main`。
+- Created TASK-010 requirement card for the Runtime Schema Validator only；no dependency installation、frontend product implementation、CMS mutation、review、Git delivery or deployment。
+- Waiting exact requirement confirmation。
+
+### 2026-07-25T17:43:44Z - TASK-010 requirements confirmed
+
+- Exact phrase `确认 TASK-010 需求并开始执行` received；task moved to READY。
+- Frozen public test seams: success/error runtime validator、opaque validated wrapper and stable contract error。
+- Direct dependency candidates remain limited to `ajv` and `ajv-formats` pending official registry and toolchain verification。
+- No Adapter、route、visible page、Transport wiring、CMS/database、Git or deployment。
+
+### 2026-07-25T17:47:30Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-010
+- summary: message queued for frontend
+
+### 2026-07-25T17:47:48Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1 dispatched to frontend
+
+### 2026-07-25T17:47:59Z - TASK-010 frontend execution dispatched
+
+- Froze the runtime validator design and vertical TDD implementation plan。
+- Verified official npm metadata for exact direct candidates `ajv@8.20.0` and `ajv-formats@3.0.1`。
+- Delivered and dispatched `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1` to the registered frontend session。
+- Transitioned TASK-010 from READY to IN_PROGRESS。
+- No Adapter、route、visible page、Transport wiring、CMS/database、Git、deployment or TASK-011。
+
+### 2026-07-25T18:03:10Z - TASK-010 Planner checkpoint PASS
+
+- Acknowledged the linked frontend execution response。
+- Independently passed focused 38/38、full 107/107、contract parity、lint、typecheck、production build、dependency tree、production audit、scope、server-only、residue、leakage and diff gates on Node 24.18.0 / npm 11.16.0。
+- Synchronized frontend and root README documentation；document impact is RESOLVED and README impact is UPDATED。
+- Transitioned TASK-010 from IN_PROGRESS to UNDER_REVIEW。
+- No acceptance、Git、deployment、Adapter、route、visible page、Transport wiring、CMS/database or TASK-011。
+
+### 2026-07-25T18:04:29Z - TASK-010 adversarial review dispatched
+
+- Delivered and dispatched `MSG-TASK-010-ADVERSARIAL-REVIEW-R1` to the registered reviewer session。
+- Review is read-only and explicitly challenges Schema semantics、server-only boundaries、wrapper forgery/mutability、leakage、mutation coverage、dependency and protected scope。
+- No acceptance、Git、deployment、Adapter、route、visible page、CMS/database or TASK-011。
+
+### 2026-07-25T18:10:35Z - TASK-010 Round 1 FAIL recovery
+
+- Acknowledged the linked FAIL response and reviewer recovery request。
+- Verdict: FAIL；P0=0、P1=1、P2=1。
+- P1 requires caller-isolated deep-immutable validated snapshot and fixed wrapper integrity；P2 current evidence is synchronized。
+- Controlled reopen helper safely refused its AWAITING_USER-only precondition with no mutation；recorded UNDER_REVIEW to NEEDS_REVISION recovery directly。
+- No acceptance、Git、deployment、Adapter、route、visible page、Transport wiring、CMS/database or TASK-011。
+
+### 2026-07-25T18:11:55Z - TASK-010 wrapper integrity R2 dispatched
+
+- Delivered and dispatched `MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2`。
+- Scope is limited to caller-isolated deep-immutable snapshot、fixed wrapper integrity、success/error public regressions and direct frontend docs。
+- No acceptance、Git、deployment、Adapter、route、visible page、Transport wiring、CMS/database or TASK-011。
+
+### 2026-07-25T18:20:06Z - TASK-010 R2 Planner checkpoint PASS
+
+- Acknowledged the R2 execution response。
+- Independently passed focused 44/44、full 113/113、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage、governance and diff gates。
+- Round 1 P1 and P2 are closed at the Planner checkpoint；transitioned NEEDS_REVISION to UNDER_REVIEW。
+- No acceptance、Git、deployment、Adapter、route、visible page、Transport wiring、CMS/database or TASK-011。
+
+### 2026-07-25T18:25:24Z - TASK-010 Round 2 FAIL recovery
+
+- Acknowledged the Round 2 FAIL response and scope-recovery request。
+- Verdict: FAIL；P0=0、P1=1、P2=0；mutable wrapper prototype can replace body getter or add a body-leaking toJSON。
+- Round 1 P2 is closed。
+- New Round 2 report filename was rejected by reviewer write scope；no bypass；recover to the existing canonical report first。
+- Transitioned UNDER_REVIEW to NEEDS_REVISION；no acceptance、Git、deployment or later features。
+
+### 2026-07-25T18:36:00Z - TASK-010 R3 checkpoint and extra review gate
+
+- Restored the full Round 2 FAIL in the canonical adversarial report and acknowledged the recovery response。
+- Acknowledged the R3 execution response；wrapper is now a frozen null-prototype object with fixed own body getter and kind-only toJSON。
+- Independently passed focused 48/48、full 117/117 and all frozen validation/scope/governance gates。
+- Two adversarial rounds are consumed；transitioned NEEDS_REVISION to PAUSED pending explicit extra closure review authorization。
+- No acceptance、Git、deployment、Adapter、page、Transport wiring、CMS or TASK-011。
+
+### 2026-07-25T18:41:15Z - TASK-010 extra closure review authorized and dispatched
+
+- Received the exact user authorization for one extra independent closure review。
+- Delivered and dispatched `MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3`。
+- Scope is limited to the Round 2 prototype-integrity P1、Round 1 P2 closure and direct regressions。
+- Transitioned PAUSED to UNDER_REVIEW；no acceptance、Git、deployment or later features。
+
+### 2026-07-25T18:45:33Z - TASK-010 closure PASS and final validation
+
+- Acknowledged the user-authorized closure PASS and recovery request；P0=0、P1=0、P2=0。
+- Independently reran focused 48/48、full 117/117 and every frozen validation/scope/governance gate successfully。
+- Generated the Planner final summary。
+- TASK-010 remains NOT_ACCEPTED / DIRTY；no Git、deployment or later features。
+
+### 2026-07-25T17:48:53Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1 moved to done
+
+### 2026-07-25T18:00:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:01:05Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1-RESPONSE moved to done
+
+### 2026-07-25T18:04:04Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T18:04:25Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-25T18:05:21Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-25T18:09:13Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:09:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:10:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-25T18:10:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-25T18:11:28Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-010
+- summary: message queued for frontend
+
+### 2026-07-25T18:11:49Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2 dispatched to frontend
+
+### 2026-07-25T18:12:11Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2 moved to done
+
+### 2026-07-25T18:18:14Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:18:42Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2-RESPONSE moved to done
+
+### 2026-07-25T18:20:51Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T18:21:09Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-25T18:21:24Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-25T18:24:29Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:24:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:25:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-25T18:25:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-REVIEW-R2-SCOPE-RECOVERY moved to done
+
+### 2026-07-25T18:26:00Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T18:26:18Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-R2-ARTIFACT-RECOVERY dispatched to adversarial_reviewer
+
+### 2026-07-25T18:26:20Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-R2-ARTIFACT-RECOVERY moved to done
+
+### 2026-07-25T18:27:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:27:54Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-R2-ARTIFACT-RECOVERY-RESPONSE moved to done
+
+### 2026-07-25T18:28:10Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-010
+- summary: message queued for frontend
+
+### 2026-07-25T18:28:27Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3 dispatched to frontend
+
+### 2026-07-25T18:29:36Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3 moved to done
+
+### 2026-07-25T18:34:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:34:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3-RESPONSE moved to done
+
+### 2026-07-25T18:40:52Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T18:41:12Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3 dispatched to adversarial_reviewer
+
+### 2026-07-25T18:41:21Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3 moved to done
+
+### 2026-07-25T18:43:48Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:43:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-010
+- summary: message queued for planner
+
+### 2026-07-25T18:44:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3-RESPONSE moved to done
+
+### 2026-07-25T18:44:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-010
+- summary: message MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3-STOP-RECOVERY moved to done
+
+### 2026-07-25T18:46:12Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-010
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-25T19:08:41Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-010
+- summary: TASK-010 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-25T19:08:41Z - TASK-010 formal delivery authorized
+
+- Exact formal delivery phrase passed the controlled task-accept check and transition。
+- TASK-010 is ACCEPTED with final PASS P0/P1/P2=0。
+- Authorized chain: formal Chinese commit、task-branch push、fast-forward merge to main、push main and verify remote ancestry。
+- No force push、rebase、branch/worktree deletion、deployment or TASK-011。

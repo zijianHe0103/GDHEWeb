@@ -37,3 +37,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`
   - Remote branch：`origin/codex/TASK-008-frontend-cms-contract-snapshot`
   - Main：`origin/main` at `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`
+- `TASK-009` Next.js server-only `/resolve` Transport 与错误语义基础 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-009-server-only-resolve-transport.md`
+  - Commit：`dd07662698744b90a0c810a0d1f9342109eb1a22`
+  - Remote branch：`origin/codex/TASK-009-server-only-resolve-transport`
+  - Main：`origin/main` at `dd07662698744b90a0c810a0d1f9342109eb1a22`

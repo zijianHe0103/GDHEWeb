@@ -403,3 +403,64 @@ Each execution records:
 - boundaries: no active task/project/board/root README, package/lock, src/app, contract, CMS, database, env, review report, Git or later-task edit
 - message_result: MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3-RESPONSE queued to Planner with requires_response_to MSG-TASK-009-FRONTEND-DEEP-IMPORT-SURFACE-R3
 - unique_next_step: Planner acknowledges and independently verifies deep export keys, path-plus-signal signature, environment-only base and frozen timeout before Round 2 review
+
+### 2026-07-26T01:57:51+08:00 - TASK-010 CMS Runtime Schema Validator execution R1
+
+- task: TASK-010
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1
+- message_ack: exact dispatched execution request and all context files read; request acknowledged through lane_message.py before dependency or implementation edits
+- baseline: Node.js 24.18.0/npm 11.16.0; parity, lint, typecheck, 69 tests and production build passed before implementation
+- dependencies: added only exact production dependencies ajv 8.20.0 and ajv-formats 3.0.1; package scripts unchanged; lock integrity and peer compatibility passed
+- implementation: three server-only validation modules statically register the frozen 16-Schema closure, rebase cloned IDs, compile strict Draft 2020-12 success/error roots once, enforce real date/date-time/URI formats, expose explicit public validators, return an opaque wrapper and throw stable sanitized CmsContractError kinds
+- strict_schema_note: two redundant type annotations are applied only to in-memory clones so Ajv strictTypes accepts constraints inherited from parent schemas; snapshot bytes and validation meaning remain unchanged
+- tdd_red_green: missing public seam RED; missing error-root RED; missing stable version error RED; enumerable error-name leakage RED; marker-stripped Client build RED; final focused 38/38 GREEN
+- server_only: real temporary Client Component builds succeed when all temporary markers are stripped and fail for guarded public and deep registry imports; all fixtures cleaned
+- final_validation: fresh npm ci; focused 38/38; contract parity 16/2/2; lint; typecheck; full 107/107; production build; dependency tree/integrity; production audit 0; protected hashes/diff; leakage/residue; git diff check; DPG project/messages/strict lane all PASS
+- dependency_notice: npm reports nine high development-tool findings in the existing ESLint/minimatch chain; production-only audit is clean; no force fix, major upgrade, override or unrelated dependency edit was authorized
+- artifacts: TASKS/ARTIFACTS/TASK-010/EXECUTION_REPORT.md; TEST_OR_VALIDATION_LOG.md; DIFF_OR_OUTPUT_SUMMARY.md
+- documentation: frontend README updated with the Validator boundary and commands; root README and Planner-owned document-impact state remained untouched as required by the execution request
+- protected_scope: contract snapshot, TASK-009 Transport/config/errors/index, src/app, CMS, database, environment, root README and Planner governance edits preserved unchanged
+- boundaries: no Adapter, DTO, route/page, cache, Preview, live WordPress E2E, review, acceptance, Git delivery, deployment or TASK-011
+- message_result: MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1-RESPONSE queued to Planner with requires_response_to MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1
+- next: wait for Planner independent checkpoint; no adversarial review is authorized from this lane
+
+### 2026-07-26T02:16:05+08:00 - TASK-010 wrapper integrity revision R2
+
+- task: TASK-010
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2
+- message_ack: exact revision request and complete Round 1 FAIL report read; request acknowledged through lane_message.py before edits
+- review_scope: closed only Round 1 P1; Planner had already synchronized the P2 current evidence
+- tdd_red_1: public success/error integrity matrix produced 8 failed and 34 passed; wrappers retained caller references, were mutable and accepted non-clonable ordinary Proxies
+- tdd_green_1: structured caller-isolated snapshot, recursive freeze and wrapper freeze reached 42/42
+- tdd_red_2: revoked success/error Proxies produced 2 failed and 42 passed because native TypeError escaped during the pre-snapshot version check
+- tdd_green_2: snapshot boundary moved before all input inspection; final focused result 44/44
+- integrity: caller mutations cannot alter body; nested writes, kind writes and instance extensions fail; kind/brand descriptors are fixed; wrapper body revalidates; keys/spread/JSON remain kind-only
+- clone_error: ordinary and revoked Proxy failures map to existing invalid success/error CmsContractError kinds without DOMException, native clone errors, raw payload or Ajv diagnostics
+- final_validation: focused 44/44; full 113/113; parity 16/2/2; lint; typecheck; production build; dependency tree; production audit 0; protected hashes/scope; leakage/residue; diff/whitespace; DPG project/messages/strict lane all PASS
+- r2_files: frontend/src/lib/cms/server/validation/index.ts; frontend/tests/cms-runtime-validator.test.ts; frontend/README.md; TASK-010 revision/execution/validation/diff evidence; frontend worklog
+- protected_scope: registry, error class, package/lock, contract snapshot, TASK-009 server modules, src/app, CMS, environment, root README and Planner state unchanged by this lane
+- boundaries: no Adapter, Transport wiring, page, review, acceptance, Git delivery, deployment or TASK-011
+- message_result: MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2-RESPONSE queued to Planner with requires_response_to MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2
+- next: wait for Planner independent checkpoint and Round 2 review dispatch
+
+### 2026-07-26T02:33:27+08:00 - TASK-010 prototype integrity revision R3
+
+- task: TASK-010
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3
+- message_ack: exact Round 2 residual-P1 request and canonical Round 2 FAIL evidence read; request acknowledged before edits
+- review_scope: closed only the prototype/getter/toJSON integrity P1; Round 1 P2 remained closed
+- tdd_red: real success/error public seams produced 4 failed and 44 passed; shared prototype body getter replacement returned attacker objects, and prototype toJSON serialized complete bodies plus attack sentinels
+- test_isolation: every shared descriptor mutation is restored in finally; final null-prototype cases temporarily poison only Object.prototype and restore it synchronously
+- minimal_fix: validated wrappers now have a null prototype, closure-private body snapshot, non-configurable own body getter, non-configurable own kind-only toJSON, fixed own kind/brand and a frozen instance
+- public_boundary: existing exports, server-only marker, caller-isolated deep-frozen snapshots and stable CmsContractError behavior remain unchanged
+- focused_green: 1 file and 48 tests passed; own getter/toJSON redefinition, instance prototype replacement, revalidation, keys/spread/JSON and sentinel non-leakage all pass for success/error
+- validation_race_note: one combined validation attempt overlapped lint with temporary Client-build fixture cleanup and produced ESLint ENOENT; after process completion and zero residue, all gates were rerun serially
+- final_validation: focused 48/48; full 117/117; parity 16/2/2; lint; typecheck; production build; exact dependency tree; production audit 0; protected hashes; server-only/runtime-loader/network/leakage/residue/diff; DPG project/messages/strict lane all PASS
+- r3_files: frontend/src/lib/cms/server/validation/index.ts; frontend/tests/cms-runtime-validator.test.ts; frontend/README.md; TASK-010 REVISION_ROUND2_REPORT/validation/diff evidence; frontend worklog
+- protected_scope: package/lock, registry, error class, contract manifest, TASK-009 Transport, src/app, CMS, environment, root README and Planner state unchanged by this lane
+- boundaries: no Adapter, page, review, acceptance, Git action, deployment or TASK-011
+- message_result: MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3-RESPONSE queued to Planner with requires_response_to MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3; message validation PASS, and the post-send strict audit reports only the expected pending-queue notice
+- next: Planner acknowledges the response, independently checkpoints the single P1 closure and controls any further review

@@ -474,3 +474,66 @@ Each execution records:
 - message_status: Round 2 request acknowledged as done; controlled final PASS review_response queued to Planner with requires response set to the Round 2 request
 - stop_recovery: controlled recovery request queued because planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
 - next: Planner acknowledges the final PASS response and recovery request, then owns recovery, final validation and checked acceptance preparation
+### 2026-07-26T02:10:00Z - TASK-010 adversarial review round 1
+
+- task: TASK-010
+- message: MSG-TASK-010-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, then independently reviewed the active acceptance criteria, frozen design and plan, all execution evidence, Planner checkpoint, TASK-008 authority snapshot, implementation, focused tests, dependency lock and protected scope
+- files_read: TASK-010 active task and artifacts; TASK-008 manifest, schemas and canonical samples; validation registry, public wrapper and errors; focused tests; package and lockfile; root and frontend README; current project, board, lane and controlled-message state
+- files_changed: TASK-010 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: fixed Node.js 24.18.0 and npm 11.16.0; focused 38/38, full 107/107, 16-Schema parity, lint, typecheck, production build, dependency tree, production audit, protected diff, leakage, residue and diff checks pass; independent strictTypes comparison found zero mismatches across 16 targeted inputs
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- p1: validated wrapper retains the caller input by reference and leaves kind writable/configurable; public-seam reproduction mutated a successful wrapper into body data that revalidates as invalid and changed kind from success to error
+- p2: active task current Validation Evidence still says frontend and dependencies are unmodified despite the implemented Validator, two new dependencies, lockfile and docs changes
+- passed_boundaries: 16 static Schemas, deterministic rebasing, redundant strictTypes annotations, strict Draft 2020-12 formats, compile-once, public/deep server-only, canonical and mutation behavior, stable non-leaking errors, exact dependencies and protected scope
+- boundaries: no product/test/dependency/README/Planner-state repair, contract or CMS mutation, acceptance, commit, push, merge, deployment or TASK-011
+- message_status: request acknowledged as done; controlled FAIL review_response queued to Planner with requires response set to the original request
+- stop_recovery: controlled recovery request queued because Planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: Planner acknowledges the response, owns NEEDS_REVISION recovery and dispatches only the two narrow revisions before Round 2
+
+### 2026-07-26T02:25:00Z - TASK-010 adversarial review round 2
+
+- task: TASK-010
+- message: MSG-TASK-010-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the narrow Round 2 request first, then independently reviewed only Round 1 P1, P2 and direct regressions
+- files_read: Round 1 canonical report; revision report; Planner revision checkpoint; active task current evidence; validation index, registry and errors; focused tests; frontend README; package and lock; protected current scope
+- files_changed: adversarial reviewer worklog; controlled request acknowledgement
+- validation: fixed Node.js 24.18.0 and npm 11.16.0; focused 44/44, full 113/113, 16-Schema parity, lint, typecheck, production build, dependency tree, production audit, protected diff, leakage, residue and diff checks pass; ordinary and revoked success/error Proxies independently map to stable existing contract errors
+- result: FAIL; P0 none; P1 one; P2 none; Planner final validation not allowed
+- p1: wrapper instance, own kind and brand are frozen, but the class prototype remains mutable and its body getter configurable; public-seam reproduction replaced the getter with attacker body and added prototype toJSON that serialized the full body
+- p2_closure: active task current Validation Evidence now accurately records implementation, dependencies, docs, protected scope and current R2 gates
+- passed_boundaries: caller input isolation, recursive snapshot freeze, own descriptors, non-extensibility, ordinary/revoked Proxy stable errors, unchanged registry/errors/package/lock/contracts/Transport/app/CMS, server-only and normal leakage gates
+- report_blocker: apply_patch creation of the request-mandated TASK-010 Round 2 report was rejected by the DPG write-scope hook because the registered reviewer scope recognizes only the canonical ADVERSARIAL_REVIEW_REPORT filename; no write workaround or alternate filename was used
+- boundaries: no product/test/dependency/README/Planner-state repair, acceptance, Git, deployment, Adapter/page or TASK-011
+- message_status: request acknowledged as done; controlled Round 2 FAIL response queued with the report blocker disclosed
+- scope_recovery: controlled recovery request queued for Planner-owned NEEDS_REVISION handling and exact Round 2 report-target authorization
+- next: Planner acknowledges both messages, authorizes the exact report target, preserves this FAIL and owns review-policy handling for the sole residual prototype integrity P1
+
+### 2026-07-26T02:29:00Z - TASK-010 Round 2 artifact recovery
+
+- task: TASK-010
+- message: MSG-TASK-010-ADVERSARIAL-R2-ARTIFACT-RECOVERY
+- action: acknowledged the recovery request first and persisted the already-completed Round 2 FAIL evidence to the hook-authorized canonical review report; no new review was performed
+- files_changed: TASK-010 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- recovered_verdict: FAIL; P0 none; P1 one; P2 none; Planner final validation not allowed
+- recovered_evidence: mutable class prototype and configurable body getter permit attacker body substitution and prototype toJSON body serialization; Round 1 P2 closure and all independent direct-regression gates preserved
+- boundaries: no business deliverable, test, dependency, README or Planner-state modification; no repair, acceptance, Git, deployment, Adapter/page or TASK-011
+- message_status: artifact recovery request acknowledged as done; linked recovery_response queued to Planner
+- next: Planner acknowledges the recovery_response and owns FAIL recovery plus any explicitly authorized closure-review policy
+
+### 2026-07-26T02:45:00Z - TASK-010 user-authorized closure review
+
+- task: TASK-010
+- message: MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3
+- authorization: user explicitly authorized one additional independent closure review after the configured two rounds
+- action: restored the registered reviewer lane, read and acknowledged the closure request first, preserved Round 1 and Round 2 history, and independently reviewed only the residual prototype-integrity P1, Round 1 P2 closure and direct regressions
+- files_read: closure request; current active task, project state and board; canonical Round 1 and Round 2 report; R3 revision report; Planner R3 checkpoint; validation index, registry and errors; focused tests; frontend README; package and lock; protected current scope
+- files_changed: TASK-010 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: success/error wrappers independently confirmed null prototype, frozen instance, fixed own body/toJSON/kind/brand descriptors, failed property redefinition and prototype replacement, resistance to Object.prototype body/toJSON pollution, caller isolation, deep freeze, revalidation and kind-only keys/spread/JSON; ordinary/revoked Proxy stable errors pass
+- gates: fixed Node.js 24.18.0 and npm 11.16.0; focused 48/48, full 117/117, 16-Schema parity, lint, typecheck, production build, dependency tree, production audit, protected diff, server-only, leakage, residue, project, messages, strict lane and diff checks pass
+- p2_closure: initial resume packet reflected the pre-authorization PAUSED snapshot; current active task, project state and board were reread before verdict and consistently record user authorization, UNDER_REVIEW, dispatched closure request and waiting verdict
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- boundaries: no product/test/dependency/README/Planner-state repair, acceptance, Git, deployment, Adapter/page/Transport wiring/CMS or TASK-011
+- message_status: closure request acknowledged as done; controlled closure PASS review_response queued to Planner
+- stop_recovery: controlled recovery request queued because Planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
+- next: Planner acknowledges the PASS response and owns review recovery, final validation and checked acceptance preparation

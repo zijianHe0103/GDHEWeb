@@ -2,14 +2,134 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-009
+current_task: TASK-010
 task_state: ACCEPTED
 git_state: DIRTY
-last_updated: 2026-07-25T17:16:01Z
+last_updated: 2026-07-25T19:08:41Z
 
 ## 当前焦点
 
-`TASK-009` 已由用户精确验收并授权正式交付：server-only `/resolve` Transport、两轮窄修订、独立 adversarial review、README 同步和 Planner final validation 均 PASS，P0=0、P1=0、P2=0。当前执行正式提交、任务分支推送、快进合并到 `main` 和推送 `main`；不部署或启动 TASK-010。
+`TASK-010` 已正式 `ACCEPTED`。用户精确交付口令已通过受控 helper；当前执行正式提交、任务分支推送、快进合并到 `main` 和 `main` 推送，尚未部署或启动 TASK-011。
+
+## TASK-010 Formal Delivery Authorized 2026-07-25T19:08:41Z
+
+- authorization: 用户精确输入 `确认 TASK-010 完成并提交到远端`，`task_accept.py check/accept` 均成功。
+- acceptance: `ACCEPTED`；final closure `PASS / P0=0 / P1=0 / P2=0`。
+- delivery: 创建一条包含任务内容、主要变更、验证结果和文档更新的正式中文提交；推送任务分支；快进合并并推送 `main`；验证远端 ancestry。
+- boundary: 不 force push、不 rebase、不删除分支/worktree，不部署或启动 TASK-011。
+- next: 完成提交前完整性检查，然后执行已授权 Git 链。
+
+## TASK-010 Closure PASS and Planner Final Validation 2026-07-25T18:45:33Z
+
+- review: user-authorized closure response 与 recovery request 已 validate/ACK；最终 `PASS / P0=0 / P1=0 / P2=0`。
+- closure: Round 2 prototype-integrity P1 关闭；Round 1 current-evidence P2 保持关闭。
+- final_validation: Node 24.18.0 / npm 11.16.0 focused 48/48、full 117/117、16-Schema parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、messages、project/strict lane 和 diff PASS。
+- summary: `TASKS/ARTIFACTS/TASK-010/PLANNER_SUMMARY.md` 已生成。
+- boundary: `NOT_ACCEPTED / DIRTY`；未 commit、push、merge、部署、Adapter、route、页面、Transport wiring、CMS/数据库或 TASK-011。
+- next: 运行 checked `prepare-awaiting-user`，然后等待精确正式交付口令。
+
+## TASK-010 Extra Closure Review Authorized and Dispatched 2026-07-25T18:41:15Z
+
+- authorization: 用户精确输入 `授权 TASK-010 进行一次额外独立 closure review`。
+- message: `MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3` 已 validate、dry-run，通过 Codex thread bridge 投递到注册 reviewer session 并标记 dispatched。
+- scope: 只复核 Round 2 prototype-integrity P1、Round 1 P2 closure 和直接 server-only/leakage/dependency/protected-scope/test 回归。
+- transition: `PAUSED` -> `UNDER_REVIEW`。
+- boundary: reviewer 对业务交付物只读；未验收、Git、部署、Adapter、route、可见页面、Transport wiring、CMS/数据库或 TASK-011。
+- next: 等待关联 review response；verdict 前不执行 Planner final validation。
+
+## TASK-010 R3 Checkpoint and Extra Review Gate 2026-07-25T18:36:00Z
+
+- response: `MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3-RESPONSE` 已 validate/ACK。
+- artifact_recovery: Round 2 FAIL 已完整追加到 canonical `ADVERSARIAL_REVIEW_REPORT.md`，recovery response 已 ACK。
+- r3: wrapper 改为 frozen null-prototype 对象，固定 own body getter、kind-only toJSON、kind 与 brand；prototype poisoning 不再改变 body 或序列化。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 48/48、full 117/117、parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、governance 和 diff PASS。
+- gate: 已使用两轮 adversarial review；额外 closure review 未获授权，不能自动派发。
+- transition: `NEEDS_REVISION` -> `PAUSED`，属于 human-required wait。
+- boundary: 未验收、Git、部署、Adapter、route、可见页面、Transport wiring、CMS/数据库或 TASK-011。
+- next: 等待精确口令 `授权 TASK-010 进行一次额外独立 closure review`。
+
+## TASK-010 Adversarial Round 2 FAIL Recovery 2026-07-25T18:25:24Z
+
+- verdict: `FAIL / P0=0 / P1=1 / P2=0`；Planner final validation 不允许。
+- residual_p1: wrapper own instance/kind/brand/body snapshot 已固定，但 class prototype 和 prototype `body` getter 可修改；公开 seam 可被 prototype poisoning 改为返回伪造 body或通过新增 `toJSON` 泄漏完整 body。
+- p2: active task current evidence 已同步，Round 1 P2 关闭。
+- responses: Round 2 response 与 reviewer scope-recovery request 已 validate/ACK。
+- artifact_blocker: 请求的新 `ADVERSARIAL_REVIEW_ROUND2.md` 不在 reviewer hook 识别的精确 canonical write scope，写入被安全拒绝且未绕过；实质证据已保存在 reviewer worklog。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- boundary: 先授权 reviewer 只追加既有 canonical report；之后只允许 prototype integrity regression/fix，不启动 Adapter、页面、Transport wiring、CMS、Git、部署或 TASK-011。
+- next: 完成 review artifact recovery，再派发 frontend R3。
+
+## TASK-010 R2 Planner Checkpoint PASS 2026-07-25T18:20:06Z
+
+- response: `MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2-RESPONSE` 已 validate/ACK。
+- p1: wrapper 改为 caller-isolated deep-immutable snapshot，kind/brand/instance 固定；ordinary/revoked Proxy 均收敛为既有 stable errors。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 44/44、full 113/113、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage、governance 和 diff PASS。
+- p2: active task current evidence 保持与实际实现同步。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- boundary: 未验收、Git、部署、Adapter、route、可见页面、Transport wiring、CMS/数据库或 TASK-011。
+- next: 派发只复核 Round 1 P1/P2 和直接回归的 adversarial Round 2。
+
+## TASK-010 Wrapper Integrity R2 Dispatched 2026-07-25T18:11:55Z
+
+- message: `MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2` 已 validate、dry-run，通过 Codex thread bridge 投递到注册 frontend session 并标记 dispatched。
+- scope: caller-isolated deep-immutable payload snapshot、fixed wrapper kind/instance integrity、success/error public-seam RED/GREEN 和直接 frontend 文档。
+- protected: registry、errors、contract、Transport、src/app、package/lock、root README、CMS、环境和 Planner state 不得修改。
+- next: 等待关联 execution response，Planner fresh checkpoint 后再请求 Round 2。
+
+## TASK-010 Adversarial Round 1 FAIL Recovery 2026-07-25T18:10:35Z
+
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`；Planner final validation 不允许。
+- p1: validated wrapper 保留 caller input 同一引用，嵌套 body 与 runtime `kind` 可在校验后改写，使 validated token 与已验证事实脱钩。
+- p2: active task current Validation Evidence 停留在 intake；本恢复入口已同步实际 frontend/依赖/README 变更与保护范围。
+- responses: review response 与 reviewer stop-recovery request 已 validate/ACK。
+- transition_helper: `task_transition.py reopen` 按其 AWAITING_USER-only 前置条件安全拒绝且无 mutation；Planner 直接记录 `UNDER_REVIEW` -> `NEEDS_REVISION` recovery。
+- boundary: 只允许 caller-isolated deep-immutable snapshot、fixed wrapper integrity、success/error public regression 和直接文档同步；不启动 Adapter、route、页面、Transport wiring、CMS、Git、部署或 TASK-011。
+- next: 派发一次 frontend P1 修订；fresh Planner checkpoint 后请求 Round 2。
+
+## TASK-010 Adversarial Review Dispatched 2026-07-25T18:04:29Z
+
+- message: `MSG-TASK-010-ADVERSARIAL-REVIEW-R1` 已 validate、dry-run，通过 Codex thread bridge 投递到注册 reviewer session 并标记 dispatched。
+- focus: Schema rebasing/strict 语义、server-only public/deep imports、wrapper 伪造/可变性、错误泄漏、mutation 覆盖、依赖和禁止范围。
+- boundary: reviewer 对业务交付物只读；未验收、Git、部署、Adapter、route、可见页面、CMS/数据库或 TASK-011。
+- next: 等待关联 review response；verdict 前不执行 Planner final validation。
+
+## TASK-010 Planner Checkpoint PASS 2026-07-25T18:03:10Z
+
+- response: `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1-RESPONSE` 已 validate 并由 Planner ACK。
+- independent_validation: 固定 Node 24.18.0 / npm 11.16.0 下 focused 38/38、full 107/107、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage 和 diff PASS。
+- implementation: server-only 16-Schema Draft 2020-12 registry、success/error validators、opaque wrapper、stable sanitized errors 和文档已完成。
+- documentation: frontend README 和根 README 已同步；`document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- boundary: 未验收、commit、push、merge、部署、Adapter、route、可见页面、Transport wiring、CMS/数据库或 TASK-011。
+- next: 派发独立 adversarial review；收到 verdict 前不执行 Planner final validation。
+
+## TASK-010 Frontend Execution Dispatched 2026-07-25T17:47:59Z
+
+- design: `DESIGN.md` 已冻结 16-Schema 静态 registry、内部 URI rebasing、Draft 2020-12 strict/format 配置、public validation seams、opaque wrapper 和 stable errors。
+- dependencies: 直接依赖精确锁定候选为 `ajv@8.20.0` 与 `ajv-formats@3.0.1`，由 frontend Lane 安装后通过 Node 24、Next.js build 和 lockfile 验证。
+- message: `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1` 已 validate、dry-run，通过 Codex thread bridge 投递到注册 frontend session 并标记 dispatched。
+- transition: `READY` -> `IN_PROGRESS`。
+- boundary: 不实现 Adapter、route、可见页面、Transport wiring、CMS/数据库、视觉系统、Git 交付、部署或 TASK-011。
+- next: 等待关联 execution response；Planner 独立 checkpoint PASS 前不得派发 adversarial review。
+
+## TASK-010 Requirement Confirmation 2026-07-25T17:43:44Z
+
+- authorization: 用户精确输入 `确认 TASK-010 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- seams: 生产 public seam 为 success/error runtime validation 入口、opaque validated wrapper 与 stable contract error；测试只通过这些 public seams，不测试 Ajv 内部实现。
+- dependency_boundary: 默认直接依赖仅 `ajv` 与 `ajv-formats`；版本在设计阶段通过官方 registry、Node 24、Next.js build 和 lockfile 验证后冻结。
+- boundary: 不实现 Adapter、route、可见页面、Transport wiring、CMS/数据库、视觉系统、Git 或部署。
+- next: 创建 `DESIGN.md` 与 `IMPLEMENTATION_PLAN.md`，校验范围后派发受控 frontend execution request。
+
+## TASK-010 Intake 2026-07-25T17:25:35Z
+
+- delivery_baseline: 本地 `main`、`origin/main` 与远端 TASK-009 分支均为 `dd07662698744b90a0c810a0d1f9342109eb1a22`；intake 前工作区干净。
+- previous_task: TASK-009 同步为 `CLOSED / MERGED` 并归档。
+- branch: 从同步 `main` 创建 `codex/TASK-010-cms-runtime-schema-validator`。
+- scope: 只实现前端拥有的 Draft 2020-12 Schema registry、success/error runtime validator、opaque validated wrapper、stable contract errors、mutation tests 和文档。
+- dependency_candidate: 默认仅允许 `ajv` 与 `ajv-formats`；精确版本和兼容性在需求确认后的设计阶段验证。
+- boundary: 不实现 Adapter、React route、可见页面、Transport 接线、CMS/数据库修改、视觉系统、Git 交付或部署。
+- next: 等待 `确认 TASK-010 需求并开始执行`。
 
 ## TASK-009 Formal Delivery Authorized 2026-07-25T17:16:01Z
 

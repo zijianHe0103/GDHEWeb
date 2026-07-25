@@ -1,0 +1,37 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-010",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T18:11:28Z",
+  "requires_response_to": "MSG-TASK-010-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "先读取并 ACK 本 execution_request，再只修复 Adversarial Round 1 P1。先通过 public seam 新增 RED：success 和 error 校验成功后，修改原 input 不得改变 wrapper.body；wrapper.body 的嵌套数据不得被改写；wrapper.kind 与 wrapper 实例不得被改写；保留再次验证仍通过、keys/spread/JSON 仍不泄漏 body 的断言。最小实现必须在成功验证边界创建与 caller 隔离的 payload snapshot，并在返回和未来 Adapter 消费期间保持深度不可变，同时固定 kind、brand 和实例完整性。对非可克隆输入的失败必须仍收敛到既有 stable CmsContractError，不泄漏 DOMException、raw payload 或 Ajv diagnostics。success/error 两个入口都覆盖。仅允许修改 frontend/src/lib/cms/server/validation/index.ts、frontend/tests/cms-runtime-validator.test.ts、frontend/README.md、TASKS/ARTIFACTS/TASK-010/ 中现有 execution evidence 的 R2 追加或新 revision report，以及 frontend lane worklog。不得修改 registry、errors、contract snapshot、Transport、src/app、package/lock、root README、Planner 状态、CMS 或环境。完成后 fresh 跑 focused/full/parity/lint/typecheck/build、依赖/范围/泄漏/residue/diff 门禁，发送关联 execution_response。不要 review、验收、commit、push、merge、部署或 TASK-011。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-010-cms-runtime-schema-validator.md",
+    "TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-010/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-010/PLANNER_CHECKPOINT.md",
+    "frontend/src/lib/cms/server/validation/index.ts",
+    "frontend/tests/cms-runtime-validator.test.ts",
+    "frontend/README.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-010/REVISION_ROUND1_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-010/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-010/DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Narrow P1 revision only; Planner has already synchronized the P2 task evidence.",
+  "dispatched_at": "2026-07-25T18:11:49Z",
+  "delivery_key": "MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T18:12:11Z",
+  "updated_at": "2026-07-25T18:12:11Z"
+}

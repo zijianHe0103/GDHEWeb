@@ -44,3 +44,7 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 ### 前端 server-only `/resolve` Transport
 
 前端已建立英语 Schema 3 `/resolve` 的 server-only 匿名只读 Transport，并通过真实 Next.js Client Component 导入负例验证隔离。运行时使用 `WORDPRESS_API_URL`；本地明文 loopback 必须带显式端口，生产 CMS 使用 HTTPS。返回 JSON 仍为 `unknown`，当前不包含 Validator、DTO Adapter 或可见页面；配置、测试与验证命令见 [`frontend/README.md`](frontend/README.md#server-only-cms-transport)。
+
+### 前端 server-only Runtime Validator
+
+前端已使用精确锁定的 Ajv Draft 2020-12 校验 TASK-008 的 16-Schema 本地闭包，并为成功和错误 payload 提供 server-only 运行时入口、opaque validated wrapper 与稳定的非泄漏错误语义。它只负责把不可信网络 JSON 校验为后续 Adapter 可接收的包装对象，尚未接入 Transport、DTO Adapter 或可见页面；聚焦测试和使用边界见 [`frontend/README.md`](frontend/README.md#server-only-cms-runtime-validator)。

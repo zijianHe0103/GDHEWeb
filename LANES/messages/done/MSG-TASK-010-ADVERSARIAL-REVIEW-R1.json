@@ -1,0 +1,43 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-010-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-010",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T18:04:04Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "先读取并 ACK 本 review_request，再进行一次只读、独立、对抗式 TASK-010 审核。不得修改 frontend 产品代码、测试、依赖、README、Planner 状态或其他业务交付物；只可写 TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md、自身 lane 记录，并通过 lane_message.py 返回关联 review_response。逐条复核活动任务验收标准、DESIGN、实现计划、execution evidence 和 Planner checkpoint；必须实际检查代码、测试、lockfile 和范围，不能只复述报告。重点挑战：16-Schema 静态闭包与内部 id rebasing 是否保持冻结合同语义；in-memory strictTypes annotations 是否扩大或缩小语义；Ajv strict/formats/fail-closed/compile-once；public 与 deep server-only 边界；opaque wrapper 的结构伪造、序列化、原始引用可变性；unsupported/invalid error 分类；raw payload、Ajv errors、CMS origin、credential、schema path 泄漏；mutation matrix 缺口；依赖和保护范围。输出明确 PASS 或 FAIL，以及 P0/P1/P2 计数；任何 P1 必须给出可复现证据和最窄修订建议。不要修复、验收、commit、push、merge、部署或启动 TASK-011。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-010-cms-runtime-schema-validator.md",
+    "TASKS/ARTIFACTS/TASK-010/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-010/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-010/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-010/DIFF_OR_OUTPUT_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-010/PLANNER_CHECKPOINT.md",
+    "frontend/src/lib/cms/server/validation/index.ts",
+    "frontend/src/lib/cms/server/validation/registry.ts",
+    "frontend/src/lib/cms/server/validation/errors.ts",
+    "frontend/tests/cms-runtime-validator.test.ts",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "frontend/README.md",
+    "README.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Read-only review; no product fixes or acceptance.",
+  "dispatched_at": "2026-07-25T18:04:25Z",
+  "delivery_key": "MSG-TASK-010-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T18:05:21Z",
+  "updated_at": "2026-07-25T18:05:21Z"
+}

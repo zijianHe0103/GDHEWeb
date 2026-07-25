@@ -108,3 +108,22 @@ npm run typecheck
 npm test
 npm run build
 ```
+
+## Server-only CMS Runtime Validator
+
+`src/lib/cms/server/validation/` is the runtime contract gate between unknown network JSON and a future DTO Adapter. It statically imports the TASK-008 16-Schema snapshot closure and compiles the Page Schema 3 success root plus the common error root once with Draft 2020-12 strict validation. `ajv@8.20.0` and `ajv-formats@3.0.1` are exact production dependencies; date, date-time and URI formats are enabled.
+
+Server code must explicitly choose `validateCmsSuccessPayload(input)` or `validateCmsErrorPayload(input)`. A successful call creates a caller-isolated, deeply immutable payload snapshot and returns it in an opaque, frozen `ValidatedCmsPayload` wrapper. The wrapper has no mutable shared prototype: its fixed kind remains enumerable, its private body getter cannot be replaced, and its fixed kind-only JSON serialization cannot be overridden through prototype pollution. The body is omitted from enumeration, object spread and JSON serialization. Unsupported versions, invalid bodies and inputs that cannot form a safe snapshot throw `CmsContractError` with stable `category` and `kind` fields; raw payloads, clone exceptions and Ajv diagnostics are not exposed.
+
+The Validator consumes only the local contract snapshot. It does not read WordPress, the filesystem, environment variables or remote Schema references, and it does not call the Transport. It is not a DTO Adapter, React prop, route, visible page, cache, Preview path or live WordPress E2E.
+
+Run its focused and normal gates with:
+
+```sh
+npm test -- tests/cms-runtime-validator.test.ts
+npm run verify:cms-contract
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```

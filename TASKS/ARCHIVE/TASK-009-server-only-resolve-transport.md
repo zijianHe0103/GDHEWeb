@@ -2,7 +2,7 @@
 accepted_at: 2026-07-25T17:16:01Z
 
 task_id: TASK-009
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
@@ -11,7 +11,7 @@ artifacts_dir: TASKS/ARTIFACTS/TASK-009
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-25T16:47:35Z
 resumed_at: 2026-07-25T15:48:23Z
-git_status: DIRTY
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -140,7 +140,7 @@ project_type: software
 
 ## 当前状态
 
-用户已输入精确正式交付口令；`acceptance_state` 已受控更新为 `ACCEPTED`。当前执行正式提交、任务分支推送、快进合并到 `main` 和推送 `main`。
+任务已正式验收、提交、推送任务分支、快进合并并推送至远端 `main`。正式提交为 `dd07662698744b90a0c810a0d1f9342109eb1a22`，本地 `main`、`origin/main` 与远端任务分支已验证一致。
 
 ## 恢复入口
 
@@ -148,7 +148,7 @@ project_type: software
 
 ## 下一步
 
-创建包含中文任务内容、主要变更、验证结果和文档更新的正式提交；随后推送任务分支、快进合并到 `main` 并推送 `main`。不部署或创建 TASK-010。
+任务已归档。后续只允许在独立任务中实现 Runtime Schema Validator、DTO Adapter 和可见技术验证页面；不得把本任务的 Transport 误称为已完成的前端界面。
 
 ## Lane Plan
 

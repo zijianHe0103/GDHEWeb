@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-010-ADVERSARIAL-REVIEW-R2",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-010",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T18:20:51Z",
+  "requires_response_to": "MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "先读取并 ACK 本 review_request，再进行只读 adversarial Round 2。范围严格限定为 Round 1 P1、P2 及直接回归：复现并确认 success/error wrapper 已与 caller input 隔离、body 深度不可变、kind/brand/instance 固定、再次验证保持有效、keys/spread/JSON 不泄漏；确认 ordinary/revoked Proxy 等 snapshot failure 只返回既有 stable CmsContractError；确认 active task current Validation Evidence 已同步；确认 registry/errors/package/lock/contract/Transport/src-app/CMS 等受保护范围和 server-only/依赖/泄漏门禁无回归。不得重新扩展到不相关设计或未来 Adapter/页面。必须实际检查实现并独立运行必要测试。写 TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_ROUND2.md，返回明确 PASS 或 FAIL 与 P0/P1/P2 计数，并通过 lane_message.py 发送关联 review_response。不得修改业务交付物、Planner 状态、验收、Git、部署或 TASK-011。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-010/REVISION_ROUND1_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-010/PLANNER_REVISION_CHECKPOINT.md",
+    "TASKS/ACTIVE/TASK-010-cms-runtime-schema-validator.md",
+    "frontend/src/lib/cms/server/validation/index.ts",
+    "frontend/tests/cms-runtime-validator.test.ts",
+    "frontend/README.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_ROUND2.md"
+  ],
+  "notes": "Round 2 is narrow: only Round 1 P1/P2 and direct regressions.",
+  "dispatched_at": "2026-07-25T18:21:09Z",
+  "delivery_key": "MSG-TASK-010-ADVERSARIAL-REVIEW-R2:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T18:21:24Z",
+  "updated_at": "2026-07-25T18:21:24Z"
+}

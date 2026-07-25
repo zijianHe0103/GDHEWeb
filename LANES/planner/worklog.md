@@ -1154,3 +1154,116 @@ Each execution records:
 - delivery: one formal Chinese commit，push task branch，fast-forward merge into `main`，push `main`，verify remote ancestry。
 - boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-010。
 - next: run final delivery integrity checks，then execute the authorized Git chain。
+
+### 2026-07-25T17:25:35Z - TASK-009 delivered; TASK-010 intake
+
+- delivery_verified: local main、origin/main and remote TASK-009 branch all point to `dd07662698744b90a0c810a0d1f9342109eb1a22`；working tree clean before intake。
+- switch: TASK-009 synchronized as CLOSED / MERGED and archived；created `codex/TASK-010-cms-runtime-schema-validator` from synchronized main。
+- intake: only Draft 2020-12 runtime Schema registry/validation、opaque validated wrapper、stable contract errors、mutation tests and docs；default direct dependencies limited to `ajv` and `ajv-formats` pending confirmation/design verification。
+- boundary: no Adapter、route、visible page、Transport wiring、CMS/database、visual system、Git delivery or deployment。
+- next: wait for exact `确认 TASK-010 需求并开始执行`。
+
+### 2026-07-25T17:43:44Z - TASK-010 requirements confirmed
+
+- authorization: exact phrase `确认 TASK-010 需求并开始执行` received。
+- transition: AWAITING_REQUIREMENT_CONFIRMATION to READY。
+- seams: public success/error validator、opaque validated wrapper and stable contract error；tests must use public seams and canonical independent samples。
+- dependency_boundary: only direct candidates `ajv` and `ajv-formats`；freeze exact versions after official registry/toolchain verification。
+- boundary: no Adapter、route、visible page、Transport wiring、CMS/database、visual system、Git or deployment。
+- next: create design and RED-GREEN plan，then dispatch controlled frontend execution。
+
+### 2026-07-25T17:47:59Z - TASK-010 frontend execution dispatched
+
+- design: froze the 16-Schema static registry、internal URI rebasing、Draft 2020-12 strict/format settings、public seams、opaque wrapper and stable errors。
+- dependencies: exact direct candidates `ajv@8.20.0` and `ajv-formats@3.0.1` verified from official npm registry metadata。
+- message: `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1` validated、dry-run resolved to the registered frontend session、delivered through the Codex thread bridge and marked dispatched。
+- transition: READY to IN_PROGRESS。
+- boundary: no Adapter、route、visible page、Transport wiring、CMS/database、Git、deployment or TASK-011。
+- next: wait for the linked execution response；Planner checkpoint PASS before adversarial review。
+
+### 2026-07-25T18:03:10Z - TASK-010 Planner checkpoint PASS
+
+- response: frontend execution response validated and acknowledged。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 38/38、full 107/107、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage and diff PASS。
+- documentation: frontend README and root README synchronized；document impact RESOLVED、README impact UPDATED。
+- transition: IN_PROGRESS to UNDER_REVIEW。
+- boundary: no acceptance、Git、deployment、Adapter、route、visible page、Transport wiring、CMS/database or TASK-011。
+- next: dispatch read-only adversarial review。
+
+### 2026-07-25T18:04:29Z - TASK-010 adversarial review dispatched
+
+- message: `MSG-TASK-010-ADVERSARIAL-REVIEW-R1` validated、dry-run resolved to the registered reviewer session、delivered through the Codex thread bridge and marked dispatched。
+- focus: Schema rebasing/strict semantics、server-only public/deep imports、wrapper forgery/mutability、error leakage、mutation coverage、dependency and protected scope。
+- boundary: read-only review；no acceptance、Git、deployment or later features。
+- next: wait for the linked review response。
+
+### 2026-07-25T18:10:35Z - TASK-010 Round 1 FAIL recovery
+
+- verdict: FAIL；P0=0、P1=1、P2=1；review response and stop-recovery request validated and acknowledged。
+- p1: wrapper retains caller input reference and permits runtime kind/body mutation after validation。
+- p2: active task current Validation Evidence was stale；synchronized in this recovery entry。
+- helper: controlled reopen safely refused because it only accepts AWAITING_USER；no helper mutation。
+- transition: UNDER_REVIEW to NEEDS_REVISION。
+- boundary: only caller-isolated deep-immutable snapshot、fixed wrapper integrity、success/error regression and direct docs；no later features or Git。
+- next: dispatch one narrow frontend revision。
+
+### 2026-07-25T18:11:55Z - TASK-010 wrapper integrity R2 dispatched
+
+- message: `MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2` validated、delivered and marked dispatched。
+- scope: caller-isolated deep-immutable snapshot、fixed wrapper kind/instance integrity、success/error public RED/GREEN and direct frontend docs。
+- protected: no registry、errors、contract、Transport、src/app、package/lock、root README、CMS、environment or Planner-state changes。
+- next: wait for linked execution response and rerun the checkpoint。
+
+### 2026-07-25T18:20:06Z - TASK-010 R2 Planner checkpoint PASS
+
+- response: R2 execution response validated and acknowledged。
+- p1_closed: caller-isolated deep-immutable snapshot、fixed kind/brand/instance and stable ordinary/revoked Proxy errors。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 44/44、full 113/113、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage、governance and diff PASS。
+- p2_closed: active task current evidence synchronized。
+- transition: NEEDS_REVISION to UNDER_REVIEW。
+- next: dispatch narrow adversarial Round 2。
+
+### 2026-07-25T18:25:24Z - TASK-010 Round 2 FAIL recovery
+
+- verdict: FAIL；P0=0、P1=1、P2=0；response and scope-recovery request validated and acknowledged。
+- residual_p1: mutable shared prototype permits replacing body getter or adding a body-leaking toJSON despite frozen own instance。
+- p2: closed。
+- artifact_blocker: new Round 2 filename was rejected by reviewer write scope；no bypass；evidence preserved in reviewer worklog。
+- transition: UNDER_REVIEW to NEEDS_REVISION。
+- next: authorize append to canonical review report，then dispatch prototype-integrity R3 only。
+
+### 2026-07-25T18:36:00Z - TASK-010 R3 checkpoint; extra review gate
+
+- artifact_recovery: canonical adversarial report now preserves full Round 2 FAIL；recovery response acknowledged。
+- response: R3 execution response validated and acknowledged。
+- implementation: frozen null-prototype wrapper with fixed own body getter、kind-only toJSON、kind and brand。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 48/48、full 117/117、parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、governance and diff PASS。
+- gate: two adversarial rounds consumed；extra closure review requires explicit user authorization。
+- transition: NEEDS_REVISION to PAUSED。
+- next: wait for exact `授权 TASK-010 进行一次额外独立 closure review`。
+
+### 2026-07-25T18:41:15Z - TASK-010 extra closure review authorized and dispatched
+
+- authorization: exact user phrase received。
+- message: `MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3` validated、delivered and marked dispatched。
+- scope: Round 2 prototype-integrity P1、Round 1 P2 closure and direct regressions only。
+- transition: PAUSED to UNDER_REVIEW。
+- boundary: read-only review；no acceptance、Git、deployment or later features。
+- next: wait for linked closure review response。
+
+### 2026-07-25T18:45:33Z - TASK-010 closure PASS and final validation
+
+- review: closure response and recovery request validated and acknowledged；final PASS，P0=0、P1=0、P2=0。
+- closure: Round 2 prototype-integrity P1 closed；Round 1 P2 remains closed。
+- final_validation: Node 24.18.0 / npm 11.16.0 focused 48/48、full 117/117、parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、messages、project/strict lane and diff PASS。
+- summary: Planner final summary generated。
+- boundary: NOT_ACCEPTED / DIRTY；no Git、deployment or later features。
+- next: checked prepare-awaiting-user only。
+
+### 2026-07-25T19:08:41Z - TASK-010 formal delivery authorized
+
+- authorization: exact phrase accepted by controlled task-accept check and transition。
+- acceptance: ACCEPTED；final PASS，P0=0、P1=0、P2=0。
+- delivery: one formal Chinese commit、push task branch、fast-forward merge to main、push main、verify remote ancestry。
+- boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-011。
+- next: run final delivery integrity checks，then execute the authorized Git chain。

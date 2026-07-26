@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T19:19:40Z",
+  "requires_response_to": "",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "先 ACK，再按 DESIGN 和 IMPLEMENTATION_PLAN 只执行 Phase A1。你负责 frontend 内最小 DTO、Adapter、server-only integration config 与 orchestration、integration/cms 技术 route、聚焦测试和直接文档。严格 TDD，先记录真实 RED 再最小 GREEN。不得创建 WordPress Fixture、运行 live E2E、修改 CMS、合同快照、既有 Transport 或 Validator 语义、根页面、全局样式、package 或 lockfile、env.local。不得 commit、push、merge、部署或启动 A2。你并非独自在代码库中工作；保留 Planner 和其他 Lane 已有修改，不得回退。完成后写 A1 execution、validation、diff artifacts 和 frontend worklog，并通过受控 execution_response 回传 Planner。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-011-minimal-cms-integration-page.md",
+    "TASKS/ARTIFACTS/TASK-011/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-011/IMPLEMENTATION_PLAN.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "A1 only; live Fixture remains blocked until Planner checkpoint PASS.",
+  "dispatched_at": "2026-07-25T19:20:08Z",
+  "delivery_key": "MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T19:20:19Z",
+  "updated_at": "2026-07-25T19:20:19Z"
+}

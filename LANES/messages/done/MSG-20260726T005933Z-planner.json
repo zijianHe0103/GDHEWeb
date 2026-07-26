@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-20260726T005933Z-planner",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-26T00:59:33Z",
+  "requires_response_to": "MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-011 Round 1 sole P1 revision is complete pending Planner checkpoint. Strict TDD reproduced the real Adapter bypass first: the focused Adapter RED had exactly 3 failures and 4 passes; raw success and authentic error wrappers raised native TypeError while an ordinary structural success object was accepted. The minimal fix adds a Validator-module-private WeakSet that registers only createValidatedPayload wrappers, exposes a success-body identity/kind accessor through the existing success-validator export without changing the Validator top-level export set, and makes the Adapter read only through that accessor. Raw payload, ordinary structural object and authentic error wrapper now all throw the existing stable CmsContractError invalid_success_payload with no input/title/body/diagnostics leakage. Canonical Home/Product still produce exact frozen DTOs. No second Schema validation was added; orchestration remains one Transport request, one success validation and one Adapter call. Fresh Node 24.18.0 validation: Adapter 7/7, focused Adapter/Validator/orchestration/server-only 85/85, full Vitest 158/158, contract parity 16/2/2, lint, typecheck, dynamic build, unchanged dependencies, production audit zero, protected hashes, server-only, leakage, residue, diff and DPG project/message/strict lane all PASS. .next, tsconfig cache, resume packet and temporary residue were removed; ports 3211/8080 are closed. Only the three authorized product/test files, Round 1 report, three direct A1 evidence addenda and frontend worklog changed. No Round 2 review, acceptance, Git, deployment or later task was started.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_REPORT.md"
+  ],
+  "notes": "Unique next step: Planner acknowledges this response, independently reproduces the runtime forgery closure and fresh gates, then alone decides whether to dispatch narrow Round 2 review.",
+  "done_at": "2026-07-26T01:00:23Z",
+  "updated_at": "2026-07-26T01:00:23Z"
+}

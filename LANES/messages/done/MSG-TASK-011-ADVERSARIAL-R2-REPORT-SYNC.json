@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC",
+  "type": "recovery_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-07-26T01:10:06Z",
+  "requires_response_to": "MSG-TASK-011-ADVERSARIAL-REVIEW-R2-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "这不是新 review round，也不得重新审查或改变 R2 verdict。请先 ACK，只同步 canonical TASK-011 ADVERSARIAL_REVIEW_REPORT.md 顶部当前 Outcome：当前 top metadata 已为 review_round 2 / PASS / P0=P1=P2=0，但紧接的 Outcome 仍声称任务不满足边界和 P1 阻断，与 final verdict 自相矛盾。将顶部 Outcome 最小改为 Round 2 final PASS、Round 1 P1 已关闭、Planner final validation allowed；保留后续完整 Round 1 FAIL 历史和 Round 2 证据，不删除或改写历史 findings。仅允许修改该 canonical report、reviewer worklog和受控 response。不得改业务代码、tests、Planner state、其他 evidence、review count、verdict、Git或部署。完成后发送关联 recovery_response或等价受控 response。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-011/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Pure canonical report consistency recovery after final PASS; not an extra review round.",
+  "dispatched_at": "2026-07-26T01:10:23Z",
+  "delivery_key": "MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-07-26T01:10:27Z",
+  "updated_at": "2026-07-26T01:10:27Z"
+}

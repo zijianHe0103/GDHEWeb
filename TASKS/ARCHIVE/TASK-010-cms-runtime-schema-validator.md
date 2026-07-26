@@ -2,14 +2,14 @@
 accepted_at: 2026-07-25T19:08:41Z
 
 task_id: TASK-010
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-010
 acceptance_state: ACCEPTED
-git_status: DIRTY
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -155,7 +155,7 @@ project_type: software
 
 ## 当前状态
 
-`AWAITING_USER / ACCEPTED / DIRTY`。用户精确正式交付口令已通过 `task_accept.py check/accept`；最终 review 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation 和文档门禁保持通过。当前已授权正式提交、任务分支推送、快进合并到 `main` 并推送 `main`。
+任务已正式验收、提交、推送任务分支、快进合并并推送远端 `main`。正式提交为 `a89bb4de91e63dce2f9960e31b1cd39cae58f335`，本地 `main`、`origin/main` 与远端任务分支已验证一致。
 
 ## 恢复入口
 
@@ -163,13 +163,13 @@ project_type: software
 
 ## 下一步
 
-执行提交前完整性检查，创建一条包含完整中文说明的正式提交；随后立即推送当前任务分支、快进合并到 `main` 并推送 `main`，最后验证远端 ancestry。不得部署或启动 TASK-011。
+任务已归档。后续只允许在独立任务中实现最小 Adapter、Transport/Validator 编排和显式开启的本地可见集成页。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 任务接收、依赖/范围冻结、门禁、独立验证、审查派发和最终汇报 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**` | task state、设计/计划、checkpoint、Planner Summary | accepted; formal delivery authorized |
+| planner | 任务接收、依赖/范围冻结、门禁、独立验证、审查派发和最终汇报 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**` | task state、设计/计划、checkpoint、Planner Summary | CLOSED; MERGED |
 | frontend | 测试先行实现 Draft 2020-12 registry、runtime validator、validated wrapper、typed contract errors、测试和 docs | 本任务允许的 `frontend/**`、TASK-010 artifacts、lane records | implementation、execution report、validation evidence | R3 execution complete |
 | adversarial_reviewer | 只读挑战 Schema 闭包、strict/format、错误泄漏、server-only、依赖和范围 | TASK-010 review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | closure PASS; P0/P1/P2=0 |
 

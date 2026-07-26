@@ -342,3 +342,32 @@ Each execution records:
 - scope_boundary: no frontend, WordPress Core, SCF source, theme, GraphQL, multilingual, real content, production media-origin/Next Image work, deployment, review, commit, push, merge, acceptance or closure change
 - result: the single P1 and two P2 findings are locally closed with reproducible runtime evidence; Planner fresh validation and A3 Round 2 remain external gates
 - next: send controlled execution_response requiring MSG-TASK-007-WORDPRESS-FOREST-SCHEMA3-REVIEW-R1-FIX; Planner acknowledges and independently validates before dispatching Round 2
+
+### 2026-07-25T19:41:24Z - TASK-011 Phase A2 Fixture window open
+
+- task: TASK-011 Phase A2 only
+- message: MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2
+- authorization: acknowledged only after the queued message showed formal Planner dispatch to this registered session; A1 Planner checkpoint had already passed
+- pre_create_gate: branch codex/TASK-011-minimal-cms-integration-page; WordPress 7.0.2; PHP 8.3.32; gdhe-site 0.4.2 active; SCF 6.9.2 active; database check PASS; A3 post slugs, marker meta, fixture terms, manifest option and uploads all zero
+- fixture: existing TASK-007-A3-REVIEW-R1 create/show manifests matched; 18 temporary posts, one attachment, five terms and one upload; show SHA-256 d07b743d5a05e8d9c6a1cc8220d729f47415af5fb9b883b157685b9b31c9b71d
+- anonymous_resolve: runtime base http://127.0.0.1:8080; public path /; unauthenticated English Schema 3 resolve returned HTTP 200 with API 1, Schema 3.0.0, page/standard, stable UUID and one module
+- handoff: temporary A3 Fixture and loopback WordPress runtime remain live for frontend Phase A3; no early cleanup performed
+- cleanup_owner: wordpress_cms must execute Phase A4 cleanup after the frontend controlled response, including failure paths, stop the temporary runtime and prove zero residue
+- artifact: TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md
+- scope_boundary: no CMS source, Schema, plugin, database structure, permanent content, user, configuration, frontend, Planner-owned task state, commit, push, merge or deployment change
+- next: send the controlled execution_response requiring MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2; wait for frontend A3 completion and a separate Planner dispatch before mandatory A4 cleanup
+
+### 2026-07-25T19:53:40Z - TASK-011 Phase A4 mandatory cleanup complete
+
+- task: TASK-011 Phase A4 only
+- message: MSG-TASK-011-WORDPRESS-A3-FIXTURE-CLEANUP-A4
+- authorization: acknowledged after formal Planner dispatch to the registered wordpress_cms session; frontend A3 report was PASS
+- pre_cleanup: TASK-007-A3-REVIEW-R1 manifest matched A2 SHA-256 d07b743d5a05e8d9c6a1cc8220d729f47415af5fb9b883b157685b9b31c9b71d; 18 fixture posts, one revision, one attachment/upload, five terms, 19 marker meta and one manifest option; PID 54060 listened on loopback 8080
+- cleanup: existing wp gdhe a3-fixtures cleanup removed 18 posts, one attachment and five terms; attachment deletion removed the upload
+- zero_residue: manifest [], fixture posts 0, revisions 0, attachment/uploads 0, marker meta 0, relationships 0, terms 0 and manifest option 0; former root Fixture returned expected HTTP 404 before shutdown
+- integrity: WordPress Core 7.0.2 checksum PASS; official SCF 6.9.2 checksum PASS; GDHE Site 0.4.2 and SCF active; database check PASS; PHP 8.3.32; 17/17 plugin PHP lint and 30/30 plugin JSON parse PASS; GDHE Site tracked diff and CMS plugin scoped status empty
+- runtime_shutdown: WP-CLI PHP PID 54060 stopped; port 8080 listeners 0; loopback HTTP connection refused as expected
+- artifact: TASKS/ARTIFACTS/TASK-011/A4_CLEANUP_REPORT.md
+- scope_boundary: no CMS source, Schema, plugin, database structure, permanent content, user, configuration, frontend, Planner-owned task state, review, commit, push, merge, acceptance, closure or deployment change
+- result: Phase A4 PASS; Fixture window closed and cleanup responsibility fully discharged
+- next: send controlled execution_response requiring MSG-TASK-011-WORDPRESS-A3-FIXTURE-CLEANUP-A4; Planner independently validates before any review dispatch

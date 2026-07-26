@@ -33,6 +33,8 @@ Open `http://localhost:3000`. The example values are deliberately non-production
 
 - `NEXT_PUBLIC_SITE_URL`: public canonical site origin. Only this variable is exposed to browser code.
 - `WORDPRESS_API_URL`: server-only WordPress REST API base consumed by the CMS Transport. Use a REST base ending exactly in `/wp-json`, such as `http://127.0.0.1:8080/wp-json` locally or `https://cms.example.com/wp-json` in production.
+- `GDHE_ENABLE_CMS_INTEGRATION_PAGE`: server-only technical-route gate. Only the exact value `1` enables `/integration/cms`; every other value keeps it unavailable.
+- `GDHE_CMS_INTEGRATION_PATH`: server-only canonical English public path consumed by the technical route. It is ignored while the route is disabled and cannot be overridden by browser input.
 
 Cleartext HTTP is accepted only for `localhost`, `127.0.0.1`, and IPv6 loopback with an explicit port, such as `:8080`. Non-loopback CMS origins require HTTPS. Credentials, query strings, fragments, non-HTTP protocols, and non-REST base paths fail closed before a request is sent.
 
@@ -102,6 +104,23 @@ This Transport is not a runtime Schema Validator, DTO Adapter, cache, Preview pa
 
 ```sh
 npm test -- tests/cms-transport.test.ts
+npm run verify:cms-contract
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```
+
+## Offline CMS integration vertical slice
+
+`src/lib/cms/server/adapter/` and `src/lib/cms/server/integration/` connect the existing Transport and Runtime Validator to one frontend-owned immutable DTO. The no-argument orchestration entry reads only server-owned configuration, performs one `/resolve` request, validates the unknown success or error body, and adapts only validated success data. Only an agreed Transport 404 plus validated error status `404` and code `gdhe_not_found` becomes the route's not-found result; every other failure remains non-404.
+
+`/integration/cms` is a local technical Server Component, not a public page template or the production homepage. It is disabled unless `GDHE_ENABLE_CMS_INTEGRATION_PAGE=1`, uses only `GDHE_CMS_INTEGRATION_PATH`, renders a small plain-text DTO summary, and exports `noindex, nofollow`. It does not accept browser path or CMS-origin input, render `safeHtml` or media, fetch from a Client Component, or expose raw JSON and Transport metadata.
+
+The offline A1 checks use canonical snapshots and loopback HTTP only. They do not create a WordPress Fixture or run the separately gated live E2E phase:
+
+```sh
+npm test -- tests/cms-integration-adapter.test.ts tests/cms-integration-orchestration.test.ts tests/cms-integration-route.test.ts tests/cms-integration-server-only.test.ts
 npm run verify:cms-contract
 npm run lint
 npm run typecheck

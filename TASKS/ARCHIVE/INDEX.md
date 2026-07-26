@@ -42,3 +42,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`dd07662698744b90a0c810a0d1f9342109eb1a22`
   - Remote branch：`origin/codex/TASK-009-server-only-resolve-transport`
   - Main：`origin/main` at `dd07662698744b90a0c810a0d1f9342109eb1a22`
+- `TASK-010` 英语版 CMS Runtime Schema Validator 基础 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-010-cms-runtime-schema-validator.md`
+  - Commit：`a89bb4de91e63dce2f9960e31b1cd39cae58f335`
+  - Remote branch：`origin/codex/TASK-010-cms-runtime-schema-validator`
+  - Main：`origin/main` at `a89bb4de91e63dce2f9960e31b1cd39cae58f335`

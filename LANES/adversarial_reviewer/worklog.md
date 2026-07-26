@@ -537,3 +537,45 @@ Each execution records:
 - message_status: closure request acknowledged as done; controlled closure PASS review_response queued to Planner
 - stop_recovery: controlled recovery request queued because Planner-owned task and project state remain UNDER_REVIEW; reviewer did not edit them or run a transition
 - next: Planner acknowledges the PASS response and owns review recovery, final validation and checked acceptance preparation
+
+### 2026-07-25T20:03:24Z - TASK-011 adversarial review round 1
+
+- task: TASK-011
+- message: MSG-TASK-011-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, then independently reviewed the active acceptance criteria, design and plan, A1 through A4 evidence, unified execution evidence, Planner checkpoint, actual implementation, tests, screenshots, protected diff and current WordPress residue without repairing deliverables
+- files_changed: TASK-011 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: fixed Node.js 24.18.0 and npm 11.16.0; focused 39/39, full 155/155, 16-Schema parity, lint, typecheck, production build and next-start smoke passed; 1440 and 390 screenshots inspected; current fixture manifest, database, uploads and ports independently show zero A3 residue; protected diff and whitespace check passed
+- result: FAIL; P0 none; P1 one; P2 none; Planner final validation not allowed
+- p1: exported production Adapter directly trusts validated.body; an ordinary object with no TASK-010 private brand was independently accepted at runtime and projected into a frozen DTO, while the current negative test is compile-time-only inside if-false
+- passed_boundaries: ordinary one-request/one-validation/one-Adapter route; validated 404 agreement; default-off server configuration and canonical path; server-only Client build guards; DTO/browser/log leakage boundaries; live WordPress E2E; screenshot readability; A4 cleanup; dependencies, protected files, README and non-goals
+- cleanup_blocker: the required review build generated ignored frontend build and TypeScript cache artifacts; exact cleanup was rejected by the governance hook as outside reviewer write scope, so no workaround was used and Planner must remove only those reviewer-generated artifacts during controlled FAIL recovery
+- boundaries: no product, test, dependency, README, CMS, database or Planner-state repair; no Fixture creation, long-running service, acceptance, Git, deployment or later-task work
+- message_status: original request acknowledged as done; linked FAIL review_response and Planner-owned recovery/cleanup request queued; controlled message validation passed
+- next: Planner acknowledges both queued messages and owns NEEDS_REVISION recovery, narrow authorization, fresh validation and any Round 2 dispatch
+
+### 2026-07-26T01:06:43Z - TASK-011 adversarial review round 2 final
+
+- task: TASK-011
+- message: MSG-TASK-011-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the final narrow request first, preserved Round 1 history, and independently reviewed only the runtime Adapter-authenticity P1 plus direct regressions
+- files_read: canonical Round 1 report; revision plan, report and Planner checkpoint; active task current facts; validation index; production Adapter; direct tests; protected scope and current governance
+- files_changed: TASK-011 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- attack_matrix: real production seam rejected raw success, structural object, authentic error wrapper, ordinary Proxy, authentic-wrapper Proxy and full visible symbol/descriptor imitation as the same stable non-leaking invalid_success_payload
+- integrity: private WeakSet has one factory-only registration site and no exported registration seam; accessor is non-writable, non-configurable and non-enumerable; set, redefine, delete and ESM export replacement attempts failed; genuine DTO remained exact and frozen
+- regression: wrapper null prototype, frozen instance/body, kind-only keys and JSON, private brand and top-level runtime exports remained; accessor performs no second Schema validation; normal route remains one request, one validation and one Adapter
+- gates: Node.js 24.18.0 and npm 11.16.0; focused 85/85, full 158/158, 16/2/2 parity, lint, typecheck, dynamic production build, next-start smoke, dependency inventory/audit, protected scope, server-only/leakage, ports, project/messages/strict lane and diff passed
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed after controlled cleanup
+- cleanup_blocker: required reviewer build regenerated ignored frontend .next and tsconfig build cache; exact removal was rejected before execution by the reviewer write-scope hook, no workaround was used, and Planner must remove only those artifacts during PASS recovery
+- boundaries: no business deliverable, test, evidence, Planner state, CMS, database or Fixture modification; no repair, acceptance, Git, deployment or later task
+- message_status: original Round 2 request acknowledged as done; linked final PASS review_response and controlled recovery/cleanup request queued
+- next: Planner acknowledges both queued messages, performs exact cache cleanup and owns final validation plus checked acceptance preparation
+
+### 2026-07-26 - TASK-011 Round 2 canonical report consistency recovery
+
+- task: TASK-011
+- message: MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC
+- action: acknowledged the recovery request and synchronized only the canonical report top Outcome with the already recorded Round 2 PASS metadata
+- preserved: review round count, final PASS, P0/P1/P2 zero, complete Round 1 FAIL findings and all Round 2 closure evidence
+- boundaries: no new review, verdict change, business/test/evidence/Planner-state edit, Git or deployment
+- message_status: linked controlled recovery response queued and message validation passed
+- next: Planner acknowledges the response and retains final validation plus acceptance-preparation ownership

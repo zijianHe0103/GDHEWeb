@@ -464,3 +464,78 @@ Each execution records:
 - boundaries: no Adapter, page, review, acceptance, Git action, deployment or TASK-011
 - message_result: MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3-RESPONSE queued to Planner with requires_response_to MSG-TASK-010-FRONTEND-PROTOTYPE-INTEGRITY-R3; message validation PASS, and the post-send strict audit reports only the expected pending-queue notice
 - next: Planner acknowledges the response, independently checkpoints the single P1 closure and controls any further review
+
+### 2026-07-26T03:34:08+08:00 - TASK-011 Phase A1 offline vertical slice
+
+- task: TASK-011
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1
+- message_ack: exact A1 execution request read and acknowledged before product edits
+- phase_boundary: frontend offline A1 only; Planner's A2 WordPress Fixture message remains queued and blocked pending checkpoint
+- baseline: Node.js 24.18.0/npm 11.16.0; parity, lint, typecheck, full 117/117 and production build passed before implementation
+- adapter_red_green: missing Adapter module RED; minimal branded-wrapper-only frozen DTO projection reached 4/4
+- orchestration_red_green: missing integration entry RED; exact enable/path gate, one request, success/error validation, Adapter, validated 404 agreement and non-404 matrix reached 28/28
+- route_red_green: missing route RED; disabled notFound, controlled DTO rendering and noindex/nofollow reached 3/3
+- server_only_red_green: after correcting a 5000 ms test-harness timeout, deliberate deep marker removal produced the expected 1 failed/1 passed RED because the Client build succeeded; restored guard reached 2/2
+- environment_red_green: existing exact environment allowlist produced 1 failed/153 passed after approved A1 variables were added; minimal allowlist update restored GREEN
+- dynamic_red_green: production build initially classified the default-off route as static; route regression produced 1 failed/3 passed, then force-dynamic reached route 4/4 and request-time gate behavior
+- implementation: readonly 10-field DTO; server-only Adapter; exact default-off config; no-argument orchestration; stable integration errors; dynamic route-local technical page/CSS
+- production_smoke: real next start with loopback CMS proved disabled 404, enabled 200, root 200 in both modes, one fixed request and query input unable to change the upstream path
+- test_harness_corrections: production-smoke spawn changed from encoded URL pathname to fileURLToPath; browser query string was removed from HTML-exclusion assertions while fixed upstream URL remains asserted
+- residue_recovery: one 3.3 MB temporary build directory left by the intentional timed-out guard RED was verified with no live process and moved to macOS Trash; it is recoverable; final timeout is 30000 ms and all fresh scans show zero residue
+- final_validation: focused 38/38; full 155/155; parity 16/2/2; lint; typecheck; dynamic production build; production smoke; dependency inventory/audit; protected hashes; server-only/client/leakage/residue/diff; DPG project/messages PASS
+- governance_note: strict lane audit has only the expected medium QUEUE_MESSAGES_PENDING notice for Planner's blocked A2 message
+- docs: frontend env example and README updated; root README remains Planner-owned because it is outside frontend write scope
+- artifacts: TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md; A1_TEST_OR_VALIDATION_LOG.md; A1_DIFF_OR_OUTPUT_SUMMARY.md
+- protected_scope: package/lock, root page/layout/global CSS, contracts, TASK-009 Transport/config/errors/public entry/URL, TASK-010 Validator, root README, env.local, CMS and database unchanged
+- boundaries: no Fixture, live WordPress E2E, screenshots, A2, review, acceptance, Git or deployment
+- message_result: MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1-RESPONSE queued to Planner with requires_response_to MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1; message validation PASS
+- next: Planner independently validates, synchronizes the root README pointer and decides whether A2 may be dispatched
+
+### 2026-07-26T03:49:04+08:00 - TASK-011 Phase A3 live WordPress E2E
+
+- task: TASK-011
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3
+- message_ack: exact dispatched A3 request and its context files read; request acknowledged before the live run
+- phase_boundary: live production E2E and screenshots only; A1 product code, WordPress Fixture and CMS source remained read only
+- runtime: Node.js 24.18.0, npm 11.16.0, Next.js 16.2.11; fresh build PASS with `/integration/cms` dynamic
+- wordpress_preflight: anonymous Schema 3 root resolve 200; selected summary matched TASK-007 A3 Home/page/standard/en/root/one module; raw payload discarded
+- live_http: real `next start` on loopback 3211; integration route 200, zero redirects and HTML
+- query_boundary: one browser load carried conflicting path/schema/locale/cmsOrigin query values, but passive server diagnostics observed exactly one GET to `/wp-json/gdhe/v1/resolve?locale=en&path=%2F&schema=3.0.0`
+- status_probe: one independent status-only Next request also produced exactly one identical fixed upstream GET
+- browser_evidence: approved eight-field technical summary rendered; 8/8 observed assets stayed on Next origin; zero direct WordPress resources; zero console warnings/errors
+- leakage: rendered HTML/RSC and Next logs contained no CMS origin, credentials, auth headers, raw modules, safeHtml or raw response JSON
+- screenshots: valid PNG desktop 1440x1064 SHA-256 53b15cef... and mobile 390x876 SHA-256 4a6a8a96...; mobile horizontal overflow false
+- protected_scope: package/lock, root app, TASK-009 Transport, TASK-010 Validator and env.local hashes unchanged; no A3 product defect or product edit
+- cleanup: all Next processes stopped, port 3211 closed, passive diagnostics subscriber removed, frontend `.next`/tsbuildinfo/runtime residue removed; WordPress port 8080 and `/wp-json/` intentionally remain healthy for A4
+- artifacts: TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md; A3_NETWORK_EVIDENCE.md; A3_DESKTOP_1440.png; A3_MOBILE_390.png
+- boundary: no Fixture cleanup, WordPress stop, review, acceptance, commit, push, merge or deployment
+- next: send the linked A3 execution_response; Planner must immediately dispatch wordpress_cms Phase A4 mandatory cleanup
+- message_result: MSG-20260725T195116Z-planner queued to Planner with requires_response_to MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3
+- unique_next_step: Planner acknowledges the A3 response and immediately dispatches wordpress_cms Phase A4 cleanup before any review
+
+### 2026-07-26T08:58:08+08:00 - TASK-011 Adapter runtime authenticity revision R1
+
+- task: TASK-011
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1
+- message_ack: exact dispatched Round 1 P1 request and all four context files read; acknowledged before test or production edits
+- transition_gate: Planner had already advanced the user-authorized revision from NEEDS_REVISION to IN_PROGRESS; no duplicate or invalid reopen was run
+- review_scope: sole Round 1 P1; all independently passed TASK-011 boundaries remained frozen
+- baseline: Node.js 24.18.0/npm 11.16.0; focused Adapter plus Validator 52/52 before revision
+- tdd_red: real production Adapter suite produced exactly 3 failed and 4 passed; raw success and authentic error wrapper raised native TypeError, while the ordinary structural object was accepted
+- minimal_fix: Validator-owned module-private WeakSet registers only createValidatedPayload wrappers; success-body accessor checks identity then success kind; Adapter reads only through that accessor
+- export_boundary: accessor is attached to the existing success-validator export, so the existing three-key Validator top-level runtime surface remains unchanged
+- semantic_boundary: no second Schema validation; normal path remains one Transport request, one success validation and one Adapter
+- stable_error: raw payload, ordinary structural object and authentic error wrapper now all throw existing CmsContractError invalid_success_payload without title/body/diagnostics leakage
+- green: Adapter 7/7; focused Adapter/Validator/orchestration/server-only 85/85
+- fresh_validation: full Vitest 9 files/158 tests, contract parity 16/2/2, lint, typecheck, dynamic production build, dependency inventory, production audit zero, protected hashes, server-only, leakage and diff checks PASS
+- cleanup: `.next`, `tsconfig.tsbuildinfo`, generated frontend resume packet and temporary test/process residue removed; ports 3211/8080 have no listeners
+- revision_files: validation/index.ts; adapter/cms-integration-page.ts; cms-integration-adapter.test.ts; ROUND1_REVISION_REPORT.md; three existing A1 evidence addenda; frontend worklog; controlled message record
+- protected_scope: registry, validation errors, contracts, Transport, orchestration, route, package/lock, README, environment, CMS, database, Fixture, Planner/reviewer files unchanged by this lane
+- boundaries: no Round 2 review, acceptance, commit, push, merge, deployment or later task
+- next: run final artifact/DPG validation, then send execution_response requiring MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1
+- governance_validation: project and message validation PASS; strict lane audit PASS with zero issues before response creation; `git diff --check` PASS
+- message_result: MSG-20260726T005933Z-planner queued to Planner with requires_response_to MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1
+- unique_next_step: Planner acknowledges the response, independently reproduces the authenticity closure and controls any narrow Round 2 review dispatch

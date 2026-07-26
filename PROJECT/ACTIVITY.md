@@ -3456,3 +3456,379 @@ schema_version: DPG-LANES-1.0.0
 - TASK-010 is ACCEPTED with final PASS P0/P1/P2=0。
 - Authorized chain: formal Chinese commit、task-branch push、fast-forward merge to main、push main and verify remote ancestry。
 - No force push、rebase、branch/worktree deletion、deployment or TASK-011。
+
+### 2026-07-25T19:14:26Z - TASK-010 delivered; TASK-011 intake
+
+- TASK-010 formal commit `a89bb4de91e63dce2f9960e31b1cd39cae58f335` verified on the remote task branch and `origin/main`；local worktree was clean。
+- TASK-010 synchronized to `CLOSED / MERGED` and archived。
+- Created `codex/TASK-011-minimal-cms-integration-page` from synchronized `main`。
+- TASK-011 freezes only the minimum Adapter、server-only orchestration、explicitly enabled local `/integration/cms` page、existing A3 Fixture live E2E、screenshots and cleanup boundary。
+- State is `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- No design、implementation、Fixture、E2E、review、commit、push、merge or deployment。
+- Next: wait for exact `确认 TASK-011 需求并开始执行`。
+
+### 2026-07-25T19:17:25Z - TASK-011 requirement confirmation
+
+- Exact user phrase `确认 TASK-011 需求并开始执行` received。
+- TASK-011 transitioned from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- Execution order is frontend TDD/loopback checkpoint first，then a short-lived existing A3 Fixture window，live E2E/screenshots and immediate cleanup。
+- No implementation、Fixture、E2E、review、Git delivery or deployment yet。
+- Next: freeze DESIGN and IMPLEMENTATION_PLAN，then dispatch frontend phase A1 only。
+
+### 2026-07-25T19:20:11Z - TASK-011 design and frontend A1 dispatch
+
+- DESIGN and IMPLEMENTATION_PLAN froze the minimum DTO、validated Adapter、server-only orchestration、validated 404、exact config gate、technical route and four-phase live lifecycle。
+- `MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1` validated、was delivered through the real Codex thread bridge and marked dispatched。
+- `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` remains queued and blocked until A1 Planner checkpoint PASS。
+- TASK-011 transitioned from READY to IN_PROGRESS。
+- No Fixture、live E2E、review、Git delivery or deployment。
+- Next: wait for frontend ACK and linked A1 execution response。
+
+### 2026-07-25T19:38:17Z - TASK-011 A1 Planner checkpoint PASS
+
+- Frontend A1 response validated and acknowledged。
+- Planner source review confirmed the frozen DTO、validated Adapter、exact configuration gate、no-argument one-request orchestration、validated 404 agreement and dynamic technical route。
+- Fresh Node 24.18.0/npm 11.16.0 gates: focused 38/38、full 155/155、parity、lint、typecheck、dynamic build、real next-start smoke、dependency/audit、protected scope、leakage、residue、project/message/diff PASS。
+- Shell-default Node 20.11.1 startup refusal was a toolchain mismatch；the complete project-Node rerun is the valid evidence。
+- Root/frontend README and `.env.example` now match implementation。
+- A1 checkpoint PASS authorizes only the short-lived A2 Fixture window；live E2E、screenshots、cleanup、review、Git delivery and deployment remain incomplete。
+- Next: dispatch `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2`。
+
+### 2026-07-25T19:39:29Z - TASK-011 wordpress_cms A2 dispatched
+
+- `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` validated、was delivered through the real Codex thread bridge and marked dispatched。
+- Scope is zero-residue precheck、existing A3 Fixture create/show and anonymous English Schema 3 root resolve only。
+- CMS source、Schema、plugin、database structure、permanent content、users and configuration remain protected。
+- Cleanup is mandatory after Fixture creation regardless of A3 result。
+- Next: wait for ACK and linked A2 execution response。
+
+### 2026-07-25T19:19:40Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-011
+- summary: message queued for frontend
+
+### 2026-07-25T19:19:40Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message queued for wordpress_cms
+
+### 2026-07-25T19:20:08Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1 dispatched to frontend
+
+### 2026-07-25T19:20:19Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1 moved to done
+
+### 2026-07-25T19:35:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T19:36:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1-RESPONSE moved to done
+
+### 2026-07-25T19:39:25Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2 dispatched to wordpress_cms
+
+### 2026-07-25T19:40:14Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2 moved to done
+
+### 2026-07-25T19:42:19Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T19:42:58Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2-RESPONSE moved to done
+
+### 2026-07-25T19:42:58Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-011
+- summary: message queued for frontend
+
+### 2026-07-25T19:43:11Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3 dispatched to frontend
+
+### 2026-07-25T19:43:17Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3 moved to done
+
+### 2026-07-25T19:51:16Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T19:52:08Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-20260725T195116Z-planner moved to done
+
+### 2026-07-25T19:52:18Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message queued for wordpress_cms
+
+### 2026-07-25T19:52:32Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-CLEANUP-A4 dispatched to wordpress_cms
+
+### 2026-07-25T19:52:47Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-CLEANUP-A4 moved to done
+
+### 2026-07-25T19:54:30Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T19:54:48Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-WORDPRESS-A3-FIXTURE-CLEANUP-A4-RESPONSE moved to done
+
+### 2026-07-25T19:58:19Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-25T19:58:30Z - task_entered_review
+- type: task_entered_review
+- lane: planner
+- task: TASK-011
+- summary: A1-A4, real production E2E, screenshots, mandatory cleanup and fresh Planner integration checkpoint passed; TASK-011 moved to UNDER_REVIEW for a read-only independent verdict.
+
+### 2026-07-25T19:59:29Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-25T19:59:45Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-25T20:04:10Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T20:04:23Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-25T20:05:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-25T20:05:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-25T20:05:52Z - task_review_failed
+- type: task_review_failed
+- lane: planner
+- task: TASK-011
+- summary: Round 1 independently reproduced a runtime forged-object Adapter bypass; TASK-011 moved from UNDER_REVIEW to NEEDS_REVISION and now waits for explicit confirmation of the narrow protected Validator-entry change.
+
+### 2026-07-25T20:07:30Z - task_revision_authorized
+- type: task_revision_authorized
+- lane: planner
+- task: TASK-011
+- summary: User explicitly authorized the narrow Round 1 P1 Validator identity and Adapter runtime-forgery revision; TASK-011 resumed IN_PROGRESS.
+
+### 2026-07-26T00:53:03Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-011
+- summary: message queued for frontend
+
+### 2026-07-26T00:53:15Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1 dispatched to frontend
+
+### 2026-07-26T00:53:58Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-011
+- summary: message MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1 moved to done
+
+### 2026-07-26T00:59:33Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-26T01:00:23Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-20260726T005933Z-planner moved to done
+
+### 2026-07-26T01:02:17Z - task_revision_checkpoint_passed
+- type: task_revision_checkpoint_passed
+- lane: planner
+- task: TASK-011
+- summary: The runtime authenticity P1 passed independent fresh validation; TASK-011 moved from IN_PROGRESS to UNDER_REVIEW for a narrow Round 2.
+
+### 2026-07-26T01:02:17Z - governance_timestamp_correction
+- type: governance_timestamp_correction
+- lane: planner
+- task: TASK-011
+- summary: Corrected the human-readable Round 1 revision authorization record to the controlled message-queue observation at 2026-07-26T00:53:03Z; the earlier manually carried 2026-07-25T20:07:30Z timestamp was stale.
+
+### 2026-07-26T01:03:50Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-26T01:04:00Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-26T01:04:21Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-26T01:07:25Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-26T01:07:34Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-26T01:08:12Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-26T01:08:12Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-26T01:10:06Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-26T01:10:23Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC dispatched to adversarial_reviewer
+
+### 2026-07-26T01:10:27Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC moved to done
+
+### 2026-07-26T01:10:47Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-011
+- summary: message queued for planner
+
+### 2026-07-26T01:11:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-011
+- summary: message MSG-TASK-011-ADVERSARIAL-R2-REPORT-SYNC-RESPONSE moved to done
+
+### 2026-07-26T01:11:24Z - task_final_validation_passed
+- type: task_final_validation_passed
+- lane: planner
+- task: TASK-011
+- summary: Final Round 2 PASS, canonical report consistency, fresh validation, zero residue and Planner Summary are complete; TASK-011 is ready for checked acceptance preparation.
+
+### 2026-07-26T01:12:45Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-011
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-26T01:13:07Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-011
+- summary: Synchronize human-readable current state, board, final review and acceptance narrative after the checked AWAITING_USER transition; no product or evidence change.
+
+### 2026-07-26T01:13:45Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-011
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-26T01:17:57Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-011
+- summary: TASK-011 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-26T01:17:57Z - TASK-011 formal delivery authorized
+
+- Exact formal delivery phrase passed the controlled task-accept check and transition。
+- TASK-011 is ACCEPTED with final Round 2 PASS and P0/P1/P2=0。
+- Authorized chain: formal Chinese commit、task-branch push、fast-forward merge to `main`、push `main` and verify remote ancestry。
+- No force push、rebase、branch/worktree deletion、deployment or TASK-012。

@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T19:42:58Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "先 ACK，再只执行 Phase A3 live E2E 与截图。A2 已 PASS，现有 A3 Fixture 在线；WORDPRESS_API_URL 使用 http://127.0.0.1:8080/wp-json，enable 精确为 1，固定 path 为 /。使用 Node 24.18.0 启动真实 Next.js production server，访问 integration/cms，验证 HTTP 200、预期技术摘要、固定一次 server-side WordPress resolve、浏览器没有直连 WordPress、HTML/RSC/网络/日志无 CMS origin 凭据或原始 JSON泄漏。分别以 1440px 和 390px 视口保存可见截图到 TASK-011 artifacts。验证 query 输入不能改变 upstream path。完成或失败后必须停止所有 Next.js 进程并清理 frontend runtime residue，但不得 cleanup Fixture 或停止 WordPress runtime；cleanup 由 wordpress_cms A4 负责。除非 live E2E 暴露明确 A1 产品缺陷，否则不得修改产品代码；若有缺陷只报告并停止。不得 review、commit、push、merge或部署。你并非独自在代码库中工作，保留其他 Lane 修改。完成后写 A3_LIVE_E2E_REPORT.md 和网络/截图证据，并通过关联本消息的受控 execution_response 回传 Planner。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-011-minimal-cms-integration-page.md",
+    "TASKS/ARTIFACTS/TASK-011/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-011/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-011/A1_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-011/A3_DESKTOP_1440.png",
+    "TASKS/ARTIFACTS/TASK-011/A3_MOBILE_390.png"
+  ],
+  "notes": "Fixture and WordPress runtime are live. Stop Next.js after A3; do not perform A4 cleanup.",
+  "dispatched_at": "2026-07-25T19:43:11Z",
+  "delivery_key": "MSG-TASK-011-FRONTEND-LIVE-WORDPRESS-E2E-A3:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-25T19:43:17Z",
+  "updated_at": "2026-07-25T19:43:17Z"
+}

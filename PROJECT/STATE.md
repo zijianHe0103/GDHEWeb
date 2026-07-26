@@ -2,14 +2,117 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-010
+current_task: TASK-011
 task_state: ACCEPTED
 git_state: DIRTY
-last_updated: 2026-07-25T19:08:41Z
+last_updated: 2026-07-26T01:17:57Z
 
 ## 当前焦点
 
-`TASK-010` 已正式 `ACCEPTED`。用户精确交付口令已通过受控 helper；当前执行正式提交、任务分支推送、快进合并到 `main` 和 `main` 推送，尚未部署或启动 TASK-011。
+`TASK-011` 已正式 `ACCEPTED / DIRTY`。用户精确交付口令已通过受控 helper；当前执行正式中文提交、任务分支推送、快进合并到 `main` 和 `main` 推送，尚未部署或启动 TASK-012。
+
+## TASK-011 Formal Delivery Authorized 2026-07-26T01:17:57Z
+
+- authorization: 用户精确输入 `确认 TASK-011 完成并提交到远端`，`task_accept.py check/accept` 均成功。
+- acceptance: `ACCEPTED`；final Round 2 `PASS / P0=0 / P1=0 / P2=0`。
+- delivery: 创建一条包含任务内容、主要变更、验证结果和文档更新的正式中文提交；推送任务分支；快进合并并推送 `main`；验证远端 ancestry。
+- boundary: 不 force push、不 rebase、不删除分支/worktree，不部署或启动 TASK-012。
+- next: 完成提交前完整性检查，然后执行已授权 Git 链。
+
+## TASK-011 Final Review and Planner Validation PASS 2026-07-26T01:11:24Z
+
+- review: Round 2 final `PASS / P0=0 / P1=0 / P2=0`；Round 1 runtime Adapter forgery P1 independently closed。
+- attacks: raw、ordinary、error wrapper、proxy、authentic-wrapper proxy、symbol/descriptor imitation 和 accessor/export replacement 均关闭且 non-leaking。
+- final_validation: Node 24.18.0 focused 85/85、full 158/158、contract 16/2/2、lint、typecheck、dynamic build、production smoke、dependency/audit、protected scope、leakage、zero Fixture/upload/listener/build residue、project/messages/strict lane/diff PASS。
+- report_recovery: canonical top Outcome 已与 R2 PASS 同步；Round 1 audit trail 完整保留，不增加 review round。
+- summary: `TASKS/ARTIFACTS/TASK-011/PLANNER_SUMMARY.md` 已生成。
+- boundary: review/test PASS 不等于用户验收；未 Git、未部署、未启动 TASK-012。
+- next: 等待 `确认 TASK-011 完成并提交到远端`。
+
+## TASK-011 Round 1 P1 Planner Checkpoint PASS 2026-07-26T01:02:17Z
+
+- response: `MSG-20260726T005933Z-planner` 已 validate/ACK。
+- implementation: module-private authentic-wrapper WeakSet、non-replaceable success-body accessor、Adapter mandatory accessor、stable non-leaking rejection。
+- invariants: wrapper representation/error behavior unchanged；normal path remains one Transport、one Schema validation、one Adapter。
+- independent_validation: Node 24.18.0 focused 85/85、full 158/158、contract 16/2/2、lint、typecheck、dynamic build、production smoke、dependency/audit、protected scope、leakage、zero residue、project/messages/strict lane/diff PASS。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 等待 narrow Round 2 verdict；verdict before final validation。
+
+## TASK-011 Round 1 P1 Revision Authorized 2026-07-26T00:53:03Z
+
+- authorization: 用户精确输入 `确认 TASK-011 Round 1 P1 修订并开始执行`。
+- scope: 仅 `validation/index.ts` 中 module-private runtime identity、Adapter brand-checked body access、直接 executable forgery tests 和受影响证据。
+- invariant: 保持一次 Transport、一次 Schema validation、一次 Adapter；身份检查不是第二次 Schema validation。
+- protected: TASK-010 registry/errors/contracts/wrapper semantics、Transport、route、CMS、数据库、Fixture、dependencies、package/lock 均不得修改。
+- transition: `NEEDS_REVISION` -> `IN_PROGRESS`。
+- next: 等待 frontend 关联 execution response；Planner fresh checkpoint PASS 后才允许 Round 2。
+
+## TASK-011 Adversarial Round 1 FAIL Recovery 2026-07-25T20:05:52Z
+
+- responses: Round 1 review response 与 stop-recovery request 已 validate/ACK。
+- verdict: `FAIL / P0=0 / P1=1 / P2=0`；Planner final validation 不允许。
+- p1: exported production Adapter 只依赖 TypeScript branded type，运行时普通对象可直接提供 `body` 并生成 DTO；现有 negative 在 `if (false)` 内，只做 compile-time check。
+- passed: normal Transport -> Validator -> Adapter、一次请求、validated 404、default-off 固定配置、server-only/leakage、真实 E2E、截图、A4 cleanup、protected scope、依赖与文档。
+- cleanup: Reviewer required build 生成的 `.next` 与 `tsconfig.tsbuildinfo` 已由 Planner 移入废纸篓；当前无 build/server residue。
+- authority_gate: 最窄安全修订需要在 Validator brand 所有模块增加 runtime authenticity accessor，并由 Adapter 使用；`frontend/src/lib/cms/server/validation/index.ts` 是本任务明确保护范围，按活动任务约束必须重新确认后才能修改。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- next: 等待用户确认这一窄范围；确认前不得实现、Round 2、final validation、验收、Git 或部署。
+
+## TASK-011 Integration Checkpoint PASS 2026-07-25T19:57:27Z
+
+- execution: DTO、validated-wrapper-only Adapter、一次请求的一次 Validator 编排、严格 validated 404、default-off 固定 path dynamic Server Component 已完成。
+- live_e2e: 真实 WordPress -> Next.js production -> browser HTTP 200；恶意 query 不改变固定英语根路径，浏览器无 WordPress 直连或敏感泄漏。
+- visual: Planner 已目检 1440px 与 390px 截图，字段可读，移动端无横向溢出。
+- cleanup: WP-CLI、数据库与 filesystem 独立查询确认 posts/revisions/attachment/upload/terms/meta/option 全零；3211/8080 无监听。
+- fresh_validation: Node 24.18.0 focused 39/39、full 155/155、16/2/2 parity、lint、typecheck、dynamic build、dependency/audit、protected scope、leakage、residue、project/messages/strict lane/diff PASS。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 等待 `MSG-TASK-011-ADVERSARIAL-REVIEW-R1` 的关联 verdict；verdict 前不得 final validation、验收、Git 或部署。
+
+## TASK-011 WordPress A2 Dispatched 2026-07-25T19:39:29Z
+
+- message: `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` 已 validate、通过 Codex thread bridge 投递并标记 dispatched。
+- scope: 只读核对、零残留前置、现有 A3 Fixture create/show、匿名英语 Schema 3 根路径 resolve。
+- protected: CMS 源码、Schema、插件、数据库结构、永久内容、用户和配置不得修改。
+- cleanup: Fixture 创建后成为强制责任；A3 成败都必须进入 A4 cleanup。
+- next: 等待 ACK 和关联 A2 execution response。
+
+## TASK-011 A1 Planner Checkpoint PASS 2026-07-25T19:38:17Z
+
+- response: `MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1-RESPONSE` 已 validate/ACK。
+- implementation: frozen ten-field DTO、validated-wrapper-only Adapter、exact default-off config、no-argument one-request orchestration、validated 404 agreement、dynamic technical route。
+- independent_validation: Node 24.18.0 / npm 11.16.0 focused 38/38、full 155/155、parity 16/2/2、lint、typecheck、dynamic build、real next-start smoke、dependency/audit、protected scope、leakage、residue、project/message/diff PASS。
+- toolchain_note: shell 默认 Node 20.11.1 在 Vitest startup 安全失败；切换项目规定 Node 24 后从头重跑通过，不属于产品失败。
+- documentation: root/frontend README 和 `.env.example` 已同步；document impact RESOLVED，README impact UPDATED。
+- gate: A1 PASS；只允许 dispatch A2 Fixture create/show/anonymous resolve。Fixture 创建后 cleanup 成为强制责任。
+- boundary: 未完成 live WordPress E2E、截图、cleanup、review、Git 交付或部署。
+- next: dispatch `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2`。
+
+## TASK-011 Design and Frontend A1 Dispatch 2026-07-25T19:20:11Z
+
+- design: 冻结最小 readonly DTO、validated-wrapper-only Adapter、无参数 server-only orchestration、validated 404 agreement、显式 enable/path 配置和 route-local technical UI。
+- phases: A1 frontend offline；Planner checkpoint；A2 short-lived Fixture；A3 live Next.js E2E/screenshots；A4 mandatory cleanup。
+- message: `MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1` 已 validate、通过 Codex thread bridge 投递并标记 dispatched。
+- queued_gate: `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` 只在 queue 中；A1 checkpoint PASS 前禁止投递。
+- transition: `READY` -> `IN_PROGRESS`。
+- boundary: 未创建 Fixture、未 live E2E、未审查、未 Git 交付或部署。
+- next: 等待 frontend ACK 与关联 A1 execution response。
+
+## TASK-011 Requirement Confirmation 2026-07-25T19:17:25Z
+
+- authorization: 用户精确输入 `确认 TASK-011 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- execution_order: frontend 第一阶段先完成 DTO/Adapter/orchestration/route gate 的 TDD 与 loopback 验证；Planner checkpoint PASS 后，wordpress_cms 才短暂创建 A3 Fixture；随后 frontend 做 live E2E/截图，wordpress_cms 立即 cleanup。
+- boundary: 未实现、未创建 Fixture、未运行 E2E、未审查、未 Git 交付或部署。
+- next: 创建 `DESIGN.md` 与 `IMPLEMENTATION_PLAN.md`，校验后派发 frontend 第一阶段。
+
+## TASK-011 Intake 2026-07-25T19:14:26Z
+
+- delivery_baseline: 本地 `main`、`origin/main` 与远端 TASK-010 分支均为 `a89bb4de91e63dce2f9960e31b1cd39cae58f335`；intake 前工作区干净。
+- previous_task: TASK-010 已同步为 `CLOSED / MERGED` 并归档。
+- branch: 从同步 `main` 创建 `codex/TASK-011-minimal-cms-integration-page`。
+- scope: 最小 Adapter、server-only orchestration、显式开启的 `/integration/cms` Server Component、现有 A3 Fixture live E2E、桌面/手机截图和 cleanup。
+- boundary: 不开发正式首页/导航/视觉系统，不修改 CMS 源码/合同/数据库结构，不实现 cache/Preview/Webhook/SEO/多语言，不提交、推送、合并或部署。
+- next: 等待精确口令 `确认 TASK-011 需求并开始执行`。
 
 ## TASK-010 Formal Delivery Authorized 2026-07-25T19:08:41Z
 

@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T20:04:23Z",
+  "requires_response_to": "MSG-TASK-011-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-011 remains UNDER_REVIEW after the linked Round 1 FAIL response. Reviewer write scope forbids planner-owned task and project recovery. Please acknowledge the review response, record NEEDS_REVISION with the single runtime Adapter forgery P1 and the narrow authorized next step, and remove only the reviewer-generated frontend .next directory and tsconfig.tsbuildinfo file. Those ignored artifacts were created by the required independent build; the reviewer exact cleanup command was rejected before execution by the write-scope hook and no workaround was used. Then perform the narrow revision and fresh validation before any Round 2 request. No acceptance, Git, deployment or later work is authorized.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-011/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-011-minimal-cms-integration-page.md",
+    "PROJECT/STATE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-011-minimal-cms-integration-page.md",
+    "PROJECT/STATE.md"
+  ],
+  "notes": "Planner-owned FAIL recovery and exact reviewer build-residue cleanup request. Reviewer did not modify Planner state or business deliverables.",
+  "done_at": "2026-07-25T20:05:14Z",
+  "updated_at": "2026-07-25T20:05:14Z"
+}

@@ -47,4 +47,17 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 
 ### 前端 server-only Runtime Validator
 
-前端已使用精确锁定的 Ajv Draft 2020-12 校验 TASK-008 的 16-Schema 本地闭包，并为成功和错误 payload 提供 server-only 运行时入口、opaque validated wrapper 与稳定的非泄漏错误语义。它只负责把不可信网络 JSON 校验为后续 Adapter 可接收的包装对象，尚未接入 Transport、DTO Adapter 或可见页面；聚焦测试和使用边界见 [`frontend/README.md`](frontend/README.md#server-only-cms-runtime-validator)。
+前端已使用精确锁定的 Ajv Draft 2020-12 校验 TASK-008 的 16-Schema 本地闭包，并为成功和错误 payload 提供 server-only 运行时入口、opaque validated wrapper 与稳定的非泄漏错误语义。TASK-011 在不修改 Validator 语义的前提下，将它接入最小 Adapter 和技术验证页；Validator 的聚焦测试和使用边界见 [`frontend/README.md`](frontend/README.md#server-only-cms-runtime-validator)。
+
+### 本地 CMS 技术验证页
+
+`/integration/cms` 是显式开启、默认关闭的 Server Component 技术页，用于验证 `WordPress /resolve -> Runtime Validator -> Adapter -> frontend DTO` 的最小只读链路。它不是正式首页或通用 CMS 页面模板，不接受浏览器提供的 CMS 地址或内容路径，也不渲染原始 JSON、`safeHtml` 或媒体。
+
+本地使用时，在用户自己的 `frontend/.env.local` 中配置有效的 loopback `WORDPRESS_API_URL`，并设置：
+
+```dotenv
+GDHE_ENABLE_CMS_INTEGRATION_PAGE=1
+GDHE_CMS_INTEGRATION_PATH=/
+```
+
+然后从 `frontend/` 运行 `npm run dev`，访问 `http://localhost:3000/integration/cms`。开关缺失或不是精确值 `1` 时该路径返回 404。详细边界和离线验证命令见 [`frontend/README.md`](frontend/README.md#offline-cms-integration-vertical-slice)。

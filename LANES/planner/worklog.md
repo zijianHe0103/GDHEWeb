@@ -1267,3 +1267,111 @@ Each execution records:
 - delivery: one formal Chinese commit、push task branch、fast-forward merge to main、push main、verify remote ancestry。
 - boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-011。
 - next: run final delivery integrity checks，then execute the authorized Git chain。
+
+### 2026-07-25T19:14:26Z - TASK-010 delivered; TASK-011 intake
+
+- delivery: TASK-010 formal commit `a89bb4de91e63dce2f9960e31b1cd39cae58f335` is present on the remote task branch and `origin/main`；remote ancestry and clean worktree verified。
+- transition: TASK-010 synchronized to `CLOSED / MERGED` and archived。
+- branch: created `codex/TASK-011-minimal-cms-integration-page` from synchronized `main`。
+- intake: froze only the minimum DTO/Adapter、server-only orchestration、explicitly enabled `/integration/cms` page、existing A3 Fixture live E2E、screenshots and cleanup boundary。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- boundary: no design、implementation、Fixture、E2E、review、commit、push、merge or deployment。
+- next: wait for exact `确认 TASK-011 需求并开始执行`。
+
+### 2026-07-25T19:17:25Z - TASK-011 requirement confirmation
+
+- authorization: exact user phrase `确认 TASK-011 需求并开始执行` received。
+- transition: AWAITING_REQUIREMENT_CONFIRMATION to READY。
+- execution_order: frontend TDD and loopback checkpoint first；only then short-lived wordpress_cms A3 Fixture window、live E2E/screenshots and immediate cleanup。
+- boundary: no implementation、Fixture、E2E、review、Git delivery or deployment yet。
+- next: freeze DESIGN and IMPLEMENTATION_PLAN，then dispatch frontend phase A1 only。
+
+### 2026-07-25T19:20:11Z - TASK-011 design and frontend A1 dispatch
+
+- design: frozen minimal DTO、validated-wrapper-only Adapter、no-argument server-only orchestration、validated 404 agreement、exact config gate and route-local technical UI。
+- phase_order: A1 frontend offline；Planner checkpoint；A2 short-lived Fixture；A3 live E2E/screenshots；A4 mandatory cleanup。
+- frontend_message: `MSG-TASK-011-FRONTEND-OFFLINE-VERTICAL-SLICE-A1` validated、delivered through the real Codex thread bridge and marked dispatched。
+- wordpress_message: `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` validated but remains queued and must not dispatch before A1 checkpoint PASS。
+- transition: READY to IN_PROGRESS。
+- boundary: no Fixture、live E2E、review、Git delivery or deployment。
+- next: wait for frontend ACK and linked A1 execution response。
+
+### 2026-07-25T19:38:17Z - TASK-011 A1 Planner checkpoint PASS
+
+- response: frontend A1 execution response validated and acknowledged。
+- source: ten-field frozen DTO、branded-wrapper Adapter、default-off exact config、no-argument one-request orchestration、validated 404 and dynamic Server Component match the frozen design。
+- independent_validation: project Node 24.18.0/npm 11.16.0 focused 38/38、full 155/155、parity、lint、typecheck、dynamic build、real next-start smoke、dependency/audit、protected scope、leakage、residue、project/message/diff PASS。
+- toolchain_note: shell default Node 20.11.1 failed before tests；project Node 24 rerun is the valid evidence。
+- docs: Planner synchronized root README；document impact RESOLVED and README impact UPDATED。
+- gate: A1 PASS authorizes only short-lived A2 Fixture create/show/anonymous resolve。
+- next: dispatch the already queued wordpress_cms A2 message。
+
+### 2026-07-25T19:39:29Z - TASK-011 wordpress_cms A2 dispatched
+
+- message: `MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2` validated、delivered through the real Codex thread bridge and marked dispatched。
+- scope: zero-residue precheck、existing A3 Fixture create/show and anonymous English Schema 3 root resolve only。
+- cleanup: mandatory after Fixture creation regardless of A3 result。
+- next: wait for ACK and linked A2 execution response。
+
+### 2026-07-25T19:58:30Z - TASK-011 integration checkpoint PASS
+
+- responses: A2 Fixture、A3 live E2E and A4 cleanup responses validated and acknowledged。
+- live: real WordPress Schema 3 root DTO rendered by real Next.js production server with HTTP 200；one fixed server-side resolve per document request；browser query could not alter origin、path、locale or schema。
+- visual: independently inspected the 1440 x 1064 and 390 x 876 screenshots；all approved technical fields are legible and mobile has no horizontal overflow。
+- cleanup: independent WP-CLI、database and filesystem checks prove zero Fixture posts、revisions、attachments、uploads、terms、marker meta and manifest option；ports 3211 and 8080 are closed。
+- fresh_validation: Node 24.18.0/npm 11.16.0，contract 16/2/2、focused 39/39、full 155/155、lint、typecheck、dynamic build、unchanged dependencies、zero production vulnerabilities、protected scope、leakage、residue、project/messages/strict lane/diff PASS。
+- artifacts: unified execution、validation、diff summary and integration Planner checkpoint added。
+- transition: IN_PROGRESS to UNDER_REVIEW；review request queued for the registered adversarial_reviewer。
+- boundary: no user acceptance、commit、push、merge、deployment or TASK-012。
+- next: dispatch `MSG-TASK-011-ADVERSARIAL-REVIEW-R1` and wait for its linked verdict。
+
+### 2026-07-25T20:05:52Z - TASK-011 Round 1 FAIL recovery
+
+- responses: review response and stop-recovery request validated and acknowledged。
+- verdict: FAIL，P0=0、P1=1、P2=0；Planner final validation is blocked。
+- p1: actual Node reproduction passed an ordinary object without the Validator private brand to the exported production Adapter and received an attacker-controlled frozen DTO；the existing negative is compile-time-only。
+- passed: normal orchestration、one request、validated 404、server-owned configuration、server-only/leakage、real E2E、screenshots、A4 cleanup、protected scope、dependencies and docs。
+- residue: reviewer-generated `.next` and `tsconfig.tsbuildinfo` were moved to macOS Trash by Planner after reviewer-scope cleanup was correctly rejected；zero build/server residue remains。
+- transition: UNDER_REVIEW to NEEDS_REVISION。
+- authority_gate: the active task expressly protects TASK-010 Validator files and requires reconfirmation if Adapter proof needs a Validator change；the narrow runtime-authenticity design is recorded but not implemented。
+- boundary: no business fix、Fixture、Round 2、final validation、acceptance、Git、deployment or TASK-012。
+- next: wait for user confirmation authorizing the narrow change to `frontend/src/lib/cms/server/validation/index.ts` plus direct Adapter/tests/docs evidence。
+
+### 2026-07-26T00:53:03Z - TASK-011 Round 1 P1 revision authorized
+
+- authorization: user exact phrase `确认 TASK-011 Round 1 P1 修订并开始执行`。
+- design: private WeakSet identity registry in the Validator owner、stable success-body accessor accepting unknown、Adapter mandatory accessor use、executable raw/ordinary/error-wrapper negatives。
+- invariant: one Transport、one Schema validation、one Adapter；identity check does not rerun Schema validation。
+- scope: only validation public entry、Adapter、direct test and TASK-011/frontend evidence；registry、errors、contracts、Transport、route、dependencies、CMS and Fixture remain protected。
+- transition: NEEDS_REVISION to IN_PROGRESS。
+- next: create and dispatch the controlled frontend revision request；fresh Planner checkpoint before Round 2。
+
+### 2026-07-26T01:02:17Z - TASK-011 Round 1 P1 Planner checkpoint PASS
+
+- response: frontend revision execution response validated and acknowledged。
+- source: Validator-private WeakSet identity、fixed success-body accessor、Adapter mandatory access；raw、ordinary and authentic-error wrappers reject with stable non-leaking error。
+- invariants: no second Schema validation、no wrapper/error/export-set drift、one Transport/validation/Adapter path preserved。
+- independent_validation: Node 24.18.0/npm 11.16.0，focused 85/85、full 158/158、contract 16/2/2、lint、typecheck、dynamic build、production smoke、dependency/audit、protected scope、leakage、zero residue、project/messages/strict lane/diff PASS。
+- timestamp_correction: human-readable authorization record now uses the controlled queue observation at 2026-07-26T00:53:03Z；the earlier manually carried 2026-07-25T20:07:30Z timestamp is explicitly superseded。
+- transition: IN_PROGRESS to UNDER_REVIEW。
+- boundary: no Fixture、Git、deployment、acceptance or later task。
+- next: dispatch only the narrow Round 2 review of Round 1 P1 and direct regressions。
+
+### 2026-07-26T01:11:24Z - TASK-011 final review and validation PASS
+
+- review: Round 2 response and cache-cleanup recovery acknowledged；final PASS，P0=0、P1=0、P2=0。
+- attacks: raw/structural/error wrappers、ordinary and authentic proxies、symbol/descriptor imitation、accessor and ESM binding replacement all reject or remain fixed。
+- report_sync: reviewer-only recovery synchronized the top Outcome with Round 2 PASS while preserving complete Round 1 history；this did not add a review round。
+- final_validation: Node 24.18.0/npm 11.16.0，focused 85/85、full 158/158、contract 16/2/2、lint、typecheck、dynamic build、production smoke、dependency/audit、protected scope、leakage、zero Fixture/upload/listener/build residue、project/messages/strict lane/diff PASS。
+- summary: `TASKS/ARTIFACTS/TASK-011/PLANNER_SUMMARY.md` generated。
+- boundary: NOT_ACCEPTED / DIRTY；no commit、push、merge、deployment or TASK-012。
+- next: run checked `prepare-awaiting-user`，then wait for exact formal delivery phrase。
+
+### 2026-07-26T01:17:57Z - TASK-011 formal delivery authorized
+
+- authorization: exact phrase accepted by controlled `task_accept.py check/accept`。
+- acceptance: ACCEPTED；final Round 2 PASS，P0=0、P1=0、P2=0。
+- remote_baseline: local `main`、`origin/main` and task baseline remain `a89bb4de91e63dce2f9960e31b1cd39cae58f335`；remote TASK-011 branch does not yet exist。
+- delivery: one formal Chinese commit、push task branch、fast-forward merge to `main`、push `main` and verify remote ancestry。
+- boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-012。
+- next: finish final delivery integrity checks，then execute the authorized Git chain。

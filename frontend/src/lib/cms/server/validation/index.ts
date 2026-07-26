@@ -7,6 +7,7 @@ export { CmsContractError } from "./errors";
 export type { CmsContractErrorKind } from "./errors";
 
 const validatedPayloadBrand: unique symbol = Symbol("ValidatedCmsPayload");
+const authenticValidatedPayloads = new WeakSet<object>();
 
 type ValidatedCmsPayloadKind = "success" | "error";
 
@@ -38,10 +39,11 @@ function createValidatedPayload<Kind extends ValidatedCmsPayloadKind>(
       value: kind,
     },
   });
+  authenticValidatedPayloads.add(wrapper);
   return Object.freeze(wrapper);
 }
 
-export function validateCmsSuccessPayload(
+function validateCmsSuccessPayloadImplementation(
   input: unknown,
 ): ValidatedCmsPayload<"success"> {
   const snapshot = snapshotPayload(input, "invalid_success_payload");
@@ -58,6 +60,32 @@ export function validateCmsSuccessPayload(
 
   return createValidatedPayload("success", snapshot);
 }
+
+function getValidatedSuccessBody(input: unknown): unknown {
+  if (
+    typeof input !== "object" ||
+    input === null ||
+    !authenticValidatedPayloads.has(input) ||
+    (input as ValidatedCmsPayload).kind !== "success"
+  ) {
+    throw new CmsContractError("invalid_success_payload");
+  }
+
+  return (input as ValidatedCmsPayload<"success">).body;
+}
+
+Object.defineProperty(
+  validateCmsSuccessPayloadImplementation,
+  "getValidatedBody",
+  {
+    value: getValidatedSuccessBody,
+  },
+);
+
+export const validateCmsSuccessPayload =
+  validateCmsSuccessPayloadImplementation as typeof validateCmsSuccessPayloadImplementation & {
+    readonly getValidatedBody: typeof getValidatedSuccessBody;
+  };
 
 export function validateCmsErrorPayload(
   input: unknown,

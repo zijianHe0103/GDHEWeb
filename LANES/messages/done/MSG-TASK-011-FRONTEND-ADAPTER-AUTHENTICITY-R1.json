@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-26T00:53:03Z",
+  "requires_response_to": "MSG-TASK-011-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "先 ACK，再只修复 TASK-011 Round 1 唯一 P1。用户已明确授权窄改 frontend/src/lib/cms/server/validation/index.ts。严格 TDD：先在真实 production Adapter seam 增加可执行 RED，证明 raw success payload、普通 {kind: success, body} 结构对象与 authentic error wrapper 均不能进入 Adapter，并要求同一个现有 stable CmsContractError invalid_success_payload，错误消息不得泄漏 input/title/body/diagnostics；保留 compile-time negative 和 valid success exact frozen DTO。最小实现：由 Validator brand 所有模块维护 module-private WeakSet 或等价不可伪造身份集合，只登记 createValidatedPayload 实际创建的 wrapper；导出一个 server-only success-body accessor，参数为 unknown，先验证实例身份与 success kind，再返回既有 immutable body；Adapter 必须通过此 accessor 取 body。不得重新运行 Schema validation，不得增加第二次 validate，不得改变 wrapper body getter、null prototype、deep-frozen snapshot、kind-only JSON、brand、error wrapper或现有 TASK-010错误语义。只允许修改 validation/index.ts、adapter/cms-integration-page.ts、cms-integration-adapter.test.ts、TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_REPORT.md、直接受影响的 TASK-011 execution/validation/diff evidence addendum 和 frontend worklog。不得修改 registry、validation/errors、contracts、Transport、integration orchestration/route、package/lock、README、CMS、数据库、Fixture、Planner state、review report或其他文件。完成后在 Node 24.18.0 下 fresh 跑 focused Adapter/Validator/orchestration/server-only、full tests、contract parity、lint、typecheck、build、dependency/protected/server-only/leakage/residue/diff/DPG gates。停止并清理 .next、tsconfig cache和任何临时文件。发送关联本消息的 execution_response；不得 review、验收、commit、push、merge、部署或启动下一任务。你并非独自在代码库中，保留其他 Lane 修改。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-011-minimal-cms-integration-page.md",
+    "TASKS/ARTIFACTS/TASK-011/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-011/ROUND1_RECOVERY.md",
+    "TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_PLAN.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_REPORT.md"
+  ],
+  "notes": "This is the sole Round 1 P1 revision. Planner checkpoint PASS is required before a narrow Round 2 review.",
+  "dispatched_at": "2026-07-26T00:53:15Z",
+  "delivery_key": "MSG-TASK-011-FRONTEND-ADAPTER-AUTHENTICITY-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-07-26T00:53:58Z",
+  "updated_at": "2026-07-26T00:53:58Z"
+}

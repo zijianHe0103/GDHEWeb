@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "wordpress_cms",
+  "to_lane": "planner",
+  "task_id": "TASK-011",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-25T19:42:19Z",
+  "requires_response_to": "MSG-TASK-011-WORDPRESS-A3-FIXTURE-A2",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "PASS: TASK-011 Phase A2 Fixture window is open. Existing TASK-007-A3-REVIEW-R1 create/show manifests match (posts home=1263, company=1264, news=1265, product_alpha=1266, product_beta=1267, product_gamma=1268, market=1269, reference=1270, support=1271, download=1272, draft=1273, private=1274, pending=1275, trash=1276, invalid_template=1277, mismatched_template=1278, invalid_module=1279, invalid_path=1280; attachment download=1282; terms category=215, series=216, installation=217, support=218, document=219; show SHA-256 d07b743d5a05e8d9c6a1cc8220d729f47415af5fb9b883b157685b9b31c9b71d). Runtime base is http://127.0.0.1:8080 and public path is /. Anonymous GET /wp-json/gdhe/v1/resolve?locale=en&path=%2F&schema=3.0.0 returned HTTP 200 with API 1, Schema 3.0.0, page/standard, stable UUID 31000000-0000-4000-8000-000000000001 and one module. Fixture and loopback runtime remain live for frontend A3. wordpress_cms retains mandatory A4 cleanup ownership after frontend response, including failure paths; no early cleanup was performed. No CMS source/Schema/plugin/DB structure/permanent content/user/config or frontend files were modified.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md"
+  ],
+  "notes": "Await frontend A3 controlled completion and separate Planner cleanup dispatch. Do not review, accept, commit, push, merge or deploy.",
+  "done_at": "2026-07-25T19:42:58Z",
+  "updated_at": "2026-07-25T19:42:58Z"
+}

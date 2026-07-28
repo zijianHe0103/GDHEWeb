@@ -29,3 +29,6 @@ node_modules/
 .output/
 dist/
 coverage/
+
+# Standalone GDHE curtain visualizer repository
+/图像生成站/

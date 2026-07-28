@@ -1,0 +1,6 @@
+# Durable Project Governance 建议项目配置。
+# 只有项目 .codex 层被信任后，本文件才会加载。
+
+[agents]
+max_threads = 4
+max_depth = 1

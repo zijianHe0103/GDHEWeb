@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-1.0.0",
+  "dispatch": {
+    "mode": "manual",
+    "allow_auto_execute": false,
+    "max_rounds_per_task": 2,
+    "require_planner_approval_for_reroute": true
+  },
+  "resume": {
+    "lane_worklog_days": 5,
+    "global_activity_days": 5,
+    "max_lane_worklog_sections": 20,
+    "max_global_activity_sections": 30,
+    "include_active_tasks": true,
+    "include_assigned_issues": true,
+    "include_recent_decisions": true,
+    "generate_resume_packet": true
+  },
+  "handoff": {
+    "require_handoff_on_session_replace": true,
+    "handoff_template": "LANES/<lane>/workspace/<date>-session-handoff.md"
+  },
+  "write_scope": {
+    "enabled": true,
+    "mode": "block",
+    "reviewer_readonly_by_default": true,
+    "allow_planner_override": true
+  },
+  "acceptance": {
+    "require_user_acceptance": true,
+    "automation_must_not_commit_push_or_merge": true,
+    "require_execution_report": true,
+    "require_adversarial_review": true,
+    "require_validation_evidence": true
+  }
+}

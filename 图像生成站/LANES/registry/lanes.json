@@ -1,0 +1,79 @@
+{
+  "schema": "DPG-LANES-1.0.0",
+  "project": "图像生成站",
+  "created_at": "2026-07-27T16:31:22Z",
+  "updated_at": "2026-07-27T17:08:08Z",
+  "lanes": {
+    "planner": {
+      "purpose": "Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.",
+      "lane_type": "planner",
+      "current_session": "019fa467-07fb-79f2-9743-a9d95ceed614",
+      "previous_sessions": [],
+      "status": "registered",
+      "write_scope": [
+        "PROJECT/**",
+        "TASKS/**",
+        "MEMORY/**",
+        "LANES/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/planner/worklog.md",
+      "workspace": "LANES/planner/workspace",
+      "inbox": "LANES/planner/inbox",
+      "outbox": "LANES/planner/outbox",
+      "sessions_dir": "LANES/planner/sessions",
+      "requires_adversarial_review": false,
+      "last_seen": "2026-07-27T16:31:59Z",
+      "created_at": "2026-07-27T16:31:22Z",
+      "updated_at": "2026-07-27T16:31:59Z"
+    },
+    "executor": {
+      "purpose": "Execute assigned work, produce deliverables, write execution reports, and request adversarial review.",
+      "lane_type": "executor",
+      "current_session": null,
+      "previous_sessions": [],
+      "status": "unregistered",
+      "write_scope": [
+        "TASKS/ARTIFACTS/**",
+        "LANES/executor/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/executor/worklog.md",
+      "workspace": "LANES/executor/workspace",
+      "inbox": "LANES/executor/inbox",
+      "outbox": "LANES/executor/outbox",
+      "sessions_dir": "LANES/executor/sessions",
+      "requires_adversarial_review": true,
+      "last_seen": null,
+      "created_at": "2026-07-27T16:31:22Z",
+      "updated_at": "2026-07-27T16:31:22Z"
+    },
+    "adversarial_reviewer": {
+      "purpose": "Challenge assumptions, inspect omissions and risk, verify evidence, and return PASS/FAIL/P0/P1/P2 findings.",
+      "lane_type": "adversarial_reviewer",
+      "current_session": "task001-adversarial-review-20260728",
+      "previous_sessions": [],
+      "status": "registered",
+      "write_scope": [
+        "TASKS/ARTIFACTS/*/ADVERSARIAL_REVIEW_REPORT.md",
+        "LANES/adversarial_reviewer/**"
+      ],
+      "read_scope": [
+        "**"
+      ],
+      "worklog": "LANES/adversarial_reviewer/worklog.md",
+      "workspace": "LANES/adversarial_reviewer/workspace",
+      "inbox": "LANES/adversarial_reviewer/inbox",
+      "outbox": "LANES/adversarial_reviewer/outbox",
+      "sessions_dir": "LANES/adversarial_reviewer/sessions",
+      "requires_adversarial_review": false,
+      "last_seen": "2026-07-27T17:08:08Z",
+      "created_at": "2026-07-27T16:31:22Z",
+      "updated_at": "2026-07-27T17:08:08Z"
+    }
+  }
+}

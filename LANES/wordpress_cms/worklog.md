@@ -386,3 +386,25 @@ Each execution records:
 - artifact: TASKS/ARTIFACTS/TASK-012/WORDPRESS_CMS_FEASIBILITY_AUDIT.md
 - scope_boundary: no cms, WordPress, database, frontend, architecture contract, active task, Planner file, product, Preview, Webhook, multilingual, Git, acceptance or closure mutation
 - next: send controlled execution_response requiring MSG-TASK-012-WORDPRESS-FEASIBILITY-AUDIT; Planner integrates only the roadmap and entry-gate findings
+
+### 2026-07-29T07:49:56Z - TASK-013 WordPress/CMS read-only audit complete
+
+- task: TASK-013 English IA/URL/CTA/product-card/SEO minimum contract
+- message: MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT
+- result: PASS_WITH_REQUIRED_FOLLOW_UP_CONTRACTS
+- runtime: WordPress 7.0.2; SCF 6.9.2 active; gdhe-site 0.4.2 active; API 1; Content Schema 3.0.0; Module Schema 1.0.0; database check PASS
+- inventory: product/market/reference/support/download/site_settings and all five contract taxonomy counts zero; one default published Post, one default published Page and one draft Page exist but have no GDHE Schema/template/UUID/path meta and are ineligible; A3 Fixture option absent
+- runtime_outputs: Product collection total 0/items empty; navigation empty; route manifest empty
+- directly_expressible: English page/post/product/market/reference/support/download envelopes, stable UUIDv4 identity, canonical public paths, closed type/template pairing, product category/series/installation slugs, structured details, controlled modules, media/Alt, relations and current Download metadata
+- card_gap: collection items are only id/type/title/publicPath; normalized product cards cannot be consumed without per-card resolve N+1, so a separately authorized versioned collection projection is required
+- cta_gap: generic link/inquiryCta exists, but availability, quoteability, discontinued/replacement state, fixed CTA semantics and configuration-level quote identity are absent
+- seo_gap: title/excerpt/path/type/timestamps/media Alt exist; no dedicated SeoDocument, robots, canonical origin/override, OG policy, Breadcrumb labels or JSON-LD policy
+- ia_gap: product_category filter exists; product_series, installation/application relation filters, typed landing routes, accessory catalogue-without-detail identity and redirect/410 lifecycle do not
+- navigation_gap: Schema permits three levels, but current runtime emits only top-level items with empty children
+- eligibility_gap: resolve/collection/navigation/manifest enforce published full envelopes and canonical routes; Feishu allow-publish, Article Number uniqueness, last-success mirror, discontinued/replacement and document lifecycle are not implemented; relation targets currently do not reuse the full-envelope/unique-route gate
+- media_boundary: current DTO carries stable public image metadata and Alt/decorative; protected-media provenance is operational, and card media is absent from collection
+- whitelist: closed GDHE envelope and code allowlist preserve public fields and exclude raw ACF/meta and WordPress database IDs; TASK-012 sensitive/internal fields remain forbidden
+- schema_scope: fresh recursive graph is CMS 19 versus frontend resolve 16; delta exactly collection.v3/navigation/route-manifest, frontend-only none; frontend contract verifier PASS for 16 schemas, two success and two error samples
+- artifact: TASKS/ARTIFACTS/TASK-013/WORDPRESS_CMS_READONLY_AUDIT.md
+- scope_boundary: no CMS/SCF/Schema/API/database/content/plugin/configuration/frontend/authority/product/Feishu/review/Git/deployment mutation
+- next: validate the two allowed writes, send controlled execution_response requiring MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT, then Planner synthesizes the target contracts and follow-up gates

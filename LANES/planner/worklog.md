@@ -2420,6 +2420,43 @@ Each execution records:
 - git: `FORMAL_COMMIT_PENDING`；当前仅执行任务分支提交/推送与 `main` 合并/推送。
 - boundary: 未部署，未开始下一任务。
 
+### 2026-07-29T07:37:54Z - TASK-013 任务登记
+
+- user_request: 创建 TASK-013，冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同。
+- previous_task: TASK-012 已远端交付并归档为 `CLOSED / MERGED`。
+- branch: 从远端一致的 `main` `374dc19` 创建 `codex/TASK-013-english-ia-url-cta-contract`。
+- scope: 只冻结英语页面/路由/CTA/card projection/SEO 输入合同并选择 TASK-014 候选；不实施代码、CMS、Schema、数据、外部系统或部署。
+- test_data_boundary: 当前样本只可作为 `TEST_CANDIDATE`，不满足最终生产目录或 10～20 产品门。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- next: 等待精确口令 `确认 TASK-013 需求并开始执行`。
+
+### 2026-07-29T07:41:57Z - TASK-013 需求确认
+
+- authorization: 用户精确输入 `确认 TASK-013 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- design: 已建立 evidence status、五层合同边界和 A1～A4 执行顺序。
+- dispatch_plan: WordPress、frontend、localization/SEO 仅做只读审计；Planner 汇总后再写权威合同。
+- protected: frontend/CMS/Schema/API/database/Feishu/dependencies/runtime/data/page implementation/deployment。
+- next: A1 validation 后创建受控 Lane 消息。
+
+### 2026-07-29T07:45:10Z - TASK-013 A1 完成并进入 A2
+
+- design: DESIGN/IMPLEMENTATION_PLAN 已完成。
+- validation: project、registry、messages、strict lane audit、protected scope、diff PASS。
+- queue: frontend、wordpress_cms、localization_seo 三项只读审计消息已创建并 validate。
+- transition: `READY` -> `IN_PROGRESS`。
+- delivery_rule: 必须先取得真实线程桥 delivery ID，再执行 dispatch-once；queue 不等于 delivered。
+- next: dry-run frontend 首项并桥接。
+
+### 2026-07-29T07:56:01Z - TASK-013 A2 汇总与业务确认暂停
+
+- responses: frontend、wordpress_cms、localization_seo 三项只读审计均通过真实线程桥返回并 ACK。
+- consensus: 当前 detail `/resolve` 可复用；collection card、typed CTA/lifecycle、SeoDocument 缺少机器合同；不得用 per-card resolve 或 frontend heuristic 绕过。
+- checkpoint: `A2_CHECKPOINT.md` 与 `OPEN_DECISIONS.md` 已生成。
+- transition: `IN_PROGRESS` -> `PAUSED`。
+- question_policy: 按用户偏好一次只确认一个业务问题。
+- next: Decision 1——英语一级导航和 Products Mega Menu。
+
 ### 2026-07-29T06:32:54Z - TASK-012 状态闭环确认已派发
 
 - user_authority: 用户要求继续完成 TASK-012 收口。
@@ -2444,3 +2481,165 @@ Each execution records:
 - validation: diff、project、registry、messages、strict lane、受保护范围和过期状态扫描全部 PASS。
 - state: `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`。
 - next: 不自动发起更多审查，等待新的用户明确指令。
+
+### 2026-07-29T10:22:45Z - TASK-013 Decision 1 confirmed
+
+- user_confirmation: “可以”。
+- decision: 采用提议的英语一级导航和 Products Mega Menu。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 2 route words 与 slug policy。
+
+### 2026-07-29T14:40:06Z - TASK-013 Decision 2 confirmed
+
+- user_confirmation: “可以的”。
+- decision: 采用提议的 route words 与 slug policy，保持一个产品一个稳定 canonical。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 3 stable primary Breadcrumb trail。
+
+### 2026-07-29T14:43:01Z - TASK-013 Decision 3 confirmed
+
+- user_confirmation: “采用”。
+- decision: 采用 stable primary Breadcrumb trail；每个公开产品显式保存一个主分类。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 4 RFQ 与 replacement/contact target routes。
+
+### 2026-07-29T14:46:57Z - TASK-013 Decision 4 confirmed
+
+- user_confirmation: “采用”。
+- decision: 正常询价统一 `/request-a-quote/`；替代咨询统一 `/contact/`。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 5 product card navigation/direct RFQ。
+
+### 2026-07-29T14:50:59Z - TASK-013 Decision 5 confirmed
+
+- user_confirmation: “采用”。
+- decision: 有详情页产品先进入详情；无详情页小配件可满足选择与数量要求后直接加入询价。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 6 fail-closed publication/quoteability。
+
+### 2026-07-29T14:57:46Z - TASK-013 Decision 6 confirmed and corrected
+
+- user_confirmation: 采用，并明确同步到 WordPress 的公开产品即使规格不完整也可以通过 Request a Quote API 询价。
+- decision: 发布保护与询价资格分离；Article Number 可在飞书业务流程中后续解析。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 7 TASK-014 test candidates。
+
+### 2026-07-29T15:00:45Z - TASK-013 Decision 7 confirmed
+
+- user_confirmation: “可以”。
+- decision: TASK-014 使用 `FGD X15+PVC`、`SSD-01` 和 `PJ-D16` 三个本地测试候选。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 8 English card summary/key attributes。
+
+### 2026-07-29T15:04:56Z - TASK-013 Decision 8 confirmed
+
+- user_confirmation: “可以”。
+- decision: 采用统一卡片骨架、人工英语短摘要和分类专属最多三项参数。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- state: `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 9 production canonical origin。
+
+### 2026-07-29T15:06:37Z - TASK-013 Decision 9 confirmed as deployment gap
+
+- user_confirmation: “暂未确定”。
+- decision: 生产 canonical origin 保留为正式部署前必须关闭的 `DEPLOYMENT_GAP`，不虚构域名。
+- transition: `PAUSED` -> `IN_PROGRESS`。
+- updated: `OPEN_DECISIONS.md`、活动任务、项目状态、Board 与 Activity。
+- protected_scope: 未修改 `frontend/**`、`cms/**`、Schema/API、数据库、飞书或运行环境。
+- next: A3 权威合同收口与后续独立 adversarial review。
+
+### 2026-07-29T15:13:18Z - TASK-013 A3 complete and A4 dispatched
+
+- deliverables: 七份正式合同、A3 checkpoint、execution/diff/validation evidence 已完成。
+- validation: CMS 19/frontend 16、hash/byte parity、verify:cms-contract、Markdown、absolute path、protected scope、project/registry/messages/strict lane 和 diff PASS。
+- message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW` 已真实桥接并 dispatch。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 等待 Reviewer ACK 与独立 verdict。
+
+### 2026-07-29T15:20:56Z - TASK-013 Round 1 review recovery
+
+- response: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW-RESPONSE` 和 stop-recovery request 已通过真实线程桥处理并 ACK。
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`；其余 identity、IA、canonical、RFQ、N+1、SEO、test-data、origin 与 protected scope 边界通过。
+- p1: `detail_product` 不论 active/discontinued 均需 `view_product` 进入 canonical detail；停产详情页再以 replacement contact 为主 CTA。无详情停产配件固定进入 `/contact/`。
+- p2: 活动任务 Validation Evidence 与 Reviewer Lane 状态已列入窄修订。
+- helper: 按要求运行 `task_transition.py reopen`；因 helper 只接受 `AWAITING_USER` 而安全拒绝，未修改文件。
+- transition: 按项目既有受控恢复惯例同步 `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- boundary: 不启动 TASK-014，不修改 frontend/CMS/API/Schema，不验收或 Git 交付。
+- next: 完成窄文档修订、fresh validation，再发起 Round 2。
+
+### 2026-07-29T15:22:51Z - TASK-013 Round 1 correction validated
+
+- correction: ProductCard lifecycle/action matrix 已确定化；活动任务 evidence/reviewer status 已同步。
+- validation: CMS 19/15 Golden/6 negative、frontend 16 schemas/2 success/2 error、TASK-007 61-entry checksum、project/registry/messages/strict lane、protected scope、absolute path/trailing whitespace 和 diff PASS。
+- state: 保持 `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`；recovery validation 不替代 Round 2 或 final validation。
+- boundary: 无 frontend/CMS/API/Schema/product/external-system 修改。
+- next: 创建、验证并真实桥接 `MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2`。
+
+### 2026-07-29T15:23:51Z - TASK-013 Round 2 review prepared
+
+- message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2` 已创建、validate 且 dry-run 命中注册 Reviewer session。
+- ordering: Active Task、Project State 和 Board 已先同步为 active review。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- scope: 仅验证 Round 1 P1/P2 closure 和已通过边界保持。
+- next: 发送真实 Codex thread bridge，再执行 `dispatch-once`。
+
+### 2026-07-29T15:25:03Z - TASK-013 Round 2 current narrative synchronized
+
+- timing: Reviewer 已 ACK 并开始 Round 2；活动任务 Review 小节仍写“Round 2 尚未开始”。
+- correction: 仅同步为“Round 2 正在进行”。
+- boundary: 无业务合同、证据、实现或外部状态变化。
+
+### 2026-07-29T15:29:56Z - TASK-013 Round 2 PASS received
+
+- messages: Round 2 PASS response 和 stop-recovery request 已真实桥接、dispatch 并 ACK。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Planner final validation allowed。
+- closure: ProductCard deterministic matrix 与 current evidence P2 均独立关闭。
+- history: Round 1 FAIL 保留，未被当前 PASS 覆盖或改写。
+- boundary: 不实施 TASK-014、frontend/CMS/API/Schema、Git 或部署。
+- next: fresh final validation、生成 Planner Summary，再运行 checked `prepare-awaiting-user`。
+
+### 2026-07-29T15:31:26Z - TASK-013 Planner final validation complete
+
+- validation: frontend 16/2/2、CMS 19/15 Golden/6 negative、TASK-007 checksum 61/61、project/registry/messages/strict lane、protected scope、private path/whitespace 和 diff PASS。
+- retry: 初次组合命令因 Python PATH 选中无 `jsonschema` 环境而停止；项目根 `/opt/homebrew/anaconda3/bin/python3` 重跑通过。
+- summary: `PLANNER_SUMMARY.md` 已生成，明确本任务是合同交付而非可见页面。
+- boundary: 不验收、不执行 Git、不部署、不开始 TASK-014。
+- next: final lightweight validation 后 checked `prepare-awaiting-user`。
+
+### 2026-07-29T15:32:31Z - TASK-013 acceptance-view synchronization
+
+- issue: 第一次 `prepare-awaiting-user` 成功，但工具未同步 Active Task current section、Project focus 和 Board。
+- transition: `AWAITING_USER` -> `NEEDS_REVISION`，只为同步人类可读状态。
+- correction: 目标视图已改为 `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- boundary: 业务合同、review、validation、implementation、Git 和外部状态均未变化。
+- next: 重新执行 checked `prepare-awaiting-user`，随后停止等待用户。
+
+### 2026-07-29T15:48:07Z - TASK-013 governance closeout revision authorized
+
+- authorization: 用户确认复核提出的窄收口修订。
+- audit: `governance_project.py audit` 报三个 HIGH；`task_accept.py check` 同时为 ready，暴露 current-section 解析与 acceptance checker 的不一致。
+- correction: Review/Validation 改为 current-only `PASS + Evidence`，Round 1 放入 Review History；Lane/Messages、执行记录、Execution Report 和历史 checkpoint 叙述同步。
+- boundary: 无 IA、URL、CTA、ProductCard、SEO、Schema/API、frontend/CMS、Git 或外部修改。
+- next: fresh tests、full audit；无 HIGH 后重新 checked `prepare-awaiting-user`。
+
+### 2026-07-29T15:52:30Z - TASK-013 正式验收
+
+- user_phrase: `确认 TASK-013 完成并提交到远端`。
+- acceptance: task_accept helper PASS；`acceptance_state=ACCEPTED`。
+- git: `FORMAL_COMMIT_PENDING`；当前仅执行任务分支提交/推送与 `main` 合并/推送。
+- boundary: 未部署，未开始 TASK-014。

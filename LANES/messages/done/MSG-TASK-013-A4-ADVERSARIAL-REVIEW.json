@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-013",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-29T15:12:54Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Perform an independent adversarial review of the completed TASK-013 English IA/URL/CTA/ProductCard/SEO contract. Read the active task, all TASKS/ARTIFACTS/TASK-013 final contracts, A2 audits, A3 checkpoint, execution report, validation log, architecture contract TASK-013 section, and current user decision record. Check especially: one product/one canonical identity; exact IA/route/Breadcrumb consistency; active synced+published products remain RFQ-capable when specs or Article Number are unresolved without frontend guessing; discontinued replacement behavior; small-accessory no-detail direct RFQ; ProductCard one collection request/zero per-card resolve; raw WordPress/SCF/internal-field exclusion; SeoDocument/status/robots/OG/Breadcrumb/JSON-LD boundaries; TEST_CANDIDATE/noindex and 10-20 production-data gates; production origin deployment gap; protected scope and documentation completeness. Treat provisional audit-stage PUBLIC_NO_QUOTABLE_VARIANT as superseded by the later explicit user Decision 6. Do not modify business deliverables. Write TASKS/ARTIFACTS/TASK-013/ADVERSARIAL_REVIEW_REPORT.md and your lane worklog, then return PASS/FAIL/BLOCKED with P0/P1/P2 and send a controlled response to planner.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-013/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "A4 independent closure review; no product implementation, Git delivery, acceptance or next-task execution.",
+  "dispatched_at": "2026-07-29T15:13:18Z",
+  "delivery_key": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-29T15:13:54Z",
+  "updated_at": "2026-07-29T15:13:54Z"
+}

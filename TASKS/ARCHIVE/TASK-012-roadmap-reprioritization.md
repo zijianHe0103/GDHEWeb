@@ -2,14 +2,14 @@
 accepted_at: 2026-07-29T06:52:10Z
 
 task_id: TASK-012
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [executor, wordpress_cms, frontend, localization_seo]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-012
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: NOT_APPLICABLE
 project_type: software

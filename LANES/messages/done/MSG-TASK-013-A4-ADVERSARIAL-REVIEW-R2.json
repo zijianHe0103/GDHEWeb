@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-013",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-29T15:23:48Z",
+  "requires_response_to": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Conduct TASK-013 Round 2 independent closure review. Verify only the Round 1 P1/P2 recovery and preservation of already-passed boundaries. Required deterministic matrix: every detail_product, active or discontinued, uses view_product to its retained canonical detail; the discontinued detail primary CTA is Contact Us for Replacement to /contact/; an active no-detail catalog_accessory uses direct_rfq; a discontinued no-detail catalog_accessory uses replacement_contact to /contact/ and never receives a fabricated detail. Confirm active task validation/reviewer narrative is current, recovery validation is evidence-backed, and no frontend/CMS/API/Schema/product/external-system implementation occurred. Re-run proportionate independent validation. Return PASS only for P0=0/P1=0/P2=0. Do not repair deliverables, accept, commit, push, merge, deploy or start TASK-014.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-013/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-013/PRODUCT_CARD_PROJECTION.md",
+    "TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md",
+    "TASKS/ARTIFACTS/TASK-013/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-013/EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-013/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Round 2 is limited to documentation closure. TASK remains NEEDS_REVISION until successful dispatch, then UNDER_REVIEW. No acceptance or Git delivery is authorized.",
+  "dispatched_at": "2026-07-29T15:24:32Z",
+  "delivery_key": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-29T15:24:57Z",
+  "updated_at": "2026-07-29T15:24:57Z"
+}

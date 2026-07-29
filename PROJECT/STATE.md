@@ -2,14 +2,184 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-012
+current_task: TASK-013
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-29T06:52:10Z
+last_updated: 2026-07-29T15:52:30Z
 
 ## 当前焦点
 
-`TASK-012` 为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-29T06:52:10Z 使用精确口令正式验收；closure review 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation 与 checked acceptance preparation 全部通过。ADR-006 随 TASK-012 验收生效。当前只执行任务分支正式提交/推送与 `main` 合并/推送；未部署或开始下一任务。
+`TASK-013` 为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-29T15:52:30Z 使用精确口令正式验收；Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation、完整治理审计与 checked acceptance preparation 均已通过。当前只执行任务分支正式提交/推送与 `main` 合并/推送；未部署或开始 TASK-014。
+
+## TASK-013 Governance Closeout Revision 2026-07-29T15:48:07Z
+
+- authorization: 用户回复“确认”，同意执行只读复核提出的窄收口修订。
+- audit_finding: full project audit 曾报 `FAILED_REVIEW_OR_VERIFY_AWAITING_USER`、`REVIEW_EVIDENCE_MISSING`、`VERIFY_EVIDENCE_MISSING`。
+- cause: current Review/Validation 区同时保存历史 FAIL 与最终 PASS，且正文缺少审计器要求的显式 Evidence；Lane、Messages、执行记录和 Execution Report 也有过期叙述。
+- scope: 只修活动任务和执行证据的当前/历史表达，不改变 IA、URL、CTA、ProductCard、SEO、候选、缺口或实现。
+- next: fresh full audit、technical validations 和 checked `prepare-awaiting-user`。
+
+## TASK-013 Round 2 Pass Received 2026-07-29T15:29:56Z
+
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Planner final validation 允许。
+- messages: Round 2 PASS response 和 stop-recovery request 已真实桥接、dispatch 并由 Planner ACK。
+- closure: ProductCard 四格动作矩阵确定；活动任务验证/审查叙述与当前事实一致。
+- preserved: Round 1 `FAIL / P0=0 / P1=1 / P2=1` 历史完整保留。
+- boundary: PASS 不等于用户验收，不授权 TASK-014、实现、CMS/API/Schema 修改、Git 或部署。
+- next: fresh Planner final validation，生成 Planner Summary，随后 checked `prepare-awaiting-user`。
+
+## TASK-013 Round 2 Review Dispatch 2026-07-29T15:23:51Z
+
+- message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2` 已创建并通过 message validation/dry-run。
+- ordering: Active Task、Project State 和 Board 在唤醒 Reviewer 前同步为 `UNDER_REVIEW`。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- scope: 只复核 Round 1 P1/P2 是否关闭及已通过边界是否保持。
+- boundary: 不授权修复、TASK-014、实现、验收、Git 交付或部署。
+- next: 真实桥接 Round 2 请求并等待独立结论。
+
+## TASK-013 Round 1 Review Recovery 2026-07-29T15:20:56Z
+
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`；Planner final validation 不允许。
+- p1: 停产 `detail_product` 卡片动作必须按 Decision 5 固定为进入 retained canonical detail；无详情停产配件必须固定为 replacement contact。
+- p2: 活动任务的 Validation Evidence 与 Reviewer Lane 状态需要同步到当前事实。
+- helper: 已按要求运行 `task_transition.py reopen`；helper 因只接受 `AWAITING_USER` 而安全拒绝，未产生 mutation。
+- transition: 按既有受控恢复惯例记录 `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- boundary: 保留其余已通过的业务合同；不得启动 TASK-014、产品实现、CMS/API/Schema 修改、验收、Git 交付或部署。
+- next: 仅做窄文档修订、fresh validation 和 Round 2。
+
+## TASK-013 A3 Complete And A4 Dispatched 2026-07-29T15:13:18Z
+
+- deliverables: 七份正式合同/候选/缺口交付物、A3 checkpoint、execution report、diff summary 和 validation log 已完成。
+- validation: CMS 19/frontend 16、A3 hash/list parity、frontend byte/hash parity、verify:cms-contract、Markdown、absolute path、protected scope、project/registry/messages/strict lane 和 diff 均 PASS。
+- review_message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW` 已取得真实 thread bridge 回执并 dispatch。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- boundary: Reviewer 只读业务交付物，只可写 review report、自身 worklog 和受控 response；未授权修复、实施或 Git 交付。
+- next: 等待 independent verdict。
+
+## TASK-013 Decision 9 Confirmed As Deployment Gap 2026-07-29T15:06:37Z
+
+- confirmation: 用户回复“暂未确定”。
+- result: 不虚构生产域名，生产 canonical origin 保留为 `DEPLOYMENT_GAP`。
+- configuration: 未来 Next.js 通过受控 `PUBLIC_SITE_ORIGIN` 取得生产 origin；WordPress、Local、Preview 和 Staging origin 不得作为生产 canonical。
+- gate: 正式部署前必须确认唯一 HTTPS origin，并统一用于 canonical、OG URL、Sitemap、绝对站内链接和未来 hreflang。
+- transition: `PAUSED` -> `IN_PROGRESS`。
+- boundary: 只恢复 TASK-013 A3 文档收口；不实施部署、DNS、页面、CMS、Schema/API 或 TASK-014。
+- next: 生成七份正式合同/候选/缺口交付物并同步架构契约。
+
+## TASK-013 Decision 8 Confirmed 2026-07-29T15:04:56Z
+
+- confirmation: 用户回复“可以”，采用 English card summary/key attributes 规则。
+- common_card: 公开保护图、型号、英语名称、可选人工短摘要、最多三项分类专属参数、必要状态和已确认动作。
+- summary: 在 `wp-admin` 人工编写；缺失时省略，不自动生成，也不阻止已公开产品询价。
+- category_attributes: 轨道、布带、线珠、电机/控制和小配件分别使用受控关键参数；完整规格留在详情或询价选择器。
+- exclusions: 卡片不显示价格、成本、MOQ、供应商、库存或内部 Article Number 选择结果。
+- boundary: 该确认只冻结卡片信息合同，不实施 collection projection、卡片 UI、内容或 Schema/API。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 9。
+- next: 确认生产 canonical origin，或确认将其保留为部署前必须关闭的 `DEPLOYMENT_GAP`。
+
+## TASK-013 Decision 7 Confirmed 2026-07-29T15:00:45Z
+
+- confirmation: 用户回复“可以”，采用三个 TASK-014 本地测试候选。
+- candidates: `FGD X15+PVC / GDHEPRD000172`、`SSD-01 / GDHEPRD000692 + GDHEPRD000695`、`PJ-D16 / GDHEPRD000640`。
+- coverage: 轨道详情与配件入口、复杂真实规格组合、电机渐进内容和规格不完整仍可询价。
+- boundary: 全部为 `TEST_CANDIDATE / noindex`，不构成正式目录、生产发布授权、最终 Article Number 冻结或 10～20 产品门通过。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 8。
+- next: 确认英语 card summary 与分类专属 key attributes 的显示策略。
+
+## TASK-013 Decision 6 Confirmed And Corrected 2026-07-29T14:57:46Z
+
+- confirmation: 用户确认采用分层发布保护，并补充同步到 WordPress 的产品即使缺少完整询价规格也可以通过 Request a Quote API 询价。
+- publication_gate: 首次同步创建草稿；公开保护图、基本公开身份与 WordPress 人工发布决定是否对匿名访客公开。
+- quoteability_gate: 成功同步并已公开的 WordPress 产品即具备询价资格，完整规格或唯一 Article Number 解析不是前置条件。
+- unresolved_quote: 提交稳定产品身份、公开型号、已知选择、数量和备注；Article Number 可未解析，由业务员在飞书中继续判断。
+- prohibition: 前端/API 不猜测规格组合或 Article Number；草稿、私有和未发布记录不可匿名询价。
+- boundary: 该确认只冻结发布/询价语义，不实施同步、发布校验、Request a Quote API 或飞书写入。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 7。
+- next: 确认 TASK-014 使用的 2～3 个本地 `TEST_CANDIDATE`。
+
+## TASK-013 Decision 5 Confirmed 2026-07-29T14:50:59Z
+
+- confirmation: 用户回复“采用”，接受 product card navigation/direct RFQ 分层规则。
+- detail_products: 有 canonical 详情页的产品卡片统一进入详情页，完成页面实际提供的已知选择与数量后再加入询价；按 Decision 6 允许 Article Number 未解析。
+- small_accessories: 没有独立详情页的小配件可在目录或关联模块满足选择要求并填写数量后直接加入询价。
+- prohibition: 卡片不得猜测规格或 Article Number，不为无详情页小配件创建虚构详情 URL。
+- boundary: 该确认只冻结卡片交互语义，不实施卡片、详情、选择器或询价状态。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 6。
+- next: 确认缺少公开保护图或完整可报价规格时的 fail-closed 行为。
+
+## TASK-013 Decision 4 Confirmed 2026-07-29T14:46:57Z
+
+- confirmation: 用户回复“采用”，接受 RFQ 与 replacement/contact target routes。
+- rfq_route: 正常多产品询价统一使用 `/request-a-quote/`。
+- contact_route: 通用联系和停产替代咨询统一使用 `/contact/`，原产品稳定身份与公开型号作为非 URL 表单上下文。
+- prohibition: 不建立 cart、checkout、buy 或支付路径，不在 URL 暴露内部 Article Number。
+- boundary: 该确认只冻结目标 route 与转化语义，不实施表单、询价清单、提交接口或飞书写入。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 5。
+- next: 确认产品卡片进入详情或直接加入询价清单的规则。
+
+## TASK-013 Decision 3 Confirmed 2026-07-29T14:43:01Z
+
+- confirmation: 用户回复“采用”，接受 stable primary Breadcrumb 规则。
+- product_trail: `Home > Products > Primary Product Group > Primary Subcategory > Product Model`。
+- primary_category: 每个公开产品显式保存一个且仅一个主分类；前端不得按当前入口、排序或第一个关系猜测。
+- stability: 产品从系列、应用或相关推荐进入时保持相同 Breadcrumb、`BreadcrumbList` 与 canonical 身份。
+- boundary: 该确认只冻结 Breadcrumb 业务语义，不实施字段、Schema/API、页面或 JSON-LD。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 4。
+- next: 确认 `Request a Quote` 与 replacement/contact 的公开目标 route。
+
+## TASK-013 Decision 2 Confirmed 2026-07-29T14:40:06Z
+
+- confirmation: 用户回复“可以的”，采用已提议的 route words 与 slug policy。
+- canonical: 产品详情使用 `/products/{product-slug}/`，以公开型号为主要 slug 来源，Article Number 不进入公开 URL。
+- discovery_routes: 产品分类、配件分类、系列和应用使用各自受控发现路径，但全部链接回同一产品 canonical。
+- lifecycle: 分类、系列或应用归属改变不改变产品 URL；已公开 slug 变更必须单跳永久重定向。
+- boundary: 该确认只冻结公开 path 形状和 slug 规则，不实施 redirect、页面、Schema/API 或数据迁移。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 3。
+- next: 确认多系列/多应用产品的稳定 primary Breadcrumb trail。
+
+## TASK-013 Decision 1 Confirmed 2026-07-29T10:22:45Z
+
+- confirmation: 用户回复“可以”，采用已提议的英语一级导航和 Products Mega Menu。
+- primary_navigation: `Products`、`Applications`、`Resources`、`About GDHE`、`Contact`；`Request a Quote` 为独立主按钮。
+- product_groups: `Curtain Track Systems` 与 `Accessories`，使用已提议的二级分类。
+- boundary: 该确认冻结导航标签和层级，不代表任何产品已导入、发布或成为最终生产目录成员。
+- state: 继续保持 `PAUSED`，按一次一个问题等待 Decision 2。
+- next: 确认产品、分类、系列、应用和配件目录的 route words 与 slug policy。
+
+## TASK-013 A2 Checkpoint and User Decision Pause 2026-07-29T07:56:01Z
+
+- frontend: `PASS_WITH_BLOCKING_FOLLOW_UPS / P0=0 / P1=7 / P2=1`。
+- wordpress_cms: `PASS_WITH_REQUIRED_FOLLOW_UP_CONTRACTS`。
+- localization_seo: `FEASIBLE_WITH_ENTRY_GATES`。
+- consensus: 现有 `/resolve` 可支撑单个已知产品详情纵切；真实卡片列表禁止逐卡 resolve，必须先有一次 collection 的 normalized projection；CTA state 与 `SeoDocument` 同样需要后续机器合同。
+- user_gate: 精确英语导航/目录、route words、Breadcrumb、CTA target、card interaction 和测试候选属于业务选择，Planner 不自行猜测。
+- transition: `IN_PROGRESS` -> `PAUSED`。
+- next: 只确认 Decision 1——英语一级导航和 Products Mega Menu；收到答案后恢复 A3。
+
+## TASK-013 A1 Complete and A2 Queued 2026-07-29T07:45:10Z
+
+- a1: DESIGN/IMPLEMENTATION_PLAN 已建立；project、registry、messages、strict lane audit、protected scope 和 diff 全部 PASS。
+- messages: frontend、wordpress_cms、localization_seo 三项只读审计消息已创建并 validate。
+- transition: `READY` -> `IN_PROGRESS`。
+- dispatch_gate: 每项必须取得真实 Codex thread bridge delivery ID 后才允许 `dispatch-once --execute`；接收 Lane 必须先 ACK。
+- next: 先派发 lexicographic queue 首项 frontend，再依次派发其余两项。
+
+## TASK-013 Requirement Confirmation 2026-07-29T07:41:57Z
+
+- authorization: 用户精确输入 `确认 TASK-013 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- execution_order: Planner 基线与执行设计 → 三个 specialist 只读审计 → Planner 综合合同和缺口 → 独立 adversarial review → checked acceptance preparation。
+- protected: `frontend/**`、`cms/**`、数据库、飞书、Schema/API、依赖、运行环境、产品导入/发布、页面实现、多语言和部署。
+- next: 生成 DESIGN/IMPLEMENTATION_PLAN，验证后创建并桥接 specialist 消息。
+
+## TASK-013 Intake 2026-07-29T07:37:54Z
+
+- user_request: `创建 TASK-013：冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同`。
+- branch: `codex/TASK-013-english-ia-url-cta-contract`，从远端一致的 `main` `374dc19` 创建。
+- scope: 英语站 IA/页面类型、URL/slug/canonical、CTA 状态、normalized 产品卡片投影、最小 `SeoDocument`、2～3 个 TASK-014 候选和缺口报告。
+- evidence_boundary: 当前产品记录仍是业务合同测试数据；除非用户另行提供并确认最终生产资料，不把候选记录写成最终生产目录，也不宣称 10～20 产品生产数据门已通过。
+- protected: `frontend/**`、`cms/**`、数据库、飞书、Schema、API、依赖、运行环境、产品导入/发布、Preview/cache/Webhook、页面实现、多语言和部署。
+- next: 等待精确口令 `确认 TASK-013 需求并开始执行`。
 
 ## TASK-012 Closure Scope Decision 2026-07-29
 

@@ -5153,3 +5153,508 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-012
 - summary: TASK-012 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-29T07:37:54Z - TASK-013 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-013
+- user_request: 创建 TASK-013：冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同。
+- previous_task: TASK-012 已以 `77031dd` 合并进远端 `main` 的 `374dc19`，归档为 `CLOSED / MERGED`。
+- branch: `codex/TASK-013-english-ia-url-cta-contract`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- boundary: 只登记任务和 Lane Plan；未修改前端、CMS、Schema、数据库，未连接飞书，未导入产品或实现页面。
+- next: 等待 `确认 TASK-013 需求并开始执行`。
+
+### 2026-07-29T07:41:57Z - TASK-013 requirements confirmed
+
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-013
+- authorization: 用户精确输入 `确认 TASK-013 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- execution_order: Planner A1 → WordPress/frontend/localization-SEO 只读 A2 → Planner A3 → adversarial A4。
+- boundary: 未修改产品代码、CMS、Schema、API、数据库或外部系统。
+- next: 验证 DESIGN/IMPLEMENTATION_PLAN 后派发 specialist。
+
+### 2026-07-29T07:45:10Z - TASK-013 A2 queued
+
+- type: execution_start
+- lane: planner
+- task: TASK-013
+- a1_validation: project、registry、messages、strict lane audit、protected scope、diff PASS。
+- messages: frontend、wordpress_cms、localization_seo 三项只读审计已进入 queue。
+- transition: `READY` -> `IN_PROGRESS`。
+- boundary: 尚未取得线程桥回执，不把 queue 状态误写成 delivered。
+- next: 按 dry-run 顺序桥接并记录真实 delivery ID。
+
+### 2026-07-29T07:56:01Z - TASK-013 A2 checkpoint
+
+- type: checkpoint
+- lane: planner
+- task: TASK-013
+- responses: frontend、wordpress_cms、localization_seo 三份只读审计均已真实回传并 ACK。
+- result: 技术方向一致；ProductCard collection、CTA/lifecycle 和 SeoDocument 是后续合同缺口，不在 TASK-013 越权实施。
+- transition: `IN_PROGRESS` -> `PAUSED`。
+- user_gate: 公开 IA、route、Breadcrumb、CTA target、card interaction 和测试候选必须逐项确认。
+- next: 只确认英语一级导航和 Products Mega Menu。
+
+### 2026-07-29T07:43:17Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-013
+- summary: message queued for frontend
+
+### 2026-07-29T07:43:17Z - message_queued
+- type: message_queued
+- lane: localization_seo
+- task: TASK-013
+- summary: message queued for localization_seo
+
+### 2026-07-29T07:43:17Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-013
+- summary: message queued for wordpress_cms
+
+### 2026-07-29T07:44:02Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT dispatched to frontend
+
+### 2026-07-29T07:44:22Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT moved to done
+
+### 2026-07-29T07:44:33Z - message_dispatched
+- type: message_dispatched
+- lane: localization_seo
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT dispatched to localization_seo
+
+### 2026-07-29T07:44:57Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT dispatched to wordpress_cms
+
+### 2026-07-29T07:45:00Z - message_done
+- type: message_done
+- lane: localization_seo
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT moved to done
+
+### 2026-07-29T07:45:35Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT moved to done
+
+### 2026-07-29T07:50:52Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T07:52:22Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-29T07:52:55Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT-RESPONSE moved to done
+
+### 2026-07-29T07:53:30Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T07:54:23Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-29T07:54:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT-RESPONSE moved to done
+
+### 2026-07-29T07:54:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T07:54:59Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-29T07:55:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT-RESPONSE moved to done
+
+### 2026-07-29T10:22:45Z - TASK-013 Decision 1 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“可以”，采用提议的英语一级导航和 Products Mega Menu。
+- frozen: `Products`、`Applications`、`Resources`、`About GDHE`、`Contact`，以及独立 `Request a Quote` 主按钮；Products 下采用 Curtain Track Systems 与 Accessories 分组。
+- boundary: 只冻结导航标签和层级；未修改前端、CMS、Schema/API、数据库或外部系统。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 2 route words 与 slug policy。
+
+### 2026-07-29T14:40:06Z - TASK-013 Decision 2 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“可以的”，采用提议的 route words 与 slug policy。
+- frozen: 产品详情 `/products/{product-slug}/`；公开型号为 slug 主要来源；Article Number 不进入 URL；分类/系列/应用变化不改变产品 canonical。
+- boundary: 只冻结 URL 合同；未实施页面、redirect、CMS、Schema/API、数据库或外部系统。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 3 stable primary Breadcrumb trail。
+
+### 2026-07-29T14:43:01Z - TASK-013 Decision 3 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“采用”，接受 stable primary Breadcrumb trail。
+- frozen: 每个公开产品显式指定一个主分类；产品详情 Breadcrumb 不随系列、应用或访问入口变化。
+- boundary: 只冻结 Breadcrumb 语义；未实施字段、页面、Schema/API、JSON-LD、数据库或外部系统。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 4 RFQ 与 replacement/contact target routes。
+
+### 2026-07-29T14:46:57Z - TASK-013 Decision 4 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“采用”，接受 RFQ 与 replacement/contact target routes。
+- frozen: 正常多产品询价 `/request-a-quote/`；通用联系与停产替代咨询 `/contact/`；不建立购物车、结账或支付路径。
+- boundary: 只冻结 route 与转化语义；未实施表单、询价清单、提交接口、Schema/API、数据库或飞书写入。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 5 product card navigation/direct RFQ。
+
+### 2026-07-29T14:50:59Z - TASK-013 Decision 5 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“采用”，接受 product card navigation/direct RFQ 分层规则。
+- frozen: 有详情页产品先进入详情完成选型；无详情页小配件可在目录或关联模块满足选择与数量要求后直接加入询价。
+- boundary: 只冻结卡片交互语义；未实施卡片、详情、选择器、询价状态、Schema/API 或外部系统。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 6 fail-closed publication/quoteability。
+
+### 2026-07-29T14:57:46Z - TASK-013 Decision 6 confirmed and corrected
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户采用分层发布保护，并明确同步到 WordPress 且公开的产品即使规格不完整也可以通过 Request a Quote API 询价。
+- frozen: 首次同步仍为 WordPress 草稿并人工发布；公开后即可询价；无法唯一解析的 Article Number 由业务员在飞书中后续处理。
+- prohibition: 前端/API 不猜测规格或 Article Number；未发布记录不可匿名询价。
+- boundary: 只冻结发布/询价语义；未实施同步、发布校验、RFQ API、Schema/API、数据库或飞书写入。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 7 TASK-014 test candidates。
+
+### 2026-07-29T15:00:45Z - TASK-013 Decision 7 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“可以”，采用三个 TASK-014 本地测试候选。
+- candidates: `FGD X15+PVC`、`SSD-01`、`PJ-D16`。
+- boundary: 全部为 `TEST_CANDIDATE / noindex`；不构成正式发布、最终目录、Article Number 冻结或 10～20 产品门通过。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 8 English card summary/key attributes。
+
+### 2026-07-29T15:04:56Z - TASK-013 Decision 8 confirmed
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“可以”，采用 English card summary/key attributes 规则。
+- frozen: 卡片统一骨架、`wp-admin` 人工英语摘要、分类专属最多三项参数和内部字段排除规则。
+- boundary: 只冻结卡片信息合同；未实施 collection projection、卡片 UI、内容、Schema/API 或外部系统。
+- state: 保持 `PAUSED / NOT_ACCEPTED / DIRTY`。
+- next: 只确认 Decision 9 production canonical origin。
+
+### 2026-07-29T15:06:37Z - TASK-013 Decision 9 confirmed as deployment gap
+
+- type: business_decision
+- lane: planner
+- task: TASK-013
+- confirmation: 用户回复“暂未确定”。
+- result: 生产 canonical origin 不虚构，保留为正式部署前必须关闭的 `DEPLOYMENT_GAP`。
+- transition: `PAUSED` -> `IN_PROGRESS`。
+- boundary: 只恢复 A3 权威合同收口；未实施部署、DNS、页面、CMS、Schema/API 或 TASK-014。
+- next: 完成七份正式合同/候选/缺口交付物并同步架构契约。
+
+### 2026-07-29T15:13:18Z - TASK-013 A3 complete and A4 dispatched
+
+- type: review_dispatch
+- lane: planner
+- task: TASK-013
+- deliverables: 七份正式合同/候选/缺口交付物与执行/验证证据已完成。
+- validation: CMS 19/frontend 16、hash/byte parity、verify:cms-contract、Markdown、protected scope、governance 和 diff PASS。
+- message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW` 已取得真实 Codex thread bridge 回执并 dispatch。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- boundary: 未实施、修复、Git 交付、验收或下一任务。
+- next: 等待 independent verdict。
+
+### 2026-07-29T15:12:54Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T15:13:18Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW dispatched to adversarial_reviewer
+
+### 2026-07-29T15:13:54Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW moved to done
+
+### 2026-07-29T15:18:11Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T15:18:35Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T15:20:23Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-RESPONSE dispatched to planner
+
+### 2026-07-29T15:20:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-RESPONSE moved to done
+
+### 2026-07-29T15:20:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-STOP-RECOVERY dispatched to planner
+
+### 2026-07-29T15:20:38Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-29T15:20:56Z - TASK-013 Round 1 review recovery
+
+- type: review_recovery
+- lane: planner
+- task: TASK-013
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`；Planner final validation 不允许。
+- findings: 停产 ProductCard 动作尚未确定冻结；活动任务 Validation Evidence 与 Reviewer 状态叙述过期。
+- helper: `task_transition.py reopen` 已运行并因仅接受 `AWAITING_USER` 安全拒绝，未发生 helper mutation。
+- transition: 按既有受控恢复惯例记录 `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- boundary: 只允许窄文档修订、fresh validation 和 Round 2；不得启动 TASK-014 或修改 frontend/CMS/API/Schema。
+- next: 固定停产详情产品与无详情停产配件动作，同步证据后重新验证。
+
+### 2026-07-29T15:22:51Z - TASK-013 Round 1 correction validated
+
+- type: validation
+- lane: planner
+- task: TASK-013
+- correction: 详情产品无论 active/discontinued 均进入 canonical detail；停产详情主 CTA 为 replacement contact；无详情停产配件直接联系且不创建虚假详情。
+- validation: CMS 19/15 Golden/6 negative、frontend 16/2/2、TASK-007 61-entry checksum、project/registry/messages/strict lane、protected scope 和 diff 全部 PASS。
+- boundary: 这是 recovery validation，不是 Planner final validation，不代表用户验收。
+- state: 保持 `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`。
+- next: 只发起 Round 2 independent review。
+
+### 2026-07-29T15:23:51Z - TASK-013 Round 2 review prepared
+
+- type: review_dispatch
+- lane: planner
+- task: TASK-013
+- message: `MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2` 已创建并通过 message validation/dry-run。
+- ordering: 在唤醒 Reviewer 前同步 Active Task、Project State 和 Board。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- boundary: 只读复核，不授权修复、实现、TASK-014、验收、Git 交付或部署。
+- next: 真实桥接 Round 2 请求并等待 verdict。
+
+### 2026-07-29T15:25:03Z - TASK-013 Round 2 current narrative synchronized
+
+- type: state_sync
+- lane: planner
+- task: TASK-013
+- correction: Round 2 已真实 dispatch 后，将活动任务 Review 小节从“尚未开始”同步为“正在进行”。
+- boundary: 仅修正当前时序叙述；不改变业务合同、审查证据或任务范围。
+- state: 保持 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+
+### 2026-07-29T15:29:56Z - TASK-013 Round 2 PASS received
+
+- type: review_response
+- lane: planner
+- task: TASK-013
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Planner final validation 允许。
+- messages: PASS response 与 stop-recovery request 已真实桥接、dispatch 和 ACK。
+- history: Round 1 `FAIL / P0=0 / P1=1 / P2=1` 保留。
+- boundary: PASS 不是用户验收，不授权 TASK-014、实现、CMS/API/Schema 修改、Git 或部署。
+- next: fresh Planner final validation、Planner Summary 和 checked acceptance preparation。
+
+### 2026-07-29T15:31:26Z - TASK-013 Planner final validation complete
+
+- type: validation
+- lane: planner
+- task: TASK-013
+- validation: frontend 16/2/2、CMS 19/15/6、handoff checksum 61/61、project/registry/messages/strict lane、protected scope、private-path/whitespace 和 diff 全部 PASS。
+- retry: 首个组合命令选中缺少 `jsonschema` 的 Python 环境并提前停止；从项目根使用已验证 Python 重跑 CMS/其余门禁后通过。
+- artifact: `TASKS/ARTIFACTS/TASK-013/PLANNER_SUMMARY.md` 已生成。
+- boundary: 未验收、提交、推送、合并、部署或开始 TASK-014。
+- next: checked `prepare-awaiting-user`。
+
+### 2026-07-29T15:23:48Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T15:24:32Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-29T15:24:57Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-29T15:28:46Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T15:29:01Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-013
+- summary: message queued for planner
+
+### 2026-07-29T15:29:33Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-07-29T15:29:33Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-29T15:29:56Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY dispatched to planner
+
+### 2026-07-29T15:29:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-013
+- summary: message MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-29T15:31:45Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-013
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-29T15:32:31Z - TASK-013 acceptance-view synchronization
+
+- type: state_sync
+- lane: planner
+- task: TASK-013
+- issue: 第一次 checked prepare 成功后，机器状态已是 `AWAITING_USER`，但 Active Task、Project focus 和 Board 人类可读视图仍写 `UNDER_REVIEW`。
+- helper: 受控 `reopen` 成功，仅用于修正当前状态叙述。
+- correction: 三处人类可读视图已预同步为 `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- boundary: 无业务合同、审查结论、实现、Git 或外部状态变化。
+- next: 重新运行 checked `prepare-awaiting-user` 后停止，等待正式验收。
+
+### 2026-07-29T15:32:31Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-013
+- summary: checked prepare-awaiting-user 已成功，但活动任务当前状态、Project focus 与 Board 人类可读视图仍保留 UNDER_REVIEW；仅为同步这些当前事实而受控 reopen。
+
+### 2026-07-29T15:32:58Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-013
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-29T15:48:07Z - TASK-013 governance closeout revision authorized
+
+- type: revision
+- lane: planner
+- task: TASK-013
+- authorization: 用户回复“确认”，授权修复复核发现的治理收口缺陷。
+- audit: full project audit 报三个 HIGH，原因是 current sections 混入历史 FAIL、缺少显式 Evidence 和若干过期叙述；业务合同与 runtime protected scope 未失败。
+- transition: `AWAITING_USER` -> `NEEDS_REVISION`。
+- scope: current PASS/evidence、Review History、Lane/Messages、执行记录和 Execution Report；不改业务合同或实现。
+- next: fresh full audit 和 checked acceptance preparation。
+
+### 2026-07-29T15:48:07Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-013
+- summary: 用户确认修复只读复核发现的治理收口缺陷：DPG audit 因当前 Review/Validation 区混入历史 FAIL 且缺少显式 Evidence 而报三个 HIGH；Lane、Messages、执行记录和 Execution Report 仍有过期叙述。
+
+### 2026-07-29T15:49:45Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-013
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-29T15:52:30Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-013
+- summary: TASK-013 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-29T15:52:30Z - task_013_formal_acceptance
+- type: acceptance
+- lane: planner
+- task: TASK-013
+- user_phrase: 确认 TASK-013 完成并提交到远端
+- result: task_accept helper accepted TASK-013.
+- git: FORMAL_COMMIT_PENDING; task branch push and main integration authorized.
+- boundary: No deployment or TASK-014 implementation.

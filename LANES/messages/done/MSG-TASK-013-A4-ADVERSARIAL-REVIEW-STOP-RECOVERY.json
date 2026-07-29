@@ -1,0 +1,31 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-013",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-29T15:18:35Z",
+  "requires_response_to": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Stop-hook recovery request. TASK-013 remains UNDER_REVIEW after the controlled Round 1 FAIL response, while reviewer write scope excludes TASKS/ACTIVE and PROJECT/STATE. Please acknowledge the FAIL response and record the review recovery in Planner-owned current state: P1 ProductCard discontinued action is not deterministic against Decision 5; P2 active validation and lane narrative is stale. Preserve the passing business boundaries and set the unique next step to narrow documentation correction, fresh validation and Round 2. Do not start TASK-014, product implementation, CMS/API/Schema mutation, acceptance, Git delivery or deployment.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-013/ADVERSARIAL_REVIEW_REPORT.md",
+    "LANES/adversarial_reviewer/worklog.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md",
+    "PROJECT/STATE.md"
+  ],
+  "notes": "Planner-owned recovery handoff; reviewer did not edit task or project state.",
+  "dispatched_at": "2026-07-29T15:20:38Z",
+  "delivery_key": "MSG-TASK-013-A4-ADVERSARIAL-REVIEW-STOP-RECOVERY:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-29T15:20:38Z",
+  "updated_at": "2026-07-29T15:20:38Z"
+}

@@ -563,3 +563,28 @@ Each execution records:
 - message_result: `MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT-RESPONSE` queued to Planner with `requires_response_to=MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT`
 - post_response_validation: project and message validation remain PASS; strict audit reports only the expected `QUEUE_MESSAGES_PENDING` notice for the newly queued frontend response and the independently queued localization response
 - unique_next_step: Planner consumes the three specialist audits and controls the executor authority-roadmap revision; frontend does not start a later candidate stage
+
+### 2026-07-29T15:48:33+08:00 - TASK-013 frontend read-only audit
+
+- task: TASK-013
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT
+- message_ack: exact dispatched request read and acknowledged before audit work
+- scope: read-only frontend feasibility audit; only `TASKS/ARTIFACTS/TASK-013/FRONTEND_READONLY_AUDIT.md` and this worklog were written
+- evidence_read: active task, DESIGN, IMPLEMENTATION_PLAN, ADR-006, architecture section 14, TASK-012 real-product validation gate, TASK-007 frozen Schema/Golden/checksum evidence, and all current frontend CMS consumer production source/contracts
+- result: PASS_WITH_BLOCKING_FOLLOW_UPS; P0=0, P1=7, P2=1
+- directly_usable: English-only locale, canonical publicPath/UUID/type-template rules, normalized Product detail and MediaReference shapes, deterministic collection pagination baseline, and the server-only Transport/Validator/opaque-wrapper/Adapter architecture
+- collection_gap: current collection items contain only id/type/title/publicPath; ProductCard model/media/taxonomy/summary/key attributes/lifecycle/CTA state are absent
+- n_plus_one_boundary: fetching the collection then resolving every item would be `1+N` and is prohibited; the future proof must remain one collection request for 0/1/N items and zero per-card `/resolve`
+- leakage_boundary: future collection must use a closed normalized ProductCard Schema and readonly DTO; raw WordPress/SCF/meta, database IDs, Feishu internal fields, CMS origin and internal originals remain excluded
+- seo_gap: current Page v3 and frontend 16-file contract closure have no normalized SeoDocument; metadata/JSON-LD implementation must wait for a closed allowlisted contract
+- confirmation_gates: exact IA labels/hierarchy/slugs/routes, quote/contact targets, card interaction policy, missing-media behavior, category-specific card attributes, and 2-3 TASK-014 candidates
+- production_data_gates: 10-20 authoritative products, verified taxonomy/relations, English copy/SEO, current downloads, quotation options/lifecycle, public protected media/rights/alt, production HTTPS media origin/allowlist
+- candidate_recommendation: FGE X08+pvc, SSD-01 and PJ-D16 remain TEST_CANDIDATE only until explicit user authorization
+- protected_scope: frontend, dependencies, CMS, Schema/API/database, architecture and task authority documents, Planner files and unrelated dirty edits remained read only
+- boundaries: no page/card/SEO/Adapter implementation, review, acceptance, Git action or deployment
+- validation: all referenced files exist; required headings, no trailing whitespace, no absolute local paths, generated resume packet removal and `git diff --check` PASS
+- governance_validation: project and message validation PASS; strict lane audit reports only the expected `QUEUE_MESSAGES_PENDING` notice for independently queued lane traffic
+- next: send the linked execution_response to Planner; Planner owns authority synthesis and any follow-up task dispatch
+- message_result: `MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT-RESPONSE` was delivered through the Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, recorded as dispatched, and removed from queue; `requires_response_to=MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT`
+- unique_next_step: Planner reads the audit, reconciles it with the other A2 evidence, and controls any authority confirmation or follow-up task; frontend does not start TASK-014

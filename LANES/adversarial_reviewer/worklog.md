@@ -676,3 +676,34 @@ Each execution records:
 - boundaries: no business re-review, repair, Planner-state edit, acceptance, ADR acceptance, Git, Feishu, CMS, frontend, runtime, deployment or next-task operation
 - message_status: request acknowledged as done; linked PASS review_response and Planner-owned recovery request queued to Planner
 - next: Planner acknowledges both messages, records PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-29T15:17:08Z - TASK-013 adversarial review round 1
+
+- task: TASK-013
+- message: MSG-TASK-013-A4-ADVERSARIAL-REVIEW
+- action: restored the registered reviewer lane, acknowledged the formal request, and independently reviewed the active task, nine user decisions, final IA/URL/CTA/ProductCard/SEO/candidate/gap contracts, three A2 specialist audits, A3 checkpoint, execution and validation evidence, architecture authority and protected scope
+- timing_refresh: the initial snapshot fell between real dispatch and Planner readable-state synchronization; after refresh, active task frontmatter/current state, project state and board consistently showed UNDER_REVIEW, NOT_ACCEPTED and DIRTY, so the transient bridge timing is not a finding
+- files_changed: TASK-013 canonical adversarial review report; adversarial reviewer worklog; project-resume generated reviewer resume packet; controlled request acknowledgement
+- independent_validation: frontend contract verifier reproduced 16 Schemas, two success and two error samples; current CMS Schema 3 graph inventory reproduced 19 files excluding two legacy aliases; protected frontend, CMS, local runtime, package and lockfile status is empty; project, registry, messages, strict lane and whitespace checks pass
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- p1: the frozen ProductCard action matrix contradicts confirmed Decision 5 by allowing a discontinued detail-product card to bypass its canonical detail or enter it, deferring the choice to a future machine contract; discontinued no-detail accessory behavior is also unspecified
+- p2: active-task Validation Evidence still says post-intake validation is pending and the Lane Plan still marks review blocked, despite completed A3 validation and an active formal review
+- passed_boundaries: one product and canonical identity; exact IA/route/Breadcrumb; active incomplete-spec RFQ with nullable Article Number and no guessing; retained discontinued canonical and replacement detail CTA; small-accessory direct RFQ; one collection request and zero per-card resolve; raw/internal field exclusion; English SEO state/robots/OG/Breadcrumb/JSON-LD; Decision 6 supersession; TEST_CANDIDATE noindex; production-data and origin gates; protected scope and non-authorization
+- boundaries: no business-deliverable repair, Planner-state edit, product or runtime mutation, acceptance, Git, deployment, external operation or TASK-014 work
+- message_status: original request acknowledged as done; linked FAIL review_response and Planner-owned stop-recovery request are queued
+- next: Planner acknowledges the response, records NEEDS_REVISION, performs only the narrow ProductCard and current-evidence documentation corrections, fresh-validates and may dispatch Round 2
+
+### 2026-07-29T15:27:28Z - TASK-013 adversarial review round 2 final
+
+- task: TASK-013
+- message: MSG-TASK-013-A4-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, acknowledged the final ordinary request, preserved the Round 1 report and independently reviewed only the ProductCard action P1, current evidence P2 and direct regression of previously passed boundaries
+- p1_closure: detail_product active and discontinued both use view_product to a non-null retained canonical detail; discontinued detail primary CTA is replacement contact to contact; active no-detail catalog_accessory uses direct RFQ; discontinued no-detail catalog_accessory uses replacement contact; catalog accessories retain null publicPath and never fabricate a detail
+- p2_closure: active-task status, next step, reviewer narrative and validation evidence now record UNDER_REVIEW, Round 1 FAIL, recovery checks and active Round 2 without treating recovery validation as final validation; project state and board agree
+- timing_sync: after real dispatch and reviewer ACK, Planner changed only the active current-review sentence from Round 2 not started to Round 2 in progress; no business contract or review evidence changed
+- independent_validation: frontend verifier reproduced 16 Schemas, two success and two error samples; no-write CMS Draft 2020-12 validation reproduced 19 files, 15 Golden and six negatives; all 61 TASK-007 handoff checksums passed; protected frontend, CMS, local runtime, package and lockfile status is empty; project, registry, messages, strict lane and whitespace checks passed before response
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed after controlled recovery
+- preserved_boundaries: single canonical identity; IA/route/Breadcrumb; incomplete-spec RFQ and no guessing; discontinued retained page; small-accessory behavior; one collection request and zero per-card resolve; raw/internal exclusion; English SEO; test-candidate and production-data gates; origin gap; non-authorization
+- boundaries: no business-deliverable repair, Planner-state edit by reviewer, product/runtime/CMS/API/Schema change, external operation, acceptance, Git, deployment or TASK-014
+- message_status: Round 2 request acknowledged as done; linked final PASS review_response and Planner-owned stop-recovery request are the next controlled messages
+- next: Planner acknowledges both messages, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation

@@ -648,6 +648,18 @@ TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重�
    - 形成 CMS Schema、normalized 产品卡片投影和 `SeoDocument` 缺口报告；未经证据和新任务确认不得改 Schema。禁止逐卡 `/resolve` 造成 N+1，也禁止前端读取原始 WordPress/SCF。
    - 在样本和上述规则获得业务确认、飞书/WordPress 权威拆分冻结、缺口报告完成且必要 Schema 修订另行验收前，不得把当前 Schema 标记为业务冻结；Header、URL、产品模板、技术 SEO 和后续真实内容保持阻塞。
 
+   **TASK-013 英语 IA、URL、CTA、Card 与 SEO 最小合同冻结：**
+
+   - 英语一级导航冻结为 `Products`、`Applications`、`Resources`、`About GDHE`、`Contact`，另设独立主按钮 `Request a Quote`。Products Mega Menu 分为 `Curtain Track Systems` 与 `Accessories`；具体已确认子类记录在 `TASKS/ARTIFACTS/TASK-013/IA_AND_PAGE_TYPE_MAP.md`。当前不渲染语言切换入口。
+   - 产品 canonical 采用 `/products/{product-slug}/`，公开型号是 slug 主要来源，Article Number 不进入 URL。分类、系列和应用只提供发现入口；一个产品无论属于多少系列或应用，始终保留一个身份和一个 canonical。产品详情 Breadcrumb 固定使用显式保存的主分类，不根据访问入口或关系顺序猜测。
+   - 正常多产品询价统一使用 `/request-a-quote/`；通用联系和停产替代咨询使用 `/contact/`。有详情页的复杂产品先进入详情完成已知选择，小配件若无独立详情页可以在目录/关联模块满足选择与数量要求后直接加入询价。网站不建立购物车、结账或支付。
+   - 发布保护与询价资格分离：首次同步仍创建 WordPress 草稿并由编辑人员手动发布；缺少公开保护图和基本公开身份时不得公开。产品成功同步并在 WordPress 公开后，即使网页端规格或 Article Number 不能唯一解析，也可以提交 `Request a Quote`；询价携带稳定产品身份、公开型号、已知选项、数量和备注，Article Number 可为空并由业务员在飞书中后续解析。前端/API 不得猜测规格组合或 Article Number。
+   - 产品卡片采用统一骨架：公开保护图、型号、英语名称、可选的 `wp-admin` 人工英语短摘要、最多三项分类专属关键参数、必要状态和已确认动作。卡片不显示价格、成本、MOQ、供应商、库存或内部 Article Number 选择结果。
+   - normalized ProductCard collection、typed lifecycle/action 与 `SeoDocument` 的目标合同已冻结，但当前 CMS collection item 仍只有 `id/type/title/publicPath`，CTA 仍是 generic link，Schema 3 仍无 normalized SEO/page-state。因此在另行实施 CMS/API 与 frontend consumer closure 前，禁止用逐卡 `/resolve`、前端 heuristic 或原始 WordPress/SCF 数据拼出真实卡片或 SEO。
+   - TASK-014 本地候选冻结为 `FGD X15+PVC / GDHEPRD000172`、`SSD-01 / GDHEPRD000692 + GDHEPRD000695`、`PJ-D16 / GDHEPRD000640`。三者均为 `TEST_CANDIDATE / noindex`，不是生产目录、正式发布授权、最终 Article Number 冻结或 10～20 产品门通过。
+   - 生产 canonical origin 暂未确定，作为正式部署前必须关闭的 `DEPLOYMENT_GAP`；未来由受控 `PUBLIC_SITE_ORIGIN` 提供。WordPress、Local、Preview 和 Staging origin 不得成为生产 canonical。
+   - TASK-013 权威交付物为 `TASKS/ARTIFACTS/TASK-013/IA_AND_PAGE_TYPE_MAP.md`、`URL_AND_CANONICAL_CONTRACT.md`、`CTA_CONTRACT.md`、`PRODUCT_CARD_PROJECTION.md`、`SEO_MINIMUM_CONTRACT.md`、`VERTICAL_SLICE_CANDIDATES.md` 和 `GAP_REPORT.md`。
+
 2. **视觉基线与真实产品纵向切片**
    - 从阶段 1 选择 2～3 个代表产品，贯通真实分类/系列入口、产品卡片、详情 Hero、特性/参数、Article Number/finish/兼容性、公开下载和产品询盘 CTA。
    - 设计令牌、字体、容器、按钮、媒体比例、数据密度、错误/空态和基础组件由该真实链路证明；孤立 `/foundation/ui` 不作为唯一验收。

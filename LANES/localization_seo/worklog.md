@@ -79,3 +79,22 @@ Each execution records:
 - next: run final read-only validation, then send the controlled execution_response; executor/planner may use this evidence to narrow the authoritative roadmap
 - planner_intervention: encode the first-template technical SEO contract, technical/content SEO split, multilingual maturity gates and strict PoC non-public/non-procurement boundary without claiming implementation
 - adversarial_reviewer_intervention: required later by TASK-012; not requested directly by this lane message
+
+### 2026-07-29T07:44:33Z - TASK-013 localization / SEO read-only audit
+
+- task: TASK-013
+- message: MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT
+- action: acknowledged the controlled assignment and completed a read-only audit of the minimum English SeoDocument, canonical path, robots, Breadcrumb/BreadcrumbList, OG, protected-image Alt, JSON-LD whitelist, public lifecycle states and future-locale isolation
+- files_read: AGENTS.md; PROJECT/MANIFEST.md; PROJECT/STATE.md; PROJECT/COORDINATION.md; PROJECT/AGENT_LANES.md; TASKS/BOARD.md; TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md; TASKS/ARTIFACTS/TASK-013/DESIGN.md; TASKS/ARTIFACTS/TASK-013/IMPLEMENTATION_PLAN.md; MEMORY/DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md; docs/architecture/headless-wordpress-nextjs-contract.md sections 7 and 14; TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md; current CMS and frontend English-only Schema/contract/Adapter/route facts; current official sources listed in the artifact
+- files_changed: TASKS/ARTIFACTS/TASK-013/LOCALIZATION_SEO_READONLY_AUDIT.md; LANES/localization_seo/worklog.md
+- artifact: TASKS/ARTIFACTS/TASK-013/LOCALIZATION_SEO_READONLY_AUDIT.md
+- result: FEASIBLE_WITH_ENTRY_GATES; TASK-014 can implement the first English template technical SEO from a normalized server-only domain contract, but test candidates remain noindex and production indexing remains blocked by content, origin, lifecycle and protected-media gates
+- current_facts: Schema 3 fixes locale to en and supplies publicPath/title/excerpt/media/route foundations; it does not contain normalized SEO, discontinued/replacement or indexability state; current MediaReference does not enforce protected-media identity or the decorative/alt conditional
+- task_014_boundary: implement typed Metadata/status/Breadcrumb/OG/allowed JSON-LD/Alt behavior and zero non-English output; do not treat keyword research, final production copy, multilingual routes or maturity gates as completed
+- blockers: stable primary IA Breadcrumb; production origin; production English copy; machine-verifiable protected-media eligibility; discontinued/replacement state; Product variant JSON-LD mapping after the final production-data gate
+- scope: no frontend, CMS, Schema, API, database, plugin, authority, external system, purchase, install, deployment or Git delivery action
+- validation: Markdown structure 270 lines / 4 tables / 10 HTTPS official links PASS; scoped trailing-whitespace and tracked diff checks PASS; no absolute local path in the artifact; no frontend/CMS/.local change introduced; project governance valid; controlled messages valid; strict lane audit was zero issues before response queueing and now reports only the unrelated WordPress CMS response still pending in queue
+- response: MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT-RESPONSE delivered through the real Codex thread bridge with requires_response_to MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT; Planner acknowledged it and the controlled message moved to done
+- next: Planner may merge only evidence-backed conclusions into TASK-013 contracts; this lane awaits any bounded revision request
+- planner_intervention: freeze the normalized contract and state matrix, retain the PUBLIC_NO_QUOTABLE_VARIANT business fork, and route Schema/API/media gaps to explicit follow-up work rather than TASK-014 guesswork
+- adversarial_reviewer_intervention: required later by TASK-013 governance; not requested directly by this assignment

@@ -52,3 +52,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`90e6deaadc05c85df51a56bec4062b657ba65917`
   - Remote branch：`origin/codex/TASK-011-minimal-cms-integration-page`
   - Main：`origin/main` at `90e6deaadc05c85df51a56bec4062b657ba65917`
+- `TASK-012` 真实产品优先的实施路线图重排 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-012-roadmap-reprioritization.md`
+  - Commit：`77031ddb11f540c8dca24674e989055443f72577`
+  - Remote branch：`origin/codex/TASK-012-roadmap-reprioritization`
+  - Main merge：`374dc19cd5d2a7d882e4bbaf895ea63295d775c2`

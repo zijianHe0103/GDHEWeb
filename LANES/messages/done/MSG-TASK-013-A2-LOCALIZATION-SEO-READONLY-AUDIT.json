@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT",
+  "type": "task_assignment",
+  "from_lane": "planner",
+  "to_lane": "localization_seo",
+  "task_id": "TASK-013",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-29T07:43:17Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Perform the TASK-013 localization/SEO read-only audit. Read the active task, DESIGN.md, IMPLEMENTATION_PLAN.md, ADR-006, architecture contract SEO and section 14, TASK-012 REAL_PRODUCT_VALIDATION_GATE.md, and current English-only contracts. Do not modify product code, CMS, Schema, API, database, plugins, or authority documents. Determine the minimum English SeoDocument and page-state contract for canonical path, robots, Breadcrumb/BreadcrumbList, OG, protected-image Alt, allowed JSON-LD inputs, 404/discontinued/unpublished states, and strict isolation from future locales. Separate technical SEO required for TASK-014 from content SEO and multilingual maturity gates. Write LOCALIZATION_SEO_READONLY_AUDIT.md plus your lane worklog, then send an execution_response linked to this message. Do not review, accept, commit, push, merge, purchase, install, or deploy.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-013/LOCALIZATION_SEO_READONLY_AUDIT.md"
+  ],
+  "notes": "",
+  "dispatched_at": "2026-07-29T07:44:33Z",
+  "delivery_key": "MSG-TASK-013-A2-LOCALIZATION-SEO-READONLY-AUDIT:019f88d0-0a8a-7f03-955e-2ac64fee87d5",
+  "target_session": "019f88d0-0a8a-7f03-955e-2ac64fee87d5",
+  "delivery_id": "019f88d0-0a8a-7f03-955e-2ac64fee87d5",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-29T07:45:00Z",
+  "updated_at": "2026-07-29T07:45:00Z"
+}

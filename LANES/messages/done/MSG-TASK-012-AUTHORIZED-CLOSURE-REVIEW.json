@@ -1,0 +1,34 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-012",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-07-29T06:40:41Z",
+  "requires_response_to": "",
+  "max_rounds": 6,
+  "status": "done",
+  "prompt": "Perform the explicitly user-authorized additional independent closure review for TASK-012. Planner has intentionally synchronized the active task, PROJECT/STATE and TASKS/BOARD to UNDER_REVIEW / NOT_ACCEPTED / DIRTY before waking this reviewer, preventing the prior thread-bridge race. Verify only: (1) those three current authority views are consistently UNDER_REVIEW while this review is active; (2) prior validation-log and Planner-summary P2 corrections remain closed; (3) Round 1, Round 2, current-scope, final-recheck and state-timing FAIL history is preserved without being treated as current PASS; (4) fresh governance and recovery evidence reproduces; (5) protected frontend/CMS/runtime/package scope remains unchanged and no external action occurred. Do not re-review already-passed business, Feishu, production-product-gate or media rules. Return PASS/FAIL/BLOCKED with P0/P1/P2. Do not repair deliverables, accept the task, change Planner-owned state, Git, Feishu, CMS/frontend/runtime, deploy, or start the next task.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md",
+    "PROJECT/STATE.md",
+    "TASKS/BOARD.md",
+    "TASKS/ARTIFACTS/TASK-012/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-012/PLANNER_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-012/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-012/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "User explicitly authorized one additional independent closure review. Planner must pre-synchronize UNDER_REVIEW before waking the reviewer. No broader work is authorized.",
+  "dispatched_at": "2026-07-29T06:42:42Z",
+  "delivery_key": "MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex_app.send_message_to_thread",
+  "done_at": "2026-07-29T06:42:57Z",
+  "updated_at": "2026-07-29T06:42:57Z"
+}

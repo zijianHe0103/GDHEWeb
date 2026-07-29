@@ -1,10 +1,10 @@
 # GDHE Headless WordPress + Next.js 架构契约
 
-status: accepted-by-TASK-002-with-accepted-TASK-004-amendment
-date: 2026-07-23
-scope: architecture contract plus implemented CMS foundation amendment
+status: accepted-core-with-TASK-012-roadmap-revision-pending-acceptance
+date: 2026-07-26
+scope: accepted architecture contract plus implemented CMS foundation and proposed roadmap revision
 supersedes: `docs/reference-site-analysis.md` 中 WordPress + Elementor 的实施建议
-authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、已随 TASK-004 接受的 ADR-005 与本契约
+authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、已随 TASK-004 接受的 ADR-005、本契约与待 TASK-012 验收的 ADR-006
 
 ## 0. 决策摘要
 
@@ -15,13 +15,14 @@ authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、�
 | 页面渲染 | 已发布营销内容采用静态生成/ISR；搜索、预览和其他请求态页面动态渲染 |
 | 数据 API | **REST-first 受控组合**：WordPress 核心 REST + GDHE 自有 `/gdhe/v1` 归一化端点；本阶段不采用 WPGraphQL |
 | 内容模型 | CPT/Taxonomy 由 GDHE Site Plugin 注册；SCF 提供字段运行时；版本化 JSON 是字段事实源；模块集合受控 |
-| 多语言 | 当前只启用英语 `/`；WPML Multilingual CMS + ACFML 延后到生产英语站监控稳定三个月后的独立 PoC |
+| 多语言 | 当前只启用英语 `/`；隔离 PoC 只可在第 14.6.1 节进入门满足后由独立任务授权，生产采购、公开路由和逐语种建设还必须通过第 14.6.2 节成熟度门 |
 | SEO 编辑 | 推荐 Yoast SEO，编辑人员在 `wp-admin` 维护 SEO 数据 |
 | SEO 输出 | Next.js 是公开 HTML 的唯一输出权威；生成 canonical、hreflang、OG、Schema、Sitemap、robots |
 | 预览 | WordPress 生成短时签名预览链接；Next.js Draft Mode；草稿数据只经服务端认证读取 |
 | 缓存刷新 | WordPress 发布事件发送 HMAC 签名 Webhook；Next.js 按内容、路径、语言和集合标签失效 |
 | 媒体 | WordPress Media Library 只存公开营销媒体；Next.js 统一图片组件和严格远程域名白名单 |
 | 询盘与 CAD | 通过独立受控 intake API 和隔离对象存储；机密文件不得进入公开 Media Library |
+| 飞书多维表格 | 结构化产品主数据权威：型号、Article Number、规格和可用状态从飞书单向流向网站侧；询价也写入飞书，由业务员报价 |
 | 参考边界 | 复用 RapidDirect 的公开信息架构和体验模式，不复制其源码、主题、品牌资产或文案 |
 
 本契约最初由 TASK-002 接受。TASK-003 已建立最小 Next.js 基础；TASK-004 已实现英语 CMS/SCF 最小基础。未明确标记为“已实现”的 DTO、预览、Webhook、多语言、SEO、询盘和部署能力仍只是后续契约，不得据此宣称已完成。
@@ -77,7 +78,8 @@ flowchart LR
 
 | 能力 | WordPress / `wp-admin` | Next.js | 外部/基础设施 |
 |---|---|---|---|
-| 内容、译文、媒体、发布状态 | 唯一权威 | 只读消费 | — |
+| 营销内容、译文、SEO、公开媒体、页面编排与页面发布状态 | 唯一编辑权威 | 只读消费与公开渲染 | — |
+| 型号、Article Number、规格、产品可用状态 | 可查看的只读镜像；禁止作为编辑权威 | 只读消费 | 飞书多维表格是唯一编辑权威 |
 | 页面布局和组件代码 | 保存结构化模块数据 | 唯一渲染权威 | — |
 | URL 解析与语言切换映射 | 提供已发布路由和译文关系 | 规范化、路由和输出 | CDN 仅缓存 |
 | SEO 文案 | 编辑与存储 | 生成最终标签和 JSON-LD | 搜索引擎消费 |
@@ -107,7 +109,7 @@ src/app/
 └── error.tsx
 ```
 
-以上只是下一任务的目录输入，本任务不创建这些文件。
+以上是未来公开站的目标目录输入，不代表紧接 TASK-012 的下一任务，也不表示这些文件已经创建；实际顺序服从第 14 节。
 
 路由解析规则：
 
@@ -248,7 +250,7 @@ frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用
 
 **决定：**首期采用 WordPress REST，不安装 WPGraphQL。TASK-004 已实测 Core REST、GDHE allowlisted 字段投影和 `/gdhe/v1/schema`；WPML/ACFML、Yoast 与完整 DTO 尚未安装或实现。数据访问层保留 adapter 边界；只有在真实页面查询出现无法通过批量 REST、`_fields`、`_embed` 或有限 `/gdhe/v1` 合理解决的可测瓶颈，或未来业务明确需要 WPML GraphQL 工作流时，才用新 ADR 重新评估 WPGraphQL。不得在组件中临时混入第二套数据协议。
 
-下一阶段的 API fixture 任务必须用首页、Service 详情、Case 详情和 Material 详情四个代表页面建立同一组 REST 与候选 GraphQL 基准。测试从与 CMS 同部署区域运行，保留 WordPress 正常 object cache、绕过 Next.js 数据缓存；每个 fixture 预热后测量 200 次、并发 20。以下任一条件成立即**强制启动 GraphQL PoC 和新 ADR**，而不是直接在生产引入：
+TASK-002 冻结的量化复评门继续有效，但它不再构成“下一阶段 API fixture 任务”。只有第 14 节阶段 2 或阶段 5 的真实产品消费证据表明 REST-first 出现可测瓶颈时，才用同一组真实产品分类/系列、产品详情、下载/关系页面比较 REST 与候选 GraphQL。测试从与 CMS 同部署区域运行，保留 WordPress 正常 object cache、绕过 Next.js 数据缓存；每个代表 fixture 预热后测量 200 次、并发 20。以下任一条件成立时，必须**提出一个独立授权的 GraphQL PoC 与新 ADR 候选**，不得自动执行或直接在生产引入：
 
 - 四个 fixture 中至少两个在聚合后仍需要超过 2 个串行 CMS origin 请求；
 - 任一 fixture 的 CMS 数据获取 p95 超过 500 ms，或上游错误率超过 1%；
@@ -259,23 +261,20 @@ frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用
 
 ### 5.2 端点层级
 
-0. 当前已实现的最小边界
-   - `GET /wp-json/gdhe/v1/schema`：匿名只读，只返回 Schema 1.0.0、当前 `en`、公开/内部类型名、Taxonomy、字段/模块 allowlist 和明确 deferred 标记。
-   - 六种公开 CPT 的 Core REST item 响应增加 `gdhe` allowlist；通用 `acf` 和 `meta` 容器被移除。
-   - `site_settings` 无公开 Core REST route；匿名只读仅允许已发布内容。
+0. 当前已实现的 GDHE 合同边界
+   - TASK-007 已交付 REST API `1`、Content Schema `3.0.0`、Module Schema `1.0.0` 与匿名只读 `GET /wp-json/gdhe/v1/schema`。
+   - TASK-007 已交付并冻结 `GET /resolve`、`GET /collection/{type}`、`GET /navigation` 和 `GET /route-manifest`；它们只返回通过 Schema 3、模板配对、路径唯一性和公开资格校验的已发布内容。
+   - 当前公开类型为原生 `page`、原生 `post`、`product`、`market`、`reference`、`support_article` 和 `download`；`site_settings` 仍无公开 Core REST route。
+   - Core REST 的 GDHE 投影继续使用 allowlist；通用 `acf`、原始 SCF/postmeta 和内部数据库形状不是公开合同。
 1. 核心 `/wp-json/wp/v2/*`
    - 简单 CPT/Taxonomy 集合、媒体、作者等标准资源。
    - 通过 `_fields` 限制响应，避免前端取得无关字段。
 2. 未来 WPML/ACFML adapter（未实现）
-   - 语言筛选、译文关系和字段翻译行为必须由三个月后的 PoC 固定；不能预设未验证的 REST 形状。
+   - 语言筛选、译文关系和字段翻译行为必须由第 14.6.1 节进入门后的独立 PoC 固定；不能预设未验证的 REST 形状。
 3. 未来 Yoast REST（未实现）
    - 如后续安装，读取 `yoast_head_json` 的编辑结果；不使用其只读 API 写数据。
-4. GDHE `/wp-json/gdhe/v1/*` 后续端点（均未实现）
-   - `GET /resolve?locale=&path=`：将公开路径解析为归一化内容。
-   - `GET /collection/{type}?locale=&page=&filters=`：稳定分页和筛选。
-   - `GET /navigation?locale=`：规范化当前语言的 Header/Mega Menu/Footer。
-   - `GET /route-manifest`：只返回已发布公共路径、修改时间和译文闭包。
-   - `GET /preview/{id}`：仅认证服务账号可读草稿/修订。
+4. 未来 Preview 读取边界（未实现）
+   - Preview endpoint、签名入口和认证草稿/修订读取均尚未交付；候选 `GET /preview/{id}` 形状必须由阶段 3 的独立任务、Schema 3 preview DTO、最小权限和 Draft Mode 合同共同冻结。
 
 公共端点只返回 `publish` 内容。草稿、私有内容、内部备注、用户邮件、插件配置和原始机密 meta 不得出现在匿名响应。
 
@@ -316,7 +315,7 @@ interface ContentEnvelope {
 }
 ```
 
-这只是契约示例，不代表已创建 TypeScript 代码。PHP 端点的 JSON Schema、TypeScript 类型和代表性 fixture 必须在下一任务中做契约测试。
+这段 TypeScript 仍只是 TASK-002 的历史契约示例，不是当前 Schema 3 消费事实。TASK-007 已交付版本化 PHP/JSON 合同与代表性 Fixture，TASK-008～011 已交付当前 `/resolve` 前端闭包和最小消费者；未来产品卡片与 SEO 归一化合同只可按第 14 节阶段 1 的缺口证据另立任务。
 
 ### 5.4 错误和版本边界
 
@@ -352,7 +351,7 @@ interface ContentEnvelope {
 
 当前阶段只启用英语，不安装 WPML、ACFML、Polylang 或机器翻译插件，不创建任何非英语内容或公开入口。ADR-002 的九语言范围是未来发布目标，不是当前运行状态。
 
-未来生产英语站正式上线并连续监控稳定三个月后，再创建独立任务评估并采购 **WPML Multilingual CMS + ACFML**。三个月从生产监控起算，不从 TASK-004 验收或本地安装起算。PoC 至少覆盖 English/French/Arabic Service fixture、SCF 字段兼容、独立发布/撤回、RTL、REST 译文关系、权限、preview、升级和回滚；未通过不得启用公开语言路由。WPML 与其他多语言插件不得并装，WPGraphQL 也不因选择 WPML 自动启用。
+未来只有第 14.6.1 节的 PoC 进入门满足后，才可由独立任务评估 **WPML Multilingual CMS + ACFML**；TASK-012 不授权安装或采购。PoC 至少覆盖 English/French/Arabic 的产品、分类、下载和关系 fixture，以及 SCF 字段兼容、独立发布/撤回、RTL、REST 译文关系、权限、preview、缓存失效、升级和回滚。SCF + WPML/ACFML 兼容性是 PoC 必须产出的结论，不是授权 PoC 前预先存在的证据。只有 PoC PASS 且第 14.6.2 节生产成熟度门全部满足，才可另行确认生产许可证、公开语言路由或逐语种建设。生产英语站的连续监控时长仍是风险证据，但不再以固定三个月作为唯一启动条件。WPML 与其他多语言插件不得并装，WPGraphQL 也不因选择 WPML 自动启用。
 
 稳定译文组 ID 不依赖未来多语言插件未承诺的内部结构，也不使用会随内容变化的最小 post ID。多语言 PoC 中由 GDHE Site Plugin 注册受保护 meta `_gdhe_translation_group_uuid`：
 
@@ -537,13 +536,26 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
 
 本任务不实现询盘系统，只冻结边界：
 
-1. 浏览器向同源 Next.js intake Route Handler 提交表单，不直接 POST WordPress 公共 REST。
-2. 文本字段做 schema 校验、长度限制、反垃圾、速率限制、Origin/CSRF 防护和隐私同意记录。
-3. 文件先取得短时预签名上传地址，写入隔离对象存储的 quarantine 区。
-4. 服务端校验扩展名、MIME、文件签名和大小，重命名对象并执行病毒/沙箱扫描；扫描通过后才可供内部人员访问。
-5. 邮件/CRM 通知异步发送；失败可重试，不能让浏览器假成功。
-6. 如需在 `wp-admin` 查看线索，可在后续任务创建非公开 `gdhe_inquiry` 类型，只保存最小化元数据、处理状态和短时签名文件引用；文件本体仍在隔离存储。
-7. 保留期限、允许格式/容量、CRM、邮件和扫描供应商均需要单独业务确认。
+1. GDHE 官网是 B2B 询价站，不是面向消费者的在线商城。访客选择所需型号、规格、配件及其他必要选项后提交 quotation request；当前业务范围不提供购物车结算、在线订单确认或在线支付。
+   - 英语站统一主询价 CTA 使用 `Request a Quote`。正常在售产品的同一主转化路径不得混用 `Ask for Quotation` 或 `Get a Quote`；停产产品继续使用已确认的 `Contact Us for Replacement`。
+   - 正常在售产品点击 `Request a Quote` 后，先将当前已选 Article Number、规格/选项和数量加入多产品询价清单；客户可继续浏览并添加其他产品，最后在统一询价步骤填写联系信息并一次提交。产品 CTA 不直接触发单产品表单提交，也不代表在线下单。
+   - 询价清单使用 `Article Number + 完整公开配置` 作为行身份。同一 Article Number 且包装、Logo、套袋/对扣等全部公开配置相同时，重复添加累加到同一行数量；任一公开配置不同则保留独立行。不得仅按 Article Number 合并而丢失客户配置。
+   - 每一个加入 quotation request 的产品或配件 RFQ 行项目都必须填写数量；缺少数量的行项目不能作为完整询价提交。数量只能是大于零的整数，最小值为 `1`；空值、`0`、负数和小数均无效。未来实现必须在浏览器交互层与服务端 intake 校验层同时执行该约束。
+   - 公开 RFQ 数量单位按产品类别固定：轨道按“支”，布带和线珠按“卷”，电机、遥控器及其他配件按“个”。飞书产品主数据为每个 Article Number 保存长度换算字段；飞书报价系统接收 Article Number 和客户数量后读取该字段，将轨道、布带和线珠换算为总米数，配件继续按个计算，并根据包装方式折算各类包装件数。总米数、包装件数和计算公式属于飞书报价系统责任，不要求访客在网页端输入，也不进入 WordPress、GDHE REST API 或 Next.js 的实现范围。系统统一使用 `Article Number`，不创建 `Part Number` 字段或别名。
+2. 可独立询价的配件可以脱离主产品成为报价请求中的独立行；每个配件拥有独立 Article Number，并沿用全公司范围不重复的 Article Number 规则。公开页面身份按产品类型决定：同款、同型号、出厂配套的电机与遥控器共用一个组合产品页面；布带、transparent tape 和用户所称“线珠”等可独立表达的大类建立类型详情页；轨道封口、走珠、顶码、墙码等小型安装配件只在相关主产品区域展示。类型页承载其真实可订购规格，不为每个规格创建独立页面。
+   - 电机与遥控器共用页面不等于共享库存身份：电机和遥控器分别保留自己的全局唯一 Article Number，API 和 RFQ 不创建额外组合 Article Number。页面需要同时表达两个部件身份，并允许客户只选电机、只选遥控器或同时选择两者；两个 RFQ 行项目分别填写数量且数量可以不同。
+   - 所有上述附属产品统一使用“配件”业务角色，不建立“备件”或“套装成员”独立角色。配件通过可筛选的“配件类别”组织；当前示例为顶码、墙码、走珠、封口、布带和线珠。“配件类别”只负责分类和筛选，不决定是否建立独立详情页；页面身份继续沿用前述混合公开规则。用户已确认“强码”是“墙码”的笔误，数据中只允许规范类别“墙码”。
+   - 配件类别基数为多对一：每个具体配件必须且只能关联一个配件类别，同一 Article Number 不得同时出现在多个配件类别中；一个配件类别可以包含多个配件。筛选结果按该唯一类别归属生成，不复制配件记录。
+   - 配件不强制每个 Article Number 都有独立型号。布带按“型号 → 多个规格/Article Number”组织：型号由颜色与钉子材质共同决定；同一型号下，宽度、钉距和长度变化产生不同可订购规格及 Article Number。当前已知宽度为 30mm、45mm、60mm，钉距包括 125mm、145mm、165mm、170mm 及更多值，长度包括 30m、40m、50m、60m 等。封口、顶码、吊码、走珠等其他配件通常同时有型号和 Article Number，但不得据“通常”把型号设为所有配件的强制字段。
+   - 线珠按“型号 → 珠距/卷长规格”组织，型号由颜色与具体珠型共同决定。当前珠型包括尚飞大方珠系列的单扣、双扣和大圆扣，以及用户所称佳丽斯中方珠/珠系列的单扣佳丽斯中方珠、双扣佳丽斯中方珠和小圆扣佳丽斯珠。常见珠距为 6cm、6.6cm、7cm、8cm、10.2cm；10.2cm 目前只记录为双扣常见规格，不设排他规则。珠距和卷长共同确定具体规格；任一变化都产生独立 Article Number，但不改变型号。
+3. 浏览器向同源 Next.js intake Route Handler 提交表单，不直接 POST WordPress 公共 REST。
+4. 文本字段做 schema 校验、长度限制、反垃圾、速率限制、Origin/CSRF 防护和隐私同意记录。
+5. 文件先取得短时预签名上传地址，写入隔离对象存储的 quarantine 区。
+6. 服务端校验扩展名、MIME、文件签名和大小，重命名对象并执行病毒/沙箱扫描；扫描通过后才可供内部人员访问。
+7. 邮件/CRM 通知异步发送；失败可重试，不能让浏览器假成功。
+8. 如需在 `wp-admin` 查看线索，可在后续任务创建非公开 `gdhe_inquiry` 类型，只保存最小化元数据、处理状态和短时签名文件引用；文件本体仍在隔离存储。
+9. 用户已确认 quotation request 最终要在指定飞书多维表格中新增记录，由业务员在飞书完成报价；实现前必须读取真实 Base、表、字段、关联、权限和幂等键，不得凭口述猜 ID 或字段。
+10. 报价请求的精确字段、数量规则、CTA 英文标签、飞书写入失败/重试/去重/状态回传、保留期限、允许格式/容量、邮件和扫描供应商均需要继续逐项确认。
 
 ## 12. 安全、权限与隐私
 
@@ -577,66 +589,145 @@ uploads.example.com    私有上传服务，不公开列目录
 
 ## 14. 后续实施顺序
 
-本节是实施路线的单一权威；任务状态仍以 `PROJECT/STATE.md` 和 `TASKS/BOARD.md` 为准。以下“候选任务”只有在用户创建并确认后才成为正式 TASK。
+本节是后续实施顺序的单一权威。它替代 TASK-005 对“全局壳层 → 首页 → 页面模板 → 后期 SEO/Preview/cache”的尚未执行顺序，但不改写 TASK-005 的合同、测试和交接边界。以下均是候选阶段；只有用户创建并确认对应任务后才可执行。
 
-### 14.1 已完成基础
+任务状态以 `TASKS/BOARD.md` 为当前视图，代码交付以 Git commit 与远端 ancestry 为事实，`PROJECT/STATE.md` 只记录当前总体状态和唯一下一步；本节不复制每个任务的完整历史。
 
-1. **TASK-001 Git/GitHub 初始化 — 已验收并推送。**
-2. **TASK-002 Headless 架构契约 — 已验收并推送。** 确立 Next.js 公开前端、WordPress `wp-admin` 唯一内容后台和 REST-first。
-3. **TASK-003 Next.js + TypeScript 基础 — 已验收并推送。** 只建立最小 App Router 工程、工具链、测试和图片优化验证；没有 CMS 消费或正式页面。
-4. **TASK-004 英语 CMS Schema + SCF + GDHE REST 基础 — 已验收并推送。** 已完成英语内容类型、分类法、代码定义字段、七个模块名、能力矩阵、最小 `/gdhe/v1/schema` 和受控 Core REST 投影；完整 DTO、路由解析、模块稳定 ID/版本和结构化 `data_table` 未实现。
-5. **TASK-005 路线图与边界 — 当前规划任务。** 只冻结后续 API/DTO/Fixture 与 Next.js CMS 接入边界，不实现产品代码。
+### 14.1 保留的交付基线
 
-### 14.2 下一候选 A：英语版 API/DTO/Fixture 实施
+TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重排为由扩张其既有范围：
 
-该任务由 WordPress/GDHE 插件侧拥有，必须先于正式前端消费完成：
+| 任务 | 保留的交付事实 |
+|---|---|
+| TASK-001～TASK-006 | Git/GitHub、Headless 架构、Next.js 基础、英语 CMS/SCF 基础、API/前端边界和治理基线 |
+| TASK-007 | Schema 3 产品模型、REST `resolve`/collection/navigation/route-manifest、Fixture、Golden、迁移与不可变交接；这是技术合同基线，不是经 GDHE 真实目录验证后的业务冻结 |
+| TASK-008 | 前端本地 `/resolve` 合同快照和校验基线 |
+| TASK-009 | server-only `/resolve` Transport、固定英语路径和错误语义 |
+| TASK-010 | 运行时 Schema Validator 与调用方隔离的 validated wrapper |
+| TASK-011 | 最小 Adapter、server-only 编排、技术集成页、真实 WordPress E2E 与强制清理 |
 
-- **A1 — Schema 与迁移基础**：冻结 page/error/module Schema，持久化 module instance ID 与 per-module version，把 `data_table` 迁移为结构化数据，并完成 dry-run、幂等、歧义处理和隔离回滚证据。
-- **A2 — 公开 API、Fixture 与交接**：在 A1 通过中间检查后实现最小端点、四类 Fixture、发布/引用/错误契约矩阵、benchmark、清理和不可变交接包。
+这些交付证明技术链路能够工作；它们不证明真实 GDHE 产品已适配、正式 IA/URL/CTA 已冻结、正式模板已完成、生产 Preview/cache/Webhook/Staging 已交付或多语言已启用。
 
-- 把 WordPress Core、SCF 和数据库形状归一化为版本化公开 DTO；前端不得依赖原始响应。
-- 冻结 page envelope、错误 envelope、collection、navigation、route manifest 及七类模块的机器可读 Schema。
-- 为每个模块持久化稳定 instance ID 和 per-module `schemaVersion`；禁止使用数组索引、标题或内容哈希充当身份。
-- 把 `data_table` 从 textarea 占位形状迁移为有列键、行和单元格校验的结构化数据，并提供 dry-run、幂等、回滚和歧义处理证据。
-- 只实现经代表页面证明必要的最小 `resolve`、`collection`、`navigation` 和 `route-manifest` 端点。
-- 用 Home、Service、Case Study 和 Material 四类可清理英语 fixture 覆盖 publish、draft、private、404、引用可见性、Schema 错误和清理负例。
-- 交付 REST contract tests、golden JSON、兼容/迁移/回滚、benchmark、fixture manifest 和零残留证明。
-- 继续采用 REST-first；只有第 5.1 节量化门满足时，才创建独立 WPGraphQL PoC 和新 ADR。
+### 14.2 内容与参考权威
 
-完成门：A1 只形成可回退的中间检查点，不授权前端正式消费。只有 A2 最终独立审查通过，DTO/模块/table/fixture/负例/清理全部有机器可验证证据，并向前端交付固定契约版本、Fixture revision 与校验值后，候选 B 才可开始正式消费。该任务不得修改 Next.js 页面、组件或正式视觉。
+- **飞书多维表格**是型号、Article Number、规格、可用状态等结构化产品主数据的唯一编辑权威；这些字段只允许单向流向网站侧，不在 WordPress 与飞书之间双向编辑。
+- **WordPress `wp-admin`**是营销文案、SEO、公开媒体和页面编排的内容管理权威；它不取代飞书的结构化产品主数据权威。型号、Article Number、规格和可用状态在 `wp-admin` 中可以查看但只读，只能在飞书修改；Next.js 的具体读取路径仍待确认。
+- **GDHE 真实资料**仍是下载、媒体、公司事实、文案和 CTA 业务流程的业务权威；资料不足时输出缺口，不用参考站内容补写。
+- **产品型同业**只用于研究产品目录、系列、技术信息、下载和关系组织；不得复制品牌、型号、文案、图片或未授权资产。
+- **RapidDirect**只用于信息节奏、信任表达、交互、响应式和转化模式；不得把其 Instant Quote、制造业 taxonomy 或页面内容机械移植到 GDHE。
 
-### 14.3 下一候选 B：Next.js 英语版 CMS 接入
+### 14.3 Schema `19/16` 口径
 
-该任务只消费候选 A 已冻结并通过审查的公开契约：
+- TASK-007 CMS 权威合同从 `page.v3`、`collection.v3`、`navigation`、`route-manifest` 和 `error` 五个根递归解析本地 `$ref`，得到 **19-file transitive Schema graph**。
+- TASK-008 固定、TASK-010 编译、TASK-011 消费的是 `page.v3` + `error` 的前端本地 **16-Schema `/resolve` closure**。
+- 两者共有同一组 16 个 `/resolve` 文件；CMS 图额外包含 `collection.v3.schema.json`、`navigation.schema.json` 和 `route-manifest.schema.json`。前端没有额外文件，差异不表示合同丢失，也不授权扩大当前前端消费者。
 
-- 在 `src/lib/cms/` 建立 server-only transport、运行时 validator、adapter、typed errors 和 cache-tag helper；组件不得读取原始 WordPress/SCF JSON。
-- `WORDPRESS_API_URL` 仅在服务端读取；CMS origin、cookie、Application Password、nonce 和未来 preview secret 不得进入浏览器或 `NEXT_PUBLIC_*`。
-- 明确 path normalization、权威 404、timeout、429、上游失败、非 JSON 和不兼容 Schema 的不同处理；不得把上游错误伪装成 404 或回首页。
-- 通过一个刻意技术性的入口或 harness，证明真实 Next.js production server 经服务端 HTTP 消费已审核英语 fixture，并验证 404 与非 404 错误。
-- 建立 validator、adapter、transport、deduplication、route、server-only 隔离、contract sample 和 live E2E 测试。
-- 技术证明可先使用 `no-store`；生产 ISR 时长、stale retention、Preview、Webhook 和 tag invalidation 留给独立任务。
+### 14.4 权威候选阶段
 
-前置门：候选 A 的 DTO Schema、模块 ID/版本、结构化 `data_table`、四类 fixture、错误矩阵、发布/引用负例、清理和审查均通过。该任务不得实现正式首页、Header、Footer 或视觉系统。
+1. **英语站信息架构、真实目录与转化基线**
+   - TASK-012 使用当前测试产品记录验证产品归组、规格、询价、媒体和关联同步等业务合同；这些记录不是最终生产目录，也不满足 10～20 个最终生产产品数据验收门。已确认的规则和未决生产数据门记录在 `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`。TASK-007 Schema 3 只能称为技术版本基线，不能称为真实产品业务模型已冻结。
+   - 在正式批量导入、产品模板业务冻结和 Schema 业务冻结前，由用户或业务责任人提供并确认 10～20 个合法、可使用且来源可追溯的最终生产 GDHE 产品，覆盖普通手动轨道、电动轨道、医用轨道、S-fold/Ripplefold、罗马杆或特殊系统、顶装/墙装、多长度/颜色/表面处理、主产品/配件/备件/套装、电机/遥控/控制协议/兼容关系、多份安装说明/型录/技术图纸，以及停产/替代/升级型号。先做映射和压力验证，不直接批量导入。该门是后续阶段的强制进入条件，不是 TASK-012 路线图文档收口必须提前伪造的生产数据。
+   - 已确认网站的主转化语义是 B2B quotation request：访客完成型号、规格、配件等选项后索取报价，不在线下单或支付。阶段内继续冻结一级/二级 IA、分类/系列、URL Map、slug/参数规则、页面类型、访客类型、精确 CTA 英文标签和辅助 CTA、公开 canonical origin、SEO 字段责任、内容责任和素材缺口。
+   - 已确认飞书多维表格持续作为型号、Article Number、规格和可用状态的结构化产品主数据权威；WordPress 持续作为营销文案、SEO、公开媒体和页面编排的内容权威。产品主数据只允许从飞书单向流向网站侧，不采用默认双向同步；quotation request 写入飞书，由业务员在飞书报价。
+   - 已确认型号、Article Number、规格和可用状态在 `wp-admin` 中显示为只读；产品介绍、SEO、公开图片和页面模块继续在 `wp-admin` 编辑。产品读取拓扑冻结为“飞书产品主数据 → 受控同步 → WordPress 只读镜像 → GDHE REST API → Next.js”：公开页面不在每次请求时直接读取飞书，现有 GDHE REST、Schema、Validator 和 Adapter 继续作为前端唯一内容边界。飞书必须提供显式的网站发布资格；只有被业务方标记为“允许发布”且 Article Number 有效的真实记录，才能进入网站同步范围，其他记录默认不进入。实施前仍须只读核对真实 Base/表/字段/关联/权限，并另行冻结字段映射、WordPress 发布审核、删除/停用、幂等、失败恢复、同步日志和最后成功数据保留策略。当前不授权连接或修改飞书。
+   - 型号级产品关联关系同样只在飞书维护。飞书新增或删除关系后，下一次完整成功同步原子替换 WordPress 只读镜像中的关系集合，并经 GDHE REST API 自动更新对应产品详情页；WordPress 不重复编辑。同步失败保留最后一次成功关系集合。关系目标停用、撤销“允许发布”或 WordPress 未公开时，官网隐藏推荐且不生成无效链接，但保留飞书内部关系；目标重新满足资格并公开后自动恢复。
+   - 发布审核采用分层生命周期：产品首次获得同步资格时只创建 WordPress 草稿，须由编辑人员完善并手动发布；已发布产品的普通飞书主数据更新通过校验后自动更新只读镜像并保持公开，不重复要求人工发布。Article Number、型号归属、产品记录删除或撤销网站发布资格属于重大变更，不得自动覆盖或下线，必须进入例外审核。任何校验失败都保留最后一次成功公开数据，且同步不得覆盖 WordPress 管理的营销文案、SEO、公开媒体和页面模块。
+   - 停产产品不直接删除或自动下线：保留原 URL 和公开页面，显著标记 `Discontinued`；存在替代型号时展示替代产品链接；常规询价 CTA 改为 `Contact Us for Replacement`。替代/升级关系、停产生效时间和无替代型号时的内容规则仍须由真实样本与字段映射验证。
+   - 产品与产品系列采用多对多关系，产品与应用场景也采用多对多关系。同一个产品可以出现在多个系列入口和多个应用场景页面，但只保留一个产品身份、一个 canonical 产品详情页和同一组 Article Number 规格，不因目录归属复制产品记录。
+   - 技术参数按“分组、名称、值、单位、显示顺序”结构化保存，不将整张参数表降级为自由文本。第一阶段统一使用公制单位（如 `mm`、`cm`、`m`、`kg`），不按市场自动换算英制；未来如有真实市场需求，再由独立任务增加显示换算，并保留原始标准值。
+   - 网站内容层只保存当前有效的型录、安装说明和技术图纸；当前文件记录类型、版本号、语言和生效日期，并可关联多个产品。失效旧版本不在 WordPress、飞书网站镜像或公开媒体中重复保存，由极空间独立归档；替换时网站关系切换到新文件并移除旧文件。极空间历史库不进入公开 API 或网站同步路径。
+   - 成本、采购价、内部销售底价、利润/利润率、供应商信息、库存数据、客户专属报价、内部备注和业务审核记录只保存在飞书，不同步也不储存在网站系统。同步合同必须采用明确的公开字段白名单，这些敏感字段不得进入 WordPress、GDHE REST API、Next.js、公开缓存或应用日志。WordPress 可保留自身内容编辑修订历史，但不复制飞书业务审核记录。
+   - 第一批公开产品字段白名单为：产品名称、型号、Article Number、真实可选规格、尺寸、颜色、表面处理、技术参数、安装方式、兼容关系、在售/停产状态、产品图片和当前有效资料。白名单只定义“允许公开”的字段范围；每条记录仍须通过飞书发布资格、数据校验和 WordPress 发布状态门。
+   - 公开产品图片使用业务方在上传前制作完成的 `公开保护图`，包括可见水印、品牌标识或品牌底纹，并可包含型号和尺寸标注。WordPress 只管理和发布保护成品图；网站不自动生成水印或排版。内部无水印原图只保存在飞书、极空间等内部系统，不进入 WordPress、GDHE REST API、Next.js、隐藏字段、构建产物或公开缓存。
+   - B2B 公开信息采用分层规则：MOQ 不特别展示，如内部需要只保留在飞书；整柜交期公开口径为“收到客户定金，并确认订单、包装和生产资料后，通常为 `30–40 天`”；包装材料选项按产品类别维护且每类相对固定；所有产品均可提供样品；公司可提供 OEM 和 ODM。包装、交期、样品和 OEM/ODM 由 WordPress 维护，不进入飞书产品主数据同步；当前已知产品类别的包装合同已确认，真实产品记录分配留待代表样本核对。
+   - 用户提供的飞书截图确认轨道类包装相关来源标签为常规、纸盒、打字、套袋、大收缩膜和对扣。WordPress 对外说明分别表达防撞膜加尼龙带、泡沫膜外加纸盒、客户 Logo 印刷、单支 PP 膜热塑、大收缩膜整扎热塑、两根轨道对扣节省装柜空间。“打字”不得作为英文客户标签直接翻译。组合合同分为三个维度：基础包装必须在常规/纸盒/大收缩膜中三选一；Logo 印刷可选；保护/排列方式可以不选，选择时只能在套袋/对扣中二选一。Logo 印刷可与任一合法状态组合；真实轨道记录分配仍待代表产品核对。
+   - 布带和用户所称“线珠”明确排除在上述轨道包装合同之外。它们的公开常规包装是纸箱包装；特殊“组合包装”只由业务员针对已有需求的客户提供，不在官网展示，也不进入公开 RFQ 自助选择。由于“常规包装”在轨道类表示防撞膜加尼龙带、在布带/线珠类表示纸箱，数据模型和 WordPress 配置必须使用类别限定的包装身份，不得共享一个全局“常规”枚举。
+   - 同款、同型号且出厂配套的电机和遥控器采用固定纸箱包装。WordPress 只维护这一公开包装说明，API 和 RFQ 不输出包装选择集合；不得复用轨道或布带/线珠的包装选择合同。
+   - 封口、走珠、顶码、墙码等小型相关配件同样固定使用纸箱包装。官网只在需要时展示固定说明，不输出包装选择集合，也不复用其他产品类别的包装合同。
+   - 基于真实样本逐项确认：产品与变体边界；型号与 Article Number 的基数关系；配件是独立产品、关联附件还是套装成员；各产品实际所属系列和应用；各产品实际参数分组、名称、值、单位和顺序；文档版本、语言、失效和替代；公开字段与内部字段；MOQ、包装、交期、OEM/ODM 和样品等 B2B 字段；Excel 批量导入和更新是否需要及其业务键。
+   - 形成 CMS Schema、normalized 产品卡片投影和 `SeoDocument` 缺口报告；未经证据和新任务确认不得改 Schema。禁止逐卡 `/resolve` 造成 N+1，也禁止前端读取原始 WordPress/SCF。
+   - 在样本和上述规则获得业务确认、飞书/WordPress 权威拆分冻结、缺口报告完成且必要 Schema 修订另行验收前，不得把当前 Schema 标记为业务冻结；Header、URL、产品模板、技术 SEO 和后续真实内容保持阻塞。
 
-### 14.4 英语公开站实施
+2. **视觉基线与真实产品纵向切片**
+   - 从阶段 1 选择 2～3 个代表产品，贯通真实分类/系列入口、产品卡片、详情 Hero、特性/参数、Article Number/finish/兼容性、公开下载和产品询盘 CTA。
+   - 设计令牌、字体、容器、按钮、媒体比例、数据密度、错误/空态和基础组件由该真实链路证明；孤立 `/foundation/ui` 不作为唯一验收。
+   - 技术 SEO 从首个正式模板进入完成定义：Metadata、self-canonical、robots、可见 Breadcrumb/`BreadcrumbList`、允许的 JSON-LD、真实 404/redirect、图片 Alt。
+   - 1440、1024、768、390 px 是验收视口而非固定 CSS 断点；另验证 320 CSS px reflow、键盘、焦点、读屏抽查和 WCAG 2.2 AA 基础。
 
-候选 A、B 通过后，按以下顺序推进：
+3. **Preview、缓存、Webhook 与 Staging**
+   - 最迟在本阶段开始前冻结部署类型，并先建立生产相似的 HTTPS Staging、Linux/架构构建、Sharp、媒体 allowlist、环境/密钥、日志和 WordPress 网络连接。
+   - 内部顺序固定为：部署拓扑与 Staging → 签名 Preview/Draft Mode → 公开缓存/ISR 与最后成功语义 → 签名 Webhook → publish/update/slug/withdraw/delete、故障和多实例联合演练。
+   - Preview 必须最小权限、短时、防重放、`private/no-store/noindex`；公开缓存只接纳通过 Validator 和 Adapter 的已知良好结果。
+   - 当前 TASK-009 Transport 保持 `no-store`、5000 ms 和零重试；不得通过重新开放 Transport 参数或隐式重试实现生产缓存。
+   - CMS 不可用或新合同无效时不得用空页、首页或伪 404 覆盖旧的有效页面；没有历史成功版本时返回受控不可用状态。显式撤回、删除和 slug 变化服从冻结的 404/410/单跳 redirect 生命周期。
 
-1. **全局壳层任务**：设计令牌、字体、容器、按钮、图片组件、Header、Mega Menu、移动导航、Footer 和仅英语的语言入口占位。
-2. **首页小批次任务**：每次 1～3 个模块；在 1440/1024/768/390 px 截图，对严重/明显/细节差异分级并等待确认。
-3. **页面模板任务**：Services、Industries、Materials、Surface Finishes、Cases、Blog、About、Contact；优先复用模板和公共组件。
-4. **英语 SEO 任务**：Metadata、canonical、Open Graph、Breadcrumb、Schema、Sitemap、robots、404 和图片 alt；Next.js 是唯一公开 SEO 输出权威。
-5. **询盘任务**：只有在字段、文件格式/容量、病毒扫描、对象存储、保留期、邮件/CRM、隐私和删除流程确认后实施。
-6. **Preview/Webhook/缓存任务**：冻结认证、签名、防重放、Draft Mode、tag 映射、重试、观测和恢复；不得用占位 secret 或未验证 stale 行为冒充完成。
+4. **受控全局壳层**
+   - 只在 IA、导航合同和阶段 3 发布链通过后实现 Header、受控 Mega Menu、移动导航和 Footer。
+   - 导航不得自动展开全部 taxonomy；只消费经审核的公开 navigation 合同。
+   - 继续验证键盘、焦点、四视口和移动菜单失败状态；当前英语阶段不渲染虚假语言入口。
 
-### 14.5 多语言与发布
+5. **产品分类、系列与详情系统**
+   - 将阶段 2 的代表性纵切扩展为完整产品分类/系列/详情、筛选/分页、空态/错误态、下载/关系和性能边界。
+   - 产品系统先于正式首页；不得用首页临时卡片掩盖尚未冻结的产品卡片、媒体、CTA 或 SEO 合同。
 
-- WPML/ACFML 仍推迟到生产英语站连续稳定监控三个月后采购和独立 PoC；在此之前不输出非英语 URL、切换入口或 hreflang。
-- PoC 通过后再逐步加入法语、德语、西班牙语、简体中文、阿拉伯语 RTL、印地语、日语和葡萄牙语；译文独立审核和发布，缺失译文不公开。
-- 最终 QA 覆盖性能、可访问性、安全、浏览器、四视口、SEO、发布/预览/缓存、备份和恢复演练。
-- 域名、托管商和生产部署继续需要独立确认，不在路线图中写死。
+6. **正式首页**
+   - 复用已经被产品页面证明的组件和数据合同，只新增首页特有编排。
+   - 仍按 ADR-003 的 1～3 模块小批次和 1440/1024/768/390 px 差异分级验收，不把小批次门解释为首页优先。
 
-每一阶段仍走独立 task-intake、需求确认、lane execution、validation、adversarial review、用户验收、formal commit 和独立 push 门。TASK-005 的专业边界证据位于 `TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md` 与 `TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md`。
+7. **其余页面模板**
+   - 按真实 IA 实施 Markets、References、Support、Downloads、Blog、About、Contact 和法律页等模板。
+   - 每个正式模板同时交付自身技术 SEO、可访问性、状态码、媒体和内容缺失边界；内容 SEO 持续迭代。
+
+8. **询盘、CRM/协作系统、分析与隐私**
+   - 主业务动作已冻结为 B2B quotation request，不引入购物车、在线结算或支付。目标协作系统已确认为飞书多维表格：询价新增飞书记录，业务员在飞书报价。阶段 1 继续冻结产品/规格/配件/数量等最小询价数据合同、精确 CTA 标签、飞书表/字段/关联/状态/幂等/失败恢复；复杂表单、上传、对象存储、扫描、邮件、保留/删除、Cookie/Analytics 和隐私同意在本阶段独立实施。
+   - 浏览器不得直接向 WordPress 公共 REST 上传机密文件；CAD/客户附件不得进入公开 Media Library。
+
+9. **上线加固**
+   - 完成性能、可访问性、安全、浏览器、技术 SEO、redirect/404、备份/恢复、Preview/cache/Webhook、监控、告警、日志、权限、供应链和部署/回滚演练。
+   - 生产部署、域名、CDN 或第三方 SaaS 仍需独立任务和明确授权。
+
+10. **最小多语言 PoC 与完整多语言建设**
+   - 只有第 14.6.1 节 PoC 进入门满足后，才可由独立任务规划隔离、可清理、非公开的最小 PoC；兼容性 PASS 是 PoC 输出，不是循环前置条件。
+   - PoC 通过后仍须满足第 14.6.2 节生产采购/公开发布成熟度门，并按目标市场、译文和运维能力逐语种、逐模板放行；未发布译文不生成公开路由、Sitemap、hreflang 或切换入口。
+
+### 14.5 全阶段门禁
+
+- 上述阶段不预建活动任务，不授权真实产品导入、CMS/Schema 修改、页面实现、SEO、Preview、缓存、Webhook、询盘、分析、多语言、采购、部署或外部系统变更。
+- 每阶段仍需独立 task-intake、需求确认、Lane execution、validation、adversarial review、用户验收和正式 Git 交付。
+- 技术 SEO 随每个正式模板交付；内容 SEO 依赖真实产品、关键词、市场和经审核文案持续迭代。
+- TASK-005 的 API/DTO/Fixture 与前端消费边界继续有效；TASK-012 只替代其尚未执行的后续顺序。
+
+### 14.6 多语言两级门
+
+#### 14.6.1 最小隔离 PoC 进入门
+
+最小 PoC 只有同时满足以下条件才可由独立任务规划；满足这些条件本身仍不授权 TASK-012 执行 PoC：
+
+1. 独立任务明确冻结测试版本、语言、一个产品、一个分类、一个下载、一个关系、translated slug、Preview、发布/撤回、缓存失效和回滚的成功/失败标准。
+2. 已有合法许可、供应商评估通道或另行明确批准的 PoC-only 许可路径；没有许可授权时保持阻塞，不把 PoC 规划解释为采购授权。
+3. 使用与生产身份、DNS、Sitemap、Search Console、导航和分析隔离的可清理环境，并具备身份保护、`noindex`、最小权限、密钥和日志脱敏。
+4. 英语 Schema、代表 Fixture、translation group 身份草案和字段翻译/复制/关系策略已稳定到足以进行受控试验。
+5. 备份、失败停止、清理和回滚方案已在执行前确认，PoC 结束后可证明插件、内容、URL、缓存和凭据残留边界。
+6. 任务范围、责任人、退出条件和验收已确认，且没有阻断 PoC 安全执行的未处理 P1。
+
+SCF 与候选 WPML/ACFML 在字段、关系、REST、Preview、升级和回滚上的兼容性是 PoC 的核心输出。失败时保持英语唯一公开语言，并阻止生产采购和公开路由。
+
+#### 14.6.2 生产采购、公开发布与完整建设成熟度门
+
+完整多语言或生产插件采购至少同时满足：
+
+1. 真实产品、关系、下载、媒体、Alt 和目标市场内容完整，责任人明确。
+2. 英语 IA、route manifest、URL/slug、canonical、redirect 和 Sitemap 已在真实模板稳定验证。
+3. 公开 DTO、产品/页面 Schema、translation group 身份和逐字段翻译/复制/关系策略稳定。
+4. Preview、独立 Draft/Review/Publish/Withdraw、缓存失效和故障降级在英语流程中通过演练。
+5. 第 14.6.1 节隔离 PoC 已对当前 SCF 与候选 WPML/ACFML 的字段、关系、REST、Preview、升级和回滚给出可复现 PASS 与清理证据。
+6. 目标语言、市场、译者、复核者、术语、法律/隐私和素材本地化责任已确认。
+7. 各译文只输出真实已发布 sibling；self-canonical、双向闭合 hreflang、Sitemap 和切换器使用同一映射。
+8. Arabic 的 `lang/dir`、CSS logical properties、双向文本、表单、表格、Breadcrumb、图标和四视口用真实内容通过 RTL/可访问性验证。
+9. 备份、升级、回滚、权限、日志、缓存清理、撤回和公开入口清除有运维证据。
+10. 独立任务已确认许可证/采购、范围、退出方案和验收，且没有未处理 P1。
+
+官方 ACFML 文档面向 ACF/ACF Pro，当前 SCF 组合没有生产兼容承诺，因此未知兼容性阻断生产采购和公开发布，但不循环阻断一个已满足 14.6.1 的独立、合法、隔离 PoC。PoC 规划不授权采购、安装、生产 DNS、公开路由、Sitemap、Search Console、翻译服务或九语言发布。
 
 ## 15. 验收追踪
 
@@ -660,7 +751,7 @@ TASK-004 amendment 追踪：
 | TASK-004 要求 | 契约位置 |
 |---|---|
 | SCF 取代 ACF Pro、官方供应链与版本化字段 | 1.1、4.5、ADR-005 |
-| 英语唯一启用、WPML/ACFML 延后三个月 | 0、6、ADR-005 |
+| 英语唯一启用、WPML/ACFML 受两级门约束 | 0、6、14.6.1、14.6.2、ADR-005、拟议 ADR-006 |
 | 已实现 CPT/Taxonomy/字段/七模块 | 4.2～4.4 |
 | 最小 `/gdhe/v1/schema` 与 allowlisted REST | 5.2 |
 | 后续 DTO/预览/Webhook/多语言不越界 | 5、6、8、9、14 |
@@ -679,7 +770,7 @@ TASK-004 amendment 追踪：
 ## 17. 不阻塞本契约但需后续确认
 
 - 公开域名、CMS 域名、部署平台和 CDN。
-- 生产英语站上线日与三个月稳定监控证据；之后才评估 WPML Multilingual CMS、ACFML 和 SCF 兼容性。Yoast Free/Premium 的最终版本仍待确认。
+- 多语言成熟度门、生产英语站监控证据，以及 WPML Multilingual CMS、ACFML 与当前 SCF 的兼容性 PoC。Yoast Free/Premium 的最终版本仍待确认。
 - 包管理器和 Next.js 精确补丁版。
 - 正式品牌资产、内容清单、编辑角色和翻译负责人。
 - 邮件、CRM、对象存储、扫描服务、Cookie/Analytics 和数据保留政策。

@@ -2,14 +2,1286 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-011
+current_task: TASK-012
 task_state: ACCEPTED
-git_state: DIRTY
-last_updated: 2026-07-26T01:17:57Z
+git_state: FORMAL_COMMIT_PENDING
+last_updated: 2026-07-29T06:52:10Z
 
 ## 当前焦点
 
-`TASK-011` 已正式 `ACCEPTED / DIRTY`。用户精确交付口令已通过受控 helper；当前执行正式中文提交、任务分支推送、快进合并到 `main` 和 `main` 推送，尚未部署或启动 TASK-012。
+`TASK-012` 为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-29T06:52:10Z 使用精确口令正式验收；closure review 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation 与 checked acceptance preparation 全部通过。ADR-006 随 TASK-012 验收生效。当前只执行任务分支正式提交/推送与 `main` 合并/推送；未部署或开始下一任务。
+
+## TASK-012 Closure Scope Decision 2026-07-29
+
+- task_scope: 收口已确认的业务合同、询价规则、飞书同步规则、媒体规则、权威实施路线图和未来进入条件。
+- test_data_boundary: 当前测试记录不作为最终生产目录。
+- deferred_mandatory_gate: 10～20 个最终生产产品数据验收必须在正式批量导入、产品模板业务冻结和 Schema 业务冻结前完成。
+- prohibited_claim: 通过该门前不得批量发布正式产品或声称产品 Schema 已业务冻结。
+- authorization_boundary: 用户已使用精确正式交付口令验收 TASK-012，并授权正式提交、任务分支推送、合并 `main` 与推送 `main`。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 正式提交并推送 TASK-012 分支，随后合并并推送 `main`。
+
+## TASK-012 Relation Target Publication Gate Decision 2026-07-29
+
+- retained_relation: 飞书内部关系可以保留。
+- hidden_conditions: 目标产品停用、撤销“允许发布”或 WordPress 未公开。
+- public_behavior: 官网隐藏相关产品/相关配件，不生成指向未公开目标的卡片或链接。
+- restoration: 目标重新满足飞书发布资格且 WordPress 公开后，在下一次成功同步或发布刷新后自动恢复。
+- no_relation_rebuild: 隐藏和恢复不要求删除或重建飞书关系。
+- lifecycle_result: 关联新增、删除、同步失败和目标发布资格门均已确认。
+- resolved: TASK-012 收口业务合同和未来进入门；10～20 个最终生产产品验收后置为强制门。
+- implementation_boundary: 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: fresh validation 和当前修订版独立对抗审查。
+
+## TASK-012 Relation Removal Sync Decision 2026-07-29
+
+- relation_authority: 飞书。
+- deletion_flow: 飞书删除关联 → 下一次完整成功同步 → WordPress 只读镜像移除 → API 移除 → Next.js 产品详情页移除。
+- no_duplicate_editing: 不需要在 WordPress 手工删除。
+- atomicity: 一次成功同步原子替换关系集合。
+- failure_behavior: 同步失败保留最后一次成功关系集合，不展示半更新状态。
+- resolved: 目标未通过公开资格门时隐藏推荐并保留飞书关系，恢复资格后自动恢复。
+- implementation_boundary: 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认 TASK-012 收口范围。
+
+## TASK-012 Test Data Authority And Relation Sync Decision 2026-07-29
+
+- data_status: 当前提供的产品记录主要是测试数据，后续继续完善。
+- validation_meaning: 样本 001～009 只验证业务模型、页面、询价和同步行为，不冻结最终生产记录值。
+- production_gate: 当前测试数据不满足 10～20 个最终真实产品数据验收门。
+- relation_authority: 飞书是型号级产品关联关系的唯一维护入口。
+- add_flow: 飞书添加关联 → 下一次成功同步 → WordPress 只读镜像更新 → GDHE REST API 输出 → Next.js 产品详情页自动显示。
+- no_duplicate_editing: 不在 WordPress 重复维护飞书关联关系。
+- failure_behavior: 同步失败保留最后一次成功数据，不展示半成品关系。
+- resolved: 飞书删除关系后，下一次完整成功同步对称移除 WordPress 镜像、API 和前端相关推荐。
+- implementation_boundary: 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认关联目标的公开发布资格门。
+
+## TASK-012 Sample 008 End Cap Compatibility Decision 2026-07-29
+
+- `FK-J-12 / GDHEPRD000488`: 兼容并推荐给 `FGG J06`。
+- `FK-J-16 / GDHEPRD000489`: 兼容并推荐给 `FGD X16`。
+- `FK-J-11 / GDHEPRD000487`: 当前无兼容关系，只进入配件目录并可独立询价。
+- deduplication: 飞书重复关联值按轨道型号去重，不生成重复推荐。
+- seo_boundary: 三条均不建立独立 SEO 产品详情页。
+- validation_result: 样本 008 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 009 三条走珠记录的独立条目身份。
+
+## TASK-012 Internal Original Media Isolation Decision 2026-07-29
+
+- internal_storage: 内部无水印原图只保存在飞书、极空间等内部系统。
+- wordpress_exclusion: 不进入 WordPress。
+- delivery_exclusion: 不进入 GDHE REST API、Next.js、公开媒体、隐藏字段、构建产物或公开缓存。
+- public_input: 网站链路只能接收业务方预制的公开保护图。
+- media_boundary_result: 公开保护图发布资格、制作职责和内部原图隔离边界已确认。
+- implementation_boundary: 未导入样本，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 008 封口配件的型号级兼容关系。
+
+## TASK-012 Public Protected Media Pipeline Decision 2026-07-29
+
+- selected_option: A。
+- producer: 业务方在上传前制作公开保护图。
+- wordpress_role: WordPress 只管理和发布保护成品图。
+- website_exclusion: 网站不自动添加水印、品牌底纹、型号或尺寸标注，也不承担图片排版。
+- quality_reason: 品牌位置、尺寸标注和产品构图由业务方在成品图中控制。
+- resolved: 内部原图完全排除在 WordPress、GDHE REST API、Next.js 和公开媒体之外。
+- implementation_boundary: 未导入样本，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 进入样本 008 封口配件兼容关系验证。
+
+## TASK-012 Public Protected Media Decision 2026-07-29
+
+- canonical_term: `公开保护图`。
+- publication_requirement: 官网发布图需要带水印、品牌标识或品牌底纹等防盗用元素。
+- superseded_assumption: 撤销“公开站需要无水印原图、带水印图只作内部参考”的假设。
+- sample: `FGD X15切面01_1.png`，`800 × 800` RGB PNG。
+- sample_content: 黑色背景、GDHE 标识、`FGD X15` 型号、`28 mm × 27 mm` 尺寸标注和产品图。
+- sample_sha256: `9a8ed9fe7145ae582450425be493987ad874d052c176e340d28d7d24bf0d4880`。
+- storage_boundary: 本轮只验证本地样本，没有复制到 WordPress、仓库或公开媒体。
+- resolved: 业务方上传前制作保护成品图；网站不自动生成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认内部原图的存储边界。
+
+## TASK-012 Sample 007 Missing Remote Presentation Decision 2026-07-29
+
+- model: `PJ-D16`。
+- confirmed_content_only: 页面只展示已经确认的电机信息。
+- omitted_module: 遥控器资料未取得时完全不渲染遥控器模块。
+- prohibited_placeholders: 不显示“即将推出”、占位型号或推测性兼容信息。
+- future_enablement: 只有取得真实且允许发布的遥控器资料后才在同一页面渲染该模块。
+- validation_result: 样本 007 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认无水印产品原图的公开发布资格。
+
+## TASK-012 Sample 007 Progressive Motor Publication Decision 2026-07-29
+
+- model: `PJ-D16`。
+- article_number: `GDHEPRD000640`。
+- publication: 不等待遥控器资料，可先作为电机产品公开。
+- future_remote: 取得同款配套遥控器资料后补充到同一产品页面，不另建遥控器页面。
+- truth_boundary: 当前不得虚构遥控器型号、Article Number、图片、控制协议或兼容能力。
+- resolved: 资料未齐期间完全省略遥控器模块与占位文案。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认公开保护图的制作路径。
+
+## TASK-012 Sample 006 Missing Compatibility Decision 2026-07-29
+
+- examples: `AZM-K-1 / GDHEPRD000011`、`AZM-K-10 / GDHEPRD000012`。
+- catalog_without_relation: 没有轨道兼容关系时，仍可在配件目录浏览。
+- rfq_without_relation: 没有轨道兼容关系时，仍可作为独立询价行。
+- recommendation_gate: 没有已确认型号级兼容关系时，不得出现在任何轨道详情页的相关配件模块。
+- enablement: 只有飞书中补充并通过同步校验的型号级关系才能启用相关推荐。
+- validation_result: 样本 006 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 007 `PJ-D16` 的发布边界。
+
+## TASK-012 Sample 006 Small Accessory Display Decision 2026-07-29
+
+- examples: `AZM-K-1 / GDHEPRD000011`、`AZM-K-10 / GDHEPRD000012`。
+- accessory_catalog: 作为配件目录中的独立条目，支持分类筛选。
+- rfq_role: 可填写数量并作为独立询价行。
+- related_accessory_role: 只有存在已确认型号级兼容关系时，才进入轨道详情页的相关配件模块。
+- seo_boundary: 安装码、封口、走珠等小配件不各自建立独立 SEO 产品详情页。
+- complex_accessory_exception: 布带、线珠等规格复杂的配件产品继续拥有产品详情页。
+- resolved: 缺少轨道兼容关系时仍可目录浏览和独立询价，但不进入相关推荐。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 进入样本 007 `PJ-D16`。
+
+## TASK-012 Sample 005 SSZ-01A Grouping Decision 2026-07-29
+
+- model: `SSZ-01A`。
+- article_numbers: `GDHEPRD000784`、`GDHEPRD000785`、`GDHEPRD000786`。
+- page_grouping: 三条记录归入同一个产品页面。
+- public_options: 线珠间距和卷长均为客户可见、可选择的规格。
+- combination_rule: 每个飞书真实存在且允许发布的组合保留自身 Article Number。
+- no_cartesian_product: 前端不得生成不存在的间距/卷长组合。
+- validation_result: 样本 005 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 006 安装码的目录展示粒度。
+
+## TASK-012 Sample 004 Article Mapping Decision 2026-07-29
+
+- `GDHEPRD000692`: 薄不锈钢钉。
+- `GDHEPRD000695`: 厚不锈钢钉。
+- combination_rule: 每条 Article Number 绑定其真实宽度、间距和卷长组合。
+- no_cartesian_product: 前端不得把各属性自由组合成飞书中不存在的规格，也不得生成 Article Number。
+- validation_result: 样本 004 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 005 `SSZ-01A` 的页面归组和公开间距/卷长选项。
+
+## TASK-012 Sample 004 Staple Specification Decision 2026-07-29
+
+- model: `SSD-01`。
+- page_grouping: 两条代表记录归入同一产品页面。
+- canonical_term: `钉子规格`。
+- public_options: `薄不锈钢钉`、`厚不锈钢钉`，客户可见且可选择。
+- terminology_boundary: 两者材质同为不锈钢，不建模成两个普通材质；不得把来源品名“全不锈/半不锈”直接作为公开术语。
+- combination_role: 钉子规格与宽度、间距、卷长共同确定真实可询价组合。
+- article_mapping: `GDHEPRD000692` 为薄不锈钢钉；`GDHEPRD000695` 为厚不锈钢钉。
+- combination_rule: 两条记录分别绑定自身宽度、间距和卷长组合。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 进入样本 005 `SSZ-01A`。
+
+## TASK-012 Sample 003 RFQ Article Resolution Decision 2026-07-29
+
+- model: `FGL X14`。
+- public_selection: 客户选择型号、长度并填写数量。
+- weight_boundary: 米重差异当前不是前端展示或选择刚需，后期可按业务价值另行建模。
+- ambiguous_article_resolution: 公开选项无法唯一确定 Article Number 时，网站不提交 Article Number，由业务员在飞书选择具体内部记录。
+- no_guessing: 网站不得根据隐藏米重猜测，也不得生成 Article Number。
+- exception_boundary: 已能由公开选项唯一确定的其他规格仍保留各自 Article Number。
+- validation_result: 样本 003 核心验证完成。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 004 `SSD-01` 的页面归组和公开材质选项。
+
+## TASK-012 Sample 003 Internal Variant Visibility Decision 2026-07-29
+
+- model: `FGL X14`。
+- public_primary_identity: 网页主要显示型号 `FGL X14`。
+- internal_only: `1132 / 9973 / 250`、对应源中文品名、源重量和供应来源差异仅用于内部识别。
+- public_selector_boundary: 上述内部字段不向客户显示，也不作为公开选择项。
+- article_number_conflict: `GDHEPRD000418`、`GDHEPRD000420`、`GDHEPRD000421` 的公开长度均为 `6 m`，仅凭 `FGL X14 + 6 m` 无法唯一确定 Article Number。
+- resolved: 网站不附 Article Number，由业务员在飞书选择具体内部记录；米重前端区分延后。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 进入样本 004 `SSD-01`。
+
+## TASK-012 Sample 003 FGL X14 Page Grouping Decision 2026-07-29
+
+- model: `FGL X14`。
+- page_identity: 一个产品页面、一个 URL、一个 canonical SEO 身份。
+- article_numbers: `GDHEPRD000418`、`GDHEPRD000419`、`GDHEPRD000420`、`GDHEPRD000421`、`GDHEPRD000422`。
+- variant_role: 五个 Article Number 是同一型号页面下的具体可询价规格。
+- no_page_split: 不因中文品名、长度、重量或供应来源值不同拆分页面。
+- internal_only: `1132 / 9973 / 250` 及对应中文品名、重量和供应来源差异仅供内部识别，不公开。
+- unresolved: 三个 `6 m` Article Number 的公开询价选择策略。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的公开 Article Number 选择策略。
+
+## TASK-012 Sample 002 Packaging Default And Core Validation Decision 2026-07-29
+
+- model: `FGE X08+pvc`。
+- default_base_packaging: 常规包装。
+- default_logo_printing: 关闭。
+- default_bagging: 不选。
+- default_paired_nesting: 不选。
+- customer_override: 客户可在合法组合内主动修改。
+- core_validation: 长度与 Article Number、定制 RFQ、核心兼容关系、配件可选性和包装均已验证。
+- deferred_gaps: 遥控器资料和原始行未知字段可后补，不影响继续验证下一代表样本。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的供应来源差异是否公开。
+
+## TASK-012 Sample 002 Packaging Applicability Decision 2026-07-29
+
+- model: `FGE X08+pvc`。
+- contract: 适用完整轨道包装合同。
+- base_packaging: 常规包装、纸盒包装、大收缩膜包装三选一。
+- logo_printing: 可选。
+- protection_arrangement: 单支套袋与对扣可以都不选；选择时互斥。
+- defaults: 常规包装、Logo 关闭、套袋与对扣均不选。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的供应来源差异是否公开。
+
+## TASK-012 Sample 002 Custom Length Range Policy Decision 2026-07-29
+
+- model: `FGE X08+pvc`。
+- fixed_minimum: 无。
+- fixed_maximum: 无。
+- frontend_validation: 长度大于 `0`，最多一位小数。
+- submission_semantics: 提交表示询价需求，不承诺可生产、包装、运输或报价。
+- feasibility_owner: 业务员收到询价后在飞书中人工判断。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的供应来源差异是否公开。
+
+## TASK-012 Sample 002 Custom Length Precision Decision 2026-07-29
+
+- model: `FGE X08+pvc`。
+- decimal_places: 最多一位小数。
+- increment: `0.1 m`。
+- valid_example: `5.5 m`。
+- invalid_examples: `5.55 m`、`5.555 m`。
+- quantity_separation: 支数仍只允许大于零的整数。
+- range_policy: 不设固定最小值或最大值，由业务员判断可行性。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的供应来源差异是否公开。
+
+## TASK-012 Sample 002 Custom Length Input Contract Decision 2026-07-28
+
+- selector: `Custom Length`。
+- length_field: 以米（m）为固定单位，允许正小数，例如 `5.5 m`。
+- quantity_field: 独立填写支数，只允许大于零的整数。
+- semantic_separation: 长度允许小数不改变 RFQ 数量禁止小数的既有规则。
+- status: RFQ 行标记为定制长度、待业务处理。
+- precision: 最多一位小数，最小增量 `0.1 m`。
+- range_policy: 不设固定最小值或最大值，由业务员判断可行性。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 002 的包装默认值。
+
+## TASK-012 Sample 002 New Custom Length RFQ Decision 2026-07-28
+
+- model: `FGE X08+pvc`。
+- case: 客户需要飞书产品主数据中尚不存在 Article Number 的新定制长度。
+- website_action: 允许客户直接提交询价。
+- identity_boundary: 网站不生成、伪造或临时复用 Article Number。
+- handoff: RFQ 标记为尚无 Article Number 的定制长度需求，由业务员在飞书中处理。
+- ownership: 后续产品主数据和 Article Number 处理属于飞书业务流程，不由网站自动完成。
+- input_contract: `Custom Length` + 米制小数长度 + 整数支数。
+- precision: 最多一位小数，最小增量 `0.1 m`。
+- range_policy: 不设固定最小值或最大值，由业务员判断可行性。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 002 是否采用完整轨道包装合同。
+
+## TASK-012 Sample 002 Length Article Identity Decision 2026-07-28
+
+- model: `FGE X08+pvc`。
+- rule: 每一个不同长度规格分别拥有独立 Article Number。
+- confirmed_example: `GDHEPRD000328` 只对应每支 `6 m`。
+- prohibition: 不同长度不得复用 6 米规格 Article Number，网站不得自行生成 Article Number。
+- new_custom_flow: 允许提交无 Article Number 的定制长度 RFQ，由业务员在飞书处理。
+- input_contract: `Custom Length` + 米制小数长度 + 整数支数。
+- precision: 最多一位小数，最小增量 `0.1 m`。
+- unresolved: 定制长度最小值和最大值。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认该型号允许的定制长度范围。
+
+## TASK-012 Sample 002 Length And Customization Decision 2026-07-28
+
+- model: `FGE X08+pvc`。
+- confirmed_article: `GDHEPRD000328`。
+- confirmed_specification: 每支 `6 m`。
+- other_lengths: 同一型号还存在其他米数规格。
+- customization: 支持客户定制长度。
+- identity_rule: 每一个不同长度规格均使用独立 Article Number。
+- new_custom_flow: 尚无 Article Number 时仍允许提交询价，业务员在飞书处理。
+- input_contract: `Custom Length` + 米制小数长度 + 整数支数。
+- unresolved: 定制长度允许的小数位数或最小增量。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认定制长度的小数精度或最小增量。
+
+## TASK-012 Sample 002 RFQ Optionality Decision 2026-07-28
+
+- electric_track: `FGE X08+pvc / GDHEPRD000328`。
+- optional_recommendations: `PJ-D16` 电机、`PJ-D25` 传动箱、`PJ-LJ-15` 外连接器。
+- default_quote_state: 三者默认均不加入询价清单。
+- track_only_quote: 客户可以只询轨道本体。
+- add_action: 客户主动添加某个配件后才创建独立 RFQ 行，并要求大于零的整数数量。
+- bundling: 不强制捆绑，不自动创建套装或组合 Article Number。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认其他标准长度和客户定制长度如何对应 Article Number。
+
+## TASK-012 Sample 002 Connector Compatibility Decision 2026-07-28
+
+- electric_track: `FGE X08+pvc / GDHEPRD000328`。
+- compatible_connector: `PJ-LJ-15 / 佳丽斯外连接器 / GDHEPRD000642`。
+- relation_status: 用户明确确认兼容。
+- confirmed_core_relations: `PJ-D16` 电机、`PJ-D25` 传动箱、`PJ-LJ-15` 外连接器。
+- rfq_optionality: 三个配件全部为可选推荐，客户可以只询轨道。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 002 的 `6 M` 是否表示每支轨道长度为 6 米。
+
+## TASK-012 Sample 002 Transmission Compatibility Decision 2026-07-28
+
+- electric_track: `FGE X08+pvc / GDHEPRD000328`。
+- compatible_transmission_box: `PJ-D25 / 佳丽斯传动箱 / GDHEPRD000641`。
+- relation_status: 用户明确确认兼容。
+- business_basis: 该轨道属于佳丽斯轨道系统。
+- inference_boundary: 品牌/系统归属是本次人工确认依据，不构成所有佳丽斯产品自动互相兼容的规则。
+- authority: 公开站最终只使用飞书中明确的型号级兼容关系。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认 `FGE X08+pvc` 是否兼容 `PJ-LJ-15 / 佳丽斯外连接器 / GDHEPRD000642`。
+
+## TASK-012 Sample 002 Remote Data Deferred Decision 2026-07-28
+
+- electric_track: `FGE X08+pvc / GDHEPRD000328`。
+- compatible_motor: `PJ-D16 / 杜亚82电机 / GDHEPRD000640`。
+- remote_data: 用户目前暂时没有可提供或确认的配套遥控器资料。
+- semantic_boundary: 只表示当前验证资料缺口；不表示电机不支持遥控器，也不否定未来补充。
+- publication_boundary: 未确认遥控器不得生成公开产品事实、Article Number 或兼容关系。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认 `FGE X08+pvc` 是否兼容 `PJ-D25 / 佳丽斯传动箱 / GDHEPRD000641`。
+
+## TASK-012 Sample 002 Motor Compatibility Decision 2026-07-28
+
+- electric_track: `FGE X08+pvc / GDHEPRD000328`。
+- compatible_motor: `PJ-D16 / 杜亚82电机 / GDHEPRD000640`。
+- relation_status: 用户明确确认兼容。
+- cardinality_boundary: 仅确认一条兼容关系，不推定 `PJ-D16` 是唯一兼容电机。
+- confirmed_relations: `PJ-D16` 电机、`PJ-D25` 传动箱、`PJ-LJ-15` 外连接器。
+- confirmed_length: `GDHEPRD000328` 对应每支 6 米。
+- customization: 同一型号有其他长度并支持定制。
+- confirmed_length_identity: 每个长度规格分别拥有独立 Article Number。
+- packaging_contract: 适用完整轨道包装合同。
+- deferred_gaps: 配套遥控器资料暂缺；其他兼容电机和原始行未知字段可后补。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认样本 003 的供应来源差异是否公开。
+
+## TASK-012 Sample 002 Electric Track Batch Received 2026-07-28
+
+- sample: `FGE X08+pvc / GDHEPRD000328`。
+- direct_fields: `1458静音电动轨白`、`FGE X08+pvc Track`、轨道、白色/White、`图片.png`、`6 M`。
+- candidate_batch: 原始粘贴含重复行；按 Article Number 去重后为 27 个候选记录。
+- same_batch_records: `PJ-D16 / GDHEPRD000640` 电机、`PJ-D25 / GDHEPRD000641` 传动箱、`PJ-LJ-15 / GDHEPRD000642` 外连接器。
+- evidence_boundary: 同批出现不构成产品兼容关系；不得自动绑定。
+- confirmed_relation: `FGE X08+pvc` 兼容 `PJ-D16 / GDHEPRD000640`；不推定唯一性。
+- missing_relation: 配套遥控器资料目前暂缺；不推定为“不支持遥控器”。
+- unknown_columns: `601*17.5*6`、`0.0630000`、`43.3`、`常用`、`Error` 等在字段名未核对前不映射。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 只确认 `FGL X14` 五个 Article Number 的页面归组。
+
+## TASK-012 Sample 001 No Installation Selector Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- installation_support: 产品页说明同时支持顶装和墙装。
+- selection_model: 不设置“顶装/墙装”选择字段或前置选择步骤。
+- accessory_presentation: 推荐配件区同时展示经型号级关系确认兼容的顶码和墙码，不做安装方式预过滤。
+- customer_action: 客户根据实际需要直接添加顶码或墙码，并为已添加配件填写大于零的整数数量。
+- supersedes: 撤销此前“选择安装方式后过滤安装码推荐”的未确认假设；该假设从未实施。
+- implementation_boundary: 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 提供并核对样本 002，一个真实电动轨道及其电机、遥控器关系。
+
+## TASK-012 Sample 001 Related Accessory Suggestion Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- related_accessories: 顶码、墙码、走珠、封口。
+- default_quote_state: 默认均不加入询价清单。
+- presentation: 在产品页面作为推荐配件展示。
+- add_action: 客户主动点击添加并填写大于零的整数数量后，创建独立配件询价行。
+- implementation_boundary: 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 提供并核对样本 002，一个真实电动轨道及其电机、遥控器关系。
+
+## TASK-012 Sample 001 Optional Runner And End Stop Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- related_accessories: 对应走珠、对应封口。
+- selection: 可选，客户可以只询轨道本体。
+- bundling: 不强制捆绑，不自动生成套装 Article Number。
+- quantity_rule: 客户主动添加配件后，该配件行必须填写大于零的整数数量。
+- supersedes: 覆盖本轮被中断输入中的“需要填写”歧义，以用户最新完整说明为准。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 提供并核对样本 002，一个真实电动轨道及其电机、遥控器关系。
+
+## TASK-012 Sample 001 Runner And End Stop Relation Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- related_accessories: 对应走珠、对应封口。
+- relation_level: 目标为型号级兼容配件关系。
+- qualification: “需要关联”不等于默认包含、必选或自动加入询价清单。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认关联配件是否默认不加入询价清单，仅作为推荐项展示。
+
+## TASK-012 Sample 001 Packaging Default Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- default_base_packaging: 常规包装。
+- default_logo_printing: 关闭。
+- default_protection_arrangement: 单支套袋与对扣均不选。
+- customer_override: 客户可以在合法组合内主动修改。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认走珠与封口在询价时是必选配件还是可选配件。
+
+## TASK-012 Sample 001 Packaging Applicability Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- base_packaging: 常规包装、纸盒包装、大收缩膜包装三选一。
+- logo_printing: 可选。
+- protection_arrangement: 可以不选；选择时单支套袋与对扣二选一。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认除顶码和墙码外，该轨道是否还关联走珠与封口。
+
+## TASK-012 Sample 001 Transition Exit Criteria Decision 2026-07-28
+
+- minimum_retention: 至少 30 天。
+- minimum_full_syncs: 至少 3 次完整同步。
+- review: 人工抽查通过。
+- deletion_gate: 最后取得人工确认，才允许删除旧 Article Number 级字段。
+- excluded: 不额外加入未经用户确认的“零异常”或其他门槛。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认默认值是否为常规包装、不开启 Logo 印刷、套袋与对扣均不选。
+
+## TASK-012 Sample 001 Transition Field Read Policy Decision 2026-07-28
+
+- scope: 过渡期内旧 Article Number 级兼容关联字段。
+- write_policy: 冻结为只读，仅用于迁移核对。
+- sync_policy: 不再参与网站同步。
+- public_authority: 网站只读取型号级兼容关系。
+- dual_authority: 禁止形成型号级与 Article Number 级两个可写权威来源。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认 `FGD X15+PVC` 实际支持哪些轨道包装选项。
+
+## TASK-012 Sample 001 Article Link Transition Decision 2026-07-28
+
+- scope: 型号级兼容关系迁移成功后的旧 Article Number 级关联字段。
+- retention: 保留一段过渡期，不立即删除。
+- reason: 为迁移核对和稳定性观察保留旧数据证据。
+- unresolved: 过渡期内字段是否只读、是否参与网站同步，以及过渡期退出条件。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认过渡期采用固定时长，还是达到成功同步次数和人工抽查条件后退出。
+
+## TASK-012 Sample 001 Migration Retry Policy Decision 2026-07-28
+
+- conflict_scope: 同一型号下现有 Article Number 记录的兼容关联不一致。
+- correction_authority: 在飞书人工修正。
+- retry: 下一次同步自动重新校验冲突型号。
+- success: 校验通过后自动继续该型号迁移。
+- manual_recovery: 不要求额外人工恢复或单独触发。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认旧字段在过渡期内是否冻结为只读且不再参与网站同步。
+
+## TASK-012 Sample 001 Migration Conflict Policy Decision 2026-07-28
+
+- scope: Article Number 级兼容关联迁移到型号级关系。
+- conflict: 同一型号下现有 Article Number 记录的关联配件集合不一致。
+- action: 停止该型号迁移，等待人工核对。
+- prohibited: 不自动取并集、交集、首条或末条覆盖。
+- isolation: 只阻止冲突型号，其他校验通过的型号继续迁移。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Model Compatibility Inheritance Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- model_rule: 同一型号下所有轨道规格使用相同的兼容配件。
+- inheritance: 每个 Article Number 规格从型号继承兼容关系。
+- override: 不允许 Article Number 级兼容配件覆盖、追加或删除。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Compatibility Level Target Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- current_level: 飞书当前在每个具体 Article Number 产品记录上维护兼容配件关联。
+- target_level: 兼容关系应建立在型号层级，由型号下的 Article Number 规格继承。
+- reason: 避免同一型号的各规格重复维护相同配件关系。
+- migration_status: 只记录目标模型，尚未设计或执行飞书字段和数据迁移。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Compatibility Link Field Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- storage_form: 飞书关联记录字段。
+- relation_target: 直接关联兼容配件产品记录，而不是保存 Article Number 文本、普通文字或图片。
+- sync_identity: 同步读取目标配件记录自身的 Article Number。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Compatibility Authority Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- authority: 轨道与顶码、墙码的实际兼容关系已经存放在飞书产品主数据中。
+- website_boundary: 网站只读取并展示飞书提供的兼容关系，不自行按宽度推导。
+- implementation_boundary: 未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Explicit Bracket Compatibility Rule 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- cross_model_compatibility: 安装码可以兼容多个轨道型号。
+- track_type_constraint: 不同轨道类型使用的配件不同。
+- width_role: 安装面宽度只用于生成建议候选，不能自动判定兼容。
+- authoritative_selection: 最终可选安装码必须来自该轨道类型经确认的实际配件关系。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Bracket Width Compatibility Rule 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- cardinality: 同一个安装码可兼容多个轨道型号。
+- primary_compatibility_dimension: 轨道安装面宽度仅用于候选建议。
+- example: 28 mm 安装面的轨道通常使用 28 mm 安装码。
+- qualification: 不同轨道类型使用的配件不同；同宽不能直接判定兼容。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Bracket Article Identity Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- ceiling_bracket_identity: 顶码具有独立 Article Number，具体编号待提供。
+- wall_bracket_identity: 墙码具有独立 Article Number，具体编号待提供。
+- relation: 顶装或墙装只替换安装码配件，不改变轨道 Article Number。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Installation Article Boundary Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- track_article_number: `GDHEPRD000172`。
+- invariant: 顶装与墙装不改变轨道 Article Number。
+- changed_component: 仅更换对应顶码或墙码配件。
+- page_identity: 两种安装方式共用同一产品页面。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Installation Methods Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- supported_installation: 顶装、墙装。
+- differentiator: 主要由不同安装码决定。
+- page_identity: 不因安装方式拆成两个产品页面。
+- confirmed_article_boundary: 两种安装方式保持轨道 Article Number `GDHEPRD000172`，只改变安装码配件。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认型号级迁移成功后，旧 Article Number 级关联字段应删除、改为隐藏只读，还是保留过渡期。
+
+## TASK-012 Sample 001 Section Dimensions Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- section_height: `27 mm`。
+- section_width: `28 mm`。
+- source: 用户提供的截面图标注并确认单位。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Sample 001 PVC Nano Strip Weight Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- track_meter_weight: `155–160 g/m`。
+- pvc_nano_strip_meter_weight: `115 g/m`。
+- section_dimensions: 高度 `27 mm`；宽度 `28 mm`。
+- installation_methods: 顶装、墙装；主要通过不同安装码实现。
+- storage_boundary: 两个重量参数分开保存，不相加为单一字段。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Sample 001 Meter Weight Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- meter_weight: `155–160 g/m`。
+- pvc_nano_strip_meter_weight: `115 g/m`。
+- meaning: 轨道主体每米重量范围。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Sample 001 Length Specification Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- piece_length: `6 m`。
+- public_quantity_unit: `支`。
+- internal_length_relation: 飞书可使用 `6 m × 支数` 计算总米数；计算实现仍属于飞书端。
+- meter_weight: `155–160 g/m`。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Sample 001 Article Number Decision 2026-07-28
+
+- sample: `FGD X15+PVC`。
+- article_number: `GDHEPRD000172`。
+- identity: 该具体规格的公开 Article Number。
+- length_specification: 每支 `6 m`。
+- model_relation: 一个型号下的一个具体规格行，符合已确认的一型号多规格、一规格一 Article Number 规则。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Real Product Sample 001 Partial Mapping 2026-07-28
+
+- model: `FGD X15+PVC`。
+- names: 中文 `999纳米喷牙白`；英文 `FGD X15+PVC Track`。
+- classification: 类别 `轨道`；二级类别 `大方`。
+- colors: 中文 `鑫邦牙白`；英文 `ivory white`。
+- source_values_pending_semantics: 顶码/墙码/走珠/封口的具体 Article Number、未来飞书迁移方案和其他关联配件。
+- confirmed_meter_weight: `155–160 g/m`。
+- confirmed_pvc_nano_strip_meter_weight: `115 g/m`。
+- confirmed_length_specification: `6 M` 表示每支轨道 6 米。
+- image_evidence: 图片标注 `FGD X15`、`H:27`、`W:28`，展示 PVC/软质内衬截面；公开使用权和原始图待确认。
+- supplier_tail: `LSB-246`、`152`、`04#`、`115`、供应商图片名、`4.7432` 等不进入公开映射。
+- confirmed_identifier: `GDHEPRD000172` 是该具体规格的 Article Number。
+- validation_status: `PARTIAL_MAPPING`，不构成完整真实产品验证或 Schema 冻结。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或数据库。
+- next: 提供并核对样本 002，一个真实电动轨道及其电机、遥控器关系。
+
+## TASK-012 Duplicate RFQ Line Decision 2026-07-28
+
+- line_identity: `Article Number + 完整公开配置`。
+- merge: Article Number 与包装、Logo、套袋/对扣等全部配置相同时合并并累加数量。
+- separate: 任一公开配置不同则保留独立行。
+- safety: 不得仅按 Article Number 合并而丢失客户配置。
+- implementation_boundary: 未修改 WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Multi-product RFQ List Flow Decision 2026-07-28
+
+- product_action: 把当前已选 Article Number、规格/选项和数量加入询价清单。
+- continued_browsing: 客户可以继续浏览并添加其他产品。
+- final_step: 最后统一填写联系信息并一次提交全部行项目。
+- excluded: 产品 CTA 不立即提交单产品表单，也不构成在线下单。
+- implementation_boundary: 未修改 WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Primary RFQ CTA Label Decision 2026-07-28
+
+- primary_cta: `Request a Quote`。
+- scope: 英语站正常在售产品的统一主询价路径。
+- disallowed_mixed_labels: 同一主路径不混用 `Ask for Quotation` 或 `Get a Quote`。
+- discontinued_exception: 停产产品继续使用 `Contact Us for Replacement`。
+- implementation_boundary: 未修改 WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 RFQ Positive Integer Quantity Decision 2026-07-28
+
+- scope: 所有按支、卷、个提交的产品和配件 RFQ 行项目。
+- type: 大于零的整数。
+- minimum: `1`。
+- invalid: 空值、`0`、负数和小数。
+- future_validation: 浏览器交互层与服务端 intake 均须校验；本轮不实现。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Article Number Terminology Decision 2026-07-28
+
+- canonical_term: `Article Number`。
+- correction: 本轮出现的 `Part Number` 是用户口误。
+- model_effect: 不建立 `Part Number` 字段、别名、映射或第二套编号。
+- conversion_key: 飞书报价系统按 Article Number 读取对应长度换算字段。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Feishu Conversion Field Authority Decision 2026-07-28
+
+- authority: 每个可订购产品对应的长度换算字段保存在飞书产品主数据中。
+- quote_input: 飞书报价系统只选择产品并取得客户数量。
+- quote_calculation: 报价系统读取产品主数据字段并计算总长度及包装件数。
+- website_boundary: 上述字段读取与计算属于飞书端，不属于官网、WordPress、GDHE REST API 或 Next.js 实现范围。
+- terminology_resolved: 统一使用 `Article Number`；`Part Number` 是口误，不创建该字段或别名。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Public RFQ Units and Internal Conversion Decision 2026-07-28
+
+- public_units: 轨道按支；布带和线珠按卷；电机、遥控器及其他配件按个。
+- internal_length_conversion: 飞书报价系统将轨道、布带和线珠换算为总米数。
+- accessory_calculation: 配件继续按个计算。
+- package_conversion: 飞书报价系统根据包装方式折算轨道、布带/线珠和小配件的包装件数。
+- website_boundary: 客户只填写公开订购单位数量，不填写内部总米数或包装件数。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 RFQ Quantity Required Decision 2026-07-28
+
+- scope: 所有加入 quotation request 的产品和配件 RFQ 行项目。
+- required: 每个行项目都必须填写数量。
+- incomplete_submission: 缺少数量的行项目不能作为完整询价提交。
+- no_salesperson_backfill_path: 不提供先留空数量、再由业务员补录的公开提交路径。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Motor and Remote RFQ Selection Decision 2026-07-28
+
+- selection_modes: 允许只选电机、只选遥控器或同时选择两者。
+- independent_quantities: 电机和遥控器分别填写数量。
+- quantity_may_differ: 两个行项目的数量可以不同。
+- line_identity: 两个 RFQ 行项目分别使用各自的 Article Number。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Motor and Remote Article Number Decision 2026-07-28
+
+- public_page: 同款、同型号且出厂配套的电机和遥控器共用一个公开页面。
+- motor_identity: 电机保留自己的全局唯一 Article Number。
+- remote_identity: 遥控器保留自己的全局唯一 Article Number。
+- no_bundle_article: 不创建额外组合 Article Number。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 客户可只选择电机、只选择遥控器或同时选择两者，并分别填写可以不同的数量。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Bead Article Number Decision 2026-07-28
+
+- model_identity: 颜色和具体珠型共同决定线珠型号。
+- specification_identity: 珠距和卷长共同确定具体可订购规格。
+- article_number_rule: 不同珠距或不同卷长均产生独立 Article Number。
+- model_stability: 珠距和卷长变化不改变型号。
+- bead_contract_status: 线珠型号—规格—Article Number 层级已闭合，真实记录仍须代表样本核对。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 电机和遥控器分别保留独立 Article Number，不创建组合 Article Number。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Bead Model and Specification Decision 2026-07-28
+
+- model_identity: 颜色和具体珠型共同决定线珠型号。
+- somfy_series: 单扣尚飞大方珠、双扣尚飞大方珠、大圆扣尚飞大方珠。
+- user_named_jialis_series: 单扣佳丽斯中方珠、双扣佳丽斯中方珠、小圆扣佳丽斯珠。
+- spacing_values: 6cm、6.6cm、7cm、8cm、10.2cm。
+- spacing_relation_guard: 10.2cm 一般用于双扣，但当前不建立排他约束。
+- roll_lengths: 40m、50m、60m 等；卷长改变 Article Number，不改变型号。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 不同珠距和不同卷长均产生独立 Article Number。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Tape Unit Decision 2026-07-28
+
+- width_unit: 毫米（mm）。
+- nail_spacing_unit: 毫米（mm）。
+- length_unit: 米（m）。
+- confirmed_examples: 宽度 30mm/45mm/60mm；钉距 125mm/145mm/165mm/170mm 及更多值；长度 30m/40m/50m/60m 等。
+- tape_contract_status: 布带型号—规格—Article Number 层级已闭合，真实记录仍须代表样本核对。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 线珠型号驱动因素、珠型系列、常见珠距和卷长规则已记录。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Tape Model Identity Decision 2026-07-28
+
+- model_identity: 布带型号由颜色和钉子材质共同决定。
+- examples: 黑色不锈钢钉、黑色铝钉、白色不锈钢钉、白色铝钉分别属于不同型号。
+- specification_only: 宽度、钉距、长度不改变型号，只确定型号下的具体规格及独立 Article Number。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 布带宽度和钉距使用 mm，长度使用 m。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Accessory Model Hierarchy Decision 2026-07-28
+
+- global_rule: 配件不强制每个 Article Number 都有一个独立型号。
+- tape_model_driver_confirmed: 布带钉子材质不同会产生不同型号；不锈钢钉与铝钉分别属于不同型号。
+- tape_specification_drivers: 同一型号下，宽度、钉距和长度不同会产生独立 Article Number。
+- tape_known_values: 宽度 30mm/45mm/60mm；钉距 125mm/145mm/165mm/170mm 及更多值；长度 30m/40m/50m/60m 等。
+- other_accessories: 封口、顶码、吊码、走珠等通常同时有型号和独立 Article Number，但“通常”不构成全局必填约束。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 布带型号由颜色和钉子材质共同决定。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Accessory Category Cardinality Decision 2026-07-28
+
+- relation: 配件到配件类别为多对一。
+- required_single_category: 每个具体配件必须且只能属于一个配件类别。
+- article_number_guard: 同一 Article Number 不得同时归入多个配件类别。
+- category_capacity: 一个配件类别可以包含多个配件。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 配件型号与 Article Number 的非一对一层级已部分确认。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Accessory Terminology Normalization 2026-07-28
+
+- confirmed: 用户确认“强码”是“墙码”的笔误。
+- canonical_term: 墙码。
+- prohibited_duplicate: 不创建“强码”配件类别。
+- affected_examples: 顶码、墙码、走珠、封口、布带、线珠。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 配件类别采用多对一基数，每个配件必须且只能属于一个类别。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Unified Accessory Role Decision 2026-07-28
+
+- role: 产品领域统一使用“配件”，不建立“备件”或“套装成员”独立业务角色。
+- classification: 使用可筛选的“配件类别”组织配件。
+- examples: 顶码、墙码、走珠、封口、布带、线珠。
+- orthogonal_page_identity: 配件类别不决定页面身份；布带/线珠可有独立类型详情页，小型配件可仅在相关配件区域展示。
+- terminology_resolved: “强码”确认为“墙码”的笔误，只保留“墙码”规范类别。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Small Accessory Packaging Decision 2026-07-28
+
+- scope: 封口、走珠、顶码、墙码等不单独建页的小型相关配件。
+- fixed_packaging: 固定使用纸箱包装。
+- public_behavior: 官网不提供包装选择。
+- contract_isolation: 不接入其他产品类别的包装合同。
+- category_packaging_status: 当前已知产品类别的包装合同已确认完成；真实记录分配留待代表产品核对。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 产品领域统一使用“配件”角色，通过配件类别筛选。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Motor and Remote Packaging Decision 2026-07-28
+
+- scope: 同款、同型号且出厂配套的电机和遥控器。
+- fixed_packaging: 固定使用纸箱包装。
+- public_behavior: 官网只展示固定包装说明，不提供包装选择。
+- contract_isolation: 不接入轨道类三维包装选择，也不复用布带/线珠包装合同。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 小型相关配件固定使用纸箱包装，官网不提供包装选择。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Tape and Bead Packaging Decision 2026-07-28
+
+- excluded_from_rail_contract: 布带和用户所称“线珠”不适用轨道类的三维包装合同。
+- public_default: 官网只展示纸箱常规包装。
+- website_excluded_service: 特殊组合包装不公开，也不作为 RFQ 自助选项；由业务员针对已有需求的客户单独提供。
+- terminology_guard: “常规包装”必须按产品类别区分；轨道类表示防撞膜加尼龙带，布带/线珠类表示纸箱，不得合并为一个全局通用选项。
+- implementation_boundary: 未修改飞书、WordPress、Schema、API、前端或 RFQ 表单。
+- resolved: 电机和遥控器固定使用纸箱包装，官网不提供包装选择。
+- resolved: 小型相关配件固定使用纸箱包装，官网不提供包装选择。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Real Packaging Option Evidence 2026-07-28
+
+- evidence: 用户提供的飞书选项截图与逐项业务说明；未在线读取真实 Base。
+- source_labels: 常规、纸盒、打字、套袋、大收缩膜、对扣。
+- meanings: 常规为防撞膜加尼龙带；纸盒为泡沫膜外加纸盒；打字为客户 Logo 印刷；套袋为单支 PP 膜热塑；大收缩膜为整扎塑封热缩；对扣为两根轨道配对以节省装柜空间。
+- wordpress_presentation: 官网由 WordPress 维护详细说明；“打字”不得在英文网站按字面翻译。
+- normalized_dimensions: 基础包装、Logo 印刷、保护/排列方式。
+- required_base: 常规/纸盒/大收缩膜必须三选一。
+- optional_logo_printing: Logo 印刷可以不选。
+- optional_protection_arrangement: 套袋/对扣可以都不选；选择时二选一。
+- compatibility: Logo 印刷可与任一基础包装和套袋或对扣组合。
+- partially_resolved: 布带和线珠已排除在本合同之外；本合同当前按轨道类规则记录。
+- resolved: 电机和遥控器采用固定纸箱包装，不属于本轨道选择合同。
+- resolved: 小型相关配件固定使用纸箱包装，不属于本轨道选择合同。
+- still_unconfirmed: 轨道真实记录分配。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Public B2B Information Decision 2026-07-28
+
+- not_public: MOQ 不在官网特别展示。
+- lead_time: 收到客户定金，并确认订单、包装和生产资料后，整柜交期通常为 `30–40 天`。
+- packaging: 可选包装材料按产品类别维护，每类相对固定；轨道与布带/线珠的类别边界已确认。
+- sample: 所有产品均可提供样品。
+- oem_odm: 公司可提供 OEM 和 ODM。
+- wordpress_authority: 包装类别与可选材料、交期、样品和 OEM/ODM。
+- feishu_only_if_needed: MOQ。
+- conversion_boundary: 信息公开不改变 B2B quotation request 模式，也不启用购物车、在线下单或支付。
+- publication_gate: 只展示经过相应发布门审核的数据。
+- resolved: 六个包装来源标签及其业务含义已由用户提供的截图和说明确认。
+- resolved: 包装互斥、兼容和必选性已确认并拆为三个维度。
+- resolved: 布带和线珠使用独立包装合同，官网只显示纸箱常规包装，特殊组合包装由业务员线下提供。
+- resolved: 电机和遥控器固定使用纸箱包装，官网不提供包装选择。
+- resolved: 小型相关配件固定使用纸箱包装，当前已知类别包装合同已确认。
+- still_unconfirmed: 真实记录分配。
+- implementation_boundary: 尚未读取或修改真实 Base，也未实现同步或页面。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 First Public Product Field Allowlist Decision 2026-07-28
+
+- public_identity: 产品名称、型号、Article Number。
+- public_specification: 真实可选规格、尺寸、颜色、表面处理。
+- public_technical: 技术参数、安装方式、兼容关系。
+- public_lifecycle: 在售/停产状态。
+- public_content: 产品图片、当前有效资料。
+- publication_gate: 白名单只定义字段可公开范围；记录仍须通过飞书发布资格、数据校验和 WordPress 发布状态门。
+- implementation_boundary: 尚未读取或修改真实 Base，也未实现同步。
+- resolved: B2B 信息已改为分层公开，MOQ 不特别展示；编辑权威和交期起算事件已确认。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Internal Notes and Business Audit Decision 2026-07-27
+
+- feishu_only: 内部备注和业务审核记录。
+- wordpress_boundary: WordPress 只保留自身对公开文案、SEO、图片和页面模块的编辑修订历史，不复制飞书业务审核记录。
+- excluded_from_website: 飞书内部备注和业务审核记录不进入 WordPress 产品镜像、GDHE REST API、Next.js、公开缓存或应用日志。
+- implementation_boundary: 尚未读取或修改真实 Base，也未实现同步。
+- resolved: 第一批公开产品字段白名单已确认。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Sensitive Field Isolation Decision 2026-07-27
+
+- feishu_only: 成本、采购价、内部销售底价、利润/利润率、供应商信息、库存数据、客户专属报价。
+- excluded_from_website: 不进入 WordPress、GDHE REST API、Next.js、公开缓存或应用日志。
+- control: 产品同步采用公开字段白名单；未列入白名单的飞书字段默认不读取、不传输、不落库。
+- implementation_boundary: 尚未读取或修改真实 Base，也未实现同步。
+- resolved: 内部备注和业务审核记录同样只保存在飞书。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Current-Only Website Document Decision 2026-07-27
+
+- website_storage: 只保存当前有效的型录、安装说明和技术图纸。
+- current_metadata: 类型、版本号、语言、生效日期。
+- product_relation: 一个当前文件可以关联多个产品。
+- archive_authority: 失效旧版本只在极空间归档，不在网站内容层重复保存。
+- replacement: 新版本生效时切换网站关系并移除旧文件。
+- isolation: 极空间历史库不进入公开 API 或网站同步路径。
+- implementation_boundary: 未连接极空间，未移动或删除任何文件。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Structured Technical Parameter Decision 2026-07-27
+
+- fields: 分组、名称、值、单位、显示顺序。
+- storage: 不将整张参数表只保存为自由文本。
+- units: 第一阶段统一使用公制单位。
+- excluded: 第一阶段不按市场自动换算英制。
+- future: 如有真实市场需求，另行实现显示换算并保留原始标准值。
+- still_unconfirmed: 真实产品参数分组、名称、单位和排序映射。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Product Series and Application Cardinality Decision 2026-07-27
+
+- product_to_series: 多对多。
+- product_to_application: 多对多。
+- identity: 多个系列和应用入口共享同一个产品身份、canonical 详情页和 Article Number 规格集合。
+- prohibited: 不因目录归属复制产品、规格或 Article Number 记录。
+- still_unconfirmed: 真实 Base 关系字段和代表样本的实际归属。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Discontinued Product Public Page Decision 2026-07-27
+
+- keep_public: 停产产品保留原 URL 和公开页面，不直接删除。
+- label: 页面显著显示 `Discontinued`。
+- replacement: 有替代型号时展示替代产品链接。
+- cta: 常规询价改为 `Contact Us for Replacement`。
+- intent: 保留历史客户查询和 SEO 入口，不代表原型号仍可供货。
+- still_unconfirmed: 替代/升级关系、生效日期和无替代型号时的真实字段与内容。
+- resolved: 已确认产品与系列、产品与应用场景均为多对多关系。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Layered Publication Lifecycle Decision 2026-07-27
+
+- first_sync: 创建 WordPress 草稿，由编辑人员完善营销内容后手动发布。
+- existing_published: 普通飞书主数据变更通过校验后自动更新只读镜像并保持公开。
+- exceptional_changes: Article Number、型号归属、产品记录删除和撤销网站发布资格进入例外审核，不自动覆盖或下线。
+- validation_failure: 保留最后一次成功公开数据并记录错误。
+- ownership_guard: 自动同步不得覆盖 WordPress 管理的文案、SEO、公开媒体和页面模块。
+- implementation_boundary: 尚未读取或修改真实 Base、WordPress、Schema 或同步代码。
+- resolved: 已确认停产产品保留原页面、显示状态和替代型号 CTA。
+- resolved: 已确认产品与系列、产品与应用场景均为多对多关系。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Feishu Website Publication Eligibility Decision 2026-07-27
+
+- accepted: 飞书产品记录必须具有显式的网站发布资格。
+- eligible: 业务方标记为“允许发布”、Article Number 有效且对应真实存在规格。
+- default_deny: 未标记、状态不明确、Article Number 无效或校验失败的记录不得进入同步范围。
+- implementation_boundary: 尚未读取真实 Base，也未创建或修改字段。
+- resolved: 已确认首次双重审核、已发布产品普通更新自动同步、重大变更例外审核。
+- resolved: 已确认停产产品公开页面策略。
+- resolved: 已确认产品与系列、产品与应用场景均为多对多关系。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Product Read Sync Topology Decision 2026-07-27
+
+- accepted: 用户接受“飞书产品主数据 → 受控同步 → WordPress 只读镜像 → GDHE REST API → Next.js”。
+- frontend_boundary: Next.js 只消费 GDHE REST API，公开页面不逐请求直连飞书。
+- wordpress_role: WordPress 组合飞书只读主数据镜像与 `wp-admin` 营销内容。
+- resilience: 无效同步不得替换最后一次成功的公开数据；精确实现合同仍待后续独立任务确认。
+- rfq_separation: quotation request 通过独立受控入口新增飞书询价记录，不修改产品主数据。
+- resolved: 已确认飞书必须具有显式网站发布资格，只有“允许发布”且数据有效的真实记录才进入同步范围。
+- resolved: 已确认分层发布生命周期。
+- resolved: 已确认停产产品公开页面策略。
+- resolved: 已确认产品与系列、产品与应用场景均为多对多关系。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 WordPress Read-Only Product Master Decision 2026-07-27
+
+- accepted: 用户接受飞书主数据字段在 `wp-admin` 可查看但只读。
+- feishu_only_edit: 型号、Article Number、规格和可用状态。
+- wordpress_edit: 产品介绍、SEO、公开图片和页面模块。
+- sync_effect: 飞书修改通过单向同步更新 WordPress/网站侧只读数据。
+- document_impact: `PROJECT/CONSTRAINTS.md` 的 `wp-admin` 唯一内容后台表述需要在 TASK-012 最终验收前受控澄清；当前任务允许范围未包含该文件，本轮未越权修改。
+- resolved: 已确认 WordPress 只读镜像拓扑和飞书网站发布资格门。
+
+## TASK-012 Feishu Product Master Decision 2026-07-27
+
+- choice: 用户选择方案 A。
+- feishu_authority: 型号、Article Number、规格和可用状态。
+- wordpress_authority: 营销文案、SEO、公开媒体和页面编排。
+- direction: 产品主数据只从飞书单向流向网站侧；不默认双向同步。
+- rfq_direction: quotation request 从网站写入飞书，由业务员报价；该方向不修改产品主数据。
+- resolved: 飞书字段在 `wp-admin` 可见但只读。
+- resolved: 已确认飞书 → 受控同步 → WordPress 只读镜像 → GDHE REST API → Next.js。
+- resolved: 已确认分层发布生命周期。
+- resolved: 已确认停产产品公开页面策略。
+- resolved: 已确认产品与系列、产品与应用场景均为多对多关系。
+- resolved: 已确认技术参数结构和第一阶段公制单位规则。
+- resolved: 已确认网站只存当前文件、极空间归档旧版本及多产品关联规则。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Feishu Product and RFQ Boundary 2026-07-27
+
+- product_records: 飞书多维表格已经保存部分现有产品记录。
+- publication: 属性可以组合，但网站只使用飞书中真实存在、具有 Article Number 的产品规格，不自动生成不存在的组合。
+- rfq: 客户提交 quotation request 后在飞书新增记录；业务员在飞书完成报价。
+- resolved_authority: 飞书是结构化产品主数据权威；`wp-admin` 是营销与页面内容权威。
+- lark_gate: 未提供具体 Base 链接/token，且当前没有外部读取/写入授权；实施前必须只读检查真实 Base、表、字段、关联和权限。
+- resolved: 已确认产品读取拓扑和飞书网站发布资格门。
+
+## TASK-012 Accessory Page-Type Rules 2026-07-27
+
+- motor_remote: 同款、同型号且出厂配套的电机与遥控器作为一个组合产品页面，不分开建页。
+- motor_remote_article_identity: 电机和遥控器分别保留自己的全局唯一 Article Number，不创建组合 Article Number。
+- motor_remote_rfq_selection: 电机和遥控器作为两个独立 RFQ 行项目，可只选其一或同时选择；数量分别填写且可以不同。
+- tape: 一种类型的布带建立一个独立详情页；transparent tape 属于另一产品类型，单独建页。
+- tape_axes: 颜色黑/白，宽度 30mm/45mm/60mm，钉子种类不锈钢/铝，钉子间距 125mm/145mm/165mm/170mm 及更多值，长度 30m/40m/50m/60m 等。
+- tape_model_hierarchy: 颜色和钉子材质共同决定型号；同一型号下宽度、钉距、长度变化会产生独立 Article Number。
+- bead_model_hierarchy: 颜色和具体珠型共同决定型号；珠距和卷长共同确定具体规格；任一变化都产生独立 Article Number，但不改变型号。
+- bead_types: 尚飞大方珠系列为单扣/双扣/大圆扣；用户所称佳丽斯中方珠/珠系列为单扣佳丽斯中方珠、双扣佳丽斯中方珠、小圆扣佳丽斯珠。
+- bead_spacing_and_length: 珠距 6cm/6.6cm/7cm/8cm/10.2cm；10.2cm 一般用于双扣但不设排他约束；卷长 40m/50m/60m 等。
+- standalone_categories: 布带和用户所称“线珠”等大类可独立建页。
+- related_only: 轨道封口、走珠、顶码、墙码不单独建页，只作为相关配件。
+- safety: 属性允许组合但并非所有组合都有现有记录；只有飞书中实际存在且拥有 Article Number 的组合才能公开选择。
+- next: 先确认飞书与 WordPress 权威拆分，再核对真实规格记录。
+
+## TASK-012 Accessory Public Page Decision 2026-07-27
+
+- confirmed: 配件采用混合公开模式。
+- unified_role: 所有附属产品统一称为“配件”，不区分备件或套装成员角色。
+- filterable_categories: 使用配件类别筛选；当前示例包括顶码、墙码、走珠、封口、布带、线珠。
+- terminology_resolved: “强码”确认为“墙码”的笔误，只保留“墙码”规范类别。
+- category_cardinality: 每个具体配件必须且只能属于一个配件类别；一个类别可以包含多个配件。
+- standalone: 部分配件拥有自己的公开详情页。
+- related_only: 其余配件只在主产品的相关配件区域展示。
+- invariant: 两类配件都可以作为 quotation request 的独立行，并用独立 Article Number 识别。
+- resolved: 已按电机/遥控器、布带/transparent tape/线珠、封口/走珠/顶码/墙码形成具体页面身份规则。
+- resolved: 布带型号—规格—Article Number 层级和单位已确认，真实记录仍需代表样本核对。
+- resolved: 线珠型号—珠距/卷长规格—Article Number 层级已确认。
+- resolved: 电机与遥控器共用页面但分别保留独立 Article Number。
+- still_unconfirmed: 所有产品和配件的 RFQ 行项目是否必须填写数量；线珠正式英文名。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Accessory Identity Decision 2026-07-27
+
+- confirmed: 每个可独立询价的配件都有自己的 Article Number。
+- uniqueness: 配件 Article Number 沿用已确认的全公司范围不重复规则。
+- model_effect: 配件可以作为 quotation request 中的独立行，并通过 Article Number 唯一识别。
+- resolved: 配件采用混合公开模式，部分独立详情页，部分仅相关配件展示。
+- resolved: 独立详情页判定规则已由具体产品类型确认。
+- resolved: 配件、备件和套装成员不需要不同角色，统一称为配件。
+- resolved: 配件类别采用多对一基数，同一 Article Number 不得归入多个类别。
+- resolved: 配件不强制“一件一个独立型号”；布带型号与规格/Article Number 分层，其他小配件通常同时有型号和 Article Number。
+- resolved: 布带颜色和钉子材质共同决定型号。
+- resolved: 布带宽度和钉距使用 mm，长度使用 m；布带层级已闭合。
+- still_unconfirmed: 其他配件的真实例外。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Accessory and B2B RFQ Decisions 2026-07-27
+
+- accessory: 配件可以脱离主产品独立提交询价。
+- conversion: 网站是 B2B 询价站；用户选择型号、规格、配件等必要选项后提交 quotation request。
+- excluded: 当前业务不包含面向消费者的直接下单、购物车结算或在线支付。
+- resolved: 每个可独立询价配件都有独立且全公司不重复的 Article Number。
+- resolved: 配件公开页面采用混合模式。
+- resolved: 配件独立详情页判定规则已由具体类型确认。
+- confirmed_public: 收到定金并确认订单、包装和生产资料后，整柜交期通常为 `30–40 天`；按产品类别的包装材料；所有产品可提供样品；支持 OEM 和 ODM。
+- not_public: MOQ 不特别展示。
+- confirmed_authority: 包装、交期、样品和 OEM/ODM 由 WordPress 维护；MOQ 如内部需要只留飞书。
+- confirmed_packaging_evidence: 常规、纸盒、打字、套袋、大收缩膜、对扣及其详细含义。
+- confirmed_packaging_logic: 轨道类基础包装必须三选一；Logo 印刷可选；套袋/对扣可都不选，选择时二选一。
+- confirmed_category_exception: 布带和线珠只公开纸箱常规包装；特殊组合包装不公开、不进入 RFQ 自助选择。
+- confirmed_fixed_packaging: 电机和遥控器固定使用纸箱包装，官网不提供包装选项。
+- confirmed_small_accessory_packaging: 封口、走珠、顶码、墙码等小型相关配件固定使用纸箱包装，官网不提供包装选项。
+- confirmed_accessory_role: 统一称为配件，通过可筛选的配件类别组织；类别与页面身份分离。
+- confirmed_accessory_category_cardinality: 每个具体配件必须且只能属于一个类别，一个类别可以包含多个配件。
+- confirmed_accessory_model_hierarchy: 配件型号不是全局逐件必填；布带颜色和钉子材质共同决定型号，宽度/钉距/长度改变 Article Number。
+- confirmed_bead_model_hierarchy: 线珠颜色和具体珠型决定型号；珠距和卷长任一变化都产生独立 Article Number。
+- confirmed_motor_remote_identity: 电机与遥控器共用页面，但分别保留独立 Article Number，不创建组合 Article Number。
+- confirmed_motor_remote_rfq_selection: 客户可只选电机、只选遥控器或同时选择两者；两个独立 RFQ 行项目分别填写可以不同的数量。
+- confirmed_general_rfq_quantity: 所有产品和配件的每个 RFQ 行项目都必须填写数量；缺少数量不能提交。
+- confirmed_public_units_and_internal_conversion: 官网轨道按支、布带/线珠按卷、配件按个；飞书内部换算米数和包装件数。
+- confirmed_feishu_conversion_authority: 长度换算字段保存在飞书产品主数据中；报价系统负责读取并计算，不属于官网实现范围。
+- confirmed_article_number_terminology: `Article Number` 是唯一规范术语；`Part Number` 是口误。
+- confirmed_quantity_input: 所有 RFQ 行项目数量只能是大于零的整数，最小值为 1。
+- confirmed_primary_rfq_cta: 英语站正常在售产品统一使用 `Request a Quote`；停产产品例外继续使用 `Contact Us for Replacement`。
+- confirmed_multi_product_rfq_flow: 正常产品先加入多产品询价清单，客户可继续添加产品，最后统一填写联系信息并一次提交。
+- confirmed_duplicate_rfq_line_rule: 同一 Article Number 且完整公开配置相同则合并数量；任一配置不同则保留独立行。
+- sample_001: `FGD X15+PVC` 已收到并完成部分映射。
+- still_unconfirmed: 安装方式是否改变轨道 Article Number、公开包装选择和关联配件。
+- next: 确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+
+## TASK-012 Product Boundary Decision 4 2026-07-27
+
+- confirmed: Article Number 在全公司全部产品和型号范围内不会重复。
+- model_effect: Article Number 是规格层的全局唯一稳定业务键，可唯一查找一个型号下的具体可订购规格。
+- deferred: Excel 导入可将 Article Number 作为候选匹配键，但覆盖、冲突和回滚规则仍需在第 9 项确认。
+- next: 确认配件是否能够独立下单。
+
+## TASK-012 Product Boundary Decision 3 2026-07-27
+
+- confirmed: 现有独立下单编码直接作为网站和 WordPress 后台中的 `Article Number`。
+- model_effect: 不创建第二套公开货号；每个可订购规格行保存并展示其 Article Number。
+- resolved_by_decision_4: Article Number 在全部产品和型号范围内唯一。
+- next: 进入配件业务边界确认。
+
+## TASK-012 Product Boundary Decision 2 2026-07-27
+
+- confirmed: 同一型号下，每个具体规格都有独立下单编码。
+- model_effect: 型号与下单编码是一对多；可订购规格必须保存各自编码，产品层不能只保存一个编码。
+- resolved_by_decision_3: 独立下单编码直接作为网站/CMS 的 `Article Number`。
+- resolved_by_decision_4: Article Number 在全部产品范围内唯一。
+- next: 进入配件业务边界确认。
+
+## TASK-012 Product Boundary Decision 1 2026-07-27
+
+- confirmed: 同一个型号可以包含不同规格。
+- model_effect: 长度、颜色或表面处理变化本身不创建新型号；暂按同一产品型号下的规格差异处理。
+- resolved_by_decision_2: 每个具体规格具有独立下单编码。
+- still_unconfirmed: 规格最终采用选项还是组合行存储；该问题需要结合真实样本再决定。
+
+## TASK-012 Product Source Availability 2026-07-27
+
+- available: 每个产品的图片、切面/尺寸、产品型号；配件展示图片；覆盖全部产品的总目录。
+- deferred: 安装说明当前没有但可补充；不作为第一轮产品边界确认的阻断项。
+- absent_as_separate_assets: 没有独立配件表和单品目录；配件图需人工确认后才能结构化，总目录可以作为样本选择来源。
+- boundary: 资料类型可支持启动验证，但具体样本尚未提交和选择；型号定义产品，规格的独立下单编码定义 Article Number。
+- next: 按用户要求一次确认一个业务问题，先确认产品、型号、规格变体与 Article Number 的关系。
+
+## TASK-012 Real Product Validation Gap 2026-07-26T09:25:50Z
+
+- correction: TASK-007 Schema 3 是技术合同基线，主要经过设计、Fixture、Golden 和产品型同业结构参考验证；未经过 10～20 个 GDHE 真实产品的业务压力验证。
+- unconfirmed: 产品/变体、型号/Article Number、配件角色、跨系列/应用、参数单位/排序/分组、文档版本/语言/替换、内外字段、B2B 字段和 Excel 导入/更新。
+- transition: checked reopen 已将 TASK-012 从 `AWAITING_USER` 退回 `NEEDS_REVISION`；旧 review/validation 保留为历史，不是当前 final verdict。
+- gate: Header、URL、产品模板和 SEO 在真实产品门关闭前保持阻塞；不得用 Fixture 或 Forest 参考代替 GDHE 业务确认。
+- next: 用户或业务责任人提供 10～20 个真实产品权威资料，再逐项形成映射、缺口和决策证据。
+
+## TASK-012 Acceptance View Synchronization 2026-07-26T05:35:32Z
+
+- reason: 首次 checked prepare 已 PASS，但 AWAITING_USER Hook 阻止同步 Board 和人类可读状态。
+- controlled_reopen: 只为同步展示视图；路线图、review、validation、`NOT_ACCEPTED / DIRTY` 不变。
+- next: 立即重跑 checked `prepare-awaiting-user`，然后等待 `确认 TASK-012 完成并提交到远端`。
+
+## TASK-012 Planner Final Validation PASS 2026-07-26T05:33:21Z
+
+- review: final Round 2 `PASS / P0=0 / P1=0 / P2=0`。
+- validation: Schema 19/16、A3/manifest hash/bytes、endpoint source、Preview absence、links、paths、protected scope、zero listeners、project/registry/messages/strict lane/diff PASS。
+- summary: `TASKS/ARTIFACTS/TASK-012/PLANNER_SUMMARY.md` 已生成。
+- boundary: `NOT_ACCEPTED / DIRTY`；未 commit、push、merge、deploy、PoC 或开始后续阶段。
+- next: checked `prepare-awaiting-user` only。
+
+## TASK-012 Final Review PASS Recovery 2026-07-26T05:31:03Z
+
+- review: Round 2 final `PASS / P0=0 / P1=0 / P2=0`；Round 1 历史完整保留。
+- endpoint: TASK-007 四端点当前事实与源码一致；Preview 保持未来未实现。
+- multilingual: PoC-entry 不预先要求兼容性；compatibility PASS 是生产采购与公开建设前置。
+- regressions: REST-first、非授权、19/16、受保护范围与治理全部通过。
+- responses: Round 2 PASS response 与 stop-recovery request 已投递并 ACK。
+- boundary: PASS 不是用户验收或 Git/部署/PoC/后续阶段授权。
+- next: Planner final fresh validation、Planner Summary 和 checked `prepare-awaiting-user`。
+
+## TASK-012 Round 1 P1 Revision Checkpoint PASS 2026-07-26T05:24:33Z
+
+- endpoint: `/resolve`、`/collection/{type}`、`/navigation`、`/route-manifest` 明确为 TASK-007 已交付；只有 Preview 仍未实现。
+- multilingual: 14.6.1 冻结 PoC-entry；14.6.2 冻结生产采购/公开发布门；兼容性 PASS 是 PoC 输出和生产前置。
+- adr: proposed ADR-006 同步两级门，不授权 PoC、安装、采购或公开语言。
+- fresh_validation: Schema 19/16、hash/byte parity、Markdown links、absolute paths、protected scope、project/registry/messages/strict lane/diff PASS。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: 窄 Round 2 只复核两项 P1 与直接回归；PASS 前不得 final validation。
+
+## TASK-012 Adversarial Round 1 FAIL Recovery 2026-07-26T05:20:17Z
+
+- verdict: `FAIL / P0=0 / P1=2 / P2=0`；review response 与 recovery request 已投递并 ACK。
+- p1_endpoint: 架构契约把已由 TASK-007 交付的 resolve、collection、navigation、route-manifest 与未来 preview 一并标为未实现。
+- p1_multilingual: Stage 10 先要求全部 14.6 门通过，14.6 又要求同一 PoC 才能产出的 SCF + WPML/ACFML 兼容证据，形成循环。
+- passed: 19/16、REST-first、阶段 1/2/3/5/6、TASK-011 归档、受保护范围和零 runtime 改动。
+- transition_helper: `task_transition.py reopen` 按其 AWAITING_USER-only 前置条件安全拒绝且无 mutation；未伪造验收状态，真实状态直接同步为 `NEEDS_REVISION`。
+- boundary: 只允许两处权威文档修订、fresh validation 与窄 Round 2；禁止 final validation、Git、验收、部署或后续阶段。
+- next: 修正当前端点事实，并拆分 PoC-entry 与生产采购/公开发布成熟度门。
+
+## TASK-012 Planner Checkpoint PASS 2026-07-26T05:11:34Z
+
+- roadmap: 十阶段真实产品优先顺序、技术 SEO 首模板门、产品系统先于首页、Preview/cache/Webhook/Staging 前置与多语言成熟度门一致。
+- conflict_fixes: 三处历史“下一任务/下一阶段”指令改为未来目标或独立复评门；TASK-011 归档底部状态同步为 `ACCEPTED / MERGED`。
+- schema: Planner 独立复算 CMS 19、frontend 16、CMS-only 三份、frontend-only 零；A3 hash 和 frontend byte/hash parity 全部通过。
+- scope: 临时 executor scope 已回收；`frontend/**`、`cms/**`、`.local/**`、依赖、lockfile 和运行环境零差异。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 发起并等待独立 adversarial review；PASS 前不做 final validation 或 checked AWAITING_USER transition。
+
+## TASK-012 Executor Complete and Scope Rollback 2026-07-26T05:05:48Z
+
+- execution: 权威架构契约、proposed ADR-006、决策索引及三份 executor 证据已完成；受控 execution response 已投递并 ACK。
+- rollback: 已从 `lanes.json`、executor `LANE.md` 和 `PROJECT/AGENT_LANES.md` 收回三个临时权威文档范围。
+- validation: registry、messages、project、strict lane 与 `git diff --check` 通过；产品代码、CMS、数据库、依赖和运行环境未进入 executor 范围。
+- next: Planner 独立重算 Schema 19/16、核对路线图与受保护范围；checkpoint PASS 后才允许独立 review。
+
+## TASK-012 Executor Scope Recovery 2026-07-26T04:55:36Z
+
+- blocker: 任务消息允许权威路线图和必要 ADR，但 executor 注册 write scope 仍只有 artifacts/worklog；Hook 在任何写入前拒绝。
+- recovery: Planner ACK scope request，并临时增加三个精确范围：架构契约、决策索引、`ADR-006-*`。
+- safety: 未修改权威交付物；`frontend/**`、`cms/**`、数据库、依赖和运行环境不在新增范围。
+- rollback: executor 阶段完成或任务退出执行阶段后立即收回临时范围。
+- next: executor 在同一原消息范围内重新执行权威文档窄修订。
+
+## TASK-012 Specialist Audits ACKed 2026-07-26T04:53:48Z
+
+- wordpress_cms: `PASS WITH ENTRY GATES`；真实产品批量录入前需冻结样本权属、变体、配件角色、文档生命周期、业务键和编辑/公开限制。
+- frontend: `PASS_WITH_ENTRY_GATES`；Stage 1 需冻结产品卡片投影与 SEO 合同，Stage 3 顺序为部署拓扑/Staging -> Preview -> last-known-good cache -> signed Webhook -> 故障/多实例演练。
+- localization_seo: `CONDITIONAL PASS`；技术 SEO 从首个正式英语模板开始，完整多语言按成熟度门，任何 PoC 都是独立、隔离、非公开、非采购。
+- schema: CMS graph 19 与 frontend `/resolve` closure 16 的差异仅为 collection、navigation、route-manifest 三个 CMS-only Schema。
+- next: executor 基于最终审计窄改权威路线图并回传 execution response。
+
+## TASK-012 Controlled Dispatch 2026-07-26T04:43:19Z
+
+- design_gate: `DESIGN.md` 与 `IMPLEMENTATION_PLAN.md` 已创建；project、registry、messages、strict lane 与 diff 校验 PASS。
+- dispatched: wordpress_cms、frontend、localization_seo 可实施性审计；executor 权威文档修订请求。
+- executor_gate: 三份专业审计未齐备前不得修改路线图或 ADR。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: 等待受控 execution responses；Planner ACK 和 checkpoint 后才允许独立 review。
+
+## TASK-012 Requirement Confirmation 2026-07-26T04:38:18Z
+
+- authorization: 用户精确输入 `确认 TASK-012 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- scope: 路线图、必要 ADR、Schema 19/16 解释、状态事实源与后续阶段门。
+- protected: `frontend/**`、`cms/**`、数据库、依赖、运行环境和用户附件保持不变。
+- next: 完成设计/计划和消息校验，再派发 executor 文档实施与三个专业 Lane 只读审计。
+
+## TASK-012 Intake 2026-07-26T04:06:13Z
+
+- source: 用户确认采用所附评估文本的总体方向与任务顺序。
+- previous_task: TASK-011 正式提交已在远端任务分支与 `main`，本次同步为 `CLOSED / MERGED` 并归档。
+- branch: 从同步 `main` 创建 `codex/TASK-012-roadmap-reprioritization`。
+- scope: 只重排权威实施路线图，统一 Schema 19/16 口径，冻结真实产品、IA/URL/CTA、视觉纵切、SEO/Preview/cache/Staging、产品优先与多语言条件门。
+- boundary: 不修改 `frontend/**`、`cms/**`、数据库、依赖或运行环境，不导入真实产品，不实现页面、SEO、Preview、缓存、Webhook、询盘、多语言或部署。
+- next: 等待精确口令 `确认 TASK-012 需求并开始执行`。
 
 ## TASK-011 Formal Delivery Authorized 2026-07-26T01:17:57Z
 

@@ -3,14 +3,14 @@ accepted_at: 2026-07-26T01:17:57Z
 recovery_recorded_at: 2026-07-26T01:13:07Z
 
 task_id: TASK-011
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, wordpress_cms]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-011
 acceptance_state: ACCEPTED
-git_status: DIRTY
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -158,7 +158,7 @@ project_type: software
 
 ## 当前状态
 
-`AWAITING_USER / NOT_ACCEPTED / DIRTY`。最终 Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，canonical report 顶部 Outcome 已同步且保留完整 Round 1 历史。Planner final fresh validation 为 PASS：85/85 focused、158/158 full、16/2/2 parity、lint、typecheck、dynamic build、production smoke、依赖/审计、范围、泄漏、Fixture/上传/进程/build residue 和治理全部通过。checked acceptance preparation 已通过；等待用户正式验收和 Git 交付口令。
+`CLOSED / ACCEPTED / MERGED`。最终 Round 2 为 `PASS / P0=0 / P1=0 / P2=0`。正式提交 `90e6deaadc05c85df51a56bec4062b657ba65917` 已推送至任务分支并快进合并至远端 `main`；本任务未部署。
 
 ## 恢复入口
 
@@ -166,13 +166,13 @@ project_type: software
 
 ## 下一步
 
-等待用户精确口令 `确认 TASK-011 完成并提交到远端`；收到前不得 commit、push、merge、部署或启动下一任务。
+无需继续执行。本任务已正式交付并归档；后续工作必须由新的活动任务承载。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 冻结纵向切片、配置/错误/Fixture/验收边界，维护门禁并做最终独立验证 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**` | task state、design gate、checkpoint、Planner Summary | waiting user acceptance |
+| planner | 冻结纵向切片、配置/错误/Fixture/验收边界，维护门禁并做最终独立验证 | `PROJECT/**`、`TASKS/**`、`LANES/planner/**` | task state、design gate、checkpoint、Planner Summary | COMPLETE; accepted and delivered |
 | frontend | 需求确认后测试先行实现最小 DTO、Adapter、orchestration、技术 route、E2E 和文档 | 本任务允许的 `frontend/**`、TASK-011 artifacts、lane records | implementation、tests、execution report、screenshots | P1 revision COMPLETE |
 | wordpress_cms | 需求确认后仅运行现有 A3 Fixture create/show/cleanup 并提供公开 HTTP 与零残留证据 | 本地 CMS runtime、TASK-011 artifacts、lane records；不得改 CMS 源码 | fixture manifest、live endpoint evidence、cleanup evidence | A2 and A4 COMPLETE |
 | adversarial_reviewer | 只读挑战数据流、404、配置门、泄漏、E2E真实性、cleanup 和范围 | TASK-011 review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | final PASS; P0=P1=P2=0 |
@@ -252,7 +252,7 @@ Round 1 历史为 `FAIL / P0=0 / P1=1 / P2=0`。最终 Round 2 为 `PASS / P0=0 
 
 ## User Acceptance
 
-`NOT_ACCEPTED`。等待用户精确口令 `确认 TASK-011 完成并提交到远端`；需求确认、执行/审查 PASS 与用户验收/Git 交付是不同门禁。
+`ACCEPTED`。用户已输入精确正式交付口令；正式提交 `90e6deaadc05c85df51a56bec4062b657ba65917` 已推送至任务分支、快进合并至远端 `main`，任务现为 `CLOSED / MERGED`。
 
 ## Recovery Entry 2026-07-26T01:13:07Z
 

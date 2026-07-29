@@ -3832,3 +3832,1324 @@ schema_version: DPG-LANES-1.0.0
 - TASK-011 is ACCEPTED with final Round 2 PASS and P0/P1/P2=0。
 - Authorized chain: formal Chinese commit、task-branch push、fast-forward merge to `main`、push `main` and verify remote ancestry。
 - No force push、rebase、branch/worktree deletion、deployment or TASK-012。
+
+### 2026-07-26T04:06:13Z - TASK-011 delivered; TASK-012 roadmap reprioritization intake
+
+- live_delivery: local `main`、`origin/main` and remote TASK-011 branch all resolve to `90e6deaadc05c85df51a56bec4062b657ba65917`; worktree was clean before intake。
+- previous_task: TASK-011 synchronized as `CLOSED / ACCEPTED / MERGED` and archived。
+- branch: created `codex/TASK-012-roadmap-reprioritization` from synchronized `main`。
+- intake: register only the authority-roadmap rewrite that moves real GDHE product validation、information architecture、URL/CTA、technical SEO、Preview/cache/Webhook/Staging and product templates ahead of isolated UI foundation/homepage work。
+- boundary: no authoritative roadmap edit、ADR edit、product/CMS/runtime implementation、dispatch、review、commit、push、merge or deployment before requirement confirmation。
+- next: wait for exact `确认 TASK-012 需求并开始执行`。
+
+### 2026-07-26T04:38:18Z - TASK-012 requirements confirmed
+
+- authorization: exact user phrase `确认 TASK-012 需求并开始执行` received。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- execution_order: Planner freezes the replacement matrix and plan；executor performs the narrow authority-document edit；wordpress_cms、frontend and localization_seo provide read-only feasibility evidence；adversarial review follows Planner checkpoint。
+- boundary: no product code、CMS/database、dependency、runtime、real-product import、page implementation、deployment or Git delivery。
+- next: create DESIGN and IMPLEMENTATION_PLAN，then queue and dry-run controlled lane requests。
+
+### 2026-07-26T04:43:19Z - TASK-012 design gate and controlled dispatch
+
+- design: replacement matrix、authority boundary、Schema 19/16 explanation、multilingual maturity gate and staged implementation plan frozen。
+- validation: project、registry、messages、strict lane audit and diff check PASS。
+- dispatch: wordpress_cms、frontend、localization_seo feasibility audits and the gated executor authority revision request delivered through registered Codex threads。
+- transition: `READY` to `IN_PROGRESS`。
+- gate: executor must not edit authority documents until all three specialist audits exist；no product/CMS/runtime implementation。
+- next: wait for linked execution responses and perform a fresh Planner checkpoint。
+
+### 2026-07-26T04:53:48Z - TASK-012 specialist audits acknowledged
+
+- wordpress_cms: feasibility PASS with entry gates；19/16 recursively reproduced and CMS-only roots identified。
+- frontend: feasibility PASS with entry gates；real-product slice、SEO contract and Staging/Preview/cache/Webhook order frozen。
+- localization_seo: conditional PASS；first-template technical SEO and non-public/non-procurement multilingual PoC boundary frozen。
+- responses: all three linked execution responses delivered and ACKed by Planner。
+- executor_gate: released after the final audit files became stable；authority revision may now proceed within its narrow write scope。
+- boundary: no product code、CMS/database、runtime、purchase、deployment or later-task implementation。
+- next: wait for executor authority-document response and run Planner checkpoint。
+
+### 2026-07-26T04:55:36Z - TASK-012 executor write-scope recovery
+
+- blocker: DPG Hook rejected the first authority-document patch before write because executor registry scope did not match the already confirmed task/message scope。
+- response: executor scope request delivered and ACKed by Planner。
+- grant: temporary exact paths added for architecture contract、decision index and `ADR-006-*` only。
+- protected: no frontend、CMS/database、dependency、runtime or other authority path added；blocked patch changed no deliverable。
+- rollback: remove the three temporary paths when executor completes or leaves its phase。
+- next: resume the original executor request without changing task scope。
+
+### 2026-07-26T04:40:47Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-012
+- summary: message queued for wordpress_cms
+
+### 2026-07-26T04:40:47Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-012
+- summary: message queued for frontend
+
+### 2026-07-26T04:40:47Z - message_queued
+- type: message_queued
+- lane: localization_seo
+- task: TASK-012
+- summary: message queued for localization_seo
+
+### 2026-07-26T04:40:48Z - message_queued
+- type: message_queued
+- lane: executor
+- task: TASK-012
+- summary: message queued for executor
+
+### 2026-07-26T04:41:26Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-012
+- summary: message MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT dispatched to frontend
+
+### 2026-07-26T04:41:35Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-012
+- summary: message MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT moved to done
+
+### 2026-07-26T04:41:50Z - message_dispatched
+- type: message_dispatched
+- lane: localization_seo
+- task: TASK-012
+- summary: message MSG-TASK-012-LOCALIZATION-SEO-FEASIBILITY-AUDIT dispatched to localization_seo
+
+### 2026-07-26T04:42:04Z - message_done
+- type: message_done
+- lane: localization_seo
+- task: TASK-012
+- summary: message MSG-TASK-012-LOCALIZATION-SEO-FEASIBILITY-AUDIT moved to done
+
+### 2026-07-26T04:42:22Z - message_dispatched
+- type: message_dispatched
+- lane: executor
+- task: TASK-012
+- summary: message MSG-TASK-012-ROADMAP-AUTHORITY-REVISION dispatched to executor
+
+### 2026-07-26T04:42:48Z - message_done
+- type: message_done
+- lane: executor
+- task: TASK-012
+- summary: message MSG-TASK-012-ROADMAP-AUTHORITY-REVISION moved to done
+
+### 2026-07-26T04:42:50Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-012
+- summary: message MSG-TASK-012-WORDPRESS-FEASIBILITY-AUDIT dispatched to wordpress_cms
+
+### 2026-07-26T04:43:09Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-012
+- summary: message MSG-TASK-012-WORDPRESS-FEASIBILITY-AUDIT moved to done
+
+### 2026-07-26T04:49:47Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T04:50:03Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T04:51:00Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T04:52:28Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-26T04:52:34Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-LOCALIZATION-SEO-FEASIBILITY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-26T04:52:35Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-FRONTEND-FEASIBILITY-AUDIT-RESPONSE moved to done
+
+### 2026-07-26T04:53:08Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-WORDPRESS-FEASIBILITY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-26T04:53:08Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-LOCALIZATION-SEO-FEASIBILITY-AUDIT-RESPONSE moved to done
+
+### 2026-07-26T04:53:30Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-WORDPRESS-FEASIBILITY-AUDIT-RESPONSE moved to done
+
+### 2026-07-26T04:55:00Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T04:55:36Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-EXECUTOR-WRITE-SCOPE-REQUEST dispatched to planner
+
+### 2026-07-26T04:55:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-EXECUTOR-WRITE-SCOPE-REQUEST moved to done
+
+### 2026-07-26T05:04:42Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T05:05:30Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ROADMAP-AUTHORITY-REVISION-RESPONSE dispatched to planner
+
+### 2026-07-26T05:05:30Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ROADMAP-AUTHORITY-REVISION-RESPONSE moved to done
+
+### 2026-07-26T05:05:48Z - TASK-012 executor complete and temporary scope rolled back
+
+- response: `MSG-TASK-012-ROADMAP-AUTHORITY-REVISION-RESPONSE` delivered and ACKed。
+- execution: architecture roadmap、proposed ADR-006、decision index and executor evidence complete。
+- rollback: removed all three TASK-012 temporary authority paths from executor registry、lane file and rendered Agent Lanes view。
+- validation: registry、messages、project、strict lane and diff checks PASS。
+- boundary: no frontend、CMS/database、dependencies、runtime、later-stage implementation、Git delivery or acceptance。
+- next: Planner independent checkpoint；adversarial review remains blocked until PASS。
+
+### 2026-07-26T05:11:34Z - TASK-012 Planner checkpoint PASS
+
+- roadmap: authority order、proposed ADR-006 and specialist entry gates are internally consistent。
+- corrections: removed three stale next-task/next-stage directives and synchronized the archived TASK-011 acceptance view。
+- independent_validation: CMS 19、frontend 16、exact three-file CMS-only difference、A3/hash/snapshot parity、Markdown links、absolute paths、protected scope、project/registry/messages/strict lane and diff PASS。
+- transition: `IN_PROGRESS` to `UNDER_REVIEW`。
+- boundary: no acceptance、Git、deployment or later candidate-stage implementation。
+- next: dispatch one independent adversarial review request and wait for its linked verdict。
+
+### 2026-07-26T05:20:17Z - TASK-012 adversarial Round 1 FAIL recovery
+
+- verdict: FAIL，P0=0、P1=2、P2=0；review response and stop-recovery request delivered and ACKed。
+- findings: accepted TASK-007 endpoint status is contradicted；multilingual PoC authorization depends on the compatibility output it is meant to prove。
+- passed: 19/16、REST-first、stage dependencies、TASK-011 archive consistency、protected scope and zero runtime changes。
+- helper: `task_transition.py reopen` safely refused because it only accepts AWAITING_USER；no mutation and no invented acceptance state。
+- transition: truthful `UNDER_REVIEW` to `NEEDS_REVISION` recovery recorded directly under established project precedent。
+- boundary: only the two authority-document corrections、fresh validation and Round 2；no later-stage implementation、acceptance、Git or deployment。
+
+### 2026-07-26T05:24:33Z - TASK-012 Round 1 P1 revision checkpoint PASS
+
+- endpoint: accepted TASK-007 endpoints now identified as implemented；Preview alone remains future。
+- multilingual: PoC-entry and production purchase/public rollout gates are separate；compatibility is a PoC output。
+- adr: proposed ADR-006 synchronized without authorizing procurement、installation、PoC or publication。
+- fresh_validation: 19/16 and all hash/byte parity、links、paths、protected scope、project/registry/messages/strict lane/diff PASS。
+- transition: `NEEDS_REVISION` to `UNDER_REVIEW`。
+- next: dispatch narrow Round 2 only；no final validation、acceptance、Git、deployment or later stage。
+
+### 2026-07-26T05:31:03Z - TASK-012 final Round 2 review PASS recovery
+
+- review: final PASS，P0=0、P1=0、P2=0；Round 1 history preserved。
+- closures: endpoint current facts and non-circular multilingual gates independently reproduced。
+- regressions: REST-first、non-authorization、19/16、protected scope and governance PASS。
+- responses: linked PASS response and stop-recovery request delivered and ACKed。
+- boundary: review PASS is not acceptance、Git、deployment、PoC or later-stage authority。
+- next: Planner final fresh validation、Summary and checked prepare-awaiting-user only。
+
+### 2026-07-26T05:33:21Z - TASK-012 Planner final validation PASS
+
+- final_validation: 19/16、A3/manifest hash/bytes、endpoint source、Preview absence、links、paths、protected scope、zero listeners、project/registry/messages/strict lane and diff PASS。
+- summary: Planner Summary generated。
+- boundary: NOT_ACCEPTED / DIRTY；no commit、push、merge、deployment、PoC or later stage。
+- next: checked prepare-awaiting-user only。
+
+### 2026-07-26T05:35:32Z - TASK-012 acceptance-view synchronization
+
+- first_prepare: checked helper PASS and machine state entered AWAITING_USER。
+- hook: AWAITING_USER correctly blocked subsequent Board/narrative writes。
+- controlled_reopen: only to synchronize acceptance views；roadmap、review、validation and NOT_ACCEPTED/DIRTY unchanged。
+- next: rerun checked prepare immediately，then wait for the exact formal delivery phrase。
+
+### 2026-07-26T05:12:30Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-26T05:12:50Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-26T05:13:09Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-26T05:18:18Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T05:18:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T05:19:36Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-07-26T05:19:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-26T05:19:36Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY dispatched to planner
+
+### 2026-07-26T05:19:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R1-STOP-RECOVERY moved to done
+
+### 2026-07-26T05:25:36Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-26T05:25:53Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-26T05:26:19Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-26T05:29:56Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T05:30:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-26T05:30:53Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-07-26T05:30:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-26T05:30:53Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY dispatched to planner
+
+### 2026-07-26T05:30:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-ADVERSARIAL-REVIEW-R2-STOP-RECOVERY moved to done
+
+### 2026-07-26T05:34:35Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-012
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-26T05:35:32Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-012
+- summary: Synchronize Board and human-readable current-state narratives after the checked AWAITING_USER transition; no roadmap, review, validation or product change.
+
+### 2026-07-26T05:36:20Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-012
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-26T09:25:50Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-012
+- summary: User identified that TASK-012 did not confirm the real GDHE product cohort or the product/variant/Article Number/accessory/document/B2B/import business rules before treating the product-validation gate as sufficiently frozen.
+
+### 2026-07-26T09:29:08Z - real_product_validation_gate_recorded
+- type: task_revision
+- lane: planner
+- task: TASK-012
+- summary: Separated TASK-007 technical Schema baseline from unconfirmed GDHE business freeze, superseded the prior acceptance summary, and recorded the authoritative 10-20 product input and decision gate; no product import, Schema/runtime change, Git delivery, or downstream task was performed.
+
+### 2026-07-27T01:20:54Z - product_boundary_decision_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that one product model may contain multiple length, color, or finish specifications; these differences do not create new models. Article Number/order-code cardinality remains unconfirmed.
+
+### 2026-07-27T01:22:41Z - product_order_code_cardinality_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that every concrete specification under one model has an independent order code, establishing one model to many order codes; Article Number naming and global uniqueness remain unconfirmed.
+
+### 2026-07-27T01:24:20Z - article_number_mapping_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that the existing independent order code is used directly as the website and WordPress Article Number for each orderable specification; global uniqueness remains unconfirmed.
+
+### 2026-07-27T01:32:08Z - article_number_global_uniqueness_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that Article Number is unique across all company products and models, so it can uniquely identify one concrete orderable specification.
+
+### 2026-07-27T01:35:00Z - accessory_and_b2b_rfq_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that accessories can be requested independently and that the site is a B2B quotation-request flow rather than direct online ordering or payment; accessory identity and exact RFQ fields remain open.
+
+### 2026-07-27T01:37:30Z - accessory_article_number_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that every independently quotable accessory has its own Article Number; the company-wide uniqueness rule makes accessories uniquely identifiable RFQ line items.
+
+### 2026-07-27T01:39:45Z - accessory_public_page_mode_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed mixed accessory publishing: some accessories have independent detail pages while others appear only as related accessories; both remain independently quotable by Article Number.
+
+### 2026-07-27T01:46:45Z - accessory_page_type_rules_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed combined motor/remote pages, standalone fabric-tape, transparent-tape and user-termed `线珠` category pages, and related-only end-cap, glider, ceiling-bracket and wall-bracket accessories; fabric-tape attribute combinations remain to be verified.
+
+### 2026-07-27T01:52:03Z - feishu_product_and_rfq_boundary_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that the website uses real product records from Feishu Base and writes quotation requests back to Feishu for sales quoting; Feishu versus WordPress structured-product authority remains unresolved and no external system was accessed.
+
+### 2026-07-27T05:50:22Z - feishu_product_master_authority_confirmed
+- type: architectural_requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User selected option A: Feishu Base is authoritative for structured product master data, WordPress is authoritative for marketing and page content, product master flows one way toward the website, and RFQ records flow separately into Feishu.
+
+### 2026-07-27T06:09:54Z - wordpress_read_only_product_master_confirmed
+- type: architectural_requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted that Feishu-owned model, Article Number, specification and availability fields are visible but read-only in wp-admin, while product copy, SEO, public media and page modules remain WordPress-editable.
+
+### 2026-07-27T07:05:14Z - product_read_sync_topology_confirmed
+- type: architectural_requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted the product read path Feishu product master to controlled sync to WordPress read-only mirror to GDHE REST API to Next.js; public pages do not directly depend on Feishu per request, and RFQ remains a separate controlled write into Feishu.
+
+### 2026-07-27T07:24:14Z - feishu_website_publication_eligibility_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted an explicit Feishu website-publication eligibility gate; only records marked allowed for publication with a valid globally unique Article Number and a real specification may enter synchronization, while no live Base field was created.
+
+### 2026-07-27T07:34:24Z - layered_publication_lifecycle_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted first-sync editorial review, automatic validated ordinary updates for already-published products, exception review for Article Number/model/deletion/eligibility changes, and last-known-good preservation on validation failure.
+
+### 2026-07-27T07:38:29Z - discontinued_product_page_policy_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted retaining discontinued product URLs and pages with a Discontinued label, replacement links when available, and a Contact Us for Replacement CTA instead of deleting the page.
+
+### 2026-07-27T07:45:58Z - product_series_application_cardinality_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted many-to-many product-to-series and product-to-application relationships while preserving one product identity, one canonical detail page, and no duplicated product or Article Number records.
+
+### 2026-07-27T15:18:24Z - structured_technical_parameters_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted structured technical parameters with group, name, value, unit and display order, using metric units in phase one without automatic market-specific imperial conversion.
+
+### 2026-07-27T15:25:33Z - current_only_website_document_lifecycle_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User corrected the document lifecycle so the website stores only current valid files, ZSpace alone archives expired versions, and one current file may relate to multiple products.
+
+### 2026-07-27T15:31:39Z - sensitive_field_isolation_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that financial, supplier, inventory and customer-specific quotation data remain only in Feishu Base and must be excluded from WordPress, API, frontend, caches and logs through a public-field allowlist.
+
+### 2026-07-27T15:51:24Z - internal_notes_and_business_audit_isolation_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that internal notes and business audit records remain only in Feishu Base, while WordPress keeps only its own content revision history and does not copy those business records.
+
+### 2026-07-27T16:23:39Z - first_public_product_field_allowlist_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User allowed the first public product field set covering identity, real specifications, dimensions and appearance, technical and compatibility data, lifecycle state, images and current valid documents, subject to existing publication gates.
+
+### 2026-07-27T16:49:43Z - public_b2b_information_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User selected public display for MOQ, packaging method, lead time, OEM/ODM capability and sample policy; their data granularity and edit authority remain to be confirmed.
+
+### 2026-07-27T17:00:20Z - b2b_information_granularity_corrected
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User corrected the public B2B model so MOQ is not specially displayed, full-container lead time is 30-40 days, packaging varies by product category, and samples plus OEM/ODM are generally available.
+
+### 2026-07-27T17:06:53Z - b2b_edit_authority_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User directed packaging information to be maintained in WordPress; the resulting boundary keeps packaging, lead time, samples and OEM/ODM as WordPress-owned public content and MOQ Feishu-only if retained.
+
+### 2026-07-27T17:10:31Z - lead_time_start_event_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User accepted that the public 30-40 day full-container lead time starts after receipt of the customer deposit and confirmation of order, packaging and production materials.
+
+### 2026-07-27T17:23:33Z - real_packaging_option_evidence_recorded
+- type: real_business_evidence
+- lane: planner
+- task: TASK-012
+- summary: User supplied a Feishu option screenshot and detailed meanings for six packaging-related labels; their field type, record assignments and combination rules remain unverified.
+
+### 2026-07-27T17:29:10Z - packaging_combination_rules_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed mutual exclusion among standard, carton and large shrink-wrap packaging, mutual exclusion between individual bagging and paired nesting, and Logo-printing compatibility with every listed legal combination.
+
+### 2026-07-27T17:34:48Z - packaging_cardinality_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed required base packaging, optional Logo printing, and an optional mutually exclusive individual-bagging versus paired-nesting dimension.
+### 2026-07-27T17:43:29Z - tape_and_bead_packaging_boundary_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User excluded tape and bead products from the rail packaging contract; the website exposes carton packaging only, while special combination packaging remains a salesperson-handled service and is not a public RFQ choice. The category-specific meaning of standard packaging is now explicit.
+### 2026-07-27T17:47:29Z - motor_remote_fixed_packaging_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that paired motors and remotes use fixed carton packaging; the website presents this as a fixed fact and does not expose packaging choices.
+### 2026-07-27T17:54:43Z - small_accessory_fixed_packaging_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed that end caps, gliders, ceiling brackets, wall brackets and comparable small related accessories use fixed carton packaging; the website exposes no packaging choice, completing the known-category packaging contracts.
+### 2026-07-27T17:58:25Z - unified_accessory_role_and_filter_categories_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User unified accessory, spare-part and kit-member semantics under one accessory role and directed filterable accessory categories; category classification remains independent from public page identity. The new term 强码 conflicts with prior 墙码 and remains explicitly unmerged pending confirmation.
+### 2026-07-27T18:06:50Z - accessory_terminology_normalized
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed 强码 was a typo for 墙码; only the canonical 墙码 accessory category remains, and no duplicate category is created.
+### 2026-07-27T18:09:07Z - accessory_category_cardinality_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed a many-to-one accessory-to-category relation: every concrete accessory and Article Number belongs to exactly one accessory category, while one category may contain multiple accessories.
+### 2026-07-27T18:14:19Z - accessory_model_article_hierarchy_partially_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed accessories do not require a one-model-per-Article relationship. For tape, nail material changes model, while width, nail spacing and length create concrete Article Numbers; other small accessories usually have both model and Article Number, with real exceptions still evidence-gated.
+### 2026-07-27T18:18:37Z - tape_model_identity_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed tape model identity is the combination of color and nail material, while width, nail spacing and length determine concrete specifications and Article Numbers under that model.
+### 2026-07-27T18:21:29Z - tape_specification_units_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed tape width and nail spacing use millimetres, while tape length uses metres, closing the tape model-specification-Article Number business hierarchy pending real-record evidence.
+### 2026-07-27T18:25:49Z - bead_model_specification_structure_partially_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed bead-chain model identity uses color plus concrete bead type, provided two named type series, common centimetre spacing values and metre roll lengths; roll length changes Article Number, while spacing-to-Article cardinality remains open.
+### 2026-07-27T18:28:50Z - bead_article_number_rule_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed every bead-spacing or roll-length change produces a distinct Article Number under the same color-plus-bead-type model, closing the bead model-specification-Article hierarchy pending real-record evidence.
+### 2026-07-27T18:31:06Z - motor_remote_article_identity_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed motor and remote share one public page but retain separate globally unique Article Numbers, with no additional bundle Article Number.
+### 2026-07-27T18:33:15Z - motor_remote_independent_rfq_selection_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed motor and remote are independently selectable RFQ lines on the shared page; either or both may be selected, and their quantities may differ.
+### 2026-07-27T18:36:13Z - all_rfq_line_quantities_required
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed every product or accessory line added to a quotation request must include a quantity; incomplete lines cannot be submitted.
+### 2026-07-27T18:40:45Z - public_rfq_units_and_internal_conversion_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed website RFQ units are pieces for rails, rolls for tape and bead chain, and individual units for accessories; Feishu internally derives metres and package counts.
+### 2026-07-27T18:44:20Z - feishu_conversion_field_authority_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed per-product length conversion data is maintained in Feishu product master data and consumed by the Feishu quotation system; website implementation is out of scope.
+### 2026-07-27T18:47:22Z - article_number_terminology_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User corrected Part Number as a slip; Article Number remains the sole canonical business identifier and no alias or second field is created.
+### 2026-07-27T18:49:35Z - rfq_positive_integer_quantity_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed every website RFQ line quantity must be a positive integer; blank, zero, negative and decimal values are invalid.
+### 2026-07-27T18:51:48Z - primary_rfq_cta_label_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed Request a Quote as the single primary English CTA for active products; discontinued products retain Contact Us for Replacement.
+### 2026-07-27T18:54:32Z - multi_product_rfq_list_flow_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed active products are added to a multi-product quotation list, followed by one shared contact-information step and one final submission.
+### 2026-07-27T18:57:00Z - duplicate_rfq_line_rule_confirmed
+- type: business_rule_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed RFQ lines merge only when Article Number and all public configuration values match; different configurations remain separate lines.
+### 2026-07-27T19:06:27Z - real_product_sample_001_partial_mapping
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User provided the first manual-track candidate sample FGD X15+PVC and a cross-section image; partial field mapping is recorded while identifier and specification semantics remain open.
+### 2026-07-27T19:09:14Z - sample_001_article_number_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed GDHEPRD000172 is the Article Number for the concrete FGD X15+PVC specification.
+### 2026-07-27T19:11:33Z - sample_001_length_specification_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed GDHEPRD000172 represents the six-metre-per-piece FGD X15+PVC specification.
+### 2026-07-27T19:13:38Z - sample_001_meter_weight_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed 155-160 is the FGD X15+PVC track metre-weight range in grams per metre.
+### 2026-07-27T19:15:22Z - sample_001_pvc_nano_strip_weight_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed 115 is the PVC nano-strip metre weight in grams per metre, stored separately from the track body metre weight.
+### 2026-07-27T19:17:40Z - sample_001_section_dimensions_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed the FGD X15+PVC cross-section is 27 millimetres high and 28 millimetres wide.
+### 2026-07-27T19:20:02Z - sample_001_installation_methods_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGD X15+PVC supports both ceiling and wall mounting, primarily differentiated by mounting brackets.
+### 2026-07-27T19:22:11Z - sample_001_installation_article_boundary_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed ceiling and wall mounting keep track Article Number GDHEPRD000172 unchanged and only switch the mounting bracket accessory.
+### 2026-07-28T01:29:28Z - sample_001_bracket_article_identity_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed the ceiling bracket and wall bracket each have their own Article Number.
+### 2026-07-28T01:45:54Z - sample_001_bracket_width_compatibility_rule_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed a bracket can fit multiple track models and is generally matched by track mounting-face width, such as 28-millimetre brackets for 28-millimetre mounting faces.
+### 2026-07-28T01:51:33Z - sample_001_explicit_bracket_compatibility_rule_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User clarified mounting-face width is advisory only because different track types use different accessories; final compatibility must follow the actual track-to-accessory relationship.
+### 2026-07-28T01:54:28Z - sample_001_compatibility_authority_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed the actual track-to-bracket compatibility relationship is already stored in the Feishu product master.
+### 2026-07-28T02:07:31Z - sample_001_compatibility_link_field_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed Feishu stores track-to-accessory compatibility with a linked-record field.
+### 2026-07-28T02:10:34Z - sample_001_compatibility_level_target_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed compatibility is currently linked per Article Number record but should move to model level and be inherited by model specifications.
+### 2026-07-28T02:16:17Z - sample_001_model_compatibility_inheritance_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed every track specification under the same model uses the same compatible accessories with no Article Number-level exception.
+### 2026-07-28T02:19:14Z - sample_001_migration_conflict_policy_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed inconsistent accessory links within one model must stop migration for that model rather than be merged automatically.
+### 2026-07-28T02:22:57Z - sample_001_migration_retry_policy_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed the next sync automatically revalidates and migrates a previously blocked model after Feishu data is corrected.
+### 2026-07-28T02:25:27Z - sample_001_article_link_transition_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed old Article Number-level compatibility links should remain for a transition period after successful model-level migration.
+### 2026-07-28T02:34:10Z - sample_001_transition_field_readonly_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed old Article Number-level links are read-only during transition, excluded from website sync, and the website reads only model-level compatibility.
+### 2026-07-28T03:03:29Z - sample_001_transition_exit_criteria_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed a minimum 30-day retention, at least three full syncs, passed manual sampling, and final human confirmation before deleting old Article Number-level links.
+### 2026-07-28T03:05:32Z - sample_001_packaging_applicability_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGD X15+PVC supports the full track packaging contract with required base packaging, optional logo printing, and optional mutually exclusive bagging or paired nesting.
+### 2026-07-28T03:07:28Z - sample_001_packaging_default_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed the default is regular packaging with logo printing off and neither individual bagging nor paired nesting selected.
+### 2026-07-28T03:10:07Z - sample_001_runner_end_stop_relation_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGD X15+PVC must be related to its compatible runners and end stops in addition to ceiling and wall brackets.
+### 2026-07-28T03:13:01Z - sample_001_runner_end_stop_optional_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User clarified runners and end stops are optional related accessories with no mandatory bundle; quantity is required only after the customer adds an accessory.
+### 2026-07-28T03:14:56Z - sample_001_related_accessory_suggestion_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed related accessories are recommendation-only by default and create separate quote lines only after the customer adds them and supplies quantity.
+
+### 2026-07-28T03:29:32Z - sample_001_no_installation_selector_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed there is no ceiling/wall installation selector; both compatible bracket types are presented as recommendations and the customer directly adds the needed accessories.
+
+### 2026-07-28T03:53:11Z - sample_002_electric_track_batch_received
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User provided a repeated raw product batch yielding 27 unique Article Numbers; FGE X08+pvc was registered as electric-track sample 002 with motor and remote compatibility still unconfirmed.
+
+### 2026-07-28T03:56:11Z - sample_002_motor_compatibility_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGE X08+pvc is compatible with PJ-D16 Duya 82 motor GDHEPRD000640, without asserting that it is the only compatible motor.
+
+### 2026-07-28T08:21:16Z - sample_002_remote_data_deferred
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User currently has no confirmed remote-control data; the gap is deferred without inferring that PJ-D16 lacks remote support.
+
+### 2026-07-28T08:23:34Z - sample_002_transmission_compatibility_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGE X08+pvc is compatible with PJ-D25 Jialisi transmission box GDHEPRD000641 because the track belongs to the Jialisi system; no global same-brand compatibility rule was inferred.
+
+### 2026-07-28T08:25:08Z - sample_002_connector_compatibility_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGE X08+pvc is compatible with PJ-LJ-15 Jialisi outer connector GDHEPRD000642; RFQ optionality remains unresolved.
+
+### 2026-07-28T08:27:50Z - sample_002_rfq_optionality_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed all three compatible electric-system accessories are optional recommendations and the customer may request a quote for the track alone.
+
+### 2026-07-28T08:29:37Z - sample_002_length_and_customization_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed GDHEPRD000328 is the 6 m per-piece specification of FGE X08+pvc and that the model also supports other and custom lengths; custom Article identity remains unresolved.
+
+### 2026-07-28T08:53:38Z - sample_002_length_article_identity_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed every distinct FGE X08+pvc length specification has its own Article Number; the workflow for a new custom length without an existing Article Number remains unresolved.
+
+### 2026-07-28T08:56:21Z - sample_002_new_custom_length_rfq_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed customers may submit RFQs for new custom lengths without an existing Article Number; website-generated identifiers are forbidden and sales handles the request in Feishu.
+
+### 2026-07-28T08:58:22Z - sample_002_custom_length_input_contract_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed Custom Length accepts decimal meters while quantity remains a separate positive integer number of pieces; precision remains unresolved.
+
+### 2026-07-29T00:34:40Z - sample_002_custom_length_precision_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed custom length accepts at most one decimal place with a 0.1 m increment; the allowed length range remains unresolved.
+
+### 2026-07-29T00:36:54Z - sample_002_custom_length_range_policy_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed no fixed custom-length minimum or maximum; sales determines feasibility in Feishu after RFQ submission.
+
+### 2026-07-29T02:00:46Z - sample_002_packaging_applicability_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FGE X08+pvc uses the full track packaging contract; default selections remain unresolved.
+
+### 2026-07-29T02:02:29Z - sample_002_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed standard track packaging defaults for FGE X08+pvc; sample 002 core business boundaries are validated with remote and unknown raw fields deferred.
+
+### 2026-07-29T02:04:57Z - sample_003_fgl_x14_page_grouping_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed all five FGL X14 Article Numbers belong to one product page and canonical identity; public visibility of source variants remains unresolved.
+
+### 2026-07-29T02:07:38Z - sample_003_internal_variants_hidden
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed source codes, names, weights and supplier variants are internal-only and the website primarily displays FGL X14; three 6 m Article Numbers now require an explicit public RFQ selection policy.
+
+### 2026-07-29T02:10:22Z - sample_003_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed ambiguous FGL X14 public selections submit model, length and quantity without Article Number; sales resolves the internal Article in Feishu, and frontend weight differentiation is deferred.
+
+### 2026-07-29T02:13:10Z - sample_004_staple_spec_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User clarified SSD-01 uses customer-visible thin and thick stainless staple specifications on one page; exact Article Number mapping remains required.
+
+### 2026-07-29T02:16:45Z - sample_004_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User mapped GDHEPRD000692 to thin stainless staples and GDHEPRD000695 to thick stainless staples; each Article retains its real width, spacing and roll-length combination.
+
+### 2026-07-29T02:31:09Z - sample_005_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed all SSZ-01A records share one page with customer-visible bead spacing and roll length; only real Feishu combinations retain Article Numbers.
+
+### 2026-07-29T02:34:35Z - sample_006_small_accessory_display_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed small accessories use a filterable accessory catalog and optional related-accessory modules without individual SEO detail pages; missing-compatibility behavior remains required.
+
+### 2026-07-29T02:47:16Z - sample_006_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User allowed small accessories without known track compatibility to remain browsable and independently quotable while excluding them from all track-related recommendations.
+
+### 2026-07-29T02:49:33Z - sample_007_motor_first_publication_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User chose to publish PJ-D16 as a motor before remote-control data is available, then add the confirmed matching remote to the same page later.
+
+### 2026-07-29T02:55:06Z - sample_007_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User required PJ-D16 to show confirmed motor facts only and omit the entire remote-control module until real publishable remote data is available.
+
+### 2026-07-29T02:57:59Z - public_protected_media_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User required public product images to carry visible watermark, brand mark or branded background; FGD X15 protected media sample metadata and checksum were recorded without importing the file.
+
+### 2026-07-29T03:00:17Z - public_protected_media_pipeline_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User selected business-prepared protected image assets; WordPress publishes finished media and the website does not generate watermark or branded layout derivatives.
+
+### 2026-07-29T03:01:45Z - internal_original_media_isolation_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User excluded internal unwatermarked originals from WordPress, API, Next.js and public media; only business-prepared protected images may enter the website delivery path.
+
+### 2026-07-29T03:06:59Z - sample_008_core_validated
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed FK-J-12 to FGG J06 and FK-J-16 to FGD X16 compatibility, while FK-J-11 remains catalog-only; duplicate relations are deduplicated by track model.
+
+### 2026-07-29T03:10:48Z - test_data_scope_and_relation_add_sync_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User clarified supplied records are mainly test data; Feishu remains relation authority and a successful sync must automatically surface newly added relations on the corresponding product page without duplicate WordPress editing.
+
+### 2026-07-29T03:12:56Z - relation_remove_sync_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed Feishu relation deletion is applied symmetrically by the next complete successful sync, while failures retain the last successful relation set.
+
+### 2026-07-29T03:15:48Z - relation_target_publication_gate_confirmed
+- type: real_product_validation
+- lane: planner
+- task: TASK-012
+- summary: User confirmed unpublished or ineligible relation targets are hidden from public recommendations without deleting Feishu relations and automatically return after eligibility and publication recover.
+
+### 2026-07-29T03:18:53Z - task_012_closure_scope_confirmed
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-012
+- summary: User approved closing TASK-012 on confirmed business contracts and future gates while deferring 10-20 final production product validation as a mandatory pre-import and pre-freeze gate.
+
+### 2026-07-29T03:23:22Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T03:23:55Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW dispatched to adversarial_reviewer
+
+### 2026-07-29T03:24:12Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW moved to done
+
+### 2026-07-29T03:24:16Z - task_012_current_scope_review_started
+- type: review_dispatch
+- lane: planner
+- task: TASK-012
+- transition: NEEDS_REVISION to UNDER_REVIEW.
+- summary: Current revision fresh validation passed and the user-authorized independent current-scope closure review was dispatched through the registered reviewer thread.
+- boundary: No acceptance, Git delivery, Feishu/NAS connection, CMS/frontend/runtime change, deployment, ADR acceptance or next-task start.
+
+### 2026-07-29T03:30:08Z - task_012_current_scope_p2_recovery
+- type: review_recovery
+- lane: planner
+- task: TASK-012
+- transition: UNDER_REVIEW to NEEDS_REVISION.
+- review: FAIL with P0=0, P1=0, P2=1; all business and protected-scope boundaries passed.
+- correction: Only the stale current-result and next-step narratives were synchronized; all prior review history was preserved.
+- authority: The third review does not authorize an automatic fourth review.
+- boundary: No acceptance, Git delivery, Feishu/NAS connection, CMS/frontend/runtime change, deployment, ADR acceptance or next-task start.
+
+### 2026-07-29T03:31:51Z - task_012_p2_recovery_validation_pass
+- type: validation
+- lane: planner
+- task: TASK-012
+- result: Diff, CMS contract 16/2/2, project, registry, messages, strict lane, protected scope and stale-state scans all PASS.
+- state: TASK-012 remains NEEDS_REVISION, NOT_ACCEPTED and DIRTY.
+- authority: Recovery validation does not replace a closure PASS; an additional review requires explicit user authority.
+- boundary: No acceptance, Git delivery, Feishu/NAS connection, CMS/frontend/runtime change, deployment, ADR acceptance or next-task start.
+
+### 2026-07-29T06:06:18Z - task_012_final_narrow_recheck_dispatched
+- type: review_dispatch
+- lane: planner
+- task: TASK-012
+- transition: NEEDS_REVISION to UNDER_REVIEW.
+- authority: User authorized one final narrow recheck limited to the single recovered P2.
+- message: MSG-TASK-012-P2-CLOSURE-RECHECK dispatched to the registered adversarial reviewer.
+- boundary: No repeated business review, acceptance, Git delivery, Feishu/NAS connection, CMS/frontend/runtime change, deployment, ADR acceptance or next-task start.
+
+### 2026-07-29T06:09:44Z - task_012_final_recheck_state_recovery
+- type: review_recovery
+- lane: planner
+- task: TASK-012
+- review: FAIL with P0=0, P1=0, P2=1; all requested evidence passed except the transient task-state requirement.
+- planner_error: The review request required NEEDS_REVISION while pending, but Planner incorrectly synchronized UNDER_REVIEW after dispatch.
+- transition: UNDER_REVIEW to NEEDS_REVISION.
+- authority: No additional review, final validation, acceptance, Git delivery or implementation is authorized.
+
+### 2026-07-29T06:11:14Z - task_012_final_recheck_state_recovery_validated
+- type: validation
+- lane: planner
+- task: TASK-012
+- result: Diff, project, registry, messages, strict lane, protected scope and stale-state scans all PASS.
+- state: NEEDS_REVISION, NOT_ACCEPTED and DIRTY.
+- next: No automatic further review; wait for new explicit user direction.
+
+### 2026-07-29T06:32:54Z - task_012_state_closure_confirmation_dispatched
+- type: review_dispatch
+- lane: planner
+- task: TASK-012
+- authority: User instructed Planner to continue TASK-012 closure.
+- corrected_contract: Pre-dispatch recovery state was NEEDS_REVISION; post-dispatch in-review state is UNDER_REVIEW.
+- transition: NEEDS_REVISION to UNDER_REVIEW.
+- message: MSG-TASK-012-STATE-CLOSURE-CONFIRMATION dispatched to the registered adversarial reviewer.
+- boundary: State-only confirmation; no repeated business review, implementation, Git delivery or next task.
+
+### 2026-07-29T06:35:37Z - task_012_state_closure_timing_recovery
+- type: review_recovery
+- lane: planner
+- task: TASK-012
+- review: FAIL with P0=0, P1=0, P2=1.
+- accepted_rule: NEEDS_REVISION before dispatch and UNDER_REVIEW during active review.
+- timing_failure: Reviewer read the pre-transition shared-file snapshot before Planner completed post-dispatch state synchronization.
+- passed: All other current narratives, history, recovery evidence, governance and protected scope passed.
+- transition: UNDER_REVIEW to NEEDS_REVISION.
+- authority: No automatic further review or final validation.
+
+### 2026-07-29T06:36:45Z - task_012_state_closure_timing_recovery_validated
+- type: validation
+- lane: planner
+- task: TASK-012
+- result: Diff, project, registry, messages, strict lane, protected scope and stale-state scans all PASS.
+- state: NEEDS_REVISION, NOT_ACCEPTED and DIRTY.
+- next: No automatic further review; wait for new explicit user direction.
+
+### 2026-07-29T06:41:05Z - task_012_authorized_closure_review_prepared
+- type: review_preparation
+- lane: planner
+- task: TASK-012
+- authority: User explicitly authorized one additional independent closure review.
+- ordering: Current authority views were synchronized to UNDER_REVIEW before waking the reviewer.
+- transition: NEEDS_REVISION to UNDER_REVIEW.
+- message: MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW queued and dry-run complete; thread not yet awakened.
+- boundary: Closure-state confirmation only; no business re-review, implementation or Git delivery.
+
+### 2026-07-29T06:45:09Z - task_012_authorized_closure_review_pass
+- type: review_result
+- lane: planner
+- task: TASK-012
+- result: PASS with P0=0, P1=0, P2=0.
+- closed: State timing defect and prior current-result narrative P2 are closed.
+- preserved: Full review history, recovery evidence, governance and protected scope pass.
+- state: UNDER_REVIEW, NOT_ACCEPTED and DIRTY.
+- next: Planner fresh final validation and checked prepare-awaiting-user only.
+
+### 2026-07-29T06:46:15Z - task_012_planner_final_validation_pass
+- type: validation
+- lane: planner
+- task: TASK-012
+- result: Diff, CMS contract 16/2/2, project, registry, messages, strict lane, protected scope and empty queue all PASS.
+- state: UNDER_REVIEW, NOT_ACCEPTED and DIRTY.
+- next: Checked prepare-awaiting-user only.
+
+### 2026-07-29T06:48:17Z - task_012_acceptance_view_sync
+- type: controlled_reopen
+- lane: planner
+- task: TASK-012
+- first_prepare: Checked prepare-awaiting-user passed at 2026-07-29T06:47:17Z.
+- reason: Synchronize human-readable acceptance-view narratives not updated by the helper.
+- invariant: Review, validation and business deliverables unchanged.
+- next: Fresh governance check and checked prepare-awaiting-user rerun.
+
+### 2026-07-29T06:52:10Z - task_012_formal_acceptance
+- type: acceptance
+- lane: planner
+- task: TASK-012
+- user_phrase: 确认 TASK-012 完成并提交到远端
+- result: task_accept helper accepted TASK-012.
+- decision: ADR-006 became accepted with TASK-012.
+- git: FORMAL_COMMIT_PENDING; task branch push and main integration authorized.
+- boundary: No deployment or next-task implementation.
+
+### 2026-07-29T03:28:57Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T03:28:57Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T03:29:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW-RESPONSE moved to done
+
+### 2026-07-29T03:29:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-29T06:05:22Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T06:06:02Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-P2-CLOSURE-RECHECK dispatched to adversarial_reviewer
+
+### 2026-07-29T06:07:10Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-P2-CLOSURE-RECHECK moved to done
+
+### 2026-07-29T06:08:42Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:08:42Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:09:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-P2-CLOSURE-RECHECK-RESPONSE moved to done
+
+### 2026-07-29T06:09:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-P2-CLOSURE-RECHECK-STOP-RECOVERY moved to done
+
+### 2026-07-29T06:31:59Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T06:32:43Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-STATE-CLOSURE-CONFIRMATION dispatched to adversarial_reviewer
+
+### 2026-07-29T06:33:12Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-STATE-CLOSURE-CONFIRMATION moved to done
+
+### 2026-07-29T06:34:29Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:34:29Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:35:28Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-STATE-CLOSURE-CONFIRMATION-RESPONSE moved to done
+
+### 2026-07-29T06:35:28Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-STATE-CLOSURE-CONFIRMATION-STOP-RECOVERY moved to done
+
+### 2026-07-29T06:40:41Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-29T06:42:42Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW dispatched to adversarial_reviewer
+
+### 2026-07-29T06:42:57Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-012
+- summary: message MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW moved to done
+
+### 2026-07-29T06:44:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:44:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-012
+- summary: message queued for planner
+
+### 2026-07-29T06:45:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW-STOP-RECOVERY moved to done
+
+### 2026-07-29T06:45:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-012
+- summary: message MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW-RESPONSE moved to done
+
+### 2026-07-29T06:47:17Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-012
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-29T06:48:18Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-012
+- summary: Synchronize human-readable current-state narratives after successful checked prepare; review, validation and business deliverables are unchanged.
+
+### 2026-07-29T06:49:43Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-012
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-29T06:52:10Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-012
+- summary: TASK-012 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

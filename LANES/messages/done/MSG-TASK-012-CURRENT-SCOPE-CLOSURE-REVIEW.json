@@ -1,0 +1,38 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-012",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-29T03:23:22Z",
+  "requires_response_to": "",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Perform a fresh independent current-scope closure review of TASK-012 after the user-confirmed test-data/production-gate revision. Preserve the full Round 1/Round 2 history and append a clearly labeled current-scope closure verdict. Verify: (a) test records are not final production catalog; (b) 10–20 final production products remain a mandatory pre-import/pre-template-freeze/pre-Schema-business-freeze gate but do not block TASK-012 roadmap closure; (c) Feishu relation add/delete atomic sync, last-known-good failure, and publication eligibility behavior are coherent with existing major product-change rules; (d) public protected image/internal original isolation is consistent; (e) architecture/ADR/task/summary/state/board contain no conflicting current directives; (f) protected frontend/CMS/runtime scope is unchanged; (g) non-authorization remains. Return PASS/FAIL/BLOCKED with P0/P1/P2. Do not repair deliverables, accept task, change planner state, Git, deploy, connect Feishu, modify CMS/frontend, or start next task.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md",
+    "TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md",
+    "TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_SCOPE_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-012/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-012/PLANNER_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-012/ADVERSARIAL_REVIEW_REPORT.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md",
+    "PROJECT/STATE.md",
+    "TASKS/BOARD.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-012/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Current-scope review is explicitly authorized after the user confirmed the closure boundary. This request does not authorize implementation or delivery.",
+  "dispatched_at": "2026-07-29T03:23:55Z",
+  "delivery_key": "MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex_app.send_message_to_thread",
+  "done_at": "2026-07-29T03:24:12Z",
+  "updated_at": "2026-07-29T03:24:12Z"
+}

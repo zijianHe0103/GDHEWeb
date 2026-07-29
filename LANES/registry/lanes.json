@@ -79,7 +79,7 @@
       "requires_adversarial_review": true,
       "last_seen": "2026-07-22T07:53:15Z",
       "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:15Z"
+      "updated_at": "2026-07-26T05:05:48Z"
     },
     "adversarial_reviewer": {
       "purpose": "Challenge assumptions, inspect omissions and risk, verify evidence, and return PASS/FAIL/P0/P1/P2 findings.",

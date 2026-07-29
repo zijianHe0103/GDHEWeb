@@ -579,3 +579,100 @@ Each execution records:
 - boundaries: no new review, verdict change, business/test/evidence/Planner-state edit, Git or deployment
 - message_status: linked controlled recovery response queued and message validation passed
 - next: Planner acknowledges the response and retains final validation plus acceptance-preparation ownership
+
+### 2026-07-26T05:17:01Z - TASK-012 adversarial review round 1
+
+- task: TASK-012
+- message: MSG-TASK-012-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the formal request first, then independently reviewed the active task, frozen design and plan, three feasibility audits, executor evidence, Planner checkpoint, proposed ADR, revised architecture authority, accepted decision chain, TASK-011 archive and current protected scope
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- validation: independently traversed the five CMS and two frontend Schema roots and reproduced 19 versus 16 with exact shared bytes, hashes and manifest parity; verified empty frontend, CMS, local runtime, package and lockfile diff from the accepted TASK-011 baseline; no listeners or generated residue; project, controlled messages, strict lane and whitespace checks passed before response
+- result: FAIL; P0 none; P1 two; P2 none; Planner final validation not allowed
+- p1_endpoint_authority: the architecture authority marks resolve, collection, navigation and route-manifest as unimplemented at the same time that its TASK-007 baseline and proposed ADR correctly record them as accepted delivery; only preview is future
+- p1_multilingual_gate: Stage 10 requires every maturity gate before authorizing the minimal PoC, while gate 5 already requires the SCF and WPML or ACFML compatibility evidence that the same PoC is intended to produce
+- passed_boundaries: single candidate-stage authority framing; preservation of TASK-001 through TASK-011 and REST-first; three targeted stale-directive corrections; current TASK-011 archive consistency; Stage 1, 2, 3, 5 and 6 ordering; first-template technical SEO; last-known-good failure semantics; controlled shell; inquiry separation; non-authorization; zero product, CMS, database, dependency and runtime change
+- boundaries: no business-deliverable repair, Planner-state edit, product or runtime mutation, acceptance, Git, deployment, external operation or later-stage work
+- message_status: original request acknowledged as done; linked FAIL review_response and Planner-owned recovery request are the next controlled messages
+- next: Planner acknowledges both messages, records NEEDS_REVISION and dispatches only the two narrow documentation corrections before any Round 2
+
+### 2026-07-26T05:28:50Z - TASK-012 adversarial review round 2 final
+
+- task: TASK-012
+- message: MSG-TASK-012-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, acknowledged the final ordinary request first, preserved Round 1 history and independently reviewed only both P1 closures plus direct REST-first, non-authorization, Schema, protected-scope and governance regressions
+- files_read: Round 2 request; canonical Round 1 report; revision report and fresh validation; active task, project and board; architecture authority and proposed ADR; actual TASK-007 endpoint registration and Schema configuration; current frontend manifest and frozen A3 evidence
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement; project-resume generated reviewer resume packet
+- endpoint_closure: architecture authority and implementation source agree that resolve, collection, navigation and route-manifest are delivered; Preview endpoint, signature and draft or revision reading remain future and no preview route is registered
+- multilingual_closure: section 14.6.1 contains only independent authorization, lawful license path, bounded fixtures, isolation, identity protection, noindex, stable inputs, cleanup and rollback entry conditions; compatibility PASS is a PoC output and section 14.6.2 production purchase and public-rollout prerequisite
+- validation: independent traversal reproduced CMS 19, frontend 16, exact three CMS-only files and zero frontend-only; all A3 hashes and frontend manifest source, snapshot, closure and SHA parity pass; offline verifier reports 16, 2 and 2; protected product, CMS, local runtime, package and lockfile scope is empty; project, registry, messages, strict lane and whitespace checks pass
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed
+- audit_provenance: one dated pre-revision localization feasibility audit line retains its original route-manifest observation; current authority, revision and state records plus implementation source supersede it, so preserving the specialist audit trail does not reopen the authority P1
+- boundaries: no business-deliverable repair, Planner-state edit, runtime or database mutation, acceptance, Git, deployment, PoC or later-stage authorization
+- message_status: Round 2 request acknowledged as done; linked final PASS review_response and Planner-owned stop-recovery request are the next controlled messages
+- next: Planner acknowledges both messages, records Round 2 PASS recovery and owns final validation plus any checked acceptance preparation
+
+### 2026-07-29T03:27:25Z - TASK-012 current-scope closure review
+
+- task: TASK-012
+- message: MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW
+- authorization: user explicitly confirmed the test-data and production-gate revision and authorized this current-scope closure review as review round 3
+- action: restored the registered reviewer lane, read and acknowledged the formal request, preserved the full Round 1 and Round 2 history, and independently reviewed only the current test-data boundary, deferred production gate, relation lifecycle, media isolation, authority consistency, protected scope and non-authorization
+- files_read: current active task; real-product validation gate and revision report; current validation log and Planner summary; canonical review history; architecture authority; proposed ADR-006; project state and board; TASK-007 and TASK-011 protected-scope evidence
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- passed_boundaries: current records are test data rather than final production catalog; 10 to 20 final production products remain a mandatory pre-import, pre-template-freeze and pre-Schema-business-freeze gate without blocking roadmap closure; Feishu relation additions and deletions are atomic on complete successful sync; failure preserves last known good; publication eligibility hides and restores only the public projection; major product-change rules remain intact; protected public image and internal original isolation is explicit; protected product/runtime scope is unchanged; non-authorization remains
+- validation: frontend, CMS, local runtime, package and lockfile diff from accepted TASK-011 baseline is empty; tree hashes match; contract verifier reports 16 Schemas, two success and two error samples; no relevant listeners or generated residue; project, registry, messages, strict lane and whitespace checks pass before response
+- result: FAIL; P0 none; P1 none; P2 one; Planner final validation not allowed
+- p2: the current validation log header says current revision validation pending while the same file, active task, project state and board say fresh validation passed; Planner Summary next step also still tells readers to complete that already-finished validation before review
+- narrow_recovery: Planner owns current-result and next-step narrative synchronization plus fresh governance validation; historical Round 1 and Round 2 evidence must remain; this report does not authorize a fourth review
+- boundaries: no business-deliverable repair, Planner-state edit, Feishu or storage connection, CMS, database, frontend, runtime, acceptance, ADR acceptance, Git, deployment or later-task operation
+- message_status: closure request acknowledged as done; linked FAIL review_response and Planner-owned recovery request queued to Planner
+- next: Planner acknowledges both messages, performs narrow recovery and owns any explicitly authorized later review-policy decision
+
+### 2026-07-29T06:07:44Z - TASK-012 final narrow P2 closure recheck
+
+- task: TASK-012
+- message: MSG-TASK-012-P2-CLOSURE-RECHECK
+- authorization: user explicitly authorized one final narrow review turn limited to the single current-scope P2
+- action: restored the registered reviewer lane, read and acknowledged the formal request, and reviewed only the corrected validation result, Planner Summary next step, required current state, preserved review history, recovery reproducibility and protected-scope regression
+- files_read: current validation log; Planner Summary; canonical review report; active task; project state; board; recovery activity and Planner worklog; protected current scope
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- closed_portions: validation header and current wording now state fresh validation PASS, prior current-scope FAIL 0/0/1 and recovery PASS; Planner Summary waits for this verdict instead of requesting completed work; Round 1 FAIL, Round 2 PASS and current-scope FAIL history is preserved
+- independent_validation: contract verifier PASS with 16 Schemas, two success and two error samples; project, registry and messages valid; strict lane audit zero issues; Git whitespace check PASS; protected frontend, CMS, local runtime, package and lock scope has zero diff from HEAD and accepted TASK-011 baseline, zero status entries, zero relevant listeners and zero generated residue
+- result: FAIL; P0 none; P1 none; P2 one; Planner final validation not allowed
+- p2: the request requires NEEDS_REVISION, NOT_ACCEPTED and DIRTY while the recheck is pending, but the active task, project state and board all record UNDER_REVIEW; this is the same current-state P2, not a reopened business finding
+- narrow_recovery: Planner owns synchronization of current task, project state and board to NEEDS_REVISION while preserving all history and rerunning governance checks
+- boundaries: no repair, Planner-state edit, business re-review, acceptance, ADR acceptance, Git, Feishu, CMS, frontend, runtime, deployment or next-task operation; this final turn does not authorize another review
+- message_status: request acknowledged as done; linked FAIL review_response and Planner-owned recovery request queued to Planner
+- next: Planner acknowledges both messages, performs the exact NEEDS_REVISION recovery and retains ownership of any future authorization decision
+
+### 2026-07-29T06:33:36Z - TASK-012 final state-only closure confirmation
+
+- task: TASK-012
+- message: MSG-TASK-012-STATE-CLOSURE-CONFIRMATION
+- authorization: user explicitly corrected the prior state criterion and authorized this one state-only confirmation; NEEDS_REVISION is pre-dispatch and UNDER_REVIEW is required after successful dispatch while review is active
+- action: restored the registered reviewer lane, read and acknowledged the formal request, and reviewed only current task-state consistency, sustained P2 wording correction, preserved review history, state-recovery evidence, governance reproducibility and protected scope
+- files_read: current active task; project state; board; current validation log; Planner Summary; canonical review history; recovery and dispatch activity; protected current scope
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- passed_regressions: validation-log and Planner-summary P2 wording remains corrected; Round 1 FAIL, Round 2 PASS, current-scope FAIL and final-recheck FAIL history is preserved; recovery events and dispatch reproduce; contract verifier, project, registry, messages, strict lane and whitespace checks pass; protected scope, listeners and residue remain empty
+- result: FAIL; P0 none; P1 none; P2 one; Planner final validation not allowed
+- p2: the request was successfully dispatched and active, but active task frontmatter/current status, project state and board all remained NEEDS_REVISION instead of corrected required UNDER_REVIEW NOT_ACCEPTED DIRTY
+- limitation: the wrong active interval is historical once review completes, so a later state edit cannot retroactively produce PASS; Planner must record accurate FAIL recovery and this report does not authorize another review
+- boundaries: no business re-review, repair, Planner-state edit, acceptance, ADR acceptance, Git, Feishu, CMS, frontend, runtime, deployment or next-task operation
+- message_status: request acknowledged as done; linked FAIL review_response and Planner-owned recovery request queued to Planner
+- next: Planner acknowledges both messages, records the final FAIL recovery and retains ownership of any future explicit authorization decision
+
+### 2026-07-29T06:43:17Z - TASK-012 user-authorized additional closure review
+
+- task: TASK-012
+- message: MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW
+- authorization: user explicitly authorized one additional independent closure review and required Planner to pre-synchronize UNDER_REVIEW before waking this reviewer
+- action: restored the registered reviewer lane, read and acknowledged the formal request, and reviewed only current state timing, sustained validation wording closure, preserved review history, recovery and governance reproducibility, and protected scope
+- files_read: current active task; project state; board; validation log; Planner Summary; canonical review history; recovery, authorization and dispatch activity; protected current scope
+- files_changed: TASK-012 canonical adversarial review report; adversarial reviewer worklog; controlled request acknowledgement
+- state_timing_closure: active task frontmatter/current status, project state and board were already UNDER_REVIEW NOT_ACCEPTED DIRTY before reviewer wake and remained so after acknowledgement; controlled request dispatch and ACK were exact
+- sustained_closure: validation-log and Planner-summary stale wording remains corrected; Round 1 FAIL, Round 2 PASS, current-scope FAIL, final-recheck FAIL and state-timing FAIL remain preserved and are not represented as current PASS
+- independent_validation: contract verifier PASS with 16 Schemas, two success and two error samples; project, registry and messages valid; strict lane audit zero issues before response; Git whitespace PASS; protected frontend, CMS, local runtime, package and lock scope has zero diff from HEAD and accepted TASK-011 baseline, zero status entries, zero relevant listeners and zero generated residue
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed after controlled recovery
+- boundaries: no business re-review, repair, Planner-state edit, acceptance, ADR acceptance, Git, Feishu, CMS, frontend, runtime, deployment or next-task operation
+- message_status: request acknowledged as done; linked PASS review_response and Planner-owned recovery request queued to Planner
+- next: Planner acknowledges both messages, records PASS recovery and owns fresh final validation plus any checked acceptance preparation

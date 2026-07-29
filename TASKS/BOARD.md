@@ -1,7 +1,7 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-011
+current_task: TASK-012
 
 ## 活动任务
 
@@ -17,7 +17,7 @@ current_task: TASK-011
 
 ## 等待推送
 
-- `TASK-011` 英语版最小 CMS Adapter 与本地可见集成页 — `ACCEPTED` / `DIRTY`
+- `TASK-012` 真实产品优先的实施路线图重排 — `ACCEPTED` / `FORMAL_COMMIT_PENDING` / `CLOSURE_PASS_P0_P1_P2_ZERO`
 
 ## 已暂停
 
@@ -25,6 +25,7 @@ current_task: TASK-011
 
 ## 最近关闭
 
+- `TASK-011` 英语版最小 CMS Adapter 与本地可见集成页 — `CLOSED` / `MERGED`
 - `TASK-010` 英语版 CMS Runtime Schema Validator 基础 — `CLOSED` / `MERGED`
 - `TASK-009` Next.js server-only `/resolve` Transport 与错误语义基础 — `CLOSED` / `MERGED`
 - `TASK-008` 前端 CMS Contract Snapshot 与校验基线 — `CLOSED` / `MERGED`
@@ -61,3 +62,7 @@ current_task: TASK-011
 ## Accepted
 
 - TASK-011: ACCEPTED at 2026-07-26T01:17:57Z
+
+## Accepted
+
+- TASK-012: ACCEPTED at 2026-07-29T06:52:10Z

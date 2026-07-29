@@ -9,6 +9,7 @@ schema_version: DPG-LANES-1.0.0
 - [ADR-003：RapidDirect 参考边界与小批次验收](DECISIONS/ADR-003-reference-and-delivery.md)
 - [ADR-004：Headless WordPress + Next.js 架构契约](DECISIONS/ADR-004-headless-wordpress-nextjs-contract.md)
 - [ADR-005：英语优先、SCF 字段层与 WPML 延后](DECISIONS/ADR-005-english-first-scf-wpml-deferral.md)
+- [ADR-006：真实产品优先路线与多语言成熟度门](DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md)
 
 ## 待决策
 

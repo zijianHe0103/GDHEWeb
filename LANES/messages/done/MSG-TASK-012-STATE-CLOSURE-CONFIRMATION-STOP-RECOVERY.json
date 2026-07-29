@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-012-STATE-CLOSURE-CONFIRMATION-STOP-RECOVERY",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-012",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-07-29T06:34:29Z",
+  "requires_response_to": "MSG-TASK-012-STATE-CLOSURE-CONFIRMATION-RESPONSE",
+  "max_rounds": 5,
+  "status": "done",
+  "prompt": "Record the final state-only FAIL recovery in Planner-owned state and preserve NEEDS_REVISION NOT_ACCEPTED DIRTY as the post-review outcome. Preserve the corrected validation wording, complete review history and protected-scope PASS evidence. Do not initiate another review, final validation, acceptance, Git, Feishu, CMS, frontend, deployment or next-task work without new explicit authority.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-012/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md",
+    "PROJECT/STATE.md",
+    "TASKS/BOARD.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md",
+    "PROJECT/STATE.md",
+    "TASKS/BOARD.md"
+  ],
+  "notes": "Reviewer preserved read-only business scope and did not run a task transition.",
+  "done_at": "2026-07-29T06:35:28Z",
+  "updated_at": "2026-07-29T06:35:28Z"
+}

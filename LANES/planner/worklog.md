@@ -1375,3 +1375,1072 @@ Each execution records:
 - delivery: one formal Chinese commit、push task branch、fast-forward merge to `main`、push `main` and verify remote ancestry。
 - boundary: no force push、rebase、branch/worktree deletion、deployment or TASK-012。
 - next: finish final delivery integrity checks，then execute the authorized Git chain。
+### 2026-07-26T04:06:13Z - TASK-012 intake
+
+- Read the user-provided reprioritization assessment in full and compared its direction with the accepted Headless contract and TASK-001 through TASK-011 delivery boundary。
+- Verified TASK-011 formal commit on local `main`、`origin/main` and the remote task branch at `90e6deaadc05c85df51a56bec4062b657ba65917`; synchronized it to `CLOSED / MERGED` and archived it。
+- Created `codex/TASK-012-roadmap-reprioritization` and registered a documentation-only task to replace the future implementation order after explicit requirement confirmation。
+- No authority roadmap、ADR、frontend、CMS、database、dependency、runtime、dispatch、review or delivery action has started。
+- Next: wait for `确认 TASK-012 需求并开始执行`。
+### 2026-07-26T04:38:18Z - TASK-012 requirements confirmed
+
+- Received exact requirement-confirmation phrase and moved TASK-012 from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`。
+- Frozen execution order: Planner design and replacement matrix；executor narrow authority-document change；wordpress_cms/frontend/localization_seo read-only feasibility audits；Planner checkpoint；adversarial review。
+- Protected all product code、CMS/database、dependencies、runtime and external systems。
+- Next: create DESIGN/IMPLEMENTATION_PLAN and controlled queue messages。
+### 2026-07-26T04:43:19Z - TASK-012 design gate and dispatch
+
+- DESIGN and IMPLEMENTATION_PLAN passed project、registry、message、strict lane and diff checks。
+- Delivered controlled feasibility requests to wordpress_cms、frontend and localization_seo registered sessions。
+- Delivered executor request with an explicit hard gate: no authority edit until all three specialist audits exist。
+- Moved TASK-012 from `READY` to `IN_PROGRESS`; product code、CMS/database and runtime remain protected。
+- Next: receive and ACK linked responses，then run the Planner checkpoint。
+### 2026-07-26T04:53:48Z - TASK-012 specialist audits ACKed
+
+- ACKed wordpress_cms、frontend and localization_seo execution responses。
+- Accepted their shared conclusion as implementation input, not final task acceptance: product-first roadmap is feasible with explicit future entry gates。
+- Confirmed machine 19/16 explanation: collection、navigation and route-manifest are the three CMS-only roots outside the frontend resolve closure。
+- Released the executor audit prerequisite through the registered thread bridge。
+- Next: wait for authority revision response and independently validate the result。
+### 2026-07-26T04:55:36Z - TASK-012 executor scope recovery
+
+- ACKed the executor P1 scope request after the Hook safely rejected the first patch before any authority write。
+- Reconciled task authorization with registry scope using only three temporary exact paths: architecture contract、decision index and `ADR-006-*`。
+- Recorded mandatory scope rollback after the executor phase。
+- Product code、CMS/database、dependencies and runtime remain outside executor scope。
+- Next: notify executor to resume the original request。
+
+### 2026-07-26T05:05:48Z - TASK-012 executor complete and scope rollback
+
+- response: validated、delivered and ACKed `MSG-TASK-012-ROADMAP-AUTHORITY-REVISION-RESPONSE`。
+- implementation: executor completed the authority roadmap、proposed ADR-006、decision index and three evidence artifacts only。
+- rollback: removed the three temporary authority paths from `lanes.json`、executor `LANE.md` and the rendered Agent Lanes view。
+- validation: registry、messages、project、strict lane audit and `git diff --check` PASS after rollback。
+- boundary: no product code、CMS/database、dependencies、runtime、later candidate task、Git delivery or acceptance。
+- next: perform an independent Planner checkpoint before adversarial review。
+
+### 2026-07-26T05:11:34Z - TASK-012 Planner checkpoint PASS
+
+- reviewed all authority changes、proposed ADR-006、specialist audits and executor evidence。
+- independently recomputed CMS 19 versus frontend 16 with exact file-set and byte/hash parity。
+- corrected three stale future-order directives and the archived TASK-011 acceptance-view drift。
+- validation: local Markdown links、absolute paths、protected scope、project、registry、messages、strict lane and diff PASS。
+- transition: IN_PROGRESS to UNDER_REVIEW。
+- boundary: no user acceptance、Git delivery、deployment or later-stage execution。
+- next: dispatch the controlled adversarial review request。
+
+### 2026-07-26T05:20:17Z - TASK-012 adversarial Round 1 FAIL recovery
+
+- review: response and recovery request validated、delivered and ACKed；FAIL，P0=0、P1=2、P2=0。
+- findings: current endpoint status contradicts accepted TASK-007；multilingual PoC entry is circular with its own compatibility output。
+- passed: Schema 19/16、REST-first、stage dependencies、archive consistency and protected scope。
+- helper: controlled reopen safely refused its AWAITING_USER-only precondition without mutation；did not invent an acceptance state。
+- transition: recorded truthful UNDER_REVIEW to NEEDS_REVISION recovery under established project precedent。
+- next: revise only the two P1 authority-document boundaries，fresh validate and request Round 2。
+
+### 2026-07-26T05:24:33Z - TASK-012 Round 1 revision checkpoint PASS
+
+- fixed only the accepted endpoint status and circular multilingual PoC gate。
+- current endpoint summary now matches TASK-007；Preview remains unimplemented。
+- multilingual two-level contract makes compatibility a PoC output and production/public prerequisite。
+- fresh validation: Schema/hash/bytes、links、absolute paths、protected scope、project、registry、messages、strict lane and diff PASS。
+- transition: NEEDS_REVISION to UNDER_REVIEW。
+- next: dispatch narrow Round 2；final validation remains blocked。
+
+### 2026-07-26T05:31:03Z - TASK-012 final review PASS recovery
+
+- review: Round 2 PASS，P0=0、P1=0、P2=0；full Round 1 trail retained。
+- responses: final review response and recovery request validated、delivered and ACKed。
+- closures: current endpoint fact and multilingual circular gate independently closed。
+- regressions: REST-first、non-authorization、Schema 19/16、protected scope and governance PASS。
+- boundary: no acceptance、Git delivery、deployment、PoC or later-stage authorization。
+- next: final Planner fresh validation、Summary and checked prepare-awaiting-user。
+
+### 2026-07-26T05:33:21Z - TASK-012 Planner final validation PASS
+
+- independently reran Schema 19/16、A3/manifest parity、endpoint/Preview source checks、Markdown links、authority paths、protected scope、listener/residue and all governance/diff checks。
+- all gates PASS；Planner Summary generated。
+- state: UNDER_REVIEW / NOT_ACCEPTED / DIRTY。
+- boundary: no acceptance、Git、deployment、PoC or later-stage work。
+- next: run checked prepare-awaiting-user only。
+
+### 2026-07-26T05:35:32Z - TASK-012 acceptance-view synchronization
+
+- first checked prepare passed and entered AWAITING_USER。
+- AWAITING_USER Hook correctly blocked Board/current-view synchronization。
+- controlled reopen only synchronizes human-readable acceptance views；no roadmap or evidence change。
+- next: immediately rerun checked prepare，then wait for exact formal delivery phrase。
+
+### 2026-07-26T09:29:08Z - TASK-012 real-product validation gap
+
+- user_correction: no 10–20 GDHE real-product cohort or product/variant/Article Number/accessory/document/B2B/import rule had been confirmed。
+- transition: checked reopen moved TASK-012 from AWAITING_USER to NEEDS_REVISION。
+- boundary_fix: TASK-007 Schema 3 is now explicitly a technical baseline，not a business-frozen GDHE catalog model；old Round 2 and Planner PASS remain historical only。
+- artifact: added `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md` with representative coverage、nine business questions、per-product inputs and closure evidence。
+- protected_scope: no `frontend/**`、`cms/**`、database、WordPress runtime、dependency、deployment、Git delivery or downstream task change。
+- validation: diff check、protected-scope diff、project、registry、messages and strict lane audit PASS。
+- next: wait for authoritative 10–20 product source materials；do not accept TASK-012 or freeze downstream IA/URL/templates/SEO before the gate is closed。
+
+### 2026-07-27T01:20:54Z - TASK-012 product boundary decision 1
+
+- confirmed_by_user: the same model has multiple specifications。
+- model_effect: length、colour and finish changes do not by themselves create another model；record them under the same product model。
+- open_boundary: whether every concrete specification has its own Article Number/order code and whether the specification structure is option-based or combination-row based。
+- scope: requirements record only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the Article Number/order-code question。
+
+### 2026-07-27T01:22:41Z - TASK-012 product boundary decision 2
+
+- confirmed_by_user: every concrete specification under one model has an independent order code。
+- model_effect: model-to-order-code cardinality is one-to-many；each orderable specification needs its own code。
+- open_boundary: whether the order code is the CMS/public `Article Number` and whether uniqueness is global across all products。
+- scope: requirements record only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the order-code naming and uniqueness question。
+
+### 2026-07-27T01:24:20Z - TASK-012 product boundary decision 3
+
+- confirmed_by_user: the existing independent order code is the website/CMS `Article Number`。
+- model_effect: no second public code system；each orderable specification row stores and displays its Article Number。
+- open_boundary: whether Article Number uniqueness is global across all products and models。
+- scope: requirements record only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the Article Number uniqueness question。
+
+### 2026-07-27T01:32:08Z - TASK-012 product boundary decision 4
+
+- confirmed_by_user: Article Number never repeats across all company products and models。
+- model_effect: Article Number is the globally unique stable business key for one orderable specification under a model。
+- deferred: Excel import may use it as a candidate match key，but overwrite、conflict and rollback rules remain open under question 9。
+- scope: requirements record only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether accessories can be ordered independently。
+
+### 2026-07-27T01:35:00Z - TASK-012 accessory and B2B RFQ decisions
+
+- confirmed_by_user: accessories can be requested independently from a main product。
+- conversion: the website is B2B quotation-request only；visitors choose required options and ask for a quotation，not place and pay for an online order。
+- authority_sync: updated the architecture inquiry boundary、Stage 1/8 roadmap、active task and real-product gate；exact English CTA label remains open。
+- excluded: no cart checkout、online order confirmation or payment implementation is authorized。
+- open_boundary: whether independent accessories have their own model and globally unique Article Number。
+- scope: documentation/requirements only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the accessory identity question。
+
+### 2026-07-27T01:37:30Z - TASK-012 accessory identity decision
+
+- confirmed_by_user: each independently quotable accessory has its own Article Number。
+- uniqueness: the already confirmed company-wide no-duplicate Article Number rule applies。
+- model_effect: accessories are uniquely identifiable independent RFQ line items。
+- open_boundary: whether accessories need public detail pages，separate model values and distinct accessory/spare/kit roles。
+- scope: documentation/requirements only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether accessories need their own public detail page。
+
+### 2026-07-27T01:39:45Z - TASK-012 accessory public-page decision
+
+- confirmed_by_user: accessory publishing uses a mixed mode。
+- standalone: some accessories have independent public detail pages。
+- related_only: others appear only in a main product's related-accessories section。
+- invariant: both modes remain independently quotable by Article Number。
+- open_boundary: the business rule that selects standalone versus related-only。
+- scope: documentation/requirements only；no CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the page-selection rule。
+
+### 2026-07-27T01:46:45Z - TASK-012 accessory page-type rules
+
+- confirmed_by_user: same-model factory-paired motor and remote share one combined page。
+- standalone: one product type of fabric tape gets one page；transparent tape is a different type and gets a different page；fabric tape and the user term `线珠` are standalone categories。
+- related_only: track end caps、gliders、ceiling brackets and wall brackets do not get detail pages。
+- tape_axes: black/white，width 30/45/60，stainless/aluminium pin，pin spacing 125/145/165；units remain open。
+- domain_guard: do not create the 36-value Cartesian product automatically；only real Article Number rows may be public。
+- scope: requirements and roadmap only；PROJECT/CONTEXT is outside current write scope，and no CMS/Schema、frontend、database、runtime or Git mutation occurred。
+- next: ask only whether every fabric-tape attribute combination actually exists。
+
+### 2026-07-27T01:52:03Z - TASK-012 Feishu product and RFQ boundary
+
+- confirmed_by_user: attributes may combine，but some combinations have no existing product record；the website must use existing product data from Feishu Base。
+- rfq_flow: website quotation request creates a Feishu record，then sales staff complete the quotation in Feishu。
+- authority_conflict: `wp-admin` remains the sole final content backend constraint，while Feishu may be the structured product master；continuous source versus one-time import is unresolved。
+- lark_boundary: no Base token/link was supplied and no external read/write was authorized；future work must inspect real tables、fields、relations and permissions before integration。
+- domain_guard: publish only real Feishu rows with Article Number，never generate theoretical combinations。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only which system is authoritative for structured product data after launch。
+
+### 2026-07-27T05:50:22Z - TASK-012 Feishu product-master decision
+
+- user_choice: A。
+- authority_split: Feishu Base owns model、Article Number、specification and availability；WordPress owns marketing copy、SEO、public media and page composition。
+- direction: structured product master flows one way from Feishu to the website side；no default bidirectional sync。
+- rfq: website-to-Feishu quotation records are a separate business write and do not mutate product master。
+- proposed_adr: ADR-006 records the boundary but remains proposed and does not authorize implementation。
+- open_boundary: whether Feishu-owned fields are read-only in wp-admin and the exact mirror/normalization path。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether wp-admin may treat Feishu-owned fields as read-only。
+
+### 2026-07-27T06:09:54Z - TASK-012 WordPress read-only product-master decision
+
+- accepted_by_user: Feishu-owned model、Article Number、specification and availability fields are visible but read-only in wp-admin。
+- wordpress_editable: product introduction、SEO、public images and page modules。
+- sync_effect: Feishu changes update the website-side read-only representation through one-way sync。
+- document_gap: PROJECT/CONSTRAINTS needs a controlled clarification before final acceptance，but it is outside the current task allowlist and was not modified。
+- open_boundary: exact path，preferably Feishu -> WordPress mirror -> GDHE REST -> Next.js versus another server-side normalization route。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only the one-way synchronization path。
+
+### 2026-07-27T07:05:14Z - TASK-012 product read sync topology confirmed
+
+- accepted_by_user: Feishu product master -> controlled sync -> WordPress read-only mirror -> GDHE REST API -> Next.js。
+- frontend_boundary: public pages do not read Feishu on every request；the accepted REST/Schema/Validator/Adapter chain remains the only frontend content boundary。
+- wordpress_role: combine the Feishu-owned read-only mirror with wp-admin-owned marketing content。
+- resilience_boundary: invalid synchronization must not replace the last successful public data；the exact trigger、mapping、publication、idempotency、failure recovery and logging contract remains open。
+- rfq_separation: quotation request uses a separate controlled write path into Feishu and never mutates product master。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only which Feishu records are eligible for website synchronization and whether an explicit website-publication status is required。
+
+### 2026-07-27T07:24:14Z - TASK-012 Feishu website-publication eligibility confirmed
+
+- accepted_by_user: Feishu product records require an explicit website-publication eligibility field。
+- eligible_only: only records marked `允许发布`，with a valid globally unique Article Number and a real existing specification，may enter website synchronization。
+- default_deny: absent、ambiguous or invalid eligibility/data stays outside the synchronization scope。
+- implementation_boundary: this is a business contract only；no real Base was inspected and no field was created or modified。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether Feishu eligibility opens synchronization while WordPress retains a separate editorial publish gate。
+
+### 2026-07-27T07:34:24Z - TASK-012 layered publication lifecycle confirmed
+
+- accepted_by_user: first publication review，automatic ordinary updates for already-published products，and exception review for material changes。
+- first_sync: create a WordPress draft；editor completes WordPress-owned content and publishes manually。
+- existing_published: validated ordinary master-data changes update automatically without repeating publication approval。
+- material_change: Article Number、model assignment、record deletion and revoked website eligibility do not overwrite or unpublish automatically。
+- validation_failure: preserve last successful public data and record a traceable error。
+- ownership_guard: synchronization never overwrites WordPress-owned copy、SEO、public media or page modules。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only how discontinued products and replacement models should behave publicly。
+
+### 2026-07-27T07:38:29Z - TASK-012 discontinued product public-page policy confirmed
+
+- accepted_by_user: keep the original URL and public page for a discontinued product。
+- presentation: show `Discontinued` prominently；when a replacement exists，link to it。
+- cta: replace the ordinary quote action with `Contact Us for Replacement`。
+- intent: preserve historical customer access and SEO without implying continued supply。
+- open_mapping: real replacement/upgrade relation、effective date and no-replacement support content remain to be validated。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether one product may belong to multiple product series and multiple application scenarios。
+
+### 2026-07-27T07:45:58Z - TASK-012 product-series and product-application cardinality confirmed
+
+- accepted_by_user: one product may belong to multiple product series and multiple application scenarios。
+- cardinality: product-to-series and product-to-application are both many-to-many。
+- identity_guard: all discovery entrances reference one product identity、one canonical detail page and the same Article Number specification set。
+- prohibited: do not duplicate product or specification records because of catalogue membership。
+- open_mapping: real Base relation fields and representative-product assignments remain to be inspected。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only whether technical parameters use structured group/order/value/unit and market-aware display units。
+
+### 2026-07-27T15:18:24Z - TASK-012 structured technical parameters confirmed
+
+- accepted_by_user: store technical parameters as group、name、value、unit and display order。
+- unit_policy: first phase uses metric units consistently；no automatic imperial conversion by market。
+- future_boundary: any later display conversion preserves the canonical source value and requires a separate task。
+- open_mapping: actual product parameter groups、names、units and ordering still require representative samples。
+- scope: requirements and authority documentation only；no Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only how download documents track version、language、current/superseded status and replacement files。
+
+### 2026-07-27T15:25:33Z - TASK-012 current-only website document lifecycle confirmed
+
+- corrected_by_user: expired document versions are not retained in the website content layer；they are archived in ZSpace。
+- website_storage: current valid files only，with type、version、language and effective date。
+- cardinality: one current file may relate to multiple products。
+- replacement: switch website relations to the new current file and remove the old file from the website layer。
+- isolation: ZSpace historical storage is not part of the public API or synchronization path。
+- scope: requirements and authority documentation only；no ZSpace、Feishu、CMS/Schema、frontend、database、runtime or Git mutation。
+- next: ask only which product fields are public and which are internal-only。
+
+### 2026-07-27T15:31:39Z - TASK-012 sensitive field isolation confirmed
+
+- corrected_boundary: cost、purchase price、internal sales floor price、profit/margin、supplier information、inventory and customer-specific quotations remain only in Feishu Base。
+- exclusion: these fields do not enter WordPress、GDHE REST API、Next.js、public caches or application logs；this is source-level exclusion，not UI hiding。
+- control: future sync uses an explicit public-field allowlist；unlisted Feishu fields are not read、transmitted or stored。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: ask only whether internal notes and audit records are also Feishu-only。
+
+### 2026-07-27T15:51:24Z - TASK-012 internal notes and business audit isolation confirmed
+
+- accepted_by_user: internal notes and business audit records remain only in Feishu Base。
+- wordpress_boundary: WordPress keeps only its own revision history for public copy、SEO、images and page modules；it does not copy Feishu business audit records。
+- exclusion: Feishu internal notes and audit records do not enter the WordPress mirror、GDHE REST API、Next.js、public caches or application logs。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: confirm the first public product-field allowlist。
+
+### 2026-07-27T16:23:39Z - TASK-012 first public product-field allowlist confirmed
+
+- accepted_by_user: product name、model、Article Number、real selectable specifications、dimensions、color、finish、technical parameters、installation、compatibility、active/discontinued status、product images and current valid documents may be public。
+- publication_gate: allowlist membership does not publish a record by itself；Feishu eligibility、validation and WordPress publication status still apply。
+- ownership_boundary: the previous Feishu-only sensitive/internal exclusion remains unchanged。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: confirm whether MOQ、packaging、lead time、OEM/ODM and sample information is public、RFQ-only or mixed。
+
+### 2026-07-27T16:49:43Z - TASK-012 public B2B information confirmed
+
+- selected_option: public display。
+- public_fields: MOQ、packaging method、lead time、OEM/ODM capability and sample policy。
+- unchanged_boundary: public information does not add cart、checkout、payment or confirmed online orders；conversion remains quotation request。
+- open_model: product/specification versus company-policy granularity and Feishu versus WordPress edit authority remain unconfirmed。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: confirm B2B field granularity and edit authority。
+
+### 2026-07-27T17:00:20Z - TASK-012 B2B information granularity corrected
+
+- corrected_public_scope: MOQ is not specially displayed on the website。
+- company_policy: full-container lead time is generally `30–40 days`；all products can provide samples；OEM and ODM are available。
+- category_data: selectable packaging materials are relatively fixed by product category。
+- open_boundary: Feishu versus WordPress edit authority、lead-time start condition and real category-to-packaging mappings remain unconfirmed。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: confirm the B2B edit-authority split。
+
+### 2026-07-27T17:06:53Z - TASK-012 B2B edit authority confirmed
+
+- corrected_by_user: packaging categories and selectable packaging materials are maintained directly in WordPress because they rarely change。
+- authority_split: packaging、lead time、sample availability and OEM/ODM are WordPress-owned public content；MOQ，if retained internally，is Feishu-only。
+- synchronization_effect: these WordPress-owned B2B fields do not enter the Feishu product-master synchronization contract。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: confirm the public start event for the full-container `30–40 day` lead time。
+
+### 2026-07-27T17:10:31Z - TASK-012 lead-time start event confirmed
+
+- accepted_by_user: the public full-container lead time starts after receipt of the customer deposit and confirmation of the order、packaging and production materials。
+- public_range: typically `30–40 days` from that event。
+- ownership: lead-time content remains WordPress-owned and outside the Feishu product-master synchronization contract。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: decide whether real category-to-packaging mappings are provided now or confirmed with the representative product cohort。
+
+### 2026-07-27T17:23:33Z - TASK-012 real packaging option evidence recorded
+
+- user_evidence: supplied Feishu option screenshot plus business explanations for 常规、纸盒、打字、套袋、大收缩膜 and 对扣。
+- source_limit: the screenshot confirms visible option labels only；it does not prove the live Base field type、record assignments or combination cardinality。
+- public_meaning: WordPress will hold detailed customer-facing explanations；打字 means customer Logo printing and must not be translated literally。
+- modeling_guard: the six labels mix base packaging、custom processing、individual protection and container-loading arrangement。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or sync code was accessed or modified。
+- next: ask only whether the six items are single-choice or combinable within one quotation request。
+
+### 2026-07-27T17:29:10Z - TASK-012 packaging combination rules confirmed
+
+- base_packaging: 常规、纸盒 and 大收缩膜 are mutually exclusive。
+- protection_arrangement: 单支套袋 and 对扣 are mutually exclusive。
+- compatible_add_on: customer Logo printing is compatible with every valid base-packaging and protection/arrangement choice。
+- confirmed_examples: all six combinations listed by the user are recorded in the real-product gate。
+- open_cardinality: whether a base package is required and whether both 套袋/对扣 may be omitted remain unconfirmed。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or RFQ code was accessed or modified。
+- next: confirm requiredness/default rules for the base and protection/arrangement dimensions。
+
+### 2026-07-27T17:34:48Z - TASK-012 packaging cardinality confirmed
+
+- required_base: exactly one of 常规、纸盒 or 大收缩膜。
+- optional_logo: customer Logo printing may be omitted。
+- optional_protection_arrangement: both 套袋 and 对扣 may be omitted；if selected，exactly one is allowed。
+- contract_effect: future RFQ requiredness and mutual-exclusion validation can use these three normalized dimensions。
+- implementation_boundary: no real Base、WordPress、Schema、frontend、database or RFQ code was accessed or modified。
+- next: confirm which product categories use this packaging contract。
+### 2026-07-27T17:43:29Z - TASK-012 布带/线珠包装类别边界确认
+
+- 用户确认布带和线珠不适用轨道类包装合同。
+- 官网只展示纸箱常规包装；特殊组合包装不公开、不进入 RFQ 自助选项，由业务员针对已有需求单独提供。
+- 记录术语冲突：轨道“常规包装”与布带/线珠“常规包装”含义不同，后续必须使用类别限定身份。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认电机/遥控器和小型相关配件的包装规则。
+### 2026-07-27T17:47:29Z - TASK-012 电机/遥控器固定包装确认
+
+- 用户确认电机和遥控器使用固定纸箱包装。
+- 官网只展示固定包装说明，不提供包装选择，不接入其他类别的包装选择合同。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认封口、走珠、顶码、墙码等小型相关配件的包装规则。
+### 2026-07-27T17:54:43Z - TASK-012 小型相关配件固定包装确认
+
+- 用户确认封口、走珠、顶码、墙码等小型相关配件同样固定使用纸箱包装。
+- 官网不提供包装选择；当前已知产品类别的包装合同已完整确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认配件、备件和套装成员是否需要独立业务角色。
+### 2026-07-27T17:58:25Z - TASK-012 统一配件角色与筛选分类确认
+
+- 用户确认产品领域统一称为“配件”，不区分备件或套装成员角色。
+- 配件通过可筛选的配件类别组织；类别与是否建立独立详情页保持独立。
+- 用户本轮使用“强码”，与此前“墙码”冲突；未擅自合并或新建类别。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认“强码”是否为“墙码”的笔误。
+### 2026-07-27T18:06:50Z - TASK-012 配件术语规范化确认
+
+- 用户确认“强码”是“墙码”的笔误。
+- 权威文档只保留“墙码”规范配件类别，不创建“强码”类别。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认一个配件可属于一个还是多个配件类别。
+### 2026-07-27T18:09:07Z - TASK-012 配件类别基数确认
+
+- 用户确认一个具体配件只能属于一个配件类别。
+- 配件到配件类别为多对一：同一 Article Number 不得进入多个类别，一个类别可以包含多个配件。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认配件除了 Article Number 是否也都有型号。
+### 2026-07-27T18:14:19Z - TASK-012 配件型号与 Article Number 层级确认
+
+- 用户确认配件不强制每个具体规格都有独立型号。
+- 布带钉子材质变化会改变型号；同一型号下宽度、钉距、长度变化产生独立 Article Number。
+- 新增真实候选值：钉距 170 及更多值；长度 30m、40m、50m、60m 等。
+- 封口、顶码、吊码、走珠等通常同时有型号和 Article Number，但未将“通常”提升为全局必填。
+- 颜色是否参与决定布带型号仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认布带颜色是否参与决定型号。
+### 2026-07-27T18:18:37Z - TASK-012 布带型号身份确认
+
+- 用户确认布带型号由颜色和钉子材质共同决定。
+- 黑/白与不锈钢钉/铝钉的组合分别形成不同型号；宽度、钉距、长度只形成型号下的具体 Article Number。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认布带宽度和钉距的计量单位。
+### 2026-07-27T18:21:29Z - TASK-012 布带规格单位确认
+
+- 用户确认布带宽度与钉距统一使用毫米（mm），长度使用米（m）。
+- 布带型号—规格—Article Number 业务层级已闭合，真实记录仍须代表样本核对。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认线珠的型号和规格结构。
+### 2026-07-27T18:25:49Z - TASK-012 线珠型号与规格结构部分确认
+
+- 用户确认线珠型号由颜色和具体珠型共同决定。
+- 记录尚飞大方珠三个珠型、用户所称佳丽斯中方珠/珠系列三个珠型、常见珠距 6/6.6/7/8/10.2cm 和卷长 40/50/60m 等。
+- 10.2cm 只记录为双扣常见值，不建立排他约束。
+- 卷长改变 Article Number，不改变型号；珠距是否也独立产生 Article Number 待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认不同珠距是否也各自产生独立 Article Number。
+### 2026-07-27T18:28:50Z - TASK-012 线珠 Article Number 规则确认
+
+- 用户确认同一线珠型号下，不同珠距和不同卷长均产生独立 Article Number。
+- 颜色和具体珠型仍决定型号；珠距/卷长变化不改变型号。
+- 线珠型号—规格—Article Number 层级已闭合，真实记录仍须代表样本核对。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认电机与遥控器共用页面时的 Article Number 关系。
+### 2026-07-27T18:31:06Z - TASK-012 电机与遥控器 Article Number 边界确认
+
+- 用户确认共用页面中的电机和遥控器分别保留各自 Article Number。
+- 不创建额外组合 Article Number；两者仍是两个可识别部件。
+- 是否可分别选择及填写各自数量仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认客户是否可以分别选择电机、遥控器并填写各自数量。
+### 2026-07-27T18:33:15Z - TASK-012 电机与遥控器独立询价选择确认
+
+- 用户确认共用页面中的电机和遥控器是两个独立 RFQ 行项目。
+- 客户可只选择电机、只选择遥控器或同时选择两者。
+- 两个行项目分别填写数量，数量可以不同，并分别使用各自 Article Number。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认所有产品和配件的每个 RFQ 行项目是否都必须填写数量。
+### 2026-07-27T18:36:13Z - TASK-012 全部 RFQ 行项目数量必填确认
+
+- 用户确认所有加入 quotation request 的产品和配件行项目都必须填写数量。
+- 缺少数量的行项目不能作为完整询价提交，不提供业务员后续补填作为公开提交路径。
+- 数量单位来源和输入格式尚未推定，留待下一项确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认数量单位是否由 Article Number 固定，以及客户是否只填写正整数。
+### 2026-07-27T18:40:45Z - TASK-012 官网询价单位与飞书内部换算边界确认
+
+- 用户确认官网 RFQ 中轨道按支、布带和线珠按卷、电机、遥控器及其他配件按个。
+- 飞书报价系统内部将轨道、布带和线珠换算为米，配件继续按个计算。
+- 飞书还会依据包装方式折算各类包装件数；这些均为内部报价衍生值，不要求网页端填写。
+- 换算系数的真实权威来源和数量输入格式仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认每个 Article Number 的米数换算系数由飞书产品主数据维护，还是由报价系统公式根据规格计算。
+### 2026-07-27T18:44:20Z - TASK-012 飞书长度换算字段权威确认
+
+- 用户确认每个可订购产品的长度换算字段保存在飞书产品主数据中。
+- 飞书报价系统只接收所选产品和客户数量，再读取该字段计算总长度及包装件数。
+- 用户明确该计算属于飞书端问题，不在官网实现范围内。
+- 本轮出现 `Part Number`，与既有 `Article Number` 的术语关系仍待确认，未静默合并。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认 `Part Number` 与 `Article Number` 是同一编号的不同叫法，还是两个不同字段。
+### 2026-07-27T18:47:22Z - TASK-012 Article Number 术语纠正确认
+
+- 用户纠正本轮 `Part Number` 为口误，规范术语仍是 `Article Number`。
+- 不创建 `Part Number` 字段、别名、映射或第二套编号。
+- 飞书报价系统按 Article Number 读取产品主数据中的长度换算字段。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认网页端数量是否只能输入大于零的整数。
+### 2026-07-27T18:49:35Z - TASK-012 RFQ 数量正整数约束确认
+
+- 用户确认所有官网 RFQ 行项目数量只允许大于零的整数。
+- 最小值为 1；空值、0、负数和小数无效。
+- 该规则覆盖轨道按支、布带/线珠按卷以及电机、遥控器和其他配件按个的行项目。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认统一主询价 CTA 的英文文案。
+### 2026-07-27T18:51:48Z - TASK-012 英语站主询价 CTA 确认
+
+- 用户确认英语站正常在售产品统一主询价 CTA 使用 `Request a Quote`。
+- 同一主转化路径不混用 `Ask for Quotation` 或 `Get a Quote`。
+- 停产产品已确认的 `Contact Us for Replacement` 继续作为例外。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认产品页点击 `Request a Quote` 后的转化路径。
+### 2026-07-27T18:54:32Z - TASK-012 多产品询价清单流程确认
+
+- 用户确认正常产品点击 `Request a Quote` 后先加入询价清单。
+- 客户可以继续浏览并添加多个产品，最后统一填写联系信息并一次提交。
+- 不采用每次产品 CTA 点击即进入并提交单产品表单的流程。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认同一 Article Number 重复加入时的行项目合并规则。
+### 2026-07-27T18:57:00Z - TASK-012 重复询价行合并规则确认
+
+- 用户确认询价清单按 `Article Number + 完整公开配置` 识别行项目。
+- 同一 Article Number 且包装、Logo、套袋/对扣等配置全部相同时合并并累加数量。
+- 任一公开配置不同则保留独立行，避免丢失客户需求。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 转入第一款普通手动轨道真实样本验证。
+### 2026-07-27T19:06:27Z - TASK-012 真实产品样本 001 部分映射
+
+- 用户提供 `FGD X15+PVC` 产品数据行和截面图，作为第一条普通轨道候选样本。
+- 初步映射型号、中英文名称、类别/二级类别、中英文颜色及若干规格候选值。
+- 图片核对到 `FGD X15`、`H:27`、`W:28` 和 PVC/软质内衬截面。
+- 后段供应商下单值不进入公开映射；`GDHEPRD000172` 的编号身份尚未确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认 `GDHEPRD000172` 是公开 Article Number、飞书内部产品 ID 还是其他编号。
+### 2026-07-27T19:09:14Z - TASK-012 样本 001 Article Number 确认
+
+- 用户确认 `GDHEPRD000172` 是 `FGD X15+PVC` 该具体规格的 Article Number。
+- 该值不属于供应商下单字段，并符合一型号多规格、一规格一 Article Number 的既定边界。
+- 样本仍处于部分映射状态，`6 M`、其他字段单位、安装、包装和关联配件待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认 `规格 6 + 单位 M` 是否表示每支轨道长度为 6 米。
+### 2026-07-27T19:11:33Z - TASK-012 样本 001 长度规格确认
+
+- 用户确认 `GDHEPRD000172` 对应 `FGD X15+PVC` 每支 6 米规格。
+- 官网继续按“支”填写正整数数量；飞书端可按 6 米乘支数计算总米数。
+- 样本 Article Number—长度规格关系已闭合，米重、纳米条、安装、包装和关联配件仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认 `155–160` 是否表示轨道米重，单位为克/米。
+### 2026-07-27T19:13:38Z - TASK-012 样本 001 米重确认
+
+- 用户确认 `155–160` 表示 `FGD X15+PVC` 轨道米重范围，单位为克/米。
+- 样本记录为 `155–160 g/m`；该值与每支 6 米长度规格分开保存。
+- 纳米条 `115`、安装、包装和关联配件仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认纳米条 `115` 的业务含义和单位。
+### 2026-07-27T19:15:22Z - TASK-012 样本 001 PVC 纳米条米重确认
+
+- 用户确认纳米条 `115` 表示 PVC 纳米条米重 `115 g/m`。
+- 该参数与轨道主体米重 `155–160 g/m` 分开保存。
+- 截面尺寸单位、安装、包装和关联配件仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认截面图 `H:27 / W:28` 是否均使用毫米。
+### 2026-07-27T19:17:40Z - TASK-012 样本 001 截面尺寸确认
+
+- 用户确认截面图 `H:27 / W:28` 均使用毫米。
+- 样本技术参数记录为高度 `27 mm`、宽度 `28 mm`。
+- 安装方式、公开包装选择和关联配件仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认该轨道支持顶装、墙装还是两者都支持。
+### 2026-07-27T19:20:02Z - TASK-012 样本 001 安装方式确认
+
+- 用户确认 `FGD X15+PVC` 同时支持顶装和墙装。
+- 两种安装方式的主要差异是所使用的安装码，不拆成两个产品页面。
+- 是否保持同一轨道 Article Number、只改变安装码配件仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认切换顶装/墙装是否不改变轨道 Article Number，只改变安装码配件。
+### 2026-07-27T19:22:11Z - TASK-012 样本 001 安装方式 Article Number 边界确认
+
+- 用户确认顶装与墙装不改变轨道 Article Number `GDHEPRD000172`。
+- 两种安装方式只更换对应安装码配件，轨道仍为同一规格、同一产品页面。
+- 顶码和墙码是否各自具有独立 Article Number 仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认该样本使用的顶码和墙码是否各自拥有独立 Article Number。
+### 2026-07-28T01:29:28Z - TASK-012 样本 001 安装码 Article Number 身份确认
+
+- 用户确认该轨道使用的顶码和墙码各自拥有独立 Article Number。
+- 顶装/墙装仍不改变轨道 Article Number `GDHEPRD000172`，只替换对应配件。
+- 安装码的具体编号以及与轨道型号的兼容基数仍待确认。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认安装码可兼容多个轨道型号，还是每个轨道型号使用专用安装码。
+### 2026-07-28T01:45:54Z - TASK-012 样本 001 安装码宽度兼容规则确认
+
+- 用户确认同一个安装码可以兼容多个轨道型号。
+- 兼容主要按轨道安装面宽度匹配，例如 28 mm 安装面通常使用 28 mm 安装码。
+- 因用户使用“一般来说”和“大概”的限定，本轮不把“同宽必然兼容”冻结为绝对规则。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认相同安装面宽度之外，是否还必须匹配截面形状、卡口或其他结构。
+### 2026-07-28T01:51:33Z - TASK-012 样本 001 实际安装码兼容规则确认
+
+- 用户明确不同轨道类型所使用的配件不同，不能只按安装面宽度决定。
+- 安装面宽度只作为搭配时的候选建议；最终选择必须依据轨道类型及其实际配件关系。
+- 网站不得自动把所有同宽安装码展示为兼容选项。
+- 未修改飞书、极空间、WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认实际兼容关系是否已经存放在飞书产品主数据中。
+### 2026-07-28T01:54:28Z - TASK-012 样本 001 兼容关系权威确认
+
+- 用户确认轨道与顶码、墙码的实际兼容关系已经保存在飞书产品主数据中。
+- 飞书是兼容关系的数据权威；网站不得自行按安装面宽度推导。
+- 本轮未连接或修改飞书，关系的具体存储形式仍待确认。
+- 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认飞书当前使用关联记录、Article Number 列表、文字还是图片保存该关系。
+### 2026-07-28T02:07:31Z - TASK-012 样本 001 兼容关系存储形式确认
+
+- 用户确认飞书使用关联记录字段保存轨道与兼容配件的关系。
+- 该关系直接连接产品记录，不依赖 Article Number 文本、普通文字或图片解析。
+- 同步应读取关联目标记录自身的 Article Number；关联所在层级仍待确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认关联字段建立在型号层级还是每个具体 Article Number 记录层级。
+### 2026-07-28T02:10:34Z - TASK-012 样本 001 兼容关系目标层级确认
+
+- 用户说明飞书当前在具体 Article Number 记录上维护兼容配件关联。
+- 用户确认更正确的目标模型是将兼容关系建立在型号层级，由型号下规格继承。
+- 本轮只记录未来迁移需求，未连接或修改飞书，也未设计迁移实施。
+- 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认同一型号下是否允许个别 Article Number 规格拥有不同兼容配件。
+### 2026-07-28T02:16:17Z - TASK-012 样本 001 型号级兼容继承确认
+
+- 用户确认同一型号下所有轨道规格使用完全相同的兼容配件。
+- 目标模型由型号维护兼容关系，所有 Article Number 规格继承，不允许规格级例外。
+- 本轮未连接或修改飞书，也未设计或执行迁移。
+- 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认迁移时发现同型号旧记录关联不一致，是阻止并人工核对还是自动合并。
+### 2026-07-28T02:19:14Z - TASK-012 样本 001 兼容关系迁移冲突策略确认
+
+- 用户确认同一型号的旧 Article Number 记录若关联不一致，应停止该型号迁移。
+- 禁止自动合并、取交集或选择任一记录覆盖；需要人工核对。
+- 失败隔离到冲突型号，其他校验通过的型号可以继续。
+- 本轮未连接或修改飞书，也未设计或执行迁移。
+- next: 仅确认飞书人工修正后是否由下一次同步自动重新校验并迁移。
+### 2026-07-28T02:22:57Z - TASK-012 样本 001 迁移冲突自动重试确认
+
+- 用户确认冲突在飞书人工修正后，由下一次同步自动重新校验。
+- 校验通过后自动继续迁移该型号，不需要额外人工恢复或单独触发。
+- 本轮未连接或修改飞书，也未设计或执行迁移。
+- 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认型号级迁移成功后旧 Article Number 级关联字段的退役方式。
+### 2026-07-28T02:25:27Z - TASK-012 样本 001 旧关联字段过渡期确认
+
+- 用户确认型号级迁移成功后，旧 Article Number 级兼容关联字段保留一段过渡期。
+- 本轮未假定旧字段在过渡期内是否可编辑或是否继续参与同步。
+- 未连接或修改飞书，也未设计或执行迁移。
+- 未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认旧字段在过渡期内是否冻结为只读且不再参与网站同步。
+### 2026-07-28T02:34:10Z - TASK-012 样本 001 过渡字段只读策略确认
+
+- 用户确认旧 Article Number 级关联字段在过渡期内冻结为只读，仅用于核对。
+- 旧字段不再参与网站同步；网站只读取型号级兼容关系。
+- 型号级关系成为唯一可写权威，避免双重来源。
+- 本轮未连接或修改飞书，也未设计或执行迁移。
+- next: 仅确认过渡期退出条件。
+### 2026-07-28T03:03:29Z - TASK-012 样本 001 过渡期退出条件确认
+
+- 用户确认旧字段至少保留 30 天，并至少完成 3 次完整同步。
+- 删除前必须人工抽查通过，并取得最终人工确认。
+- 未加入用户未确认的“零异常”或其他额外门槛。
+- 本轮未连接或修改飞书，也未设计或执行迁移。
+- next: 回到样本 001，仅确认该轨道实际支持哪些包装选项。
+### 2026-07-28T03:05:32Z - TASK-012 样本 001 包装适用性确认
+
+- 用户确认 `FGD X15+PVC` 适用完整轨道包装合同。
+- 基础包装为常规/纸盒/大收缩膜三选一；Logo 印刷可选；套袋/对扣可以都不选，选择时二选一。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认包装表单默认值。
+### 2026-07-28T03:07:28Z - TASK-012 样本 001 包装默认值确认
+
+- 用户确认默认选择常规包装、不开启 Logo 印刷、套袋与对扣均不选。
+- 默认值只初始化表单，客户可以在合法组合内主动修改。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认除顶码和墙码外，该轨道是否还关联走珠与封口。
+### 2026-07-28T03:10:07Z - TASK-012 样本 001 走珠与封口关系确认
+
+- 用户确认 `FGD X15+PVC` 除顶码和墙码外，还需要关联对应走珠与封口。
+- 本轮只确认型号级兼容关系，不推定默认包含、必选或自动加入询价清单。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认走珠与封口在询价时是必选还是可选。
+### 2026-07-28T03:13:01Z - TASK-012 样本 001 走珠与封口可选性确认
+
+- 以用户最新完整说明覆盖被中断输入中的“需要填写”歧义。
+- 走珠与封口是可选关联配件，不与轨道强制捆绑；客户可以只询轨道本体。
+- 客户主动添加配件后，该配件行才必须填写大于零的整数数量。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认关联配件是否默认不加入询价清单、只作为推荐项展示。
+### 2026-07-28T03:14:56Z - TASK-012 样本 001 关联配件推荐行为确认
+
+- 用户确认所有关联配件默认不加入询价清单，只作为推荐项展示。
+- 客户主动添加并填写大于零的整数数量后，才创建独立配件询价行。
+- 本轮未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 仅确认安装方式是否过滤安装码推荐。
+
+### 2026-07-28T03:29:32Z - TASK-012 样本 001 不设置安装方式选择
+
+- 用户确认产品页不存在单独的“顶装/墙装”选择字段或前置步骤。
+- 页面直接说明产品同时支持顶装和墙装，并同时展示经型号级兼容关系确认的顶码和墙码。
+- 客户根据实际需要直接添加配件；此前“选择安装方式后过滤安装码”的假设已撤销，且从未实施。
+- 本轮未修改 WordPress、Schema、API、前端、数据库或 RFQ 实现。
+- next: 获取并核对样本 002，一个真实电动轨道及其电机、遥控器关系。
+
+### 2026-07-28T03:53:11Z - TASK-012 样本 002 电动轨道批次接收
+
+- 用户提供一批含重复行的真实产品资料，按 Article Number 去重后识别 27 个候选记录。
+- `FGE X08+pvc / GDHEPRD000328` 登记为电动轨道样本 002。
+- 同批出现 `PJ-D16 / GDHEPRD000640` 电机、`PJ-D25 / GDHEPRD000641` 传动箱和 `PJ-LJ-15 / GDHEPRD000642` 外连接器，但没有可验证关联字段，不自动绑定。
+- 当前批次没有识别出可明确归属于样本 002 的遥控器。
+- 未知列、`Error`、价格和供应商字段未进入公开映射。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGE X08+pvc` 实际兼容哪一个电机和遥控器。
+
+### 2026-07-28T03:56:11Z - TASK-012 样本 002 电机兼容关系确认
+
+- 用户确认 `FGE X08+pvc / GDHEPRD000328` 兼容 `PJ-D16 / 杜亚82电机 / GDHEPRD000640`。
+- 本次确认只建立一条兼容关系，不推定该电机具有唯一性。
+- 同批传动箱、外连接器和遥控器关系仍未确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认与 `PJ-D16` 配套的遥控器型号和 Article Number。
+
+### 2026-07-28T08:21:16Z - TASK-012 样本 002 遥控器资料暂缺
+
+- 用户说明目前暂时没有可确认的配套遥控器资料。
+- 该结论只记录当前资料缺口，不推定 `PJ-D16` 不支持遥控器，也不阻止未来补充。
+- 未创建虚构遥控器型号、Article Number 或兼容关系。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGE X08+pvc` 是否兼容 `PJ-D25 / 佳丽斯传动箱 / GDHEPRD000641`。
+
+### 2026-07-28T08:23:34Z - TASK-012 样本 002 传动箱兼容关系确认
+
+- 用户确认 `FGE X08+pvc / GDHEPRD000328` 兼容 `PJ-D25 / 佳丽斯传动箱 / GDHEPRD000641`。
+- 业务依据是该轨道属于佳丽斯系统。
+- 不把品牌/系统归属泛化为自动兼容算法；最终仍以飞书型号级明确关联为权威。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGE X08+pvc` 是否兼容 `PJ-LJ-15 / 佳丽斯外连接器 / GDHEPRD000642`。
+
+### 2026-07-28T08:25:08Z - TASK-012 样本 002 外连接器兼容关系确认
+
+- 用户确认 `FGE X08+pvc / GDHEPRD000328` 兼容 `PJ-LJ-15 / 佳丽斯外连接器 / GDHEPRD000642`。
+- 样本 002 已确认电机、传动箱和外连接器三条核心兼容关系。
+- 尚未推定三个配件在询价中的可选或必选规则。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认三个已兼容配件在 RFQ 中是可选推荐，还是存在必选关系。
+
+### 2026-07-28T08:27:50Z - TASK-012 样本 002 配件 RFQ 可选性确认
+
+- 用户确认 `PJ-D16` 电机、`PJ-D25` 传动箱和 `PJ-LJ-15` 外连接器全部只是可选推荐项。
+- 客户可以只询 `FGE X08+pvc` 轨道本体，不存在必选配件。
+- 配件默认不加入询价清单；客户主动添加后才创建独立 RFQ 行并填写数量。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本行 `6 M` 是否表示每支轨道长度为 6 米。
+
+### 2026-07-28T08:29:37Z - TASK-012 样本 002 长度与定制边界确认
+
+- 用户确认 `GDHEPRD000328` 对应 `FGE X08+pvc` 每支 6 米规格。
+- 同一型号还有其他长度规格，并支持客户定制长度。
+- 未推定其他标准长度或任意定制长度已有独立 Article Number，也未复用 6 米规格编号。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认其他标准长度和客户定制长度如何对应 Article Number。
+
+### 2026-07-28T08:53:38Z - TASK-012 样本 002 长度 Article Number 身份确认
+
+- 用户确认 `FGE X08+pvc` 每一个不同长度规格均拥有独立 Article Number。
+- `GDHEPRD000328` 只对应每支 6 米规格，不得用于其他长度。
+- 网站不得为尚不存在的定制长度自行生成 Article Number。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认尚未存在 Article Number 的全新定制长度如何提交询价。
+
+### 2026-07-28T08:56:21Z - TASK-012 样本 002 新定制长度询价流程确认
+
+- 用户确认飞书中尚无 Article Number 的全新定制长度仍可从网站提交询价。
+- 网站不生成或复用 Article Number；业务员收到 RFQ 后在飞书中处理。
+- 具体定制长度输入字段和数量单位尚未确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认定制长度的网页输入字段与数量单位。
+
+### 2026-07-28T08:58:22Z - TASK-012 样本 002 定制长度输入合同确认
+
+- 用户纠正并确认定制长度允许小数。
+- 客户选择 `Custom Length`，以米为单位输入长度，数量另按整数“支”填写。
+- 定制 RFQ 行标记为待业务处理；长度小数不改变数量必须为正整数的规则。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认定制长度允许的小数位数或最小增量。
+
+### 2026-07-29T00:34:40Z - TASK-012 样本 002 定制长度精度确认
+
+- 用户确认定制长度最多允许一位小数，最小输入增量为 `0.1 m`。
+- `5.5 m` 有效，`5.55 m` 和 `5.555 m` 无效。
+- 长度精度不改变支数必须为正整数的规则。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGE X08+pvc` 允许的定制长度范围。
+
+### 2026-07-29T00:36:54Z - TASK-012 样本 002 定制长度范围政策确认
+
+- 用户确认不设置固定最小或最大定制长度。
+- 前端只校验长度大于零且最多一位小数；提交不代表可生产、包装、运输或报价。
+- 业务员收到询价后在飞书中人工判断可行性。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本 002 是否采用完整轨道包装合同。
+
+### 2026-07-29T02:00:46Z - TASK-012 样本 002 包装适用性确认
+
+- 用户确认 `FGE X08+pvc` 适用完整轨道包装合同。
+- 基础包装三选一；Logo 印刷可选；套袋与对扣可以都不选，选择时互斥。
+- 本轮只确认可用选项，默认值仍待确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本 002 的包装默认值。
+
+### 2026-07-29T02:02:29Z - TASK-012 样本 002 包装默认值与核心验证
+
+- 用户确认包装默认值与普通轨道相同：常规包装、Logo 关闭、套袋与对扣均不选。
+- 样本 002 的长度、Article Number、定制 RFQ、核心兼容关系、配件可选性和包装已完成核心验证。
+- 遥控器资料及原始行未知字段保留为可后补缺口，不声称所有资料完整。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGL X14` 五个 Article Number 的页面归组。
+
+### 2026-07-29T02:04:57Z - TASK-012 样本 003 页面归组确认
+
+- 用户确认 `FGL X14` 的五个 Article Number 全部归入同一个产品页面。
+- 页面、URL 和 canonical SEO 身份由型号决定，不因具体 Article Number 差异拆分。
+- `1132 / 9973 / 250` 等供应来源差异是否公开仍待确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本 003 的供应来源差异是否公开。
+
+### 2026-07-29T02:07:38Z - TASK-012 样本 003 内部差异可见性确认
+
+- 用户确认 `1132 / 9973 / 250`、对应源中文品名、源重量和供应来源差异仅用于内部识别。
+- 网页主要显示型号 `FGL X14`，上述内部字段不公开，也不作为客户选择项。
+- 暴露出唯一待确认冲突：`GDHEPRD000418`、`GDHEPRD000420`、`GDHEPRD000421` 的公开长度均为 `6 m`，客户仅选择型号和长度时无法唯一确定 Article Number。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FGL X14 + 6 m` 使用默认 Article Number，还是不带 Article Number 提交并由业务员在飞书选择。
+
+### 2026-07-29T02:10:22Z - TASK-012 样本 003 RFQ Article 解析确认
+
+- 用户确认米重差异当前不是前端展示刚需，可延后设计。
+- 客户提交 `FGL X14 + 长度 + 数量`；公开选项无法唯一确定 Article Number 时，网站不附 Article Number，由业务员在飞书选择具体内部记录。
+- 网站不得根据隐藏米重猜测或生成 Article Number；已能由公开选项唯一确定的其他规格仍保留自身 Article Number。
+- 样本 003 核心验证完成。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本 004 `SSD-01` 的页面归组和“全不锈/半不锈”是否为客户可见材质选项。
+
+### 2026-07-29T02:13:10Z - TASK-012 样本 004 钉子规格确认
+
+- 用户澄清 `SSD-01` 两条记录的真实差异是薄不锈钢钉和厚不锈钢钉，并且是客户可见、可选择的规格。
+- 规范术语冻结为“钉子规格”；两者材质同为不锈钢，不错误建模为两个普通材质，也不直接采用“全不锈/半不锈”来源名称。
+- 两条记录按同一 `SSD-01` 页面归组；钉子规格与宽度、间距、卷长共同形成真实可询价组合。
+- 两条 Article Number 与薄钉/厚钉的精确映射仍待用户确认，不进行猜测。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `GDHEPRD000692`、`GDHEPRD000695` 分别对应薄不锈钢钉还是厚不锈钢钉。
+
+### 2026-07-29T02:16:45Z - TASK-012 样本 004 Article 映射确认
+
+- 用户确认 `GDHEPRD000692` 对应薄不锈钢钉，`GDHEPRD000695` 对应厚不锈钢钉。
+- 每条 Article Number 绑定其真实宽度、间距和卷长组合；前端不得做属性笛卡尔积或生成不存在的规格。
+- 样本 004 核心验证完成。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认样本 005 `SSZ-01A` 三条记录是否同页，以及间距和卷长是否为客户可见选项。
+
+### 2026-07-29T02:31:09Z - TASK-012 样本 005 页面归组确认
+
+- 用户确认 `GDHEPRD000784`～`GDHEPRD000786` 全部归入同一 `SSZ-01A` 产品页面。
+- 线珠间距和卷长均为客户可见、可选择的规格；每个真实组合保留自身 Article Number。
+- 前端只展示飞书中真实存在且允许发布的组合，不生成属性笛卡尔积。
+- 样本 005 核心验证完成。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认安装码 `AZM-K-1`、`AZM-K-10` 是否作为配件目录和相关模块中的独立条目，而不建立独立 SEO 详情页。
+
+### 2026-07-29T02:34:35Z - TASK-012 样本 006 小配件展示粒度确认
+
+- 用户确认安装码、封口、走珠等小配件进入统一配件目录，支持分类筛选、填写数量和独立询价。
+- 具有已确认型号级兼容关系时，小配件可进入轨道详情页的相关配件模块。
+- 小配件不各自建立独立 SEO 产品详情页；布带、线珠等复杂规格产品继续拥有详情页。
+- `AZM-K-1`、`AZM-K-10` 当前没有已确认的具体轨道兼容关系，缺失时的目录与推荐边界仍待确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认缺少兼容关系时是否仍允许目录浏览和独立询价，但禁止进入轨道相关推荐。
+
+### 2026-07-29T02:47:16Z - TASK-012 样本 006 兼容关系缺失规则确认
+
+- 用户确认没有已知轨道兼容关系的小配件仍可在配件目录中浏览并独立询价。
+- 缺少已确认型号级关系时不得进入任何轨道详情页的相关配件模块。
+- 后续只有飞书中补充并通过同步校验的型号级关系才能启用相关推荐。
+- 样本 006 核心验证完成。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `PJ-D16` 杜亚 82 电机在遥控器资料未齐时先单独公开，还是等待组合页面资料齐全。
+
+### 2026-07-29T02:49:33Z - TASK-012 样本 007 渐进发布确认
+
+- 用户选择方案 A：`PJ-D16` 可在配套遥控器资料未齐时先作为电机产品公开。
+- 未来取得同款配套遥控器资料后补充到同一产品页面，不另建遥控器页面。
+- 当前不得虚构遥控器型号、Article Number、图片、控制协议或兼容能力。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认资料未齐期间是否完全省略遥控器模块和占位信息，只陈述已确认电机事实。
+
+### 2026-07-29T02:55:06Z - TASK-012 样本 007 缺失遥控器呈现确认
+
+- 用户确认遥控器资料未取得时，页面只展示已经确认的电机信息并完全省略遥控器模块。
+- 不显示“即将推出”、占位型号或推测性兼容信息；真实资料补齐后才在同一页面启用模块。
+- 样本 007 核心验证完成。
+- 当前代表样本图片带有水印，无水印原图和公开发布资格仍待确认。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认是否持有可用于官网发布的无水印产品原图。
+
+### 2026-07-29T02:57:59Z - TASK-012 公开保护图规则确认
+
+- 用户纠正此前无水印发布假设：官网发布图需要带水印，甚至需要品牌底纹，以降低同行盗用风险。
+- 规范术语冻结为“公开保护图”；无水印不是公开发布目标。
+- 本地样本 `FGD X15切面01_1.png` 验证为 800 × 800 RGB PNG，含 GDHE 标识、型号、28 mm × 27 mm 尺寸和黑色背景。
+- 本轮只读取样本元数据和 SHA-256，没有复制到 WordPress、仓库或公开媒体。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认保护图由业务方预制后上传，还是由网站自动生成。
+
+### 2026-07-29T03:00:17Z - TASK-012 公开保护图制作路径确认
+
+- 用户选择方案 A：业务方在上传前制作带水印、品牌底纹、型号和尺寸标注的保护成品图。
+- WordPress 只管理和发布成品图；网站不自动加水印、生成底纹或承担图片排版。
+- 本轮没有导入图片，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认内部原图是否完全不进入 WordPress、GDHE REST API、Next.js 和公开媒体。
+
+### 2026-07-29T03:01:45Z - TASK-012 内部原图隔离边界确认
+
+- 用户确认内部无水印原图只保存在飞书、极空间等内部系统。
+- 内部原图完全不进入 WordPress、GDHE REST API、Next.js、公开媒体、隐藏字段、构建产物或公开缓存。
+- 网站链路只能接收业务方预制的公开保护图。
+- 公开媒体资格、制作职责和隔离边界完成确认。
+- 本轮没有导入图片，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认封口样本 `FK-J-12 → FGG J06`、`FK-J-16 → FGD X16` 是否有效，及 `FK-J-11` 无关系时只进入目录。
+
+### 2026-07-29T03:06:59Z - TASK-012 样本 008 封口兼容关系确认
+
+- 用户确认 `FK-J-12 / GDHEPRD000488` 兼容 `FGG J06`，`FK-J-16 / GDHEPRD000489` 兼容 `FGD X16`。
+- `FK-J-11 / GDHEPRD000487` 当前无兼容关系，只进入配件目录并可独立询价。
+- 飞书重复关联值按轨道型号去重，不生成重复推荐。
+- 样本 008 核心验证完成。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 `FZZH12-`、`FZZH13-Z`、`FZZH14-Z` 是否为三个独立走珠配件条目。
+
+### 2026-07-29T03:10:48Z - TASK-012 测试数据口径与关联新增同步确认
+
+- 用户澄清当前提供的产品记录主要是测试数据，后续会继续完善。
+- 前述样本确认只验证业务模型、页面、询价和同步行为，不冻结最终生产目录或满足 10～20 个最终真实产品数据验收门。
+- 飞书是型号级产品关联关系的唯一维护入口；新增关系在下一次成功同步后自动进入 WordPress 只读镜像、API 和对应产品详情页。
+- WordPress 不重复编辑飞书关联；同步失败保留最后成功数据。
+- 样本 009 具体走珠身份暂停为测试候选，不视为最终事实。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认从飞书删除关联后是否在下一次成功同步中对称移除网站关系。
+
+### 2026-07-29T03:12:56Z - TASK-012 关联删除同步确认
+
+- 用户确认飞书删除关联后，下一次完整成功同步应从 WordPress 只读镜像、API 和对应产品详情页对称移除关系。
+- 不需要在 WordPress 手工删除；同步失败保留最后成功关系集合，避免半更新状态。
+- 新增与删除共同形成飞书权威、成功同步原子替换的网站关联生命周期。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认关系仍存在但目标产品停用、撤销允许发布或 WordPress 未公开时的推荐隐藏规则。
+
+### 2026-07-29T03:15:48Z - TASK-012 关联目标发布资格门确认
+
+- 用户确认飞书内部关系可保留，但目标停用、撤销允许发布或 WordPress 未公开时，官网必须隐藏相关推荐且不生成无效链接。
+- 目标重新满足飞书发布资格且 WordPress 公开后，在下一次成功同步或发布刷新后自动恢复显示。
+- 隐藏和恢复不要求删除或重建飞书关系。
+- 关联新增、删除、失败保留和目标发布资格门均完成确认。
+- 当前样本是测试数据，10～20 个最终生产产品数据仍未验收。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 仅确认 TASK-012 是否以业务合同、路线图和未来生产数据进入门收口，将最终产品验收后置。
+
+### 2026-07-29T03:18:53Z - TASK-012 收口范围确认
+
+- 用户确认 TASK-012 收口业务合同、询价/同步/媒体规则、权威路线图和未来进入门。
+- 当前测试记录不作为最终生产目录。
+- 10～20 个最终生产产品数据验收后置为正式批量导入、产品模板业务冻结和 Schema 业务冻结前的强制门。
+- 通过该门前不得批量发布正式产品或声称产品 Schema 已业务冻结。
+- 本次确认只允许 fresh validation 和独立审查，不等于最终验收、ADR-006 接受或 Git 交付。
+- 本轮未连接或修改飞书，也未修改 WordPress、Schema、API、前端或数据库。
+- next: 同步权威路线图、ADR、汇总和验证记录，fresh validate 后请求当前修订版独立审查。
+
+### 2026-07-29T03:24:16Z - TASK-012 当前修订版独立审查已派发
+
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- validation: 当前修订版 Schema contract、受保护范围、Markdown 本地链接、绝对路径、`git diff --check`、project/registry/messages 和 strict lane audit 均 PASS。
+- message: `MSG-TASK-012-CURRENT-SCOPE-CLOSURE-REVIEW` 已投递注册的 adversarial reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`。
+- boundary: 未验收、未 Git 交付、未连接飞书/极空间、未修改 CMS/前端/runtime、未部署、未接受 ADR、未开始下一任务。
+- next: 等待独立 current-scope verdict。
+
+### 2026-07-29T03:30:08Z - TASK-012 current-scope review P2 恢复
+
+- review: `FAIL / P0=0 / P1=0 / P2=1`；业务合同、后续生产数据门、飞书关系生命周期、媒体隔离、受保护范围和非授权边界全部 PASS。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- correction: 只同步 `TEST_OR_VALIDATION_LOG.md` 和 `PLANNER_SUMMARY.md` 的当前结果与下一步，保留 Round 1、Round 2 和 current-scope FAIL 历史。
+- authority: 第三次审查不授权自动发起第四轮；恢复验证通过后等待用户另行明确授权。
+- boundary: 未验收、未 Git 交付、未连接飞书/极空间、未修改 CMS/前端/runtime、未部署、未接受 ADR、未开始下一任务。
+- next: fresh governance validation。
+
+### 2026-07-29T03:31:51Z - TASK-012 P2 恢复验证通过
+
+- validation: `git diff --check`、CMS contract 16/2/2、project、registry、messages、strict lane、受保护范围和过期状态扫描全部 PASS。
+- state: 保持 `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`；恢复验证不替代独立 closure PASS。
+- authority: 第三次审查不授权自动发起第四轮。
+- boundary: 未验收、未 Git 交付、未连接飞书/极空间、未修改 CMS/前端/runtime、未部署、未接受 ADR、未开始下一任务。
+- next: 等待用户另行明确授权一次 closure review。
+
+### 2026-07-29T06:06:18Z - TASK-012 最终窄复核已派发
+
+- user_authority: 用户确认执行一次只检查唯一 P2 是否关闭的最终窄复核，不重复业务审查。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- message: `MSG-TASK-012-P2-CLOSURE-RECHECK` 已投递注册的 adversarial reviewer session。
+- boundary: 未验收、未 Git 交付、未连接飞书/极空间、未修改 CMS/前端/runtime、未部署、未接受 ADR、未开始下一任务。
+- next: 等待 PASS/FAIL/BLOCKED 结论。
+
+### 2026-07-29T06:09:44Z - TASK-012 最终窄复核状态恢复
+
+- review: `FAIL / P0=0 / P1=0 / P2=1`；验证日志、Planner Summary、历史、恢复证据和受保护范围全部通过。
+- planner_error: 复核请求要求任务保持 `NEEDS_REVISION`，但派发后被错误同步为 `UNDER_REVIEW`。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`，与请求和 recovery message 一致。
+- authority: 不再自动发起审查，不运行 Planner final validation 或最终验收准备。
+- next: fresh governance consistency validation 后等待新的用户明确指令。
+
+### 2026-07-29T06:11:14Z - TASK-012 最终窄复核状态恢复验证通过
+
+- validation: diff、project、registry、messages、strict lane、受保护范围和过期状态扫描全部 PASS。
+- state: `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`。
+- next: 不自动发起更多审查，等待新的用户明确指令。
+
+### 2026-07-29T06:41:05Z - TASK-012 额外 closure review 预同步
+
+- user_authority: 用户精确授权 TASK-012 进行一次额外独立 closure review。
+- ordering: 先将活动任务、项目状态和 Board 同步为 `UNDER_REVIEW`，验证可见后才唤醒 Reviewer。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- message: `MSG-TASK-012-AUTHORIZED-CLOSURE-REVIEW` 已创建并 dry-run，尚未唤醒线程。
+- boundary: 只确认 closure 状态与既有证据，不重审业务、不实施、不 Git。
+
+### 2026-07-29T06:45:09Z - TASK-012 追加 closure review PASS
+
+- review: `PASS / P0=0 / P1=0 / P2=0`。
+- closed: 状态时序缺陷与旧验证叙述 P2 均关闭。
+- preserved: 全部历史、恢复证据、治理和受保护范围保持通过。
+- state: `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`；PASS 不等于用户验收。
+- next: Planner fresh final validation，随后 checked `prepare-awaiting-user`。
+
+### 2026-07-29T06:46:15Z - TASK-012 Planner fresh final validation PASS
+
+- validation: diff、CMS contract 16/2/2、project、registry、messages、strict lane、受保护范围和空 queue 全部 PASS。
+- state: `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- next: checked `prepare-awaiting-user` only。
+
+### 2026-07-29T06:48:17Z - TASK-012 验收视图同步
+
+- first_prepare: checked `prepare-awaiting-user` 于 2026-07-29T06:47:17Z PASS。
+- reopen: 仅为同步 Helper 未更新的人类可读验收视图；review、validation、业务交付物不变。
+- acceptance_view: `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- next: fresh governance check 后再次 checked prepare。
+
+### 2026-07-29T06:52:10Z - TASK-012 正式验收
+
+- user_phrase: `确认 TASK-012 完成并提交到远端`。
+- acceptance: task_accept helper PASS；`acceptance_state=ACCEPTED`。
+- decision: ADR-006 随 TASK-012 验收生效。
+- git: `FORMAL_COMMIT_PENDING`；当前仅执行任务分支提交/推送与 `main` 合并/推送。
+- boundary: 未部署，未开始下一任务。
+
+### 2026-07-29T06:32:54Z - TASK-012 状态闭环确认已派发
+
+- user_authority: 用户要求继续完成 TASK-012 收口。
+- corrected_contract: 派发前恢复态为 `NEEDS_REVISION`；成功受控派发后的正确审查态为 `UNDER_REVIEW`。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- message: `MSG-TASK-012-STATE-CLOSURE-CONFIRMATION` 已投递注册 Reviewer。
+- boundary: 只验证状态闭环，不重审业务合同，不实施业务、Git 或下一任务。
+- next: 等待 PASS/FAIL/BLOCKED。
+
+### 2026-07-29T06:35:37Z - TASK-012 状态闭环时序恢复
+
+- review: `FAIL / P0=0 / P1=0 / P2=1`。
+- accepted_rule: 派发前为 `NEEDS_REVISION`，成功派发后 active review 应为 `UNDER_REVIEW`。
+- timing_failure: Reviewer 在线程桥唤醒后、Planner 完成共享文件状态同步前读取了旧快照。
+- passed: 其余叙述、历史、恢复证据、治理和受保护范围全部 PASS。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION` 作为 post-review recovery。
+- authority: 不自动发起下一轮审查或 final validation。
+- next: recovery validation 后等待新的用户明确指令。
+
+### 2026-07-29T06:36:45Z - TASK-012 状态闭环时序恢复验证通过
+
+- validation: diff、project、registry、messages、strict lane、受保护范围和过期状态扫描全部 PASS。
+- state: `NEEDS_REVISION / NOT_ACCEPTED / DIRTY`。
+- next: 不自动发起更多审查，等待新的用户明确指令。

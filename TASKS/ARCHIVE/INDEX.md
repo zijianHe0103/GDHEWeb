@@ -47,3 +47,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`a89bb4de91e63dce2f9960e31b1cd39cae58f335`
   - Remote branch：`origin/codex/TASK-010-cms-runtime-schema-validator`
   - Main：`origin/main` at `a89bb4de91e63dce2f9960e31b1cd39cae58f335`
+- `TASK-011` 英语版最小 CMS Adapter 与本地可见集成页 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-011-minimal-cms-integration-page.md`
+  - Commit：`90e6deaadc05c85df51a56bec4062b657ba65917`
+  - Remote branch：`origin/codex/TASK-011-minimal-cms-integration-page`
+  - Main：`origin/main` at `90e6deaadc05c85df51a56bec4062b657ba65917`

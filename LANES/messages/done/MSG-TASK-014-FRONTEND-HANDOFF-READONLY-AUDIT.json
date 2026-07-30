@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT",
+  "type": "task_assignment",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-014",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-29T18:43:26Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Acknowledge and perform only the TASK-014 read-only ProductCard handoff consumer audit in the context file. Verify exact Schema/checksum closure, one collection request and zero per-card resolve, closed DTO/action/reference/error/cache/server-only boundaries, and identify the minimum next frontend task plus entry gates. Return PASS/FAIL/BLOCKED with P0/P1/P2 and one controlled execution_response. Do not modify frontend, CMS, root docs, dependencies, runtime, external systems, task state, Git delivery, acceptance or deployment.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_AUDIT_REQUEST.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_READONLY_AUDIT.md"
+  ],
+  "notes": "",
+  "dispatched_at": "2026-07-29T18:43:39Z",
+  "delivery_key": "MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-29T18:44:36Z",
+  "updated_at": "2026-07-29T18:44:36Z"
+}

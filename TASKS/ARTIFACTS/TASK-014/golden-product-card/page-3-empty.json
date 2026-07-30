@@ -1,0 +1,13 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "locale": "en",
+    "type": "product_card",
+    "sort": "modified_desc",
+    "filter": null,
+    "page": 3,
+    "perPage": 2,
+    "total": 4,
+    "totalPages": 2,
+    "items": []
+}

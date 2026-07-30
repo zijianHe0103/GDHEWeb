@@ -2,7 +2,7 @@
 accepted_at: 2026-07-29T15:52:30Z
 
 task_id: TASK-013
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, wordpress_cms, localization_seo]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-013
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-29T15:48:07Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: NOT_APPLICABLE
 project_type: software
@@ -153,7 +153,7 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-29T15:52:30Z 使用精确口令正式验收 TASK-013。Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation、完整治理审计和 checked acceptance preparation 均已通过。当前只执行正式提交、任务分支推送、合并 `main` 与推送 `main`。
+`CLOSED / ACCEPTED / MERGED`。用户于 2026-07-29T15:52:30Z 使用精确口令正式验收 TASK-013；正式提交 `72d500bd2bb424a0f3896b336f3e9a3d79f90ab9` 已推送任务分支，并快进合并、推送至远端 `main`。
 
 ## 恢复入口
 
@@ -161,7 +161,7 @@ project_type: software
 
 ## 下一步
 
-执行正式 Git 交付：提交并推送 `codex/TASK-013-english-ia-url-cta-contract`，随后合并并推送 `main`。不得启动 TASK-014、产品实现、CMS/API/Schema 修改或部署。
+无。本任务已正式交付并归档；后续工作必须通过独立任务登记。
 
 ## Lane Plan
 

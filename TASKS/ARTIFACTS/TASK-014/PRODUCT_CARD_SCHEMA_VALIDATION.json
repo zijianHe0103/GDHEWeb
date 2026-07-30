@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "closureFiles": [
+    "card-action.v1.schema.json",
+    "card-attribute.v1.schema.json",
+    "product-card-collection.v1.schema.json",
+    "product-card.v1.schema.json",
+    "public-path.schema.json",
+    "public-protected-media.v1.schema.json",
+    "public-taxonomy-ref.v1.schema.json",
+    "uuid-v4.schema.json"
+  ],
+  "positiveCount": 1,
+  "negativeCount": 6,
+  "runtimeGoldenCount": 8,
+  "runtimeGoldenResults": [
+    {
+      "golden": "all.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "filtered-empty.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "filtered.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "one-item.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "page-1.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "page-2.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "page-3-empty.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "golden": "title-asc.json",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "valid": true
+}

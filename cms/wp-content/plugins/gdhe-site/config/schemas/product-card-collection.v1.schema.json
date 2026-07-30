@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/product-card/v1/product-card-collection.v1.schema.json",
+  "title": "GDHE Product Card Collection 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "schemaVersion",
+    "locale",
+    "type",
+    "sort",
+    "filter",
+    "page",
+    "perPage",
+    "total",
+    "totalPages",
+    "items"
+  ],
+  "properties": {
+    "apiVersion": {
+      "const": "1"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "locale": {
+      "const": "en"
+    },
+    "type": {
+      "const": "product_card"
+    },
+    "sort": {
+      "enum": ["modified_desc", "title_asc"]
+    },
+    "filter": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^product_category:[a-z0-9]+(?:-[a-z0-9]+)*$"
+        }
+      ]
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "perPage": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totalPages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "product-card.v1.schema.json"
+      }
+    }
+  }
+}

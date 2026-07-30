@@ -30,12 +30,15 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 - `/wp-json/gdhe/v1/schema`
 - `/wp-json/gdhe/v1/resolve?locale=en&path=/&schema=3.0.0`
 - `/wp-json/gdhe/v1/collection/{type}?locale=en`
+- `/wp-json/gdhe/v1/product-cards?locale=en&schema=1.0.0&page=1&per_page=10`
 - `/wp-json/gdhe/v1/navigation?locale=en`
 - `/wp-json/gdhe/v1/route-manifest?locale=en`
 
 当前公开内容模型包括原生 `page`/`post`，以及 `product`、`market`、`reference`、`support_article`、`download`；`site_settings` 不公开。
 
-前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
+`product-cards` 是独立、封闭的 ProductCard Schema `1.0.0` collection：一次请求返回列表渲染所需的完整卡片 DTO，资格校验先于筛选、总数和分页，禁止前端逐卡调用 `/resolve`。它不会改变 Content Schema `3.0.0` 或原有四个公开内容端点。
+
+前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；ProductCard 目前只有 CMS/API 合同和本地合成 Fixture，尚无前端消费者、可见产品页或正式产品导入。Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
 
 ### 前端离线合同快照
 

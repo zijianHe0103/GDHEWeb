@@ -1,0 +1,63 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "locale": "en",
+    "type": "product_card",
+    "sort": "modified_desc",
+    "filter": null,
+    "page": 1,
+    "perPage": 1,
+    "total": 4,
+    "totalPages": 4,
+    "items": [
+        {
+            "id": "41000000-0000-4000-8000-000000000001",
+            "kind": "detail_product",
+            "model": "Flow Control Task-014-detail_active",
+            "name": "TASK-014 Alpha Detail Active",
+            "publicPath": "/products/task-014-alpha-detail-active/",
+            "image": {
+                "id": "42000000-0000-4000-8000-000000000001",
+                "url": "https://media.gdhe.example/task-014/detail_active.webp",
+                "width": 1200,
+                "height": 800,
+                "alt": "Protected synthetic TASK-014 product card image"
+            },
+            "primaryCategory": {
+                "id": "44000000-0000-4000-8000-000000000001",
+                "label": "TASK-014 Card Products",
+                "publicPath": "/products/curtain-track-systems/task-014-card-products/"
+            },
+            "series": [
+                {
+                    "id": "44000000-0000-4000-8000-000000000002",
+                    "label": "TASK-014 Series",
+                    "publicPath": "/series/task-014-series/"
+                }
+            ],
+            "applications": [
+                {
+                    "id": "44000000-0000-4000-8000-000000000003",
+                    "label": "TASK-014 Application",
+                    "publicPath": "/applications/task-014-application/"
+                }
+            ],
+            "summary": "Synthetic TASK-007-A3-REVIEW-R1 summary.",
+            "keyAttributes": [
+                {
+                    "key": "system_type",
+                    "label": "System type",
+                    "value": "Synthetic fixture",
+                    "unit": null
+                }
+            ],
+            "lifecycle": "active",
+            "action": {
+                "mode": "view_product",
+                "label": "View Product",
+                "targetPath": "/products/task-014-alpha-detail-active/"
+            },
+            "modifiedAt": "2026-07-29T08:00:00+00:00"
+        }
+    ]
+}

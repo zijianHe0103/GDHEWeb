@@ -264,6 +264,7 @@ TASK-002 冻结的量化复评门继续有效，但它不再构成“下一阶�
 0. 当前已实现的 GDHE 合同边界
    - TASK-007 已交付 REST API `1`、Content Schema `3.0.0`、Module Schema `1.0.0` 与匿名只读 `GET /wp-json/gdhe/v1/schema`。
    - TASK-007 已交付并冻结 `GET /resolve`、`GET /collection/{type}`、`GET /navigation` 和 `GET /route-manifest`；它们只返回通过 Schema 3、模板配对、路径唯一性和公开资格校验的已发布内容。
+   - TASK-014 在不改变上述合同的前提下新增匿名只读 `GET /product-cards` 与独立 ProductCard Schema `1.0.0`。一次 collection 响应提供完整卡片 DTO；公开资格先于 filter/total/pagination，前端不得逐卡调用 `/resolve`。
    - 当前公开类型为原生 `page`、原生 `post`、`product`、`market`、`reference`、`support_article` 和 `download`；`site_settings` 仍无公开 Core REST route。
    - Core REST 的 GDHE 投影继续使用 allowlist；通用 `acf`、原始 SCF/postmeta 和内部数据库形状不是公开合同。
 1. 核心 `/wp-json/wp/v2/*`
@@ -315,7 +316,7 @@ interface ContentEnvelope {
 }
 ```
 
-这段 TypeScript 仍只是 TASK-002 的历史契约示例，不是当前 Schema 3 消费事实。TASK-007 已交付版本化 PHP/JSON 合同与代表性 Fixture，TASK-008～011 已交付当前 `/resolve` 前端闭包和最小消费者；未来产品卡片与 SEO 归一化合同只可按第 14 节阶段 1 的缺口证据另立任务。
+这段 TypeScript 仍只是 TASK-002 的历史契约示例，不是当前 Schema 3 消费事实。TASK-007 已交付版本化 PHP/JSON 合同与代表性 Fixture，TASK-008～011 已交付当前 `/resolve` 前端闭包和最小消费者；TASK-014 已增加独立 ProductCard CMS/API 合同，但尚未建立前端 snapshot、Validator、Transport、Adapter 或可见卡片页面。`SeoDocument` 归一化合同与前端 ProductCard consumer 仍须分别另立任务。
 
 ### 5.4 错误和版本边界
 
@@ -595,7 +596,7 @@ uploads.example.com    私有上传服务，不公开列目录
 
 ### 14.1 保留的交付基线
 
-TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重排为由扩张其既有范围：
+TASK-001 至 TASK-013 全部保留，不回退、不重做，也不以路线重排为由扩张其既有范围：
 
 | 任务 | 保留的交付事实 |
 |---|---|
@@ -605,8 +606,12 @@ TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重�
 | TASK-009 | server-only `/resolve` Transport、固定英语路径和错误语义 |
 | TASK-010 | 运行时 Schema Validator 与调用方隔离的 validated wrapper |
 | TASK-011 | 最小 Adapter、server-only 编排、技术集成页、真实 WordPress E2E 与强制清理 |
+| TASK-012 | 真实产品边界、B2B 询价、飞书/WordPress 权威拆分、同步/媒体规则和产品优先路线图；当前记录仍是测试数据 |
+| TASK-013 | 英语 IA、URL/canonical、CTA、ProductCard projection、最小 SEO 输入合同、测试候选和实施缺口 |
 
-这些交付证明技术链路能够工作；它们不证明真实 GDHE 产品已适配、正式 IA/URL/CTA 已冻结、正式模板已完成、生产 Preview/cache/Webhook/Staging 已交付或多语言已启用。
+这些交付证明技术链路能够工作，并已冻结 TASK-013 范围内的英语 IA/URL/CTA 合同；它们不证明真实 GDHE 产品已适配、正式模板已完成、生产 Preview/cache/Webhook/Staging 已交付或多语言已启用。
+
+TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Schema `1.0.0` 的 CMS/API 合同、合成 Fixture 和验证证据；它尚未获得用户验收或 Git 交付，也不代表已有前端卡片、可见页面或生产目录。
 
 ### 14.2 内容与参考权威
 
@@ -621,6 +626,7 @@ TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重�
 - TASK-007 CMS 权威合同从 `page.v3`、`collection.v3`、`navigation`、`route-manifest` 和 `error` 五个根递归解析本地 `$ref`，得到 **19-file transitive Schema graph**。
 - TASK-008 固定、TASK-010 编译、TASK-011 消费的是 `page.v3` + `error` 的前端本地 **16-Schema `/resolve` closure**。
 - 两者共有同一组 16 个 `/resolve` 文件；CMS 图额外包含 `collection.v3.schema.json`、`navigation.schema.json` 和 `route-manifest.schema.json`。前端没有额外文件，差异不表示合同丢失，也不授权扩大当前前端消费者。
+- TASK-014 ProductCard 是独立的 **8-file Schema closure**，不并入或改写上述 19/16 图。当前没有 ProductCard 前端 snapshot，因此不能把 8 个文件误称为前端已消费合同。
 
 ### 14.4 权威候选阶段
 
@@ -655,8 +661,8 @@ TASK-001 至 TASK-011 全部保留，不回退、不重做，也不以路线重�
    - 正常多产品询价统一使用 `/request-a-quote/`；通用联系和停产替代咨询使用 `/contact/`。有详情页的复杂产品先进入详情完成已知选择，小配件若无独立详情页可以在目录/关联模块满足选择与数量要求后直接加入询价。网站不建立购物车、结账或支付。
    - 发布保护与询价资格分离：首次同步仍创建 WordPress 草稿并由编辑人员手动发布；缺少公开保护图和基本公开身份时不得公开。产品成功同步并在 WordPress 公开后，即使网页端规格或 Article Number 不能唯一解析，也可以提交 `Request a Quote`；询价携带稳定产品身份、公开型号、已知选项、数量和备注，Article Number 可为空并由业务员在飞书中后续解析。前端/API 不得猜测规格组合或 Article Number。
    - 产品卡片采用统一骨架：公开保护图、型号、英语名称、可选的 `wp-admin` 人工英语短摘要、最多三项分类专属关键参数、必要状态和已确认动作。卡片不显示价格、成本、MOQ、供应商、库存或内部 Article Number 选择结果。
-   - normalized ProductCard collection、typed lifecycle/action 与 `SeoDocument` 的目标合同已冻结，但当前 CMS collection item 仍只有 `id/type/title/publicPath`，CTA 仍是 generic link，Schema 3 仍无 normalized SEO/page-state。因此在另行实施 CMS/API 与 frontend consumer closure 前，禁止用逐卡 `/resolve`、前端 heuristic 或原始 WordPress/SCF 数据拼出真实卡片或 SEO。
-   - TASK-014 本地候选冻结为 `FGD X15+PVC / GDHEPRD000172`、`SSD-01 / GDHEPRD000692 + GDHEPRD000695`、`PJ-D16 / GDHEPRD000640`。三者均为 `TEST_CANDIDATE / noindex`，不是生产目录、正式发布授权、最终 Article Number 冻结或 10～20 产品门通过。
+   - normalized ProductCard collection 与 typed lifecycle/action 已通过 TASK-014 实现为新增 `/product-cards` 和独立 Schema `1.0.0`；既有通用 `collection.v3` item 仍只有 `id/type/title/publicPath`，没有被静默扩张。当前仍缺 frontend ProductCard snapshot/Validator/Transport/Adapter 与 `SeoDocument`/page-state 合同，因此不得用逐卡 `/resolve`、前端 heuristic 或原始 WordPress/SCF 数据绕过这些缺口。
+   - TASK-013 为 TASK-014 选择的业务测试候选是 `FGD X15+PVC / GDHEPRD000172`、`SSD-01 / GDHEPRD000692 + GDHEPRD000695`、`PJ-D16 / GDHEPRD000640`；TASK-014 实际合同测试使用隔离的合成 Fixture，没有导入或发布上述业务记录。两者都不构成生产目录、正式发布授权、最终 Article Number 冻结或 10～20 产品门通过。
    - 生产 canonical origin 暂未确定，作为正式部署前必须关闭的 `DEPLOYMENT_GAP`；未来由受控 `PUBLIC_SITE_ORIGIN` 提供。WordPress、Local、Preview 和 Staging origin 不得成为生产 canonical。
    - TASK-013 权威交付物为 `TASKS/ARTIFACTS/TASK-013/IA_AND_PAGE_TYPE_MAP.md`、`URL_AND_CANONICAL_CONTRACT.md`、`CTA_CONTRACT.md`、`PRODUCT_CARD_PROJECTION.md`、`SEO_MINIMUM_CONTRACT.md`、`VERTICAL_SLICE_CANDIDATES.md` 和 `GAP_REPORT.md`。
 

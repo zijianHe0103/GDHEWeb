@@ -2643,3 +2643,150 @@ Each execution records:
 - acceptance: task_accept helper PASS；`acceptance_state=ACCEPTED`。
 - git: `FORMAL_COMMIT_PENDING`；当前仅执行任务分支提交/推送与 `main` 合并/推送。
 - boundary: 未部署，未开始 TASK-014。
+
+### 2026-07-29T16:15:22Z - TASK-014 任务登记
+
+- trigger: 用户在 TASK-013 正式交付后要求“继续”。
+- previous: TASK-013 提交 `72d500b` 已推送任务分支和远端 `main`，本次同步为 `CLOSED / MERGED` 并归档。
+- authority: TASK-013 Gap Report 要求真实卡片 UI 前先完成 normalized ProductCard collection machine contract。
+- granularity: 只登记 CMS/API/Schema ProductCard collection；SeoDocument、frontend consumer 和可见页面不并入本任务。
+- branch: `codex/TASK-014-product-card-collection-contract`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- boundary: 未修改 CMS/API/Schema、frontend、数据库或外部系统，未 dispatch。
+- next: 等待 `确认 TASK-014 需求并开始执行`。
+
+### 2026-07-29T16:26:57Z - TASK-014 需求确认
+
+- user_phrase: `确认 TASK-014 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- scope: additive ProductCard collection CMS/API/Schema、Fixture、验证和 handoff。
+- tdd: RED -> GREEN -> regression；实现代码不得先于失败测试。
+- boundary: 不包含 SeoDocument、frontend consumer、可见页面、飞书、RFQ 或部署。
+- next: DESIGN、IMPLEMENTATION_PLAN 和 baseline validation 通过后再 dispatch。
+
+### 2026-07-29T16:46:06Z - TASK-014 design gate 通过
+
+- design: 冻结 additive `/gdhe/v1/product-cards`、独立 Schema 1.0.0、closed item/envelope 和四格 action 派生规则。
+- source: 不增加长期 SCF 编辑字段；内部 source document 只承载不能推测的显式输入，生产映射后置。
+- baseline: WordPress 7.0.2、SCF 6.9.2、GDHE Site 0.4.2；CMS 19/15/6 通过。
+- runtime: 本地 MySQL 8.4 / GDHE 连通；A3 Fixture option/marker 为 0。
+- validation: project、registry、messages、strict lane、diff 全部 PASS。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: 创建并真实桥接 wordpress_cms 实施消息；要求先测试 RED，再最小 GREEN。
+
+### 2026-07-29T18:26:34Z - TASK-014 CMS Planner checkpoint P1
+
+- response: `MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION-RESPONSE` 已受控回传并 ACK；首轮 TDD、runtime、determinism、A3 回归、清理和 handoff 证据完整。
+- independent_validation: Planner 重跑 ProductCard 两轮 determinism、A3 runtime、Schema/handoff、PHP/JSON、数据库零残留和治理检查均通过。
+- p1: `gdhe_product_card_public_reference()` 未验证 source reference `id` 等于 resolved target 的稳定 public UUID。
+- fixture_evidence: 合法 source category 使用 `43000000-...-0001`，对应 landing `_gdhe_public_id` 却为 `44000000-...-0001`；当前 Golden 固化了错误 identity。
+- state: 保持 `IN_PROGRESS / NOT_ACCEPTED / DIRTY`；这是实现 checkpoint 内的单一窄修订，不开始 frontend audit 或 review。
+- next: 受控派发 wordpress_cms 先补 mismatch RED，再最小绑定修复、刷新 Golden/checksum/证据并重跑全回归。
+
+### 2026-07-29T18:41:52Z - TASK-014 CMS Planner checkpoint PASS
+
+- p1_response: public-reference identity P1 R1 response 已通过真实线程桥处理并由 Planner ACK。
+- p1_closed: shared helper 绑定 source UUID 与 resolved target stable UUID；合法 Fixture 对齐，`mismatched_reference_id` 覆盖主分类、系列和应用。
+- independent_product_card: 两轮不同数据库 ID，7/7 Golden hashes 一致；12/12 invalid/unpublished exclusions；0/1/N、action、filter/total 保持通过。
+- independent_a3: 15 Golden、runtime totals `3/3/3`、items `2/1/0`、19-file graph、6 boundary negatives 通过。
+- cleanup: TASK-014/A3 六项数据库计数均为 0。
+- handoff: Planner 重跑动态证据后按当前字节重新冻结，24/24 checksums 通过。
+- docs: 根 README 与架构契约已同步，明确当前没有 frontend ProductCard consumer、可见页面、SeoDocument 或生产数据。
+- state: `IN_PROGRESS / NOT_ACCEPTED / DIRTY`。
+- next: 受控派发 frontend read-only handoff audit，不修改 `frontend/**`。
+
+### 2026-07-29T18:54:15Z - TASK-014 frontend handoff audit Round 1 FAIL
+
+- response: frontend 只读 audit response 已受控送达并由 Planner ACK。
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`。
+- passed: 8-file closure、24/24 checksum、closed DTO、action/path、零逐卡 `/resolve`、error/cache 和 server-only feasibility。
+- p1_1: 七份 runtime Golden counts `4/0/4/2/2/0/4`，没有真实 1-item HTTP 证据。
+- p1_2: 所有成功样本 `series/applications` 为空，没有合法非空 identity-bound relation 正向证据。
+- p2: 生产 media origin/Next Image allowlist 后置为可见页面/部署 gate。
+- helper: 按 developer gate 运行 `task_transition.py reopen`，因当前是 `IN_PROGRESS` 而非 `AWAITING_USER` 安全拒绝，未修改状态。
+- state: 保持 `IN_PROGRESS / NOT_ACCEPTED / DIRTY`；这是实现证据循环，不开始 adversarial review。
+- next: 受控派发 wordpress_cms 只补两个 P1，重跑 Planner checkpoint 后再做窄 frontend 复核。
+
+### 2026-07-30T03:57:47Z - TASK-014 frontend handoff P1 Planner checkpoint PASS
+
+- response: wordpress_cms 两项 P1 revision response 已受控回传并由 Planner ACK。
+- p1_1: 真实匿名 one-item Golden 证明 `200 / 1 item / total 4 / totalPages 4` 与既有 headers/action/零逐卡 resolve。
+- p1_2: 合法 card 输出非空 series/application，source UUID 与 unique public target stable UUID 匹配；三处 mismatch negative 保持拒绝。
+- independent_product_card: 两轮不同 DB IDs、8/8 hashes 相同，每轮 cleanup 19 posts/3 terms。
+- independent_a3: 15 Golden、runtime `3/3/3`、19-file graph、6 negatives 通过。
+- cleanup: TASK-014/A3 六项 DB residue 均为 0。
+- handoff: Planner 运行后重新冻结并复核 25/25 checksums。
+- state: `IN_PROGRESS / NOT_ACCEPTED / DIRTY`。
+- next: 受控派发 frontend Round 2 窄复核，不实施 frontend。
+
+### 2026-07-30T04:07:22Z - TASK-014 frontend Round 2 PASS 与 review gate
+
+- response: frontend Round 2 response 已受控送达并由 Planner ACK。
+- verdict: `PASS / P0=0 / P1=0 / P2=1`；Round 1 两个 P1 已关闭，历史保留。
+- preserved: 8-file/25-checksum、8 success/9 error、closed DTO、actions、zero resolve、cache/304、determinism/cleanup 均通过。
+- p2: production media origin / Next Image allowlist 后置为可见页面/部署 gate，不阻塞 TASK-014。
+- artifacts: generic execution report 与 adversarial review request 已完成。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 独立 adversarial review；不实施 frontend、不验收、不 Git。
+
+### 2026-07-30T04:24:46Z - TASK-014 adversarial Round 1 FAIL recovery
+
+- response: `MSG-TASK-014-ADVERSARIAL-REVIEW-R1-RESPONSE-CORRECTED` 已通过 `lane_message.py` ACK；原遗漏 reviewer `.pyc` 的 response 保留为 superseded 历史。
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`；不允许 Planner final validation。
+- p1: taxonomy reference 未绑定 `primaryCategory`、`series`、`applications` 的 TASK-013 route role；超大 digit-only `page` 可让 offset 溢出并在 `array_slice` 抛 `TypeError`。
+- p2: reviewer 生成两个精确 `.pyc`，其 cleanup 被只读 scope 正确阻止；将由 wordpress_cms 精确删除。
+- helper: `task_transition.py reopen` 已运行并因只接受 `AWAITING_USER` 安全拒绝，无 mutation。
+- transition: 未伪造 `AWAITING_USER`；按真实审查事实同步 `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- preserved: additive、8-file/25-checksum、A3、0/1/N、actions、cache/304、determinism、frontend Round 2 passing boundaries。
+- next: 只 dispatch wordpress_cms 窄 TDD 修订，之后 fresh Planner validation 和已配置 final Round 2；不启动 frontend/TASK-015/Git/部署。
+
+### 2026-07-30T04:29:22Z - TASK-014 revision authority correction
+
+- blocker: wordpress_cms 在 mutation 前指出初始 assignment 与 TASK-013 URL 权威冲突，并通过关联 blocker 停止；未改代码、测试、Fixture 或数据库。
+- planner_error: 初始 assignment 错把 `primaryCategory` 固定为 `/products/category/...`，并引用不存在的 `ROUTE_AND_CANONICAL_CONTRACT.md`。
+- correction: authoritative file 是 `TASKS/ARTIFACTS/TASK-013/URL_AND_CANONICAL_CONTRACT.md`；主分类 route role 只接受 `/products/curtain-track-systems/...` 或 `/products/accessories/...`，系列接受 `/series/...`，应用接受 `/applications/...`。
+- message: blocker 已 ACK；下一条 continuation 必须保持两个 P1 和 `.pyc` cleanup 同一窄范围，不拆成半完成状态。
+
+### 2026-07-30T05:03:54Z - TASK-014 adversarial R1 revision Planner checkpoint PASS
+
+- response: corrected wordpress_cms execution response 已 ACK；初始 response 在 dispatch 前撤回。
+- independent_finding: Planner byte-level scan 发现 Schema-only inline positive 仍有 `/products/category/...`；wordpress_cms 单点修正为合法 curtain-track category，重跑 Schema 与 handoff。
+- product_card: Planner 独立两轮 Fixture determinism PASS，DB IDs 改变、8/8 hashes 一致、每轮 cleanup 19 posts/3 terms；11 negatives、12 exclusions、route roles、extreme pagination 通过。
+- a3: Planner fresh runtime/Schema 为 19/15/6、totals `3/3/3`、items `2/1/0`；cleanup 18 posts/1 attachment/5 terms。
+- residue: TASK-014/A3 六项 DB count `0`；plugin tests 无 pyc/cache。
+- integrity: active old namespaces 0、25/25 handoff、PHP/JSON/Python、Core/SCF、12-table DB、protected scope、project/registry/messages/strict lane/diff 全 PASS。
+- environment: sandbox-local TCP denial caused a false DB-down signal; an attempted default 3306 Homebrew start failed against its unrelated legacy data dir and exited. Actual GDHE MySQL stayed on 3307 and validated outside sandbox; 3306 has no listener.
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: dispatch only configured adversarial final Round 2; no frontend/TASK-015/acceptance/Git/deployment。
+
+### 2026-07-30T05:18:31Z - TASK-014 adversarial Round 2 final PASS
+
+- response: `MSG-TASK-014-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 ACK。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Round 1 FAIL 与 recovery 历史保留。
+- independent: reviewer 在 3307 只读实测两种 overflow 为 normalized `400/no-store`，验证 route-role matrix、8/8、11 errors、12 exclusions、25/25、A3 19/15/6、Core/SCF/DB、zero residue 和 governance。
+- planner_post_review: 25/25 handoff、old namespace 0、pyc/cache 0、project/registry/messages/strict lane/diff fresh PASS。
+- summary: `PLANNER_SUMMARY.md` 完成；明确本任务无可见页面、正式产品数据、SeoDocument、RFQ/飞书或部署。
+- next: checked `prepare-awaiting-user` only；PASS 不等于用户验收或 Git 授权。
+
+### 2026-07-30T05:24:10Z - TASK-014 prepared for user acceptance
+
+- evidence_normalization: review report 和 validation log 补充工具要求的显式机器可读 `PASS`，不改变审查结论、验证内容、代码或合同。
+- first_prepare: checked `prepare-awaiting-user` 于 05:23:00Z PASS。
+- recovery: helper 未同步 Board 与当前人类可读段落；按受控流程 reopen 到 `NEEDS_REVISION`，只同步三个状态面。
+- final_prepare: 状态显示同步后再次执行 checked `prepare-awaiting-user` 并 PASS。
+- state: `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- next: 等待精确口令 `确认 TASK-014 完成并提交到远端`；不启动 TASK-015，不执行 Git 或部署。
+
+### 2026-07-30T05:25:44Z - TASK-014 strict audit narrative recovery
+
+- finding: full project audit reported `FAILED_REVIEW_OR_VERIFY_AWAITING_USER` and `REVIEW_EVIDENCE_MISSING` because the exact current `Adversarial Review` section mixed historical Round 1 failure text with final Round 2 PASS and did not label evidence explicitly。
+- recovery: controlled reopen returned the task to `NEEDS_REVISION`; no implementation, contract, runtime, database or authorization change。
+- correction: current review section now contains only final PASS and explicit evidence; Round 1 history remains under a separate historical heading。
+- next: fresh strict audit and checked `prepare-awaiting-user`; if both pass, stop for user acceptance。
+
+### 2026-07-30T05:28:54Z - TASK-014 formally accepted
+
+- authorization: 用户输入精确口令 `确认 TASK-014 完成并提交到远端`。
+- acceptance: `task_accept.py accept` PASS；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- delivery: 只执行正式提交、推送当前任务分支、合并 `main` 和推送 `main`。
+- boundary: 不启动 frontend、TASK-015 或部署；不提交既有无关 resume packets。

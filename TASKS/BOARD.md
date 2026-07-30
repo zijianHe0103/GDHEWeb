@@ -1,7 +1,7 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-013
+current_task: TASK-014
 
 ## 活动任务
 
@@ -17,7 +17,7 @@ current_task: TASK-013
 
 ## 等待推送
 
-- `TASK-013` 冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同 — `ACCEPTED` / `FORMAL_COMMIT_PENDING` / `ROUND_2_PASS_P0_P1_P2_ZERO`
+- `TASK-014` 英语版 ProductCard Collection CMS/API 合同基础 — `ACCEPTED` / `FORMAL_COMMIT_PENDING` / `ROUND_2_PASS_P0_P1_P2_ZERO`
 
 ## 已暂停
 
@@ -25,6 +25,7 @@ current_task: TASK-013
 
 ## 最近关闭
 
+- `TASK-013` 冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同 — `CLOSED` / `MERGED`
 - `TASK-012` 真实产品优先的实施路线图重排 — `CLOSED` / `MERGED`
 - `TASK-011` 英语版最小 CMS Adapter 与本地可见集成页 — `CLOSED` / `MERGED`
 - `TASK-010` 英语版 CMS Runtime Schema Validator 基础 — `CLOSED` / `MERGED`
@@ -71,3 +72,7 @@ current_task: TASK-013
 ## Accepted
 
 - TASK-013: ACCEPTED at 2026-07-29T15:52:30Z
+
+## Accepted
+
+- TASK-014: ACCEPTED at 2026-07-30T05:28:54Z

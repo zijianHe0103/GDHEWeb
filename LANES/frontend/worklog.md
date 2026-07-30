@@ -588,3 +588,56 @@ Each execution records:
 - next: send the linked execution_response to Planner; Planner owns authority synthesis and any follow-up task dispatch
 - message_result: `MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT-RESPONSE` was delivered through the Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, recorded as dispatched, and removed from queue; `requires_response_to=MSG-TASK-013-A2-FRONTEND-READONLY-AUDIT`
 - unique_next_step: Planner reads the audit, reconciles it with the other A2 evidence, and controls any authority confirmation or follow-up task; frontend does not start TASK-014
+
+### 2026-07-30T02:44:08+08:00 - TASK-014 ProductCard handoff read-only audit
+
+- task: TASK-014
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT
+- message_ack: exact dispatched request acknowledged before audit execution
+- scope: read-only ProductCard consumer audit; only `TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_READONLY_AUDIT.md`, this worklog and controlled message state are writable
+- evidence_read: active task, DESIGN, IMPLEMENTATION_PLAN, audit context, TASK-013 projection/gap, ProductCard handoff/manifest/checksums, 8 Schemas, 7 Golden responses, error/runtime/Schema/determinism evidence, Planner checkpoint, production/test implementation, CMS contract docs and current frontend consumer source/contracts
+- verdict: FAIL; P0=0, P1=2, P2=1
+- closure_pass: independent transitive traversal produced exactly 8 local Schema files; 24/24 exact checksums and manifest map/sort/count passed
+- schema_pass: independent corrected local-only resolution validated 7 success and 9 error fixtures; CMS/frontend public-path, UUID and error Schemas are byte-identical
+- validation_note: first independent Schema command omitted the ProductCard-relative alias for reused UUID and safely failed at local resolution; corrected local store passed without file or runtime mutation
+- dto_pass: closed Schema shapes, 14 public item fields, forbidden-key scan and all four action/path cells passed
+- n_plus_one_pass_boundary: ProductCard endpoint contains no resolve or HTTP subrequest and returns complete items; current frontend has no ProductCard consumer and its only production fetch remains TASK-009 resolve
+- p1_1: runtime Golden item counts are 4/0/4/2/2/0/4; no real one-item HTTP response exists, while the one-item case is only an inline Schema instance
+- p1_2: all runtime and inline positive series/applications arrays are empty; mismatch rejection is proven for the shared helper, but no non-empty positive identity-bound relation is emitted
+- p2_1: production HTTPS media origin and Next Image allowlist remain a visible-page/deployment gate; synthetic media does not block the next frontend snapshot task
+- cache_boundary: ETag, public max-age=60, request ID, normalized no-store errors and conditional 304 are explicit; a future ProductCard Transport must remain separate from TASK-009 and use 304 only with matching validated last-known-good data
+- minimum_next_task: after P1 closure, create only a frontend-owned ProductCard 8-file snapshot/authority manifest/offline verifier with authoritative 0/1/N, four-action, positive relation and selected error samples; no Validator/Transport/Adapter/UI
+- protected_scope: frontend, CMS, root README, architecture docs, dependencies, runtime, database, external systems, Planner task/state and Git delivery remained read only; other lanes' dirty edits were preserved
+- boundaries: no adversarial review, acceptance, commit, push, merge, deployment or next-task implementation
+- validation: all artifact references exist; required headings, trailing-whitespace, absolute-path, generated-resume-packet removal and `git diff --check` gates PASS
+- protected_hashes: frontend/CMS/root-README/architecture/dependency diff hash remained `fe86c404...70119`; protected status hash remained `36605531...76d2` before and after audit
+- governance_validation: project, messages and strict lane audit PASS with zero issues
+- next: send one execution_response requiring the original audit request; Planner owns the narrow CMS evidence revision and re-audit decision
+- message_result: `MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-RESPONSE` received a real Codex thread bridge receipt for Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was recorded as dispatched and removed from queue; `requires_response_to=MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT`
+- planner_bridge_observation: one bounded thread wait observed Planner explicitly recognize both P1 findings and begin a CMS-only evidence revision; the DPG response record still remains `dispatched` pending formal Planner ACK
+- unique_next_step: Planner acknowledges the FAIL response and controls a CMS-only evidence revision for the one-item runtime case and positive non-empty series/application references; frontend does not implement the next task
+
+### 2026-07-30T12:04:01+08:00 - TASK-014 ProductCard handoff narrow re-audit R2
+
+- task: TASK-014
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2
+- message_ack: exact narrow Round 2 request read and acknowledged before audit work
+- scope: only the two Round 1 P1 closures, directly regressed passing boundaries and preserved P2; Round 1 report remains in the same artifact as explicit history
+- verdict: PASS; P0=0, P1=0, P2=1
+- p1_1_closed: independently verified the real anonymous `per_page=1&page=1` route case returns 200, one complete item, total 4, totalPages 4, frozen action and success headers; the case is one `rest_do_request`, and ProductCard production code has no resolve or HTTP subrequest path
+- p1_2_closed: independently verified the emitted one-item response has legal non-empty series/application references; each UUID/path pair matches a unique published Page Fixture with the same stable public UUID and a valid public envelope
+- mismatch_regression: primaryCategory, series and applications direct mismatch checks remain true, and the `mismatched_reference_id` candidate remains excluded
+- closure_pass: exact 8-file recursive Schema closure, lexicographically sorted 25/25 checksums and manifest map parity passed
+- schema_pass: corrected local-only resolution validated all 8 success and 9 normalized error fixtures; the first attempt lacked relative UUID aliases, attempted a blocked remote lookup, returned no data and changed no state
+- dto_action_cache_pass: recursive forbidden-key scan, closed DTO, four action cells, totals/items, normalized errors, success/error cache headers, conditional 304 and server-only feasibility remain intact
+- determinism_cleanup_pass: two rounds use different database IDs, retain identical 8/8 Golden hashes, delete 19 posts and 3 terms per round, and record zero TASK-014/A3 residue
+- p2_preserved: final production HTTPS media origin and Next Image allowlist remain one non-blocking P2 for visible page/deployment acceptance
+- minimum_next_task: only a separately governed frontend-local ProductCard contract snapshot and offline authority-bound verifier after remaining lifecycle gates; no Transport, Validator, Adapter, UI, SEO, cache, RFQ or deployment
+- protected_scope: frontend, CMS, root docs, architecture docs, dependencies, runtime, database, external systems, task state, Planner state, Git delivery, acceptance, adversarial review and deployment remained read only
+- command_note: the first recovery invocation used a misspelled workdir and did not start; the corrected recovery sequence completed normally
+- validation: artifact references, Round 1 history marker, current/final verdict consistency, Markdown headings, trailing whitespace, absolute local paths, resume-packet removal, scoped/global `git diff --check`, protected diff/status hashes, project validation, message validation and strict lane audit all PASS
+- protected_hashes: protected frontend/CMS/root-doc/architecture diff hash remained `79676675...dd4e`; protected status hash remained `3f26ab06...7ec5` before and after audit
+- message_result: `MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2-RESPONSE` received a real Codex thread bridge receipt for Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was recorded as dispatched and removed from queue; `requires_response_to=MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2`
+- unique_next_step: Planner acknowledges the PASS response and controls the remaining TASK-014 governance gates; frontend does not start the ProductCard snapshot task without a separate confirmed task and dispatch

@@ -1,0 +1,128 @@
+{
+  "evidenceVersion": "TASK-014-PRODUCT-CARD-DETERMINISM-1",
+  "fixtureVersion": "TASK-014-PRODUCT-CARD-1",
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 8,
+  "goldenHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-014-PRODUCT-CARD-1",
+        "posts": {
+          "category_landing": 1920,
+          "series_landing": 1921,
+          "application_landing": 1922,
+          "detail_active": 1923,
+          "detail_discontinued": 1924,
+          "accessory_active": 1925,
+          "accessory_discontinued": 1926,
+          "missing_image": 1927,
+          "unprotected_image": 1928,
+          "missing_category": 1929,
+          "missing_uuid": 1930,
+          "invalid_kind": 1931,
+          "invalid_lifecycle": 1932,
+          "detail_missing_path": 1933,
+          "accessory_with_path": 1934,
+          "too_many_attributes": 1935,
+          "source_action": 1936,
+          "mismatched_reference_id": 1937,
+          "draft": 1938
+        },
+        "terms": {
+          "category": 341,
+          "series": 342,
+          "installation": 343
+        }
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "all.json": "72378b235ac4c9d596eca98fcfd24de309858a810565b5331236b835a315e9ba",
+        "filtered-empty.json": "cd10e1d1b1f56428f6ee7e15f6b7a7cbc981af281940e74a25faf277ab9f7ca7",
+        "filtered.json": "fc30acb5d3492625de2bdf0311e5473ee5e411dba05343acda3877e8cc4222c6",
+        "one-item.json": "748a65137c021aaafc91a0667023ed24874a9713455abded462d6482de80ce07",
+        "page-1.json": "c7424a9767c098d28b2b72a4d876b040004654976c7ce4a1bea611949754c415",
+        "page-2.json": "c2478988deee2eb2619c2c180672251b7420211b40d288bd1f8f5cbf0acb8844",
+        "page-3-empty.json": "e7fb2a923250cb1ac7d881b338bfcb4b9d97d3e2558d5339a7bdc310cdd4d1ec",
+        "title-asc.json": "8c7fe10c086419ce2132cd3a7182454df7991e5cb4b0381ab9c87f6570f6eb5b"
+      },
+      "cleanup": {
+        "posts": 19,
+        "terms": 3
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskTermmeta": 0,
+        "a3Postmeta": 0,
+        "a3Options": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-014-PRODUCT-CARD-1",
+        "posts": {
+          "category_landing": 1939,
+          "series_landing": 1940,
+          "application_landing": 1941,
+          "detail_active": 1942,
+          "detail_discontinued": 1943,
+          "accessory_active": 1944,
+          "accessory_discontinued": 1945,
+          "missing_image": 1946,
+          "unprotected_image": 1947,
+          "missing_category": 1948,
+          "missing_uuid": 1949,
+          "invalid_kind": 1950,
+          "invalid_lifecycle": 1951,
+          "detail_missing_path": 1952,
+          "accessory_with_path": 1953,
+          "too_many_attributes": 1954,
+          "source_action": 1955,
+          "mismatched_reference_id": 1956,
+          "draft": 1957
+        },
+        "terms": {
+          "category": 344,
+          "series": 345,
+          "installation": 346
+        }
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "all.json": "72378b235ac4c9d596eca98fcfd24de309858a810565b5331236b835a315e9ba",
+        "filtered-empty.json": "cd10e1d1b1f56428f6ee7e15f6b7a7cbc981af281940e74a25faf277ab9f7ca7",
+        "filtered.json": "fc30acb5d3492625de2bdf0311e5473ee5e411dba05343acda3877e8cc4222c6",
+        "one-item.json": "748a65137c021aaafc91a0667023ed24874a9713455abded462d6482de80ce07",
+        "page-1.json": "c7424a9767c098d28b2b72a4d876b040004654976c7ce4a1bea611949754c415",
+        "page-2.json": "c2478988deee2eb2619c2c180672251b7420211b40d288bd1f8f5cbf0acb8844",
+        "page-3-empty.json": "e7fb2a923250cb1ac7d881b338bfcb4b9d97d3e2558d5339a7bdc310cdd4d1ec",
+        "title-asc.json": "8c7fe10c086419ce2132cd3a7182454df7991e5cb4b0381ab9c87f6570f6eb5b"
+      },
+      "cleanup": {
+        "posts": 19,
+        "terms": 3
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskTermmeta": 0,
+        "a3Postmeta": 0,
+        "a3Options": 0,
+        "taskUploads": 0
+      }
+    }
+  ],
+  "valid": true
+}

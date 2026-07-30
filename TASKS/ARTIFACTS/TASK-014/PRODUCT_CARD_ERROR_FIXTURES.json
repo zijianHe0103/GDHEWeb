@@ -1,0 +1,145 @@
+{
+    "locale": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_locale",
+        "message": "Only the English locale is available.",
+        "status": 400,
+        "requestId": "8e2f4703-750e-4dc8-bb24-4f7fef3271fe",
+        "details": [
+            {
+                "field": "locale",
+                "code": "gdhe_invalid_locale"
+            }
+        ]
+    },
+    "schema": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_schema",
+        "message": "Unsupported ProductCard schema version.",
+        "status": 400,
+        "requestId": "c4c8fb18-7d4d-4e27-823a-deb71c804476",
+        "details": [
+            {
+                "field": "schema",
+                "code": "gdhe_invalid_schema"
+            }
+        ]
+    },
+    "page-zero": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "9fcb5be2-051e-4b55-bcbe-bd0ad96b733a",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "page-decimal": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "1084642e-b055-4f0f-85e2-7fdcc6e4d10b",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "page-native-overflow": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "f0b2bb18-174b-488d-9c9d-602f0db22fc9",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "page-offset-overflow": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "76e42e19-ca7d-4745-8a7c-3dceeabeddc1",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "per-page": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_pagination",
+        "message": "Pagination is outside the allowed range.",
+        "status": 400,
+        "requestId": "dc50060d-2ab6-4b56-b099-26db7cd1e911",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_pagination"
+            }
+        ]
+    },
+    "sort": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_sort",
+        "message": "Sort value is not allowed.",
+        "status": 400,
+        "requestId": "376946d9-188d-405f-8d66-62836d90c11d",
+        "details": [
+            {
+                "field": "sort",
+                "code": "gdhe_invalid_sort"
+            }
+        ]
+    },
+    "filter-taxonomy": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_filter",
+        "message": "Filter value is not allowed.",
+        "status": 400,
+        "requestId": "5fdc4971-d513-4769-a2be-baee947bcb9c",
+        "details": [
+            {
+                "field": "filter",
+                "code": "gdhe_invalid_filter"
+            }
+        ]
+    },
+    "filter-slug": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_filter",
+        "message": "Filter value is not allowed.",
+        "status": 400,
+        "requestId": "03ee965c-4281-46e0-af39-f22f006c1c15",
+        "details": [
+            {
+                "field": "filter",
+                "code": "gdhe_invalid_filter"
+            }
+        ]
+    },
+    "unknown-parameter": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_parameter",
+        "message": "Query parameter is not allowed.",
+        "status": 400,
+        "requestId": "5d66acd9-4940-4f02-a16e-82d0033a9d8a",
+        "details": [
+            {
+                "field": "meta_key",
+                "code": "gdhe_invalid_parameter"
+            }
+        ]
+    }
+}

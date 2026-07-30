@@ -2,14 +2,154 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-013
+current_task: TASK-014
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-29T15:52:30Z
+last_updated: 2026-07-30T05:28:54Z
 
 ## 当前焦点
 
-`TASK-013` 为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-29T15:52:30Z 使用精确口令正式验收；Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation、完整治理审计与 checked acceptance preparation 均已通过。当前只执行任务分支正式提交/推送与 `main` 合并/推送；未部署或开始 TASK-014。
+`TASK-014` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-30T05:28:54Z 使用精确口令正式验收；Adversarial Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation、完整治理审计与 checked acceptance preparation 均已通过。当前只执行任务分支正式提交/推送与 `main` 合并/推送；不部署或开始 TASK-015。
+
+## TASK-014 User Acceptance 2026-07-30T05:28:54Z
+
+- authorization: 用户输入精确口令 `确认 TASK-014 完成并提交到远端`。
+- acceptance: `task_accept.py accept` 通过，任务进入 `ACCEPTED`。
+- git: `FORMAL_COMMIT_PENDING`；下一步为任务分支正式提交和推送，再合并并推送 `main`。
+- boundary: 不启动 frontend、TASK-015 或部署。
+
+## TASK-014 Prepared For User Acceptance 2026-07-30T05:24:10Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 05:23:00Z 通过。
+- recovery: helper 未同步 Board 和当前人类可读段落；受控 `reopen` 只用于对齐三个状态面，没有重开实现范围。
+- final_prepare: 状态显示同步后再次执行 checked `prepare-awaiting-user` 并通过。
+- acceptance: 仍为 `NOT_ACCEPTED`；review PASS 不等于用户验收。
+- git: 仍为 `DIRTY`；没有 commit、push、merge 或 deployment。
+- boundary: 没有可见页面、正式产品数据、SeoDocument、RFQ/飞书写入或 frontend consumer。
+- next: 等待精确口令 `确认 TASK-014 完成并提交到远端`。
+
+## TASK-014 Strict Audit Narrative Recovery 2026-07-30T05:25:44Z
+
+- finding: full project audit 因 current review section 混入历史 Round 1 failure 文本且缺少显式 evidence 标签而报两个 HIGH。
+- recovery: checked reopen 只用于拆分 current final PASS 与 historical review record；没有修改代码、合同、运行时、数据库或授权。
+- correction: current review section 仅保留 final PASS、证据、closure 和 boundary；Round 1 历史完整保留在独立历史标题下。
+- next: fresh strict audit 与 checked `prepare-awaiting-user`；全部通过后等待用户正式验收。
+
+## TASK-014 Adversarial Round 2 PASS And Final Validation 2026-07-30T05:18:31Z
+
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Round 1 FAIL 历史保留。
+- closed: role-aware route authority、native integer/offset overflow、Schema-only old namespace、reviewer pyc residue。
+- independent_runtime: reviewer 在 3307 只读复现两种 overflow 均为 `400 gdhe_invalid_pagination + no-store`；匿名 empty route 为 200/public cache/ETag。
+- regressions: 8-file/8-Golden/11-error/12-exclusion/25-checksum、0/1/N、actions、identity、A3 19/15/6、Core/SCF/DB、zero residue 和 protected scope 通过。
+- planner_post_review: 25/25 checksum、active old namespace 0、pyc/cache 0、project/registry/messages/strict lane/diff fresh PASS。
+- summary: `TASKS/ARTIFACTS/TASK-014/PLANNER_SUMMARY.md` 已生成。
+- boundary: 本任务没有可见页面、正式产品导入、SeoDocument、RFQ/飞书写入、部署或 Git 交付。
+- next: checked `task_transition.py prepare-awaiting-user`。
+
+## TASK-014 Adversarial R1 Revision Planner Checkpoint PASS 2026-07-30T05:03:54Z
+
+- response: wordpress_cms corrected execution response 已 ACK；旧 response 在 dispatch 前撤回，权威纠错历史保留。
+- route_role: primaryCategory 仅允许 curtain-track/accessory 冻结路径族，series `/series/`，applications `/applications/`；UUID/unique target/full envelope gates 保留。
+- pagination: 大于 `PHP_INT_MAX` 的 digit-only page 与 integer-unsafe offset 在 query/slice 前返回规范化 `gdhe_invalid_pagination 400 no-store`。
+- planner_byte_check: 发现并修正 handoff 内 Schema-only positive 的 `/products/category/...` 残余；active handoff 旧 `/products/category/`、`/products/series/` 扫描为 0。
+- product_card: Planner 重跑两轮不同 DB IDs，8/8 Golden hashes 一致；每轮 cleanup 19 posts/3 terms；11 negatives、12 exclusions、四格 action 和 role mismatch 通过。
+- a3: fresh runtime/Schema 回归为 19-file、15 Golden、6 negatives、totals `3/3/3`、items `2/1/0`；cleanup 18 posts/1 attachment/5 terms。
+- residue: TASK-014/A3 六项 DB count 为 0；plugin tests 无 `.pyc` 或 `__pycache__`。
+- integrity: 25/25 handoff、PHP/JSON/Python、Core/SCF、12-table DB、protected scope、project/registry/messages/strict lane/diff 通过。
+- environment_note: sandbox 内 TCP 被拒曾误判 MySQL 停止；尝试启动默认 3306 的旧 Homebrew data dir 自行失败并退出。GDHE 实际 3307 实例始终监听且通过系统授权后的 DB check；3306 无 listener。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: 受控 dispatch adversarial final Round 2；不得开始 Planner final validation 之外的后续任务。
+
+## TASK-014 Adversarial Round 1 Recovery 2026-07-30T04:24:46Z
+
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`；Planner final validation 不允许。
+- p1_route_role: source UUID 与唯一 public target 已绑定，但 `primaryCategory`、`series`、`applications` 没有绑定 TASK-013 冻结 route role；错误 `/products/category/...` 与 `/products/series/...` 已进入 Fixture/Golden/handoff。
+- p1_pagination: digit-only 超大 `page` 饱和为 `PHP_INT_MAX`，offset 运算溢出并在 `array_slice` 抛 `TypeError`；必须在切片前 fail closed 为规范化 `400 no-store`。
+- p2_cleanup: reviewer import 精确生成 `product-card-schema-test.cpython-311.pyc` 与 `a3-schema-validate.cpython-311.pyc`；reviewer write scope 正确拒绝删除，交由 wordpress_cms 精确清理。
+- helper: `task_transition.py reopen` 因仅接受 `AWAITING_USER` 而安全拒绝且无 mutation；Planner 未伪造中间状态，真实同步 `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- preserved: additive、8-file/25-checksum、A3、0/1/N、action、cache/304、determinism 和 frontend Round 2 passing boundaries 不重做设计。
+- next: 单一 wordpress_cms 窄修订；fresh Planner validation 后只做已配置的 adversarial Round 2。
+- authority_correction: 初始 revision assignment 错把 `primaryCategory` 写成 `/products/category/...` 并引用不存在的 `ROUTE_AND_CANONICAL_CONTRACT.md`；wordpress_cms 在 mutation 前受控阻断。真实权威为 `URL_AND_CANONICAL_CONTRACT.md`，主分类只允许 `/products/curtain-track-systems/...` 或 `/products/accessories/...` 两类冻结路径族。
+
+## TASK-014 Frontend Round 2 PASS And Review Gate 2026-07-30T04:07:22Z
+
+- frontend: `PASS / P0=0 / P1=0 / P2=1`；Round 1 两个 P1 均独立关闭，历史保留。
+- verified: real one-item route、non-empty identity-bound relations、mismatch fail-closed、8-file closure、25/25 checksum、8 success、9 error、actions、cache/304、determinism、zero residue。
+- p2: 生产 media HTTPS origin 与 Next Image allowlist 仅阻塞未来可见页面/部署，不属于 TASK-014 CMS/API contract acceptance。
+- execution: generic `EXECUTION_REPORT.md` 与独立 review request 已完成。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: adversarial_reviewer 只读独立审查；不得修复、实施 frontend、验收或 Git 交付。
+
+## TASK-014 Frontend Handoff P1 Planner Checkpoint PASS 2026-07-30T03:57:47Z
+
+- p1_1: 新增真实匿名 `per_page=1&page=1` success Golden；`200`、1 item、total 4、totalPages 4、现有 headers/action/零逐卡 resolve 通过。
+- p1_2: 隔离 Fixture 新增 series/application public landing，合法 card 输出两个非空 identity-bound references；三处 mismatch negative 保持 fail closed。
+- determinism: 两轮不同 WordPress database IDs，8/8 Golden hashes 一致；每轮 cleanup 19 posts/3 terms。
+- regression: A3 15 Golden、runtime `3/3/3`、19-file graph、6 boundary negatives 通过。
+- cleanup: TASK-014/A3 六项数据库残留均为 0。
+- handoff: Planner 重跑动态证据后重新冻结并验证 25/25 SHA-256。
+- boundary: route/version/fields/action/Schema 3/旧 endpoint/frontend 均未改变；P2 media origin 继续后置。
+- next: frontend Round 2 只读复核两个 P1 closure 与 passing boundaries。
+
+## TASK-014 Frontend Handoff Audit Round 1 FAIL 2026-07-29T18:54:15Z
+
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`。
+- passed: 8-file Schema closure、24/24 checksum、7 success + 9 error Schema、closed DTO、四格 action/path、零 ProductCard `/resolve`、ETag/cache/no-store/304 和 server-only feasibility。
+- p1_1: runtime success item counts 为 `4/0/4/2/2/0/4`；inline 1-item 只证明 Schema，未证明真实 route/header/total/action/单次请求。
+- p1_2: 所有 runtime 和 inline positive 的 `series/applications` 都为空；mismatch rejection 不能替代合法非空 identity-bound relation 输出。
+- p2: 生产 HTTPS media origin 与 Next Image allowlist 保留为未来可见页面/部署 gate。
+- helper: 已按治理要求运行 `task_transition.py reopen`；当前任务为 `IN_PROGRESS`，helper 因只接受 `AWAITING_USER` 而安全拒绝，未产生 mutation。
+- state: 保持实现循环内 `IN_PROGRESS / NOT_ACCEPTED / DIRTY`，不进入独立 adversarial review。
+- next: 只补真实 1-item HTTP Golden 和合法非空 series/application Fixture/Golden，重新冻结证据并做窄 frontend 复核。
+
+## TASK-014 CMS Planner Checkpoint PASS 2026-07-29T18:41:52Z
+
+- p1_closed: source reference UUID 现在必须等于唯一 resolved target 的稳定公开 UUID；合法 Fixture identity 已对齐。
+- negative: `mismatched_reference_id` 证明 `primaryCategory`、`series` 和 `applications` 共用校验均 fail closed，valid total/action 不变。
+- product_card: 两轮使用不同 WordPress database IDs，7/7 Golden hashes 相同；12/12 invalid/unpublished candidates 排除。
+- regression: A3 runtime 15 Golden、total `3/3/3`、items `2/1/0`、19-file graph 和 6 boundary negatives 通过。
+- cleanup: TASK-014/A3 posts/meta/terms/options/marker 六项独立数据库读回均为 0。
+- handoff: Planner 重跑动态证据后重新冻结并复核 24/24 SHA-256。
+- docs: 根 README 和架构契约已同步 ProductCard endpoint、独立 8-file closure、测试数据和未实现 frontend/SeoDocument/可见页面边界。
+- next: 受控派发 frontend 只读 handoff 审计；不实施 consumer。
+
+## TASK-014 CMS Planner Checkpoint P1 2026-07-29T18:26:34Z
+
+- implementation: WordPress/CMS 已按 TDD 完成 additive `/gdhe/v1/product-cards` 与 ProductCard Schema 1.0.0；既有 Content Schema 3.0.0 和旧 endpoint 保持不变。
+- passed: 7 Golden、9 request negatives、11 invalid/unpublished exclusions、四格 action、0/1/N、两轮不同数据库 ID determinism、A3 回归、精确清理、handoff、PHP/JSON 和治理检查。
+- finding: `gdhe_product_card_public_reference()` 只验证 source UUID 与 publicPath 分别合法，没有验证 source `id` 等于 publicPath 目标的稳定公开 UUID。
+- fixture_evidence: source category `43000000-...-0001`，目标 landing `_gdhe_public_id` 为 `44000000-...-0001`，当前合同会错误输出不属于目标实体的 identity。
+- scope: 只修 reference identity binding、Fixture、negative/Golden/checksum 和相应证据；不改变 route/version/fields/action，不修改 frontend，不实施 SeoDocument、真实数据、飞书、RFQ 或部署。
+- next: 受控派发 wordpress_cms P1 窄修订；通过新的 Planner checkpoint 前不得开始 frontend handoff audit。
+
+## TASK-014 Design Gate 2026-07-29T16:46:06Z
+
+- route: 新增独立 `/wp-json/gdhe/v1/product-cards` 与 ProductCard Schema 1.0.0；既有 Content Schema 3.0.0 和旧 route 保持不变。
+- source: 不新增长期 SCF 编辑字段；只建立未公开的版本化内部 source document 和独立本地 Fixture。
+- baseline: WordPress 7.0.2、SCF 6.9.2、GDHE Site 0.4.2；既有 19-file Schema graph、15 Golden、6 negative 通过。
+- runtime: 本地 MySQL 8.4 / GDHE 可连接；A3 Fixture option 和 marker 均为 0。
+- validation: design/plan、project、registry、messages、strict lane 和 `git diff --check` 通过。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: 真实桥接并 dispatch wordpress_cms 实施请求；必须先得到预期 RED，再写最小 GREEN。
+
+## TASK-014 Requirement Confirmation 2026-07-29T16:26:57Z
+
+- authorization: 用户输入精确口令 `确认 TASK-014 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- scope: 仅 additive normalized ProductCard collection CMS/API/Schema 合同、Fixture、验证和 handoff。
+- tdd: 实现必须先得到预期失败的 RED，再做最小 GREEN；旧合同回归必须持续通过。
+- boundary: SeoDocument、frontend consumer、可见页面、飞书、RFQ 和部署继续排除。
+- next: 完成 DESIGN、IMPLEMENTATION_PLAN 与 baseline validation，验证通过后才 dispatch。
+
+## TASK-014 Intake 2026-07-29T16:15:22Z
+
+- source: 用户在 TASK-013 正式交付后要求“继续”。
+- authority: TASK-013 `GAP_REPORT.md` 要求在真实卡片 UI 前先关闭 ProductCard collection machine-contract blocker。
+- granularity: 依据用户此前的小任务要求，TASK-014 只实现 CMS/API/Schema ProductCard collection；SeoDocument、frontend consumer 和可见纵向切片分别后置。
+- branch: `codex/TASK-014-product-card-collection-contract`，基线 `72d500bd2bb424a0f3896b336f3e9a3d79f90ab9`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- boundary: 未修改 CMS/API/Schema、前端、数据库或外部系统，未运行 Fixture，未 dispatch 实施。
+- next: 等待精确口令 `确认 TASK-014 需求并开始执行`。
 
 ## TASK-013 Governance Closeout Revision 2026-07-29T15:48:07Z
 

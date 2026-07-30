@@ -408,3 +408,107 @@ Each execution records:
 - artifact: TASKS/ARTIFACTS/TASK-013/WORDPRESS_CMS_READONLY_AUDIT.md
 - scope_boundary: no CMS/SCF/Schema/API/database/content/plugin/configuration/frontend/authority/product/Feishu/review/Git/deployment mutation
 - next: validate the two allowed writes, send controlled execution_response requiring MSG-TASK-013-A2-WORDPRESS-CMS-READONLY-AUDIT, then Planner synthesizes the target contracts and follow-up gates
+
+### 2026-07-29T17:51:57Z - TASK-014 ProductCard CMS/API TDD execution complete
+
+- task: TASK-014 additive English ProductCard collection contract
+- message: MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION
+- authorization: exact dispatched request read and acknowledged before implementation; branch codex/TASK-014-product-card-collection-contract and wordpress_cms write scope verified; Planner/reviewer dirty changes preserved
+- tdd_red: added tests before production implementation; Schema test failed only because product-card-collection.v1.schema.json was absent; WordPress REST test booted successfully and failed only because /gdhe/v1/product-cards was not registered
+- backup_gate: immutable .local/backups/TASK-014/20260729T164606Z/database.sql verified at 179205 bytes and SHA-256 1b9f7def6c333284e324719e3fd43e68a8201100a96a7eba47aa48588635cb98 with completion marker; backup remained read-only; pre-Fixture TASK-014/A3 options, marker/source/migration meta all zero
+- implementation: gdhe-site 0.5.0; added anonymous GET /gdhe/v1/product-cards, independent closed ProductCard Schema 1.0.0 eight-file closure, strict query allowlist, private exact-key source document, local-only test-candidate gate, protected HTTPS media, linkable category/relation checks, server-derived four-cell actions and eligibility-before-filter/total/pagination
+- fixture: isolated TASK-014-PRODUCT-CARD-1 lifecycle with one public category landing, four valid action cells, eleven explicit invalid/unpublished candidates and three task terms; no real GDHE product/media, user, configuration or external data used
+- runtime: total 4; page items 2/2/0 with invariant totals 4/4/4; matching filter 4 and empty filter 0; 7 Golden, 9 normalized request negatives, 11 candidate exclusions, leakage scan and conditional 304 PASS
+- determinism: two complete create/contract/schema/hash/cleanup rounds used different post/term database IDs and produced identical 7/7 Golden SHA-256 values; public DTO uses no database IDs
+- regression: existing A3 runtime regenerated unchanged 15 Golden with totals 3/3/3 and items 2/1/0; 19-file Draft 2020-12 graph, 15 positives and six boundary negatives PASS; TASK-007 tracked artifacts remained unchanged
+- cleanup: each final TASK-014 round removed 16 posts and 3 terms; final TASK-014 posts/source/marker meta/terms/termmeta/option/uploads zero; final A3 fixture/migration meta and option zero; no temporary user or WordPress HTTP listener created
+- integrity: all GDHE Site PHP lint and JSON parse PASS; ProductCard 8-file Schema closure and 7 runtime Goldens PASS; 24/24 handoff checksums PASS; WordPress 7.0.2 Core checksum, official SCF 6.9.2 checksum and 12-table database check PASS; gdhe-site 0.5.0 active
+- docs: docs/cms README, REST contract and operations/rollback synchronized; documentation impact RESOLVED
+- artifacts: TDD_RED_EVIDENCE.md; WORDPRESS_CMS_EXECUTION_REPORT.md; TEST_OR_VALIDATION_LOG.md; DIFF_OR_OUTPUT_SUMMARY.md; PRODUCT_CARD_HANDOFF.md; runtime/error/Schema/determinism/manifest/checksum machine evidence; 7 Goldens
+- scope_boundary: no frontend, root README, architecture authority, Planner task/state/board/registry, WordPress Core, SCF source, theme, dependency, environment, production content, Feishu, RFQ write, Preview, Webhook, GraphQL, multilingual, review, Git delivery, acceptance or deployment change
+- result: lane implementation and cleanup complete; this is CMS/API contract infrastructure, not a visible product page or accepted production catalog
+- next: run final DPG project/message/strict-lane and scope validation, send one controlled execution_response requiring MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION, then wait for Planner independent validation
+
+### 2026-07-29T18:34:47Z - TASK-014 public-reference identity P1 revision complete
+
+- task: TASK-014 narrow public-reference identity revision only
+- message: MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1
+- authorization: exact dispatched Planner checkpoint read and acknowledged before the revision; existing TASK-014 branch and wordpress_cms write scope preserved
+- tdd_red: added the identity regression before the production fix; a valid but mismatched UUID with a resolvable target path was accepted by the old helper and produced the expected controlled failure `Public reference accepted a UUID that differs from its resolved target.`
+- minimum_fix: `gdhe_product_card_public_reference()` now fails closed unless the source reference UUID equals the uniquely resolved target's stable public UUID; route, API, Schema, version, field and action contracts are unchanged
+- fixture: legal category reference aligned to the target stable UUID; added one published `mismatched_reference_id` candidate whose primaryCategory, series and applications references use valid paths with the wrong UUID; lifecycle now creates 17 posts and three terms
+- shared_helper_coverage: direct primaryCategory and relation-list helper assertions reject the mismatch; the invalid candidate is excluded from items, total, navigation and route-derived eligibility
+- runtime: eligible total remains 4; page items remain 2/2/0; seven ProductCard Goldens, nine request negatives and all 12 invalid/unpublished candidate exclusions PASS; four server-derived action states remain unchanged
+- determinism: two complete TASK-014 create/contract/schema/hash/cleanup rounds used different database IDs and produced identical 7/7 Golden hashes
+- regression: A3 runtime regenerated and validated all 15 existing positive Goldens with Product totals 3/3/3 and items 2/1/0; 19-file Draft 2020-12 graph and six boundary negatives PASS
+- cleanup: each TASK-014 lifecycle removed 17 posts and three terms; A3 lifecycle removed 18 posts, one attachment and five terms; final TASK-014/A3 posts, meta, terms, options and uploads are zero; ProductCard route remains registered and returns an empty collection
+- integrity: all GDHE Site PHP lint and scoped JSON parse PASS; 8-file ProductCard Schema closure and seven runtime Goldens PASS; refreshed 24/24 handoff checksums PASS; WordPress Core, official SCF and database checks PASS; gdhe-site 0.5.0 remains active
+- docs: ProductCard handoff, CMS REST/README/operations guidance and TASK-014 execution/validation/diff evidence synchronized; added PUBLIC_REFERENCE_P1_REVISION_REPORT.md
+- scope_boundary: no frontend, SeoDocument, root README, architecture authority, Planner state, WordPress Core, SCF source, theme, real data, external system, review, Git delivery, acceptance or deployment change
+- result: the single public-reference identity P1 is locally closed with valid RED, minimum GREEN, deterministic evidence and exact cleanup
+- next: run final DPG validation and send one controlled execution_response requiring MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1; Planner performs independent validation
+
+### 2026-07-29T19:01:28Z - TASK-014 frontend-handoff P1 evidence revision complete
+
+- task: TASK-014 two frontend-handoff evidence P1 closures only
+- message: MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1
+- authorization: dispatched Planner checkpoint read and acknowledged; same IN_PROGRESS task and branch retained, so no task switch or state mutation was required
+- tdd_red_one_item: before adding the runtime case, the real WordPress suite failed only with `Real anonymous one-item ProductCard response is missing.`
+- tdd_red_relations: after adding the one-item request but before changing the Fixture, the suite failed only with `Valid identity-bound series/applications references are missing.`
+- minimum_green: added one real anonymous `per_page=1&page=1` success case and two removable public relation landings; only the valid active detail card references one series and one application
+- one_item: HTTP 200, one complete item, total 4, totalPages 4, existing ETag/public max-age/request-id headers, server-derived view_product action, one collection request and zero per-card resolve
+- relation_identity: each positive source UUID equals its unique target stable public UUID; direct primaryCategory/series/applications mismatch helper checks and the published mismatched_reference_id candidate remain fail closed
+- contract_boundary: route, REST API 1, ProductCard Schema 1.0.0, public fields, four action states, Content Schema 3.0.0 and existing endpoints are unchanged
+- runtime: eight ProductCard Goldens, nine request negatives, twelve invalid/unpublished exclusions, valid total 4, pages 2/2/0 and totals 4/4/4 PASS
+- determinism: two complete TASK-014 lifecycles used different database IDs and produced identical 8/8 Golden hashes
+- regression: A3 19-file graph, 15 Goldens, six boundary negatives, totals 3/3/3 and items 2/1/0 PASS
+- cleanup: each TASK-014 lifecycle removed exactly 19 posts and three terms; A3 removed 18 posts, one attachment and five terms; final TASK-014/A3 posts, meta, terms, options and uploads are zero
+- handoff: eight Goldens and 25 exact SHA-256 entries regenerated and verified
+- integrity: GDHE Site PHP lint, scoped JSON/Python syntax, Core, official SCF, database, route-empty, diff and protected-scope checks PASS; gdhe-site 0.5.0 remains active
+- artifacts: FRONTEND_HANDOFF_P1_REVISION_REPORT.md plus refreshed RED, execution, validation, diff, handoff, runtime, Schema, determinism, Golden and checksum evidence
+- docs: only docs/cms README, REST contract and operations/rollback synchronized; frontend, SeoDocument, root README and architecture authority untouched by this lane
+- scope_boundary: no real data, external system, review, Git delivery, acceptance or deployment work
+- result: both frontend-handoff P1 evidence gaps are locally closed without public-contract expansion
+- next: run final DPG validation and send one controlled execution_response requiring MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1; Planner independently validates before any frontend re-audit
+
+### 2026-07-30T04:27:56Z - TASK-014 adversarial R1 revision blocked before mutation
+
+- task: TASK-014 adversarial Round 1 narrow recovery
+- message: MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1
+- authorization: queued assignment read and acknowledged; task already controlled at NEEDS_REVISION
+- blocker: the assignment and ADVERSARIAL_R1_RECOVERY.md require primaryCategory under `/products/category/...`, while the canonical TASK-013 URL_AND_CANONICAL_CONTRACT.md permits only `/products/curtain-track-systems/...` and `/products/accessories/...`; the canonical review explicitly classifies `/products/category/...` as invented and invalid
+- context_defect: assignment references missing `TASKS/ARTIFACTS/TASK-013/ROUTE_AND_CANONICAL_CONTRACT.md`; the actual frozen authority is `URL_AND_CANONICAL_CONTRACT.md`
+- preserved: no product code, test, Fixture, database, Golden, evidence or documentation mutation; pagination P1 and exact reviewer bytecode cleanup intentionally not split into a partial revision
+- residue_observed: exactly the two disclosed reviewer files remain under tests/__pycache__ pending clarified controlled continuation
+- next: Planner must resolve the primaryCategory route authority and provide a corrected continuation; then wordpress_cms can execute both P1 RED/GREEN closures and exact cleanup as one revision
+
+### 2026-07-30T04:36:42Z - TASK-014 adversarial R1 WordPress revision complete
+
+- task: TASK-014 adversarial Round 1 two-P1 narrow revision plus exact reviewer-bytecode cleanup
+- message: MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION
+- authority_resolution: Planner acknowledged the blocker and corrected authority to TASK-013 URL_AND_CANONICAL_CONTRACT.md; continuation read and acknowledged before implementation
+- route_role_red: with valid UUID/path identity, unique published target and complete envelope, the old helper accepted an application target as primaryCategory; expected runtime failure observed before production change
+- route_role_green: helper is field-aware; primaryCategory accepts only curtain-track/accessory hub or one-child families, series only /series/ hub/detail, applications only /applications/ hub/detail; UUID, unique target and full-envelope gates retained
+- fixture_alignment: category `/products/curtain-track-systems/task-014-card-products/`, series `/series/task-014-series/`, application `/applications/task-014-application/`; old `/products/category/` and `/products/series/` absent from source, tests, runtime evidence and Goldens
+- pagination_red: anonymous 100-digit page reproduced native `array_slice` TypeError through float offset before production change
+- pagination_green: lossless decimal-to-PHP_INT_MAX comparison and intdiv-based offset safety run before query/slice; native-integer and offset overflow return normalized `gdhe_invalid_pagination` 400 with no-store
+- runtime: eight success Goldens, eleven request negatives, twelve candidate exclusions, identity and role coverage for all three reference fields, four actions, total 4 and pages 2/2/0 PASS
+- determinism: final two complete lifecycles used different database IDs and produced identical 8/8 hashes; each cleaned 19 posts and three terms
+- regression: A3 19-file graph, 15 Goldens, six boundary negatives, totals 3/3/3 and items 2/1/0 PASS; cleanup removed 18 posts, one attachment and five terms
+- pyc_cleanup: the two disclosed files matched reviewer SHA-256, were deleted by exact path, and the directory was removed only when empty; plugin tests contain no pyc or __pycache__ residue
+- cleanup: final TASK-014/A3 posts, meta, terms and options all zero; route registered and empty outside Fixture
+- integrity: 25/25 sorted handoff checksums, all GDHE Site PHP lint, scoped JSON/Python syntax, Core, official SCF, database, protected scope, authority scan and git diff checks PASS
+- artifacts: ADVERSARIAL_R1_WORDPRESS_REVISION_REPORT.md plus refreshed RED, execution, validation, diff, handoff, runtime/error/Schema/determinism, eight Goldens and checksums
+- docs: only docs/cms README, REST contract and operations/rollback synchronized; frontend, root README and architecture authority untouched by this lane
+- scope_boundary: route/version/fields/actions, Content Schema 3.0.0, old endpoints, product data and external systems unchanged; no review, acceptance, Git delivery, deployment or TASK-015
+- result: both adversarial P1 findings and exact P2 cleanup are locally closed, pending fresh Planner validation and separate Round 2
+- next: send one controlled execution_response requiring MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION
+
+### 2026-07-30T04:39:00Z - TASK-014 adversarial R1 byte-level handoff correction
+
+- finding: Planner pre-response byte check correctly found the Schema-only inline positive still used `/products/category/synthetic-tracks/`; because product-card-schema-test.py is in the 25-file handoff, the earlier active-handoff namespace claim was incomplete
+- correction: changed only that synthetic primaryCategory path to `/products/curtain-track-systems/synthetic-tracks/`
+- validation: ProductCard Draft 2020-12 validation PASS for one inline positive, six negatives and eight runtime Goldens; 25/25 handoff regenerated and verified
+- determinism_scope: no rerun required because the changed inline-only test value is not a Golden hash input; the previously completed two-lifecycle 8/8 database-ID determinism evidence remains current
+- authority_scan: active ProductCard production source, Fixture, contract/Schema tests, Goldens and runtime/Schema evidence contain no `/products/category/` or `/products/series/`
+- response_control: retract the not-yet-dispatched queued response whose wording preceded this byte correction, then send one corrected execution_response

@@ -5658,3 +5658,484 @@ schema_version: DPG-LANES-1.0.0
 - result: task_accept helper accepted TASK-013.
 - git: FORMAL_COMMIT_PENDING; task branch push and main integration authorized.
 - boundary: No deployment or TASK-014 implementation.
+
+### 2026-07-29T16:15:22Z - task_014_intake
+- type: task_intake
+- lane: planner
+- task: TASK-014
+- source: User requested continuation after TASK-013 formal delivery.
+- previous: TASK-013 commit 72d500b is on the remote task branch and origin/main; TASK-013 is closed and archived.
+- scope: Additive normalized ProductCard collection CMS/API/Schema contract only.
+- deferred: SeoDocument, frontend consumer, visible category/card/detail slice, Feishu, RFQ and deployment.
+- branch: codex/TASK-014-product-card-collection-contract
+- state: AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY
+- next: Wait for exact phrase 确认 TASK-014 需求并开始执行.
+
+### 2026-07-29T16:26:57Z - task_014_requirement_confirmation
+- type: requirement_confirmation
+- lane: planner
+- task: TASK-014
+- user_phrase: 确认 TASK-014 需求并开始执行
+- transition: AWAITING_REQUIREMENT_CONFIRMATION -> READY
+- scope: Additive ProductCard collection CMS/API/Schema contract only.
+- tdd: Require observed RED before implementation and GREEN plus legacy regression after implementation.
+- boundary: No SeoDocument, frontend consumer, visible page, Feishu, RFQ or deployment.
+- next: Complete design, implementation plan and baseline validation before dispatch.
+
+### 2026-07-29T16:46:06Z - task_014_design_gate
+
+- type: checkpoint
+- lane: planner
+- task: TASK-014
+- transition: READY -> IN_PROGRESS
+- contract: Additive `/wp-json/gdhe/v1/product-cards` with closed Schema 1.0.0; existing Content Schema 3.0.0 remains unchanged.
+- source_boundary: No long-term SCF editor fields; only a private versioned source document and isolated local fixtures.
+- baseline: WordPress 7.0.2, SCF 6.9.2, GDHE Site 0.4.2, CMS graph 19, Golden 15, negative 6.
+- runtime: Local MySQL 8.4 / GDHE reachable; A3 fixture option and marker both zero.
+- validation: Design, plan, project, registry, messages, strict lane and diff checks PASS.
+- next: Controlled wordpress_cms dispatch; observe valid TDD RED before minimal GREEN.
+
+### 2026-07-29T16:58:18Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message queued for wordpress_cms
+
+### 2026-07-29T16:58:45Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION dispatched to wordpress_cms
+
+### 2026-07-29T16:59:16Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION moved to done
+
+### 2026-07-29T17:52:53Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-29T18:12:31Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-07-29T18:12:35Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-CMS-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-07-29T18:26:34Z - task_014_cms_planner_checkpoint_p1
+
+- type: checkpoint
+- lane: planner
+- task: TASK-014
+- result: NEEDS_NARROW_REVISION
+- passed: ProductCard TDD/runtime/determinism/A3 regression/cleanup/handoff and governance checks.
+- finding: Public reference source UUID is not bound to the resolved target stable public UUID; the valid fixture contains a 4300/4400 mismatch.
+- state: IN_PROGRESS / NOT_ACCEPTED / DIRTY
+- next: Dispatch one wordpress_cms P1 revision before frontend read-only handoff audit.
+
+### 2026-07-29T18:41:52Z - task_014_cms_planner_checkpoint_pass
+
+- type: checkpoint
+- lane: planner
+- task: TASK-014
+- result: PASS_AFTER_P1_R1
+- evidence: Public reference identity binding, ProductCard 2-round determinism, A3 19/15/6 regression, six zero-residue DB counts and 24/24 refrozen handoff checksums.
+- docs: Root README and architecture contract synchronized.
+- state: IN_PROGRESS / NOT_ACCEPTED / DIRTY
+- next: Dispatch frontend read-only handoff audit without modifying frontend code.
+
+### 2026-07-29T18:54:15Z - task_014_frontend_handoff_audit_round_1_fail
+
+- type: checkpoint_review
+- lane: planner
+- task: TASK-014
+- verdict: FAIL / P0=0 / P1=2 / P2=1
+- p1: Missing real one-item HTTP Golden; missing positive non-empty identity-bound series/application output.
+- helper: Controlled reopen was attempted and safely refused because the task remains IN_PROGRESS, not AWAITING_USER.
+- state: IN_PROGRESS / NOT_ACCEPTED / DIRTY
+- next: One CMS evidence-only revision, then narrow frontend re-audit.
+
+### 2026-07-30T03:57:47Z - task_014_frontend_handoff_p1_checkpoint_pass
+
+- type: checkpoint
+- lane: planner
+- task: TASK-014
+- result: PASS_FOR_NARROW_FRONTEND_REAUDIT
+- evidence: Real one-item HTTP Golden, non-empty identity-bound relations, two-round 8/8 determinism, A3 19/15/6, six zero-residue counts and 25/25 checksums.
+- state: IN_PROGRESS / NOT_ACCEPTED / DIRTY
+- next: Dispatch frontend Round 2 read-only closure audit.
+
+### 2026-07-30T04:07:22Z - task_014_frontend_round_2_pass_review_gate
+
+- type: review_gate
+- lane: planner
+- task: TASK-014
+- frontend_verdict: PASS / P0=0 / P1=0 / P2=1
+- transition: IN_PROGRESS -> UNDER_REVIEW
+- boundary: Remaining P2 is deferred only to visible-page/deployment acceptance.
+- next: Dispatch independent adversarial review.
+
+### 2026-07-29T18:28:12Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message queued for wordpress_cms
+
+### 2026-07-29T18:28:42Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1 dispatched to wordpress_cms
+
+### 2026-07-29T18:29:45Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1 moved to done
+
+### 2026-07-29T18:35:47Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-29T18:36:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1-RESPONSE dispatched to planner
+
+### 2026-07-29T18:36:52Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-PUBLIC-REFERENCE-P1-R1-RESPONSE moved to done
+
+### 2026-07-29T18:43:26Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-014
+- summary: message queued for frontend
+
+### 2026-07-29T18:43:39Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT dispatched to frontend
+
+### 2026-07-29T18:44:36Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT moved to done
+
+### 2026-07-29T18:51:21Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-29T18:51:52Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-07-29T18:53:57Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-RESPONSE moved to done
+
+### 2026-07-29T18:55:41Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message queued for wordpress_cms
+
+### 2026-07-29T18:55:54Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1 dispatched to wordpress_cms
+
+### 2026-07-29T18:56:26Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1 moved to done
+
+### 2026-07-29T19:02:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-29T19:02:51Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1-RESPONSE dispatched to planner
+
+### 2026-07-29T19:02:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-FRONTEND-HANDOFF-P1-R1-RESPONSE moved to done
+
+### 2026-07-30T03:59:20Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-014
+- summary: message queued for frontend
+
+### 2026-07-30T03:59:33Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2 dispatched to frontend
+
+### 2026-07-30T03:59:59Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2 moved to done
+
+### 2026-07-30T04:05:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:06:12Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2-RESPONSE dispatched to planner
+
+### 2026-07-30T04:06:59Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2-RESPONSE moved to done
+
+### 2026-07-30T04:10:31Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-014
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T04:10:49Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-30T04:11:19Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-30T04:20:34Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:22:07Z - message_failed
+- type: message_failed
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R1-RESPONSE moved to failed
+
+### 2026-07-30T04:22:59Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:23:08Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-30T04:24:35Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R1-RESPONSE-CORRECTED moved to done
+
+### 2026-07-30T04:24:46Z - TASK-014 adversarial Round 1 recovery
+
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`；corrected response 已由 Planner ACK。
+- p1: taxonomy reference route role 未绑定；极端 digit-only `page` 触发 offset 溢出与非规范化 `TypeError`。
+- p2: reviewer 生成两个精确 `.pyc`，须由 wordpress_cms 精确清理。
+- helper: `task_transition.py reopen` 因仅接受 `AWAITING_USER` 安全拒绝，无 mutation。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`；只允许窄 TDD 修订、fresh validation 和 final Round 2。
+- boundary: 不实施 frontend、TASK-015、验收、commit、push、merge 或部署。
+
+### 2026-07-30T04:29:22Z - TASK-014 revision authority correction
+
+- blocker: wordpress_cms 在 mutation 前受控阻断错误主分类路径与错误 context filename；无 CMS/Fixture/DB mutation。
+- corrected_authority: `URL_AND_CANONICAL_CONTRACT.md`；主分类为 `/products/curtain-track-systems/...` 或 `/products/accessories/...`，系列 `/series/...`，应用 `/applications/...`。
+- next: 发送更正 continuation，仍只修两个 P1 和两个精确 `.pyc` 残留。
+
+### 2026-07-30T05:03:54Z - TASK-014 adversarial R1 revision checkpoint PASS
+
+- corrected_response: wordpress_cms 窄修订已完成并由 Planner ACK；Schema-only inline positive 残余在 dispatch 前经 Planner byte-level 检查关闭。
+- validation: ProductCard two-lifecycle 8/8 determinism、11 negatives、12 exclusions、route roles、extreme page、A3 19/15/6/runtime、六项 DB zero residue、25/25 handoff、Core/SCF/DB 和治理门均 PASS。
+- cleanup: reviewer 两个 pyc 精确删除；当前 plugin tests 无 pyc/cache。
+- environment: GDHE MySQL 3307 正常；默认 3306 legacy data-dir start 尝试失败并退出，未产生 listener。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: adversarial final Round 2 only；不实施 frontend、TASK-015、验收、Git 或部署。
+
+### 2026-07-30T05:18:31Z - TASK-014 adversarial Round 2 final PASS
+
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；response 已由 Planner ACK。
+- closure: 两个 Round 1 P1、Schema-only old namespace 与 reviewer pyc P2 全部关闭。
+- validation: reviewer 3307 read-only runtime、8/8、11 errors、12 exclusions、25/25、A3 19/15/6、Core/SCF/DB、zero residue 和 governance PASS。
+- planner: post-review checksum/namespace/pyc/governance/diff fresh PASS；`PLANNER_SUMMARY.md` 完成。
+- next: checked `prepare-awaiting-user`；不自动验收、Git、部署或 TASK-015。
+
+### 2026-07-30T04:26:23Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message queued for wordpress_cms
+
+### 2026-07-30T04:27:40Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1 moved to done
+
+### 2026-07-30T04:28:17Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:28:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-SCOPE-BLOCKER moved to done
+
+### 2026-07-30T04:29:51Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message queued for wordpress_cms
+
+### 2026-07-30T04:30:26Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION moved to done
+
+### 2026-07-30T04:37:21Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:39:14Z - message_failed
+- type: message_failed
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION-RESPONSE moved to failed
+
+### 2026-07-30T04:39:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T04:41:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION-RESPONSE moved to done
+
+### 2026-07-30T04:42:13Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION-RESPONSE-CORRECTED dispatched to planner
+
+### 2026-07-30T04:46:44Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION-RESPONSE-CORRECTED moved to done
+
+### 2026-07-30T05:05:48Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-014
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T05:06:43Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-30T05:17:10Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-014
+- summary: message queued for planner
+
+### 2026-07-30T05:18:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-014
+- summary: message MSG-TASK-014-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-30T05:23:00Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-014
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T05:24:10Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-014
+- summary: Checked prepare succeeded, but TASKS/BOARD and current human-readable status text remained stale because the transition helper updates only canonical status fields.
+
+### 2026-07-30T05:24:57Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-014
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T05:25:44Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-014
+- summary: Strict project audit found that the current Adversarial Review section still mixed historical FAIL text with the final PASS and lacked an explicit evidence label.
+
+### 2026-07-30T05:26:25Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-014
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T05:28:54Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-014
+- summary: TASK-014 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

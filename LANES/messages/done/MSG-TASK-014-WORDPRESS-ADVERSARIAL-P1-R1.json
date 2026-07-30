@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1",
+  "type": "task_assignment",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-014",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-30T04:26:23Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-014 adversarial Round 1 failed with two narrow P1 findings and one exact cleanup P2. First read and ACK this request, the active task, TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REPORT.md and ADVERSARIAL_R1_RECOVERY.md. Use strict TDD. P1-1: add focused REDs showing valid UUID/path identity is still rejected when primaryCategory, series or applications uses a path outside its TASK-013 frozen role; minimally bind primaryCategory to /products/category/..., series to /series/..., applications to /applications/... while preserving unique complete public target and UUID identity. Align Fixture and Goldens, specifically replacing the illegal /products/series/... authority. P1-2: add a real anonymous extreme digit-only page RED reproducing native integer or offset overflow; minimally reject unsafe conversion/offset before array_slice and return the existing normalized 400 with no-store, without changing valid pagination/cache/304. P2: remove exactly product-card-schema-test.cpython-311.pyc and a3-schema-validate.cpython-311.pyc under the tests __pycache__, then remove that directory only if empty and prove no pyc/cache residue. Regenerate all eight ProductCard Goldens, request negatives, role mismatch evidence, two-lifecycle determinism and sorted handoff checksums; rerun A3 19/15/6/runtime, exact DB/Fixture cleanup, PHP/JSON/Schema/protected-scope/governance checks. Restore local MySQL only as needed for the existing local validation; do not alter credentials or database structure. Write a narrow revision report and update existing validation/execution evidence truthfully, then return one execution_response. Preserve frontend/**, route/version/fields/actions, Content Schema 3.0.0, old endpoints, docs authority, product data and all out-of-scope systems. Do not review, accept, Git deliver, deploy or start TASK-015.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-014-product-card-collection-contract.md",
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_R1_RECOVERY.md",
+    "TASKS/ARTIFACTS/TASK-013/ROUTE_AND_CANONICAL_CONTRACT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_R1_WORDPRESS_REVISION_REPORT.md"
+  ],
+  "notes": "Round 1 recovery only; passing boundaries remain frozen. Planner fresh validation and final Round 2 are separate gates.",
+  "done_at": "2026-07-30T04:27:40Z",
+  "updated_at": "2026-07-30T04:27:40Z"
+}

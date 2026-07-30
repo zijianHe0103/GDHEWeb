@@ -38,6 +38,7 @@
     "collection": "config/schemas/collection.v3.schema.json",
     "navigation": "config/schemas/navigation.schema.json",
     "routeManifest": "config/schemas/route-manifest.schema.json",
+    "productCardCollection": "config/schemas/product-card-collection.v1.schema.json",
     "modules": "config/schemas/modules"
   },
   "boundaries": {
@@ -53,6 +54,7 @@
     "resolve": "/wp-json/gdhe/v1/resolve",
     "collection": "/wp-json/gdhe/v1/collection/{type}",
     "navigation": "/wp-json/gdhe/v1/navigation",
-    "routeManifest": "/wp-json/gdhe/v1/route-manifest"
+    "routeManifest": "/wp-json/gdhe/v1/route-manifest",
+    "productCards": "/wp-json/gdhe/v1/product-cards"
   }
 }

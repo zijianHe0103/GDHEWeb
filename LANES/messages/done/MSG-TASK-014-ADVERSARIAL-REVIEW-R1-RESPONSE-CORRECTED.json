@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-014-ADVERSARIAL-REVIEW-R1-RESPONSE-CORRECTED",
+  "type": "review_response",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-014",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-30T04:22:59Z",
+  "requires_response_to": "MSG-TASK-014-ADVERSARIAL-REVIEW-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "Round 1 independent verdict: FAIL; P0=0, P1=2, P2=1; Planner final validation is not allowed. P1-1: reference validation binds UUID to a unique complete public-path target but does not bind category, series or application role to frozen TASK-013 route authority; current Fixture and Golden accept /products/series/task-014-series/ and /products/category/task-014-card-products/ despite the confirmed route map. P1-2: a digit-only page beyond the native integer range saturates to PHP_INT_MAX, passes validation, overflows the array_slice offset to float and throws TypeError instead of normalized 400 no-store. P2-1: reviewer no-write Python imports generated exactly two untracked caches under the CMS tests cache directory: product-card-schema-test.cpython-311.pyc with SHA-256 4783ebac228863a71e39c29119732ca2f21df30616681cd64c3dd11e028f1709 and a3-schema-validate.cpython-311.pyc with SHA-256 ae0d3291b7cc649565fec7d0225ac20587ee87e455c70baaa72a08d0f5182a72. Exact cleanup was attempted but correctly blocked by reviewer write scope; Planner must remove only those files and the empty cache directory, and no bypass was used. Required revision: role-aware route validation, safe integer and offset validation, focused negatives, regenerated eight Goldens/runtime/determinism/checksums, restored local MySQL and fresh full validation before final Round 2. Passed regressions: additive contract, ProductCard 8-file closure and 8 Goldens, 25/25 checksums, A3 19/15, closed leakage, covered 0/1/N and zero per-card resolve, four actions, protected local-only boundaries, covered cache/304, determinism/cleanup evidence and frontend Round 1/Round 2 history. Local MySQL was unavailable for the final read-only probe; no Fixture or database mutation was attempted. No repair, Planner-state edit, product-code/frontend/authority/external/Git/deployment action occurred.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "This corrected queued response supersedes the pre-dispatch failed response that omitted reviewer-generated pyc residue. Reviewer changed only the canonical report, own lane records and controlled messages; the exact pyc cleanup remains Planner-owned.",
+  "done_at": "2026-07-30T04:24:35Z",
+  "updated_at": "2026-07-30T04:24:35Z"
+}

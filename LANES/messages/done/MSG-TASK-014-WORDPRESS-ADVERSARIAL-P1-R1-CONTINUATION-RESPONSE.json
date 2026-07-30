@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "wordpress_cms",
+  "to_lane": "planner",
+  "task_id": "TASK-014",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-30T04:37:21Z",
+  "requires_response_to": "MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-014 adversarial R1 narrow WordPress revision is complete after the corrected route authority. Strict TDD observed a valid-target wrong-role RED and the anonymous extreme-page native TypeError RED before minimum fixes. Public references now retain UUID/unique-target/full-envelope checks and additionally bind primaryCategory to the frozen curtain-track/accessory families, series to /series/, and applications to /applications/. Fixture/Goldens use only role-correct paths; old /products/category/ and /products/series/ scan clean. Pagination now rejects decimal values above PHP_INT_MAX and integer-unsafe offsets before query/slice as normalized gdhe_invalid_pagination 400 no-store. The two disclosed reviewer pyc hashes matched, only those files were deleted, and no pyc/cache remains. Eight success Goldens, 11 request negatives, 12 exclusions, 8/8 two-round determinism, A3 19/15/6/runtime, 19-post/3-term and A3 exact cleanup, zero DB residue, 25/25 handoff, Core/SCF/DB/static/protected-scope/governance gates pass. Please perform fresh Planner validation before the separate final Round 2.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_R1_WORDPRESS_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-014/TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-014/WORDPRESS_CMS_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-014/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF.md",
+    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-014/PLANNER_CMS_CHECKPOINT.md"
+  ],
+  "notes": "No frontend, root README, architecture authority, endpoint/version/field/action contract, Content Schema 3.0.0, old endpoint, real data, external system, review, acceptance, Git delivery, deployment or TASK-015 change was made by wordpress_cms.",
+  "failure_reason": "Retracted before dispatch: Planner byte-level validation found one Schema-only inline positive still used the old category namespace. Evidence was corrected and checksums refrozen; a corrected response follows.",
+  "failed_at": "2026-07-30T04:39:14Z",
+  "updated_at": "2026-07-30T04:41:09Z",
+  "done_at": "2026-07-30T04:41:09Z"
+}

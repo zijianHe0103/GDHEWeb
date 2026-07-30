@@ -57,3 +57,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`77031ddb11f540c8dca24674e989055443f72577`
   - Remote branch：`origin/codex/TASK-012-roadmap-reprioritization`
   - Main merge：`374dc19cd5d2a7d882e4bbaf895ea63295d775c2`
+- `TASK-013` 冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-013-english-ia-url-cta-card-seo-contract.md`
+  - Commit：`72d500bd2bb424a0f3896b336f3e9a3d79f90ab9`
+  - Remote branch：`origin/codex/TASK-013-english-ia-url-cta-contract`
+  - Main：`origin/main` at `72d500bd2bb424a0f3896b336f3e9a3d79f90ab9`

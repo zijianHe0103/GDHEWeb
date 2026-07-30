@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-CONTINUATION",
+  "type": "task_assignment",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-014",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-07-30T04:29:51Z",
+  "requires_response_to": "MSG-TASK-014-WORDPRESS-ADVERSARIAL-P1-R1-SCOPE-BLOCKER",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Corrected continuation for the same TASK-014 Round 1 recovery. Thank you for blocking before mutation. The authoritative file is TASKS/ARTIFACTS/TASK-013/URL_AND_CANONICAL_CONTRACT.md. Role-aware public references must accept only: primaryCategory under either /products/curtain-track-systems/ with its one subcategory segment, or /products/accessories/ with its one accessory-category segment; series under /series/ or /series/{series-slug}/; applications under /applications/ or /applications/{application-slug}/. Do not create or accept /products/category/... or /products/series/.... Now execute the original two P1 TDD closures and exact P2 cleanup as one narrow revision: focused wrong-role REDs then minimum role-aware validation; extreme digit-only page RED then safe integer/offset rejection with normalized 400 no-store before slicing; exact deletion of only the two disclosed reviewer pyc files and the cache directory only if empty. Align Fixture/Goldens/handoff to the frozen roles, regenerate all eight success samples and sorted checksums, rerun request negatives, mismatch evidence, two-lifecycle determinism, A3 19/15/6/runtime, DB/Fixture cleanup, PHP/JSON/Schema/protected-scope/governance. Write ADVERSARIAL_R1_WORDPRESS_REVISION_REPORT.md and return one controlled execution_response. Preserve frontend/**, endpoint/version/fields/actions, existing contracts, production data and all external systems. No review, acceptance, Git delivery, deployment or TASK-015.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-014-product-card-collection-contract.md",
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_R1_RECOVERY.md",
+    "TASKS/ARTIFACTS/TASK-013/URL_AND_CANONICAL_CONTRACT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_R1_WORDPRESS_REVISION_REPORT.md"
+  ],
+  "notes": "This continuation supersedes only the wrong primaryCategory path and missing context filename in the initial assignment; all other narrow scope remains unchanged.",
+  "done_at": "2026-07-30T04:30:26Z",
+  "updated_at": "2026-07-30T04:30:26Z"
+}

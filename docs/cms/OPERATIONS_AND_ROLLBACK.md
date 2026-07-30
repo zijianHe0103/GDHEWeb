@@ -130,6 +130,26 @@ wp gdhe a2-fixtures cleanup --path=cms
 
 If A2 rollback is required, first clean fixtures, deactivate `gdhe-site`, restore `database.sql`, replace only `gdhe-site` with `gdhe-site-before/`, reactivate it, and repeat database, Core, SCF and plugin-manifest verification. Do not restore on a healthy database merely to demonstrate the procedure.
 
+## TASK-014 ProductCard Fixture
+
+The immutable pre-Fixture SQL backup is:
+
+`.local/backups/TASK-014/20260729T164606Z/database.sql`
+
+It is 179,205 bytes with SHA-256 `1b9f7def6c333284e324719e3fd43e68a8201100a96a7eba47aa48588635cb98` and contains the dump completion marker. Do not modify or overwrite it.
+
+The isolated local lifecycle is:
+
+```sh
+wp gdhe task014-fixtures create --path=cms
+wp gdhe task014-fixtures show --path=cms
+wp eval-file cms/wp-content/plugins/gdhe-site/tests/product-card-contract-test.php --path=cms
+python3 cms/wp-content/plugins/gdhe-site/tests/product-card-schema-test.py
+wp gdhe task014-fixtures cleanup --path=cms
+```
+
+`create` refuses an existing manifest. It creates only synthetic test candidates, one linkable curtain-track category landing, one `/series/` landing, one `/applications/` landing, three task-scoped terms and the fixed positive/negative ProductCard matrix. One valid card proves legal non-empty identity- and role-bound series/application output. The negative set includes source/target UUID mismatch and complete targets under the wrong semantic route role. `cleanup` deletes only manifest/marker-owned records and terms. The current lifecycle removes 19 posts and three terms; final verification must prove TASK-014 and A3 options, posts, postmeta, termmeta, terms and uploads are all zero.
+
 ## Routine verification
 
 Use WP-CLI to verify:

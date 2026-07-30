@@ -707,3 +707,37 @@ Each execution records:
 - boundaries: no business-deliverable repair, Planner-state edit by reviewer, product/runtime/CMS/API/Schema change, external operation, acceptance, Git, deployment or TASK-014
 - message_status: Round 2 request acknowledged as done; linked final PASS review_response and Planner-owned stop-recovery request are the next controlled messages
 - next: Planner acknowledges both messages, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-30T04:18:57Z - TASK-014 adversarial review round 1
+
+- task: TASK-014
+- message: MSG-TASK-014-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the formal request, and independently reviewed the active task, TASK-013 authority, TASK-014 design/plan/implementation/evidence, ProductCard runtime and Schema code, Fixture/tests, frontend handoff rounds, documentation and protected scope
+- files_changed: TASK-014 canonical adversarial review report; adversarial reviewer worklog; project-resume generated reviewer resume packet; controlled request acknowledgement
+- independent_validation: ProductCard eight-file closure and all eight Goldens PASS; 25/25 handoff checksums PASS; legacy A3 19-file closure and all 15 Goldens PASS; all GDHE PHP lint PASS; 49 plugin/TASK-014 JSON files parse; protected frontend/dependency/Core/SCF/theme/environment scope was empty before the reviewer import created two disclosed pyc caches; project, messages and whitespace checks PASS
+- result: FAIL; P0 none; P1 two; P2 one; Planner final validation not allowed
+- p1_reference_route_role: shared reference validation binds UUID to one complete public-path target but does not bind category/series/application role; current Fixture, test and Golden handoff accept `/products/series/task-014-series/` and `/products/category/task-014-card-products/` despite frozen TASK-013 route authority
+- p1_pagination_overflow: a 100-digit numeric page saturates to PHP_INT_MAX, passes the positive-range gate, overflows the slice offset to float and throws TypeError instead of returning normalized 400 no-store
+- p2_reviewer_bytecode_residue: independent Python imports generated exactly `product-card-schema-test.cpython-311.pyc` and `a3-schema-validate.cpython-311.pyc` under the CMS tests cache directory; exact cleanup was attempted but correctly blocked by reviewer write scope, so Planner cleanup is required and no bypass was used
+- passed_boundaries: additive contract; closed DTO/leakage; covered zero/one/N; zero per-card resolve; four action cells; protected local-only media/data; covered errors/cache/304; two-round determinism; A3 regressions; frozen cleanup evidence; frontend Round 1 history and Round 2 closure; documentation non-authorization and protected scope
+- runtime_limitation: local MySQL was unavailable for the final reviewer read-only probe, so no new Fixture lifecycle was started; immutable backup size/hash/completion marker and frozen evidence remain readable; both P1 findings reproduce without database mutation
+- boundaries: no business-deliverable repair, Planner-state edit, product-code/frontend/authority/database/external mutation, acceptance, Git, deployment or later-task implementation; two generated untracked bytecode caches are disclosed and pending Planner cleanup
+- message_status: original request acknowledged as done; the first queued response was marked failed before dispatch and acknowledged as superseded when the bytecode residue was detected; one corrected linked FAIL review_response is the actionable controlled return
+- next: Planner acknowledges the corrected response, exactly cleans the two pyc files, records the two narrow revisions, restores local runtime for fresh validation and dispatches only the configured final Round 2
+
+### 2026-07-30T05:13:53Z - TASK-014 adversarial review round 2 final
+
+- task: TASK-014
+- message: MSG-TASK-014-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, acknowledged the configured final request, preserved the complete Round 1 FAIL history and independently reviewed only both P1 closures, the reviewer-bytecode P2, the Planner-detected Schema-only old namespace and direct regressions
+- p1_reference_role_closure: production accepts only the TASK-013 primary category, series and application hub or one-child families; fixed role call sites retain UUIDv4, unique target, target UUID equality and complete-envelope gates; a 15-case direct matrix passed and wrong-role published-target tests cover all three fields
+- p1_pagination_closure: native integer text is bounded before cast and offset multiplication is bounded before query and slice; actual 127.0.0.1:3307 anonymous probes returned normalized 400 gdhe_invalid_pagination plus no-store for both required extreme cases without TypeError
+- p2_and_namespace_closure: exact active source, test, Golden and machine-handoff scan found no old category or series namespace; Schema-only positive is corrected; repository pyc and pycache counts remained zero before and after no-bytecode Python validation
+- independent_validation: ProductCard no-write validation reproduced exact 8-file closure, 8 Goldens, 1 positive and 6 mutations and matched frozen output; 11 errors, 12 exclusions, 25/25 checksums, zero/one/N, actions, identity, leakage, cache/304 and two-lifecycle determinism remain coherent; A3 no-write validation reproduced 19 files, 15 Goldens and 6 negatives and matched frozen output
+- runtime_integrity: DB_HOST is 127.0.0.1:3307; 12-table database check passed; zero-residue anonymous endpoint returned 200 with cache, ETag and request ID; TASK-014/A3 database residue was 0/0/0/0/0/0/0; uploads zero; all five additive and legacy REST surfaces are registered; no 3306 listener was started
+- protected_integrity: WordPress 7.0.2 and official Core checksums pass; GDHE Site 0.5.0 and SCF 6.9.2 are active; official SCF checksum passes; frontend, package and lock, TASK-007, Core, SCF, theme and configuration protected checks show no TASK-014 regression; PHP lint, Python AST and JSON parsing pass
+- governance: project validation PASS; controlled-message validation PASS before response; strict lane audit zero issues; Git whitespace check PASS
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed after controlled review recovery
+- boundaries: no business-deliverable repair, product or CMS write, Planner-state edit, Fixture creation, database mutation, frontend, dependency, external-system state change, acceptance, Git, deployment or TASK-015 work
+- message_status: Round 2 request acknowledged as done; linked final review_response is the required controlled return
+- next: Planner acknowledges the response, records Round 2 PASS recovery and owns final validation plus any later checked acceptance preparation

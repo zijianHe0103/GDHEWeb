@@ -795,3 +795,38 @@ Each execution records:
 - boundaries: no business-deliverable repair, product/test/evidence/README or Planner-state edit, UI, cache, CMS, database, dependency, external-system mutation, acceptance, Git, deployment or later-task work
 - message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run exactly resolved to the registered Planner session, delivered through the Codex thread bridge, recorded dispatch-once with the real bridge receipt and acknowledged as done by Planner
 - next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-30T18:33:31Z - TASK-017 adversarial review round 1
+
+- task: TASK-017
+- message: MSG-TASK-017-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the exact formal request before review, read the dispatch and full task/design/plan/TDD/execution/validation/diff/README/visual evidence, inspected the implementation and tests, and independently reviewed only the read-only TASK-017 scope
+- visual_history: preserved visual Round 1 FAIL with severe 0, obvious 1 and detail 1; directly inspected its missing-CTA and clipped-focus evidence; preserved and directly inspected visual Round 2 PASS with severe 0, obvious 0 and detail 0 at 1024, 768, 390 and 320/focus boundaries
+- p1: a Schema-valid HTTPS WordPress wp-content image URL passes the real ProductCard Validator and Adapter, then React emits both preload and img requests to that exact URL; the current browser-fetch test checks only absence of explicit fetch calls and does not enforce the accepted zero-browser-WordPress boundary
+- p1_reproduction: a no-listener Vite SSR probe against the real production modules returned VALIDATED_AND_ADAPTED true and WORDPRESS_IMAGE_EMITTED true for the synthetic WordPress media URL
+- p1_narrow_revision: reconcile the zero-browser-WordPress rule with the deferred production-media-origin gate, enforce a server-owned fail-closed boundary before React or keep CMS image rendering unavailable, and test rendered markup or browser network rather than source-text fetch absence
+- p2_scope: visual QA left frontend/next-env.d.ts changed from the baseline production route-types import to the dev route-types import; the tracked change is outside the declared TASK-017 inventory and omitted from the diff summary
+- p2_narration: request ACK is done and the task is correctly UNDER_REVIEW NOT_ACCEPTED DIRTY, but the active reviewer lane and message narration still says ACK_PENDING
+- passed_boundaries: exact non-production preview/cms mode gate and production 404; force-dynamic noindex/nofollow; preview zero CMS and CMS one collection/zero resolve; DTO-only presentation; four action cells; 0/1/N and safe unavailable behavior; exact protected image and TASK-013 category; visual Round 2 closure; protected TASK-014～016, dependency, lock, config, Snapshot/runtime, README and non-authorization boundaries
+- independent_validation: bundled Node 24.14 ProductList safe subset 19 PASS and 2 listener skips; unfiltered sandbox run had the same 19 PASS with exactly 2 EPERM listener failures; ProductCard verifier 8/3/6 PASS; old resolve verifier 16/2/2 PASS; lint and typecheck PASS; exact protected image hash and 13/20 inventories PASS; project/message/strict-lane/whitespace gates PASS
+- cross_lane_evidence: Planner fresh current-byte Node 24.18 evidence reports ProductList 21/21, TASK-016 73/73, full 265/265, build and production smoke PASS before final visual capture; reviewer did not rerun build because it could overwrite the disclosed current next-env residue
+- result: FAIL; P0 none; P1 one; P2 two; Planner final validation not allowed
+- boundaries: no product, test, evidence or README repair; no Planner-state edit, CMS/database/external mutation, acceptance, commit, push, merge, deployment or later-task work
+- message_status: original request acknowledged as done; the single linked FAIL review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner acknowledges the response, records governed FAIL recovery and authorizes only the minimum media-boundary, generated-residue and current-narration revisions before any fresh review
+
+### 2026-07-30T19:04:45Z - TASK-017 adversarial review round 2 final
+
+- task: TASK-017
+- message: MSG-TASK-017-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the exact final Round 2 request before substantive review, preserved adversarial Round 1 FAIL and both visual QA rounds, and independently reviewed only the media P1, both P2 closures and direct regressions
+- p1_closure: the real ProductList page with a Schema-valid HTTPS WordPress-shaped media URL made exactly one collection request and zero per-card resolve requests, became the generic unavailable state before React received card media, and rendered no hostile URL, origin, external preload, external img, raw payload or diagnostic
+- attack_matrix: absolute, protocol-relative, raw and decoded backslash, credential-bearing, malformed-percent and control-confused inputs failed closed; accepted encoded root paths remained on the fixed synthetic same-frontend origin; the seam is server-only and exposes no caller override
+- p2_closure: the independent final production build retained the baseline next-env route-types import with zero diff; the frontend revision request and response are ACKed/done and current task/project/board narration is UNDER_REVIEW NOT_ACCEPTED DIRTY with Round 1 FAIL preserved
+- visual_history: visual Round 1 remains FAIL with severe 0, obvious 1 and detail 1; visual Round 2 remains PASS with severe 0, obvious 0 and detail 0; no additional visual round was performed
+- independent_validation: ProductList no-listener 27 PASS and 2 skips; TASK-016 direct regression 60 PASS and 22 skips; both verifiers 8/3/6 and 16/2/2 PASS; lint, typecheck and production build PASS; next-env and protected baseline diffs empty; protected hashes and 13/20 inventories exact; project, messages, strict lane and whitespace gates PASS
+- cross_lane_evidence: Planner fresh current-byte listener results report ProductList 29/29, TASK-016 73/73, full Vitest 273/273 and production smoke PASS; reviewer did not request system privilege for listener-only reruns
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after controlled response acknowledgement and review recovery
+- boundaries: no product, test, evidence, README or Planner-state repair; no CMS/database/external mutation, acceptance, Git delivery, deployment or later-task work
+- message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation

@@ -711,3 +711,75 @@ Each execution records:
 - final_governance: current-byte Markdown/trailing-whitespace, zero temporary residue, git diff check, DPG project, message and strict lane audit gates PASS with zero issues
 - message_result: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE` received real Codex thread bridge receipt `item-2391` for Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1`
 - unique_next_step: Planner independently checks the R1 closure and controls any Round 2 dispatch; frontend stops without review, acceptance, Git delivery, deployment, cache or UI work
+
+### 2026-07-31T02:00:00+08:00 - TASK-017 local visible ProductCard list implementation
+
+- task: TASK-017
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION
+- message_ack: exact request, frozen DESIGN, IMPLEMENTATION_PLAN and FRONTEND_DISPATCH read; request acknowledged before product mutation
+- scope: only the authorized local `/products/` slice, ProductCard presentation, server-only product-list config/orchestration, protected preview asset, new focused tests, frontend README, TASK-017 artifacts and this lane record
+- tdd: four frozen seams received RED evidence before minimum closure; missing config, missing component family, missing route and missing/then strict built-runtime smoke were preserved in TDD_RED_EVIDENCE
+- config: one server-only `GDHE_PRODUCT_LIST_MODE`; exact non-production preview/cms only, production always disabled, no second/public flag
+- route: dynamic noindex/nofollow `/products/`; disabled maps to notFound, preview is zero-network, CMS reuses TASK-016 exactly once with page 1/perPage 12/modified_desc and zero resolve
+- states: valid empty and sanitized unavailable remain distinct; no error detail, raw body, CMS origin or diagnostic enters React
+- presentation: DTO-only semantic ProductList/ProductCard/Grid/Media/Empty/Unavailable family, all four action/lifecycle cells, image/title/action identity, optional fields, visible focus, 44 px action target and responsive 3/2/1 grid
+- media: exact 800 x 800 protected PNG copied mechanically once and retained without transform; SHA-256 `9a8ed9fe...4880`
+- ia_correction: TASK-013 route shape plus Manual Curtain Tracks and kebab-case authority closed the preview category path RED at `/products/curtain-track-systems/manual-curtain-tracks/`
+- environment_note: lane sandbox listener attempts stopped at `listen EPERM`; Planner unrestricted runs used the same shared bytes without product edits
+- focused_validation: final ProductList cases 20/20 PASS; TASK-016 focused 5 files/73 tests PASS
+- full_validation: full Vitest 18 files/264 tests PASS; ProductCard verifier 8/3/6, existing CMS verifier 16/2/2, lint, typecheck and production build PASS
+- production_smoke: first strict run observed Next internal trailing-slash 308 before route evaluation; test followed the same-origin canonical redirect, then PASS proved production preview/cms final 404, root 200, integration 404 and CMS requests 0
+- protected_integrity: package/package-lock, next.config, ProductCard and CMS snapshot/verifiers, TASK-016 runtime and existing routes unchanged; inventories remain 13/20
+- documentation: frontend README updated; exact protected root README delta recorded for Planner in EXECUTION_REPORT without editing root
+- artifacts: TDD_RED_EVIDENCE.md, EXECUTION_REPORT.md, TEST_OR_VALIDATION_LOG.md and DIFF_OR_OUTPUT_SUMMARY.md complete
+- boundaries: no visual QA, adversarial review, acceptance, Git delivery, deployment, CMS/database/external mutation, real-product import, product detail or RFQ work
+- final_integrity: exact protected image is 800 x 800 RGBA and hash-matched; package/lock/Next config/protected runtime diff, 13/20 inventories, production leakage, browser fetch, absolute path, temporary residue, Markdown whitespace and global diff gates PASS
+- final_governance: DPG project, registry, messages and strict lane audit PASS with zero issues
+- process_note: production smoke exited cleanly after both modes; later sandbox process enumeration was unavailable because the local sysmond service was absent, not because a residue was found
+- message_result: `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION-RESPONSE` received real Planner thread bridge receipt `item-2475`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION`
+- unique_next_step: Planner independently runs the implementation checkpoint, applies the protected root README delta and controls visual QA or later review dispatch; frontend stops here
+
+### 2026-07-31T02:15:00+08:00 - TASK-017 visual Round 1 narrow CSS revision
+
+- task: TASK-017
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION
+- message_ack: exact revision request, canonical visual report and narrow authority read; request acknowledged before mutation
+- review_context: Round 1 FAIL with severe 0, obvious 1 and detail 1; only 1024 CTA clipping and media focus clipping assigned
+- tdd_red: one source/style test exit 1 because the existing 64rem block lacked the content-sized card body rule; the stylesheet also lacked a media-specific inside outline offset
+- minimum_green: moved only the existing `.cardBody { height: auto; }` override from 42rem to 64rem and added `.mediaLink:focus-visible { outline-offset: -0.2rem; }`
+- compatibility_correction: removed two redundant RegExp `s` flags after ES2017 typecheck RED; `[^}]*` preserved exact assertion semantics
+- focused_validation: targeted style 1/1 PASS; no-listener ProductList 19 PASS/2 skipped; Planner unrestricted ProductList 3 files/21 tests PASS
+- regression_validation: TASK-016 5 files/73 tests and full Vitest 18 files/265 tests PASS on shared current bytes
+- build_validation: both verifiers 8/3/6 and 16/2/2, lint, typecheck and production build PASS; route inventory unchanged
+- production_smoke: preview/cms final 404, root 200, integration 404 and CMS requests 0 PASS
+- protected_integrity: package/lock/Next config, protected image hash, 13/20 contract inventories, runtime, component semantics/data, CMS and Planner-owned files unchanged
+- boundaries: no visual QA, component markup/action/DTO/data, new breakpoint, global CSS, dependency, CMS/database, Git, deployment, detail, RFQ or external-system work
+- final_governance: protected scope, zero temporary residue, production leakage, Markdown whitespace, git diff check, DPG project/registry/messages and strict lane audit all PASS with zero issues
+- message_result: `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION-RESPONSE` received real Planner thread bridge receipt `item-2494`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION`
+- unique_next_step: Planner owns the independent checkpoint and any visual Round 2 dispatch; frontend stops here
+
+### 2026-07-31T02:49:59+08:00 - TASK-017 adversarial Round 1 media P1/P2 revision
+
+- task: TASK-017
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1
+- message_ack: exact revision, active task, canonical Round 1 FAIL report and current recovery read; request acknowledged before product mutation and moved to done
+- review_context: Round 1 `FAIL / P0=0 / P1=1 / P2=2`; frontend owns only remote-media fail-closed behavior, rendered-markup proof, next-env production baseline and direct docs/evidence
+- tdd_red: real page plus TASK-016 Transport/Validator/Adapter produced one fixed collection request and zero resolve, then rendered the exact hostile HTTPS WordPress URL in both React preload and img; focused command exit 1 with 1 failed/9 skipped
+- policy_red: focused policy test exit 1 because the server-owned media-policy module did not exist
+- minimum_green: one server-only fixed synthetic-origin policy accepts only safe original root-relative paths beginning with exactly one slash; absolute, protocol-relative, backslash-confused, credential-bearing and malformed values fail closed
+- orchestration: authentic CMS DTO remains unchanged; after the one request, any unsafe image in a non-empty collection returns the existing sanitized unavailable state before React; empty CMS remains empty and preview retains the exact protected local image
+- consistency: real listener keeps the frozen Schema-valid absolute media sample and now expects unavailable; root-relative acceptance is unit-tested only at the policy seam; 1/N rendering remains in DTO presentation and preview
+- rendered_proof: hostile URL/origin, external preload and external img are absent; unavailable markup exposes no CMS origin, raw body or policy diagnostic
+- generated_file: final production build regenerated `frontend/next-env.d.ts` to `./.next/types/routes.d.ts`; baseline diff is empty and no manual edit was used
+- documentation: frontend README states authentic one-request/zero-resolve CMS behavior and deferred-media fail-closed gate; exact root README delta recorded for Planner in EXECUTION_REPORT without editing root
+- local_validation: media-policy 7/7, rendered hostile-media 1/1, no-listener route 8 with 2 listener skips, presentation/config/policy 19/19, lint, typecheck and production build PASS
+- unrestricted_validation: Planner same-current-bytes ProductList 4 files/29 tests, TASK-016 5/73, full Vitest 19/273, both verifiers, lint/typecheck/build and production smoke all PASS
+- production_smoke: preview/cms final 404, root 200, integration 404 and CMS requests 0
+- environment_note: lane sandbox listener run reached 27 passing cases and only two listener cases stopped at EPERM; a later privilege request was rejected and not retried because Planner supplied the exact unrestricted shared-byte results
+- protected_scope: Validator, Adapter, DTO, Transport, contracts, CMS/database, component DOM/CSS/visual output, package/lock, Next config, protected image, Planner state, root README, external systems and Git unchanged
+- artifacts: the four existing TASK-017 implementation artifacts preserve visual R1/R2 and adversarial R1 history and now append this revision
+- message_result: `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-2519`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1`
+- unique_next_step: Planner owns the independent checkpoint and any adversarial Round 2 dispatch; frontend stops without review, acceptance, Git delivery, deployment or later work

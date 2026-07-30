@@ -1,0 +1,26 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-017-VISUAL-QA-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-017",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-30T18:09:50Z",
+  "requires_response_to": "MSG-TASK-017-VISUAL-QA-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-017 visual QA Round 1 is complete: FAIL with 严重差异 0, 明显差异 1, 细节差异 1. Exact 1440/1024/768/390 full-page evidence and 320 reflow evidence are under QA/TASK-017. Grid columns are 3/2/2/1/1; 320 innerWidth and scrollWidth are both 320 with no horizontal overflow. Protected 800x800 image, English Alt, semantics, meaningful link names, natural media-title-action order, focus styles, long-text reflow and 44px action size otherwise pass. Blocking finding: on a fresh 1024px initial render the 44px View Product action intersects the overflow-hidden card by only about 0.4375px and is visually absent; direct keyboard focus forces it to reflow fully inside. Smallest correction is to apply cardBody height auto at the existing max-width 64rem two-column breakpoint and rerun 1024/768 plus focus/target-size gates. Detail finding: media-link focus outline is clipped on three sides but remains visible at the lower edge. Canonical report: QA/TASK-017/VISUAL_QA_REPORT.md. Task report: TASKS/ARTIFACTS/TASK-017/VISUAL_QA_REPORT.md. Local preview server was stopped. No frontend/CMS/Planner/Git/deployment/external-system change was made.",
+  "context_files": [
+    "QA/TASK-017/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-017/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-017/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-017/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Linked response to MSG-TASK-017-VISUAL-QA-R1. Planner/frontend narrow revision required before review.",
+  "done_at": "2026-07-30T18:10:40Z",
+  "updated_at": "2026-07-30T18:10:40Z"
+}

@@ -72,3 +72,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`54917bdedcdb710830021c6397adc217252a8423`
   - Remote branch：`origin/codex/TASK-015-product-card-contract-snapshot`
   - Main：`origin/main` at `54917bdedcdb710830021c6397adc217252a8423`
+- `TASK-016` 前端 ProductCard Transport、Runtime Validator 与 DTO Adapter — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-016-product-card-runtime-consumer.md`
+  - Commit：`5b448c5c169db7aba1b6c69b3b4baa216493f4d3`
+  - Remote branch：`origin/codex/TASK-016-product-card-runtime-consumer`
+  - Main：`origin/main` at `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`

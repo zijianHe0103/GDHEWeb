@@ -1,7 +1,7 @@
 # TASK-016 前端 ProductCard Transport、Runtime Validator 与 DTO Adapter
 
 task_id: TASK-016
-status: AWAITING_USER
+status: CLOSED
 accepted_at: 2026-07-30T15:28:57Z
 owner_lane: planner
 assigned_lanes: [frontend]
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-016
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-30T14:32:21Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -152,7 +152,7 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；Final Round 2 `PASS / P0=0 / P1=0 / P2=0`、Planner final validation 与文档门均已通过。当前只执行提交前验证、任务分支正式提交与推送、fast-forward 合并 `main` 并推送 `main`，不开始 UI、部署或下一任务。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `5b448c5c169db7aba1b6c69b3b4baa216493f4d3` 已同时成为本地/远端任务分支与本地/远端 `main` 的共同指针；TASK-016 已完成归档。
 
 ## 恢复入口
 
@@ -160,19 +160,13 @@ project_type: software
 
 ## 下一步
 
-复跑提交前门禁，只暂存 TASK-016 受控文件并生成中文正式提交；随后立即推送任务分支、fast-forward 合并到 `main` 并推送远端 `main`。
-
-正式交付只接受：
-
-```text
-确认 TASK-016 完成并提交到远端
-```
+无。后续工作由独立任务管理。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 冻结需求、设计门、状态、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**` | intake、DESIGN/PLAN、checkpoint、Planner Summary | FORMAL_DELIVERY_AUTHORIZED |
+| planner | 冻结需求、设计门、状态、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**` | intake、DESIGN/PLAN、checkpoint、Planner Summary | CLOSED |
 | frontend | 确认后按 TDD 建立独立 ProductCard Transport、Validator、wrapper、DTO Adapter、编排和测试 | 本任务允许的 `frontend/**`、TASK-016 artifacts、lane records | RED/GREEN、implementation、execution report、validation evidence | REVISION_RESPONSE_ACKED; COMPLETE |
 | adversarial_reviewer | 实施与 Planner validation 后只读独立审查 | canonical review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | ROUND_1_FAIL_HISTORY_PRESERVED; ROUND_2_PASS; RESPONSE_ACKED |
 

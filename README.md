@@ -38,7 +38,7 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 
 `product-cards` 是独立、封闭的 ProductCard Schema `1.0.0` collection：一次请求返回列表渲染所需的完整卡片 DTO，资格校验先于筛选、总数和分页，禁止前端逐卡调用 `/resolve`。它不会改变 Content Schema `3.0.0` 或原有四个公开内容端点。
 
-前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；ProductCard 已具备 CMS/API 合同、前端离线快照和 server-only 运行时消费者，但尚无可见产品页或正式产品导入。Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
+前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；ProductCard 已具备 CMS/API 合同、前端离线快照、server-only 运行时消费者和本地受控可见列表切片，但尚无正式公开产品页或正式产品导入。Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
 
 ### 前端离线合同快照
 
@@ -51,6 +51,12 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 ### 前端 server-only ProductCard 运行时消费者
 
 TASK-016 在 `frontend/src/lib/cms/server/product-cards/` 建立了 server-only ProductCard 运行时消费者：它固定请求英语 ProductCard Schema `1.0.0` collection，使用本地 8-file Schema closure 验证响应，并且只有真实 validated wrapper 才能适配为只读前端 DTO。每次编排只发起一次 collection 请求、零逐卡 `/resolve`；当前故意不包含 UI 或缓存。验证时从 `frontend/` 运行五个 `product-card-*.test.ts` 聚焦文件，以及 `npm run verify:product-card-contract` 和 `npm run verify:cms-contract`。
+
+### 英语 ProductCard 本地可见列表切片
+
+TASK-017 在 `/products/` 增加了一个固定 `noindex,nofollow` 的本地受控英语列表切片。它默认关闭，只能在非生产环境通过 server-only `GDHE_PRODUCT_LIST_MODE=preview|cms` 开启：`preview` 使用带 GDHE 品牌保护的 FGD X15 本地测试候选且不请求 CMS，`cms` 复用 TASK-016 的一次 collection 请求、零逐卡 `/resolve` 消费链。生产媒体来源尚未授权，因此非空 CMS 集合若只提供远程媒体 URL，会在进入 React 前整体转为脱敏的暂不可用状态，浏览器不会直连 WordPress；空集合仍保持独立空状态。两种模式在 production 都强制返回 404。
+
+这只是可视化和接入验证页面，不是正式公开产品目录。真实产品导入、产品详情页、可工作的 RFQ/Contact 目标、公开 SEO、生产媒体配置和部署仍未实现；完整启动方式与边界见 [`frontend/README.md`](frontend/README.md#local-only-productcard-list-slice)。
 
 ### 前端 server-only `/resolve` Transport
 

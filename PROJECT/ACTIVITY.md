@@ -6709,3 +6709,473 @@ schema_version: DPG-LANES-1.0.0
 - state: `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
 - scope: 只提交 TASK-016 产品、测试、文档和治理文件；排除 `.codex/config.toml` 与历史 resume packets。
 - next: pre-commit verification、正式提交、推送任务分支、fast-forward 合并并推送 `main`。
+## 2026-07-30T16:00:28Z TASK-017 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-017
+- 已核验 TASK-016 正式提交、本地/远端任务分支与本地/远端 `main` 均为 `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`，并将 TASK-016 同步为 `CLOSED / MERGED` 后归档。
+- 从同步的 `main` 创建 `codex/TASK-017-product-card-visible-list-slice`。
+- TASK-017 只冻结英语 `/products/` 本地受控可见列表、ProductCard UI、测试候选隔离及四视口/320 reflow 验收，不实施详情、RFQ、CMS、SEO、多语言或部署。
+- 当前状态为 `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- 唯一下一步：等待 `确认 TASK-017 需求并开始执行`。
+
+## 2026-07-30T17:37:41Z TASK-017 requirement confirmation and design gate
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-017
+- 用户输入精确口令 `确认 TASK-017 需求并开始执行`，任务从 `AWAITING_REQUIREMENT_CONFIRMATION` 推进为 `READY`。
+- DESIGN 与 IMPLEMENTATION_PLAN 冻结单一 local mode、production fail-closed、DTO-only UI、受控保护图候选、一次请求/零 resolve 和四个 TDD 接缝。
+- Node 24.18.0 下 ProductCard `8/3/6`、旧 CMS `16/2/2`、完整 `244/244`、lint、typecheck 和 production build 全 PASS。
+- 下一步只创建并真实投递 frontend implementation message；不得提前做视觉 QA、审查、验收、Git 或部署。
+
+## 2026-07-30T17:41:18Z TASK-017 frontend dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- message: `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION`。
+- delivery: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，Codex turn `019fb41d-ac41-7172-bd37-bba02e978848`，dispatch-once recorded。
+- boundary: frontend 必须先 ACK，只实施受控 `/products/`、DTO-only ProductCard UI、本地候选、测试和 frontend 文档/证据。
+- next: 等待 execution response；不提前视觉 QA、审查、验收、Git 或部署。
+
+## 2026-07-30T17:48:09Z TASK-017 duplicate approval recovery
+
+- type: execution_recovery
+- lane: planner
+- task: TASK-017
+- frontend 已 ACK 并开始四个 TDD 接缝；当前重复素材复制请求停在系统审批。
+- Planner 已完成唯一二进制原样复制并验证 800 × 800 与冻结 SHA-256；无素材转换、CMS、数据库或外部写入。
+- frontend 继续指令已排队。
+- next: 用户在 frontend 任务取消/拒绝重复审批，Lane 随后继续。
+
+## 2026-07-30T17:50:39Z TASK-017 duplicate approval recovery resolved
+
+- type: execution_recovery_resolved
+- lane: planner
+- task: TASK-017
+- 用户已取消重复的保护图复制审批并要求继续。
+- frontend continuation turn `019fb426-2b41-7053-9258-6754c399cfd8` 已启动且无 approval flag；素材不再复制或转换。
+- 当前只继续 route/production smoke/最终验证，并以 TASK-013 权威合同核对分类 canonical path。
+- next: 等待 frontend 受控 execution response，之后 Planner fresh checkpoint 和 visual QA。
+
+## 2026-07-30T18:00:38Z TASK-017 frontend checkpoint PASS and visual QA dispatched
+
+- type: checkpoint_and_message_dispatched
+- lane: planner
+- task: TASK-017
+- frontend response 已 validate、ACK 并移动至 done；Planner 独立复现 ProductList 20/20、TASK-016 73/73、full 264/264、两个 verifier、lint/typecheck/build、production smoke、protected scope/hash 和 DPG gates 全 PASS。
+- `frontend/README.md` 与根 `README.md` 已同步，document impact `RESOLVED`，README impact `UPDATED`。
+- `MSG-TASK-017-VISUAL-QA-R1` 已通过 visual_qa 真实 turn `019fb42f-56ae-7770-80a4-b00bc8c9bfc6` 投递并 record dispatch。
+- next: 等待四视口截图、320 reflow、键盘/焦点和差异分级 response；visual PASS 前不进入 adversarial review。
+
+## 2026-07-30T18:10:52Z TASK-017 visual QA Round 1 FAIL recovery
+
+- type: visual_review_failed
+- lane: planner
+- task: TASK-017
+- `MSG-TASK-017-VISUAL-QA-R1-RESPONSE` 已 validate、ACK；结论 `FAIL / 严重 0 / 明显 1 / 细节 1`。
+- 1024px fresh render 的 CTA 被 card overflow 裁至约 0.4375px 可交区域；media-link focus ring 裁切三侧。
+- `task_transition.py reopen` 已按要求运行，但 helper 只接受 AWAITING_USER 并拒绝真实 IN_PROGRESS；任务以等价语义进入 NEEDS_REVISION。
+- next: 只 dispatch frontend 窄 CSS TDD 修订，随后 visual Round 2；不进入 adversarial review、验收、Git 或部署。
+
+## 2026-07-30T18:12:10Z TASK-017 frontend visual revision dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- message: `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION`。
+- delivery: registered frontend session，real turn `019fb439-d0ee-7ae3-ad3a-0e92f3ad011f`，dispatch-once recorded。
+- scope: 仅 64rem cardBody 高度、media focus ring 内缩、直接测试和 TASK-017 evidence。
+- next: 等待 revision response，fresh Planner checkpoint 后 visual R2。
+
+## 2026-07-30T18:18:34Z TASK-017 revision checkpoint PASS and visual Round 2 dispatched
+
+- type: checkpoint_and_message_dispatched
+- lane: planner
+- task: TASK-017
+- frontend revision response 已 ACK；Planner fresh current-byte validation 通过 ProductList 21/21、TASK-016 73/73、full 265/265、两个 verifier、lint/typecheck/build、production smoke、protected scope/hash 和 DPG gates。
+- `MSG-TASK-017-VISUAL-QA-R2` 已通过 visual_qa 真实 turn `019fb43f-a4fd-70f1-a975-a4f4638d4289` 投递并 record dispatch。
+- next: 等待 1024/768/390 CTA/focus Round 2 response；PASS 前不进入 adversarial review。
+
+## 2026-07-30T18:26:23Z TASK-017 visual Round 2 PASS and adversarial review dispatched
+
+- type: review_dispatched
+- lane: adversarial_reviewer
+- task: TASK-017
+- visual Round 2 `PASS / severe 0 / obvious 0 / detail 0` 已 ACK；Round 1 FAIL 历史保留。
+- `MSG-TASK-017-ADVERSARIAL-REVIEW-R1` 已通过 reviewer 真实 turn `019fb446-d476-78b0-840a-6d29ddb2021d` 投递并 record dispatch。
+- task state: `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- next: 等待独立 verdict；PASS 前不得 Planner final validation、checked prepare、验收、Git 或部署。
+
+## 2026-07-30T18:37:08Z TASK-017 adversarial Round 1 FAIL recovery
+
+- type: review_failed
+- lane: planner
+- task: TASK-017
+- `MSG-TASK-017-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 ACK；verdict `FAIL / P0=0 / P1=1 / P2=2`。
+- P1 为 WordPress remote media 进入 React/browser；P2 为 next-env generated residue 与 stale ACK narration。
+- reopen helper 已运行但因只接受 AWAITING_USER 拒绝真实 UNDER_REVIEW；任务记录等价 NEEDS_REVISION。
+- next: 仅 frontend media fail-closed TDD、markup/network regression 和 generated-file cleanup；之后 adversarial Round 2。
+
+## 2026-07-30T18:38:52Z TASK-017 frontend adversarial revision dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- message: `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1`。
+- delivery: registered frontend session，real turn `019fb452-4fc7-7163-92a6-8ae560f1ab73`，dispatch-once recorded。
+- scope: media fail-closed TDD、rendered markup regression、frontend docs/evidence 与 next-env cleanup；protected runtime/CMS 不可改。
+- next: 等待 revision response，fresh checkpoint 后 adversarial Round 2。
+
+### 2026-07-30T17:41:00Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-017
+- summary: message queued for frontend
+
+### 2026-07-30T17:41:18Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION dispatched to frontend
+
+### 2026-07-30T17:41:53Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION moved to done
+
+### 2026-07-30T17:57:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T17:57:34Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-07-30T17:57:35Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-07-30T18:00:18Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-017
+- summary: message queued for visual_qa
+
+### 2026-07-30T18:00:35Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-07-30T18:01:20Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R1 moved to done
+
+### 2026-07-30T18:09:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T18:10:40Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R1-RESPONSE moved to done
+
+### 2026-07-30T18:11:51Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-017
+- summary: message queued for frontend
+
+### 2026-07-30T18:12:06Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION dispatched to frontend
+
+### 2026-07-30T18:12:29Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION moved to done
+
+### 2026-07-30T18:16:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T18:16:59Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION-RESPONSE dispatched to planner
+
+### 2026-07-30T18:17:01Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION-RESPONSE moved to done
+
+### 2026-07-30T18:18:09Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-017
+- summary: message queued for visual_qa
+
+### 2026-07-30T18:18:34Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R2 dispatched to visual_qa
+
+### 2026-07-30T18:19:12Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R2 moved to done
+
+### 2026-07-30T18:24:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T18:25:04Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-VISUAL-QA-R2-RESPONSE moved to done
+
+### 2026-07-30T18:26:03Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T18:26:23Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-30T18:26:27Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-30T18:35:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T18:36:16Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-07-30T18:36:45Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-30T18:38:32Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-017
+- summary: message queued for frontend
+
+### 2026-07-30T18:38:52Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1 dispatched to frontend
+
+### 2026-07-30T18:39:35Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1 moved to done
+
+## 2026-07-30T18:47:33Z TASK-017 frontend revision duplicate approval recovery
+
+- task: TASK-017
+- frontend 已完成远程媒体 fail-closed TDD；Planner fresh validation 通过 ProductList `29/29`、TASK-016 `73/73`、full `273/273`、verifiers、lint/typecheck/build、production smoke、受保护范围与 DPG gates。
+- `frontend/next-env.d.ts` 已恢复基线，无 tracked generated diff。
+- frontend 原 turn 仅停在重复 build 系统审批；Planner 已完成相同构建并通知 lane 复用证据。
+- next: 用户取消冗余审批，让 frontend 写完 evidence 并发送受控 response；之后只进入 adversarial Round 2。
+
+## 2026-07-30T18:55:42Z TASK-017 frontend checkpoint PASS and adversarial Round 2 dispatched
+
+- task: TASK-017
+- `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` 已 validate、ACK 并移动至 done。
+- Planner fresh validation 再次通过 ProductList `29/29`、TASK-016 `73/73`、full `273/273`、两套 verifier、lint/typecheck/build、production smoke、protected scope 与 DPG gates。
+- `MSG-TASK-017-ADVERSARIAL-REVIEW-R2` 已通过 reviewer 真实 turn `019fb461-b445-7392-91c7-6d7c13204ed4` 投递并 record dispatch。
+- next: 等待最终独立 response；PASS 0/0/0 前不得 final validation、验收、Git 或部署。
+
+## 2026-07-30T19:08:03Z TASK-017 adversarial Round 2 PASS recovery
+
+- task: TASK-017
+- `MSG-TASK-017-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK 并移动至 done。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Round 1 FAIL 与 visual R1 FAIL/R2 PASS 历史保留。
+- closure: hostile media 真实页面路径一次 collection、零 resolve，React 前 fail closed，markup 无外部 URL/origin/preload/img/raw payload/diagnostic；两个 P2 已关闭。
+- next: Planner Summary、fresh final validation、checked `prepare-awaiting-user`；不得验收、Git 或部署。
+
+## 2026-07-30T19:10:39Z TASK-017 Planner final validation PASS
+
+- task: TASK-017
+- Planner Summary 已生成。
+- final validation: ProductList `29/29`、TASK-016 `73/73`、full `273/273`、两套 verifier、lint/typecheck/build、production smoke、protected scope/hash、next-env baseline 与 DPG gates 全 PASS。
+- full audit: zero HIGH；仅预期 DIRTY 与两个 LOW heuristic，未据此执行范围外清理。
+- next: checked `prepare-awaiting-user`；不得手工设置 AWAITING_USER。
+
+## 2026-07-30T19:12:11Z TASK-017 checked prepare evidence-format recovery
+
+- task: TASK-017
+- first_prepare: checked prepare 于 19:11:26Z 成功。
+- audit: 只报 `REVIEW_EVIDENCE_MISSING` 与 `VERIFY_EVIDENCE_MISSING`；产品、review 和 validation PASS 未变化。
+- recovery: checked reopen 已退回 NEEDS_REVISION，只补 parser 要求的 `Evidence: PASS` 标记并同步 Board/当前叙述。
+- next: fresh audit HIGH 清零后再次 checked prepare。
+
+## 2026-07-30T19:13:45Z TASK-017 final strict audit zero HIGH
+
+- task: TASK-017
+- activity task 已有独立 Adversarial Review 与 Validation Evidence，均含 `Evidence: PASS`。
+- full audit: zero HIGH；仅预期 DIRTY medium 与两个 LOW heuristic。
+- project/registry/messages/strict lane/diff: PASS。
+- status views: 已同步 AWAITING_USER target。
+- next: 最终 checked prepare 后等待用户。
+
+## 2026-07-30T19:14:33Z TASK-017 review-history format recovery
+
+- task: TASK-017
+- second_prepare: 19:14:16Z 成功。
+- audit: 唯一 HIGH 为 `FAILED_REVIEW_OR_VERIFY_AWAITING_USER`。
+- cause: 当前 review 章节含保留的 Round 1 FAIL，解析器误判；最终 Round 2 PASS 未变化。
+- recovery: checked reopen；只把历史 FAIL 移到独立 Review History。
+- next: fresh audit HIGH 清零后 final checked prepare。
+
+## 2026-07-30T19:15:15Z TASK-017 final review-history audit zero HIGH
+
+- task: TASK-017
+- current review 只含 Evidence: PASS 与 Final Round 2 PASS；历史 FAIL 位于独立 Review History。
+- full audit: zero HIGH；project/registry/messages/strict lane/diff PASS。
+- status views: 已同步 AWAITING_USER target。
+- next: final checked prepare 后等待用户。
+
+### 2026-07-30T18:51:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T18:52:08Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE dispatched to planner
+
+### 2026-07-30T18:52:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE moved to done
+
+### 2026-07-30T18:55:18Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T18:55:39Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-30T18:56:08Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-30T19:06:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-017
+- summary: message queued for planner
+
+### 2026-07-30T19:07:09Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-07-30T19:07:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-017
+- summary: message MSG-TASK-017-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-30T19:11:26Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-017
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T19:12:11Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-017
+- summary: checked prepare succeeded, but strict audit requires explicit Adversarial Review Evidence: PASS and Validation Evidence Evidence: PASS markers plus synchronized human-readable AWAITING_USER views
+
+### 2026-07-30T19:14:16Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-017
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T19:14:33Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-017
+- summary: post-prepare audit parsed preserved Round 1 FAIL inside the current Adversarial Review section as current failed review
+
+### 2026-07-30T19:15:48Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-017
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T19:34:02Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-017
+- summary: TASK-017 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+## 2026-07-30T19:34:02Z TASK-017 formal delivery authorization
+
+- task: TASK-017
+- authorization: exact user phrase accepted by `task_accept.py`.
+- content: local gated English ProductCard list slice, DTO-only presentation, protected FGD X15 preview, one collection/zero resolve and production/media fail-closed.
+- validation: adversarial R2 PASS 0/0/0; fresh full Vitest 273/273, ProductCard 8/3/6, CMS 16/2/2, lint/typecheck/build/smoke and governance gates PASS.
+- docs: root/frontend README and TASK-017 artifacts are resolved and current.
+- next: controlled formal commit, task-branch push, main merge and main push; no deployment or next task.

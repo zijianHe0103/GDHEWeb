@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-017-ADVERSARIAL-REVIEW-R2",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-017",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-30T18:55:18Z",
+  "requires_response_to": "MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact Round 2 review before work. Perform only the read-only TASKS/ARTIFACTS/TASK-017/ADVERSARIAL_REVIEW_R2_DISPATCH.md review. Preserve Round 1 FAIL and both visual QA rounds. Return one controlled review_response with exact PASS/FAIL/BLOCKED and P0/P1/P2 counts. Do not repair product/evidence, modify Planner state, accept, Git deliver, deploy or mutate external systems.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-017-product-card-visible-list-slice.md",
+    "TASKS/ARTIFACTS/TASK-017/ADVERSARIAL_REVIEW_R2_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-017/FRONTEND_ADVERSARIAL_R1_REVISION.md",
+    "TASKS/ARTIFACTS/TASK-017/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-017/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-017/ADVERSARIAL_REVIEW_REPORT.md",
+    "QA/TASK-017/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-017/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Node 24.18.0. Final configured read-only Round 2. Preserve unrelated .codex/config.toml and resume packets.",
+  "dispatched_at": "2026-07-30T18:55:39Z",
+  "delivery_key": "MSG-TASK-017-ADVERSARIAL-REVIEW-R2:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019fb461-b445-7392-91c7-6d7c13204ed4",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-30T18:56:08Z",
+  "updated_at": "2026-07-30T18:56:08Z"
+}

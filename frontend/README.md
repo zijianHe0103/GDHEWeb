@@ -150,6 +150,48 @@ npm run verify:product-card-contract
 npm run verify:cms-contract
 ```
 
+## Local-only ProductCard list slice
+
+`/products/` is a controlled English ProductCard presentation slice. It is
+not the production catalog. The route is disabled by default, always exports
+`noindex,nofollow`, and cannot be enabled when `NODE_ENV=production`.
+
+Use exactly one server-only local mode:
+
+```sh
+GDHE_PRODUCT_LIST_MODE=preview npm run dev
+```
+
+Preview mode renders the frozen FGD X15 protected test candidate from
+`public/test-candidates/` and performs no CMS request. The visible notice
+states that the content is a local test candidate, not a production catalog.
+
+To exercise the authentic TASK-016 consumer against a controlled local CMS:
+
+```sh
+WORDPRESS_API_URL=http://127.0.0.1:8080/wp-json \
+GDHE_PRODUCT_LIST_MODE=cms \
+npm run dev
+```
+
+CMS mode performs one fixed English ProductCard collection request with
+`page=1`, `perPage=12`, and `sort=modified_desc`; it performs no per-card
+`/resolve` requests. Valid empty collections and sanitized unavailable states
+remain distinct. Before React renders a non-empty CMS collection, every media
+URL must be a safe root-relative same-frontend-origin path. Absolute,
+protocol-relative, malformed or backslash-confused media makes the whole
+collection use the sanitized unavailable state; no CMS media origin or policy
+diagnostic enters markup. This remains fail closed until a separate task
+authorizes the production public-media origin and Next Image allowlist.
+Unknown or unset modes return the framework 404.
+
+The slice uses a reusable native responsive image for the repository-local
+protected candidate. Production HTTPS media origin selection and the Next
+Image allowlist remain deferred deployment gates; no remote-image fallback is
+configured here. Product details, working RFQ/contact targets, real production
+products, public SEO, filtering, pagination, visual QA and deployment are also
+outside this slice.
+
 ## Server-only CMS Transport
 
 `src/lib/cms/server/` provides the server-only network boundary for the fixed English Schema 3 `/gdhe/v1/resolve` endpoint. Its public entry accepts only a canonical public path and an optional caller `AbortSignal`; origin, endpoint, locale and schema cannot be overridden.

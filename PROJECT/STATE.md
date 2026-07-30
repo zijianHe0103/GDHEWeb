@@ -2,14 +2,201 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-016
+current_task: TASK-017
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-30T15:28:57Z
+last_updated: 2026-07-30T19:34:02Z
 
 ## 当前焦点
 
-`TASK-016` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已由 `task_accept` 接受；当前唯一下一步是提交前验证、受控正式提交、任务分支推送、fast-forward 合并 `main` 并推送远端 `main`。不开始 UI、部署或下一任务。
+`TASK-017` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已由 `task_accept` 接受；当前唯一下一步是完成提交前验证、受控正式提交、任务分支推送、合并 `main` 并推送远端 `main`。不开始部署或下一任务。
+
+## TASK-017 Formal Delivery Authorization 2026-07-30T19:34:02Z
+
+- authorization: 用户输入精确口令 `确认 TASK-017 完成并提交到远端`；`task_accept.py accept` 返回 accepted。
+- content: 本地受控英语 `/products/`、DTO-only ProductCard、一次 collection/零 `/resolve`、受保护 FGD X15 候选、production fail-closed 和远程媒体浏览器零直连。
+- review_validation: Final Round 2 `PASS / P0=0 / P1=0 / P2=0`；fresh Node 24 full Vitest `273/273`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、production build、production smoke、lane audit 与 diff 通过。
+- docs: root/frontend README、执行证据、视觉证据、review report 与 Planner Summary 已更新。
+- delivery: 只提交任务受控文件与 TASK-016 归档状态，排除 `.codex/config.toml` 和历史 resume packets；提交后立即推送任务分支、合并并推送 `main`。
+
+## TASK-017 Final Review-History Audit PASS 2026-07-30T19:15:15Z
+
+- format: 当前 Adversarial Review 只含最终 PASS；Round 1/visual FAIL 历史位于独立 Review History。
+- audit: full project audit zero HIGH；仅预期 DIRTY medium 与两个 LOW heuristic。
+- governance: project、registry、messages、strict lane 与 diff PASS。
+- target: `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
+- next: 最终 checked prepare 后等待用户。
+
+## TASK-017 Review History Format Recovery 2026-07-30T19:14:33Z
+
+- second_prepare: checked prepare 于 `2026-07-30T19:14:16Z` 返回 `ok: true`。
+- audit: 唯一 HIGH 为 `FAILED_REVIEW_OR_VERIFY_AWAITING_USER`。
+- cause: 当前 `Adversarial Review` 章节同时包含最终 PASS 和保留的 Round 1 FAIL；解析器把历史 FAIL 当成当前 verdict。
+- recovery: checked reopen 已退回 NEEDS_REVISION；只把 Round 1/visual 历史移至独立 `Review History`，不改 canonical report、产品或 validation。
+- next: fresh full audit；HIGH 清零后再次 checked prepare。
+
+## TASK-017 Final Strict Audit PASS 2026-07-30T19:13:45Z
+
+- evidence_format: 独立 `Adversarial Review` 和 `Validation Evidence` 均含 `Evidence: PASS`。
+- audit: full project audit zero HIGH；仅预期 `GIT_DIRTY` medium 与两个 LOW heuristic。
+- governance: project、registry、messages、strict lane 与 diff PASS。
+- target: `AWAITING_USER / NOT_ACCEPTED / DIRTY`；不授权 Git、部署或下一任务。
+- next: 最终 checked `prepare-awaiting-user` 后停止等待用户。
+
+## TASK-017 Checked Prepare Evidence Format Recovery 2026-07-30T19:12:11Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-07-30T19:11:26Z` 返回 `ok: true`。
+- audit: prepare 后 full audit 报 `REVIEW_EVIDENCE_MISSING` 和 `VERIFY_EVIDENCE_MISSING`；strict lane audit 仍为零 issues。
+- cause: 活动任务虽有最终 PASS 内容，但缺少解析器要求的独立 `Adversarial Review` 与 `Evidence: PASS` 字面标记；Board/当前叙述仍显示 UNDER_REVIEW。
+- recovery: checked `reopen` 于 `2026-07-30T19:12:11Z` 将任务退回 `NEEDS_REVISION`；只同步证据格式和状态视图，不重开实现、visual QA 或 review。
+- next: fresh governance audit；HIGH 清零后再次 checked `prepare-awaiting-user`。
+
+## TASK-017 Planner Final Validation PASS 2026-07-30T19:10:39Z
+
+- artifacts: execution report、validation log、diff summary、visual QA、canonical adversarial report 与 Planner Summary 齐全。
+- technical: ProductList `29/29`、TASK-016 `73/73`、full `273/273`、ProductCard `8/3/6`、CMS `16/2/2`、lint/typecheck/build 和 production smoke PASS。
+- protected: package/lock、CMS、TASK-014～016 contracts/runtime、保护图、`next-env.d.ts` baseline 与 diff checks PASS。
+- governance: project、registry、messages、strict lane 与 whitespace PASS；full audit zero HIGH，仅预期 DIRTY 与两个 LOW temp heuristic。
+- next: checked `prepare-awaiting-user`；不手工写 AWAITING_USER。
+
+## TASK-017 Adversarial Round 2 PASS Recovery 2026-07-30T19:08:03Z
+
+- response: `MSG-TASK-017-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK 并移动至 done。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Planner final validation 允许。
+- closure: 真实 hostile media 页面路径一次 collection、零 `/resolve`，React 前 fail closed，HTML 不含 URL/origin/preload/img/raw payload/diagnostic；两个 Round 1 P2 均关闭。
+- preserved_history: adversarial Round 1 `FAIL / 0/1/2`、visual Round 1 `FAIL / 0/1/1` 与 visual Round 2 `PASS / 0/0/0` 完整保留。
+- boundary: PASS 不是用户验收，也不授权 Git、部署或后续任务。
+- next: Planner Summary、fresh final validation、checked `prepare-awaiting-user`。
+
+## TASK-017 Frontend Revision Checkpoint And Adversarial Round 2 Dispatch 2026-07-30T18:55:42Z
+
+- response: `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` 已 validate、ACK 并移动至 done。
+- closure: 非授权远程 CMS media 在 React 前使非空集合整体进入 sanitized unavailable；真实 markup 不含 hostile URL/origin/preload/img；一次 collection、零 `/resolve`；空集合与 preview 保持。
+- planner_validation: ProductList `29/29`、TASK-016 `73/73`、full `273/273`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、production build 与 production smoke 全 PASS。
+- integrity: `next-env.d.ts` 与基线无 diff；package/lock、受保护 CMS runtime/contracts、保护图、diff 和 DPG project/registry/messages/strict lane 全 PASS。
+- dispatch: `MSG-TASK-017-ADVERSARIAL-REVIEW-R2` 经 reviewer 真实 turn `019fb461-b445-7392-91c7-6d7c13204ed4` 投递并 record dispatch。
+- next: 等待 Round 2 response；只有 `PASS / P0=0 / P1=0 / P2=0` 后才允许 Planner final validation。
+
+## TASK-017 Frontend Revision Duplicate Approval Recovery 2026-07-30T18:47:33Z
+
+- implementation: server-only ProductList 编排在 React 前拒绝非授权远程媒体；Schema-valid 非空 WordPress media 集合经一次 collection、零 `/resolve` 后整体进入脱敏 unavailable，hostile preload/img 不进入 HTML；合法空集合与本地 preview 边界保持。
+- planner_validation: ProductList `29/29`、TASK-016 `73/73`、full `273/273`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、production build 与 production smoke 全 PASS。
+- integrity: `frontend/next-env.d.ts` 与基线无 diff；package/lock、受保护 CMS runtime/contract、保护图 SHA-256、diff 和 DPG project/registry/messages/strict lane 均 PASS。
+- blocker: frontend turn `019fb452-4fc7-7163-92a6-8ae560f1ab73` 仍处于重复 build 的 `waitingOnApproval`；Planner 已完成相同且更完整的 unrestricted gates，并已通知该 turn 复用证据。
+- next: 用户取消重复审批；frontend 只完成 artifacts/worklog 与受控 execution response，不再修改产品代码。不得提前 Round 2、验收、Git 或部署。
+
+## TASK-017 Frontend Adversarial Revision Dispatch 2026-07-30T18:38:52Z
+
+- message: `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: real Codex turn `019fb452-4fc7-7163-92a6-8ae560f1ab73`；dispatch-once recorded。
+- scope: 仅 TASK-017 page orchestration media policy、rendered markup tests、frontend README/evidence 和 generated next-env cleanup；受保护 Validator/Adapter/DTO/Transport/CMS 不可改。
+- next: frontend 已 ACK；等待 execution response，不提前 Round 2、final validation、验收、Git 或部署。
+
+## TASK-017 Adversarial Round 1 FAIL Recovery 2026-07-30T18:37:08Z
+
+- response: `MSG-TASK-017-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并移动至 done。
+- verdict: `FAIL / P0=0 / P1=1 / P2=2`；Planner final validation 不允许。
+- p1: Schema-valid HTTPS WordPress `wp-content` media 穿过真实 Validator/Adapter，并由 React 输出 preload + img；源码无 `fetch()` 不能证明零浏览器直连。
+- p2_generated: visual dev run 将 tracked `frontend/next-env.d.ts` 留在 `.next/dev/types/routes.d.ts` 引用，未在 diff inventory 申报。
+- p2_narrative: reviewer request 已 ACK/done，但 active task 仍写 `ACK_PENDING`；现已同步关闭。
+- passing: local mode/production 404/noindex、一次 collection/零 resolve、DTO/CTA/state、保护图、visual R1/R2 history、合同/verifier/scope/governance 继续保留。
+- helper: 已按要求运行 `task_transition.py reopen`；helper 只接受 `AWAITING_USER` 并拒绝真实 `UNDER_REVIEW`，故记录等价 `NEEDS_REVISION` 恢复语义，不伪造 AWAITING_USER。
+- next: 只 dispatch frontend media fail-closed TDD + generated-file correction；之后 fresh validation 和 adversarial Round 2。
+
+## TASK-017 Visual Round 2 PASS And Adversarial Dispatch 2026-07-30T18:26:23Z
+
+- response: `MSG-TASK-017-VISUAL-QA-R2-RESPONSE` 已 validate、ACK 并移动至 done。
+- verdict: current `PASS / severe 0 / obvious 0 / detail 0`；Round 1 `FAIL / 0 / 1 / 1` 历史和证据保留。
+- evidence: 1024/768/390 无横向溢出、2/2/1 列、CTA 44px 全部可见；1024 pointer hit-test 命中 CTA；media/title/action 焦点可见，390 media outline 四边均在卡片内。
+- cleanup: preview server stopped，browser viewport reset，test tab closed。
+- dispatch: `MSG-TASK-017-ADVERSARIAL-REVIEW-R1` 经 reviewer 真实 turn `019fb446-d476-78b0-840a-6d29ddb2021d` 投递并 record dispatch。
+- next: 等待 reviewer ACK/verdict；PASS 前不得 final validation 或 checked prepare。
+
+## TASK-017 Frontend Visual Revision Checkpoint And QA R2 Dispatch 2026-07-30T18:18:34Z
+
+- response: `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION-RESPONSE` 已 validate、ACK 并移动至 done。
+- revision: 现有 64rem 断点的 cardBody 改为内容自适应；media-link focus outline 改为卡片内缩。DOM、CTA、DTO、数据、断点结构和 runtime 未变。
+- validation: ProductList `21/21`、TASK-016 `73/73`、full `265/265`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、build 和 production smoke 全 PASS。
+- integrity: package/lock、保护图、13/20 inventory、TASK-014～016/CMS/runtime、scope/diff 和 DPG gates 全 PASS。
+- dispatch: `MSG-TASK-017-VISUAL-QA-R2` 经 visual_qa 真实 turn `019fb43f-a4fd-70f1-a975-a4f4638d4289` 投递并 record dispatch。
+- next: 等待 Round 2 visual response；不提前 review、验收、Git 或部署。
+
+## TASK-017 Frontend Visual Revision Dispatch 2026-07-30T18:12:10Z
+
+- message: `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: real Codex turn `019fb439-d0ee-7ae3-ad3a-0e92f3ad011f`；dispatch-once recorded。
+- scope: 只允许现有 64rem 断点的 cardBody 高度、media focus ring 内缩、对应测试和 TASK-017 evidence。
+- next: 等待 ACK/response；不提前 visual R2、review、验收、Git 或部署。
+
+## TASK-017 Visual QA Round 1 FAIL Recovery 2026-07-30T18:10:52Z
+
+- response: `MSG-TASK-017-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并移动至 done。
+- verdict: `FAIL / 严重差异 0 / 明显差异 1 / 细节差异 1`。
+- p1_visual: 1024px 首次渲染时 44px CTA 仅约 `0.4375px` 位于 `overflow:hidden` 卡片内，普通视觉和指针路径不可见；键盘聚焦后才重排。
+- detail: media-link 的外扩 focus outline 被卡片裁掉三侧，仅底边可见。
+- passing: 1440/768/390/320、3/2/2/1/1 列、320 零横向溢出、保护图/Alt、语义、链接目标和 44px 本体均通过。
+- helper: 按要求运行 `task_transition.py reopen`，但当前 helper 只接受 `AWAITING_USER`，拒绝真实 `IN_PROGRESS`；本恢复入口采用同一 `NEEDS_REVISION` 语义，未伪造 AWAITING_USER。
+- next: 只修正 64rem 两列断点的 cardBody 高度与 media focus ring 内缩；再做 1024/768/390 visual Round 2。
+
+## TASK-017 Frontend Checkpoint PASS And Visual QA Dispatch 2026-07-30T18:00:38Z
+
+- response: `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION-RESPONSE` 已 validate、ACK 并移动至 done。
+- implementation: 本地 server-only `preview|cms` 门、dynamic noindex `/products/`、受保护 FGD X15 preview、DTO-only ProductCard、一次请求/零 resolve 和安全 empty/unavailable 状态。
+- planner_validation: ProductList `20/20`、TASK-016 `73/73`、full `264/264`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、build 和 production smoke 全 PASS。
+- integrity: package/lock、13/20 Snapshot inventory、TASK-014～016/CMS/既有 runtime/route、保护图 SHA-256、scope/leak/diff 和 DPG project/registry/messages/strict lane 全 PASS。
+- docs: `frontend/README.md` 与根 `README.md` 已同步；document impact `RESOLVED`，README impact `UPDATED`。
+- dispatch: `MSG-TASK-017-VISUAL-QA-R1` 已通过真实 Codex turn `019fb42f-56ae-7770-80a4-b00bc8c9bfc6` 投递并 record dispatch。
+- next: 等待 visual QA response；不提前 adversarial review、验收、Git 或部署。
+
+## TASK-017 Frontend Duplicate Approval Recovery Resolved 2026-07-30T17:50:39Z
+
+- user_action: 用户明确说明重复审批已取消并要求继续。
+- runtime: frontend 原 turn 已结束且无待审批标志；continuation turn `019fb426-2b41-7053-9258-6754c399cfd8` 已启动。
+- correction_gate: frontend 正在通过聚焦断言核对 TASK-013 的 `/products/curtain-track-systems/{subcategory-slug}/` 规则，避免测试候选写入旧目录命名。
+- next: 等待 frontend 完成当前 TDD、验证、artifacts/worklog 和受控 execution response；随后 Planner fresh checkpoint。
+
+## TASK-017 Frontend Duplicate Approval Recovery 2026-07-30T17:48:09Z
+
+- progress: frontend 已 ACK；配置 seam RED/GREEN、ProductCard 展示和 `/products/` route/loader 当前源码已形成。
+- blocker: frontend 对二进制保护图的机械复制触发系统审批等待。
+- resolved_work: Planner 已在共享工作区完成唯一复制；目标 800 × 800 RGBA PNG，SHA-256 `9a8ed9fe7145ae582450425be493987ad874d052c176e340d28d7d24bf0d4880`。
+- queued: 已向 frontend 排队继续指令，要求取消/忽略重复复制、不转换素材并继续当前 TDD。
+- next: 用户在 frontend 任务取消/拒绝重复审批；不授权其他权限或范围。
+
+## TASK-017 Frontend Dispatch 2026-07-30T17:41:18Z
+
+- message: `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: Codex thread turn `019fb41d-ac41-7172-bd37-bba02e978848`；`lane_dispatch.py dispatch-once` recorded。
+- scope: only locally gated `/products/`, DTO-only ProductCard presentation, controlled FGD X15 preview, tests and frontend docs/artifacts。
+- next: 等待 frontend ACK 和 execution response；之后 Planner fresh checkpoint，再决定 visual QA dispatch。
+
+## TASK-017 Requirement Confirmation And Design Gate 2026-07-30T17:37:41Z
+
+- authorization: 用户输入精确口令 `确认 TASK-017 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- design: 冻结单一 `GDHE_PRODUCT_LIST_MODE=preview|cms` 本地门、production 硬拒绝、DTO-only UI、FGD X15 保护图候选、一次请求/零 resolve 和四个 TDD 接缝。
+- baseline: Node 24.18.0 / npm 11.16.0；ProductCard `8/3/6`、旧 CMS `16/2/2`、Vitest `15 files / 244 tests`、lint、typecheck、build 全 PASS。
+- protected: `frontend/**`、根 README 和 CMS 在实施前零任务 diff；TASK-014～016、lockfile 和既有 `/integration/cms` 保持受保护。
+- next: queue、dry-run、线程桥真实投递并 record dispatch；frontend 必须先 ACK。
+
+## TASK-017 Intake 2026-07-30T16:00:28Z
+
+- source: 用户明确要求创建“英语站 ProductCard 本地可见列表纵向切片”任务。
+- scope: 受控 `/products/` 英语页面、只读 ProductCard DTO 卡片/网格、0/1/N 与安全错误状态、本地测试候选预览、1440/1024/768/390 截图和 320 reflow。
+- data_boundary: 真实路径复用 TASK-016 一次 collection 请求/零逐卡 `/resolve`；测试候选必须 production fail closed，不等于 CMS E2E、正式产品或发布授权。
+- exclusion: 无详情页、筛选/分页 UI、Header/Footer、RFQ/飞书写入、SeoDocument、多语言、CMS/数据库修改、生产媒体配置、部署或 Git 正式交付。
+- branch: `codex/TASK-017-product-card-visible-list-slice`，基线 `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`。
+- next: 等待精确口令 `确认 TASK-017 需求并开始执行`。
+
+## TASK-016 Remote Delivery Verified And Archived 2026-07-30T16:00:28Z
+
+- commit: `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`。
+- refs: 本地 `main`、`origin/main`、本地 TASK-016 分支与远端 TASK-016 分支均指向同一正式提交。
+- transition: TASK-016 从 `ACCEPTED / FORMAL_COMMIT_PENDING` 同步为 `CLOSED / MERGED` 并移动到 Archive。
+- boundary: 这是已授权 Git 交付的事实核验，不是 TASK-017 实施、生产发布或部署授权。
 
 ## TASK-016 Formal Delivery Authorization 2026-07-30T15:28:57Z
 

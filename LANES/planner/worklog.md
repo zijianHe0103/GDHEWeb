@@ -2999,3 +2999,172 @@ Each execution records:
 - Re-run current-byte verification before staging.
 - Stage only TASK-016 product, tests, documentation and governance files; exclude `.codex/config.toml` and all existing resume packets.
 - After the formal Chinese commit, immediately push the task branch, fast-forward merge to `main`, and push `main`.
+## 2026-07-30T16:00:28Z TASK-017 intake
+
+- Verified TASK-016 formal commit and local/remote task/main refs at `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`; archived TASK-016 as `CLOSED / MERGED`.
+- Created `codex/TASK-017-product-card-visible-list-slice` from synchronized `main`.
+- TASK-017 is limited to a locally gated English `/products/` ProductCard list slice, reusable DTO-only cards, controlled test-candidate preview and responsive/visual evidence.
+- Product details, working RFQ/Feishu submission, CMS/database changes, production products/media configuration, SeoDocument, multilingual work and deployment remain excluded.
+- State is `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`.
+- Unique next step: wait for `确认 TASK-017 需求并开始执行`.
+
+## 2026-07-30T17:37:41Z TASK-017 requirements confirmed and design gate PASS
+
+- User supplied exact phrase `确认 TASK-017 需求并开始执行`; task moved from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`.
+- Frozen one `GDHE_PRODUCT_LIST_MODE=preview|cms` non-production gate, production hard-disable, DTO-only ProductCard UI, controlled FGD X15 protected preview asset and four TDD seams.
+- Node 24.18.0 baseline passes ProductCard 8/3/6, old CMS 16/2/2, full 15 files/244 tests, lint, typecheck and build.
+- No frontend, root README or CMS task diff exists before dispatch; TASK-014–016 and lockfile remain protected.
+- Unique next step: queue, dry-run, bridge and record one frontend implementation request; recipient must ACK before mutation.
+
+## 2026-07-30T17:41:18Z TASK-017 frontend implementation dispatched
+
+- Created and validated `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION`.
+- Sent the exact dry-run payload to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`.
+- Real Codex turn receipt: `019fb41d-ac41-7172-bd37-bba02e978848`; `lane_dispatch.py dispatch-once` recorded delivery.
+- Frontend must ACK before mutation and remains limited to the frozen `/products/` local slice, DTO-only UI, controlled preview, tests and frontend docs/artifacts.
+- State is `IN_PROGRESS / NOT_ACCEPTED / DIRTY`.
+- Unique next step: wait for the linked execution response; Planner does not edit frontend product files in parallel.
+
+## 2026-07-30T17:48:09Z TASK-017 duplicate binary-copy approval recovery
+
+- Frontend ACKed and produced current configuration, presentation and initial route/loader TDD slices.
+- The binary protected-image copy triggered a system approval wait in the frontend turn.
+- Planner performed the single necessary shared-workspace binary copy: 800 × 800 RGBA PNG, SHA-256 `9a8ed9fe7145ae582450425be493987ad874d052c176e340d28d7d24bf0d4880`.
+- Sent a queued continuation telling frontend not to recopy or transform the image and to continue the authorized tests.
+- Unique next step: user cancels/denies the duplicate approval in the frontend task; no other permission or scope is authorized.
+
+## 2026-07-30T17:50:39Z TASK-017 duplicate approval resolved
+
+- User canceled the duplicate binary-copy approval and explicitly requested continuation.
+- Confirmed the interrupted frontend turn has no pending approval flag and started continuation turn `019fb426-2b41-7053-9258-6754c399cfd8`.
+- Sent a narrow path-consistency gate: preview category must follow the TASK-013 `/products/curtain-track-systems/{subcategory-slug}/` authority, with a focused assertion before any correction.
+- Unique next step: wait for the controlled frontend execution response; then perform a fresh Planner checkpoint before visual QA.
+
+## 2026-07-30T18:00:38Z TASK-017 frontend checkpoint PASS and visual QA dispatched
+
+- Validated and ACKed `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION-RESPONSE`.
+- Independently inspected the local mode gate, route, DTO-only ProductCard UI, preview candidate, protected asset, one-request/zero-resolve orchestration, safe states, tests, artifacts and frontend README.
+- Fresh Node 24 results: ProductList 20/20, TASK-016 73/73, full 264/264, ProductCard verifier 8/3/6, CMS verifier 16/2/2, lint, typecheck, build and production fail-closed smoke PASS.
+- Reproduced package/lock and protected hashes, 13/20 inventories, protected scope, image identity, leak scans, diff and all DPG gates. Updated the Planner-owned root README.
+- Created and delivered `MSG-TASK-017-VISUAL-QA-R1` through real turn `019fb42f-56ae-7770-80a4-b00bc8c9bfc6`; dispatch-once recorded.
+- Unique next step: wait for visual QA response; no adversarial review, acceptance, Git or deployment before the visual checkpoint.
+
+## 2026-07-30T18:10:52Z TASK-017 visual QA Round 1 FAIL recovery
+
+- Validated and ACKed `MSG-TASK-017-VISUAL-QA-R1-RESPONSE`.
+- Verdict: FAIL / severe 0 / obvious 1 / detail 1. The 1024 px fresh render clips the CTA to about 0.4375 px inside the card; the media-link focus ring is clipped on three sides.
+- Preserved passing evidence: 1440/768/390/320, 320 no-overflow reflow, protected image/Alt, semantics, link order/targets and 44 px action box.
+- Ran the required `task_transition.py reopen`; the helper rejected truthful IN_PROGRESS because it only accepts AWAITING_USER. Recorded the equivalent NEEDS_REVISION recovery without fabricating AWAITING_USER.
+- Unique next step: dispatch one frontend narrow CSS TDD revision, then rerun only the affected visual/focus gates.
+
+## 2026-07-30T18:12:10Z TASK-017 frontend visual revision dispatched
+
+- Created and validated `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION`.
+- Delivered the exact dry-run payload to registered frontend session through real turn `019fb439-d0ee-7ae3-ad3a-0e92f3ad011f`; dispatch-once recorded.
+- Scope is limited to the 64rem cardBody height, inside-card media focus treatment, direct test and TASK-017 evidence.
+- Unique next step: wait for ACK and controlled revision response; no visual R2 or review before fresh Planner validation.
+
+## 2026-07-30T18:18:34Z TASK-017 visual revision checkpoint PASS and Round 2 dispatched
+
+- Validated and ACKed `MSG-TASK-017-FRONTEND-VISUAL-R1-REVISION-RESPONSE`.
+- Independently inspected the 64rem content-height rule, inside-card media focus rule and direct RED/GREEN assertion; no semantic/data/runtime change.
+- Fresh Node 24 results: ProductList 21/21, TASK-016 73/73, full 265/265, both verifiers, lint, typecheck, build and production smoke PASS; protected hashes/scope and DPG gates pass.
+- Delivered `MSG-TASK-017-VISUAL-QA-R2` through real visual_qa turn `019fb43f-a4fd-70f1-a975-a4f4638d4289`; dispatch-once recorded.
+- Unique next step: wait for the narrow 1024/768/390 CTA/focus response; no adversarial review before Round 2 PASS.
+
+## 2026-07-30T18:26:23Z TASK-017 visual Round 2 PASS and adversarial review dispatched
+
+- Validated and ACKed `MSG-TASK-017-VISUAL-QA-R2-RESPONSE`.
+- Current visual verdict: PASS / severe 0 / obvious 0 / detail 0; Round 1 FAIL / 0 / 1 / 1 history and screenshots remain preserved.
+- Independently inspected the new 1024 and 390 evidence; full CTA visibility, pointer hit-test, 2/2/1 columns, no overflow and inside-card focus treatment are supported.
+- Delivered `MSG-TASK-017-ADVERSARIAL-REVIEW-R1` to registered reviewer through real turn `019fb446-d476-78b0-840a-6d29ddb2021d`; dispatch-once recorded.
+- Unique next step: wait for the independent verdict; no Planner final validation before PASS.
+
+## 2026-07-30T18:37:08Z TASK-017 adversarial Round 1 FAIL recovery
+
+- Validated and ACKed `MSG-TASK-017-ADVERSARIAL-REVIEW-R1-RESPONSE`.
+- Verdict: FAIL / P0=0 / P1=1 / P2=2. A valid WordPress wp-content image survives Validator/Adapter and renders external preload/img; next-env has an undeclared dev route-types diff; active review ACK narration was stale.
+- Ran the required task reopen helper; it rejected truthful UNDER_REVIEW because it only accepts AWAITING_USER. Recorded equivalent NEEDS_REVISION semantics without fabricating AWAITING_USER.
+- Preserved all passing mode, request, DTO/action/state, protected-image, visual R1/R2, contract and governance evidence.
+- Unique next step: dispatch one frontend narrow media fail-closed TDD and generated-file cleanup; then fresh checkpoint and adversarial Round 2.
+
+## 2026-07-30T18:38:52Z TASK-017 frontend adversarial revision dispatched
+
+- Created and validated `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1`.
+- Delivered the exact revision payload through real frontend turn `019fb452-4fc7-7163-92a6-8ae560f1ab73`; dispatch-once recorded.
+- Scope is limited to TASK-017 server-owned remote-media fail-closed policy, rendered-markup regressions, frontend README/evidence and generated next-env cleanup.
+- Unique next step: wait for ACK and controlled response; no Round 2 before fresh Planner checkpoint.
+
+## 2026-07-30T18:47:33Z TASK-017 frontend revision duplicate approval recovery
+
+- Frontend completed strict RED/GREEN for remote WordPress media: a Schema-valid non-empty collection now becomes the sanitized unavailable state before React, with one collection request, zero `/resolve`, and no hostile preload/img in rendered markup.
+- Planner independently passed ProductList 29/29, TASK-016 73/73, full 273/273, both verifiers, lint, typecheck, production build and production smoke.
+- `frontend/next-env.d.ts` is byte-clean against baseline; package/lock, protected CMS runtime/contracts, protected image hash, diff and DPG project/registry/messages/strict lane gates pass.
+- The frontend turn remains blocked only on a duplicate build system approval already superseded by Planner evidence. User cancellation is required so the registered lane can finish artifacts/worklog and send its controlled execution response.
+- Unique next step: cancel the duplicate approval, ACK the response, then dispatch adversarial Round 2. No acceptance, Git or deployment.
+
+## 2026-07-30T18:55:42Z TASK-017 frontend checkpoint PASS and adversarial Round 2 dispatched
+
+- Validated and ACKed `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE`; controlled response is in done.
+- Re-inspected the server-only fixed synthetic-origin media policy, pre-React whole-collection gate, real rendered hostile-media regression, empty/preview boundaries and unchanged protected runtime.
+- Fresh Node 24 results: ProductList 29/29, TASK-016 73/73, full 273/273, ProductCard 8/3/6, CMS 16/2/2, lint, typecheck, build and production smoke PASS.
+- Package/lock, protected CMS runtime/contracts, protected image, `next-env.d.ts` baseline, diff and DPG project/registry/messages/strict lane gates pass.
+- Delivered `MSG-TASK-017-ADVERSARIAL-REVIEW-R2` through real reviewer turn `019fb461-b445-7392-91c7-6d7c13204ed4`; dispatch-once recorded.
+- Unique next step: wait for final Round 2 response. No Planner final validation, acceptance, Git or deployment before PASS 0/0/0.
+
+## 2026-07-30T19:08:03Z TASK-017 adversarial Round 2 PASS recovery
+
+- Validated and ACKed `MSG-TASK-017-ADVERSARIAL-REVIEW-R2-RESPONSE`; controlled response is in done.
+- Final independent verdict: PASS / P0=0 / P1=0 / P2=0. Round 1 FAIL and both visual rounds remain preserved.
+- Reviewer independently reproduced one collection, zero resolve, pre-React fail-closed hostile media and markup free of hostile URL/origin/preload/img/raw payload/diagnostic; both Round 1 P2 findings are closed.
+- PASS allows Planner final validation only. It is not acceptance and does not authorize Git, deployment or later work.
+- Unique next step: create Planner Summary, run fresh final validation, then checked `prepare-awaiting-user`.
+
+## 2026-07-30T19:10:39Z TASK-017 Planner final validation PASS
+
+- Created `TASKS/ARTIFACTS/TASK-017/PLANNER_SUMMARY.md`.
+- Fresh Node 24 results: ProductList 29/29, TASK-016 73/73, full 273/273, ProductCard 8/3/6, CMS 16/2/2, lint, typecheck, production build and production smoke PASS.
+- Package/lock, CMS, TASK-014～016 contracts/runtime, protected PNG, `next-env.d.ts` baseline and diff checks PASS.
+- DPG project, registry, messages, strict lane and whitespace gates PASS.
+- Full governance audit has zero HIGH; expected pre-acceptance DIRTY is MEDIUM and two existing/generated heuristics are LOW. No audit-driven mutation was made.
+- Unique next step: checked `prepare-awaiting-user`; do not hand-edit AWAITING_USER.
+
+## 2026-07-30T19:12:11Z TASK-017 checked prepare evidence-format recovery
+
+- First checked `prepare-awaiting-user` passed at 19:11:26Z.
+- Post-prepare full audit found only `REVIEW_EVIDENCE_MISSING` and `VERIFY_EVIDENCE_MISSING`; the product, final review and validation results remain PASS.
+- Root cause: active-task prose lacked the parser's standalone `Adversarial Review` and `Evidence: PASS` markers, and Board/current narrative were not synchronized by the helper.
+- Checked `reopen` returned TASK-017 to NEEDS_REVISION. Scope is only evidence-format and status-view sync; implementation, visual QA and review are not reopened.
+- Unique next step: fresh governance audit; if HIGH is zero, run checked prepare again.
+
+## 2026-07-30T19:13:45Z TASK-017 final strict audit zero HIGH
+
+- Active task now contains standalone Adversarial Review and Validation Evidence sections with literal `Evidence: PASS`.
+- Fresh full project audit has zero HIGH; only expected pre-acceptance GIT_DIRTY medium and two LOW heuristics remain.
+- Project, registry, messages, strict lane and diff gates pass.
+- Human-readable active task, Board and project focus are synchronized to the AWAITING_USER target before the final checked transition.
+- Unique next step: final checked prepare, then stop for user acceptance.
+
+## 2026-07-30T19:14:33Z TASK-017 review-history format recovery
+
+- Second checked prepare passed at 19:14:16Z.
+- Post-prepare audit reported only `FAILED_REVIEW_OR_VERIFY_AWAITING_USER`.
+- Root cause: the current Adversarial Review section preserved the Round 1 FAIL alongside Final Round 2 PASS, so the parser treated historical FAIL as current.
+- Checked reopen returned TASK-017 to NEEDS_REVISION. Only heading placement changes: current PASS remains under Adversarial Review; Round 1 and visual history move under Review History.
+- Unique next step: fresh full audit; if HIGH is zero, final checked prepare.
+
+## 2026-07-30T19:15:15Z TASK-017 final review-history audit zero HIGH
+
+- Current Adversarial Review contains only Evidence: PASS and Final Round 2 PASS.
+- Preserved Round 1 and visual FAIL history now lives under a separate Review History heading.
+- Fresh full project audit has zero HIGH; project, registry, messages, strict lane and diff pass.
+- Human-readable task, Board and project focus are synchronized to AWAITING_USER target.
+- Unique next step: final checked prepare, then stop for user acceptance.
+
+## 2026-07-30T19:34:02Z TASK-017 formal delivery authorized
+
+- Exact user phrase `确认 TASK-017 完成并提交到远端` was accepted by `task_accept.py`.
+- Fresh Node 24 evidence passes full Vitest 19 files/273 tests, ProductCard 8/3/6, CMS 16/2/2, lint, typecheck, production build and production smoke.
+- Final adversarial verdict remains PASS / P0=0 / P1=0 / P2=0; visual Round 2 remains PASS at 1440/1024/768/390 plus 320 reflow.
+- `frontend/next-env.d.ts` is restored to the production baseline. Governance project/lane/diff gates pass with only expected pre-commit dirty and existing/generated LOW heuristics.
+- Delivery scope excludes `.codex/config.toml` and historical resume packets. Unique next step: controlled commit, push task branch, merge to main, push main.

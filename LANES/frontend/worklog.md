@@ -666,3 +666,48 @@ Each execution records:
 - governance_validation: project, messages and strict lane audit PASS with zero issues before response creation; generated frontend resume packet removed
 - message_result: MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE received a real Codex thread bridge receipt for Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was recorded as dispatched and removed from queue; requires_response_to=MSG-TASK-015-FRONTEND-IMPLEMENTATION
 - unique_next_step: Planner independently validates the implementation, applies the recorded root README delta in Planner scope and decides whether to dispatch adversarial review; frontend does not review, accept, deliver Git or start another task
+
+### 2026-07-30T21:45:00+08:00 - TASK-016 ProductCard runtime consumer implementation
+
+- task: TASK-016
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION
+- message_ack: exact dispatched request read and acknowledged before product mutation
+- authority: TASKS/ARTIFACTS/TASK-016/FRONTEND_DISPATCH.md was the sole implementation authority; all required context files were read
+- tdd: ten behavior-level RED slices preceded minimum GREEN for query/URL, request, 304, HTTP error, request-failure mapping, Validator, action/path equality, Adapter, orchestration and normalized error sanitization
+- sandbox_note: loopback commands inside the frontend lane returned listen EPERM and were not treated as code failures; Planner reran every loopback RED/GREEN against the same shared bytes without editing product code
+- transport: fixed English ProductCard 1.0.0 endpoint, closed query, one anonymous GET, no-store, redirect refusal, 5000 ms timeout, caller abort, zero retry, single JSON parse and typed 200/304/error outcomes
+- validator: exact static 8-Schema Draft 2020-12 strict Ajv closure, API/Schema gates, detail action/path semantic equality, caller-isolated deep-frozen snapshot and authentic non-serializing wrapper
+- adapter: explicit frontend-owned deeply readonly DTO copy for complete public collection/card fields; 0/1/N, four action cells and non-empty relations pass
+- orchestration: one ProductCard collection request, zero per-card resolve, validated common errors, body/status equality, sanitized HTTP rethrow and 304-without-cache fail closed
+- server_only: public entry plus deep Transport, Validator and Adapter real Client Component build negatives all PASS
+- focused_validation: ProductCard loopback Transport/orchestration 2 files/39 tests PASS; current Validator 18 tests PASS; Validator/Adapter/server-only gate 3 files/21 tests PASS before six added error-sample cases
+- full_validation: Planner unrestricted current-bytes full suite 15 files/237 tests PASS; ProductCard verifier 8/3/6, old CMS verifier 16/2/2, lint, typecheck and production build PASS
+- protected_hashes: package/package-lock, ProductCard Snapshot/verifier, old resolve Snapshot/verifier and TASK-014 manifest/checksums remain byte-identical to baseline; inventories remain 13 and 20 files
+- isolation: no existing resolve production module, Snapshot/verifier, package/lock/dependency, env, src/app, CMS, database, Fixture, root README, external system or Planner-owned task/state edit by frontend
+- documentation: frontend README updated; exact root README paragraph recorded in TASK-016 EXECUTION_REPORT for Planner without editing root README
+- artifacts: TDD_RED_EVIDENCE.md, EXECUTION_REPORT.md, TEST_OR_VALIDATION_LOG.md and DIFF_OR_OUTPUT_SUMMARY.md completed
+- boundaries: no UI, route, SEO, RFQ, cache, Preview, Staging, deployment, review, acceptance or Git delivery
+- final_governance: Markdown/trailing-whitespace, zero temporary residue, git diff check, DPG project, registry, messages and strict lane audit all PASS with zero issues
+- message_result: MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION-RESPONSE received real Planner thread turn 019fb348-78d4-7b52-aeda-59b1520e9a75, was recorded as dispatched and left queue; requires_response_to=MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION
+- unique_next_step: Planner independently checks current bytes, applies the recorded root README delta and decides whether to dispatch adversarial review; frontend does not review, accept, perform Git delivery, deploy or start UI
+
+### 2026-07-30T22:18:00+08:00 - TASK-016 Round 1 closed-query P1 revision
+
+- task: TASK-016
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1
+- message_ack: exact revision request, canonical Round 1 report and current recovery entry read; request acknowledged before mutation
+- review_context: Round 1 FAIL P0=0/P1=1/P2=1; only closed-query P1 assigned to frontend, narration-only P2 already closed by Planner
+- tdd_red: no-listener query gate exit 1 with exactly 6 new failures while 14 prior query tests passed; stateful coercible filter, non-enumerable key, symbol key, accessor, Proxy-hidden key and reflection trap were reproduced
+- minimum_fix: only ProductCard query/URL seam changed; Node runtime proxy detector rejects before reflection, Reflect.ownKeys plus own descriptors require allowed enumerable string data properties, values are read once, primitive guards produce a new frozen snapshot, and URL uses only that snapshot
+- type_safety_red: first unrestricted full runs remained RED at 242/244 because copied Next positive controls retained filter as unknown; no completion claim was made
+- type_safety_green: explicit undefined return plus runtime-backed sort/filter predicates closed copied-project type narrowing without unchecked assertions; copied-project server-only controls 2/2 PASS
+- focused_validation: no-listener query 20/20 PASS; Planner unrestricted Transport 42/42 PASS
+- full_validation: Planner unrestricted current bytes 15 files/244 tests PASS; ProductCard verifier 8/3/6, old CMS verifier 16/2/2, lint, typecheck and production build PASS
+- integrity: package/lock, ProductCard and resolve Snapshot/verifier hashes unchanged; inventories remain 13 and 20; zero temporary residue and git diff check PASS
+- protected_scope: response Transport, timeout, errors, Validator, wrapper, Adapter, DTO, orchestration, package/lock/dependencies, README, src/app, CMS, environment, external systems and Planner state unchanged by frontend
+- boundaries: no review, acceptance, Git delivery, deployment, cache or UI
+- final_governance: current-byte Markdown/trailing-whitespace, zero temporary residue, git diff check, DPG project, message and strict lane audit gates PASS with zero issues
+- message_result: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE` received real Codex thread bridge receipt `item-2391` for Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1`
+- unique_next_step: Planner independently checks the R1 closure and controls any Round 2 dispatch; frontend stops without review, acceptance, Git delivery, deployment, cache or UI work

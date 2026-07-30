@@ -2888,3 +2888,114 @@ Each execution records:
 - State is ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING.
 - Stage only TASK-015 governed/product files; exclude `.codex/config.toml` and existing resume packets.
 - Next: formal Chinese commit, push task branch, ff-only merge to main, push main.
+
+## 2026-07-30T10:49:44Z TASK-016 intake
+
+- Verified TASK-015 commit, local/remote task branch and local/remote `main` all equal `54917bdedcdb710830021c6397adc217252a8423`; archived TASK-015 as `CLOSED / MERGED`.
+- Created `codex/TASK-016-product-card-runtime-consumer` from synchronized `main`.
+- TASK-016 is limited to ProductCard server-only Transport, runtime Schema/semantic Validator, authentic wrapper, readonly DTO Adapter and one-request/zero-resolve proof.
+- React/UI, SeoDocument, real-product work, CMS, RFQ/Feishu, cache, deployment and Git delivery remain excluded.
+- State is `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`.
+- Unique next step: wait for `确认 TASK-016 需求并开始执行`.
+
+## 2026-07-30T13:16:26Z TASK-016 requirements confirmed
+
+- User supplied exact phrase `确认 TASK-016 需求并开始执行`.
+- Transitioned TASK-016 from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`.
+- Confirmed public test seams: Transport, Runtime Validator, DTO Adapter and minimal orchestration.
+- No frontend product code, CMS, database, external system, UI, SEO, cache or deployment work starts before the design gate passes.
+- Next: create DESIGN and IMPLEMENTATION_PLAN, capture baseline evidence, then dispatch frontend only if all gates pass.
+
+## 2026-07-30T13:21:11Z TASK-016 design gate PASS
+
+- Frozen ProductCard query/Transport, typed 200/304/error outcomes, exact 8-Schema plus semantic validation, authentic wrapper, readonly DTO and one-request/zero-resolve orchestration.
+- TDD seams remain Transport, Validator, Adapter and orchestration; tests use only the loopback HTTP boundary and vertical RED/GREEN slices.
+- Correct Node 24.18.0 baseline passes ProductCard 8/3/6, old contract 16/2/2, full suite 10/171, lint, typecheck and build.
+- TASK-014/TASK-015/old resolve/package-lock hashes and zero product-code diff pass.
+- Transitioned `READY` -> `IN_PROGRESS`.
+- Next: queue, validate and bridge one frontend execution request; recipient must ACK before mutation.
+
+## 2026-07-30T13:22:48Z TASK-016 frontend dispatched
+
+- Queued and validated `MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION`.
+- Sent the exact dry-run prompt to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`.
+- Real Codex turn receipt: `019fb330-c341-72d1-b89b-4b7def1cbf5a`.
+- `lane_dispatch.py dispatch-once` recorded the delivery; the message is now dispatched.
+- Frontend must ACK before mutation and remains limited to TASK-016 runtime consumer scope.
+- Next: wait for the linked execution response; Planner does not edit frontend product files in parallel.
+
+## 2026-07-30T13:51:11Z TASK-016 Planner checkpoint PASS
+
+- ACKed `MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION-RESPONSE`.
+- Independently inspected the ProductCard Transport, exact static Validator, wrapper, DTO Adapter, sanitized error orchestration, tests, artifacts and documentation.
+- Fresh Node 24 results: ProductCard verifier 8/3/6, old verifier 16/2/2, five focused files 66/66, full suite 15 files/237 tests, lint, typecheck and production build all PASS.
+- Reproduced package/lock, TASK-014 handoff, TASK-015 exact 13 and old `/resolve` exact 20 protected hashes/inventories; forbidden runtime import/token scan, DPG project/registry/messages/strict lane and diff checks passed.
+- Applied the Planner-owned root README synchronization and recorded document impact RESOLVED / README impact UPDATED.
+- Transitioned TASK-016 from IN_PROGRESS to UNDER_REVIEW.
+- Unique next step: create and dispatch one independent adversarial Round 1 request; no UI, Git, deployment or next task.
+
+## 2026-07-30T13:52:53Z TASK-016 adversarial Round 1 dispatched
+
+- Created and validated `MSG-TASK-016-ADVERSARIAL-REVIEW-R1`.
+- Sent the exact dry-run payload to registered adversarial reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`.
+- Real Codex turn receipt: `019fb34c-740f-7492-a582-9a9d7103cd8a`; `lane_dispatch.py dispatch-once` recorded the delivery.
+- Review is read-only and must return PASS/FAIL/BLOCKED with exact P0/P1/P2 counts.
+- Unique next step: wait for reviewer ACK and verdict; task remains UNDER_REVIEW / NOT_ACCEPTED / DIRTY.
+
+## 2026-07-30T14:06:25Z TASK-016 adversarial Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE`.
+- Verdict: FAIL / P0=0 / P1=1 / P2=1; Planner final validation is not allowed.
+- Verified P1 against production code: `RegExp.test` and URLSearchParams coerce the same caller-owned filter separately, while `Object.keys` does not close non-enumerable/symbol/accessor/Proxy-hidden inputs.
+- Closed P2 by synchronizing current ACK/done narration while preserving the complete Round 1 report.
+- Ran the required `task_transition.py reopen`; the current helper accepts only AWAITING_USER and rejected the truthful UNDER_REVIEW state. Recorded the same controlled NEEDS_REVISION recovery semantics without fabricating AWAITING_USER.
+- Unique next step: dispatch one frontend narrow TDD revision for primitive, one-time copied query snapshots and reflective-input fail-closed tests; then fresh checkpoint and Round 2.
+
+## 2026-07-30T14:09:01Z TASK-016 frontend query-boundary revision dispatched
+
+- Created and validated `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1`.
+- Sent the exact dry-run payload to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`.
+- Real Codex turn receipt: `019fb35b-33fb-7a01-b54a-48db198ae477`; `lane_dispatch.py dispatch-once` recorded the delivery.
+- Scope is limited to primitive one-time query snapshots, reflective/non-data/Proxy fail-closed tests and the query/URL seam.
+- Unique next step: wait for ACK and revision response; then fresh Planner checkpoint and Round 2 only.
+
+## 2026-07-30T14:20:30Z TASK-016 query-boundary revision Planner checkpoint PASS
+
+- ACKed `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE`.
+- Independently inspected proxy-before-reflection refusal, exact own-key/data-descriptor capture, primitive guards, frozen snapshot and URL construction from that snapshot.
+- Fresh Node 24 results: ProductCard verifier `8/3/6`, old verifier `16/2/2`, five focused files `73/73`, full suite `15 files / 244 tests`, lint, typecheck and production build all PASS.
+- Reproduced package/lock and contract hashes, exact 13/20 inventories, TASK-014 handoff `25/25`, forbidden-import scan, zero temporary residue, DPG project/registry/messages/strict lane and diff gates.
+- Preserved Round 1 `FAIL / P0=0 / P1=1 / P2=1` history and transitioned `NEEDS_REVISION` -> `UNDER_REVIEW`.
+- Unique next step: dispatch one narrow adversarial Round 2; no final validation, UI, Git, deployment or next task.
+
+## 2026-07-30T14:22:35Z TASK-016 adversarial Round 2 dispatched
+
+- Created and validated `MSG-TASK-016-ADVERSARIAL-REVIEW-R2`.
+- Sent the exact dry-run payload to registered adversarial reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`.
+- Real Codex turn receipt: `019fb367-989d-7980-a6d3-126b20f014bd`; `lane_dispatch.py dispatch-once` recorded the delivery.
+- Scope is strictly Round 1 P1/P2 closure and direct regression, preserving Round 1 FAIL history.
+- Unique next step: wait for reviewer ACK and final verdict; no final validation, UI, Git, deployment or next task.
+
+## 2026-07-30T14:29:23Z TASK-016 Round 2 PASS and Planner final validation
+
+- ACKed `MSG-TASK-016-ADVERSARIAL-REVIEW-R2-RESPONSE`.
+- Final independent verdict is `PASS / P0=0 / P1=0 / P2=0`; complete Round 1 FAIL history remains in the canonical report.
+- Fresh frozen Node 24.18.0 results: ProductCard verifier `8/3/6`, old verifier `16/2/2`, five focused files `73/73`, full suite `15 files / 244 tests`, lint, typecheck and production build all PASS.
+- Reproduced TASK-014 handoff `25/25`, exact 13/20 inventories, protected hashes, forbidden-import scan, zero temporary residue, DPG project/registry/messages/strict lane and diff gates.
+- Created `TASKS/ARTIFACTS/TASK-016/PLANNER_SUMMARY.md`; it explicitly states this is a server-only data layer with no visible UI.
+- Unique next step: checked `prepare-awaiting-user`; no acceptance, Git, deployment, UI or next task.
+
+## 2026-07-30T14:30:53Z TASK-016 checked preparation narrative sync
+
+- First checked `prepare-awaiting-user` succeeded at `2026-07-30T14:30:28Z`.
+- The helper did not synchronize the active current paragraph, Board or current-only review evidence, so strict audit reported two HIGH findings despite task acceptance readiness passing.
+- Used controlled `reopen` from legal AWAITING_USER and changed only those human-readable views; product code, final PASS, validation, Summary, acceptance and Git state remain unchanged.
+- Unique next step: fresh audit, then checked prepare again; after success wait for the exact formal delivery phrase.
+
+## 2026-07-30T15:28:57Z TASK-016 formal delivery authorized
+
+- User supplied the exact phrase `确认 TASK-016 完成并提交到远端`; `task_accept.py accept` returned accepted.
+- State is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Re-run current-byte verification before staging.
+- Stage only TASK-016 product, tests, documentation and governance files; exclude `.codex/config.toml` and all existing resume packets.
+- After the formal Chinese commit, immediately push the task branch, fast-forward merge to `main`, and push `main`.

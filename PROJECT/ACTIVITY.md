@@ -6392,3 +6392,320 @@ schema_version: DPG-LANES-1.0.0
 - validation: pre-commit 8/3/6、13/13、16/2/2、lint、typecheck、build、171/171 PASS。
 - exclusion: unrelated `.codex/config.toml` and resume packets。
 - next: commit, push task branch, ff-only merge main, push main。
+
+### 2026-07-30T10:49:44Z - TASK-016 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-016
+- previous: TASK-015 formal commit `54917bdedcdb710830021c6397adc217252a8423` 已在本地/远端任务分支和本地/远端 `main` 核验一致，现已归档为 `CLOSED / MERGED`。
+- scope: ProductCard server-only Transport、runtime Validator、validated wrapper、readonly DTO Adapter 与一次请求/零逐卡 `/resolve` 证明。
+- boundary: 未修改 frontend 产品代码、CMS、数据库或外部系统；无 UI、SeoDocument、RFQ、cache 或部署。
+- branch: `codex/TASK-016-product-card-runtime-consumer`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- next: 等待 `确认 TASK-016 需求并开始执行`。
+
+### 2026-07-30T13:16:26Z - TASK-016 requirements confirmed
+
+- type: requirement_confirmed
+- lane: planner
+- task: TASK-016
+- authorization: `确认 TASK-016 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- seams: Transport、Runtime Validator、DTO Adapter、最小编排。
+- boundary: 设计门通过前不修改 frontend 产品代码；UI、SEO、CMS、真实产品、RFQ、cache、部署和 Git 交付仍排除。
+- next: DESIGN、IMPLEMENTATION_PLAN 和 baseline validation。
+
+### 2026-07-30T13:21:11Z - TASK-016 design gate PASS
+
+- type: design_gate_passed
+- lane: planner
+- task: TASK-016
+- design: 固定 query/Transport、200/304/error、8-Schema + semantic Validator、authentic wrapper、readonly DTO 和一次请求/零 resolve。
+- baseline: Node 24.18.0；ProductCard 8/3/6、旧合同 16/2/2、171/171、lint、typecheck、build PASS。
+- integrity: TASK-014/TASK-015/旧 `/resolve`/lockfile hashes 和产品代码零 diff 通过。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: 只 dispatch frontend TDD implementation request。
+
+### 2026-07-30T13:22:48Z - TASK-016 frontend dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-016
+- message: `MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION`。
+- delivery: Codex thread turn `019fb330-c341-72d1-b89b-4b7def1cbf5a`，dispatch-once recorded。
+- boundary: frontend 必须先 ACK；Planner 不并行修改 frontend 业务文件。
+- next: 等待 execution response。
+
+### 2026-07-30T13:22:16Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-016
+- summary: message queued for frontend
+
+### 2026-07-30T13:22:40Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION dispatched to frontend
+
+### 2026-07-30T13:23:21Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION moved to done
+
+### 2026-07-30T13:48:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-016
+- summary: message queued for planner
+
+### 2026-07-30T13:48:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-07-30T13:48:47Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-07-30T13:51:11Z - TASK-016 Planner checkpoint PASS
+
+- type: planner_checkpoint_passed
+- lane: planner
+- task: TASK-016
+- response: frontend execution response 已 ACK。
+- validation: Node 24 ProductCard verifier `8/3/6`、旧 verifier `16/2/2`、focused `66/66`、full `237/237`、lint、typecheck、build、protected hashes/inventories、forbidden imports、project/registry/messages/strict lane/diff 全 PASS。
+- docs: frontend README 与根 README 已同步；document impact `RESOLVED`，README impact `UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 只 dispatch adversarial Round 1；无 UI、Git、部署或下一任务授权。
+
+### 2026-07-30T13:52:53Z - TASK-016 adversarial Round 1 dispatched
+
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-016
+- message: `MSG-TASK-016-ADVERSARIAL-REVIEW-R1`。
+- delivery: Codex thread turn `019fb34c-740f-7492-a582-9a9d7103cd8a`，dispatch-once recorded。
+- boundary: 独立只读审查；不得修复、验收、Git 交付、部署或开始 UI。
+- next: 等待 ACK 和独立 verdict。
+
+### 2026-07-30T14:06:25Z - TASK-016 adversarial Round 1 FAIL recovery
+
+- type: task_needs_revision
+- lane: planner
+- task: TASK-016
+- response: `MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 ACK。
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`。
+- p1: stateful/non-data/reflection-hidden query inputs can bypass the claimed closed boundary.
+- p2: current ACK-pending narration synchronized and closed.
+- helper: controlled reopen was attempted but rejected because the helper only supports AWAITING_USER; equivalent NEEDS_REVISION recovery recorded without fabricating that state.
+- next: frontend narrow TDD revision, fresh Planner checkpoint, then Round 2 only.
+
+### 2026-07-30T14:09:01Z - TASK-016 frontend query-boundary revision dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-016
+- message: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1`。
+- delivery: Codex thread turn `019fb35b-33fb-7a01-b54a-48db198ae477`，dispatch-once recorded。
+- scope: primitive snapshot and reflective-input fail-closed query/URL seam only。
+- next: wait for ACK and revision response, then fresh checkpoint and Round 2。
+
+### 2026-07-30T13:52:27Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T13:52:49Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-30T13:53:38Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-30T14:05:12Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-016
+- summary: message queued for planner
+
+### 2026-07-30T14:05:50Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-07-30T14:06:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-30T14:08:37Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-016
+- summary: message queued for frontend
+
+### 2026-07-30T14:08:57Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1 dispatched to frontend
+
+### 2026-07-30T14:09:23Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1 moved to done
+
+### 2026-07-30T14:17:17Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-016
+- summary: message queued for planner
+
+### 2026-07-30T14:17:44Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE dispatched to planner
+
+### 2026-07-30T14:20:30Z - TASK-016 query-boundary revision Planner checkpoint PASS
+
+- type: planner_checkpoint_passed
+- lane: planner
+- task: TASK-016
+- response: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE` 已 ACK。
+- validation: Node 24 ProductCard `8/3/6`、旧 CMS `16/2/2`、focused `73/73`、full `244/244`、lint、typecheck、build、protected hashes/inventories、TASK-014 `25/25`、scope、project/registry/messages/strict lane/diff 全 PASS。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: 只 dispatch adversarial Round 2；无 UI、Git、部署或下一任务授权。
+
+### 2026-07-30T14:22:35Z - TASK-016 adversarial Round 2 dispatched
+
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-016
+- message: `MSG-TASK-016-ADVERSARIAL-REVIEW-R2`。
+- delivery: Codex thread turn `019fb367-989d-7980-a6d3-126b20f014bd`，dispatch-once recorded。
+- boundary: 只读复核 Round 1 P1/P2 closure 与直接回归；不得修复、验收、Git、部署或开始 UI。
+- next: 等待 ACK 和 final verdict。
+
+### 2026-07-30T14:29:23Z - TASK-016 Round 2 PASS and Planner final validation
+
+- type: planner_final_validation_passed
+- lane: planner
+- task: TASK-016
+- response: Final Round 2 response 已 ACK；`PASS / P0=0 / P1=0 / P2=0`，Round 1 FAIL 历史保留。
+- validation: Node 24.18.0 ProductCard `8/3/6`、旧 CMS `16/2/2`、focused `73/73`、full `244/244`、lint、typecheck、build、TASK-014 `25/25`、13/20 inventory、protected hashes、scope/residue、project/registry/messages/strict lane/diff 全 PASS。
+- summary: `PLANNER_SUMMARY.md` 已生成。
+- next: checked `prepare-awaiting-user` only。
+
+### 2026-07-30T14:30:53Z - TASK-016 checked preparation narrative sync
+
+- type: acceptance_view_recovery
+- lane: planner
+- task: TASK-016
+- first_prepare: checked prepare 于 `2026-07-30T14:30:28Z` 成功。
+- recovery: helper 未同步 current paragraph、Board 与 current-only review evidence；已受控 reopen，仅修正这些视图。
+- boundary: 产品、review verdict、validation、Summary、acceptance 与 Git 均未改变。
+- next: fresh audit 后再次 checked prepare。
+
+### 2026-07-30T14:18:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE moved to done
+
+### 2026-07-30T14:22:06Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T14:22:31Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-07-30T14:22:47Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-30T14:27:47Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-016
+- summary: message queued for planner
+
+### 2026-07-30T14:28:07Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-07-30T14:28:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-016
+- summary: message MSG-TASK-016-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-30T14:30:28Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-016
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T14:30:45Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-016
+- summary: First checked prepare succeeded, but human-readable current state and Board remained UNDER_REVIEW and audit could not detect current Round 2 PASS review evidence.
+
+### 2026-07-30T14:31:38Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-016
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T14:32:21Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-016
+- summary: Second checked prepare succeeded, but the AWAITING_USER write hook blocked recording its final current-focus completion after the transition.
+
+### 2026-07-30T14:32:49Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-016
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T15:28:57Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-016
+- summary: TASK-016 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-30T15:28:57Z - TASK-016 formal delivery authorized
+
+- type: formal_delivery_authorized
+- lane: planner
+- task: TASK-016
+- authorization: 用户精确输入 `确认 TASK-016 完成并提交到远端`；`task_accept.py accept` 返回 accepted。
+- state: `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- scope: 只提交 TASK-016 产品、测试、文档和治理文件；排除 `.codex/config.toml` 与历史 resume packets。
+- next: pre-commit verification、正式提交、推送任务分支、fast-forward 合并并推送 `main`。

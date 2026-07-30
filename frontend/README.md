@@ -119,6 +119,37 @@ runtime Validator, DTO Adapter, React component, route, visible page, cache,
 SEO implementation or WordPress connection. Runtime modules must consume only
 frontend-owned normalized data and must never import `cms/` or `TASKS/`.
 
+## Server-only ProductCard runtime consumer
+
+`src/lib/cms/server/product-cards/` is the independent runtime consumer for the
+frozen ProductCard collection contract. Its public
+`loadProductCardCollection(query?, callerSignal?)` entry accepts only the
+closed pagination, sort, and `product_category:<slug>` filter query. It reads
+the existing server-owned `WORDPRESS_API_URL`, then performs exactly one
+anonymous request to the fixed English ProductCard `1.0.0` endpoint with a
+5000 ms timeout, no retry, redirect refusal, and `no-store`.
+
+A `200` body remains unknown until the exact local eight-Schema ProductCard
+closure and the detail action/path equality rule pass. The authentic,
+caller-isolated wrapper can then be copied into a deeply frozen
+frontend-owned DTO. Normalized HTTP errors are validated against the existing
+common error Schema and sanitized before they leave orchestration. A bodyless
+`304` is recognized by the Transport but fails closed because this task owns
+no matching validated last-success cache.
+
+The consumer never calls `/resolve` per card and never exposes the CMS origin,
+Transport metadata, raw JSON, WordPress/SCF fields, database IDs, or internal
+commercial data to future UI. It remains server-only and creates no component,
+route, visible page, cache, Preview, SEO, RFQ, or deployment behavior.
+
+Run its focused gates with Node.js 24.18.0:
+
+```sh
+npm test -- tests/product-card-transport.test.ts tests/product-card-runtime-validator.test.ts tests/product-card-adapter.test.ts tests/product-card-consumer.test.ts tests/product-card-server-only.test.ts
+npm run verify:product-card-contract
+npm run verify:cms-contract
+```
+
 ## Server-only CMS Transport
 
 `src/lib/cms/server/` provides the server-only network boundary for the fixed English Schema 3 `/gdhe/v1/resolve` endpoint. Its public entry accepts only a canonical public path and an optional caller `AbortSignal`; origin, endpoint, locale and schema cannot be overridden.

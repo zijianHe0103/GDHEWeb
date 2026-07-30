@@ -2,14 +2,132 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-015
+current_task: TASK-016
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-30T10:25:34Z
+last_updated: 2026-07-30T15:28:57Z
 
 ## 当前焦点
 
-`TASK-015` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；提交前全量验证通过，当前只执行任务分支提交/推送、fast-forward 合并 `main` 和推送 `main`。
+`TASK-016` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已由 `task_accept` 接受；当前唯一下一步是提交前验证、受控正式提交、任务分支推送、fast-forward 合并 `main` 并推送远端 `main`。不开始 UI、部署或下一任务。
+
+## TASK-016 Formal Delivery Authorization 2026-07-30T15:28:57Z
+
+- authorization: 用户输入精确口令 `确认 TASK-016 完成并提交到远端`；`task_accept.py accept` 返回 accepted。
+- content: server-only ProductCard Transport、runtime Schema/semantic Validator、authentic wrapper、readonly DTO Adapter、稳定错误和一次请求/零 resolve 编排。
+- review_validation: Final Round 2 `PASS / P0=0 / P1=0 / P2=0`；Node 24.18.0 `8/3/6`、`16/2/2`、`73/73`、`244/244`、lint、typecheck、build、protected hashes/scope 与 DPG 门通过。
+- docs: root/frontend README、执行证据、review report 与 Planner Summary 已更新。
+- delivery: 只提交任务受控文件，排除 `.codex/config.toml` 和历史 resume packets；提交后立即推送任务分支、合并并推送 `main`。
+
+## TASK-016 Checked Preparation Narrative Sync 2026-07-30T14:30:53Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-07-30T14:30:28Z` 成功验证 artifacts 并将机器状态推进为 `AWAITING_USER`。
+- recovery: helper 未同步 active current paragraph、Board 和 current-only review evidence，strict audit 因此报告两个 HIGH；已受控 reopen 到 `NEEDS_REVISION`，只同步这些状态视图。
+- protected: 产品代码、审查结论、验证证据、Summary、验收和 Git 状态均未改变。
+- next: fresh governance audit 后再次运行 checked prepare；成功后只等待用户正式交付口令。
+
+## TASK-016 Round 2 PASS And Planner Final Validation 2026-07-30T14:29:23Z
+
+- response: `MSG-TASK-016-ADVERSARIAL-REVIEW-R2-RESPONSE` 已回传并 ACK。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Round 1 `FAIL / P0=0 / P1=1 / P2=1` 历史保留。
+- independent_review: 六类查询攻击、零 coercion/accessor/trap、独立 frozen primitive snapshot 与 transmitted identity 均关闭；直接回归通过。
+- planner_final_validation: Node 24.18.0 ProductCard `8/3/6`、旧 CMS `16/2/2`、focused `73/73`、full `244/244`、lint、typecheck、build、TASK-014 `25/25`、13/20 inventory、protected hashes、scope/residue、project/registry/messages/strict lane/diff 全 PASS。
+- summary: `TASKS/ARTIFACTS/TASK-016/PLANNER_SUMMARY.md` 已生成。
+- next: 只运行 checked `prepare-awaiting-user`；不得验收、Git、部署、UI 或开始下一任务。
+
+## TASK-016 Adversarial Round 2 Dispatch 2026-07-30T14:22:35Z
+
+- message: `MSG-TASK-016-ADVERSARIAL-REVIEW-R2`。
+- recipient: registered adversarial reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`。
+- delivery: Codex thread turn `019fb367-989d-7980-a6d3-126b20f014bd` 返回真实回执，`lane_dispatch.py dispatch-once` 已记录 `dispatched: true`。
+- boundary: 只复核 Round 1 P1/P2 closure 与直接回归；不得修复、修改 Planner 状态、验收、Git 交付、部署或开始 UI。
+- next: 等待 reviewer ACK 和 final Round 2 response。
+
+## TASK-016 Query Boundary Revision Planner Checkpoint PASS 2026-07-30T14:20:30Z
+
+- response: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1-RESPONSE` 已回传并 ACK。
+- p1_closure: 拒绝 stateful coercible filter、non-enumerable unknown key、symbol key、allowed-key accessor、任意 Proxy 和 reflection failure；只从一次复制的 primitive frozen snapshot 构造 URL。
+- planner_validation: Node 24 下 ProductCard verifier `8/3/6`、旧 verifier `16/2/2`、focused `73/73`、full `244/244`、lint、typecheck、build 全 PASS。
+- integrity: package/lock、ProductCard/resolve Snapshot 与 verifier、TASK-014 handoff `25/25`、13/20 inventory、禁止导入、零临时残留、DPG project/registry/messages/strict lane 和 diff 全 PASS。
+- transition: `NEEDS_REVISION` -> `UNDER_REVIEW`。
+- next: 只 dispatch adversarial Round 2；Round 2 PASS 前不得做 Planner final validation、验收、Git、部署或 UI。
+
+## TASK-016 Frontend Query Boundary Narrow Revision Dispatch 2026-07-30T14:09:01Z
+
+- message: `MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: Codex thread turn `019fb35b-33fb-7a01-b54a-48db198ae477` 返回真实回执，`lane_dispatch.py dispatch-once` 已记录 `dispatched: true`。
+- scope: only primitive one-time query snapshot, reflective/non-data/Proxy fail-closed tests and query/URL seam; all Round 1 passing behavior remains protected。
+- next: 等待 frontend ACK 和 revision response；之后 fresh Planner checkpoint，再进入 Round 2。
+
+## TASK-016 Adversarial Round 1 FAIL Recovery 2026-07-30T14:06:25Z
+
+- response: `MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE` 已回传并 ACK。
+- verdict: `FAIL / P0=0 / P1=1 / P2=1`；Planner final validation 不允许。
+- p1: caller-owned non-string stateful `filter` 在校验和 URL 构造时可产生不同字符串；`Object.keys` 也未拒绝 non-enumerable、symbol、accessor、Proxy-hidden 或反射失败输入。
+- p2: reviewer request 已 ACK/done，但当前叙述仍显示等待 ACK；现已同步关闭。
+- helper: 已运行 `task_transition.py reopen`，但当前 helper 只允许从 `AWAITING_USER` 重开并拒绝真实 `UNDER_REVIEW`；本恢复入口采用相同 `NEEDS_REVISION` 语义且未伪造 AWAITING_USER。
+- transition: `UNDER_REVIEW` -> `NEEDS_REVISION`。
+- next: 只 dispatch frontend narrow revision；完成 fresh checkpoint 后进入 Round 2。
+
+## TASK-016 Adversarial Round 1 Dispatch 2026-07-30T13:52:53Z
+
+- message: `MSG-TASK-016-ADVERSARIAL-REVIEW-R1`。
+- recipient: registered adversarial reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`。
+- delivery: Codex thread turn `019fb34c-740f-7492-a582-9a9d7103cd8a` 返回真实回执，`lane_dispatch.py dispatch-once` 已记录 `dispatched: true`。
+- boundary: reviewer 只读检查产品交付物，仅可写 canonical review report、reviewer lane records 和受控 response；不得修复、验收、Git 交付或开始 UI。
+- next: historical dispatch completed; Round 1 verdict is recorded in the recovery section above.
+
+## TASK-016 Planner Checkpoint PASS 2026-07-30T13:51:11Z
+
+- response: `MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION-RESPONSE` 已回传并 ACK。
+- implementation: 固定 ProductCard query/Transport、精确 8-Schema + action/path Validator、authentic wrapper、readonly DTO Adapter、错误清洗和一次请求/零 resolve 编排。
+- planner_validation: Node 24 下 ProductCard verifier `8/3/6`、旧 verifier `16/2/2`、focused `66/66`、full `237/237`、lint、typecheck、build 全 PASS。
+- integrity: package/lock、TASK-014 handoff、TASK-015 exact 13、旧 `/resolve` exact 20、禁止导入和受保护哈希全部通过。
+- docs: frontend README 与根 README 已同步；document impact `RESOLVED`，README impact `UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 创建、验证并 dispatch adversarial Round 1；不得开始 UI、下一任务、Git 或部署。
+
+## TASK-016 Design Gate PASS 2026-07-30T13:21:11Z
+
+- design: 冻结独立 ProductCard query/Transport、200/304/error、8-Schema + semantic Validator、authentic wrapper、readonly DTO 和一次请求/零 resolve 编排。
+- seams: Transport、Validator、Adapter、orchestration 四个行为接缝采用逐片 RED -> GREEN；只 mock loopback HTTP 外部边界。
+- baseline: Node `24.18.0` / npm `11.16.0`；ProductCard verifier `8/3/6`、旧 verifier `16/2/2`、full suite `10 files/171 tests`、lint、typecheck、build 全 PASS。
+- integrity: TASK-014 authority、TASK-015 exact 13、旧 `/resolve` exact 20、package-lock 和产品/运行时零 diff 通过。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: queue、dry-run、thread bridge、record dispatch；frontend 必须先 ACK。
+
+## TASK-016 Frontend Dispatch 2026-07-30T13:22:48Z
+
+- message: `MSG-TASK-016-FRONTEND-RUNTIME-CONSUMER-IMPLEMENTATION`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: Codex thread turn `019fb330-c341-72d1-b89b-4b7def1cbf5a` 返回真实回执，`lane_dispatch.py dispatch-once` 已记录 `dispatched: true`。
+- boundary: frontend 必须先 ACK；只允许 TASK-016 runtime consumer、tests、frontend README 和 artifacts，不允许 UI、CMS、root README、依赖或外部系统。
+- next: 等待 execution response；Planner 不并行修改 frontend 业务文件。
+
+## TASK-016 Requirement Confirmation 2026-07-30T13:16:26Z
+
+- authorization: 用户输入精确口令 `确认 TASK-016 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- seams: Transport、Runtime Validator、DTO Adapter、最小编排四个公开测试接缝已由任务卡冻结并获得确认。
+- boundary: React/UI、SeoDocument、CMS、真实产品、RFQ/飞书、cache、部署和 Git 交付继续排除。
+- next: DESIGN、IMPLEMENTATION_PLAN 和 baseline validation；通过后才 dispatch frontend TDD implementation。
+
+## TASK-016 Intake 2026-07-30T10:49:44Z
+
+- source: 用户明确要求创建“前端 ProductCard Transport、Runtime Validator 与 DTO Adapter”任务。
+- scope: 只补齐 ProductCard 的运行时 consumer；固定英语 endpoint/query、一次请求、严格 Schema 与跨字段语义校验、不可伪造 wrapper 和 readonly DTO。
+- exclusion: 不创建可见页面，不修改 WordPress/TASK-014/TASK-015 Snapshot/既有 `/resolve` consumer，不增加依赖，不连接飞书/RFQ，不实现 cache/Preview/deployment。
+- branch: `codex/TASK-016-product-card-runtime-consumer`，基线 `54917bdedcdb710830021c6397adc217252a8423`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- next: 等待精确口令 `确认 TASK-016 需求并开始执行`。
+
+## TASK-015 Remote Delivery Verified And Archived 2026-07-30T10:49:44Z
+
+- commit: `54917bdedcdb710830021c6397adc217252a8423`。
+- refs: 本地 `main`、`origin/main`、本地 TASK-015 分支与远端 TASK-015 分支均指向同一正式提交。
+- transition: TASK-015 从 `ACCEPTED / FORMAL_COMMIT_PENDING` 同步为 `CLOSED / MERGED` 并移动到 Archive。
+- boundary: 这是已授权 Git 交付的事实核验，不是 TASK-016 实施、可见页面或部署授权。
 
 ## TASK-015 Formal User Acceptance 2026-07-30T10:25:34Z
 

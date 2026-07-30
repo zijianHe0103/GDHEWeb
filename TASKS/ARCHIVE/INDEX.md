@@ -67,3 +67,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`c8417089c716244a4739ae17b7abe6c5f31ef929`
   - Remote branch：`origin/codex/TASK-014-product-card-collection-contract`
   - Main：`origin/main` at `c8417089c716244a4739ae17b7abe6c5f31ef929`
+- `TASK-015` 前端 ProductCard Contract Snapshot 与离线权威校验器 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-015-product-card-contract-snapshot.md`
+  - Commit：`54917bdedcdb710830021c6397adc217252a8423`
+  - Remote branch：`origin/codex/TASK-015-product-card-contract-snapshot`
+  - Main：`origin/main` at `54917bdedcdb710830021c6397adc217252a8423`

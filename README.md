@@ -38,7 +38,7 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 
 `product-cards` 是独立、封闭的 ProductCard Schema `1.0.0` collection：一次请求返回列表渲染所需的完整卡片 DTO，资格校验先于筛选、总数和分页，禁止前端逐卡调用 `/resolve`。它不会改变 Content Schema `3.0.0` 或原有四个公开内容端点。
 
-前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；ProductCard 目前只有 CMS/API 合同和本地合成 Fixture，尚无前端消费者、可见产品页或正式产品导入。Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
+前端只能消费这些 GDHE 归一化 DTO，不能依赖 Core REST、SCF 字段、post meta、数据库表或 WordPress 数字 ID。当前只开放英语 `en`；ProductCard 已具备 CMS/API 合同、前端离线快照和 server-only 运行时消费者，但尚无可见产品页或正式产品导入。Fixture、benchmark、清理和完整契约验证命令见 `docs/cms/`。
 
 ### 前端离线合同快照
 
@@ -46,7 +46,11 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 
 ### 前端 ProductCard 离线合同快照
 
-前端现已在 `frontend/src/lib/cms/product-card-contract/` 内持有 TASK-014 ProductCard 合同的独立离线快照；从 `frontend/` 运行 `npm run verify:product-card-contract` 验证 TASK-014 权威身份、精确 8-file Schema closure、3 份 0/1/N 成功样例和 6 份规范化错误。它与 TASK-008 `/resolve` Snapshot 相互隔离，不是 ProductCard Transport、runtime Validator、DTO Adapter、React/UI、可见页面或 WordPress 连接；详细边界见 [`frontend/README.md`](frontend/README.md#productcard-contract-snapshot)。
+前端现已在 `frontend/src/lib/cms/product-card-contract/` 内持有 TASK-014 ProductCard 合同的独立离线快照；从 `frontend/` 运行 `npm run verify:product-card-contract` 验证 TASK-014 权威身份、精确 8-file Schema closure、3 份 0/1/N 成功样例和 6 份规范化错误。它与 TASK-008 `/resolve` Snapshot 相互隔离；快照自身不执行网络请求、React/UI、可见页面或 WordPress 连接。详细边界见 [`frontend/README.md`](frontend/README.md#productcard-contract-snapshot)。
+
+### 前端 server-only ProductCard 运行时消费者
+
+TASK-016 在 `frontend/src/lib/cms/server/product-cards/` 建立了 server-only ProductCard 运行时消费者：它固定请求英语 ProductCard Schema `1.0.0` collection，使用本地 8-file Schema closure 验证响应，并且只有真实 validated wrapper 才能适配为只读前端 DTO。每次编排只发起一次 collection 请求、零逐卡 `/resolve`；当前故意不包含 UI 或缓存。验证时从 `frontend/` 运行五个 `product-card-*.test.ts` 聚焦文件，以及 `npm run verify:product-card-contract` 和 `npm run verify:cms-contract`。
 
 ### 前端 server-only `/resolve` Transport
 

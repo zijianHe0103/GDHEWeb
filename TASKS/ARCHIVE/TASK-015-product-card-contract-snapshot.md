@@ -3,14 +3,14 @@ accepted_at: 2026-07-30T10:25:34Z
 recovery_recorded_at: 2026-07-30T10:23:51Z
 
 task_id: TASK-015
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-015
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -143,7 +143,8 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；当前只执行任务分支提交与推送、合并 `main` 和推送 `main`。
+`CLOSED / ACCEPTED / MERGED`。正式提交
+`54917bdedcdb710830021c6397adc217252a8423` 已推送任务分支，并已快进合并和推送至远端 `main`；本地任务分支、远端任务分支、本地 `main` 与 `origin/main` 均已核验一致。
 
 ## 恢复入口
 
@@ -151,7 +152,7 @@ project_type: software
 
 ## 下一步
 
-创建中文正式提交，立即推送当前任务分支，fast-forward 合并到 `main` 并推送 `main`；不得纳入 `.codex/config.toml` 或既有 resume packets。
+任务已归档。后续 ProductCard Transport、runtime Validator、DTO Adapter、React/UI、SeoDocument、真实产品或部署必须在独立任务中实施。
 
 ## Lane Plan
 

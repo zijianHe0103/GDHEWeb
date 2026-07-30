@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-016",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-30T14:08:37Z",
+  "requires_response_to": "MSG-TASK-016-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Execute only TASK-016 Round 1 P1 narrow revision. Read and ACK this request, the canonical Round 1 report and current recovery entry before mutation. Preserve all Round 1 passing behavior. Strict TDD: first add focused no-listener regressions that fail on current production for (1) stateful toString/Symbol.toPrimitive filter accepted then transmitted differently, (2) non-enumerable unknown own key, (3) symbol own key, (4) accessor for an allowed key, (5) Proxy-hidden unknown key, and (6) reflection trap failure. Prove the canonical filter placed in URLSearchParams is byte-for-byte the primitive string validated exactly once. Minimum production fix only in ProductCard query validation/URL seam: require filter to be a primitive string; reject Proxies before reflection using the server-only Node runtime proxy detector if needed; use Reflect.ownKeys and own property descriptors to require a plain extensible or non-extensible data object with only allowed enumerable string data properties and no symbols/accessors; catch reflective failures and throw ProductCardConfigurationError(invalid_query); read values from descriptors once, validate primitives/ranges, return a new frozen primitive snapshot, and build the URL only from that snapshot. Do not touch response Transport, timeout, errors, Validator, wrapper, Adapter, DTO, orchestration, Snapshot/verifiers, dependencies, package/lock, README, src/app, CMS or external systems. If Node proxy detection conflicts with the existing Node/Next build target, return BLOCKED rather than weakening the Proxy requirement. Update TDD_RED_EVIDENCE, EXECUTION_REPORT, TEST_OR_VALIDATION_LOG, DIFF_OR_OUTPUT_SUMMARY and frontend worklog with the revision. Run focused tests, both verifiers, full test, lint, typecheck, build, protected hashes/inventories, scope and DPG gates; any listener-only gate may be delegated to Planner without requesting system permission. Send one revision_response linked to this request. Do not review, accept, commit, push, merge, deploy or start UI.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-016-product-card-runtime-consumer.md",
+    "TASKS/ARTIFACTS/TASK-016/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-016/TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-016/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-016/TEST_OR_VALIDATION_LOG.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-016/TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-016/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-016/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-016/DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Round 1 FAIL recovery only. P2 narration is already closed by Planner. No Round 2 review until frontend response and fresh Planner checkpoint.",
+  "dispatched_at": "2026-07-30T14:08:57Z",
+  "delivery_key": "MSG-TASK-016-FRONTEND-QUERY-BOUNDARY-P1-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019fb35b-33fb-7a01-b54a-48db198ae477",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-30T14:09:23Z",
+  "updated_at": "2026-07-30T14:09:23Z"
+}

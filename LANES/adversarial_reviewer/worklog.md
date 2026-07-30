@@ -759,3 +759,39 @@ Each execution records:
 - reviewer_harness_note: an empty external temporary build directory and one Turbopack panic log from the rejected symlink-isolation attempt remain outside the repository because the DPG reviewer write-scope hook denied external cleanup; they contain no product, authority or test mutation data and do not affect repository residue
 - message_status: original request acknowledged as done; linked PASS review_response is the required controlled return
 - next: Planner acknowledges the response, records PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-30T14:03:51Z - TASK-016 adversarial review round 1
+
+- task: TASK-016
+- message: MSG-TASK-016-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the formal request, read all required task, design, plan, TDD, execution, validation, diff, README, implementation and test evidence, and independently challenged the complete runtime consumer boundary without modifying business deliverables
+- p1: closed-query validation is not closed at the JavaScript boundary; a stateful non-string filter passed RegExp coercion once and transmitted a different second-coercion value, while non-enumerable, symbol and Proxy-hidden unknown own keys were accepted
+- p1_reproduction: the real production module observed exactly two filter coercions, retained typeof filter object after validation and sent product_category:track&meta_key=private even though only product_category:track had passed the allowlist
+- p1_narrow_revision: require primitive string filter, snapshot and canonicalize once, reject non-enumerable, symbol, accessor, Proxy and reflective-failure query shapes, and prove the transmitted primitive exactly equals the validated value with focused regressions
+- p2: controlled request is done and ACKed, but current active-task and project narration still says ACK is pending; semantic task state remains correctly UNDER_REVIEW NOT_ACCEPTED DIRTY
+- passed_boundaries: safe integer pagination; fixed endpoint, English locale and Schema 1.0.0; one anonymous no-store GET; zero retry; private 5000 ms timeout; caller abort; redirect and error mapping; one JSON parse; 304 without cache fail closed; exact static eight-Schema closure; semantic action/path gate; authentic caller-isolated deeply frozen wrapper; readonly allowlisted DTO; normalized-error validation and sanitization; one collection and zero resolve; public and deep server-only
+- independent_validation: ProductCard verifier 8/3/6 PASS; existing verifier 16/2/2 PASS; Validator and Adapter 23 tests PASS; server-only 4 tests PASS; lint and typecheck PASS; TASK-014 25/25 checksums PASS; protected hashes, 13/20 inventories, scope, leakage, documentation, cleanup and whitespace gates PASS
+- environment_limit: sandbox full suite reached 170 PASS and 67 listener tests failed only with EPERM on 127.0.0.1; no privilege was requested; Planner fresh system-approved checkpoint reports 237/237 and build PASS, while the decisive P1 was independently reproduced without a listener
+- cleanup: reviewer runtime probe and Vite cache removed; ProductCard server temp directories, Python bytecode and mutation residue absent
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- boundaries: no product or test repair, README or Planner-state edit, UI, cache, CMS, database, dependency, external-system mutation, acceptance, Git, deployment or later-task work; unrelated config and resume packets preserved
+- message_status: original request acknowledged as done; the single linked FAIL review_response was validated, dry-run exactly resolved to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner acknowledges the response, records governed FAIL recovery and owns any narrow revision plus configured Round 2 dispatch
+
+### 2026-07-30T14:26:30Z - TASK-016 adversarial review round 2 final
+
+- task: TASK-016
+- message: MSG-TASK-016-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the exact final Round 2 request first, preserved the complete Round 1 FAIL history and independently reviewed only the query-boundary P1, narration P2 and direct regressions
+- p1_closure: production rejects every Proxy before reflection, inspects all own keys and data descriptors once, rejects unknown, symbol, non-enumerable and accessor shapes, requires primitive pagination, sort and filter values, returns a distinct frozen primitive snapshot and builds the fixed URL only from that snapshot
+- attack_matrix: stateful filter rejected with zero coercions; allowed-key accessor rejected with zero reads; hidden-key and throwing-reflection Proxies rejected with zero trap calls and no private-detail leakage; accepted filter exactly matched transmitted bytes
+- assertion_boundary: no unchecked production narrowing was added; the only Transport cast is JSON parse to unknown, while sort and filter template types come from runtime-backed predicates
+- p2_closure: revision request and response are both ACKed and done; active task, project and board are UNDER_REVIEW NOT_ACCEPTED DIRTY; Round 1 FAIL history is preserved and Round 2 remains the unique gate before Planner final validation
+- independent_validation: bundled Node 24.14 query 20/20 PASS; Validator, Adapter and server-only 27/27 PASS; both offline verifiers 8/3/6 and 16/2/2 PASS; lint, clean typecheck, TASK-014 25/25 checksums, exact 13/20 inventories, protected hashes and scope, import/leakage scan, cleanup and whitespace gates PASS
+- runtime_note: the first command used shell-default Node 20.11.1 and failed before discovery on missing node util styleText; it was rerun directly under bundled Node 24.14.0; Planner fresh current-byte evidence under frozen Node 24.18.0/npm 11.16.0 reports focused 73/73, full 244/244 and build PASS
+- passed_regressions: exact static eight-Schema and semantic gates; one anonymous GET, zero retry, fixed timeout, caller abort, redirect, one parse, 304 no-cache failure; authentic wrapper, readonly DTO, sanitized errors, one request/zero resolve, browser/CMS isolation and public/deep server-only all remain intact
+- cleanup: reviewer query probe and Vite cache removed; ProductCard test server directories, Python bytecode and mutation residue absent
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after controlled response acknowledgement and review recovery
+- boundaries: no business-deliverable repair, product/test/evidence/README or Planner-state edit, UI, cache, CMS, database, dependency, external-system mutation, acceptance, Git, deployment or later-task work
+- message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run exactly resolved to the registered Planner session, delivered through the Codex thread bridge, recorded dispatch-once with the real bridge receipt and acknowledged as done by Planner
+- next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation

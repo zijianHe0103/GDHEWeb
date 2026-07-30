@@ -1,7 +1,7 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-015
+current_task: TASK-016
 
 ## 活动任务
 
@@ -17,7 +17,7 @@ current_task: TASK-015
 
 ## 等待推送
 
-- `TASK-015` 前端 ProductCard Contract Snapshot 与离线权威校验器 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-016` 前端 ProductCard Transport、Runtime Validator 与 DTO Adapter — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 已暂停
 
@@ -25,6 +25,7 @@ current_task: TASK-015
 
 ## 最近关闭
 
+- `TASK-015` 前端 ProductCard Contract Snapshot 与离线权威校验器 — `CLOSED` / `MERGED`
 - `TASK-014` 英语版 ProductCard Collection CMS/API 合同基础 — `CLOSED` / `MERGED`
 - `TASK-013` 冻结英语站 IA、URL、CTA 与产品卡片/SEO 最小合同 — `CLOSED` / `MERGED`
 - `TASK-012` 真实产品优先的实施路线图重排 — `CLOSED` / `MERGED`
@@ -81,3 +82,7 @@ current_task: TASK-015
 ## Accepted
 
 - TASK-015: ACCEPTED at 2026-07-30T10:25:34Z
+
+## Accepted
+
+- TASK-016: ACCEPTED at 2026-07-30T15:28:57Z

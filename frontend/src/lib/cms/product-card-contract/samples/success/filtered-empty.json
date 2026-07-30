@@ -1,0 +1,13 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "locale": "en",
+    "type": "product_card",
+    "sort": "modified_desc",
+    "filter": "product_category:not-present",
+    "page": 1,
+    "perPage": 10,
+    "total": 0,
+    "totalPages": 0,
+    "items": []
+}

@@ -741,3 +741,21 @@ Each execution records:
 - boundaries: no business-deliverable repair, product or CMS write, Planner-state edit, Fixture creation, database mutation, frontend, dependency, external-system state change, acceptance, Git, deployment or TASK-015 work
 - message_status: Round 2 request acknowledged as done; linked final review_response is the required controlled return
 - next: Planner acknowledges the response, records Round 2 PASS recovery and owns final validation plus any later checked acceptance preparation
+
+### 2026-07-30T10:09:13Z - TASK-015 adversarial review round 1
+
+- task: TASK-015
+- message: MSG-TASK-015-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, acknowledged the formal request, and independently reviewed the active task, frozen design and plan, TDD evidence, implementation, TASK-014 authority, frontend evidence, README wording and protected scope
+- tdd: target-focused RED is supported by the recorded missing verifier, Node 24 runtime and filesystem birth ordering in which the focused test and RED record precede both production targets
+- authority: exact 13-file Snapshot inventory and exact eight-file local Schema closure pass; all eight Schema and three success pairs have exact source bytes; all 25 TASK-014 handoff checksums pass; authority paths, file hashes and 25-entry map are independently frozen against redirection
+- mutation: focused 13 of 13 PASS plus five reviewer temporary probes for checksum drift, success/error source substitution, protocol-relative ref and backslash ref; all fail closed without absolute-path leakage and all ProductCard mutation roots were cleaned
+- semantics: zero, one and N samples, all four action cells, non-empty one-item relations and deterministic six-error reconstruction pass without new semantics
+- independent_validation: ProductCard verifier 8/3/6 PASS; existing verifier 16/2/2 PASS; focused 13/13 PASS; lint PASS; isolated temporary typecheck and production build PASS; system-approved reviewer full suite 10 files/171 tests PASS after the sandbox-only 41-listener EPERM; 25/25 authority and whitespace gates PASS
+- protected_integrity: package lock, dependencies, existing resolve Snapshot/verifier, app, CMS server runtime, CMS and TASK-014 authority are unchanged from baseline; runtime ProductCard imports, secret/internal-field leakage and repository mutation residue are zero
+- minimality: the 762-line verifier remains one dependency-free offline authority gate; its explicit duplicated identities are the anti-redirection boundary and no correctness, maintainability or scope finding was reproduced
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed after controlled review recovery
+- boundaries: no business-deliverable repair, Planner-state edit, product/CMS/database/runtime/dependency/external-system mutation, acceptance, Git, deployment or later-task work
+- reviewer_harness_note: an empty external temporary build directory and one Turbopack panic log from the rejected symlink-isolation attempt remain outside the repository because the DPG reviewer write-scope hook denied external cleanup; they contain no product, authority or test mutation data and do not affect repository residue
+- message_status: original request acknowledged as done; linked PASS review_response is the required controlled return
+- next: Planner acknowledges the response, records PASS recovery and owns fresh final validation plus any checked acceptance preparation

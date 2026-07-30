@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/product-card/v1/card-action.v1.schema.json",
+  "title": "GDHE Card Action 1.0.0",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "label", "targetPath"],
+      "properties": {
+        "mode": {
+          "const": "view_product"
+        },
+        "label": {
+          "const": "View Product"
+        },
+        "targetPath": {
+          "$ref": "public-path.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "label", "targetPath"],
+      "properties": {
+        "mode": {
+          "const": "direct_rfq"
+        },
+        "label": {
+          "const": "Request a Quote"
+        },
+        "targetPath": {
+          "const": "/request-a-quote/"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "label", "targetPath"],
+      "properties": {
+        "mode": {
+          "const": "replacement_contact"
+        },
+        "label": {
+          "const": "Contact Us for Replacement"
+        },
+        "targetPath": {
+          "const": "/contact/"
+        }
+      }
+    }
+  ]
+}

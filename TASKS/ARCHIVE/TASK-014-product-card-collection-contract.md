@@ -2,7 +2,7 @@
 accepted_at: 2026-07-30T05:28:54Z
 
 task_id: TASK-014
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-014
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-30T05:25:44Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -149,7 +149,7 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-30T05:28:54Z 使用精确口令正式验收 TASK-014。Adversarial Round 2、Planner final validation、完整治理审计和 checked acceptance preparation 均已通过。当前只执行正式提交、任务分支推送、合并 `main` 与推送 `main`。
+`CLOSED / ACCEPTED / MERGED`。用户于 2026-07-30T05:28:54Z 使用精确口令正式验收 TASK-014；正式提交 `c8417089c716244a4739ae17b7abe6c5f31ef929` 已推送到任务分支、fast-forward 合并到 `main` 并推送。2026-07-30T05:38:12Z 已核验本地/远端任务分支和 `main` 均指向该提交，任务完成归档。
 
 ## 恢复入口
 
@@ -157,16 +157,16 @@ project_type: software
 
 ## 下一步
 
-执行正式 Git 交付：提交并推送 `codex/TASK-014-product-card-collection-contract`，随后合并并推送 `main`。不得启动 frontend、TASK-015 或部署。
+已归档。后续 TASK-015 只建立前端 ProductCard Contract Snapshot 与离线权威校验器；其实施仍须单独取得需求确认。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 需求边界、状态、消息、checkpoint、最终验证与用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、授权文档 | intake、checkpoint、Planner Summary | FORMAL_GIT_DELIVERY |
-| wordpress_cms | 按已冻结设计以 TDD 实现 additive ProductCard collection CMS/API/Schema、Fixture、回滚和验证 | `cms/wp-content/plugins/gdhe-site/**`、TASK-014 artifacts、lane records | RED/GREEN 证据、实现、fixtures、schema/handoff、execution report | R1_NARROW_REVISION_COMPLETE |
-| frontend | 对新 CMS handoff 做只读消费可行性与 N+1 边界审计，不改前端 | TASK-014 artifacts、lane records | frontend read-only handoff audit | ROUND_2_PASS_COMPLETE |
-| adversarial_reviewer | 对业务交付物只读独立审查 | canonical review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | ROUND_2_FINAL_PASS |
+| planner | 需求边界、状态、消息、checkpoint、最终验证与用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、授权文档 | intake、checkpoint、Planner Summary | CLOSED |
+| wordpress_cms | 按已冻结设计以 TDD 实现 additive ProductCard collection CMS/API/Schema、Fixture、回滚和验证 | `cms/wp-content/plugins/gdhe-site/**`、TASK-014 artifacts、lane records | RED/GREEN 证据、实现、fixtures、schema/handoff、execution report | CLOSED |
+| frontend | 对新 CMS handoff 做只读消费可行性与 N+1 边界审计，不改前端 | TASK-014 artifacts、lane records | frontend read-only handoff audit | CLOSED |
+| adversarial_reviewer | 对业务交付物只读独立审查 | canonical review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | CLOSED |
 
 ## Messages
 
@@ -183,6 +183,7 @@ project_type: software
 
 ## 执行记录
 
+- 2026-07-30T05:38:12Z：核验本地 `main`、`origin/main`、本地 TASK-014 分支与远端 TASK-014 分支均为正式提交 `c8417089c716244a4739ae17b7abe6c5f31ef929`；任务归档为 `CLOSED / MERGED`。
 - 2026-07-29T16:15:22Z：TASK-014 完成任务登记。
 - 2026-07-29T16:26:57Z：用户确认需求；任务进入 `READY`，开始设计与 dispatch 准备。
 - 2026-07-29T16:46:06Z：DESIGN、IMPLEMENTATION_PLAN 与 baseline validation 通过；任务进入 `IN_PROGRESS`，准备受控派发 wordpress_cms。

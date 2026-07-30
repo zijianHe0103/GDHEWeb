@@ -6139,3 +6139,256 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-014
 - summary: TASK-014 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+### 2026-07-30T05:38:12Z - TASK-015 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-015
+- summary: 建立独立前端 ProductCard Contract Snapshot 与离线权威校验器的需求边界；等待用户确认，未开始实施。
+- branch: `codex/TASK-015-product-card-contract-snapshot`
+- baseline: `c8417089c716244a4739ae17b7abe6c5f31ef929`
+- next: 等待精确口令 `确认 TASK-015 需求并开始执行`。
+
+### 2026-07-30T05:38:12Z - TASK-014 remote delivery verified
+
+- type: task_closed
+- lane: planner
+- task: TASK-014
+- summary: 本地/远端 TASK-014 分支与 `main` 全部核验为正式提交 `c8417089c716244a4739ae17b7abe6c5f31ef929`；归档为 `CLOSED / MERGED`。
+### 2026-07-30T05:49:14Z - TASK-015 requirements confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-015
+- summary: 用户精确确认 TASK-015；任务进入 READY，先完成设计和 baseline gate。
+- next: DESIGN、IMPLEMENTATION_PLAN、baseline validation，随后受控 dispatch frontend。
+### 2026-07-30T06:00:39Z - TASK-015 design gate passed
+
+- type: task_execution_started
+- lane: planner
+- task: TASK-015
+- summary: DESIGN、IMPLEMENTATION_PLAN、Node 24 baseline 和治理门通过；任务进入 IN_PROGRESS。
+- next: 受控 dispatch frontend，先 ACK 和 TDD RED。
+
+### 2026-07-30T06:01:17Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-015
+- summary: message queued for frontend
+
+### 2026-07-30T06:01:40Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-015
+- summary: message MSG-TASK-015-FRONTEND-IMPLEMENTATION dispatched to frontend
+
+### 2026-07-30T06:02:03Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-015
+- summary: message MSG-TASK-015-FRONTEND-IMPLEMENTATION moved to done
+### 2026-07-30T06:01:49Z - TASK-015 frontend dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-015
+- summary: MSG-TASK-015-FRONTEND-IMPLEMENTATION 通过真实 Codex thread bridge 投递并记录 dispatched。
+- next: 等待 frontend ACK、TDD execution 和关联 response。
+### 2026-07-30T09:33:03Z - TASK-015 frontend permission recovery
+
+- type: recovery_recorded
+- lane: planner
+- task: TASK-015
+- summary: frontend implementation/evidence exists and full suite is 10/171 PASS, but a duplicate system permission request blocks the required execution response.
+- next: approve or cancel the frontend permission request, then finish the response and Planner checkpoint.
+
+### 2026-07-30T09:37:35Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-015
+- summary: message queued for planner
+
+### 2026-07-30T09:37:52Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-015
+- summary: message MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-07-30T09:39:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-015
+- summary: message MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-07-30T09:55:13Z - TASK-015 Planner checkpoint PASS
+
+- type: planner_checkpoint_passed
+- lane: planner
+- task: TASK-015
+- summary: frontend response 已 ACK；Planner 独立验证 Snapshot/verifier、25/25 authority、13 focused tests、旧回归、build 与 full suite 171/171 全通过。
+- docs: frontend README 与根 README 已同步，document impact RESOLVED，readme impact UPDATED。
+- transition: IN_PROGRESS -> UNDER_REVIEW。
+- next: dispatch adversarial Round 1 only。
+
+### 2026-07-30T09:57:51Z - TASK-015 adversarial Round 1 dispatched
+
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-015
+- summary: `MSG-TASK-015-ADVERSARIAL-REVIEW-R1` 通过真实 Codex thread bridge 投递并由 `lane_dispatch.py dispatch-once` 记录。
+- boundary: reviewer 只读审查，不修复、不验收、不 Git、不部署。
+- next: 等待 ACK 和 PASS/FAIL/BLOCKED verdict。
+
+### 2026-07-30T10:14:04Z - TASK-015 adversarial Round 1 PASS received
+
+- type: review_response_acknowledged
+- lane: planner
+- task: TASK-015
+- verdict: PASS / P0=0 / P1=0 / P2=0。
+- evidence: 13-file inventory、8-file closure、25/25 authority、focused 13/13、五个附加 mutation probes、171/171 和 protected scope。
+- boundary: PASS 不等于 acceptance、Git 或 deployment。
+- next: fresh Planner final validation and checked acceptance preparation。
+
+### 2026-07-30T09:57:07Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-015
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-30T09:57:30Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-015
+- summary: message MSG-TASK-015-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-30T09:58:23Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-015
+- summary: message MSG-TASK-015-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-30T10:11:40Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-015
+- summary: message queued for planner
+
+### 2026-07-30T10:13:59Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-015
+- summary: message MSG-TASK-015-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-07-30T10:14:04Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-015
+- summary: message MSG-TASK-015-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-30T10:20:01Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-015
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T10:20:49Z - TASK-015 acceptance state synchronization
+
+- type: acceptance_state_sync
+- lane: planner
+- task: TASK-015
+- first_prepare: checked prepare-awaiting-user PASS。
+- recovery: Hook 阻止在 AWAITING_USER 下同步 Board/叙述；受控 reopen 只同步状态面，不修改实现、review 或 evidence。
+- final_validation: 8/3/6、13/13、16/2/2、lint、typecheck、build、171/171、25/25 与治理门禁通过。
+- next: second checked prepare-awaiting-user；随后等待用户正式验收。
+
+### 2026-07-30T10:22:07Z - TASK-015 strict audit evidence recovery
+
+- type: audit_recovery
+- lane: planner
+- task: TASK-015
+- finding: VERIFY_EVIDENCE_MISSING。
+- cause: active Validation Evidence section lacked literal Evidence/证据 despite PASS and complete command results。
+- correction: add only the parser marker, rerun governance, then checked prepare again。
+- boundary: no product, test, review verdict, Git or deployment change。
+
+### 2026-07-30T10:23:01Z - TASK-015 strict audit PASS token recovery
+
+- type: audit_recovery
+- lane: planner
+- task: TASK-015
+- cause: PASS_FOR contains underscore, so parser did not see standalone PASS。
+- correction: existing validation result now begins `Evidence: PASS`。
+- boundary: format only; no product, evidence result, review, Git or deployment change。
+
+### 2026-07-30T10:23:51Z - TASK-015 final strict audit zero HIGH
+
+- type: final_audit_passed
+- lane: planner
+- task: TASK-015
+- result: zero HIGH；acceptance readiness/project/registry/messages/strict lane/diff PASS。
+- notices: expected GIT_DIRTY medium and existing WordPress Core filename low heuristic。
+- next: final checked prepare-awaiting-user；then wait for exact acceptance。
+
+### 2026-07-30T10:20:49Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-015
+- summary: Checked prepare succeeded, but Board and human-readable current-state narratives still display UNDER_REVIEW; reopen only to synchronize those status surfaces.
+
+### 2026-07-30T10:21:31Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-015
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T10:22:07Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-015
+- summary: Strict project audit found VERIFY_EVIDENCE_MISSING because the active Validation Evidence section lacked the literal evidence marker required by the audit parser.
+
+### 2026-07-30T10:22:35Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-015
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T10:23:01Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-015
+- summary: Strict audit parser treats underscore as a word character, so PASS_FOR did not satisfy the required standalone PASS token even after the Evidence marker was added.
+
+### 2026-07-30T10:23:26Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-015
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T10:23:51Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-015
+- summary: Final strict audit has zero HIGH findings; reopen only to persist that final audit result and replace stale NEEDS_REVISION narrative before the final checked prepare.
+
+### 2026-07-30T10:24:17Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-015
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-30T10:25:34Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-015
+- summary: TASK-015 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-07-30T10:25:34Z - TASK-015 formal delivery authorized
+
+- type: formal_delivery_authorized
+- lane: planner
+- task: TASK-015
+- authorization: `确认 TASK-015 完成并提交到远端`。
+- validation: pre-commit 8/3/6、13/13、16/2/2、lint、typecheck、build、171/171 PASS。
+- exclusion: unrelated `.codex/config.toml` and resume packets。
+- next: commit, push task branch, ff-only merge main, push main。

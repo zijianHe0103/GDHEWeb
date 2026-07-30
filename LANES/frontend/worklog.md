@@ -641,3 +641,28 @@ Each execution records:
 - protected_hashes: protected frontend/CMS/root-doc/architecture diff hash remained `79676675...dd4e`; protected status hash remained `3f26ab06...7ec5` before and after audit
 - message_result: `MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2-RESPONSE` received a real Codex thread bridge receipt for Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was recorded as dispatched and removed from queue; `requires_response_to=MSG-TASK-014-FRONTEND-HANDOFF-READONLY-AUDIT-R2`
 - unique_next_step: Planner acknowledges the PASS response and controls the remaining TASK-014 governance gates; frontend does not start the ProductCard snapshot task without a separate confirmed task and dispatch
+
+### 2026-07-30T17:29:23+08:00 - TASK-015 ProductCard contract snapshot implementation
+
+- task: TASK-015
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-015-FRONTEND-IMPLEMENTATION
+- message_ack: exact dispatched request and all context files read; acknowledged before edits
+- tdd_red: only the focused test existed; Node v24.18.0/npm 11.16.0 produced exit 1 and 1 failed test because verify-product-card-contract.mjs was missing; Snapshot/verifier were absent
+- green_correction: first implementation run found checksum-map insertion-order disagreement; comparison was minimally changed to sorted entries, then canonical GREEN passed
+- snapshot: independent 13-file product-card-contract tree with closed manifest, exact 8-file Schema closure, 3 exact success samples and one deterministic 6-selector error bundle
+- authority: hard-bound TASK-014 handoff/checksum canonical paths and hashes, 25-entry parity, exact source/Snapshot mapping and byte hashes
+- verifier: Node built-ins only; exact inventory, safe paths, local closure, 0/1/N, four actions, non-empty relations, deterministic errors and sanitized failures
+- focused_tests: 13/13 PASS covering canonical, Schema/manifest/checksum authority substitution, authority/direct source drift, missing/extra/tamper, manifest traversal and traversing/remote/unknown refs; mutations use temporary repository copies only
+- regression: verify:cms-contract 16/2/2, lint, typecheck and Next production build PASS
+- full_tests: sandbox run failed only because 41 existing HTTP tests received listen EPERM on 127.0.0.1 while 130 passed; system-approved non-sandbox rerun passed 10 files/171 tests
+- protected_hashes: TASK-014 authority matches aa7cd391/c363f293; package-lock dda25a90, old manifest 3d3a1379 and old verifier 5c9edf3c remain baseline-identical
+- isolation: package-lock/dependencies, old Snapshot/verifier, src/app, Transport, Validator, Adapter, CMS, TASK-014, database, root README and Planner state unchanged by frontend lane
+- documentation: frontend README updated; exact root README delta recorded for Planner in DIFF_OR_OUTPUT_SUMMARY.md without editing root
+- boundaries: no runtime ProductCard consumer, Transport, Validator, DTO, Adapter, UI, SEO, cache, external system, review, acceptance, Git delivery, deployment or later task
+- command_note: one scope-validation invocation used a misspelled workdir and did not start; the corrected invocation completed
+- final_validation: fresh Node 24 verifier 8/3/6, focused 13/13, old verifier 16/2/2, lint, typecheck, build and system-approved full 171/171 all PASS; Planner independently reproduced full 171/171
+- final_scope: exact 13-file inventory, 25/25 TASK-014 authority, package-lock/old snapshot/verifier hashes, no runtime cross-import, no secret/absolute/internal leakage, zero temporary roots, Markdown/JSON/reference checks and global diff check PASS
+- governance_validation: project, messages and strict lane audit PASS with zero issues before response creation; generated frontend resume packet removed
+- message_result: MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE received a real Codex thread bridge receipt for Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was recorded as dispatched and removed from queue; requires_response_to=MSG-TASK-015-FRONTEND-IMPLEMENTATION
+- unique_next_step: Planner independently validates the implementation, applies the recorded root README delta in Planner scope and decides whether to dispatch adversarial review; frontend does not review, accept, deliver Git or start another task

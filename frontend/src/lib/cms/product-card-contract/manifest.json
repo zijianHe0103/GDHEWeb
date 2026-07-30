@@ -1,0 +1,128 @@
+{
+  "manifestVersion": "1",
+  "sourceAuthority": {
+    "task": "TASK-014",
+    "handoff": "TASK-014-PRODUCT-CARD-1",
+    "manifestPath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "manifestSha256": "aa7cd391c78ffb7038d8ef233101ceb3ee75e619b1246d1da280cc8c4ba42ccb",
+    "checksumsPath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "c363f293c44ffee6b9c3cebbb03ac0e2dab73e9a7910f18b0975a65404962883"
+  },
+  "restApiVersion": "1",
+  "contentSchemaVersion": "3.0.0",
+  "productCardSchemaVersion": "1.0.0",
+  "endpoint": "/wp-json/gdhe/v1/product-cards",
+  "roots": [
+    "product-card-collection.v1.schema.json"
+  ],
+  "schemas": [
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/card-action.v1.schema.json",
+      "snapshotPath": "schemas/card-action.v1.schema.json",
+      "sha256": "6639d8ac895baa3eb4400b2e8cadd6c5032d0290caac3872eb1550cd3aa6b6e4"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/card-attribute.v1.schema.json",
+      "snapshotPath": "schemas/card-attribute.v1.schema.json",
+      "sha256": "3c2828ee795863f2bc153a5a26d3c1564677d3681aaa3bb15daf4f29a57cc821"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/product-card-collection.v1.schema.json",
+      "snapshotPath": "schemas/product-card-collection.v1.schema.json",
+      "sha256": "c842e7c899446b4ddaa37f33128144f8d8f9eb7bd9e9704926e3a5131e12847a"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/product-card.v1.schema.json",
+      "snapshotPath": "schemas/product-card.v1.schema.json",
+      "sha256": "615e6dd00c33e3b1b366a1640ccc5300b93d5733413be63b24e7853f5d1dec7a"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json",
+      "snapshotPath": "schemas/public-path.schema.json",
+      "sha256": "9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-protected-media.v1.schema.json",
+      "snapshotPath": "schemas/public-protected-media.v1.schema.json",
+      "sha256": "c8fc9afc35db82d91f5c75f84cce289a1f0f68c2884490405e734a26194ccd5c"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-taxonomy-ref.v1.schema.json",
+      "snapshotPath": "schemas/public-taxonomy-ref.v1.schema.json",
+      "sha256": "a2c7dc8ba7cdaa0f64ec9d7a67186b64343cf71ae95e062a99340ba7017fe5a8"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json",
+      "snapshotPath": "schemas/uuid-v4.schema.json",
+      "sha256": "59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"
+    }
+  ],
+  "samples": {
+    "success": [
+      {
+        "name": "all",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/all.json",
+        "snapshotPath": "samples/success/all.json",
+        "sha256": "72378b235ac4c9d596eca98fcfd24de309858a810565b5331236b835a315e9ba"
+      },
+      {
+        "name": "empty",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/filtered-empty.json",
+        "snapshotPath": "samples/success/filtered-empty.json",
+        "sha256": "cd10e1d1b1f56428f6ee7e15f6b7a7cbc981af281940e74a25faf277ab9f7ca7"
+      },
+      {
+        "name": "one",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/one-item.json",
+        "snapshotPath": "samples/success/one-item.json",
+        "sha256": "748a65137c021aaafc91a0667023ed24874a9713455abded462d6482de80ce07"
+      }
+    ],
+    "errors": {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_ERROR_FIXTURES.json",
+      "sourceSha256": "c1c65c21daef313f31b0d0f8a6a0640b6507be7c534e04af864bfc9f0ffae0e9",
+      "snapshotPath": "samples/errors/product-card-errors.json",
+      "selectors": [
+        "filter-taxonomy",
+        "locale",
+        "page-native-overflow",
+        "schema",
+        "sort",
+        "unknown-parameter"
+      ],
+      "expected": [
+        {
+          "selector": "filter-taxonomy",
+          "code": "gdhe_invalid_filter",
+          "status": 400
+        },
+        {
+          "selector": "locale",
+          "code": "gdhe_invalid_locale",
+          "status": 400
+        },
+        {
+          "selector": "page-native-overflow",
+          "code": "gdhe_invalid_pagination",
+          "status": 400
+        },
+        {
+          "selector": "schema",
+          "code": "gdhe_invalid_schema",
+          "status": 400
+        },
+        {
+          "selector": "sort",
+          "code": "gdhe_invalid_sort",
+          "status": 400
+        },
+        {
+          "selector": "unknown-parameter",
+          "code": "gdhe_invalid_parameter",
+          "status": 400
+        }
+      ],
+      "sha256": "3fbf1cc44e23574e2e43ff60e5a7d010f7acf11a437f48d63a5536336e2f5d29"
+    }
+  }
+}

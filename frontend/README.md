@@ -92,6 +92,33 @@ The verifier uses only Node.js built-ins. It fails closed for missing, extra or 
 
 This snapshot does not connect to WordPress, read environment variables, add a runtime Schema validator or DTO adapter, or create a visible page. Future runtime code must consume the local normalized contract without importing `cms/` or `TASKS/`.
 
+## ProductCard contract snapshot
+
+TASK-015 freezes an independent frontend-owned copy of the TASK-014 ProductCard
+collection contract under `src/lib/cms/product-card-contract/`. It contains the
+exact eight-file ProductCard Schema closure, three authoritative success
+samples covering 0/1/N items, all four action cells and non-empty relations,
+plus six deterministically selected normalized errors.
+
+Run its offline authority and parity check with the pinned Node.js runtime:
+
+```sh
+npm run verify:product-card-contract
+```
+
+The Node-built verifier uses only built-in modules. It binds the Snapshot to
+the canonical TASK-014 handoff manifest and checksum file, verifies exact
+source/snapshot bytes and inventory, follows only the frozen local `$ref`
+closure, and fails closed for missing, extra, tampered, traversing, remote,
+unknown, substituted or drifted inputs. Mutation tests operate only on
+temporary repository copies.
+
+This directory is deliberately separate from the TASK-008 `/resolve` Snapshot
+and does not change `verify:cms-contract`. It is not a ProductCard Transport,
+runtime Validator, DTO Adapter, React component, route, visible page, cache,
+SEO implementation or WordPress connection. Runtime modules must consume only
+frontend-owned normalized data and must never import `cms/` or `TASKS/`.
+
 ## Server-only CMS Transport
 
 `src/lib/cms/server/` provides the server-only network boundary for the fixed English Schema 3 `/gdhe/v1/resolve` endpoint. Its public entry accepts only a canonical public path and an optional caller `AbortSignal`; origin, endpoint, locale and schema cannot be overridden.

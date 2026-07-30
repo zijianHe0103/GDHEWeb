@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:image-optimizer": "node tests/image-optimizer-fixture.mjs",
-    "verify:cms-contract": "node scripts/verify-cms-contract.mjs"
+    "verify:cms-contract": "node scripts/verify-cms-contract.mjs",
+    "verify:product-card-contract": "node scripts/verify-product-card-contract.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",

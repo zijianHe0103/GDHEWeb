@@ -62,3 +62,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`72d500bd2bb424a0f3896b336f3e9a3d79f90ab9`
   - Remote branch：`origin/codex/TASK-013-english-ia-url-cta-contract`
   - Main：`origin/main` at `72d500bd2bb424a0f3896b336f3e9a3d79f90ab9`
+- `TASK-014` 英语版 ProductCard Collection CMS/API 合同基础 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-014-product-card-collection-contract.md`
+  - Commit：`c8417089c716244a4739ae17b7abe6c5f31ef929`
+  - Remote branch：`origin/codex/TASK-014-product-card-collection-contract`
+  - Main：`origin/main` at `c8417089c716244a4739ae17b7abe6c5f31ef929`

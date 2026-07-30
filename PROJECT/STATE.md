@@ -2,14 +2,126 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-014
+current_task: TASK-015
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-30T05:28:54Z
+last_updated: 2026-07-30T10:25:34Z
 
 ## 当前焦点
 
-`TASK-014` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户于 2026-07-30T05:28:54Z 使用精确口令正式验收；Adversarial Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation、完整治理审计与 checked acceptance preparation 均已通过。当前只执行任务分支正式提交/推送与 `main` 合并/推送；不部署或开始 TASK-015。
+`TASK-015` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；提交前全量验证通过，当前只执行任务分支提交/推送、fast-forward 合并 `main` 和推送 `main`。
+
+## TASK-015 Formal User Acceptance 2026-07-30T10:25:34Z
+
+- authorization: `确认 TASK-015 完成并提交到远端`。
+- acceptance: `task_accept.py accept` PASS。
+- pre_commit_validation: 8/3/6、13/13、16/2/2、lint、typecheck、build、171/171 全 PASS。
+- git: `FORMAL_COMMIT_PENDING`。
+- exclusion: `.codex/config.toml` 和既有 resume packets 不纳入提交。
+- next: formal commit -> push task branch -> ff-only main -> push main。
+
+## TASK-015 Final Strict Audit 2026-07-30T10:23:51Z
+
+- validation_marker: active Validation Evidence 现为可解析的 `Evidence: PASS`。
+- audit: fresh full strict project audit zero HIGH。
+- notices: `GIT_DIRTY` medium 是正式提交前预期；WordPress Core `class-wp-debug-data.php` low heuristic 不是任务临时产物。
+- gates: acceptance readiness、project、registry、messages、strict lane、diff 全通过。
+- next: final checked prepare，随后等待 `确认 TASK-015 完成并提交到远端`。
+
+## TASK-015 Strict Audit PASS Token Recovery 2026-07-30T10:23:01Z
+
+- finding: `PASS_FOR_...` 未通过 parser 的 standalone `\bPASS\b` 检查。
+- correction: 现有 validation line 改为 literal `Evidence: PASS`，原 status/commands/results 保留。
+- boundary: no implementation, test, review verdict, acceptance, Git or deployment change。
+- next: fresh strict audit and checked prepare。
+
+## TASK-015 Strict Audit Evidence Recovery 2026-07-30T10:22:07Z
+
+- finding: `VERIFY_EVIDENCE_MISSING`；产品测试、review 和 acceptance readiness 均未失败。
+- cause: Validation Evidence section 含 PASS 和完整结果，但 section body 不含解析器要求的 literal `Evidence`/`证据`。
+- correction: 同一 PASS 行增加 `Evidence:`；不改变实现、结果、review 或 scope。
+- next: fresh strict audit；HIGH 清零后再次 checked `prepare-awaiting-user`。
+
+## TASK-015 Acceptance State Synchronization 2026-07-30T10:20:49Z
+
+- final_validation: ProductCard verifier `8/3/6`、focused `13/13`、旧 verifier `16/2/2`、lint、typecheck、build、system-approved full suite `171/171` 全 PASS。
+- integrity: exact 13 inventory、TASK-014 25/25、package-lock/旧 Snapshot hashes、protected scope、project/registry/messages/strict lane/diff 通过。
+- review: `PASS / P0=0 / P1=0 / P2=0`；报告仅补充机器可读 `status: PASS`，未改变 review 内容。
+- first_prepare: checked `prepare-awaiting-user` 返回 `ok: true`。
+- recovery: Hook 阻止在 AWAITING_USER 下同步 Board/叙述；受控 reopen 只处理状态显示，不重开实现或审查。
+- next: 同步完成后立即再次运行 checked prepare；最终保持 `NOT_ACCEPTED / DIRTY`。
+
+## TASK-015 Adversarial Round 1 PASS 2026-07-30T10:14:04Z
+
+- response: `MSG-TASK-015-ADVERSARIAL-REVIEW-R1-RESPONSE` 已通过真实线程桥送达并 ACK。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；没有修订 finding。
+- independent: exact 13-file inventory、8-file closure、25/25 authority、focused 13/13、五个附加 mutation probes、0/1/N、四格 action、六错误重建、旧 verifier、lint、isolated typecheck/build、system-approved full suite 171/171 与 protected scope 均通过。
+- boundary: PASS 不等于用户验收，不授权 Git、部署、UI、CMS 或下一任务。
+- next: fresh Planner final validation、Planner Summary、checked `prepare-awaiting-user`。
+
+## TASK-015 Planner Checkpoint PASS 2026-07-30T09:55:13Z
+
+- response: `MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE` 已送达并 ACK；先前重复权限恢复记录关闭但保留历史。
+- implementation: 独立 13-file ProductCard Snapshot、built-in verifier、13 个 focused mutation tests、package script 和 frontend README。
+- planner_validation: verifier `8/3/6`、focused `13/13`、旧 verifier `16/2/2`、lint、typecheck、build、system-approved full suite `10 files/171 tests` 全 PASS。
+- integrity: 25/25 TASK-014 handoff、exact 13 inventory、existing 20-file `/resolve` inventory、package-lock 和旧 manifest/verifier baseline hashes、protected scope、runtime import/secret scan、diff 通过。
+- docs: frontend README 与根 README 已同步；document impact `RESOLVED`，README impact `UPDATED`。
+- transition: `IN_PROGRESS` -> `UNDER_REVIEW`。
+- next: 受控 dispatch adversarial Round 1；不得开始 UI、下一任务、Git 或部署。
+
+## TASK-015 Frontend Permission Recovery 2026-07-30T09:33:03Z
+
+- implementation: 13-file Snapshot tree、built-in verifier、focused tests、package script 和 frontend README 已形成。
+- evidence: verifier `8 Schema / 3 success / 6 errors` PASS；focused `13/13`；旧 verifier/lint/typecheck/build PASS；获批非沙箱 full suite `10 files / 171 tests` PASS。
+- planner_reproduction: Planner 也独立重跑当前 full suite 为 10/171 PASS；该证据不能代替 frontend 的受控 execution response。
+- blocker: registered frontend task 停在重复的系统 PermissionRequest，response 尚未创建/投递。
+- recovery: 已把 Codex 主窗口导航到 frontend task，并发送 continuation 要求取消重复审批、使用已有 PASS 后完成 response。
+- next: 用户批准或取消该权限弹窗；frontend 完成 response 后 Planner fresh checkpoint。不得提前 review、验收或 Git。
+
+## TASK-015 Frontend Dispatch 2026-07-30T06:01:49Z
+
+- message: `MSG-TASK-015-FRONTEND-IMPLEMENTATION`。
+- recipient: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`。
+- delivery: Codex thread bridge 返回真实 thread receipt，`lane_dispatch.py dispatch-once` 已记录 `dispatched: true`。
+- boundary: frontend 必须先 ACK；只允许 TASK-015 Snapshot/verifier/test/frontend README 和 artifacts，不允许旧 Snapshot、CMS、UI、root README 或部署。
+- next: 等待 execution response；Planner 不并行修改 frontend 业务文件。
+
+## TASK-015 Design Gate PASS 2026-07-30T06:00:39Z
+
+- design: 独立 `product-card-contract` tree、TASK-014 authority binding、8-file closure、3 success samples、6 error selectors 和 mutation matrix 已冻结。
+- baseline: Node `24.18.0` / npm `11.16.0`；旧 verifier、lint、typecheck、build 通过。
+- tests: 沙箱监听被 `EPERM` 阻止；经系统审批在非沙箱环境重跑为 9 files / 158 tests PASS。
+- protected_hashes: TASK-014 authority、package-lock、旧 `/resolve` manifest/verifier 已记录。
+- governance: project、registry、messages、strict lane 和 diff 通过。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: 创建并通过真实 Codex thread bridge dispatch frontend implementation request；必须先 ACK 和真实 RED。
+
+## TASK-015 Requirement Confirmation 2026-07-30T05:49:14Z
+
+- authorization: 用户输入精确口令 `确认 TASK-015 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- scope: 只建立独立前端 ProductCard Snapshot、authority-bound 离线 verifier、focused mutation tests 和开发者文档。
+- tdd: 必须先得到目标功能缺失的真实 RED，再写最小 GREEN；旧 `/resolve` Snapshot/verifier 必须持续回归通过。
+- boundary: Transport、runtime Validator、Adapter、UI、SeoDocument、CMS、数据库、外部系统和部署继续排除。
+- next: 完成 DESIGN、IMPLEMENTATION_PLAN 与 baseline validation，通过后才 dispatch frontend。
+
+## TASK-015 Intake 2026-07-30T05:38:12Z
+
+- source: 用户明确要求创建“前端 ProductCard Contract Snapshot 与离线权威校验器”任务。
+- scope: 只建立独立前端 Snapshot、manifest、离线 verifier、focused mutation tests 和开发者文档；不实现 Transport、runtime Validator、Adapter、React/UI、SeoDocument 或可见页面。
+- isolation: 使用独立 `frontend/src/lib/cms/product-card-contract/**`；禁止修改 TASK-008 `/resolve` Snapshot 精确 inventory 和 `verify-cms-contract.mjs`。
+- authority: TASK-014 `PRODUCT_CARD_HANDOFF_MANIFEST.json` 与 checksum 是直接权威；8-file closure、代表性 0/1/N、四种 action、非空 relation 和规范化错误必须可追溯。
+- branch: `codex/TASK-015-product-card-contract-snapshot`，基线 `c8417089c716244a4739ae17b7abe6c5f31ef929`。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- boundary: 未修改 frontend、CMS、数据库或外部系统，未创建实施 artifacts，未 dispatch。
+- next: 等待精确口令 `确认 TASK-015 需求并开始执行`。
+
+## TASK-014 Remote Delivery Verified And Archived 2026-07-30T05:38:12Z
+
+- commit: `c8417089c716244a4739ae17b7abe6c5f31ef929`。
+- refs: 本地 `main`、`origin/main`、本地 TASK-014 分支与远端 TASK-014 分支均指向同一正式提交。
+- transition: TASK-014 从 `ACCEPTED / FORMAL_COMMIT_PENDING` 同步为 `CLOSED / MERGED` 并移动到 Archive。
+- boundary: 这是已授权 Git 交付的事实核验，不是新的产品实现、部署或 TASK-015 实施授权。
 
 ## TASK-014 User Acceptance 2026-07-30T05:28:54Z
 

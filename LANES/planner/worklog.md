@@ -2790,3 +2790,101 @@ Each execution records:
 - acceptance: `task_accept.py accept` PASS；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
 - delivery: 只执行正式提交、推送当前任务分支、合并 `main` 和推送 `main`。
 - boundary: 不启动 frontend、TASK-015 或部署；不提交既有无关 resume packets。
+## 2026-07-30T05:38:12Z TASK-015 intake
+
+- 已核验 TASK-014 本地/远端任务分支和 `main` 均为 `c8417089c716244a4739ae17b7abe6c5f31ef929`，将其归档为 `CLOSED / MERGED`。
+- 已建立分支 `codex/TASK-015-product-card-contract-snapshot` 和活动任务登记。
+- TASK-015 只允许独立 ProductCard Snapshot、authority-bound 离线 verifier、focused mutation tests 和文档；不允许 Transport、Validator、Adapter、UI、SeoDocument、CMS 或部署。
+- 既有 `.codex/config.toml` 和 resume packets 继续视为无关用户/运行产物，不纳入任务。
+- 当前状态：`AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- 唯一下一步：等待用户输入 `确认 TASK-015 需求并开始执行`。
+## 2026-07-30T05:49:14Z TASK-015 requirements confirmed
+
+- authorization: 用户输入精确口令 `确认 TASK-015 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- gate: 先建立 DESIGN、IMPLEMENTATION_PLAN 和 baseline evidence；通过前不修改 frontend 产品代码。
+- boundary: TDD RED 在 frontend lane 实施时必须真实观察；Transport、Validator、Adapter、UI、CMS 和部署继续排除。
+- next: 完成设计 gate 后受控 dispatch frontend。
+## 2026-07-30T06:00:39Z TASK-015 design gate PASS
+
+- design: 冻结独立 Snapshot tree、TASK-014 authority mapping、8 Schema、3 success、6 errors 和 fail-closed mutation matrix。
+- baseline: Node 24.18.0 / npm 11.16.0；old verifier/lint/typecheck/build PASS。
+- full_tests: sandbox `listen EPERM` 后通过系统审批在非沙箱环境重跑，9 files / 158 tests PASS。
+- hashes: TASK-014 manifest/checksums、package/package-lock、old manifest/verifier 已记录。
+- governance: validate/registry/messages/strict lane/diff PASS。
+- transition: `READY` -> `IN_PROGRESS`。
+- next: queue、dry-run、thread bridge、record dispatch；frontend 必须先 ACK。
+## 2026-07-30T06:01:49Z TASK-015 frontend dispatched
+
+- message: `MSG-TASK-015-FRONTEND-IMPLEMENTATION`。
+- bridge: exact dry-run prompt 已发送到 registered frontend session，bridge 返回真实 thread receipt。
+- dispatch: `lane_dispatch.py dispatch-once --execute` 返回 `dispatched: true`。
+- boundary: Planner 不并行编辑 frontend；等待 lane ACK 和关联 execution response。
+## 2026-07-30T09:33:03Z TASK-015 frontend permission recovery
+
+- observed: frontend completed RED/GREEN, 13 focused tests, verifier 8/3/6, old regression, build and four execution artifacts.
+- full_tests: frontend and Planner each independently obtained system-approved Node 24 full-suite PASS at 10 files / 171 tests.
+- blocker: frontend task is waiting on a duplicate system PermissionRequest before it can finish and dispatch the linked execution response.
+- action: navigated the app to frontend task and sent a continuation to cancel/skip duplicate privilege work and finish response using existing PASS.
+- boundary: no review dispatch until the execution response is delivered and ACKed.
+- next: user approves or cancels the visible frontend permission request; resume with Planner checkpoint.
+
+## 2026-07-30T09:55:13Z TASK-015 Planner checkpoint PASS
+
+- ACKed `MSG-TASK-015-FRONTEND-IMPLEMENTATION-RESPONSE`; the duplicate permission recovery is closed with history preserved.
+- Independently inspected the 13-file Snapshot, manifest, verifier, focused tests, package/README changes and protected scope.
+- Fresh Node 24 results: ProductCard verifier 8/3/6, focused 13/13, old verifier 16/2/2, lint, typecheck, build and approved full suite 10 files/171 tests all PASS.
+- Reproduced TASK-014 25/25 checksums and baseline hashes for package-lock plus old `/resolve` manifest/verifier.
+- Applied the exact Planner-owned root README handoff and recorded document impact RESOLVED / readme impact UPDATED.
+- Transitioned TASK-015 from IN_PROGRESS to UNDER_REVIEW. Next is the single controlled adversarial Round 1 dispatch; no Git, UI, CMS or next task.
+
+## 2026-07-30T09:57:51Z TASK-015 adversarial Round 1 dispatched
+
+- Created and validated `MSG-TASK-015-ADVERSARIAL-REVIEW-R1`.
+- Sent the exact dry-run payload to registered adversarial_reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`.
+- Recorded a real `codex-app` dispatch receipt with `lane_dispatch.py dispatch-once`.
+- Waiting for independent ACK and verdict; task stays UNDER_REVIEW / NOT_ACCEPTED / DIRTY.
+
+## 2026-07-30T10:14:04Z TASK-015 adversarial Round 1 PASS received
+
+- ACKed the bridge-delivered `MSG-TASK-015-ADVERSARIAL-REVIEW-R1-RESPONSE`.
+- Final verdict is PASS / P0=0 / P1=0 / P2=0; no revision finding.
+- Reviewer independently reproduced exact inventory/closure/authority, the requested mutation matrix plus five extra probes, success/error semantics, old regressions, full 171/171 suite and protected scope.
+- Task remains UNDER_REVIEW / NOT_ACCEPTED / DIRTY until fresh Planner final validation and checked `prepare-awaiting-user`.
+
+## 2026-07-30T10:20:49Z TASK-015 acceptance state synchronization
+
+- Fresh current-byte gates passed: ProductCard verifier 8/3/6, focused 13/13, old verifier 16/2/2, lint, typecheck, build, approved full suite 171/171 and TASK-014 checksum 25/25.
+- Protected hashes/scope, project, registry, messages, strict lane and whitespace checks passed.
+- Added only machine-readable `status: PASS` to the canonical review report so the DPG parser recognizes the already recorded PASS; no verdict or evidence changed.
+- First checked prepare succeeded. Because AWAITING_USER hook blocked Board/current-narrative sync, controlled reopen was used only for those state surfaces.
+- Next is the second checked prepare; final state must be AWAITING_USER / NOT_ACCEPTED / DIRTY with no Git or next task.
+
+## 2026-07-30T10:22:07Z TASK-015 strict audit evidence recovery
+
+- Second checked prepare succeeded, but the full strict project audit found `VERIFY_EVIDENCE_MISSING`.
+- The active validation section already had PASS and full command evidence; its body lacked the parser's literal `Evidence` or `证据` marker.
+- Controlled reopen is limited to adding `Evidence:` to that same PASS line and correcting the final-validation audit narrative.
+- Next: fresh project/registry/messages/strict lane/full strict audit/diff, then checked prepare again only if no HIGH remains.
+
+## 2026-07-30T10:23:01Z TASK-015 strict audit PASS token recovery
+
+- Direct helper inspection showed `PASS_FOR_...` fails the audit regex because underscore is a word character and no `\\bPASS\\b` boundary exists.
+- Changed only the existing validation label to literal `Evidence: PASS`; kept status, commands and results.
+- Next: fresh full strict audit and governance gates, then checked prepare if HIGH issues are zero.
+
+## 2026-07-30T10:23:51Z TASK-015 final strict audit zero HIGH
+
+- Active validation now exposes literal `Evidence: PASS`; helper-level review and validation evidence checks both return true.
+- Fresh full strict project audit has zero HIGH issues.
+- Remaining audit notices are expected dirty Git state before formal delivery and an existing WordPress Core filename heuristic.
+- Acceptance readiness, project, registry, messages, strict lane and diff gates pass.
+- Next: one final checked prepare; then stop in AWAITING_USER / NOT_ACCEPTED / DIRTY.
+
+## 2026-07-30T10:25:34Z TASK-015 formal delivery authorized
+
+- User supplied the exact acceptance phrase and `task_accept.py accept` returned accepted.
+- Pre-commit current-byte verification passed: ProductCard 8/3/6, focused 13/13, old verifier 16/2/2, lint, typecheck, build and full suite 171/171.
+- State is ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING.
+- Stage only TASK-015 governed/product files; exclude `.codex/config.toml` and existing resume packets.
+- Next: formal Chinese commit, push task branch, ff-only merge to main, push main.

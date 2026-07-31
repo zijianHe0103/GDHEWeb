@@ -56,7 +56,13 @@ TASK-016 在 `frontend/src/lib/cms/server/product-cards/` 建立了 server-only 
 
 TASK-017 在 `/products/` 增加了一个固定 `noindex,nofollow` 的本地受控英语列表切片。它默认关闭，只能在非生产环境通过 server-only `GDHE_PRODUCT_LIST_MODE=preview|cms` 开启：`preview` 使用带 GDHE 品牌保护的 FGD X15 本地测试候选且不请求 CMS，`cms` 复用 TASK-016 的一次 collection 请求、零逐卡 `/resolve` 消费链。生产媒体来源尚未授权，因此非空 CMS 集合若只提供远程媒体 URL，会在进入 React 前整体转为脱敏的暂不可用状态，浏览器不会直连 WordPress；空集合仍保持独立空状态。两种模式在 production 都强制返回 404。
 
-这只是可视化和接入验证页面，不是正式公开产品目录。真实产品导入、产品详情页、可工作的 RFQ/Contact 目标、公开 SEO、生产媒体配置和部署仍未实现；完整启动方式与边界见 [`frontend/README.md`](frontend/README.md#local-only-productcard-list-slice)。
+这只是可视化和接入验证页面，不是正式公开产品目录。真实产品导入、可工作的 RFQ/Contact 目标、公开 SEO、生产媒体配置和部署仍未实现；完整启动方式与边界见 [`frontend/README.md`](frontend/README.md#local-only-productcard-list-slice)。
+
+### FGD X15+PVC 本地可见产品详情切片
+
+TASK-018 在 `/products/fgd-x15-pvc/` 增加了一个本地受控、固定 `noindex,nofollow` 的英语产品详情切片。它默认关闭，只能在非生产环境通过 server-only `GDHE_PRODUCT_DETAIL_MODE=preview|cms` 开启：`preview` 使用仓库内受保护测试候选且不访问网络；`cms` 只执行一次经过 Schema 3 Validator 验证的 `/resolve` 请求，并在 Product Detail DTO 边界排除 CMS 媒体、Article Number、内部产品代码和诊断信息。两种 ready 模式都明确显示本地非生产提示，production 中均强制返回 404。
+
+当前页面只包含 Product Hero、Overview、五项已确认规格和导航至 `/request-a-quote/` 的 `Request a Quote` 控件。该控件尚不添加询价条目、不提交表单，也不写入飞书；页面仍是本地纵向切片，不代表视觉验收、正式 SEO、生产产品发布或部署。完整启动方式与边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
 
 ### 前端 server-only `/resolve` Transport
 

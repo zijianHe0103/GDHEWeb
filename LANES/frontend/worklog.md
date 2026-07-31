@@ -783,3 +783,71 @@ Each execution records:
 - artifacts: the four existing TASK-017 implementation artifacts preserve visual R1/R2 and adversarial R1 history and now append this revision
 - message_result: `MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-2519`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-017-FRONTEND-ADVERSARIAL-P1-R1`
 - unique_next_step: Planner owns the independent checkpoint and any adversarial Round 2 dispatch; frontend stops without review, acceptance, Git delivery, deployment or later work
+
+### 2026-07-31T10:28:44+08:00 - TASK-018 local FGD X15+PVC Product Detail implementation
+
+- task: TASK-018
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION
+- message_ack: exact request, frozen DESIGN, IMPLEMENTATION_PLAN and FRONTEND_DISPATCH read; request acknowledged before product mutation
+- scope: only the authorized single detail route, Product Detail DTO/config/preview/Adapter/loader/component/CSS, TASK-018 tests/evidence, frontend README and this worklog
+- tdd: five vertical seams retained RED evidence before minimum closure; missing config/DTO, Adapter, loader and route/component plus built-runtime redirect observation
+- config: one server-only `GDHE_PRODUCT_DETAIL_MODE`; exact non-production preview/cms only, production always disabled
+- dto_preview: deeply readonly exact FGD X15+PVC identity, protected local image, Manual Curtain Tracks category, replaceable overview, five display rows and navigation-only request_quote action
+- adapter: consumes only authentic existing Validator success wrappers; exact product/template/locale/path/title/model/category/install/specification guards; CMS media, Article Number, product code, modules, relations and diagnostics excluded
+- loader: disabled/ready/not_found/unavailable; preview zero network; CMS one fixed Schema 3 resolve, zero ProductCard requests and zero retries; only validated gdhe_not_found HTTP 404 maps not_found
+- presentation: only Hero, Overview and Key Specifications; semantic dl, non-empty protected Alt, 44 px CTA, responsive stack, fixed noindex/nofollow and sanitized unavailable state
+- focused_validation: Product Detail 4 files/28 tests, ProductList 4/29, CMS resolve 7/156 and ProductCard 6/86 PASS
+- full_validation: full Vitest 23 files/301 tests, both verifiers 16/2/2 and 8/3/6, lint, typecheck and production build PASS
+- production_smoke: detail preview/cms final 404 and CMS requests 0; ProductList and CMS integration production smokes also PASS
+- framework_note: detail smoke first observed Next trailing-slash 308; corrected observer follows same-origin normalization and requires final 404, matching the established TASK-017 distinction
+- protected_integrity: package/lock, existing Transport/Validator/manifest and protected image hashes exactly match baseline; no existing ProductCard/ProductList/CMS/protected route diff and no next-env diff
+- documentation: frontend README updated; exact root README delta recorded for Planner in EXECUTION_REPORT without editing root README
+- artifacts: TDD_RED_EVIDENCE.md, EXECUTION_REPORT.md, TEST_OR_VALIDATION_LOG.md and DIFF_OR_OUTPUT_SUMMARY.md completed
+- governance: project validation, message validation and strict lane audit PASS; git diff check and temporary-root scan PASS; strict project audit only reports expected dirty governance state and pre-existing low heuristics
+- boundaries: no visual QA, adversarial review, acceptance, Git delivery, deployment, CMS/database/Feishu/external mutation, working RFQ, formal SEO or later Product Detail module
+- message_result: `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION-RESPONSE` received real Planner thread bridge receipt `item-2598`, was recorded as dispatched, acknowledged by Planner and moved to done; `requires_response_to=MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION`
+- unique_next_step: Planner independently validates the delivered implementation and controls any later visual/review dispatch; frontend stops here
+
+### 2026-07-31T10:39:44+08:00 - TASK-018 Planner checkpoint P1 R1 closure
+
+- task: TASK-018
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1
+- message_ack: exact revision and PLANNER_IMPLEMENTATION_CHECKPOINT read; request acknowledged before mutation
+- transition_note: Planner had already run the required reopen check; it safely returned ok false because truthful state remained IN_PROGRESS, so frontend did not repeat or mutate Planner state
+- scope: only P1-1 through P1-3; Product Detail tests/notice, frontend README, TASK-018 execution evidence and this worklog
+- tdd_red: authentic hostile-media CMS route test exit 1 with 6 prior passes and one new failure solely because CMS ready markup lacked the local non-production notice
+- minimum_green: existing preview boolean now selects preview or CMS-specific text while the notice remains visible in both ready states; no DTO, Adapter, loader or request change
+- p1_1: real route used one Schema-valid payload containing hostile HTTPS WordPress featured/gallery media, internal Product Code/Article Number and raw diagnostic marker; exact one resolve, zero product-cards, protected local image and zero hostile/internal/raw markup PASS
+- p1_2: copied-project Client Component imports for loader and deep Adapter; 2 marker-stripped positive builds PASS, 2 real guarded builds fail with server-only diagnostic, temporary roots zero
+- p1_3: preview notice preserved and CMS ready notice now reads `Local CMS test candidate — not a production product page`
+- focused_validation: Product Detail 5 files/31 tests PASS
+- regression_validation: ProductList 4/29, CMS resolve 7/156, ProductCard 6/86 and full Vitest 24/304 PASS
+- build_validation: both verifiers 16/2/2 and 8/3/6, lint, typecheck and production build PASS; route inventory unchanged
+- production_smoke: Product Detail preview/cms final 404 with CMS requests 0; ProductList and CMS integration smokes PASS
+- protected_integrity: package/lock, Transport, Validator, CMS manifest and protected image hashes match baseline; next-env diff empty; zero temporary roots
+- boundaries: DTO/Adapter mapping, loader, Transport, Validator, ProductCard, ProductList, CMS, dependencies, root README, Planner state, visual QA, review, Git and deployment unchanged
+- artifacts: four TASK-018 execution evidence files append the R1 history and current-byte validation
+- message_result: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-2609`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so the subsequent dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1`
+- unique_next_step: Planner independently validates the R1 closure and controls any later visual/review dispatch; frontend stops here
+
+### 2026-07-31T14:40:49+08:00 - TASK-018 visual Round 1 CSS revision
+
+- task: TASK-018
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION
+- message_ack: exact revision request and dispatch read; ACK completed before test or production mutation
+- review_context: preserved prior BLOCKED history and current independent `FAIL / severe 0 / obvious 2 / detail 0`; frontend owns only O1 and O2 code causes
+- tdd_red: focused CSS contract command exit 1 with 1 failed/7 skipped because Hero, Overview and Specifications lacked the local border-box/100% rule; current CSS also retained Hero's inherited 42rem cap and H1 anywhere wrapping
+- minimum_green: only Product Detail local CSS changed; three cards use border-box width 100%, Hero max-width 100%, and H1 overflow-wrap normal
+- focused_validation: exact CSS contract 1/1 PASS; Product Detail 5 files/32 tests PASS
+- regression_validation: ProductList 4/29, CMS 7/156, ProductCard 6/86 and full Vitest 24/305 PASS
+- build_validation: both verifiers 16/2/2 and 8/3/6, lint, typecheck and production build PASS; route inventory unchanged
+- production_smoke: Product Detail preview/cms final 404 with CMS requests 0; ProductList and CMS integration smokes PASS
+- protected_integrity: package/lock, Transport, Validator, CMS manifest and protected image hashes match baseline; inventories remain 16 and 13; final next-env diff empty; zero temporary roots
+- boundaries: global CSS, component DOM, DTO, Adapter, loader, Transport, Validator, data, wording, routes, links, dependencies, ProductCard/ProductList/CMS, Planner state, visual QA, review, acceptance, Git and deployment unchanged
+- artifacts: preserved earlier history and appended `FRONTEND_VISUAL_R1_REVISION.md` plus RED/GREEN/current-byte validation to the existing TASK-018 evidence
+- final_governance: git diff check, residue scan, DPG project, messages and strict lane audit PASS with zero issues before response creation
+- message_result: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE` received real Planner thread bridge receipt `item-2641`, was recorded as dispatched, acknowledged by Planner and moved to done; `requires_response_to=MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION`
+- unique_next_step: Planner independently validates current bytes and controls visual_qa browser retest; frontend does not alter the existing visual verdict

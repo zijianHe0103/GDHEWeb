@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-018-VISUAL-QA-R2",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-018",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T06:46:55Z",
+  "requires_response_to": "MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact retest before work. Execute only TASKS/ARTIFACTS/TASK-018/VISUAL_QA_R2_DISPATCH.md against current shared bytes at the already-running http://localhost:3000. Preserve the original BLOCKED_NO_VISUAL_EVIDENCE history, Round 1 FAIL / severe 0 / obvious 2 / detail 0 report, screenshots and measurements. Do not start or stop a server. Capture fresh r2 evidence at 1440/1024/768/390/320; verify Hero width use and intact X15+PVC at 1440, scrollWidth <= clientWidth and no clipping at 768/390/320, 1024 regression, CTA 44px/center hit, category-then-RFQ keyboard/focus, console and no CMS/internal leakage. Return PASS only for severe=0, obvious=0, detail=0; otherwise FAIL with exact current evidence. Write only QA/TASK-018/**, the canonical VISUAL_QA_REPORT.md and visual_qa lane records. Do not edit frontend/CSS/tests/docs, task authority, CMS, dependencies, Git or deployment. Stop after one linked execution_response.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-018-fgd-x15-product-detail-slice.md",
+    "TASKS/ARTIFACTS/TASK-018/VISUAL_QA_R2_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-018/PLANNER_VISUAL_R1_REVISION_CHECKPOINT.md",
+    "QA/TASK-018/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-018/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-018/FRONTEND_VISUAL_R1_REVISION.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-018/VISUAL_QA_REPORT.md",
+    "QA/TASK-018/fgd-x15-pvc-r2-1440.png",
+    "QA/TASK-018/fgd-x15-pvc-r2-1024.png",
+    "QA/TASK-018/fgd-x15-pvc-r2-768.png",
+    "QA/TASK-018/fgd-x15-pvc-r2-390.png",
+    "QA/TASK-018/fgd-x15-pvc-r2-320.png",
+    "TASKS/ARTIFACTS/TASK-018/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Current shared server is Planner-owned and already running dual preview at localhost:3000. Preserve all prior evidence. Use r2 filenames. Do not stop the server or modify next-env.d.ts.",
+  "done_at": "2026-07-31T06:47:14Z",
+  "updated_at": "2026-07-31T06:47:14Z"
+}

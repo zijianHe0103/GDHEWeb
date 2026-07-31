@@ -1,0 +1,182 @@
+.detail {
+  width: min(100%, 78rem);
+  margin: 0 auto;
+}
+
+.hero,
+.overview,
+.specifications {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hero {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #111111;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.heroContent {
+  min-width: 0;
+}
+
+.category,
+.model,
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.category {
+  color: #5b5b54;
+  text-underline-offset: 0.25rem;
+}
+
+.model {
+  margin: 2rem 0 0;
+}
+
+.hero h1 {
+  margin: 0.6rem 0 0;
+  overflow-wrap: normal;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.previewNotice {
+  width: fit-content;
+  margin: 1.5rem 0 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 0.3rem solid #f5c400;
+  background: #fff5bd;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.action {
+  display: inline-flex;
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 0.25rem;
+  background: #f5c400;
+  color: #171717;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.action:hover {
+  background: #ffd633;
+}
+
+.category:focus-visible,
+.action:focus-visible {
+  outline: 0.2rem solid #171717;
+  outline-offset: 0.25rem;
+}
+
+.overview,
+.specifications {
+  margin-top: clamp(4rem, 9vw, 8rem);
+}
+
+.overview {
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #686861;
+}
+
+.overview h2,
+.specifications h2,
+.state h1 {
+  margin: 0.65rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+}
+
+.overview > p:last-child {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  color: #51514c;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.specifications dl {
+  margin: 2rem 0 0;
+  border-top: 1px solid #cacac3;
+}
+
+.specifications dl div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.7fr);
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid #cacac3;
+}
+
+.specifications dt,
+.specifications dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.specifications dt {
+  color: #5b5b54;
+}
+
+.specifications dd {
+  font-weight: 800;
+}
+
+.state {
+  width: min(100%, 42rem);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem);
+  border: 1px solid #d1d1ca;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.state p {
+  margin: 1rem 0 0;
+  color: #51514c;
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .specifications dl div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+}

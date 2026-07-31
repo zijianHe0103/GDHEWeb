@@ -192,6 +192,45 @@ configured here. Product details, working RFQ/contact targets, real production
 products, public SEO, filtering, pagination, visual QA and deployment are also
 outside this slice.
 
+## Local-only FGD X15+PVC Product Detail slice
+
+`/products/fgd-x15-pvc/` is a controlled English Product Detail slice for the
+same local FGD X15+PVC candidate shown by the ProductCard preview. It is
+disabled by default, always `noindex,nofollow`, and cannot be enabled when
+`NODE_ENV=production`.
+
+Render the frozen frontend-owned DTO with zero network access:
+
+```sh
+GDHE_PRODUCT_DETAIL_MODE=preview npm run dev
+```
+
+Exercise the authentic Schema 3 `/resolve` boundary against a controlled local
+CMS:
+
+```sh
+WORDPRESS_API_URL=http://127.0.0.1:8080/wp-json \
+GDHE_PRODUCT_DETAIL_MODE=cms \
+npm run dev
+```
+
+CMS mode performs exactly one fixed English `/resolve` request for
+`/products/fgd-x15-pvc/`, validates it with the existing 16-Schema runtime
+Validator, and adapts only the exact confirmed product identity and five
+display specifications. It performs no ProductCard collection request and no
+retry. Only a validated `gdhe_not_found` HTTP 404 becomes a page 404; every
+other failure renders a sanitized unavailable state.
+
+Both modes render the repository-local protected image and exclude CMS media,
+Article Number, internal product codes, raw modules, relations and diagnostics.
+Both ready states also display an explicit local test-candidate notice; CMS
+mode identifies itself as a non-production CMS test candidate rather than
+implying that validated data is publicly published.
+The visible `Request a Quote` control is ordinary navigation to the currently
+deferred `/request-a-quote/` workspace; it does not add, save or submit an RFQ.
+This slice is not a production product page, formal SEO implementation, final
+copy, visual acceptance, CMS import or deployment authorization.
+
 ## Server-only CMS Transport
 
 `src/lib/cms/server/` provides the server-only network boundary for the fixed English Schema 3 `/gdhe/v1/resolve` endpoint. Its public entry accepts only a canonical public path and an optional caller `AbortSignal`; origin, endpoint, locale and schema cannot be overridden.

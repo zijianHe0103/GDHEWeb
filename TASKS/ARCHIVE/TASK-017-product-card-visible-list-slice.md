@@ -3,14 +3,15 @@ accepted_at: 2026-07-30T19:34:02Z
 recovery_recorded_at: 2026-07-30T19:14:33Z
 
 task_id: TASK-017
-status: AWAITING_USER
+status: CLOSED
+closed_at: 2026-07-30T19:44:31Z
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-017
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software

@@ -1,0 +1,40 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-018-VISUAL-QA-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-018",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T02:45:29Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before execution. Perform only TASKS/ARTIFACTS/TASK-018/VISUAL_QA_DISPATCH.md. Start the local non-production preview with both ProductList and Product Detail preview modes, then capture fresh 1440/1024/768/390 full-page evidence plus 320 CSS px reflow. Verify the ProductCard-to-detail canonical route, exact FGD X15+PVC identity, Hero/Overview/five specifications, protected image and Alt, visible local notice, category and RFQ targets, 44px CTA and center hit-test, natural keyboard order/focus, responsive columns/spacing/overflow, console and browser-facing no-CMS/internal leakage. Return PASS only for severe=0, obvious=0, detail=0; otherwise FAIL with exact reproducible findings and smallest proposed correction. Write only QA/TASK-018/**, the canonical VISUAL_QA_REPORT.md and visual_qa lane records. Do not edit frontend/CSS/tests/docs, task authority, CMS, dependencies, Git or deployment. Stop after one linked execution_response.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-018-fgd-x15-product-detail-slice.md",
+    "TASKS/ARTIFACTS/TASK-018/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-018/PLANNER_IMPLEMENTATION_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-018/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-018/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-018/VISUAL_QA_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-018/VISUAL_QA_REPORT.md",
+    "QA/TASK-018/fgd-x15-pvc-1440.png",
+    "QA/TASK-018/fgd-x15-pvc-1024.png",
+    "QA/TASK-018/fgd-x15-pvc-768.png",
+    "QA/TASK-018/fgd-x15-pvc-390.png",
+    "QA/TASK-018/fgd-x15-pvc-320.png",
+    "TASKS/ARTIFACTS/TASK-018/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Use Node 24.18.0 and stop the local server after capture. Round 1 evidence must be retained if revision is required. No visual finding may be repaired by visual_qa.",
+  "dispatched_at": "2026-07-31T02:45:44Z",
+  "delivery_key": "MSG-TASK-018-VISUAL-QA-R1:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "target_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_id": "019fb610-1f68-71f0-9124-87dddc1f0724",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T02:46:16Z",
+  "updated_at": "2026-07-31T02:46:16Z"
+}

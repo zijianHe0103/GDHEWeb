@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-018",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T02:35:55Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact revision request before mutation. Read PLANNER_IMPLEMENTATION_CHECKPOINT.md and close only P1-1 through P1-3 under strict TDD. Add one real CMS-mode route render through the existing Validator and Adapter using a Schema-valid payload with hostile HTTPS WordPress media and internal fields; prove exactly one /resolve, zero product-cards, protected local image rendered, and no hostile origin or URL, wp-content, external preload or img, internal Article Number/product code, raw payload or diagnostic in markup. Add a TASK-018-only Client Component import build negative for at least the Product Detail loader and deep Adapter with marker-stripped positive controls and complete temporary-root cleanup. Keep a visible local test-candidate/non-production notice in both preview and CMS ready markup, with CMS-specific wording allowed. Update only TASK-018 tests, Product Detail presentation notice, frontend README/execution artifacts and frontend worklog. Return one controlled execution_response linked to this request. Do not change DTO or Adapter mapping, Transport, Validator, ProductCard, ProductList, CMS, dependencies, root README, Planner state, visual QA, review, Git or deployment.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-018-fgd-x15-product-detail-slice.md",
+    "TASKS/ARTIFACTS/TASK-018/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-018/FRONTEND_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-018/PLANNER_IMPLEMENTATION_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-018/EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-018/TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-018/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-018/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-018/DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0. This is a narrow implementation checkpoint revision, not visual QA, review, acceptance or delivery. Preserve unrelated .codex/config.toml, historical resume packets, protected image bytes and every existing protected path.",
+  "dispatched_at": "2026-07-31T02:36:19Z",
+  "delivery_key": "MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019fb607-7d23-7cf2-a397-689b438b7dcd",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T02:36:38Z",
+  "updated_at": "2026-07-31T02:36:38Z"
+}

@@ -2,14 +2,271 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-017
+current_task: TASK-018
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-30T19:34:02Z
+last_updated: 2026-07-31T08:32:34Z
 
 ## 当前焦点
 
-`TASK-017` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已由 `task_accept` 接受；当前唯一下一步是完成提交前验证、受控正式提交、任务分支推送、合并 `main` 并推送远端 `main`。不开始部署或下一任务。
+`TASK-018` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；当前只允许创建受控正式提交、推送任务分支、合并 `main` 并推送远端 `main`，不授权部署或下一任务。
+
+## TASK-018 Formal Delivery Authorization 2026-07-31T08:32:34Z
+
+- authorization: 用户精确输入 `确认 TASK-018 完成并提交到远端`。
+- acceptance: `task_accept.py accept` 成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: execution、final validation、Visual Round 2、Adversarial Round 2、Planner Summary 和 README impact 门均已通过。
+- branch: `codex/TASK-018-fgd-x15-product-detail-slice`，基线 `238b316003e97194bbed1b41f6b604c48b383587`。
+- exclusion: 用户自有 `.codex/config.toml` 与历史 resume packet 不属于 TASK-018，不得暂存。
+- next: 只暂存 TASK-018 受控交付物，正式提交后立即推送任务分支，再 fast-forward 合并并推送 `main`。
+
+## TASK-018 Awaiting-user View Sync Recovery 2026-07-31T07:32:33Z
+
+- first prepare: `PASS`，机器状态曾正确进入 `AWAITING_USER`。
+- finding: Project focus、Board 与 active-task 当前叙述仍显示旧 `UNDER_REVIEW`。
+- controlled reopen: `AWAITING_USER -> NEEDS_REVISION`，只用于同步人类可读视图。
+- protected: 产品、测试、视觉证据、review verdict、acceptance 和 Git 状态不变。
+- next: 同步视图并再次运行 checked `prepare-awaiting-user`。
+
+## TASK-018 Prepared For User Acceptance 2026-07-31T07:31:55Z
+
+- transition: 第一次 checked `prepare-awaiting-user` 成功。
+- verified artifacts: execution、validation、visual QA、final review、Planner Summary 全部通过。
+- acceptance: `NOT_ACCEPTED`。
+- git: `DIRTY`，未 commit/push/merge/deploy。
+
+## TASK-018 Planner Final Validation PASS 2026-07-31T07:31:19Z
+
+- tests: Product Detail 32、ProductList 29、CMS 156、ProductCard 86、full 305 全 PASS。
+- tools: two verifiers、lint、typecheck、build、three production smokes PASS。
+- evidence: visual R2 0/0/0、14/14 encoding/hash、protected hashes、scope/residue/port cleanup PASS。
+- governance: project/registry/messages/strict lane/diff PASS；full audit 仅报告预期 DIRTY 和既有 low-level source-name heuristics，无 TASK-018 gate failure。
+- artifacts: `PLANNER_FINAL_VALIDATION.md` 与 `PLANNER_SUMMARY.md` 已完成。
+- next: view sync recovery 后再次 checked `prepare-awaiting-user`。
+
+## TASK-018 Adversarial Round 2 PASS Recovery 2026-07-31T07:26:43Z
+
+- response: `MSG-TASK-018-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`。
+- closure: 14/14 visual files、两份 encoding matrix、历史和 protected scope 全部独立复核通过。
+- history: Round 1 `FAIL / P0=0 / P1=0 / P2=1` 保留，不作为当前 verdict。
+- next: fresh Planner final validation；通过后才允许 checked `prepare-awaiting-user`。
+
+## TASK-018 Adversarial Round 2 Dispatch 2026-07-31T07:22:26Z
+
+- message: `MSG-TASK-018-ADVERSARIAL-REVIEW-R2`。
+- delivery: adversarial_reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，fresh turn `019fb70d-5040-7be0-8862-79db9c540410`，dispatch-once recorded。
+- scope: 只复核 Round 1 P2 的 14/14 file/magic/hash、两份 report encoding matrix、历史和范围保持；不重复完整产品审查。
+- next: 等待 pre-review ACK 与 linked final PASS/FAIL/P0/P1/P2 response。
+
+## TASK-018 Encoding P2 Planner Checkpoint PASS 2026-07-31T07:19:57Z
+
+- response: `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- evidence: 14/14 file type、magic prefix、SHA-256 与 canonical report 一致。
+- disclosure: Round 1 full/focus JPEG under historical .png；Round 2 full true PNG；Round 2 focus JPEG under historical .png。
+- preservation: image bytes/names/dimensions/hashes、blocked/R1 FAIL/R2 PASS、measurements/capture history unchanged。
+- governance: project/registry/messages/strict lane、diff PASS；next-env baseline；port 3000 absent。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`。
+- next: narrow adversarial Round 2 only。
+
+## TASK-018 Visual Evidence Encoding P2 Dispatch 2026-07-31T07:15:26Z
+
+- message: `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1`。
+- delivery: visual_qa session `019f88d0-0f9c-7940-af93-f9eef03f92c8`，fresh turn `019fb707-035d-7c10-b6da-345a34ad34ea`，dispatch-once recorded。
+- scope: two canonical visual reports + visual worklog only；all 14 image bytes/names/hashes protected。
+- next: wait for pre-edit ACK and linked response。
+
+## TASK-018 Adversarial Round 1 FAIL Recovery 2026-07-31T07:14:09Z
+
+- response: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / P0=0 / P1=0 / P2=1`；Planner final validation 不允许。
+- p2: Round 1 full/focus 与 Round 2 focus 实际为 JPEG/JFIF bytes under `.png` names；Round 2 full-page composites 为真实 PNG。报告披露不精确。
+- unaffected: 所有 image names/dimensions/hashes、visual verdicts、product behavior、Node 24.18 full 305、verifiers/lint/typecheck/build/smokes/scope/generated cleanup PASS。
+- helper: 按 task-switch 先运行 checked reopen；工具因真实状态 `UNDER_REVIEW` 而安全拒绝，无 mutation；记录等价 `NEEDS_REVISION` 恢复。
+- next: 只 dispatch visual_qa 修改两份 report encoding disclosure；不重拍、不改名、不改图像 bytes、不改产品。
+
+## TASK-018 Adversarial Review Round 1 ACK 2026-07-31T07:00:41Z
+
+- request: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1` 已在 review work 前 ACK 并进入 done。
+- reviewer: registered session `019f88d0-018d-75e2-8e28-54a904a6bf8c`。
+- boundary: read-only independent reproduction；不把 prior PASS 作为结论，不修产品。
+- next: 等待 linked PASS/FAIL/P0/P1/P2 response。
+
+## TASK-018 Adversarial Review Round 1 Dispatch 2026-07-31T06:59:47Z
+
+- message: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1`。
+- delivery: reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，real Codex turn `019fb6f8-aaa3-7ac3-ad1f-40c19f5ed165`，dispatch-once recorded。
+- scope: read-only challenge of identity/modes/DTO/request/media/content/visual/accessibility/regression/docs/generated/scope boundaries。
+- writes: canonical review report、reviewer lane records 与 linked response only。
+- next: 等待 ACK 与 PASS/FAIL/P0/P1/P2；不提前 final validation。
+
+## TASK-018 Pre-review Validation PASS 2026-07-31T06:58:20Z
+
+- visual_response: `MSG-TASK-018-VISUAL-QA-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- visual: Round 2 `PASS / severe 0 / obvious 0 / detail 0`；1440 Hero `1248/1248px`，1024/768/390/320 no overflow，CTA/focus/console/no-CMS PASS。
+- validation: full `305/305`、Product Detail 32、ProductList 29、CMS 156、ProductCard 86、verifiers、lint/typecheck/build、三条 smokes PASS。
+- generated: visual 后停止 Planner-owned 3000，final build 将 `next-env.d.ts` 恢复 production baseline；port 3000 无 listener。
+- cleanup: Planner-created `/tmp/gdhe-task018-qa.0EycaJ` 已移动到 `/Users/arron/.Trash/gdhe-task018-qa.0EycaJ`，可从 Trash 恢复。
+- governance: project/registry/messages/strict lane、protected scope 与 diff PASS。
+- transition: `IN_PROGRESS -> UNDER_REVIEW`；next 为独立 adversarial review。
+
+## TASK-018 Visual QA Round 2 ACK 2026-07-31T06:47:14Z
+
+- request: `MSG-TASK-018-VISUAL-QA-R2` 已在采集前 ACK 并进入 done。
+- delivery: visual_qa session `019f88d0-0f9c-7940-af93-f9eef03f92c8`，fresh turn `019fb6ed-2047-77e1-8068-da434229019b`。
+- race: ACK 先于 Planner 后续 `dispatch-once` 完成，helper 返回 queue empty；未伪造 dispatch metadata，真实 turn/delivery key 保留。
+- scope: 1440/1024/768/390/320 r2 evidence；保留 blocked 与 Round 1 FAIL；不改产品代码。
+- next: 等待 linked visual response。
+
+## TASK-018 Planner Visual R1 Revision Checkpoint PASS 2026-07-31T06:45:51Z
+
+- response: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE` 已 validate、ACK 并进入 done。
+- diff: 仅 Product Detail local CSS 与一个直接测试；三个卡片 border-box/100%，Hero max-width 100%，H1 normal wrap。
+- validation: Product Detail `32/32`、ProductList `29/29`、CMS `156/156`、ProductCard `86/86`、full `305/305`、verifiers、lint/typecheck/build、detail/list/CMS smokes PASS。
+- integrity: package/lock、CMS protected boundaries、保护图、scope、diff 和 DPG project/registry/messages/strict lane PASS。
+- runtime: production build 前停止 Planner-owned 3000；验证后已用当前 checkout 双 preview 恢复 3000，list/detail 均为 200。
+- generated: build 后 `next-env.d.ts` 与 production baseline 一致；当前 dev server 运行期间会生成 dev route import，Planner 在 visual retest 后负责 stop + build 清理。
+- next: 只 dispatch visual Round 2；不提前 adversarial review、验收、Git 或部署。
+
+## TASK-018 Frontend Visual R1 Revision ACK 2026-07-31T06:37:00Z
+
+- request: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION` 已在生产 CSS mutation 前 ACK 并进入 done。
+- execution: frontend 先用 global `section` content-box/42rem 和 H1 `overflow-wrap:anywhere` 建立可复现 RED，再做最小局部 GREEN。
+- boundary: 仍只允许 Product Detail CSS、直接 test 和 artifacts；shared port 3000 由 Planner 保持运行。
+- next: 等待 linked execution response，再由 Planner 独立复验。
+
+## TASK-018 Frontend Visual R1 Revision Dispatch 2026-07-31T06:35:46Z
+
+- message: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION`。
+- delivery: frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，real Codex turn `019fb6e2-a56d-7390-adf8-0e4915e1d926`，`dispatch-once` 已记录。
+- scope: Product Detail 局部 CSS、直接对应 focused test、TASK-018 artifacts 与 frontend worklog。
+- protected: globals、DOM、DTO、Adapter、loader、Transport、Validator、数据/文案/路由/链接、依赖、CMS、README、Git、部署。
+- next: 等待 frontend 在 mutation 前 ACK，再等待一份 linked execution response。
+
+## TASK-018 Visual QA Recovery FAIL 2026-07-31T06:33:26Z
+
+- response: `MSG-TASK-018-VISUAL-QA-R1-RECOVERY-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / severe 0 / obvious 2 / detail 0`；此前 `BLOCKED_NO_VISUAL_EVIDENCE` 历史保留。
+- o1: CSS `768/390/320` 的 `scrollWidth/clientWidth` 为 `792/768`、`452/390`、`397/320`；Hero/Overview/Specifications 及内容右侧超出视口。
+- o2: 1440 下 article 可用 `1248px`，Hero 只使用 `754px`、text column `320px`，H1 将 `X15+PVC` 显示为 `X15+PV / C`。
+- passing: canonical click、唯一身份、保护图/Alt、Hero/Overview/五项规格、本地 notice、category/RFQ、CTA `44.09375px` 与 center hit、键盘/焦点、console 0、无 CMS/internal 泄漏。
+- helper: checked reopen 因真实 task state 为 `IN_PROGRESS` 而安全拒绝，无 mutation。
+- next: dispatch frontend 只修改 Product Detail 局部 CSS 与直接测试，关闭 O1/O2；不触碰全局样式、DOM/DTO/CMS。
+
+## TASK-018 Visual QA Recovery ACK 2026-07-31T06:26:21Z
+
+- request: `MSG-TASK-018-VISUAL-QA-R1-RECOVERY` 已在浏览器执行前 ACK 并进入 done。
+- delivery: visual_qa session `019f88d0-0f9c-7940-af93-f9eef03f92c8`，fresh Codex turn `019fb6d9-ccac-7372-9d42-57f3580e98a9`。
+- race: visual_qa 的 ACK 先于 Planner 后续 `dispatch-once` 记录完成；helper 如实返回 queue empty，未伪造 dispatch metadata。message validation 继续通过，真实 turn/delivery key 保留在本记录和 thread。
+- runtime: 只使用已运行的 current shared checkout `http://localhost:3000`；不启动第二 server、不使用 `3001`、不停止 port `3000`。
+- next: 等待 fresh 1440/1024/768/390/320、键盘/焦点、CTA、响应式、console/network response。
+
+## TASK-018 Visual QA Round 1 Recovery Ready 2026-07-31T06:23:28Z
+
+- response: `MSG-TASK-018-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- result: `BLOCKED_NO_VISUAL_EVIDENCE`；严重/明显/细节均为 `NOT_MEASURED`，没有产品 verdict。
+- helper: 已先运行 checked `task_transition.py reopen`；因真实状态为 `IN_PROGRESS` 而安全拒绝，无 mutation。
+- recovery_runtime: 已精确停止旧 `3000` Next PID，并用当前 shared checkout、Node 24、`GDHE_PRODUCT_LIST_MODE=preview` 与 `GDHE_PRODUCT_DETAIL_MODE=preview` 重新启动 `localhost:3000`。
+- verification: `/products/` 与 `/products/fgd-x15-pvc/` 均为 `200`；详情 HTML 含确认身份、Hero、Overview、Key Specifications、本地提示和 RFQ CTA。
+- recovery_scope: 保留原 blocked 历史，在 fresh browser-control turn 重做 1440/1024/768/390、320、键盘/焦点、CTA hit-test、响应式和浏览器泄漏证据；不修改产品代码。
+- next: 派发 `MSG-TASK-018-VISUAL-QA-R1-RECOVERY` 到已注册 visual_qa session。
+
+## TASK-018 Visual QA Browser Permission Gate 2026-07-31T02:51:30Z
+
+- status: visual_qa thread `019f88d0-0f9c-7940-af93-f9eef03f92c8` 当前 `waitingOnApproval`。
+- permission: 只请求控制本地浏览器以访问 TASK-018 preview、截图和测量；Planner 未绕过系统授权。
+- runtime: 用户已有 `3000` Next process 未触碰。Planner 在当前字节临时副本 `/tmp/gdhe-task018-qa.0EycaJ` 使用 webpack 启动双 preview `http://localhost:3001`；list/detail curl 均为 200。
+- cleanup_owner: Planner 在 visual response 后停止 exec session `38431` 并只清理上述临时目录。
+- next: 用户允许 `GDHE｜视觉 QA` 的浏览器控制；随后 visual lane 继续，不需要重新授权产品范围。
+
+## TASK-018 Visual QA Round 1 ACK 2026-07-31T02:46:16Z
+
+- request: `MSG-TASK-018-VISUAL-QA-R1` 已 ACK 并进入 done。
+- runtime: 双 preview 在 `http://localhost:3001` 启动；端口 `3000` 已被其他进程占用，visual lane 未触碰。
+- boundary: 只停止本轮启动的 `3001` server；只写 QA evidence/report 和 visual lane records。
+- next: 等待 fresh screenshots、measurements、graded verdict 与 linked response。
+
+## TASK-018 Visual QA Round 1 Dispatch 2026-07-31T02:45:37Z
+
+- message: `MSG-TASK-018-VISUAL-QA-R1`。
+- delivery: visual_qa session `019f88d0-0f9c-7940-af93-f9eef03f92c8`，real Codex turn `019fb610-1f68-71f0-9124-87dddc1f0724`，`dispatch-once` 已记录。
+- scope: 1440/1024/768/390 全页、320 reflow、列表到详情 canonical、CTA hit-test、键盘/焦点、Alt、响应式和浏览器泄漏检查。
+- writes: 仅 `QA/TASK-018/**`、canonical visual report 和 visual_qa lane records。
+- next: 等待执行前 ACK 与关联 response；visual lane 不得修产品代码。
+
+## TASK-018 Planner Implementation Checkpoint PASS 2026-07-31T02:44:05Z
+
+- response: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- p1_media: 一个真实 Schema-valid hostile CMS payload 经 route/Transport/Validator/Adapter/React，固定一个 `/resolve`、零 ProductCard，HTML 不含 hostile URL/origin、`wp-content`、外部 preload/img、Article Number、Product Code、raw marker 或 diagnostic。
+- p1_server_only: loader 和 deep Adapter Client Component guarded builds 拒绝，两个 marker-stripped controls build 通过，临时根为零。
+- p1_notice: preview 与 CMS ready 都显示明确本地非生产候选提示。
+- validation: Product Detail `31/31`、ProductList `29/29`、CMS `156/156`、ProductCard `86/86`、full `304/304`、两套 verifier、lint/typecheck/build 和三个 production smoke PASS。
+- integrity: package/lock、Transport、Validator、CMS manifest、保护图哈希与 baseline 一致；protected diff 和 temporary roots 为空。
+- docs: 根 README 和 frontend README 已同步，document impact `RESOLVED`，README impact `UPDATED`。
+- next: 只 dispatch configured visual_qa；不提前 adversarial review、验收、Git 或部署。
+
+## TASK-018 Frontend Checkpoint Revision ACK 2026-07-31T02:36:38Z
+
+- request: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1` 已 ACK 并进入 done。
+- timing: ACK 在本轮修订 mutation 前完成。
+- execution: frontend 正在用一个真实 CMS route render 同时验证媒体/内部字段隔离，并用 CMS notice 缺失形成有效 RED；另补 Client Component server-only negative。
+- next: 等待 linked execution response，再由 Planner 独立复验。
+
+## TASK-018 Frontend Checkpoint Revision Dispatch 2026-07-31T02:36:19Z
+
+- message: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1`。
+- delivery: frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，real Codex turn `019fb607-7d23-7cf2-a397-689b438b7dcd`，`dispatch-once` 已记录。
+- scope: 只补真实 CMS-to-markup 远程媒体零输出、Product Detail Client Component server-only 负例和 CMS 模式本地候选提示。
+- protected: DTO/Adapter mapping、Transport、Validator、ProductCard、ProductList、CMS、依赖、root README、visual QA、review、Git 和部署不可修改。
+- next: 等待 frontend 在 mutation 前 ACK；随后只等待关联 execution response。
+
+## TASK-018 Planner Implementation Checkpoint 2026-07-31T02:33:57Z
+
+- response: `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION-RESPONSE` 通过真实回执 `item-2598` 送达并已 ACK。
+- reproduced: Product Detail `28/28`、ProductList `29/29`、full `301/301`、ProductCard `8/3/6`、CMS `16/2/2`、lint、typecheck、build 与三个 production smoke PASS。
+- p1_media: 缺少真实 `CMS -> Validator -> Adapter -> React markup` 的单路径远程媒体零输出证据。
+- p1_server_only: 新 Product Detail server 模块缺少 Client Component 导入失败与 marker-stripped 正控。
+- p1_notice: CMS ready 模式隐藏本地测试候选提示，不满足 Hero 在本地可见模式的披露边界。
+- helper: 先运行 checked reopen；工具因状态真实为 `IN_PROGRESS` 而安全拒绝，未修改 task state。
+- next: 只 dispatch frontend 三项窄 RED/GREEN，随后重新进行 Planner checkpoint。
+
+## TASK-018 Design Gate And Frontend Dispatch 2026-07-31T02:18:21Z
+
+- design: 冻结单一 `/products/fgd-x15-pvc/`、`GDHE_PRODUCT_DETAIL_MODE=preview|cms`、同一 Product Detail DTO、一个 `/resolve`、五项确认规格和导航型 RFQ CTA。
+- media: preview/CMS 都只向 React 输出现有保护图；CMS 原始媒体不进入浏览器，生产媒体 origin/allowlist 继续后置。
+- baseline: Node 24.18.0 / npm 11.16.0；ProductCard `8/3/6`、CMS `16/2/2`、full Vitest `273/273`、lint、typecheck、build 全 PASS。
+- integrity: frontend/cms baseline 无 TASK-018 diff，保护图、package/lock、Transport、Validator 和 manifest 哈希已记录。
+- dispatch: `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION` -> frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，delivery turn `019fb5f6-fb29-70e1-8a6e-810d7cea723d`。
+- next: frontend 必须先 ACK，再按 RED/GREEN 实施；等待受控 response。
+
+## TASK-018 Requirement Confirmation 2026-07-31T02:13:36Z
+
+- authorization: 用户输入精确口令 `确认 TASK-018 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION` -> `READY`。
+- scope: 本地受控详情 Hero、Overview、5 项已确认规格和只导航至 `/request-a-quote/` 的 CTA；preview 与 CMS 共用 Product Detail DTO。
+- exclusions: WordPress/CMS/数据库/飞书修改、RFQ 提交、正式 SEO、完整详情模块、依赖、部署与 Git 交付继续禁止。
+- next: DESIGN、IMPLEMENTATION_PLAN 和 baseline gate；通过后只 dispatch frontend implementation。
+
+## TASK-018 Public Identity Decision 2026-07-31T01:59:13Z
+
+- confirmation: 用户明确确认 `+PVC` 是官网公开型号的一部分。
+- public_model: `FGD X15+PVC`。
+- english_name: `FGD X15+PVC Track`。
+- canonical: `/products/fgd-x15-pvc/`。
+- excluded_identity: 不创建 `/products/fgd-x15/` 第二详情身份；TASK-013 中该路径只是通用 slug 示例。
+- consistency: TASK-017 ProductCard 图片、标题和 `View Product` 已使用确认后的 canonical，不需要迁移。
+- boundary: 只关闭需求阻塞；未修改 frontend、CMS、数据库、飞书、SEO、RFQ 或部署。
+- next: 等待 `确认 TASK-018 需求并开始执行`。
+
+## TASK-018 Intake 2026-07-30T19:44:31Z
+
+- source: 用户明确创建“FGD X15 本地可见产品详情页最小纵向切片”。
+- scope: 只建立本地受控详情 Hero、Overview、3～5 项关键参数和 `Request a Quote` 导航 CTA；复用现有 `/resolve` 合同并新增最小 Product Detail DTO/Adapter。
+- blocker: `CLOSED 2026-07-31T01:59:13Z`；用户确认公开型号 `FGD X15+PVC` 与 canonical `/products/fgd-x15-pvc/`。
+- exclusions: 无完整规格/配件/下载/RFQ、正式 SEO、CMS/数据库/飞书修改、生产媒体、Header/Footer、多语言、部署或 Git 正式交付。
+- branch: `codex/TASK-018-fgd-x15-product-detail-slice`，基线 `238b316003e97194bbed1b41f6b604c48b383587`。
+- predecessor: TASK-017 的任务分支和远端 main 均已验证包含正式提交，现已同步为 `CLOSED / MERGED` 并归档。
+- next: 等待 `确认 TASK-018 需求并开始执行`。
 
 ## TASK-017 Formal Delivery Authorization 2026-07-30T19:34:02Z
 

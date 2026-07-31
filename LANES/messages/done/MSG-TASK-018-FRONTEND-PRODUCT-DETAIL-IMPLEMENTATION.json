@@ -1,0 +1,39 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-018",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T02:18:03Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before mutation. Execute only TASKS/ARTIFACTS/TASK-018/FRONTEND_DISPATCH.md under the frozen DESIGN and IMPLEMENTATION_PLAN. Apply strict vertical TDD: observe one valid behavior RED before each minimum GREEN. Return one controlled execution_response linked to this message. Do not perform visual QA, adversarial review, acceptance, Git delivery, deployment, CMS/database/Feishu mutation, working RFQ, formal SEO or later product-detail modules.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-018-fgd-x15-product-detail-slice.md",
+    "TASKS/ARTIFACTS/TASK-018/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-018/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-018/BASELINE_VALIDATION.md",
+    "TASKS/ARTIFACTS/TASK-018/FRONTEND_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-013/URL_AND_CANONICAL_CONTRACT.md",
+    "TASKS/ARTIFACTS/TASK-013/CTA_CONTRACT.md",
+    "TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-018/TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-018/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-018/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-018/DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0. Root README and Planner-owned state remain Planner-owned. Preserve unrelated .codex/config.toml and all historical resume packets. Existing protected image must remain byte-identical.",
+  "dispatched_at": "2026-07-31T02:18:21Z",
+  "delivery_key": "MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019fb5f6-fb29-70e1-8a6e-810d7cea723d",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T02:19:40Z",
+  "updated_at": "2026-07-31T02:19:40Z"
+}

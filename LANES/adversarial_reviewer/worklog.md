@@ -828,5 +828,39 @@ Each execution records:
 - cross_lane_evidence: Planner fresh current-byte listener results report ProductList 29/29, TASK-016 73/73, full Vitest 273/273 and production smoke PASS; reviewer did not request system privilege for listener-only reruns
 - result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after controlled response acknowledgement and review recovery
 - boundaries: no product, test, evidence, README or Planner-state repair; no CMS/database/external mutation, acceptance, Git delivery, deployment or later-task work
+- message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge, recorded dispatch-once with the real bridge receipt and acknowledged as done by Planner
+- next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-31T07:12:02Z - TASK-018 adversarial review round 1
+
+- task: TASK-018
+- message: MSG-TASK-018-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the exact review request before substantive work, inspected the complete dispatch context, real implementation/tests, visual history and current screenshots, and independently reproduced the requested current-byte boundaries
+- preserved_visual_history: initial BLOCKED_NO_VISUAL_EVIDENCE, visual Round 1 FAIL with severe 0 obvious 2 detail 0, and visual Round 2 PASS with severe 0 obvious 0 detail 0 remain distinct and preserved
+- p2: the visual report calls Round 1 full-page files PNG although all five and both focus files are JPEG bitstreams under png filenames; Round 2 full-page files are real PNG, while both Round 2 focus files are JPEG under png filenames
+- p2_reproduction: file type and magic bytes showed JFIF ff d8 ff e0 for Round 1 and R2 focus samples and PNG 89 50 4e 47 for R2 full-page samples; all fourteen reported hashes and dimensions otherwise matched
+- p2_narrow_revision: preserve files, names, hashes and all history; update only canonical visual evidence and task summary with the exact encoding matrix, then fresh-run format/hash/governance checks and request one narrow Round 2
+- identity_note: the inherited protected candidate visibly contains its original FGD X15 artwork label; this is not treated as a second identity because the active task explicitly freezes and authorizes that exact replaceable local-only asset while route, model, H1, Alt and CTA remain FGD X15+PVC
+- passed_product_boundaries: sole canonical route; exact identity; closed preview/cms and production noindex gates; one resolve/zero ProductCard; DTO-only React; authentic Adapter and server-only builds; protected local media; internal-field/raw/diagnostic exclusion; distinct not-found/unavailable; exact five specifications; category and navigation-only RFQ targets
+- independent_validation: exact Node 24.18.0/npm 11.16.0 Product Detail 32/32, ProductList 29/29, full Vitest 305/305, ProductCard 8/3/6, CMS 16/2/2, lint, typecheck, production build and three production smokes PASS; protected hashes, baseline scope, next-env, residue, project/registry/messages/strict lane and whitespace gates PASS
+- runtime_observation: bundled Node 24.14.0 produced 304/305 twice on the existing TASK-009 response-body timeout ordering case while the isolated case passed; the project-frozen Node 24.18.0 independently reproduced the authoritative complete PASS
+- result: FAIL; P0 none; P1 none; P2 one; Planner final validation not allowed
+- boundaries: no frontend, test, README, task authority, Planner state, visual evidence, CMS, database, dependency, Git, deployment or external-system repair/mutation
+- message_status: original request acknowledged as done; the single linked FAIL review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner acknowledges the response, records governed recovery, corrects only the evidence-format disclosure, fresh-validates and may dispatch one narrow Round 2
+
+### 2026-07-31T07:25:09Z - TASK-018 adversarial review round 2 final
+
+- task: TASK-018
+- message: MSG-TASK-018-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the exact narrow Round 2 request before substantive work, preserved the complete Round 1 FAIL report and independently rechecked only its visual-evidence encoding P2 plus direct scope regressions
+- encoding_reproduction: exactly 14 visual files; Round 1 five full-page and two focus are JPEG/JFIF with ff d8 ff e0 under historical png names; Round 2 five full-page composites are true PNG with 89 50 4e 47 0d 0a 1a 0a; Round 2 two focus are JPEG/JFIF with ff d8 ff e0 under historical png names
+- evidence_integrity: all 14 current filenames, dimensions and SHA-256 values match the preserved inventories; no image rename, recapture, re-encoding or byte change
+- report_closure: both canonical visual reports contain identical four-row encoding matrices and preserve initial BLOCKED_NO_VISUAL_EVIDENCE, visual Round 1 FAIL 0/2/0 and visual Round 2 PASS 0/0/0 history, measurements, findings and capture disclosure
+- protected_scope: controlled revision records only the two visual reports and visual lane worklog; product/test/README/package bytes predate the correction; later active-task edit is Planner-owned review narration only; CMS, package/lock, Transport, Validator, manifest, protected image and next-env hashes remain frozen
+- cleanup: no Product Detail temporary build root, Python bytecode, DS Store or port 3000 listener
+- independent_validation: project valid; messages valid; strict lane audit zero issues; canonical matrix rows identical; git diff whitespace check PASS
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after controlled response acknowledgement and review recovery
+- boundaries: no product, test, README, task-authority, visual-report/image, Planner-state, CMS, dependency, generated-file, Git, deployment or external-system edit by reviewer; PASS is not acceptance or Git authorization
 - message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
 - next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation

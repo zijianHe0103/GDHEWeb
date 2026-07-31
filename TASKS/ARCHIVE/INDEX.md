@@ -77,3 +77,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`5b448c5c169db7aba1b6c69b3b4baa216493f4d3`
   - Remote branch：`origin/codex/TASK-016-product-card-runtime-consumer`
   - Main：`origin/main` at `5b448c5c169db7aba1b6c69b3b4baa216493f4d3`
+- `TASK-017` 英语站 ProductCard 本地可见列表纵向切片 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-017-product-card-visible-list-slice.md`
+  - Commit：`238b316003e97194bbed1b41f6b604c48b383587`
+  - Remote branch：`origin/codex/TASK-017-product-card-visible-list-slice`
+  - Main：`origin/main` at `238b316003e97194bbed1b41f6b604c48b383587`

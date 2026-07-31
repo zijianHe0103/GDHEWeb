@@ -3168,3 +3168,235 @@ Each execution records:
 - Final adversarial verdict remains PASS / P0=0 / P1=0 / P2=0; visual Round 2 remains PASS at 1440/1024/768/390 plus 320 reflow.
 - `frontend/next-env.d.ts` is restored to the production baseline. Governance project/lane/diff gates pass with only expected pre-commit dirty and existing/generated LOW heuristics.
 - Delivery scope excludes `.codex/config.toml` and historical resume packets. Unique next step: controlled commit, push task branch, merge to main, push main.
+
+## 2026-07-30T19:44:31Z TASK-018 intake
+
+- Verified local main, origin/main and both TASK-017 refs at `238b316003e97194bbed1b41f6b604c48b383587`; TASK-017 is now CLOSED / MERGED and archived.
+- Created branch `codex/TASK-018-fgd-x15-product-detail-slice` and an intake-only task card for Hero, Overview, 3–5 confirmed specifications and Request a Quote navigation.
+- Preserved user-owned `.codex/config.toml` and historical resume packets; no frontend, CMS, database, dependency or external-system work started.
+- Blocking conflict: TASK-017 card points to `/products/fgd-x15-pvc/`, while TASK-013 gives public model FGD X15 as `/products/fgd-x15/`.
+- Unique next step: user confirms whether `+PVC` is part of the public model; Planner records one canonical, then waits for exact requirement confirmation.
+
+## 2026-07-31T01:59:13Z TASK-018 public identity confirmed
+
+- User confirmed `+PVC` is part of the public website model.
+- Frozen public identity: `FGD X15+PVC`, English name `FGD X15+PVC Track`, canonical `/products/fgd-x15-pvc/`.
+- `/products/fgd-x15/` is not a second product identity; the TASK-013 occurrence remains a generic slug example.
+- TASK-017 ProductCard already points at the confirmed canonical, so no migration is needed.
+- No frontend, CMS, database, Feishu, SEO, RFQ or deployment work started. Unique next step: wait for `确认 TASK-018 需求并开始执行`.
+
+## 2026-07-31T02:13:36Z TASK-018 requirements confirmed
+
+- User supplied the exact phrase `确认 TASK-018 需求并开始执行`; the task moved from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`.
+- Frozen scope remains one local-only FGD X15+PVC detail slice: Hero, Overview, five confirmed specifications and a navigation-only Request a Quote CTA.
+- WordPress/CMS/database/Feishu mutation, RFQ submission, formal SEO, later detail modules, dependency changes, deployment and Git delivery remain excluded.
+- Unique next step: freeze DESIGN and IMPLEMENTATION_PLAN, reproduce the baseline, then dispatch only the registered frontend lane.
+
+## 2026-07-31T02:18:21Z TASK-018 design gate PASS and frontend dispatched
+
+- Froze the single FGD X15+PVC route, closed preview/CMS mode, one Product Detail DTO, exact-identity Adapter, one `/resolve`, five confirmed specifications, protected local media and navigation-only RFQ CTA.
+- Node 24.18.0 baseline passed ProductCard `8/3/6`, CMS `16/2/2`, full Vitest `273/273`, lint, typecheck and production build.
+- Verified zero TASK-018 frontend/CMS diff before dispatch and recorded protected image/package/lock/Transport/Validator/manifest hashes.
+- Delivered `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION` to registered frontend session through real Codex turn `019fb5f6-fb29-70e1-8a6e-810d7cea723d`; dispatch-once recorded.
+- State is `IN_PROGRESS / NOT_ACCEPTED / DIRTY`. Unique next step: wait for ACK and linked execution response; Planner does not edit frontend product files in parallel.
+
+## 2026-07-31T02:19:40Z TASK-018 frontend request ACKed
+
+- The exact implementation request moved to done before product mutation.
+- Frontend began Slice 1 with a real missing config/DTO/preview behavior RED.
+- Unique next step: wait for the linked execution response, then run an independent Planner checkpoint.
+
+## 2026-07-31T02:33:57Z TASK-018 initial response checkpoint requires narrow revision
+
+- ACKed the linked frontend response delivered with real receipt `item-2598`.
+- Independently reproduced Product Detail 28/28, ProductList 29/29, full 301/301, both verifiers, lint, typecheck, build and all three production smokes.
+- Protected package/lock/Transport/Validator/manifest/image hashes and existing protected paths remain unchanged.
+- Found three required gaps: no real CMS-to-rendered-markup hostile-media proof, no direct Product Detail Client Component server-only negative, and no local-candidate notice in CMS ready markup.
+- Ran checked reopen first; it safely refused because truthful state is IN_PROGRESS rather than AWAITING_USER.
+- Unique next step: dispatch one frontend narrow TDD revision for only these three findings, then rerun Planner checkpoint.
+
+## 2026-07-31T02:36:19Z TASK-018 checkpoint revision dispatched
+
+- Queued and delivered `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1` to the registered frontend session.
+- Real Codex delivery turn: `019fb607-7d23-7cf2-a397-689b438b7dcd`; `dispatch-once` recorded the exact dry-run prompt.
+- Scope is limited to real CMS-to-markup hostile-media proof, direct Product Detail client-import server-only proof, and CMS local-candidate disclosure.
+- DTO/Adapter mapping, Transport, Validator, ProductCard/ProductList, CMS, dependencies, root README, visual QA, review, Git and deployment remain protected.
+- Unique next step: wait for pre-mutation ACK and linked execution response, then perform fresh Planner validation.
+
+## 2026-07-31T02:36:38Z TASK-018 checkpoint revision ACKed
+
+- Frontend ACKed `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1` before revision mutation; the controlled request is in done.
+- Current execution uses a real CMS route render to prove hostile media and internal-field isolation, and the missing CMS notice as the behavior RED; the server-only negative is a separate boundary proof.
+- Unique next step: wait for the linked execution response, ACK it, then reproduce the entire checkpoint independently.
+
+## 2026-07-31T02:44:05Z TASK-018 implementation checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE`.
+- Independently reproduced Product Detail 31/31, ProductList 29/29, CMS 156/156, ProductCard 86/86, full 304/304, both verifiers, lint, typecheck, build and three production smokes.
+- Real hostile CMS route render proves one resolve, zero ProductCard request, protected local image and no hostile/internal/raw browser-facing output.
+- Loader/deep Adapter Client Component builds fail under server-only; marker-stripped controls build and temporary roots are zero.
+- Preview and CMS ready markup both disclose the local non-production candidate.
+- Protected hashes and diff boundaries remain intact. Root and frontend README are synchronized; document impact RESOLVED, README impact UPDATED.
+- Unique next step: dispatch visual_qa for 1440/1024/768/390, 320 reflow, keyboard/focus, Alt, CTA hit-test and graded differences.
+
+## 2026-07-31T02:45:37Z TASK-018 visual QA Round 1 dispatched
+
+- Delivered `MSG-TASK-018-VISUAL-QA-R1` to the registered visual_qa session through real Codex turn `019fb610-1f68-71f0-9124-87dddc1f0724`; dispatch-once recorded.
+- Scope is fresh 1440/1024/768/390 full-page evidence, 320 reflow, ProductCard-to-detail canonical navigation, CTA hit-test, keyboard/focus, Alt, responsive layout and browser-facing leakage checks.
+- Visual lane is read-only for frontend product code and may only write QA evidence, the canonical report and its lane records.
+- Unique next step: wait for pre-execution ACK and linked response; do not start adversarial review before current visual PASS.
+
+## 2026-07-31T02:46:16Z TASK-018 visual QA Round 1 ACKed
+
+- Visual QA ACKed the exact request before execution.
+- The dual-preview server is running on actual port 3001 because port 3000 was already occupied; the lane did not touch the existing process and will stop only its own server.
+- Unique next step: wait for fresh evidence and linked graded response; no adversarial review before a current visual PASS.
+
+## 2026-07-31T02:51:30Z TASK-018 visual QA browser permission pending
+
+- Visual QA is paused at a real Codex app browser-control approval; Planner did not bypass it.
+- The existing user-owned Next process on port 3000 remains untouched.
+- Because Next prevents a second same-checkout dev lock, Planner created temporary byte copy `/tmp/gdhe-task018-qa.0EycaJ` and started webpack dual-preview on port 3001; curl proves list/detail final 200.
+- Planner owns stopping exec session 38431 and cleaning only that temporary directory after visual response.
+- Unique next step: user allows browser control in `GDHE｜视觉 QA`; the lane then resumes its already-ACKed Round 1.
+
+## 2026-07-31T06:23:28Z TASK-018 visual QA Round 1 blocked recovery
+
+- Visual Round 1 returned `BLOCKED_NO_VISUAL_EVIDENCE`; it produced no screenshots, graded counts or product verdict.
+- Validated and ACKed `MSG-TASK-018-VISUAL-QA-R1-RESPONSE`; the prior blocked report remains canonical history.
+- Ran checked reopen before recovery; it safely refused because TASK-018 truthfully remains `IN_PROGRESS`, so no task-state mutation occurred.
+- Resolved and stopped only the exact old port 3000 Next processes, then started current shared bytes on port 3000 with both list and detail preview modes.
+- Independently verified `/products/` and `/products/fgd-x15-pvc/` return 200 and the detail HTML contains the frozen public identity, three modules, local notice and RFQ CTA.
+- Unique next step: controlled fresh-turn dispatch `MSG-TASK-018-VISUAL-QA-R1-RECOVERY`; do not start adversarial review before a current visual PASS.
+
+## 2026-07-31T06:26:21Z TASK-018 visual QA recovery ACKed
+
+- Sent `MSG-TASK-018-VISUAL-QA-R1-RECOVERY` to registered visual_qa session in fresh Codex turn `019fb6d9-ccac-7372-9d42-57f3580e98a9`.
+- Visual QA ACKed the exact message before browser work and moved it to done.
+- The ACK won a narrow race with the subsequent Planner `dispatch-once`; the helper truthfully returned queue empty, so no dispatch metadata was fabricated. Controlled delivery key, target session and real turn remain recorded here and in the Codex thread.
+- Current shared server remains owned by Planner at localhost:3000 with both preview modes; visual_qa will not start or stop it.
+- Unique next step: wait for the linked recovery response and preserve the previous blocked history.
+
+## 2026-07-31T06:33:26Z TASK-018 visual QA recovery FAIL
+
+- Validated and ACKed `MSG-TASK-018-VISUAL-QA-R1-RECOVERY-RESPONSE`.
+- Current verdict is `FAIL / severe 0 / obvious 2 / detail 0`; prior blocked history remains intact.
+- O1 independently measured horizontal overflow at 768/390/320 as 792/768, 452/390 and 397/320.
+- O2 independently measured 1440 Hero at 754px within a 1248px article; H1 split `X15+PVC` between V and C.
+- All navigation, identity, protected media/Alt, module/specification, CTA/hit, keyboard/focus, console and no-CMS/internal leakage gates passed.
+- Ran checked reopen first; it safely refused because truthful state remains IN_PROGRESS.
+- Unique next step: dispatch one CSS-only frontend TDD revision and keep visual retest blocked until fresh Planner validation.
+
+## 2026-07-31T06:35:46Z TASK-018 frontend visual R1 revision dispatched
+
+- Delivered `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION` to registered frontend session through real Codex turn `019fb6e2-a56d-7390-adf8-0e4915e1d926`; dispatch-once recorded.
+- Scope is only Product Detail local CSS, the directly corresponding focused test and TASK-018/frontend lane evidence.
+- Global CSS, component DOM, DTO/Adapter/loader/Transport/Validator, data, route, link targets, dependencies, README, CMS, Git and deployment remain protected.
+- Unique next step: wait for pre-mutation ACK and linked execution response, then run a fresh Planner checkpoint before visual retest.
+
+## 2026-07-31T06:37:00Z TASK-018 frontend visual R1 revision ACKed
+
+- Frontend ACKed `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION` before production CSS mutation and moved the request to done.
+- Current execution first proves the missing local width-safe/card and H1 non-internal-wrap rules as RED, then applies only the minimum CSS GREEN.
+- Planner is not editing frontend product files in parallel.
+- Unique next step: wait for the linked execution response, then independently reproduce the complete checkpoint.
+
+## 2026-07-31T06:45:51Z TASK-018 visual revision Planner checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE`.
+- Independently reproduced Product Detail 32, ProductList 29, CMS 156, ProductCard 86 and full 305 tests, both verifiers, lint, typecheck, clean production build and all three production smokes.
+- Revision is limited to Product Detail local CSS and one direct test; global CSS, DOM/data/runtime, dependencies and CMS remain unchanged.
+- Stopped Planner-owned dev server before build and restored current shared dual-preview localhost:3000 afterward; list/detail both return 200.
+- Running dev mode regenerates next-env dev route import; Planner owns stop plus production build after visual retest to restore the final production baseline.
+- Unique next step: dispatch visual Round 2 with preserved Round 1 history.
+
+## 2026-07-31T06:47:14Z TASK-018 visual QA Round 2 ACKed
+
+- Sent `MSG-TASK-018-VISUAL-QA-R2` to visual_qa in fresh turn `019fb6ed-2047-77e1-8068-da434229019b`; it ACKed before evidence capture.
+- ACK won the race with Planner's subsequent dispatch-once and the helper truthfully returned queue empty; no dispatch metadata was fabricated.
+- R2 must preserve both the blocked run and Round 1 FAIL, use r2 filenames and only inspect current localhost:3000.
+- Unique next step: wait for linked Round 2 visual response.
+
+## 2026-07-31T06:58:20Z TASK-018 pre-review validation PASS
+
+- Validated and ACKed `MSG-TASK-018-VISUAL-QA-R2-RESPONSE`; current visual verdict is PASS / 0 / 0 / 0 with prior histories preserved.
+- Stopped Planner-owned port 3000 after visual capture and reran production build, typecheck and Product Detail smoke; next-env is back at production baseline and no port 3000 listener remains.
+- Old Planner temp copy was moved recoverably to Trash, not permanently deleted.
+- Fresh full/focused tests, verifiers, build/smokes, protected scope, diff and DPG gates pass.
+- TASK-018 is now UNDER_REVIEW / NOT_ACCEPTED / DIRTY.
+- Unique next step: dispatch one independent read-only adversarial review.
+
+## 2026-07-31T06:59:47Z TASK-018 adversarial review Round 1 dispatched
+
+- Delivered `MSG-TASK-018-ADVERSARIAL-REVIEW-R1` to the registered reviewer session in real turn `019fb6f8-aaa3-7ac3-ad1f-40c19f5ed165`; dispatch-once recorded.
+- Reviewer is read-only for product, task authority, Planner state, visual evidence, CMS, Git and deployment.
+- Unique next step: wait for pre-review ACK and one linked PASS/FAIL/P0/P1/P2 response.
+
+## 2026-07-31T07:00:41Z TASK-018 adversarial review Round 1 ACKed
+
+- Reviewer ACKed `MSG-TASK-018-ADVERSARIAL-REVIEW-R1` before reading/reproduction and moved it to done.
+- Reviewer remains read-only and is independently challenging current bytes and evidence.
+- Unique next step: wait for the linked current verdict.
+
+## 2026-07-31T07:14:09Z TASK-018 adversarial Round 1 FAIL recovery
+
+- Validated and ACKed `MSG-TASK-018-ADVERSARIAL-REVIEW-R1-RESPONSE`.
+- Verdict is FAIL / P0=0 / P1=0 / P2=1; the sole P2 is inaccurate JPEG/PNG encoding disclosure in canonical visual reports.
+- All image bytes, names, dimensions and hashes remain valid; product code/behavior and all technical gates independently pass.
+- Ran checked reopen first; it safely refused truthful UNDER_REVIEW, so Planner recorded equivalent NEEDS_REVISION recovery without pretending AWAITING_USER.
+- Unique next step: dispatch visual_qa for report-only byte-format disclosure correction, then fresh validation and adversarial Round 2.
+
+## 2026-07-31T07:15:26Z TASK-018 visual evidence encoding P2 dispatched
+
+- Delivered `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1` to registered visual_qa in fresh turn `019fb707-035d-7c10-b6da-345a34ad34ea`; dispatch-once recorded.
+- Scope is only the two canonical visual reports and visual lane record; all image files and product/runtime scopes are protected.
+- Unique next step: wait for pre-edit ACK and linked response.
+
+## 2026-07-31T07:19:57Z TASK-018 encoding P2 Planner checkpoint PASS
+
+- Validated and ACKed the report-only visual response.
+- Independently reproduced 14/14 file type, magic prefix and SHA-256 checks and confirmed both reports contain the exact four-group encoding matrix.
+- All image bytes/names/hashes, visual history and product/runtime scope remain unchanged.
+- Project, registry, messages, strict lane, diff, next-env and port cleanup gates pass.
+- TASK-018 returned to UNDER_REVIEW.
+- Unique next step: dispatch one narrow adversarial Round 2.
+
+## 2026-07-31T07:22:26Z TASK-018 adversarial Round 2 dispatched
+
+- Delivered `MSG-TASK-018-ADVERSARIAL-REVIEW-R2` to the registered reviewer session in fresh Codex turn `019fb70d-5040-7be0-8862-79db9c540410`; dispatch-once recorded.
+- Scope is only the prior P2: 14/14 file type, magic and SHA-256, exact encoding matrix in both reports, and preserved bytes/names/dimensions/history/scope.
+- Round 1 FAIL history remains canonical; no complete product re-review or product mutation is requested.
+- Unique next step: wait for pre-review ACK and one linked final PASS/FAIL/P0/P1/P2 response.
+
+## 2026-07-31T07:26:43Z TASK-018 adversarial Round 2 PASS recovery
+
+- Validated and ACKed `MSG-TASK-018-ADVERSARIAL-REVIEW-R2-RESPONSE`.
+- Final verdict is PASS / P0=0 / P1=0 / P2=0; the sole encoding-disclosure P2 is closed.
+- Round 1 FAIL remains under Review History; the current Adversarial Review section contains only final PASS evidence.
+- No user acceptance, Git delivery or deployment is inferred.
+- Unique next step: run fresh Planner final validation, write Planner Summary and use checked prepare-awaiting-user only if all gates pass.
+
+## 2026-07-31T07:31:19Z TASK-018 Planner final validation PASS
+
+- Current Node 24.18 evidence: Product Detail 32, ProductList 29, CMS 156, ProductCard 86 and full 305 tests PASS.
+- Both verifiers, lint, typecheck, production build and three production smokes PASS.
+- Visual R2, 14/14 encoding/hash, protected hashes/scope, residue/port cleanup, diff and DPG gates PASS.
+- Added `PLANNER_FINAL_VALIDATION.md` and `PLANNER_SUMMARY.md`.
+- Full audit reports only expected dirty-worktree and existing low-level source-name heuristics, with no TASK-018 delivery gate failure.
+- Unique next step: run checked prepare-awaiting-user; do not infer acceptance or Git authorization.
+
+## 2026-07-31T07:32:33Z TASK-018 awaiting-user view sync recovery
+
+- First checked prepare-awaiting-user succeeded at 07:31:55Z.
+- Machine state moved to AWAITING_USER, but Project focus, Board and the active-task current narrative remained UNDER_REVIEW.
+- The hook correctly blocked direct post-transition edits. Controlled reopen moved only task state to NEEDS_REVISION for human-readable view synchronization.
+- Product, evidence, final PASS verdict, acceptance and Git state remain unchanged.
+- Unique next step: rerun validation and checked prepare-awaiting-user after the view-only sync.
+
+## 2026-07-31T08:32:34Z TASK-018 formal delivery authorized
+
+- User entered the exact phrase `确认 TASK-018 完成并提交到远端`.
+- `task_accept.py check` and `accept` passed; state is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Execution, final validation, Visual Round 2, Adversarial Round 2, Planner Summary and README impact gates remain PASS.
+- User-owned `.codex/config.toml` and historical resume packets are explicitly excluded from staging.
+- Unique next step: stage only controlled TASK-018 delivery, create the formal Chinese commit, immediately push the task branch, fast-forward `main` and push `main`.

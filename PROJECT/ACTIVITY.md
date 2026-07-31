@@ -7179,3 +7179,575 @@ schema_version: DPG-LANES-1.0.0
 - validation: adversarial R2 PASS 0/0/0; fresh full Vitest 273/273, ProductCard 8/3/6, CMS 16/2/2, lint/typecheck/build/smoke and governance gates PASS.
 - docs: root/frontend README and TASK-017 artifacts are resolved and current.
 - next: controlled formal commit, task-branch push, main merge and main push; no deployment or next task.
+
+## 2026-07-30T19:44:31Z TASK-018 intake
+
+- task: TASK-018
+- predecessor: TASK-017 remote task branch and origin/main verified at `238b316003e97194bbed1b41f6b604c48b383587`; task closed and archived.
+- branch: `codex/TASK-018-fgd-x15-product-detail-slice`.
+- scope: local-only Product Detail Hero, Overview, 3–5 confirmed specifications and Request a Quote navigation through a DTO-only, one-resolve boundary.
+- blocker: `/products/fgd-x15-pvc/` versus `/products/fgd-x15/`; user must confirm whether `+PVC` is part of the public model.
+- boundary: no frontend implementation, CMS/database/Feishu change, RFQ submission, formal SEO, deployment, commit, push or merge.
+- next: close the canonical identity decision, then wait for exact requirement confirmation.
+
+## 2026-07-31T01:59:13Z TASK-018 public identity confirmed
+
+- task: TASK-018
+- user_confirmation: `+PVC` is part of the public website model.
+- public_identity: `FGD X15+PVC` / `FGD X15+PVC Track`.
+- canonical: `/products/fgd-x15-pvc/`.
+- excluded: no `/products/fgd-x15/` second product identity or guessed redirect.
+- boundary: intake clarification only; no product implementation or external mutation.
+- next: wait for exact requirement confirmation.
+
+## 2026-07-31T02:13:36Z TASK-018 requirement confirmation
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-018
+- 用户输入精确口令 `确认 TASK-018 需求并开始执行`；任务从 `AWAITING_REQUIREMENT_CONFIRMATION` 推进为 `READY`。
+- 范围保持为本地受控 FGD X15+PVC Hero、Overview、五项已确认规格和导航型 Request a Quote CTA；不扩大到 CMS、RFQ 提交、正式 SEO、依赖、部署或 Git。
+- 下一步只冻结 DESIGN、IMPLEMENTATION_PLAN 和 baseline；通过后真实投递 frontend lane。
+
+## 2026-07-31T02:18:21Z TASK-018 design gate and frontend dispatch
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-018
+- design: 单一 `/products/fgd-x15-pvc/`、closed preview/CMS mode、同一 DTO、exact identity Adapter、一个 `/resolve`、五项确认规格和导航型 CTA 已冻结。
+- baseline: Node 24 下 ProductCard `8/3/6`、CMS `16/2/2`、full `273/273`、lint、typecheck、build 和治理门通过；frontend/cms 无预先任务 diff。
+- delivery: `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION` 经 frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445` 的 Codex turn `019fb5f6-fb29-70e1-8a6e-810d7cea723d` 投递并由 `dispatch-once` 记录。
+- next: 等待 frontend ACK 与 execution response；不提前 visual QA、review、验收、Git 或部署。
+
+## 2026-07-31T02:19:40Z TASK-018 frontend request acknowledged
+
+- type: message_done
+- lane: frontend
+- task: TASK-018
+- request: `MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION` 已在产品修改前 ACK 并进入 done。
+- execution: frontend 开始 Slice 1 的配置/DTO/preview RED。
+- next: 等待关联 execution response，再做 Planner 独立 checkpoint。
+
+## 2026-07-31T02:33:57Z TASK-018 Planner implementation checkpoint
+
+- type: implementation_checkpoint
+- lane: planner
+- task: TASK-018
+- response: frontend execution response 经 `item-2598` 真实回执送达并已 ACK。
+- reproduced: Product Detail 28/28、ProductList 29/29、full 301/301、两套 verifier、lint/typecheck/build 和三个 production smoke PASS。
+- findings: 缺少真实 CMS-to-rendered-markup 远程媒体零输出证明、Product Detail client-import server-only 负例，并且 CMS 模式未显示本地候选提示。
+- helper: checked reopen 已先运行；因真实状态为 IN_PROGRESS 而安全拒绝，无 mutation。
+- next: 只 dispatch frontend 三项窄 TDD 修订，再 fresh checkpoint；不提前视觉 QA、审查、验收、Git 或部署。
+
+## 2026-07-31T02:36:19Z TASK-018 frontend checkpoint revision dispatched
+
+- type: message_dispatched
+- lane: frontend
+- task: TASK-018
+- message: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1`。
+- delivery: frontend 注册 session，real Codex turn `019fb607-7d23-7cf2-a397-689b438b7dcd`，dispatch-once 已记录。
+- scope: 仅真实 CMS-to-markup 媒体零输出、Product Detail client-import server-only 负例和 CMS 本地候选提示。
+- next: 等待 mutation 前 ACK 与关联 execution response；不提前 visual QA、review、验收、Git 或部署。
+
+## 2026-07-31T02:36:38Z TASK-018 frontend checkpoint revision acknowledged
+
+- type: message_done
+- lane: frontend
+- task: TASK-018
+- request: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1` 已在本轮修订 mutation 前 ACK。
+- execution: 当前按严格 TDD 补 CMS-to-markup、server-only negative 和 CMS 本地候选提示。
+- next: 等待关联 execution response，再做 Planner fresh checkpoint。
+
+## 2026-07-31T02:44:05Z TASK-018 implementation checkpoint PASS
+
+- type: implementation_checkpoint_pass
+- lane: planner
+- task: TASK-018
+- response: `MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- closure: hostile CMS-to-markup、Product Detail server-only negative、preview/CMS 本地候选提示三项 finding 均关闭。
+- validation: Product Detail `31/31`、ProductList `29/29`、CMS `156/156`、ProductCard `86/86`、full `304/304`、两套 verifier、lint/typecheck/build 与三个 production smoke PASS。
+- integrity: protected hashes/scope、temporary roots、diff 和治理门 PASS。
+- docs: root/frontend README 已同步，document impact `RESOLVED`，README impact `UPDATED`。
+- next: 只 dispatch visual_qa；visual PASS 前不进入 adversarial review、验收、Git 或部署。
+
+## 2026-07-31T02:45:37Z TASK-018 visual QA Round 1 dispatched
+
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-018
+- message: `MSG-TASK-018-VISUAL-QA-R1`。
+- delivery: registered visual_qa session，real Codex turn `019fb610-1f68-71f0-9124-87dddc1f0724`，dispatch-once 已记录。
+- scope: 四个验收宽度、320 reflow、canonical navigation、CTA、键盘/焦点、Alt、响应式和浏览器安全。
+- next: 等待执行前 ACK 和关联 response；visual PASS 前不进入 adversarial review。
+
+## 2026-07-31T02:46:16Z TASK-018 visual QA Round 1 acknowledged
+
+- type: message_done
+- lane: visual_qa
+- task: TASK-018
+- request: `MSG-TASK-018-VISUAL-QA-R1` 已在执行前 ACK。
+- runtime: 双 preview 实际运行于 `localhost:3001`；既有 `3000` 进程未触碰。
+- next: 等待 fresh screenshots、测量、分级 verdict 和关联 response。
+
+## 2026-07-31T02:51:30Z TASK-018 visual QA browser permission pending
+
+- type: system_permission_gate
+- lane: visual_qa
+- task: TASK-018
+- status: visual_qa registered thread 为 `waitingOnApproval`，等待本地浏览器控制授权。
+- safety: Planner 未绕过授权，也未触碰用户已有 `3000` Next process。
+- runtime: 当前共享字节的临时副本 `/tmp/gdhe-task018-qa.0EycaJ` 已在 `3001` 运行双 preview；list/detail curl 最终 200。
+- next: 用户在 `GDHE｜视觉 QA` 允许浏览器控制后继续 Round 1；visual PASS 前不进入 review。
+
+### 2026-07-31T02:18:03Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-018
+- summary: message queued for frontend
+
+### 2026-07-31T02:18:21Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION dispatched to frontend
+
+### 2026-07-31T02:19:40Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION moved to done
+
+### 2026-07-31T02:30:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T02:31:10Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-07-31T02:31:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PRODUCT-DETAIL-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-07-31T02:35:55Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-018
+- summary: message queued for frontend
+
+### 2026-07-31T02:36:19Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1 dispatched to frontend
+
+### 2026-07-31T02:36:38Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1 moved to done
+
+### 2026-07-31T02:40:42Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T02:41:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE moved to done
+
+### 2026-07-31T02:45:29Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-018
+- summary: message queued for visual_qa
+
+### 2026-07-31T02:45:44Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-07-31T02:46:16Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R1 moved to done
+
+### 2026-07-31T06:10:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T06:20:22Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R1-RESPONSE moved to done
+
+## 2026-07-31T06:23:28Z TASK-018 visual QA Round 1 blocked recovery
+
+- task: TASK-018
+- response: `MSG-TASK-018-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- result: `BLOCKED_NO_VISUAL_EVIDENCE`；无截图、无分级计数、无产品 PASS/FAIL。
+- helper: checked reopen 因真实任务状态为 `IN_PROGRESS` 而安全拒绝，无 mutation。
+- runtime: 精确停止旧 `3000` Next PID 后，当前 shared checkout 已使用 list/detail 双 preview 重新启动 `localhost:3000`；两个目标页面均为 `200`。
+- boundary: 保留 blocked 历史；恢复只重派原视觉门，不修改 frontend/CSS/tests/CMS，不进入 review、Git 或部署。
+- next: 受控派发 `MSG-TASK-018-VISUAL-QA-R1-RECOVERY` 到 visual_qa 的 fresh turn。
+
+## 2026-07-31T06:26:21Z TASK-018 visual QA recovery acknowledged
+
+- task: TASK-018
+- request: `MSG-TASK-018-VISUAL-QA-R1-RECOVERY` 已送达 visual_qa session 的 fresh turn `019fb6d9-ccac-7372-9d42-57f3580e98a9`，并在执行前 ACK。
+- runtime: current shared checkout 的 list/detail 双 preview 继续运行在 `localhost:3000`；visual lane 不启动或停止 server。
+- dispatch_race: ACK 先于 Planner `dispatch-once` 记录完成，helper 返回 queue empty；未手工伪造 message metadata，validation 通过。
+- next: 等待一份关联 fresh visual response；不提前 adversarial review、验收、Git 或部署。
+
+## 2026-07-31T06:33:26Z TASK-018 visual QA recovery FAIL
+
+- task: TASK-018
+- response: `MSG-TASK-018-VISUAL-QA-R1-RECOVERY-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / severe 0 / obvious 2 / detail 0`；原 blocked history 保留。
+- findings: 窄屏横向溢出 `792/768`、`452/390`、`397/320`；1440 Hero `754/1248px` 且 `X15+PVC` 发生词内断行。
+- passing: canonical、身份、图片/Alt、三模块/五规格、CTA/命中、键盘/焦点、console 与无 CMS/internal 泄漏。
+- helper: checked reopen 因当前真实状态为 `IN_PROGRESS` 而安全拒绝，无 mutation。
+- next: 受控 frontend CSS-only TDD 修订；fresh validation 后才可 visual retest。
+
+## 2026-07-31T06:35:46Z TASK-018 frontend visual R1 revision dispatched
+
+- task: TASK-018
+- message: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION`。
+- delivery: frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，Codex turn `019fb6e2-a56d-7390-adf8-0e4915e1d926`，dispatch-once recorded。
+- scope: 只处理 O1 窄屏 overflow 与 O2 1440 Hero/model token，CSS-only + direct test。
+- next: 等待 mutation 前 ACK 与 linked response；不提前 visual retest、review、验收、Git 或部署。
+
+## 2026-07-31T06:37:00Z TASK-018 frontend visual R1 revision acknowledged
+
+- task: TASK-018
+- request: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION` 已在 production CSS mutation 前 ACK 并进入 done。
+- execution: 先用直接 CSS 合同测试复现 O1/O2，再做最小局部 GREEN。
+- next: 等待 linked execution response；Planner 不并行编辑产品文件。
+
+## 2026-07-31T06:45:51Z TASK-018 Planner visual revision checkpoint PASS
+
+- task: TASK-018
+- response: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE` 已 validate、ACK 并进入 done。
+- validation: Product Detail 32、ProductList 29、CMS 156、ProductCard 86、full 305、两套 verifier、lint/typecheck/build 与三条 production smoke 全 PASS。
+- diff: 只含 Product Detail local CSS 与 direct test；protected scope/哈希、DPG 与 diff PASS。
+- runtime: 双 preview 已恢复到 current shared checkout `localhost:3000`；list/detail 均 200。
+- next: 受控派发 visual Round 2 五宽度复测；Round 1 FAIL 仍是当前视觉 verdict。
+
+## 2026-07-31T06:47:14Z TASK-018 visual QA Round 2 acknowledged
+
+- task: TASK-018
+- request: `MSG-TASK-018-VISUAL-QA-R2` 已送达 fresh turn `019fb6ed-2047-77e1-8068-da434229019b` 并在采集前 ACK。
+- dispatch_race: ACK 先于 Planner 后续 dispatch-once，helper 返回 queue empty；未伪造 metadata。
+- runtime: 仅使用 Planner-owned current shared `localhost:3000`，不启动/停止 server。
+- next: 等待 linked Round 2 response；不提前 review、验收、Git 或部署。
+
+## 2026-07-31T06:58:20Z TASK-018 visual Round 2 and pre-review validation PASS
+
+- task: TASK-018
+- response: `MSG-TASK-018-VISUAL-QA-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- visual: `PASS / severe 0 / obvious 0 / detail 0`；Round 1 FAIL 与 initial BLOCKED history 保留。
+- validation: full 305、focused regressions、verifiers、lint/typecheck/build、三条 smokes、DPG/diff 全 PASS。
+- generated: stopped port 3000 and reran production build; next-env production baseline restored。
+- cleanup: old 82MB Planner temp copy moved recoverably to Trash。
+- transition: TASK-018 `IN_PROGRESS -> UNDER_REVIEW`。
+- next: independent adversarial review only。
+
+## 2026-07-31T06:59:47Z TASK-018 adversarial review Round 1 dispatched
+
+- task: TASK-018
+- message: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1`。
+- delivery: reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，turn `019fb6f8-aaa3-7ac3-ad1f-40c19f5ed165`，dispatch-once recorded。
+- scope: read-only independent challenge；no product repair。
+- next: wait for ACK and current verdict。
+
+## 2026-07-31T07:00:41Z TASK-018 adversarial review Round 1 acknowledged
+
+- task: TASK-018
+- request: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1` 已在审查工作前 ACK 并进入 done。
+- boundary: reviewer read-only；no product repair。
+- next: wait for linked PASS/FAIL/P0/P1/P2 response。
+
+## 2026-07-31T07:14:09Z TASK-018 adversarial Round 1 FAIL recovery
+
+- task: TASK-018
+- response: `MSG-TASK-018-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / P0=0 / P1=0 / P2=1`。
+- p2: visual evidence actual JPEG/PNG encoding disclosure 不精确；所有 bytes/names/hashes/verdicts 本身有效。
+- helper: checked reopen 因当前 UNDER_REVIEW 而安全拒绝；记录等价 NEEDS_REVISION。
+- next: visual_qa report-only encoding correction，fresh validation，adversarial Round 2。
+
+## 2026-07-31T07:15:26Z TASK-018 visual evidence encoding P2 dispatched
+
+- task: TASK-018
+- message: `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1`。
+- delivery: visual_qa turn `019fb707-035d-7c10-b6da-345a34ad34ea`，dispatch-once recorded。
+- scope: report-only encoding disclosure；all image bytes/names/hashes protected。
+- next: wait for ACK and linked response。
+
+## 2026-07-31T07:19:57Z TASK-018 encoding P2 Planner checkpoint PASS
+
+- task: TASK-018
+- response: `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1-RESPONSE` 已 validate/ACK。
+- evidence: 14/14 actual type/magic/hash PASS；four-group encoding disclosure accurate。
+- preservation: all image bytes/names/hashes and visual/product history unchanged。
+- transition: NEEDS_REVISION -> UNDER_REVIEW。
+- next: narrow adversarial Round 2。
+
+### 2026-07-31T06:25:22Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-018
+- summary: message queued for visual_qa
+
+### 2026-07-31T06:26:21Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R1-RECOVERY moved to done
+
+### 2026-07-31T06:32:02Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T06:33:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R1-RECOVERY-RESPONSE moved to done
+
+### 2026-07-31T06:35:28Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-018
+- summary: message queued for frontend
+
+### 2026-07-31T06:35:46Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION dispatched to frontend
+
+### 2026-07-31T06:37:00Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION moved to done
+
+### 2026-07-31T06:42:05Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T06:42:34Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE dispatched to planner
+
+### 2026-07-31T06:42:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE moved to done
+
+### 2026-07-31T06:46:55Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-018
+- summary: message queued for visual_qa
+
+### 2026-07-31T06:47:14Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R2 moved to done
+
+### 2026-07-31T06:56:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T06:57:19Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-QA-R2-RESPONSE moved to done
+
+### 2026-07-31T06:59:27Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-31T06:59:47Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-07-31T07:00:41Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-07-31T07:13:36Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T07:14:00Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-07-31T07:14:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-07-31T07:15:07Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-018
+- summary: message queued for visual_qa
+
+### 2026-07-31T07:15:26Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1 dispatched to visual_qa
+
+### 2026-07-31T07:15:37Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1 moved to done
+
+### 2026-07-31T07:19:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T07:19:57Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1-RESPONSE moved to done
+
+### 2026-07-31T07:22:00Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message queued for adversarial_reviewer
+
+### 2026-07-31T07:22:17Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+## 2026-07-31T07:22:26Z TASK-018 narrow adversarial Round 2 dispatched
+
+- `MSG-TASK-018-ADVERSARIAL-REVIEW-R2` was delivered to reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` in fresh turn `019fb70d-5040-7be0-8862-79db9c540410`; dispatch-once recorded.
+- Scope is only the Round 1 encoding-disclosure P2, all 14 evidence files and preserved scope/history.
+- Next: wait for pre-review ACK and linked final verdict; no acceptance, Git or deployment.
+
+## 2026-07-31T07:26:43Z TASK-018 adversarial Round 2 final PASS recovery
+
+- Final linked response was validated and ACKed: `PASS / P0=0 / P1=0 / P2=0`.
+- The sole evidence-encoding P2 is closed; Round 1 FAIL remains preserved as history.
+- TASK-018 remains `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`.
+- Next: fresh Planner final validation and checked prepare-awaiting-user; no Git or deployment.
+
+## 2026-07-31T07:31:19Z TASK-018 Planner final validation PASS
+
+- Reproduced focused 32/29/156/86 and full 305 tests under Node 24.18.
+- Both contract verifiers, lint, typecheck, production build and all three production smokes pass.
+- Visual, 14-file encoding/hash, protected scope, cleanup, diff and DPG gates pass.
+- Planner final validation and summary artifacts are complete.
+- Next: checked prepare-awaiting-user only; no acceptance, Git or deployment.
+
+## 2026-07-31T07:32:33Z TASK-018 awaiting-user view sync recovery
+
+- First checked prepare-awaiting-user succeeded, but human-readable Project/Board/task views remained UNDER_REVIEW.
+- Direct editing was correctly blocked after AWAITING_USER; controlled reopen returned task state to NEEDS_REVISION only for view synchronization.
+- Product, review PASS, acceptance and Git state are unchanged.
+- Next: validate synchronized views and rerun checked prepare-awaiting-user.
+
+## 2026-07-31T08:32:34Z TASK-018 formal delivery authorized
+
+- Exact user phrase `确认 TASK-018 完成并提交到远端` was accepted by the controlled helper.
+- State is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; all execution, validation, visual, review and documentation gates remain PASS.
+- User-owned `.codex/config.toml` and historical resume packets remain excluded from the task commit.
+- Next: formal Chinese commit, immediate task-branch push, fast-forward merge to `main`, then push `main`; no deployment or next task.
+
+### 2026-07-31T07:23:36Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-07-31T07:26:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-018
+- summary: message queued for planner
+
+### 2026-07-31T07:26:24Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-07-31T07:26:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-018
+- summary: message MSG-TASK-018-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-07-31T07:31:55Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-018
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-31T07:32:33Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-018
+- summary: checked prepare-awaiting-user succeeded, but Planner-owned human-readable current state and Board still display UNDER_REVIEW; reopen only to synchronize those views without changing product, evidence or verdict
+
+### 2026-07-31T07:33:13Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-018
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-07-31T08:32:34Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-018
+- summary: TASK-018 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

@@ -66,3 +66,79 @@ Each execution records:
 - limitation: browser-container global Tab injection did not advance from body and was excluded; supported per-target keyboard press, DOM order, active-element checks and screenshots were used
 - next: return one controlled execution response linked to `MSG-TASK-017-VISUAL-QA-R2`; Planner owns subsequent state/review decisions
 - intervention: none from visual lane
+
+### TASK-018 visual QA Round 1 — blocked before evidence
+
+- task: `TASK-018`
+- message: `MSG-TASK-018-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-018/VISUAL_QA_DISPATCH.md`
+- runtime: Node `24.18.0`; exact ProductList/Product Detail preview modes; verified webpack server on port `3001`; list/detail HTTP `200`
+- source_boundary: Planner temporary-copy source matched current shared frontend except generated `next-env.d.ts`
+- blocker: in-app browser entered a localhost connection-error page during server drift; browser URL safety policy then blocked the stale and fresh tabs and prohibited indirect/alternate-browser recovery
+- artifacts: canonical blocked report and task-artifact blocked report; no screenshots created
+- result: `BLOCKED_NO_VISUAL_EVIDENCE`; no PASS/FAIL verdict; severe/obvious/detail counts `NOT_MEASURED`
+- cleanup: visual lane restarted server stopped; viewport reset; blocked tabs finalized; existing port `3000` and Planner temp directory untouched
+- files_changed: `QA/TASK-018/VISUAL_QA_REPORT.md`, `TASKS/ARTIFACTS/TASK-018/VISUAL_QA_REPORT.md`, this worklog
+- protected_scope: no frontend/CSS/tests/docs/task authority/CMS/dependencies/Git/deployment/external-system mutation
+- next: return one controlled execution response; Planner should provide a fresh browser-control session and redispatch Round 1
+- intervention: Planner/browser-session recovery required
+
+### TASK-018 visual QA Round 1 — recovery verdict
+
+- task: `TASK-018`
+- message: `MSG-TASK-018-VISUAL-QA-R1-RECOVERY`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-018/VISUAL_QA_RECOVERY_DISPATCH.md`
+- preserved_history: prior `BLOCKED_NO_VISUAL_EVIDENCE` report retained unchanged above the appended recovery sections
+- runtime: already-running current shared checkout at `http://localhost:3000`; no port `3001`, temporary copy or additional server
+- artifacts: fresh full-page evidence at exact CSS widths `1440/1024/768/390`; `320` reflow; 390 category and RFQ focus screenshots; canonical and task-artifact recovery reports
+- passing_validation: list card image/title/action canonical paths and observed click-through; exact identity; protected local image/Alt; Hero/Overview/exactly five specifications; local notice; exact category/RFQ targets; CTA `44.09375px` and center hit; category-to-RFQ focus order and visible 3px outlines; zero console warnings/errors; same-origin asset inventory and rendered no-CMS/internal-leak checks
+- finding_1: obvious — horizontal overflow at `768` (`792/768`), `390` (`452/390`) and `320` (`397/320`) clips required card content
+- finding_2: obvious — 1440 Hero uses `754/1248px`, fixes the text column at `320px`, and breaks the model token as `X15+PV / C`
+- result: `FAIL / severe 0 / obvious 2 / detail 0`
+- smallest_corrections: border-box width-safe cards for narrow viewports; widen the desktop Hero/text column and remove word-internal H1 wrapping
+- cleanup: viewport override reset and recovery tab finalized; shared port `3000` left running
+- protected_scope: no frontend/CSS/tests/docs/task authority/CMS/dependencies/Git/deployment/external-system mutation
+- next: return one controlled execution response linked to the recovery message; Planner owns revision/retest dispatch
+- intervention: Planner/frontend revision required before visual PASS
+
+### TASK-018 visual QA Round 2
+
+- task: `TASK-018`
+- message: `MSG-TASK-018-VISUAL-QA-R2`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-018/VISUAL_QA_R2_DISPATCH.md`
+- preserved_history: original `BLOCKED_NO_VISUAL_EVIDENCE`, Round 1 `FAIL / severe 0 / obvious 2 / detail 0`, screenshots and measurements retained
+- runtime: reused already-running current shared checkout at `http://localhost:3000`; no server start/stop or port `3001`
+- artifacts: fresh R2 full-page evidence at `1440/1024/768/390/320`; fresh 390 category and RFQ focus evidence; appended canonical and task-artifact reports
+- capture_note: native full-page compositor retained a stale narrow paint under viewport override, so rejected provisional files were replaced by exact-width, unscaled 900px browser viewport tiles joined only vertically at measured scroll positions; repeated scrollbar fragments are capture artifacts
+- o2_closed: at 1440 Article/Hero `1248/1248px`; H1 `FGD X15+PVC / Track`; model token has one client rectangle
+- o1_closed: `scrollWidth/clientWidth` is `768/768`, `390/390`, `320/320`; all card and required child right edges inside viewport
+- regression: 1024 is `1024/1024`, Article/Hero `921.609375/921.609375px`, no clipping
+- interaction: CTA `44.09375px` and center hit true at all five widths; category then RFQ order; both `tabIndex 0`; visible 3px focus outlines inside 390 viewport
+- browser_facing: console warnings/errors `0`; `19` same-origin assets; suspicious CMS/internal URLs `0`; rendered leakage checks all false
+- result: `PASS / severe 0 / obvious 0 / detail 0`
+- cleanup: viewport override reset, QA tabs finalized, temporary debug captures removed, shared port `3000` left running
+- protected_scope: no frontend/CSS/tests/docs/task authority/CMS/dependencies/Git/deployment/external-system mutation
+- next: return one controlled execution response linked to `MSG-TASK-018-VISUAL-QA-R2`; Planner owns subsequent review/state decisions
+- intervention: none from visual lane
+
+### TASK-018 visual evidence encoding P2 report revision
+
+- task: `TASK-018`
+- message: `MSG-TASK-018-VISUAL-EVIDENCE-ENCODING-P2-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-018/VISUAL_EVIDENCE_ENCODING_REVISION_DISPATCH.md`
+- files_changed: `QA/TASK-018/VISUAL_QA_REPORT.md`, `TASKS/ARTIFACTS/TASK-018/VISUAL_QA_REPORT.md`, this worklog
+- encoding_recheck: all 14 files independently checked with `file`, first-eight-byte magic and SHA-256
+- encoding_matrix: Round 1 five full-page plus two focus files are JPEG/JFIF under historical `.png` names; Round 2 five full-page composites are PNG; Round 2 two focus files are JPEG/JFIF under historical `.png` names
+- integrity: all 14 filenames, dimensions and SHA-256 values match the preserved evidence inventories; no image was recaptured, renamed, re-encoded, deleted or modified
+- preserved_history: initial `BLOCKED_NO_VISUAL_EVIDENCE`, Round 1 `FAIL / severe 0 / obvious 2 / detail 0`, Round 2 `PASS / severe 0 / obvious 0 / detail 0`, measurements, findings and capture disclosure unchanged
+- report_revision: replaced the inaccurate Round 1 all-PNG wording and added the four-group actual-encoding/magic disclosure to both reports
+- markdown_validation: final newline, zero CR, zero trailing whitespace, table column consistency, required history/encoding terms and local-link existence checks PASS
+- protected_validation: package, lock, Transport, Validator entry, CMS manifest, protected image and generated-file hashes reproduce the independently frozen values; no protected-scope write was made
+- governance: project, registry and controlled-message validation PASS; strict lane audit reports zero issues; `git diff --check` PASS
+- result: report-only P2 correction complete; visual verdict remains Round 2 PASS and is not re-reviewed by this lane
+- next: return one controlled execution response linked to the encoding revision request; Planner owns narrow adversarial Round 2
+- intervention: none from visual lane

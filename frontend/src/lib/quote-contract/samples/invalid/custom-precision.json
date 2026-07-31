@@ -1,0 +1,25 @@
+{
+  "contractVersion": "1.0.0",
+  "product": {
+    "id": "17000000-0000-4000-8000-000000000001",
+    "model": "FGD X15+PVC",
+    "publicPath": "/products/fgd-x15-pvc/"
+  },
+  "selection": {
+    "type": "custom_length",
+    "articleNumber": null,
+    "lengthMeters": 4.31,
+    "color": { "code": "ivory-white", "label": "Ivory White" },
+    "resolution": "sales_follow_up"
+  },
+  "configuration": {
+    "installationMethod": "wall",
+    "packaging": {
+      "basePackaging": "carton",
+      "logoPrinting": true,
+      "protectionArrangement": "single_bag"
+    }
+  },
+  "quantityUnit": "piece",
+  "quantity": 1
+}

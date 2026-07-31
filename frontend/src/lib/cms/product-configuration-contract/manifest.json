@@ -1,0 +1,70 @@
+{
+  "manifestVersion": "1",
+  "sourceAuthority": {
+    "task": "TASK-019",
+    "handoff": "TASK-019-PRODUCT-CONFIGURATION-1",
+    "manifestPath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
+    "manifestSha256": "b219e7178104769cf410a430fbfb00cbbf351a8f58365490ad0bd0dbddfa06af",
+    "checksumsPath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "641dfaaa193bca490243fcadbd8b94e4c8fbbc90ecb59dab6ab476ba7c63dae8"
+  },
+  "restApiVersion": "1",
+  "contentSchemaVersion": "3.0.0",
+  "productConfigurationSchemaVersion": "1.0.0",
+  "endpoint": "/wp-json/gdhe/v1/product-configurations",
+  "query": {
+    "locale": "en",
+    "schema": "1.0.0",
+    "path": "required canonical public path",
+    "additionalParameters": false
+  },
+  "roots": [
+    "product-configuration.v1.schema.json"
+  ],
+  "schemas": [
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/article-number-option.v1.schema.json",
+      "snapshotPath": "schemas/article-number-option.v1.schema.json",
+      "sha256": "c9da8e10de98c9bc3eb1cb2775afdc81e4b05ef9b397b75b2c1c234a7b91381e"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/product-configuration.v1.schema.json",
+      "snapshotPath": "schemas/product-configuration.v1.schema.json",
+      "sha256": "fbe3701b9d250ad867a675cb6ce8d9da48829f79fed63ec7715c086702fc60f4"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json",
+      "snapshotPath": "schemas/public-path.schema.json",
+      "sha256": "9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json",
+      "snapshotPath": "schemas/uuid-v4.schema.json",
+      "sha256": "59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"
+    }
+  ],
+  "samples": {
+    "success": [
+      {
+        "name": "fgd-x15-pvc",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-019/golden-product-configuration/fgd-x15-pvc.json",
+        "snapshotPath": "samples/success/fgd-x15-pvc.json",
+        "sha256": "3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf"
+      }
+    ],
+    "errors": {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json",
+      "sourceSha256": "01a60b64f5e899b4cd34c03fa0e4fc599aa915ac8422a4c8162402dbb4ee88e6",
+      "snapshotPath": "samples/errors/product-configuration-errors.json",
+      "selectors": [
+        "unknown-parameter",
+        "invalid-locale",
+        "invalid-schema",
+        "invalid-path",
+        "missing-path",
+        "not-found"
+      ],
+      "sha256": "7c5d50fe712a6ab95f091880449cce3db51e838731c7cc925420692d48961d2a"
+    }
+  }
+}

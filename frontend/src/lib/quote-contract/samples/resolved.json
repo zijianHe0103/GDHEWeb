@@ -1,0 +1,27 @@
+{
+  "contractVersion": "1.0.0",
+  "product": {
+    "id": "17000000-0000-4000-8000-000000000001",
+    "model": "FGD X15+PVC",
+    "publicPath": "/products/fgd-x15-pvc/"
+  },
+  "selection": {
+    "type": "article_number",
+    "articleNumber": "GDHEPRD000172",
+    "lengthMeters": 6,
+    "color": {
+      "code": "ivory-white",
+      "label": "Ivory White"
+    }
+  },
+  "configuration": {
+    "installationMethod": "ceiling",
+    "packaging": {
+      "basePackaging": "standard",
+      "logoPrinting": false,
+      "protectionArrangement": null
+    }
+  },
+  "quantityUnit": "piece",
+  "quantity": 1
+}

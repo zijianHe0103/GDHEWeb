@@ -1,0 +1,40 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-019",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T10:53:14Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before mutation. Execute only TASKS/ARTIFACTS/TASK-019/FRONTEND_CONTRACT_DISPATCH.md under the frozen TASK-019 REQUIREMENTS, DESIGN and IMPLEMENTATION_PLAN. Use strict TDD with one real missing-snapshot/verifier RED and one real missing-QuoteLine-contract RED before minimum GREEN. Return one controlled execution_response linked to this message. Do not modify CMS, existing Transport/Validator/Adapter/UI, package/lock, root README or Planner authority; do not implement configurator, basket, persistence, submission, Feishu, review, acceptance, Git or deployment.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-019-product-configuration-quote-line-contract.md",
+    "TASKS/ARTIFACTS/TASK-019/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-019/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-019/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF.md",
+    "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
+    "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
+    "TASKS/ARTIFACTS/TASK-019/PLANNER_WORDPRESS_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_CONTRACT_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0/npm 11.16.0. Preserve unrelated .codex/config.toml and historical resume packets. Root README remains Planner-owned; record only the exact proposed delta.",
+  "dispatched_at": "2026-07-31T10:53:38Z",
+  "delivery_key": "MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019fb7ce-c2fa-7da1-83ba-cf01ed6e64af",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T10:54:11Z",
+  "updated_at": "2026-07-31T10:54:11Z"
+}

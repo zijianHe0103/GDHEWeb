@@ -38,6 +38,12 @@ function gdhe_register_public_api_routes(): void
     $product_cards['callback'] = 'gdhe_rest_product_cards';
     $product_cards['permission_callback'] = $permission;
     register_rest_route('gdhe/v1', '/product-cards', $product_cards);
+
+    $product_configurations = array();
+    $product_configurations['methods'] = 'GET';
+    $product_configurations['callback'] = 'gdhe_rest_product_configurations';
+    $product_configurations['permission_callback'] = $permission;
+    register_rest_route('gdhe/v1', '/product-configurations', $product_configurations);
 }
 
 function gdhe_request_param($request, string $name, $default = '')

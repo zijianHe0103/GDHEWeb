@@ -1,16 +1,17 @@
 # TASK-018 FGD X15 本地可见产品详情页最小纵向切片
 accepted_at: 2026-07-31T08:32:34Z
+closed_at: 2026-07-31T08:48:43Z
 recovery_recorded_at: 2026-07-31T07:32:33Z
 
 task_id: TASK-018
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-018
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -192,7 +193,7 @@ project_type: software
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 关闭 canonical 冲突、冻结设计门、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、根 README | intake、design checkpoint、Planner Summary | AWAITING_USER |
+| planner | 关闭 canonical 冲突、冻结设计门、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、根 README | intake、design checkpoint、Planner Summary | CLOSED |
 | frontend | 确认后按 TDD 建立 DTO/Adapter、一次 `/resolve` 编排、三模块详情页和测试 | TASK-018 允许的 `frontend/**`、artifacts、lane records | RED/GREEN、execution report、validation evidence | VISUAL_R1_CSS_REVISION_CHECKPOINT_PASS |
 | visual_qa | frontend checkpoint 后执行四视口、320、键盘/焦点与差异分级 | `QA/TASK-018/**`、artifacts、lane records | visual QA report | ROUND_2_PASS; ENCODING_P2_CHECKPOINT_PASS |
 | adversarial_reviewer | implementation、visual QA 与 Planner validation 后独立只读审查 | canonical review report、reviewer lane records | PASS/FAIL/P0/P1/P2 | ROUND_2_PASS_P0_P1_P2_0 |
@@ -202,15 +203,18 @@ project_type: software
 - 分支：`codex/TASK-018-fgd-x15-product-detail-slice`
 - Worktree：当前共享项目工作区
 - 基线：`main` / `origin/main` at `238b316003e97194bbed1b41f6b604c48b383587`
+- 正式提交：`4a92c0770388d4a198a123a8b667753f39431015`
+- Remote branch：`origin/codex/TASK-018-fgd-x15-product-detail-slice`
+- Main：`origin/main` at `4a92c0770388d4a198a123a8b667753f39431015`
 - 用户自有 `.codex/config.toml` 和历史 resume packet 保持排除，不属于本任务。
 
 ## 当前状态
 
-`AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；implementation、Visual Round 2、Adversarial Round 2、Planner final validation、Planner Summary、文档影响和 checked acceptance 门均已通过。当前只允许正式提交、推送任务分支、合并 `main` 并推送远端 `main`，不授权部署或下一个任务。
+`CLOSED / ACCEPTED / MERGED`。正式提交、任务分支推送、fast-forward 合并和远端 `main` 推送均已完成；TASK-018 的任务分支、远端任务分支、本地 `main` 和远端 `main` 均指向 `4a92c0770388d4a198a123a8b667753f39431015`。未执行部署。
 
 ## 下一步
 
-只暂存 TASK-018 受控交付物，排除用户自有 `.codex/config.toml` 与历史 resume packet；创建中文正式提交并立即推送任务分支，随后 fast-forward 合并到 `main` 并推送远端 `main`。
+TASK-018 已归档。后续工作进入独立的 TASK-019；不得在本归档任务中继续修改产品配置、询价清单或飞书集成。
 
 ## Validation Evidence
 

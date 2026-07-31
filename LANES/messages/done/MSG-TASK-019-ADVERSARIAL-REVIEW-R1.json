@@ -1,0 +1,37 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-019-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-019",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T11:10:42Z",
+  "requires_response_to": "MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before review. Perform only the independent read-only review defined in TASKS/ARTIFACTS/TASK-019/ADVERSARIAL_REVIEW_DISPATCH.md. Challenge the WordPress Product Configuration authority and repaired stable-identity boundaries, deterministic Fixture/cleanup, exact frontend snapshot binding, QuoteLine Schema/equality/merge semantics, internal-field isolation, protected regressions, documentation and non-implementation scope. Independently reproduce relevant current-byte evidence. Return exactly one current verdict PASS / P0=0 / P1=0 / P2=0 or FAIL with exact findings and smallest bounded revision. Write only the canonical TASK-019 review report, adversarial_reviewer lane records and one linked response. Do not edit product source, tests, docs, README, task authority, Planner state, database, dependencies, Git, deployment or external systems. PASS is not acceptance or Git authorization.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-019-product-configuration-quote-line-contract.md",
+    "TASKS/ARTIFACTS/TASK-019/ADVERSARIAL_REVIEW_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-019/PLANNER_WORDPRESS_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-019/PLANNER_FRONTEND_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-019/WORDPRESS_EXECUTION_REPORT.md",
+    "docs/cms/REST_CONTRACT.md",
+    "docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-019/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Read-only final review. Preserve WordPress Round 1 FAIL history. No repair, acceptance, Git, deployment or deferred UI/external work.",
+  "dispatched_at": "2026-07-31T11:11:08Z",
+  "delivery_key": "MSG-TASK-019-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019fb7de-c9c7-7623-8fa3-995f2388b5ea",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T11:11:31Z",
+  "updated_at": "2026-07-31T11:11:31Z"
+}

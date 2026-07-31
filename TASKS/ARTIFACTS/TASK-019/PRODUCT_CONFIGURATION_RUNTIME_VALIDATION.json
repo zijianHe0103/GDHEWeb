@@ -1,0 +1,32 @@
+{
+    "fixtureVersion": "TASK-019-PRODUCT-CONFIGURATION-1",
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "positiveGoldenCount": 1,
+    "negativeRequestCount": 6,
+    "invalidCandidateExclusions": {
+        "draft": true,
+        "ineligible": true,
+        "wrong_model": true,
+        "wrong_path": true,
+        "duplicate_article": true,
+        "duplicate_choice": true,
+        "extra_length": true,
+        "guessed_accessory": true,
+        "invalid_packaging": true,
+        "custom_article": true,
+        "internal_field": true,
+        "malformed_source": true
+    },
+    "crossSourceDuplicateArticleNumberRejected": true,
+    "sameProductDuplicatePublicChoiceRejected": true,
+    "distinctProductSharedPublicChoiceAccepted": true,
+    "conflictingStableProductIdentityRejected": true,
+    "conditionalStatus": 304,
+    "standardOptionCount": 1,
+    "customLengthWithoutArticleNumber": true,
+    "goldenSha256": {
+        "fgd-x15-pvc.json": "3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf"
+    },
+    "valid": true
+}

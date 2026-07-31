@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-019",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-07-31T11:32:29Z",
+  "requires_response_to": "MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-019 frontend adversarial Round 1 narrow revision is complete. Historical Round 1 remains FAIL with P0=0, P1=2, P2=1; this response closes only the two frontend P1 code causes for independent Planner reproduction. P1-1: every canonical Product Configuration authority read now uses one reader that rejects a symlinked or non-canonical repository root, directory segment or final object and requires a regular final file. Removable tests cover root, handoff, checksum, checksum-listed source, Schema, success, error and intermediate substitution; RED was 8 failed with 17 prior passing, GREEN is 25 of 25, direct verifier remains 4 schemas, 1 success, 6 errors. P1-2: QuoteLine Schema maximum is 9007199254740991; merge rejects non-positive, non-integer and unsafe inputs plus overflowing sums before return. RED was 6 failed with 17 prior passing, GREEN is 23 of 23 while identity and normal merge/split semantics remain. Fresh gates PASS: combined focused 48, full Vitest 26 files and 353 tests, all three verifiers, lint, typecheck, production build, 17 authority checksums, exact frozen Schema and Golden bytes, protected hashes/inventories, JSON, Markdown, diff and DPG. No CMS, authority or snapshot byte, package or lock, runtime or UI or route, root README, Planner state, external system, Git or deployment change. Planner owns independent checkpoint and any new controlled review.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-019/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Linked narrow revision response only. Planner owns independent reproduction and a new controlled review. This is not review, acceptance, Git delivery or deployment.",
+  "dispatched_at": "2026-07-31T11:33:11Z",
+  "delivery_key": "MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "item-2927",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-07-31T12:48:29Z",
+  "updated_at": "2026-07-31T12:48:29Z"
+}

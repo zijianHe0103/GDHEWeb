@@ -119,6 +119,41 @@ runtime Validator, DTO Adapter, React component, route, visible page, cache,
 SEO implementation or WordPress connection. Runtime modules must consume only
 frontend-owned normalized data and must never import `cms/` or `TASKS/`.
 
+## Product Configuration and QuoteLine contracts
+
+TASK-019 freezes an independent frontend-owned snapshot of the WordPress
+`ProductConfigurationDocument 1.0.0` authority under
+`src/lib/cms/product-configuration-contract/`. The snapshot contains the exact
+four-file Schema closure, the single confirmed FGD X15+PVC success Golden and
+six deterministically selected normalized errors. Its Node-built verifier
+binds the canonical TASK-019 handoff and all 17 authority checksums, then fails
+closed on symlinked or non-canonical authority objects as well as inventory,
+byte, path, `$ref`, version, endpoint, query or sample drift:
+
+```sh
+node scripts/verify-product-configuration-contract.mjs
+npm test -- tests/product-configuration-contract-snapshot.test.ts
+```
+
+`src/lib/quote-contract/` is a separate website inquiry-domain contract. Its
+closed `QuoteLine 1.0.0` Schema and readonly TypeScript surface cover resolved
+`GDHEPRD000172 / 6 m / Ivory White` lines and unresolved custom-length lines.
+Identity excludes quantity and includes the complete product, selection,
+installation and track-packaging configuration; merge returns new deterministic
+serializable lines without mutating caller input. Quantity is a positive
+JavaScript safe integer through `9007199254740991`; invalid inputs and sums
+above that technical representation boundary fail closed. Run its focused gate
+with:
+
+```sh
+npm test -- tests/quote-line-contract.test.ts
+```
+
+These are offline contracts only. They do not change the CMS Transport,
+runtime Validator, Adapter, Product Detail or ProductList, and they do not add
+a configurator, Add to Quote control, basket, browser persistence, submission
+endpoint, WordPress write model, Feishu integration or deployment behavior.
+
 ## Server-only ProductCard runtime consumer
 
 `src/lib/cms/server/product-cards/` is the independent runtime consumer for the

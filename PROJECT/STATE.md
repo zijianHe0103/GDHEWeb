@@ -2,14 +2,188 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-018
+current_task: TASK-019
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-31T08:32:34Z
+last_updated: 2026-07-31T13:42:04Z
 
 ## 当前焦点
 
-`TASK-018` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；当前只允许创建受控正式提交、推送任务分支、合并 `main` 并推送远端 `main`，不授权部署或下一任务。
+`TASK-019` 已由用户通过精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Adversarial Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=2 / P2=1` 作为历史保留。唯一下一步是创建正式提交、立即推送任务分支，再 fast-forward 合并并推送 `main`；尚未执行部署。
+
+## TASK-019 Formal Delivery Authorization 2026-07-31T13:42:04Z
+
+- authorization: 用户精确输入 `确认 TASK-019 完成并提交到远端`。
+- acceptance: `task_accept.py accept` 成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: aggregate execution、final validation、Adversarial Round 2 PASS、Planner Summary、README/document impact 和 readiness 门均通过。
+- branch: `codex/TASK-019-product-configuration-contract`，基线 `4a92c0770388d4a198a123a8b667753f39431015`。
+- exclusion: 用户自有 `.codex/config.toml` 与历史 resume packet 不属于 TASK-019，不得暂存。
+- unique_next: 只暂存 TASK-019 受控交付物，正式提交后立即推送任务分支，再 fast-forward 合并并推送 `main`。
+
+## TASK-019 Awaiting-user View Sync Recovery 2026-07-31T13:14:47Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-07-31T13:14:31Z` 成功，机器状态进入 `AWAITING_USER`。
+- finding: Project focus、Board 与 active-task 当前叙述仍显示旧 `UNDER_REVIEW`。
+- controlled_reopen: `AWAITING_USER -> NEEDS_REVISION`，只用于同步人类可读视图。
+- protected: 产品、合同、测试、review、acceptance 和 Git 状态不变。
+- unique_next: 同步视图后再次运行 checked `prepare-awaiting-user`，成功后只等待用户正式交付口令。
+
+## TASK-019 Planner Final Validation PASS 2026-07-31T13:10:22Z
+
+- wordpress: 两次 live Fixture 生命周期使用不同内部 ID、相同 `1/1` public Golden；每轮清理 `13/0/0`，TASK-019/A3/TASK-014 数据库与上传残留均为 0。
+- frozen_handoff: fresh run 的内部 ID 记录在 Planner validation；冻结 determinism artifact 已恢复原始 `4afc5790…a20` 字节，17/17 checksum 与 direct verifier 重新 PASS。
+- frontend: Product Configuration `25/25`、QuoteLine `23/23`、联合 `48/48`、full `26 files / 353 tests`、三套 verifier、lint/typecheck/build PASS。
+- protected: 4 Schema + 1 Golden 精确字节、7/10 inventory、Core/SCF/12-table DB、PHP/JSON/Python、旧合同/运行时/依赖/图片/next-env 与 diff 全 PASS。
+- artifacts: `PLANNER_FINAL_VALIDATION.md` 与 `PLANNER_SUMMARY.md` 已完成。
+- boundary: 仍是 `NOT_ACCEPTED / DIRTY`；未 commit、push、merge、deploy，也未实现配置器、Basket、提交或飞书。
+- unique_next: fresh full governance audit；若门通过，使用 checked `prepare-awaiting-user`，不得手工写入状态。
+
+## TASK-019 Adversarial Round 2 PASS Recovery 2026-07-31T13:02:06Z
+
+- response: `MSG-TASK-019-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `PASS / P0=0 / P1=0 / P2=0`；Round 1 `FAIL / P0=0 / P1=2 / P2=1` 完整保留为历史。
+- closures: 8 类 authority symlink 攻击均拒绝；QuoteLine exact maximum/非法输入/溢出门通过；P2 当前叙述已同步。
+- evidence: focused `48/48`、full `353/353`、三套 verifier、lint/typecheck/build、17/17、精确字节、protected scope 和 governance PASS。
+- boundary: PASS 只解锁 fresh Planner final validation，不是验收、Git、部署或后续功能授权。
+- unique_next: 运行当前字节的 Planner final validation，完成 Summary 和 full audit 后才可 checked prepare-awaiting-user。
+
+## TASK-019 Adversarial Review Round 2 Dispatch 2026-07-31T12:54:31Z
+
+- message: `MSG-TASK-019-ADVERSARIAL-REVIEW-R2`。
+- delivery: registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，real turn `019fb83d-703c-7522-9f46-17a45f02986a`，dispatch-once 已记录。
+- scope: 只复核 canonical non-symlink authority reader、QuoteLine safe-integer Schema/input/sum、已同步 P2 叙述和直接回归。
+- history: Round 1 `FAIL / P0=0 / P1=2 / P2=1` 保留；Round 2 PASS 前不允许 final validation、验收、Git、部署或后续功能。
+- unique_next: 等待 pre-review ACK 与唯一 linked final verdict response。
+
+## TASK-019 Frontend Round 1 Revision Planner Checkpoint PASS 2026-07-31T12:51:57Z
+
+- response: `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- p1_1: 共享 canonical authority reader 已覆盖全部权威读取；root/intermediate/final symlink 与 non-canonical 路径均 fail closed，聚焦测试 `25/25` PASS。
+- p1_2: QuoteLine Schema/input/sum 均以 `9007199254740991` 为安全整数上界，聚焦测试 `23/23` PASS；身份与正常合并/分行语义不变。
+- regression: 联合 `48/48`、full `26 files / 353 tests`、三套 verifier、lint、typecheck、build、17/17 authority、Schema/Golden 精确字节、protected scope 和 DPG 门全部 PASS。
+- history: Round 1 `FAIL / P0=0 / P1=2 / P2=1` 保留；本 checkpoint 只解锁窄范围 Round 2，不是 final validation、验收、Git 或部署。
+- unique_next: 受控派发 `MSG-TASK-019-ADVERSARIAL-REVIEW-R2`，只复核两项 P1、P2 状态叙述与直接回归。
+
+## TASK-019 Frontend Adversarial P1 Revision Dispatch 2026-07-31T11:26:06Z
+
+- message: `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1`。
+- delivery: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，真实 turn `019fb7ec-6840-7922-a5eb-a53b42500ed4`。
+- scope: shared non-symlink canonical authority reader；safe-integer Schema/input/sum gate；direct removable RED/GREEN regressions。
+- protected: WordPress/snapshot authority bytes、业务身份、runtime/UI、package/lock、外部系统、Git 和部署。
+- unique_next: 等待 pre-mutation ACK 和 linked execution response，再由 Planner 独立复验两项攻击。
+
+## TASK-019 Adversarial Round 1 FAIL Recovery 2026-07-31T11:23:45Z
+
+- response: `MSG-TASK-019-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`；Planner final validation 不允许。
+- p1_1: 当前 verifier 只做 lexical containment + hash/readFile，canonical authority 同字节 symlink 替换仍 PASS。
+- p1_2: QuoteLine Schema 无 safe maximum；`MAX_SAFE_INTEGER + 2` 合并静默得到错误且仍 Schema-valid 的值。
+- p2: review 已 ACK 但当前叙述仍等待 ACK；本 recovery 已同步关闭叙述差异。
+- transition: 已先运行受控 `reopen`；helper 因只允许 `AWAITING_USER` 而对真实 `UNDER_REVIEW` 安全拒绝、零修改，随后记录等价 `NEEDS_REVISION`。
+- unique_next: 只派发 frontend 窄修订，fresh Planner validation 后再发起新的 controlled review。
+
+## TASK-019 Adversarial Review Round 1 Dispatch 2026-07-31T11:11:12Z
+
+- message: `MSG-TASK-019-ADVERSARIAL-REVIEW-R1`。
+- delivery: registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，真实 turn `019fb7de-c9c7-7623-8fa3-995f2388b5ea`。
+- scope: WordPress 权威与修复历史、Fixture 确定性、前端 snapshot、QuoteLine 身份/合并、内部字段隔离、回归、文档和未实施边界。
+- protection: reviewer 只读产品与任务权威，不得修复、验收、Git、部署或外部操作。
+- unique_next: 等待 pre-review ACK 与唯一 linked PASS/FAIL/P0/P1/P2 response。
+
+## TASK-019 Frontend Planner Checkpoint PASS 2026-07-31T11:08:21Z
+
+- response: frontend linked execution response 已 validate、ACK 并进入 done。
+- authority: 7-file snapshot、17/17 handoff、4 Schema 与 1 Golden 精确字节一致，独立 verifier 为 4/1/6 PASS。
+- quote_line: 10-file closed contract、2 valid/6 invalid、16 项 Schema/相等/合并测试 PASS；数量不属于身份，配置差异分行，resolved/custom 永不合并。
+- regression: 26 files/338 tests、旧 verifier 16/2/2 与 8/3/6、lint、typecheck、build、原有 5 routes、protected scope 和 diff PASS。
+- boundary: 没有新增 runtime/UI/API、依赖、basket、persistence、submission、Feishu、Git 或部署。
+- unique_next: 派发一次独立只读 adversarial review；最终 PASS 前不得进行 Planner final validation。
+
+## TASK-019 Frontend Contract Dispatch ACK 2026-07-31T10:54:11Z
+
+- message: `MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION`。
+- delivery: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，真实 turn `019fb7ce-c2fa-7da1-83ba-cf01ed6e64af`。
+- ack: recipient 在任何测试/产品修改前 ACK；controlled message 已进入 done。
+- scope: 精确 Product Configuration snapshot/verifier 与独立 QuoteLine 1.0.0 Schema、样本、相等/合并测试。
+- unique_next: 等待 linked execution response，再由 Planner 独立 checkpoint；不得提前 UI、review、Git 或部署。
+
+## TASK-019 WordPress Planner Checkpoint Round 2 PASS 2026-07-31T10:50:23Z
+
+- response: stable-identity linked response 已 validate、ACK 并进入 done。
+- p1_closed: 不同稳定 UUID 的产品可共享 `6 m / Ivory White`；同一 UUID 的冲突 model/name/canonical/kind/unit 候选及路径全部 fail closed。
+- preserved: Article Number 仍全局唯一；同一产品的重复公开选择仍 fail closed；FGD X15+PVC 仍只公开 `GDHEPRD000172 / 6 m / Ivory White / piece`。
+- evidence: TASK-019 两轮、4-file Schema、17/17 handoff、POST 404、A3 15/15、ProductCard 8/8、Core/SCF/12-table DB、protected scope、DPG 与最终零残留全部独立通过。
+- cleanup: Planner `/private/tmp/gdhe-task019-planner-r2.46l9RF` 隔离副本已精确删除且不可恢复；其中仅含本轮复制的 `cms` 与 `TASKS`。
+- unique_next: 受控派发 frontend snapshot/verifier 与 QuoteLine 1.0.0 合同；禁止可见 UI、basket、submission、Feishu、Git 和部署。
+
+## TASK-019 WordPress System Approval Recovery 2026-07-31T10:29:32Z
+
+- completed: distinct-product shared-choice RED/GREEN、TASK-019 两轮确定性、A3/ProductCard 隔离回归和数据库零残留。
+- approval: background wordpress_cms turn 仍等待删除 `LANES/wordpress_cms/workspace/task019-regression-isolated` 的系统许可；Planner 已核对该目录只含临时 `cms`/`TASKS` 副本并精确删除。
+- pending: `MSG-TASK-019-WORDPRESS-STABLE-IDENTITY-P1-R1-CONTINUATION` 的 ACK、同 UUID 冲突身份 RED/GREEN、最终证据与 linked response。
+- unique_next: 用户允许后台精确清理审批；随后继续同一 WordPress turn。不得启动 frontend、review、Git 或部署。
+
+## TASK-019 WordPress Planner Checkpoint Round 1 FAIL 2026-07-31T10:16:58Z
+
+- response: `MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION-RESPONSE` 已 validate、ACK 并进入 done。
+- passing: 4-file Schema、FGD 唯一真实 option、GET-only/POST 404、双 Fixture 确定性、17 handoff、Core/SCF/DB/PHP/JSON、A3/ProductCard 隔离回归和零残留均复现。
+- p1: `choice_counts` 只使用长度和颜色，没有产品稳定身份；两个不同产品分别合法但聚合结果 `0`，预期 `2`。
+- p1-2: 两个来源复用同一稳定 UUID 但使用不同型号、canonical、Article Number 和长度时，聚合结果 `2`，预期冲突候选全部排除为 `0`。
+- invariant: Article Number 继续全站唯一；公开选择只在同一产品稳定身份内唯一；不同产品可共享长度/颜色。
+- cleanup: 诊断 Fixture、临时 PHP 探针和 Planner 临时 CMS 副本已精确删除；数据库残留为零。
+- unique_next: 派发 `wordpress_cms` P1 窄修订并在回执后执行 Round 2 checkpoint；不得启动 frontend。
+
+## TASK-019 WordPress System-Approval Recovery 2026-07-31T09:24:01Z
+
+- completed: 两个有效初始 RED、5 个请求闭包负例、完整候选/Article Number/公开选择/包装/定制长度/internal-field fail-closed、双 Fixture 生命周期、17/17 handoff、live DB 零残留。
+- pause_reason: wordpress_cms 为避免改写 TASK-007/TASK-014 authority，建立 lane 内固定隔离副本运行回归；系统权限请求使该 Agent turn 暂停。
+- cleanup: Planner 已只删除 `LANES/wordpress_cms/workspace/task019-regression-isolated` 临时副本；未删除产品代码、TASK-019 evidence 或数据库记录。
+- remaining: 完整 A3/ProductCard 隔离回归、CMS 文档/执行报告最终化、linked `execution_response`。
+- unique_next: 用户处理界面中的 pending system approval 后，wordpress_cms 继续；Planner 随后执行独立 WordPress checkpoint。不得提前启动 frontend。
+
+## TASK-019 WordPress Dispatch ACK 2026-07-31T09:10:51Z
+
+- message: `MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION`。
+- delivery: registered `wordpress_cms` session `019f88d0-05f9-7213-abad-e8b1ada660b5`。
+- ack: recipient read and ACKed the exact assignment before product mutation; message moved to done。
+- scope: 仅 ProductConfigurationDocument 1.0.0 的 WordPress Schema/API/Fixture/Golden/cleanup/handoff。
+- next: 等待 linked `execution_response`，然后由 Planner 独立执行 WordPress checkpoint；不得提前启动 frontend。
+
+## TASK-019 A1 Design And Baseline PASS 2026-07-31T09:07:12Z
+
+- artifacts: `REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`BASELINE_VALIDATION.md`、`PROTECTED_BASELINE.md`。
+- environment: WordPress `7.0.2`、PHP `8.3.32`、SCF `6.9.2` active、GDHE Site `0.5.0` active、Node `24.18.0`、npm `11.16.0`。
+- database: 正确的 GDHE MySQL 一直监听 `127.0.0.1:3307`；沙箱本机 TCP 限制曾产生假阴性。无关 3306 旧数据目录未启动、修复、初始化、升级或修改。
+- cms: 12 表、Core/SCF checksum、全 PHP/JSON、Content Schema `19/15/6`、ProductCard `8/8` 和 25 handoff checksums PASS；A3/TASK-014 residue 为零。
+- frontend: 两套 verifier、lint、typecheck、24 files/305 tests 和 production build PASS。
+- transition: `READY -> IN_PROGRESS`。
+- next: 创建并受控 dispatch WordPress A2/A3 实施消息；frontend 继续等待 Planner WordPress checkpoint。
+
+## TASK-019 Requirement Confirmation 2026-07-31T08:57:09Z
+
+- authorization: 用户输入精确口令 `确认 TASK-019 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`。
+- scope: Product Configuration 权威 WordPress 合同、FGD X15+PVC 测试候选、前端 snapshot/verifier 与独立 QuoteLine 合同。
+- sequencing: 先 DESIGN/IMPLEMENTATION_PLAN/baseline；再 WordPress 实施与 Planner checkpoint；最后才允许 frontend snapshot/QuoteLine 实施。
+- exclusions: 可见配置器、Quote Basket、询价提交、真实飞书、外部系统、Git 交付和部署继续禁止。
+- next: 创建设计 artifacts 并验证基线。
+
+## TASK-019 Intake 2026-07-31T08:48:43Z
+
+- request: 用户创建“FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同”任务。
+- branch: `codex/TASK-019-product-configuration-contract`，基线 `main` / `origin/main` at `4a92c0770388d4a198a123a8b667753f39431015`。
+- scope: 独立 WordPress 产品配置合同、FGD X15+PVC 合法测试数据、QuoteLine 语义、前端 snapshot 与离线 verifier。
+- boundary: 不实现可见配置器、Quote Basket、浏览器持久化、询价提交、飞书连接、安全服务或部署。
+- protected: 用户自有 `.codex/config.toml` 与历史 resume packet 原样保留并排除。
+- next: 等待精确口令 `确认 TASK-019 需求并开始执行`。
+
+## TASK-018 Closed And Archived 2026-07-31T08:48:43Z
+
+- delivery_commit: `4a92c0770388d4a198a123a8b667753f39431015`。
+- verification: TASK-018 本地/远端任务分支、本地 `main` 与远端 `main` 均指向同一正式提交。
+- transition: `ACCEPTED / FORMAL_COMMIT_PENDING` 同步为 `CLOSED / MERGED` 并归档。
+- deployment: 未执行。
+- next: 独立 TASK-019 intake；不得在 TASK-018 归档文件继续实施后续功能。
 
 ## TASK-018 Formal Delivery Authorization 2026-07-31T08:32:34Z
 

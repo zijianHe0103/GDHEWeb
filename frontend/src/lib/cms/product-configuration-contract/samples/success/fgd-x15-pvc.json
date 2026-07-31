@@ -1,0 +1,70 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "locale": "en",
+    "type": "product_configuration",
+    "product": {
+        "id": "17000000-0000-4000-8000-000000000001",
+        "model": "FGD X15+PVC",
+        "name": "FGD X15+PVC Track",
+        "publicPath": "/products/fgd-x15-pvc/",
+        "productKind": "curtain_track",
+        "quantityUnit": "piece"
+    },
+    "articleNumberOptions": [
+        {
+            "articleNumber": "GDHEPRD000172",
+            "lengthMeters": 6,
+            "color": {
+                "code": "ivory-white",
+                "label": "Ivory White"
+            }
+        }
+    ],
+    "configurationPolicy": {
+        "installationMethods": [
+            {
+                "method": "ceiling",
+                "changesTrackArticleNumber": false,
+                "optionalAccessory": null
+            },
+            {
+                "method": "wall",
+                "changesTrackArticleNumber": false,
+                "optionalAccessory": null
+            }
+        ],
+        "packaging": {
+            "scope": "curtain_track",
+            "basePackaging": {
+                "required": true,
+                "selectionMode": "single",
+                "options": [
+                    "standard",
+                    "carton",
+                    "large_shrink_wrap"
+                ]
+            },
+            "logoPrinting": {
+                "available": true,
+                "valueType": "boolean"
+            },
+            "protectionArrangement": {
+                "required": false,
+                "selectionMode": "single",
+                "options": [
+                    "single_bag",
+                    "paired"
+                ]
+            }
+        },
+        "customLength": {
+            "enabled": true,
+            "articleNumberResolution": "sales_follow_up",
+            "minimumExclusive": 0,
+            "maximum": null,
+            "decimalPlaces": 1
+        }
+    },
+    "modifiedAt": "2026-07-31T01:00:00+00:00"
+}

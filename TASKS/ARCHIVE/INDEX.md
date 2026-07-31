@@ -82,3 +82,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`238b316003e97194bbed1b41f6b604c48b383587`
   - Remote branch：`origin/codex/TASK-017-product-card-visible-list-slice`
   - Main：`origin/main` at `238b316003e97194bbed1b41f6b604c48b383587`
+- `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-018-fgd-x15-product-detail-slice.md`
+  - Commit：`4a92c0770388d4a198a123a8b667753f39431015`
+  - Remote branch：`origin/codex/TASK-018-fgd-x15-product-detail-slice`
+  - Main：`origin/main` at `4a92c0770388d4a198a123a8b667753f39431015`

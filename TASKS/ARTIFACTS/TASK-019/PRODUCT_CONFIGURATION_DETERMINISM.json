@@ -1,0 +1,94 @@
+{
+  "evidenceVersion": "TASK-019-PRODUCT-CONFIGURATION-DETERMINISM-1",
+  "fixtureVersion": "TASK-019-PRODUCT-CONFIGURATION-1",
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 1,
+  "goldenHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-019-PRODUCT-CONFIGURATION-1",
+        "posts": {
+          "valid": 2519,
+          "draft": 2520,
+          "ineligible": 2521,
+          "wrong_model": 2522,
+          "wrong_path": 2523,
+          "duplicate_article": 2524,
+          "duplicate_choice": 2525,
+          "extra_length": 2526,
+          "guessed_accessory": 2527,
+          "invalid_packaging": 2528,
+          "custom_article": 2529,
+          "internal_field": 2530,
+          "malformed_source": 2531
+        }
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "fgd-x15-pvc.json": "3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf"
+      },
+      "cleanup": {
+        "posts": 13,
+        "terms": 0,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskOptions": 0,
+        "taskTerms": 0,
+        "taskTermmeta": 0,
+        "a3Task014Postmeta": 0,
+        "a3Task014Options": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-019-PRODUCT-CONFIGURATION-1",
+        "posts": {
+          "valid": 2537,
+          "draft": 2538,
+          "ineligible": 2539,
+          "wrong_model": 2540,
+          "wrong_path": 2541,
+          "duplicate_article": 2542,
+          "duplicate_choice": 2543,
+          "extra_length": 2544,
+          "guessed_accessory": 2545,
+          "invalid_packaging": 2546,
+          "custom_article": 2547,
+          "internal_field": 2548,
+          "malformed_source": 2549
+        }
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "fgd-x15-pvc.json": "3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf"
+      },
+      "cleanup": {
+        "posts": 13,
+        "terms": 0,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskOptions": 0,
+        "taskTerms": 0,
+        "taskTermmeta": 0,
+        "a3Task014Postmeta": 0,
+        "a3Task014Options": 0,
+        "taskUploads": 0
+      }
+    }
+  ],
+  "valid": true
+}

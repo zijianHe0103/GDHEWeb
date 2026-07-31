@@ -150,6 +150,28 @@ wp gdhe task014-fixtures cleanup --path=cms
 
 `create` refuses an existing manifest. It creates only synthetic test candidates, one linkable curtain-track category landing, one `/series/` landing, one `/applications/` landing, three task-scoped terms and the fixed positive/negative ProductCard matrix. One valid card proves legal non-empty identity- and role-bound series/application output. The negative set includes source/target UUID mismatch and complete targets under the wrong semantic route role. `cleanup` deletes only manifest/marker-owned records and terms. The current lifecycle removes 19 posts and three terms; final verification must prove TASK-014 and A3 options, posts, postmeta, termmeta, terms and uploads are all zero.
 
+## TASK-019 Product Configuration Fixture
+
+The Planner-created immutable pre-Fixture SQL backup is:
+
+`.local/backups/TASK-019/20260731T090821Z/database.sql`
+
+It is 179,430 bytes with SHA-256 `2cdcecce2e81fdc8c0be6864621a198270f7b25e7c26f1d30129a489036e6df2`, contains the dump completion marker and is ignored by Git. Do not modify or overwrite it.
+
+The isolated local lifecycle is:
+
+```sh
+wp gdhe task019-fixtures create --path=cms
+wp gdhe task019-fixtures show --path=cms
+wp eval-file cms/wp-content/plugins/gdhe-site/tests/product-configuration-contract-test.php --path=cms
+python3 cms/wp-content/plugins/gdhe-site/tests/product-configuration-schema-test.py
+wp gdhe task019-fixtures cleanup --path=cms
+```
+
+`create` refuses an existing manifest. It creates 13 marker-owned Product posts only: one valid FGD X15+PVC test candidate and 12 unpublished, ineligible, malformed, duplicate, guessed-option, invalid-policy or internal-field negatives. It creates no terms, attachments, uploads, users or QuoteLine records. The contract test creates one short-lived marker-owned cross-source duplicate probe and deletes it in `finally`.
+
+`cleanup` force-deletes only manifest/marker-owned TASK-019 Product posts and its option. Each deterministic lifecycle removes exactly 13 posts, zero terms and zero uploads. Final verification must prove TASK-019 posts/source/marker meta/option/terms/termmeta/uploads plus A3 and TASK-014 markers/options are all zero. Restore the immutable SQL only after explicit authorization for a real failure; do not restore a healthy database merely to demonstrate rollback.
+
 ## Routine verification
 
 Use WP-CLI to verify:

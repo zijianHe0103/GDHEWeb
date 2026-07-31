@@ -39,6 +39,7 @@
     "navigation": "config/schemas/navigation.schema.json",
     "routeManifest": "config/schemas/route-manifest.schema.json",
     "productCardCollection": "config/schemas/product-card-collection.v1.schema.json",
+    "productConfiguration": "config/schemas/product-configuration.v1.schema.json",
     "modules": "config/schemas/modules"
   },
   "boundaries": {
@@ -55,6 +56,7 @@
     "collection": "/wp-json/gdhe/v1/collection/{type}",
     "navigation": "/wp-json/gdhe/v1/navigation",
     "routeManifest": "/wp-json/gdhe/v1/route-manifest",
-    "productCards": "/wp-json/gdhe/v1/product-cards"
+    "productCards": "/wp-json/gdhe/v1/product-cards",
+    "productConfigurations": "/wp-json/gdhe/v1/product-configurations"
   }
 }

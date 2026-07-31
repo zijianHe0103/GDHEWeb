@@ -512,3 +512,41 @@ Each execution records:
 - determinism_scope: no rerun required because the changed inline-only test value is not a Golden hash input; the previously completed two-lifecycle 8/8 database-ID determinism evidence remains current
 - authority_scan: active ProductCard production source, Fixture, contract/Schema tests, Goldens and runtime/Schema evidence contain no `/products/category/` or `/products/series/`
 - response_control: retract the not-yet-dispatched queued response whose wording preceded this byte correction, then send one corrected execution_response
+
+### 2026-07-31T09:34:00Z - TASK-019 Product Configuration authority complete
+
+- task: TASK-019 additive ProductConfigurationDocument 1.0.0 WordPress authority slice
+- message: MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION
+- authorization: exact dispatched assignment read and ACKed before implementation; branch codex/TASK-019-product-configuration-contract and wordpress_cms write scope verified
+- tdd_red: valid missing-root-Schema and missing-route failures observed; focused request-closure and eligible-source projection REDs also preceded their minimum GREEN behavior
+- backup_gate: immutable .local/backups/TASK-019/20260731T090821Z/database.sql verified at 179430 bytes and SHA-256 2cdcecce2e81fdc8c0be6864621a198270f7b25e7c26f1d30129a489036e6df2 with completion marker; A3/TASK-014/TASK-019 pre-Fixture residue zero
+- implementation: gdhe-site 0.6.0; anonymous read-only GET /gdhe/v1/product-configurations; exact English/Schema/path query; independent four-file Draft 2020-12 closure; private exact-key source mirror; complete-candidate/identity/global uniqueness/no-guessing/internal-field fail-closed; deterministic ETag/304 and normalized no-store errors
+- truth_set: only FGD X15+PVC / GDHEPRD000172 / 6 m / Ivory White / piece; ceiling/wall keep the same track Article Number; optional accessories null; frozen curtain-track packaging; unresolved custom length without Article Number
+- fixture: 13 marker-owned posts per lifecycle, one valid and 12 invalid/unpublished candidates; short-lived cross-source duplicate probe; no terms, media, uploads, users or QuoteLine records
+- determinism: two complete lifecycles used different WordPress IDs and produced identical 1/1 Golden hash 3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf
+- cleanup: each lifecycle removed exactly 13 posts/0 terms/0 uploads; final TASK-019/A3/TASK-014 options, marker/source meta, terms, termmeta and uploads zero
+- regression: isolated A3 19/15/6 with totals 3/3/3 and items 2/1/0; isolated ProductCard 8 Goldens/11 request negatives/12 exclusions with 2/2/0; frozen TASK-007/TASK-014 authority bytes unchanged
+- handoff: four Schema files, one Golden and 17 exact SHA-256 entries generated and verified
+- integrity: all GDHE Site PHP/JSON/Python AST, WordPress Core, official SCF, 12-table DB, plugin 0.6.0 active, POST no-route, protected baseline and git diff checks PASS; first Core checksum request had transient TLS EOF and standalone retry passed
+- docs: docs/cms README, REST contract and operations/rollback synchronized; documentation impact resolved for this lane slice
+- hook_recovery: three pre-tool isolated-copy attempts were safely rejected for unresolvable temp paths with zero mutation; fixed lane-owned copy completed regression and Planner removed only that exact temp copy
+- scope_boundary: no frontend, QuoteLine, root README, Planner task/state/board, WordPress Core, SCF source, theme, dependency, real content, Feishu, external service, review, Git delivery, acceptance or deployment change
+- result: WordPress authority slice complete and ready for fresh Planner checkpoint; this is contract infrastructure, not a visible configurator or inquiry flow
+- next: run final DPG project/registry/messages/strict-lane checks and send one execution_response requiring MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION
+
+### 2026-07-31T10:42:11Z - TASK-019 aggregate identity P1 revision complete
+
+- task: TASK-019 Round 1 WordPress aggregate-identity P1 narrow revision
+- messages: MSG-TASK-019-WORDPRESS-PRODUCT-CHOICE-SCOPE-P1-R1 and MSG-TASK-019-WORDPRESS-STABLE-IDENTITY-P1-R1-CONTINUATION read and ACKed; checked reopen safely refused because the same task already remained IN_PROGRESS
+- choice_scope_red: two individually valid products with different stable UUID/path/Article Number and equal 6 m / Ivory White were both excluded by the old global choice key
+- choice_scope_green: aggregate choice keys now include stable Product UUID; both distinct products remain eligible and both paths resolve; Article Number counting remains global and the same-product duplicate-choice negative remains fail closed
+- identity_red: two individually valid sources reused one UUID with different model/name/publicPath, Article Number and length; the old aggregate returned both instead of excluding them
+- identity_green: each UUID binds to one normalized model/name/publicPath/productKind/quantityUnit signature; every candidate for a conflicting UUID is excluded and both paths return 404; probe removal restores the valid FGD path
+- cleanup: each focused RED/GREEN probe used finally deletion; every Fixture cleanup removed 13 posts/0 terms/0 uploads and residue returned 0/0/0
+- determinism: final two TASK-019 lifecycles used different database IDs and retained identical 1/1 Golden hash 3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf
+- regression: before the continuation, isolated A3 15/15 and ProductCard 8/8 two-lifecycle regressions passed with exact cleanup; Planner removed the verified two-directory temporary root and instructed it not be recreated; the continuation touched only Product Configuration aggregation
+- handoff: four-file Schema, one Golden and 17/17 checksums regenerated and verified with explicit aggregate identity invariants
+- scope_boundary: no frontend, QuoteLine, root README, existing Content Schema/ProductCard authority, Core, SCF, themes, real data, external systems, Git, review, acceptance or deployment change
+- final_validation: direct TASK-019 runtime/Schema/request/two-lifecycle determinism, 17/17 handoff, all PHP/JSON/Python AST, Core, SCF, 12-table DB, POST no-route, protected scope, secret scan, diff and DPG project/registry/messages/drift/strict-lane gates PASS; temporary regression root absent
+- result: both aggregate-identity P1 findings are locally closed without changing route/version/Schema/Golden or frontend authority
+- next: send one execution_response linked to the continuation and covering both P1s; Planner performs independent Round 2 checkpoint before frontend

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "closureFiles": [
+    "article-number-option.v1.schema.json",
+    "product-configuration.v1.schema.json",
+    "public-path.schema.json",
+    "uuid-v4.schema.json"
+  ],
+  "positiveCount": 1,
+  "negativeCount": 8,
+  "runtimeGoldenCount": 1,
+  "runtimeGoldenResults": [
+    {
+      "golden": "fgd-x15-pvc.json",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "valid": true
+}

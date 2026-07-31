@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/quote-line/v1/quote-line.v1.schema.json",
+  "title": "GDHE QuoteLine 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "product",
+    "selection",
+    "configuration",
+    "quantityUnit",
+    "quantity"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "1.0.0"
+    },
+    "product": {
+      "$ref": "#/$defs/product"
+    },
+    "selection": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/articleNumberSelection"
+        },
+        {
+          "$ref": "#/$defs/customLengthSelection"
+        }
+      ]
+    },
+    "configuration": {
+      "$ref": "#/$defs/configuration"
+    },
+    "quantityUnit": {
+      "const": "piece"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    }
+  },
+  "$defs": {
+    "uuidV4": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "publicPath": {
+      "type": "string",
+      "maxLength": 500,
+      "pattern": "^/$|^/(?:[a-z0-9](?:[a-z0-9-]{0,62})/)+$"
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "model", "publicPath"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuidV4"
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "publicPath": {
+          "$ref": "#/$defs/publicPath"
+        }
+      }
+    },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "label"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 100
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    },
+    "articleNumberSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "articleNumber", "lengthMeters", "color"],
+      "properties": {
+        "type": {
+          "const": "article_number"
+        },
+        "articleNumber": {
+          "type": "string",
+          "pattern": "^GDHEPRD[0-9]{6}$"
+        },
+        "lengthMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.1
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        }
+      }
+    },
+    "customLengthSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "articleNumber",
+        "lengthMeters",
+        "color",
+        "resolution"
+      ],
+      "properties": {
+        "type": {
+          "const": "custom_length"
+        },
+        "articleNumber": {
+          "type": "null"
+        },
+        "lengthMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.1
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        },
+        "resolution": {
+          "const": "sales_follow_up"
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["installationMethod", "packaging"],
+      "properties": {
+        "installationMethod": {
+          "enum": ["ceiling", "wall"]
+        },
+        "packaging": {
+          "$ref": "#/$defs/packaging"
+        }
+      }
+    },
+    "packaging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basePackaging",
+        "logoPrinting",
+        "protectionArrangement"
+      ],
+      "properties": {
+        "basePackaging": {
+          "enum": ["standard", "carton", "large_shrink_wrap"]
+        },
+        "logoPrinting": {
+          "type": "boolean"
+        },
+        "protectionArrangement": {
+          "enum": ["single_bag", "paired", null]
+        }
+      }
+    }
+  }
+}

@@ -3400,3 +3400,169 @@ Each execution records:
 - Execution, final validation, Visual Round 2, Adversarial Round 2, Planner Summary and README impact gates remain PASS.
 - User-owned `.codex/config.toml` and historical resume packets are explicitly excluded from staging.
 - Unique next step: stage only controlled TASK-018 delivery, create the formal Chinese commit, immediately push the task branch, fast-forward `main` and push `main`.
+
+## 2026-07-31T08:48:43Z TASK-018 closure and TASK-019 intake
+
+- Verified TASK-018 local/remote task branch and local/remote `main` all at formal delivery commit `4a92c0770388d4a198a123a8b667753f39431015`.
+- Archived TASK-018 as `CLOSED / ACCEPTED / MERGED`; no deployment was inferred or performed.
+- Switched from `main` to new branch `codex/TASK-019-product-configuration-contract`.
+- Created only the TASK-019 requirement card and Lane Plan for FGD X15+PVC Article Number, Product Configuration and QuoteLine contracts.
+- Preserved and excluded user-owned `.codex/config.toml` and historical resume packets.
+- No CMS, API, Schema, frontend runtime, database, Feishu, external-system or deployment implementation started.
+- Unique next step: wait for exact phrase `确认 TASK-019 需求并开始执行`.
+
+## 2026-07-31T08:57:09Z TASK-019 requirements confirmed
+
+- User supplied exact requirement-confirmation phrase; TASK-019 moved to `READY / NOT_ACCEPTED / DIRTY`.
+- The confirmed authority split remains: WordPress owns Product Configuration read facts; the independent QuoteLine contract belongs to the Next.js inquiry domain.
+- Execution order is serial: Planner design/baseline, WordPress authority implementation/checkpoint, then frontend snapshot/QuoteLine implementation.
+- Visible configurator, Quote Basket, submission security, live Feishu, Git delivery and deployment remain excluded.
+- Unique next step: create design artifacts and verify protected baselines before any lane dispatch.
+
+## 2026-07-31T09:07:12Z TASK-019 A1 design and baseline PASS
+
+- Froze REQUIREMENTS, DESIGN and serial TDD IMPLEMENTATION_PLAN with the WordPress Product Configuration versus Next.js QuoteLine authority split.
+- Confirmed GDHE MySQL was already healthy on `127.0.0.1:3307`; the command sandbox caused the earlier false connection failure. The unrelated legacy 3306 data directory was not modified.
+- WordPress 7.0.2, PHP 8.3.32, SCF 6.9.2, GDHE Site 0.5.0, 12-table DB, Core/SCF checksums, PHP/JSON, CMS 19/15/6 and ProductCard 8/8/25 all passed.
+- Node 24.18.0/npm 11.16.0, both frontend verifiers, lint, typecheck, 24 files/305 tests and production build passed.
+- Recorded exact protected aggregate and critical hashes; no TASK-019 CMS/frontend product mutation, Feishu, external action, Git delivery or deployment occurred.
+- Task moved `READY -> IN_PROGRESS`.
+- Unique next step: controlled WordPress A2/A3 dispatch; frontend remains blocked until the independent Planner WordPress checkpoint passes.
+
+## 2026-07-31T09:10:51Z TASK-019 WordPress dispatch ACK
+
+- Queued, dry-ran and delivered `MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION` to registered wordpress_cms session `019f88d0-05f9-7213-abad-e8b1ada660b5`.
+- Recipient read the exact dispatch and ACKed it before implementation edits; controlled message is done.
+- Scope remains only ProductConfigurationDocument 1.0.0 authority TDD, Fixture determinism, cleanup and handoff.
+- Frontend Product Configuration snapshot and QuoteLine remain blocked.
+- Unique next step: wait for the linked wordpress_cms execution response, then run the independent Planner checkpoint.
+
+## 2026-07-31T09:24:01Z TASK-019 WordPress system-approval recovery
+
+- WordPress lane completed valid Schema/route REDs, request closure, strict complete-candidate projection, two Fixture lifecycles, 17/17 handoff and live zero residue.
+- A lane-local isolated A3/ProductCard regression copy triggered a pending system approval. Earlier hook refusals were pre-tool and zero-mutation.
+- Planner removed only the exact fixed temporary copy `LANES/wordpress_cms/workspace/task019-regression-isolated`; product code, TASK-019 evidence and database state remain intact.
+- Remaining work is isolated legacy regression, final lane evidence/docs and one linked execution response.
+- Unique next step: resolve the pending system approval in the wordpress_cms thread, then continue the same turn; frontend remains blocked.
+
+## 2026-07-31T10:16:58Z TASK-019 WordPress Planner checkpoint Round 1 FAIL
+
+- Validated and ACKed `MSG-TASK-019-WORDPRESS-PRODUCT-CONFIGURATION-RESPONSE`.
+- Independently reproduced the 4-file Schema, FGD one-option contract, GET-only route, two-round TASK-019 determinism, A3/ProductCard isolated regressions, official checksums and zero residue.
+- First isolated A3 attempt failed only at missing `jsonschema` in the inherited system Python; cleanup was verified before a fixed Anaconda PATH rerun passed.
+- P1: global public-choice counts omit stable product identity. Two individually valid distinct products sharing `6 m / Ivory White` produced aggregate count `0`, expected `2`.
+- Correct invariant: Article Number remains global; normalized public choice is unique only within the same stable product identity.
+- Planner diagnostic Fixture, PHP probe and temporary regression copy were precisely deleted; final TASK-019/A3/TASK-014 residue is zero.
+- Unique next step: dispatch one narrow wordpress_cms P1 revision; frontend remains blocked until Round 2 checkpoint PASS.
+
+## 2026-07-31T10:28:00Z TASK-019 aggregate identity P1 continuation
+
+- The first P1 RED/GREEN is present in shared bytes: distinct UUIDs may share `6 m / Ivory White`; the aggregate choice key now includes stable product UUID while Article Number counts remain global.
+- A second acceptance-driven diagnostic reproduced inconsistent identity: the same UUID with different model/name/canonical/Article Number/length returned two public documents instead of excluding both.
+- Diagnostic cleanup is `0/0/0`; the temporary probe file was deleted.
+- Queued and dispatched `MSG-TASK-019-WORDPRESS-STABLE-IDENTITY-P1-R1-CONTINUATION` to the same registered wordpress_cms session.
+- The lane remains on a system approval for deleting an already Planner-removed exact temporary copy; no frontend dispatch is permitted.
+
+## 2026-07-31T10:29:32Z TASK-019 WordPress system-approval recovery
+
+- Planner verified the exact lane temporary root contained only copied `cms` and `TASKS`, then deleted only that root.
+- The background wordpress_cms turn still reports `waitingOnApproval` for its now-idempotent exact cleanup command.
+- Stable-identity continuation is valid and dispatched; it cannot be ACKed until the pending system action resolves.
+- Unique next step: user allows the background cleanup approval; then the same lane turn completes P1-2 and returns one linked response.
+
+## 2026-07-31T10:50:23Z TASK-019 WordPress Planner checkpoint Round 2 PASS
+
+- Validated and ACKed `MSG-TASK-019-WORDPRESS-STABLE-IDENTITY-P1-R1-CONTINUATION-RESPONSE`.
+- Independently reran TASK-019 two-round determinism: different database IDs, identical one-Golden hash, exact `13/0/0` cleanup per round and final zero residue.
+- Reproduced both repaired identity boundaries: distinct stable products may share `6 m / Ivory White`; every candidate for one conflicting stable UUID fails closed. Global Article Number and same-product public-choice uniqueness remain closed.
+- Reproduced Product Configuration `4/1/8/1`, six normalized request errors, 12 candidate exclusions, 17/17 handoff, GET-only/POST 404, Core/SCF/12-table DB and protected-path equality.
+- Independently ran isolated A3 two-round 15/15 and ProductCard two-round 8/8 regressions. Deleted only the exact Planner-created `/private/tmp/gdhe-task019-planner-r2.46l9RF` copy after confirming it contained `cms` and `TASKS`; final live residue is zero.
+- Project, registry, message, strict lane and diff gates pass. Verdict `PASS / P0=0 / P1=0 / P2=0`; Round 1 FAIL remains preserved.
+- Unique next step: controlled frontend snapshot/verifier plus QuoteLine contract dispatch; no UI, basket, submit, Feishu, Git or deployment.
+
+## 2026-07-31T10:54:11Z TASK-019 frontend contract dispatch ACK
+
+- Created `FRONTEND_CONTRACT_DISPATCH.md` with the exact snapshot/verifier and QuoteLine-only boundary.
+- Queued, dry-ran and delivered `MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION` to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445` through real turn `019fb7ce-c2fa-7da1-83ba-cf01ed6e64af`.
+- Recipient ACKed before mutation; message moved to done.
+- Unique next step: wait for the linked execution response and run an independent Planner frontend checkpoint. Runtime/UI, package/lock, CMS, external systems, review, Git and deployment remain blocked.
+
+## 2026-07-31T11:08:21Z TASK-019 frontend Planner checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION-RESPONSE`.
+- Independently reproduced the exact 7-file Product Configuration snapshot, 17/17 authority checksums, four Schema and one Golden byte parity, and the 4/1/6 verifier result.
+- Reproduced the independent QuoteLine 10-file contract, 2 valid/6 invalid samples and 16 equality/merge tests; focused total is 33/33.
+- The first full-suite attempt was blocked only by sandbox `listen EPERM`; the permitted loopback rerun passed 26 files/338 tests. Both older verifiers, lint, typecheck and production build pass.
+- Package/lock, existing snapshots/verifiers, TASK-016 through TASK-018 runtime/pages, protected image and next-env remain unchanged; TASK-019 adds no route or runtime import.
+- Root/frontend/CMS documentation impact is now resolved. No configurator, basket, persistence, submission, Feishu, review, acceptance, Git or deployment has occurred.
+- Unique next step: dispatch one independent read-only adversarial review.
+
+## 2026-07-31T11:11:12Z TASK-019 adversarial review Round 1 dispatched
+
+- Created `ADVERSARIAL_REVIEW_DISPATCH.md` and queued a read-only final review covering WordPress authority, the two repaired identity findings, deterministic cleanup, frontend authority binding, QuoteLine semantics, protected scope and documentation.
+- Delivered `MSG-TASK-019-ADVERSARIAL-REVIEW-R1` to registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` through real turn `019fb7de-c9c7-7623-8fa3-995f2388b5ea`; dispatch-once recorded.
+- TASK-019 is `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`. Reviewer may write only its canonical report, lane records and one linked response.
+- Unique next step: wait for pre-review ACK and the linked current verdict; no Planner final validation, acceptance, Git or deployment before final PASS.
+
+## 2026-07-31T11:23:45Z TASK-019 adversarial Round 1 FAIL recovery
+
+- Validated and ACKed `MSG-TASK-019-ADVERSARIAL-REVIEW-R1-RESPONSE`; verdict is `FAIL / P0=0 / P1=2 / P2=1`.
+- Technically verified P1-1 against current source: authority reads use only lexical containment plus `readFile`, with no lstat/realpath/non-symlink identity gate; reviewer reproduced a byte-identical symlink substitution PASS.
+- Technically verified P1-2: Schema has integer minimum only and merge performs unchecked number addition; `9007199254740991 + 2` cannot be represented exactly.
+- Ran governed `task_transition.py reopen` first. It safely refused with zero mutation because the helper currently accepts only AWAITING_USER, not truthful UNDER_REVIEW; recorded equivalent NEEDS_REVISION recovery.
+- P2 current narration is synchronized. Existing WordPress repairs, authority bytes, snapshot bytes and all passing evidence remain preserved.
+- Unique next step: dispatch only a frontend TDD revision for canonical non-symlink authority reads and safe-integer quantity bounds; then fresh Planner validation and a new controlled review.
+
+## 2026-07-31T11:26:06Z TASK-019 frontend adversarial P1 revision dispatched
+
+- Created `FRONTEND_ADVERSARIAL_P1_R1_DISPATCH.md` with exact RED/GREEN, allowed writes and protected scope.
+- Delivered `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1` to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445` through real turn `019fb7ec-6840-7922-a5eb-a53b42500ed4`; dispatch-once recorded.
+- Scope is only canonical non-symlink authority reads, six substitution classes plus intermediate path proof, safe-integer Schema/input/sum gates, direct tests and corresponding evidence.
+- Unique next step: wait for pre-mutation ACK and linked response; Planner then independently reproduces both attacks before any new review.
+## 2026-07-31T12:51:57Z TASK-019 frontend Round 1 revision checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE`; the controlled response is in done.
+- Independently reproduced Product Configuration 25/25, QuoteLine 23/23, combined focused 48/48 and full Vitest 26 files/353 tests.
+- Reproduced canonical non-symlink authority handling for root/intermediate/final substitutions and safe-integer Schema/input/sum rejection while ordinary identity and merge/split behavior remain unchanged.
+- All three verifiers, lint, typecheck, production build, 17 authority checksums, exact Schema/Golden bytes, protected hashes/inventories, diff and DPG gates pass.
+- The first protected-image hash command used a stale read-only pathname; it was rerun against `frontend/public/test-candidates/fgd-x15-protected.png` and passed.
+- Round 1 remains historical `FAIL / P0=0 / P1=2 / P2=1`; TASK-019 returns to `UNDER_REVIEW` only for a narrow Round 2.
+- Unique next step: dispatch `MSG-TASK-019-ADVERSARIAL-REVIEW-R2`; no final validation, acceptance, Git, deployment or deferred feature work before the final verdict.
+
+## 2026-07-31T12:54:31Z TASK-019 adversarial Round 2 dispatched
+
+- Delivered `MSG-TASK-019-ADVERSARIAL-REVIEW-R2` to registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` through real turn `019fb83d-703c-7522-9f46-17a45f02986a`; dispatch-once recorded.
+- Scope is only the two Round 1 frontend P1 corrections, the synchronized narration P2 and direct protected regressions.
+- Round 1 `FAIL / P0=0 / P1=2 / P2=1` remains preserved.
+- Unique next step: wait for pre-review ACK and one linked final verdict; no final validation, acceptance, Git, deployment or deferred feature work before PASS.
+
+## 2026-07-31T13:02:06Z TASK-019 adversarial Round 2 PASS recovery
+
+- Validated and ACKed `MSG-TASK-019-ADVERSARIAL-REVIEW-R2-RESPONSE`; the controlled response is in done.
+- Final current verdict is `PASS / P0=0 / P1=0 / P2=0`; Round 1 `FAIL / P0=0 / P1=2 / P2=1` remains fully historical.
+- Reviewer independently rejected eight real-verifier symlink substitutions, reproduced the safe-integer maximum and overflow boundary, and passed focused 48/48, full 353/353, all three verifiers, lint/typecheck/build, authority parity and protected scope.
+- PASS authorizes only fresh Planner final validation. It is not acceptance, Git delivery, deployment or deferred feature authorization.
+- Unique next step: run current-byte final validation, write Planner Summary, run full governance audit and checked prepare-awaiting-user only if all gates pass.
+
+## 2026-07-31T13:10:22Z TASK-019 Planner final validation PASS
+
+- Ran fresh live WordPress two-lifecycle determinism: distinct internal IDs, identical one-Golden hash, exact 13-post cleanup per round and final TASK-019/A3/TASK-014 database plus upload residue zero.
+- Preserved frozen handoff semantics: the fresh database IDs are recorded in Planner validation while the prior determinism authority was restored byte-for-byte; 17/17 and direct 4/1/6 then passed.
+- Reproduced frontend focused 48/48, full 26 files/353 tests, all three verifiers, lint, typecheck and production build.
+- Reproduced Core/SCF checksums, 12-table DB, 26 PHP, 54 JSON, 12 Python, exact 5-file parity, 7/10 inventory, protected hashes/aggregates and zero protected diff.
+- Wrote `PLANNER_FINAL_VALIDATION.md` and `PLANNER_SUMMARY.md`. No acceptance, Git delivery, UI, basket, submission, Feishu or deployment action occurred.
+- Next: full governance audit; checked `prepare-awaiting-user` only if it passes.
+
+## 2026-07-31T13:14:47Z TASK-019 awaiting-user view sync recovery
+
+- First checked prepare at 13:14:31Z passed all canonical artifact gates and entered AWAITING_USER.
+- Human-readable Project focus, Board and active-task narrative remained on the previous UNDER_REVIEW text.
+- Ran controlled reopen to NEEDS_REVISION only for view synchronization; no product, authority, evidence, review, acceptance or Git fact changed.
+- Next: validate synchronized views and run the final checked prepare, then stop for user acceptance.
+
+## 2026-07-31T13:42:04Z TASK-019 formal delivery authorized
+
+- Exact user phrase received and `task_accept.py accept` returned accepted:true.
+- Current delivery state is ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING on `codex/TASK-019-product-configuration-contract`.
+- User-owned `.codex/config.toml` and historical resume packets remain excluded.
+- Next: controlled staging, formal Chinese commit, task-branch push, fast-forward main merge and main push; no deployment.

@@ -48,6 +48,12 @@ wp server --path=cms --host=127.0.0.1 --port=8080
 
 前端现已在 `frontend/src/lib/cms/product-card-contract/` 内持有 TASK-014 ProductCard 合同的独立离线快照；从 `frontend/` 运行 `npm run verify:product-card-contract` 验证 TASK-014 权威身份、精确 8-file Schema closure、3 份 0/1/N 成功样例和 6 份规范化错误。它与 TASK-008 `/resolve` Snapshot 相互隔离；快照自身不执行网络请求、React/UI、可见页面或 WordPress 连接。详细边界见 [`frontend/README.md`](frontend/README.md#productcard-contract-snapshot)。
 
+### 产品配置与 QuoteLine 离线合同
+
+TASK-019 在前端增加了 WordPress `ProductConfigurationDocument 1.0.0` 的精确离线快照和独立 `QuoteLine 1.0.0` 询价行合同。从 `frontend/` 运行 `node scripts/verify-product-configuration-contract.mjs` 验证配置快照，再运行 `npm test -- tests/product-configuration-contract-snapshot.test.ts tests/quote-line-contract.test.ts` 验证权威绑定、正负样本及询价行相等/合并规则。
+
+这些合同尚未实现可见配置器、Quote Basket、30 天浏览器保存、询价提交或飞书连接；完整边界见 [`docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md`](docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md)。
+
 ### 前端 server-only ProductCard 运行时消费者
 
 TASK-016 在 `frontend/src/lib/cms/server/product-cards/` 建立了 server-only ProductCard 运行时消费者：它固定请求英语 ProductCard Schema `1.0.0` collection，使用本地 8-file Schema closure 验证响应，并且只有真实 validated wrapper 才能适配为只读前端 DTO。每次编排只发起一次 collection 请求、零逐卡 `/resolve`；当前故意不包含 UI 或缓存。验证时从 `frontend/` 运行五个 `product-card-*.test.ts` 聚焦文件，以及 `npm run verify:product-card-contract` 和 `npm run verify:cms-contract`。

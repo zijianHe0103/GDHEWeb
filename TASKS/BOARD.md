@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-018
+current_task: TASK-019
 
 ## 活动任务
 
-- `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-019` 建立 FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -21,7 +21,7 @@ current_task: TASK-018
 
 ## 等待推送
 
-- `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-019` 已正式验收；等待任务分支提交/推送、fast-forward 合并及远端 `main` 推送
 
 ## 已暂停
 
@@ -29,6 +29,7 @@ current_task: TASK-018
 
 ## 最近关闭
 
+- `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `CLOSED` / `MERGED`
 - `TASK-017` 英语站 ProductCard 本地可见列表纵向切片 — `CLOSED` / `MERGED`
 - `TASK-016` 前端 ProductCard Transport、Runtime Validator 与 DTO Adapter — `CLOSED` / `MERGED`
 - `TASK-015` 前端 ProductCard Contract Snapshot 与离线权威校验器 — `CLOSED` / `MERGED`
@@ -100,3 +101,7 @@ current_task: TASK-018
 ## Accepted
 
 - TASK-018: ACCEPTED at 2026-07-31T08:32:34Z
+
+## Accepted
+
+- TASK-019: ACCEPTED at 2026-07-31T13:42:04Z

@@ -851,3 +851,46 @@ Each execution records:
 - final_governance: git diff check, residue scan, DPG project, messages and strict lane audit PASS with zero issues before response creation
 - message_result: `MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION-RESPONSE` received real Planner thread bridge receipt `item-2641`, was recorded as dispatched, acknowledged by Planner and moved to done; `requires_response_to=MSG-TASK-018-FRONTEND-VISUAL-R1-REVISION`
 - unique_next_step: Planner independently validates current bytes and controls visual_qa browser retest; frontend does not alter the existing visual verdict
+
+### 2026-07-31T19:01:27+08:00 - TASK-019 frontend contract implementation
+
+- task: TASK-019
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION
+- message_ack: exact request, active task, frozen REQUIREMENTS/DESIGN/IMPLEMENTATION_PLAN, handoff/checksums/checkpoint and dispatch read; ACK completed before mutation
+- authority_gate: WordPress Round 2 PASS P0=0/P1=0/P2=0 observed; Round 1 FAIL/P1=2 history preserved; no task switch or reopen required
+- tdd_red_snapshot: focused command exit 1 because the TASK-019 verifier module was missing
+- tdd_red_quote: focused command exit 1 because the QuoteLine contract/sample modules were missing
+- minimum_green_snapshot: exact 7-file Product Configuration snapshot plus Node-built-in-only authority verifier; first GREEN correction sorted checksum map entries without weakening bytes/hashes
+- minimum_green_quote: closed Schema, readonly types, two valid/six invalid samples and pure equality/merge functions; complete matrix corrected key-order dependence and test-validator decimal precision
+- focused_validation: Product Configuration 17/17, QuoteLine 16/16 and direct verifier 4/1/6 PASS
+- regression_validation: old CMS verifier 16/2/2, ProductCard verifier 8/3/6 and full Vitest 26 files/338 tests PASS
+- build_validation: lint, typecheck and production build PASS; route inventory unchanged
+- authority_parity: 17/17 checksum authority, four Schema and one Golden exact-byte parity PASS; Product Configuration inventory 7 and QuoteLine inventory 10
+- protected_integrity: package/lock, old verifier/snapshots, TASK-016～018 runtime/page aggregate, protected image and next-env match A1 baseline; no runtime cms/TASKS import, absolute path, secret or temporary root
+- documentation: frontend README and docs/frontend updated; exact root README delta recorded for Planner without editing root
+- boundaries: CMS/database, existing Transport/Validator/Adapter/consumer/DTO/UI, package/lock, root README, Planner authority, configurator, basket, persistence, submission, Feishu, review, acceptance, Git and deployment unchanged by frontend
+- command_note: one read-only aggregate command had unmatched shell quoting and did not start; split read-only rerun passed
+- artifacts: FRONTEND_TDD_RED_EVIDENCE, FRONTEND_EXECUTION_REPORT, FRONTEND_TEST_OR_VALIDATION_LOG and FRONTEND_DIFF_OR_OUTPUT_SUMMARY complete
+- message_result: `MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION-RESPONSE` received real Planner thread bridge receipt `item-2898`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so the subsequent dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-019-FRONTEND-CONTRACT-IMPLEMENTATION`
+- unique_next_step: Planner owns the independent checkpoint and any later review dispatch; frontend stops without review, acceptance, Git delivery, deployment or follow-on implementation
+
+### 2026-07-31T19:30:13+08:00 - TASK-019 adversarial Round 1 P1 narrow revision
+
+- task: TASK-019
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1
+- message_ack: exact revision request, canonical Round 1 FAIL/recovery and narrow dispatch read; ACK completed before product mutation and message moved to done
+- preserved_history: Round 1 remains `FAIL / P0=0 / P1=2 / P2=1`; Planner already closed the narration-only P2
+- p1_1_red: Product Configuration focused exit 1; 25 total, 17 prior PASS and eight symlink substitutions incorrectly returned verifier success
+- p1_1_green: one shared canonical authority reader now rejects symlinked root/final/intermediate objects and requires canonical directories plus a regular final file for every authority read; focused 25/25 and direct verifier 4/1/6 PASS
+- p1_2_red: QuoteLine focused exit 1; 23 total, 17 prior PASS and six safe-integer assertions failed; Schema accepted 9007199254740992 and overflow was not rejected
+- p1_2_green: Schema maximum 9007199254740991 plus positive-safe-input and safe-sum gates; focused 23/23 PASS with identity and normal merge/split semantics preserved
+- regression_validation: combined focused 2/48, full Vitest 26/353, old verifiers 16/2/2 and 8/3/6, lint, typecheck and production build PASS
+- protected_integrity: 17/17 authority, four Schema/Golden exact bytes, package/lock, old snapshots/verifiers, TASK-016～018 runtime/page aggregate, protected image and next-env match; inventories 7/10, authority symlinks zero and temporary roots zero
+- documentation: frontend README and frontend contract document truthfully record canonical non-symlink authority and safe-integer technical bound; root README untouched
+- boundaries: CMS/database, authority/snapshot/manifest bytes, existing runtime/UI/routes, package/lock, root README, Planner state, external systems, Git and deployment unchanged
+- artifacts: existing four frontend TASK-019 evidence files append Round 1 RED/GREEN and current-byte validation
+- final_governance: JSON, Markdown/trailing-whitespace, git diff check, DPG project, registry, messages and strict lane audit PASS with zero issues
+- message_result: `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-2927`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1`
+- unique_next_step: Planner ACKs and independently reproduces the two P1 closures, then controls any new adversarial review; frontend stops without review, acceptance, Git delivery or deployment

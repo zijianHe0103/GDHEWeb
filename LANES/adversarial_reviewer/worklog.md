@@ -864,3 +864,40 @@ Each execution records:
 - boundaries: no product, test, README, task-authority, visual-report/image, Planner-state, CMS, dependency, generated-file, Git, deployment or external-system edit by reviewer; PASS is not acceptance or Git authorization
 - message_status: Round 2 request acknowledged as done; the single linked final PASS review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
 - next: Planner acknowledges the response, records Round 2 PASS recovery and owns fresh final validation plus any checked acceptance preparation
+
+### 2026-07-31T11:20:42Z - TASK-019 adversarial review round 1
+
+- task: TASK-019
+- message: MSG-TASK-019-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the exact formal request before substantive review, inspected the active task, dispatch, frozen design and plan, WordPress/Frontend implementation and evidence, current code/tests/contracts/docs, and independently reviewed only the requested read-only TASK-019 scope
+- wordpress_round1_closure: preserved the original WordPress FAIL with P1 two; current aggregation permits equal public choices across distinct product UUIDs, rejects every conflicting public identity for one UUID, and preserves global Article Number plus same-product choice uniqueness
+- wordpress_evidence: exact anonymous GET-only route and POST 404, closed query/errors, four-Schema closure, sole GDHEPRD000172 6 m Ivory White piece output, unresolved custom length, null accessories, 17 checksums, two different DB-ID lifecycles with identical Golden hash, exact 13/0/0 cleanup and final TASK-019/A3/TASK-014 zero residue pass
+- p1_authority_identity: the frontend verifier uses lexical path containment and readFile without symlink/realpath identity enforcement; a removable reviewer-scope copy that replaced the frozen authority-manifest pathname with a symlink to byte-identical rogue bytes was accepted as 4 schemas, 1 success and 6 errors
+- p1_authority_revision: require a regular non-symlink canonical authority object for every path segment and final file through one shared reader, cover the two root authorities plus Schema/success/error sources with mutation tests, and preserve the frozen authority/snapshot bytes
+- p1_quantity_precision: the Schema accepts every integer at least one and merge uses unchecked JavaScript addition; two individually valid equal lines with quantities 9007199254740991 and 2 returned Schema-valid 9007199254740992 instead of mathematical 9007199254740993, with isSafeInteger false
+- p1_quantity_revision: bound Schema quantity to the JavaScript safe-integer maximum unless a narrower business limit is confirmed, reject unsafe inputs and overflow before return, and add boundary/overflow tests without changing identity semantics
+- p2_narration: task/project/board state is correctly UNDER_REVIEW NOT_ACCEPTED DIRTY, but active-task Current State/Next Step and Project State still wait for an already-recorded ACK, while the active Adversarial Review section says review has not started
+- passed_regressions: seven-file snapshot and ten-file QuoteLine inventory, 17/17 checksums, four Schema plus Golden byte parity, focused 33 and full 338 tests, verifiers 4/1/6 plus 16/2/2 plus 8/3/6, PHP/JSON, lint, typecheck, build, five unchanged routes, protected hashes/scope, no runtime imports, leakage and non-implementation boundaries pass
+- governance: project, registry, messages, strict lane and whitespace validation pass; reviewer probe and temporary roots removed; ignored pre-task root DS Store is not residue
+- result: FAIL; P0 none; P1 two; P2 one; Planner final validation not allowed
+- boundaries: no business-deliverable, test, README, task-authority or Planner-state repair; no database/dependency/external-system mutation, acceptance, Git, deployment or later-task work
+- message_status: original review request acknowledged as done before review; the single linked FAIL review_response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt; it remains dispatched pending Planner ACK
+- next: Planner acknowledges the response, records governed recovery and authorizes only the two P1 revisions plus narration sync, fresh validation and a new independent review
+
+### 2026-07-31T12:59:34Z - TASK-019 adversarial review round 2 final
+
+- task: TASK-019
+- message: MSG-TASK-019-ADVERSARIAL-REVIEW-R2
+- action: read and acknowledged the exact final Round 2 request before substantive review, restored the registered reviewer lane, preserved the complete Round 1 FAIL 0/2/1 history, inspected the narrow revision bytes/evidence and independently reviewed only both P1 closures, the narration P2 closure and direct regressions
+- p1_authority_closure: one shared authorityBytes reader covers the repository root, both root authorities, all 17 checksum sources, every Schema source, success Golden and error source; it checks lstat plus realpath for canonical non-symlink intermediates and a regular final file before reading
+- authority_attack_matrix: an independent removable probe against the real verifier retained regular-tree 4/1/6 PASS and rejected eight byte-identical symlink attacks covering repository root, handoff manifest, checksum authority, checksum-listed source, Schema, success, error and intermediate Golden directory with sanitized errors
+- authority_integrity: 17/17 checksums PASS; four authority Schemas plus success Golden are exact snapshot byte matches; live authority tree has no symlink; frozen handoff and checksum hashes remain b219e717...06af and 641dfaaa...ae8
+- p1_quantity_closure: Schema exact maximum 9007199254740991 accepts while above-maximum, zero and fraction reject; runtime rejects 0, -1, 1.5, unsafe integer, NaN and Infinity; prior maximum-plus-two attack throws before return with caller inputs unchanged
+- quote_regression: exact maximum single line accepted, normal equal identity merged to 3, installation and resolved/custom differences split, and quantities 1/9 remain identity-equal so quantity exclusion from identity is preserved
+- p2_closure: frontend revision request/response are ACKed and done; active task/project/board are UNDER_REVIEW NOT_ACCEPTED DIRTY, identify controlled Round 2 as current gate, remove the old review-not-started statement and preserve Round 1 FAIL plus recovery history
+- independent_validation: frozen Node 24.18.0 focused 48/48 and full 353/353 PASS; Product Configuration 4/1/6, old CMS 16/2/2 and ProductCard 8/3/6 verifiers PASS; lint, typecheck and Next 16.2.11 production build PASS with the same five routes
+- protected_scope: exact seven and ten inventories, package/lock, old verifiers, protected image and next-env hashes frozen; protected runtime/page/component/snapshot/CMS diff empty; no runtime imports, deferred feature implementation, temporary probe roots, Python bytecode or whitespace/governance issue
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after linked response acknowledgement
+- boundaries: no product source, tests, docs, README, task authority or Planner state edit; no database/dependency/external-system mutation, acceptance, Git, deployment or later capability work; PASS is not acceptance or Git authorization
+- message_status: exact Round 2 request and the single linked final PASS review_response are both acknowledged as done; the response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner owns fresh final validation plus any checked acceptance preparation

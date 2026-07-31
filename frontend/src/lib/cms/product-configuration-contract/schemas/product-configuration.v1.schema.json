@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/product-configuration/v1/product-configuration.v1.schema.json",
+  "title": "GDHE Product Configuration Document 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "schemaVersion",
+    "locale",
+    "type",
+    "product",
+    "articleNumberOptions",
+    "configurationPolicy",
+    "modifiedAt"
+  ],
+  "properties": {
+    "apiVersion": {
+      "const": "1"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "locale": {
+      "const": "en"
+    },
+    "type": {
+      "const": "product_configuration"
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "model", "name", "publicPath", "productKind", "quantityUnit"],
+      "properties": {
+        "id": {
+          "$ref": "uuid-v4.schema.json"
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "publicPath": {
+          "$ref": "public-path.schema.json"
+        },
+        "productKind": {
+          "const": "curtain_track"
+        },
+        "quantityUnit": {
+          "const": "piece"
+        }
+      }
+    },
+    "articleNumberOptions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "$ref": "article-number-option.v1.schema.json"
+      }
+    },
+    "configurationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["installationMethods", "packaging", "customLength"],
+      "properties": {
+        "installationMethods": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/installationMethod",
+              "properties": {
+                "method": {
+                  "const": "ceiling"
+                }
+              }
+            },
+            {
+              "$ref": "#/$defs/installationMethod",
+              "properties": {
+                "method": {
+                  "const": "wall"
+                }
+              }
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "packaging": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scope",
+            "basePackaging",
+            "logoPrinting",
+            "protectionArrangement"
+          ],
+          "properties": {
+            "scope": {
+              "const": "curtain_track"
+            },
+            "basePackaging": {
+              "$ref": "#/$defs/basePackagingPolicy"
+            },
+            "logoPrinting": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["available", "valueType"],
+              "properties": {
+                "available": {
+                  "const": true
+                },
+                "valueType": {
+                  "const": "boolean"
+                }
+              }
+            },
+            "protectionArrangement": {
+              "$ref": "#/$defs/protectionPolicy"
+            }
+          }
+        },
+        "customLength": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "articleNumberResolution",
+            "minimumExclusive",
+            "maximum",
+            "decimalPlaces"
+          ],
+          "properties": {
+            "enabled": {
+              "const": true
+            },
+            "articleNumberResolution": {
+              "const": "sales_follow_up"
+            },
+            "minimumExclusive": {
+              "const": 0
+            },
+            "maximum": {
+              "type": "null"
+            },
+            "decimalPlaces": {
+              "const": 1
+            }
+          }
+        }
+      }
+    },
+    "modifiedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "installationMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "changesTrackArticleNumber", "optionalAccessory"],
+      "properties": {
+        "method": {
+          "enum": ["ceiling", "wall"]
+        },
+        "changesTrackArticleNumber": {
+          "const": false
+        },
+        "optionalAccessory": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/accessoryReference"
+            }
+          ]
+        }
+      }
+    },
+    "accessoryReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "model", "name", "articleNumber"],
+      "properties": {
+        "id": {
+          "$ref": "uuid-v4.schema.json"
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "articleNumber": {
+          "type": "string",
+          "pattern": "^GDHEPRD[0-9]{6}$"
+        }
+      }
+    },
+    "basePackagingPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "selectionMode", "options"],
+      "properties": {
+        "required": {
+          "const": true
+        },
+        "selectionMode": {
+          "const": "single"
+        },
+        "options": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "standard"
+            },
+            {
+              "const": "carton"
+            },
+            {
+              "const": "large_shrink_wrap"
+            }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "protectionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "selectionMode", "options"],
+      "properties": {
+        "required": {
+          "const": false
+        },
+        "selectionMode": {
+          "const": "single"
+        },
+        "options": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "single_bag"
+            },
+            {
+              "const": "paired"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    }
+  }
+}

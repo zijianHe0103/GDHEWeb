@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <!-- Local non-production fallback; replace with the approved final brand favicon. -->
+  <title id="title">GDHE fallback monogram</title>
+  <rect width="64" height="64" rx="12" fill="#102b4e"/>
+  <path fill="#fff" d="M29 17v7h-8a8 8 0 1 0 0 16h2v-5h-5v-6h12v17h-9a15 15 0 1 1 0-30h8v1Z"/>
+  <path fill="#f2a900" fill-rule="evenodd" d="M35 17h8a15 15 0 0 1 0 30h-8V17Zm7 7v16h1a8 8 0 0 0 0-16h-1Z"/>
+</svg>

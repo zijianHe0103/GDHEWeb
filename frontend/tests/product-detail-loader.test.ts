@@ -5,6 +5,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 
 import errors from "../src/lib/cms/contracts/samples/errors/resolve-errors.json";
 import productSample from "../src/lib/cms/contracts/samples/success/resolve-product-alpha.json";
+import configurationSample from "../src/lib/cms/product-configuration-contract/samples/success/fgd-x15-pvc.json";
 import { loadProductDetailPage } from "../src/lib/product-detail/load";
 
 const originalEnvironment = {
@@ -46,6 +47,10 @@ describe("Product Detail page loader", () => {
       kind: "ready",
       preview: true,
       detail: { publicPath: "/products/fgd-x15-pvc/" },
+      configurationState: {
+        kind: "ready",
+        configuration: { options: [{ articleNumber: "GDHEPRD000172" }] },
+      },
     });
     expect(fetchSpy).not.toHaveBeenCalled();
   });
@@ -54,7 +59,14 @@ describe("Product Detail page loader", () => {
     const paths: string[] = [];
     await withLoopbackServer((path, response) => {
       paths.push(path);
-      sendJson(response, 200, candidatePayload());
+      if (path.startsWith("/wp-json/gdhe/v1/product-configurations?")) {
+        sendJson(response, 200, configurationSample, {
+          etag: '"configuration"',
+          "cache-control": "public, max-age=60",
+        });
+      } else {
+        sendJson(response, 200, candidatePayload());
+      }
     }, async (baseUrl) => {
       process.env.GDHE_PRODUCT_DETAIL_MODE = "cms";
       process.env.WORDPRESS_API_URL = baseUrl;
@@ -63,13 +75,18 @@ describe("Product Detail page loader", () => {
         kind: "ready",
         preview: false,
         detail: { model: "FGD X15+PVC" },
+        configurationState: {
+          kind: "ready",
+          configuration: { options: [{ articleNumber: "GDHEPRD000172" }] },
+        },
       });
     });
 
     expect(paths).toEqual([
       "/wp-json/gdhe/v1/resolve?locale=en&path=%2Fproducts%2Ffgd-x15-pvc%2F&schema=3.0.0",
+      "/wp-json/gdhe/v1/product-configurations?locale=en&schema=1.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
     ]);
-    expect(paths[0]).not.toContain("product-cards");
+    expect(paths.every((path) => !path.includes("product-cards"))).toBe(true);
   });
 
   test("maps only a validated gdhe_not_found HTTP 404 to not_found", async () => {
@@ -83,6 +100,31 @@ describe("Product Detail page loader", () => {
         kind: "not_found",
       });
     });
+  });
+
+  test("keeps a ready detail but sanitizes a configuration failure", async () => {
+    const paths: string[] = [];
+    await withLoopbackServer((path, response) => {
+      paths.push(path);
+      if (path.startsWith("/wp-json/gdhe/v1/product-configurations?")) {
+        sendJson(response, 400, errors.gdhe_invalid_schema, {
+          "cache-control": "no-store",
+        });
+      } else {
+        sendJson(response, 200, candidatePayload());
+      }
+    }, async (baseUrl) => {
+      process.env.GDHE_PRODUCT_DETAIL_MODE = "cms";
+      process.env.WORDPRESS_API_URL = baseUrl;
+
+      await expect(loadProductDetailPage()).resolves.toMatchObject({
+        kind: "ready",
+        detail: { model: "FGD X15+PVC" },
+        configurationState: { kind: "unavailable" },
+      });
+    });
+    expect(paths).toHaveLength(2);
+    expect(paths.every((path) => !path.includes("product-cards"))).toBe(true);
   });
 
   test.each([
@@ -153,8 +195,9 @@ function sendJson(
   response: ServerResponse,
   status: number,
   body: unknown,
+  headers: Record<string, string> = {},
 ): void {
-  response.writeHead(status, { "content-type": "application/json" });
+  response.writeHead(status, { "content-type": "application/json", ...headers });
   response.end(JSON.stringify(body));
 }
 

@@ -68,7 +68,7 @@ TASK-017 在 `/products/` 增加了一个固定 `noindex,nofollow` 的本地受�
 
 TASK-018 在 `/products/fgd-x15-pvc/` 增加了一个本地受控、固定 `noindex,nofollow` 的英语产品详情切片。它默认关闭，只能在非生产环境通过 server-only `GDHE_PRODUCT_DETAIL_MODE=preview|cms` 开启：`preview` 使用仓库内受保护测试候选且不访问网络；`cms` 只执行一次经过 Schema 3 Validator 验证的 `/resolve` 请求，并在 Product Detail DTO 边界排除 CMS 媒体、Article Number、内部产品代码和诊断信息。两种 ready 模式都明确显示本地非生产提示，production 中均强制返回 404。
 
-当前页面只包含 Product Hero、Overview、五项已确认规格和导航至 `/request-a-quote/` 的 `Request a Quote` 控件。该控件尚不添加询价条目、不提交表单，也不写入飞书；页面仍是本地纵向切片，不代表视觉验收、正式 SEO、生产产品发布或部署。完整启动方式与边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
+TASK-020 在这一本地详情页上接入了冻结的 Product Configuration 合同，新增 `Configure Your Track` 配置区。客户可选标准/定制长度、安装方式、轨道包装和数量，并使用 `Add to Quote` 在当前 React 页面内生成一条最新的临时 QuoteLine 摘要。该结果刷新即清空，尚未建立多行 Quote Basket、30 天浏览器保存、询价提交或飞书写入；生产模式仍强制 404。完整启动、验证方式与当前边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
 
 ### 前端 server-only `/resolve` Transport
 

@@ -53,9 +53,22 @@ cd frontend
 npm test -- tests/quote-line-contract.test.ts
 ```
 
+## TASK-020 local consumer
+
+The contract bytes remain independent and immutable. TASK-020 consumes them in
+the local-only FGD X15+PVC detail route through a fixed server-only Transport,
+exact four-Schema runtime Validator, authentic wrapper and deeply frozen public
+DTO. The visible `Configure Your Track` form can construct one latest in-memory
+resolved or custom QuoteLine from DTO facts and primitive form values.
+
+CMS detail-ready orchestration performs one `/resolve` request followed by one
+fixed `/product-configurations` request and zero ProductCard or per-option
+requests. Configuration failure leaves the detail visible and exposes only a
+sanitized navigation fallback. Production mode remains fail-closed at 404.
+
 ## Deferred capabilities
 
-This contract does not authorize a visible configurator, basket, 30-day browser
-storage, contact form, submission endpoint, server-side revalidation service,
-WordPress QuoteLine storage, Feishu access, email, Webhook, deployment or
-production publication.
+The local consumer does not create a basket, 30-day browser storage, contact
+form, submission endpoint, server-side revalidation service, WordPress
+QuoteLine storage, Feishu access, email, Webhook, deployment or production
+publication.

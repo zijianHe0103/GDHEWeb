@@ -87,3 +87,8 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`4a92c0770388d4a198a123a8b667753f39431015`
   - Remote branch：`origin/codex/TASK-018-fgd-x15-product-detail-slice`
   - Main：`origin/main` at `4a92c0770388d4a198a123a8b667753f39431015`
+- `TASK-019` 建立 FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同 — `CLOSED` / `MERGED`
+  - 任务文件：`TASKS/ARCHIVE/TASK-019-product-configuration-quote-line-contract.md`
+  - Commit：`7c140448cb723acbe2c3debed844fc5ea4ffb267`
+  - Remote branch：`origin/codex/TASK-019-product-configuration-contract`
+  - Main：`origin/main` at `7c140448cb723acbe2c3debed844fc5ea4ffb267`

@@ -252,19 +252,32 @@ npm run dev
 CMS mode performs exactly one fixed English `/resolve` request for
 `/products/fgd-x15-pvc/`, validates it with the existing 16-Schema runtime
 Validator, and adapts only the exact confirmed product identity and five
-display specifications. It performs no ProductCard collection request and no
-retry. Only a validated `gdhe_not_found` HTTP 404 becomes a page 404; every
-other failure renders a sanitized unavailable state.
+display specifications. After a ready detail, it performs exactly one fixed
+Product Configuration request; it performs no ProductCard collection request,
+per-option request or retry. Only a validated `gdhe_not_found` HTTP 404 from
+the detail boundary becomes a page 404. A configuration failure keeps the
+detail visible and replaces the form with a sanitized navigation-only fallback.
 
 Both modes render the repository-local protected image and exclude CMS media,
 Article Number, internal product codes, raw modules, relations and diagnostics.
 Both ready states also display an explicit local test-candidate notice; CMS
 mode identifies itself as a non-production CMS test candidate rather than
 implying that validated data is publicly published.
-The visible `Request a Quote` control is ordinary navigation to the currently
-deferred `/request-a-quote/` workspace; it does not add, save or submit an RFQ.
-This slice is not a production product page, formal SEO implementation, final
-copy, visual acceptance, CMS import or deployment authorization.
+When configuration is ready, the Hero action navigates to the local
+`Configure Your Track` section. The form creates only one latest in-memory
+QuoteLine and replaces that result on the next valid action. It does not create
+a basket, write browser storage, submit an RFQ or contact an external system.
+When configuration is unavailable, `Request a Quote` remains ordinary
+navigation to the currently deferred `/request-a-quote/` workspace. This slice
+is not a production product page, formal SEO implementation, final copy, visual
+acceptance, CMS import or deployment authorization.
+
+Run the TASK-020 focused gates with Node.js 24.18.0:
+
+```sh
+npm test -- tests/product-configuration-transport.test.ts tests/product-configuration-runtime-validator.test.ts tests/product-configuration-adapter.test.ts tests/product-configuration-server-only.test.ts tests/product-configuration-quote-builder.test.ts tests/product-configurator-presentation.test.ts tests/product-detail-loader.test.ts tests/product-detail-route.test.ts
+node scripts/verify-product-configuration-contract.mjs
+```
 
 ## Server-only CMS Transport
 

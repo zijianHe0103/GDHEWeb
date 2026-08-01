@@ -62,6 +62,14 @@ async function buildClientImport(
       join(temporaryRoot, "src", "lib", "product-detail"),
       { recursive: true },
     );
+    await mkdir(
+      join(temporaryRoot, "src", "lib", "product-configuration"),
+      { recursive: true },
+    );
+    await cp(
+      join(projectRoot, "src", "lib", "product-configuration", "preview.ts"),
+      join(temporaryRoot, "src", "lib", "product-configuration", "preview.ts"),
+    );
     await cp(
       join(projectRoot, "src", "types"),
       join(temporaryRoot, "src", "types"),

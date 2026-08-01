@@ -5,6 +5,10 @@ import {
   ProductDetailUnavailable,
   ProductDetailView,
 } from "../../../components/product-detail";
+import {
+  ProductConfigurator,
+  ProductConfiguratorUnavailable,
+} from "../../../components/product-configurator";
 import { loadProductDetailPage } from "../../../lib/product-detail/load";
 import styles from "./page.module.css";
 
@@ -27,7 +31,20 @@ export default async function ProductDetailPage() {
   return (
     <main className={styles.main}>
       {state.kind === "ready" ? (
-        <ProductDetailView detail={state.detail} preview={state.preview} />
+        <>
+          <ProductDetailView
+            detail={state.detail}
+            preview={state.preview}
+            configurationAvailable={state.configurationState.kind === "ready"}
+          />
+          {state.configurationState.kind === "ready" ? (
+            <ProductConfigurator
+              configuration={state.configurationState.configuration}
+            />
+          ) : (
+            <ProductConfiguratorUnavailable />
+          )}
+        </>
       ) : (
         <ProductDetailUnavailable />
       )}

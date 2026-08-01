@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY-RESPONSE",
+  "type": "visual_qa_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-020",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-01T08:25:31Z",
+  "requires_response_to": "MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-020/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-020/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Recovery FAIL; severe=0; obvious=0; detail=1. System-level native keyboard gates all passed and Round 1 keyboard blocker is closed. Chrome Console exposed same-origin /favicon.ico 404; Network remained empty across native Enter. Smallest correction: provide or correctly declare favicon; preserve all Round 1 evidence.",
+  "done_at": "2026-08-01T11:20:08Z",
+  "updated_at": "2026-08-01T11:20:08Z"
+}

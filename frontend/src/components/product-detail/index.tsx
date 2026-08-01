@@ -4,11 +4,13 @@ import styles from "./product-detail.module.css";
 type ProductDetailViewProps = Readonly<{
   detail: ProductDetailDto;
   preview: boolean;
+  configurationAvailable?: boolean;
 }>;
 
 export function ProductDetailView({
   detail,
   preview,
+  configurationAvailable = false,
 }: ProductDetailViewProps) {
   return (
     <article className={styles.detail}>
@@ -38,8 +40,15 @@ export function ProductDetailView({
               ? "Local test candidate — details and copy remain replaceable"
               : "Local CMS test candidate — not a production product page"}
           </p>
-          <a className={styles.action} href={detail.action.target}>
-            {detail.action.label}
+          <a
+            className={styles.action}
+            href={
+              configurationAvailable ? "#configure-product" : detail.action.target
+            }
+          >
+            {configurationAvailable
+              ? "Configure & Add to Quote"
+              : detail.action.label}
           </a>
         </div>
       </section>

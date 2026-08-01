@@ -2,14 +2,197 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-019
+current_task: TASK-020
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-07-31T13:42:04Z
+last_updated: 2026-08-01T15:26:27Z
 
 ## 当前焦点
 
-`TASK-019` 已由用户通过精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Adversarial Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=2 / P2=1` 作为历史保留。唯一下一步是创建正式提交、立即推送任务分支，再 fast-forward 合并并推送 `main`；尚未执行部署。
+`TASK-020` 已由用户通过精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Adversarial Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=1 / P2=0` 及全部 visual 历史保留。唯一下一步是只暂存 TASK-020 受控交付物，创建正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署，也不开始 TASK-021。
+
+## TASK-020 Formal Delivery Authorization 2026-08-01T15:26:27Z
+
+- authorization: 用户精确输入 `确认 TASK-020 完成并提交到远端`。
+- acceptance: `task_accept.py check` 和 `accept` 均成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: aggregate execution、Planner final validation、Visual Round 2 `PASS / 0 / 0 / 0`、Adversarial Round 2 `PASS / 0 / 0 / 0`、Planner Summary、README/document impact 与 readiness 门均通过。
+- branch: `codex/TASK-020-visible-product-configurator`，基线 `7c140448cb723acbe2c3debed844fc5ea4ffb267`。
+- exclusion: 用户自有 `.codex/config.toml` 与历史 resume packet 不属于 TASK-020，不得暂存。
+- unique_next: 只暂存 TASK-020 受控交付物，正式提交后立即推送任务分支，再 fast-forward 合并并推送 `main`。
+
+## TASK-020 Awaiting-user View Sync Recovery 2026-08-01T12:47:58Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-08-01T12:46:44Z` 成功。
+- finding: Project focus、Board 与 active-task 当前叙述仍显示旧 `UNDER_REVIEW` / prepare pending。
+- controlled_reopen: `AWAITING_USER -> NEEDS_REVISION`，只用于同步人类可读视图；产品、测试、视觉、review、acceptance 和 Git facts 不变。
+- canonical_artifacts: aggregate `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与 `DIFF_OR_OUTPUT_SUMMARY.md` 已补齐；首次 prepare 的唯一命名缺口已关闭。
+- unique_next: 完成本 patch 后 fresh validate 并再次 checked prepare；成功后只等待精确正式交付口令。
+
+## TASK-020 Round 2 PASS And Planner Final Validation 2026-08-01T12:43:56Z
+
+- response: `MSG-TASK-020-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: current `PASS / P0=0 / P1=0 / P2=0`；Round 1 `FAIL / P0=0 / P1=1 / P2=0` 完整保留。
+- numeric: 两原攻击、canonical-string 攻击、safe tenths boundary、JSON round-trip、普通 5.8 与 standard success 均独立通过。
+- final_validation: focused `13/13`、full `35 files / 406 tests`、verifiers `16/2/2` + `8/3/6` + `4/1/6`、lint/typecheck/clean build、三项 smokes、Core/SCF/12-table DB、17/17 handoff、20/20 visual hashes、保护/diff/DPG 门 PASS。
+- cleanup: port 3000 无 listener；final build `.next` 已移动到 recoverable Trash；用户排除文件保持不变。
+- docs: document impact `RESOLVED`，README impact `UPDATED`；Planner final validation/summary complete。
+- unique_next: 运行 checked `task_transition.py prepare-awaiting-user`；成功后只等待用户精确正式交付口令，不得 commit/push/merge/deploy 或开始 TASK-021。
+
+## TASK-020 Adversarial Review Round 2 ACK 2026-08-01T12:28:36Z
+
+- message: `MSG-TASK-020-ADVERSARIAL-REVIEW-R2`。
+- delivery: registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，real turn `019fbd4b-4552-7950-b0c6-a126b0d0d74b`。
+- ack: reviewer 在 substantive read-only review 前 ACK；request 已进入 done。
+- unique_next: 等待唯一 linked final verdict；不得提前 final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Custom-length P1 Checkpoint PASS 2026-08-01T12:25:13Z
+
+- response: `MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- red: prior builder run had 11 PASS plus exactly two disclosed FAILs: finite rounding and Infinity false success。
+- green: scaled tenths must be positive/safe and round-trip exactly; both attacks now return only sanitized customLength invalid, ordinary 5.8 and standard output remain Schema-valid。
+- validation: focused `13/13`、full `35 files / 406 tests`、verifiers `16/2/2` + `8/3/6` + `4/1/6`、lint/typecheck/build、三项 smokes、20/20 visual hashes、保护哈希/diff 与 DPG 门 PASS。
+- cleanup: port 3000 无 listener；Planner build `.next` 已移到 recoverable Trash。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；Round 1 FAIL 仍为历史，尚无 Round 2 verdict。
+- unique_next: 受控派发 `ADVERSARIAL_REVIEW_R2_DISPATCH.md` 定义的窄复审；不得提前 final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Custom-length P1 Frontend Revision ACK 2026-08-01T12:10:56Z
+
+- message: `MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1`。
+- delivery: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，real turn `019fbd3a-f4d2-73b2-9206-752c4d2bfe60`。
+- ack: 接收方在 builder/test mutation 前 ACK；request 已进入 done。
+- helper: frontend 复核 checked reopen 对 NEEDS_REVISION 同样安全拒绝，零修改；未伪造 AWAITING_USER。
+- unique_next: 等待唯一 linked execution response，随后独立复现攻击与全量门；不得提前 Round 2、final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Adversarial Round 1 FAIL Recovery 2026-08-01T12:07:55Z
+
+- response: `MSG-TASK-020-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `FAIL / P0=0 / P1=1 / P2=0`；Planner final validation 不允许。
+- p1: unbounded canonical one-decimal custom length can round silently or become Infinity; builder returns `ok:true`, rendered summary may show Infinity, and JSON serialization changes it to null.
+- preserved: historical Planner FAIL、Visual BLOCKED、Keyboard Recovery FAIL 与 current Visual Round 2 PASS 均保留；其余 full `404/404`、verifiers、lint/typecheck/build/smokes、20/20 visual hashes、保护范围和 DPG 门 PASS。
+- transition_helper: checked reopen 对真实 UNDER_REVIEW 安全拒绝，因为当前 helper 仅允许 AWAITING_USER；零文件修改，随后显式记录 `NEEDS_REVISION` recovery。
+- dispatch: `FRONTEND_ADVERSARIAL_CUSTOM_LENGTH_P1_R1_DISPATCH.md` 只授权 custom-length finite/exact conversion guard 和两条直接回归。
+- unique_next: frontend 修改前 ACK、严格 RED/GREEN、fresh Planner checkpoint，再派发窄 Round 2；不得提前 visual、final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Adversarial Review Round 1 ACK 2026-08-01T11:56:41Z
+
+- message: `MSG-TASK-020-ADVERSARIAL-REVIEW-R1`。
+- delivery: registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c`，real turn `019fbd2d-6977-7290-abb3-ace3a425109a`。
+- ack: 接收方在读取实现和运行审查前 ACK，request 已进入 done。
+- scope: 只读挑战 runtime consumer、cardinality、DTO/React 边界、QuoteLine 构造/替换、无持久化/提交/飞书、视觉/网络/编码和保护/文档边界。
+- unique_next: 等待唯一 linked review response；不得提前 final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Visual Round 2 And Pre-review Validation PASS 2026-08-01T11:53:06Z
+
+- visual_response: `MSG-TASK-020-VISUAL-QA-FAVICON-R2-RESPONSE` 已 validate、ACK 并进入 done。
+- visual: `PASS / severe 0 / obvious 0 / detail 0`；Round 1 BLOCKED 与 Keyboard Recovery `FAIL / 0 / 0 / 1` 历史原样保留。
+- browser: clean Guest 的 local icon HTTP 200、favicon.ico 0 request/404、Console 0；native Enter 前后均为 24 个同源 URL、增量 0，单一完整摘要和 canonical URL 不变。
+- cleanup: Planner dev server 已停止，port 3000 无 listener；旧 dev `.next` 移到 `/Users/arron/.Trash/gdhe-task020-next-clean.gkAg6U`，随后 fresh production build PASS。
+- validation: full `35 files / 404 tests`、verifiers `16/2/2`、`8/3/6`、`4/1/6`、lint、typecheck、三项 production smoke、20/20 visual hashes、保护哈希/diff 与 DPG 门 PASS。
+- transition: `IN_PROGRESS -> UNDER_REVIEW`；仍是 `NOT_ACCEPTED / DIRTY`。
+- unique_next: 受控派发一轮只读 adversarial review；在独立 verdict 前不得 final validation、验收、Git、部署或 TASK-021。
+
+## TASK-020 Favicon D1 Checkpoint PASS And Visual Round 2 ACK 2026-08-01T11:37:11Z
+
+- frontend_response: `MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- revision: 只新增 `frontend/src/app/icon.svg` 与 `frontend/tests/app-icon.test.ts`；fallback monogram 明确为非生产临时品牌图标，无外链、脚本、动画、嵌入图片、产品数据或内部字段。
+- planner_checkpoint: dev `GET /icon.svg` 为 `200 image/svg+xml`、504 bytes，HTML icon link 指向 `/icon.svg`，served bytes 与 source 相同；focused `1/1`、full `35 files / 404 tests`、lint、typecheck、三套 verifier、保护哈希、diff 与 DPG 门 PASS。
+- dispatch: `MSG-TASK-020-VISUAL-QA-FAVICON-R2` 已由 visual_qa 在 real turn `019fbd1b-4c1e-7ae0-9d4a-69edc9b5eb22` ACK 并进入 done。
+- scope: 只允许 fresh clean Chrome 验证 icon 200、无 `/favicon.ico` 404、Console zero error/warning、受控 Network、最小 native keyboard chain、单一摘要与 canonical URL 不变。
+- unique_next: 等待唯一 linked visual response；fresh visual `PASS / 0 / 0 / 0` 后停止 Planner server、清理生成物并运行 pre-review validation，方可派发 adversarial review。
+
+## TASK-020 Visual Keyboard PASS And Favicon D1 Revision ACK 2026-08-01T11:25:47Z
+
+- visual_response: `MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY-RESPONSE` 已 validate、ACK 并进入 done。
+- keyboard: system-level Chrome AX 直接证明连续 Tab、Standard↔Custom arrow、keyboard-only standard configuration、focused native Enter、唯一完整摘要和 URL 不变；Network 录制跨二次 Enter 仍为空。
+- verdict: `FAIL / severe 0 / obvious 0 / detail 1`；Round 1 evidence BLOCKED 历史保留，键盘 blocker 已关闭。
+- d1: page-load `GET /favicon.ico` → 404，是唯一 Console error；不是配置器、提交或外部网络 finding。
+- helper: task-switch checked reopen 因当前真实 IN_PROGRESS 安全拒绝、零修改；等价窄修订恢复已记录。
+- dispatch: `FRONTEND_VISUAL_FAVICON_D1_R1_DISPATCH.md` 只授权 `frontend/src/app/icon.svg`、一个聚焦测试和 lane evidence；`MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1` 已由 frontend ACK。
+- unique_next: 等待 linked frontend response 并 fresh checkpoint；通过后仅复测 fresh Chrome favicon/Console/Network，再决定是否解锁 adversarial review。
+
+## TASK-020 Visual Round 1 Evidence Blocker And Keyboard Recovery 2026-08-01T08:13:02Z
+
+- response: `MSG-TASK-020-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- verdict: `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE / severe 0 / obvious 0 / detail 0`；页面本身没有视觉或产品 finding。
+- passed: 1440/1024/768/390/320、default/invalid/standard/custom replacement、focus rendering、labels/errors/live region、44px hit target、zero overflow、no motion dependency、same-origin resources、zero console warning/error、zero WordPress/ProductCard/submission/Feishu request、11/11 real PNG/hash gates。
+- blocker: 同一 in-app browser channel 不能从 body/first link 传递原生 Tab、ArrowRight 或 Enter；直接聚焦与 mouse 证据未被冒充 native keyboard PASS。
+- helper: checked reopen 安全拒绝真实 IN_PROGRESS；等价 evidence-recovery 语义已记录，不伪造 AWAITING_USER 或产品 NEEDS_REVISION。
+- recovery: `VISUAL_QA_KEYBOARD_RECOVERY_DISPATCH.md` 只授权 system-level computer-use 对真实本地浏览器做连续 Tab、radio arrow、keyboard-only standard configuration 和 Enter submit；已由 visual_qa ACK。
+- unique_next: 等待唯一 linked keyboard recovery response；PASS 后才允许停止 Planner server、清理生成物、运行 pre-review validation。不得提前 adversarial review。
+
+## TASK-020 Final Implementation Checkpoint PASS And Visual QA ACK 2026-08-01T07:53:03Z
+
+- label_response: `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2-RESPONSE` 已 validate、ACK 并进入 done；表单与结果摘要共用关闭的客户标签映射，提交 enum 与 QuoteLine 语义未改变。
+- independent: focused `88/88`、full `403/403`、verifiers `16/2/2`、`8/3/6`、`4/1/6`、lint、typecheck、production build、两项 production smoke、17/17 handoff、保护哈希/范围、diff 与 DPG 门 PASS。
+- evidence: `FRONTEND_PLANNER_CHECKPOINT_PASS.md` 记录当前字节 PASS，并透明更正 A1 ProductCard/ProductList aggregate 文字；16 个受保护文件本身始终相对基线零 diff。
+- docs: 根 `README.md`、`frontend/README.md` 和 `docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md` 已同步本地可见配置器及仍未实现的 Basket/持久化/提交/飞书边界。
+- visual: `MSG-TASK-020-VISUAL-QA-R1` 已由 visual_qa 真实 turn `019fbc4c-f233-74a2-b56f-6d19789abcca` ACK 并进入 done；Planner-owned preview 继续运行，visual_qa 不启动、停止或重配服务器。
+- unique_next: 等待唯一 linked visual response；若 PASS，停止 Planner-owned server、清理生成物并运行 pre-review validation；若 FAIL，只派发最小视觉修订。视觉 PASS 前不得进入 adversarial review。
+
+## TASK-020 Frontend Planner Checkpoint Round 2 Label P1 Recovery 2026-08-01T07:32:04Z
+
+- r1_response: Round 1 narrow response is validate/ACK/done; complete summary, eight-field error association and one-scalar standard-to-custom replacement independently pass.
+- independent: focused `88/88`, full `403/403`, verifiers `16/2/2`, `8/3/6`, `4/1/6`, lint, typecheck, build and both production smokes PASS.
+- remaining_p1: form controls expose `Ceiling/Wall`, `standard/carton/large shrink wrap`, `Logo printing`, `single bag/paired` instead of the frozen customer labels already used by the summary.
+- helper: checked reopen safely refused truthful IN_PROGRESS; equivalent NEEDS_REVISION semantics preserved without fabricating AWAITING_USER.
+- dispatch: `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2` delivered to real frontend turn `019fbc3b-586e-7ad2-bc13-01bffe6f19df` and ACKed before mutation.
+- unique_next: wait for the linked label response, independently reproduce the final implementation checkpoint, then and only then dispatch visual QA.
+
+## TASK-020 Frontend Planner Checkpoint Round 1 FAIL Recovery 2026-08-01T07:01:39Z
+
+- response: `MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION-RESPONSE` 已 validate、ACK 并进入 done。
+- independent_test: sandbox 回环被拒后，系统允许的本地回环复跑为 `9 files / 84 tests` PASS。
+- verdict: `FAIL / P0=0 / P1=2 / P2=0`。
+- p1_1: 最新行摘要只显示长度、颜色和数量，缺少型号、标准/定制、安装、基础包装、Logo、保护方式和单位。
+- p1_2: 基础包装等可见错误没有关联行内提示；现有测试仅渲染初始 markup/扫源码，未操作 invalid -> standard -> custom 替换链。
+- helper: checked `reopen` 因真实状态是 `IN_PROGRESS` 而安全拒绝、零修改；本记录使用等价 `NEEDS_REVISION` 语义，不伪造 AWAITING_USER。
+- dispatch: `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1` 真实送达 frontend turn `019fbc20-09be-7e21-b795-0ae60dc34f87`，已在修改前 ACK。
+- unique_next: 等待 linked revision response 并独立重做 checkpoint；不提前 visual QA、review、Git、部署或延期功能。
+
+## TASK-020 Frontend Dispatch ACK 2026-08-01T06:24:02Z
+
+- message: `MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION`。
+- delivery: registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445`，real turn `019fbbfd-9b08-7f20-b93a-7ce5573fe805`，dispatch-once recorded。
+- ack: 接收方在任何测试或产品修改前 ACK，controlled request 已进入 `done`。
+- scope: A1～A6 的 fixed Transport、四 Schema Validator、public DTO/Adapter、page orchestration、pure QuoteLine builder 与可见单条内存配置器。
+- boundary: visual QA、review、acceptance、Git、deployment、Basket/persistence/submission/Feishu 继续禁止。
+- unique_next: 等待唯一 linked `execution_response`，然后由 Planner 复验代码、测试、保护哈希和边界。
+
+## TASK-020 A1 Design And Baseline PASS 2026-08-01T06:19:47Z
+
+- artifacts: `REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`BASELINE_VALIDATION.md`、`PROTECTED_BASELINE.md`。
+- runtime: Node `24.18.0`、npm `11.16.0`、PHP `8.3.32`、WordPress `7.0.2`、GDHE Site `0.6.0`、SCF `6.9.2`。
+- frontend: 三套 verifier `16/2/2`、`8/3/6`、`4/1/6`，聚焦 `7 files / 80 tests`，full `26 files / 353 tests`，lint、typecheck、production build 和两个 production smoke PASS。
+- cms: Product Configuration handoff `17/17`、Core/SCF checksums、12-table database read-only check PASS；实际 GDHE MySQL 一直位于 `127.0.0.1:3307`，无关默认 3306 未启动或修改。
+- protected: CMS、Product Configuration snapshot、QuoteLine、Product Detail、ProductCard/ProductList、package/lock、保护图片和 next-env 哈希已冻结；用户 `.codex/config.toml` 与历史 resume packet 继续排除。
+- transition: `READY -> IN_PROGRESS`。
+- unique_next: 受控派发 frontend A1～A6 TDD 实施消息；不得提前 visual QA、review、验收、Git、部署、Basket、提交或飞书。
+
+## TASK-020 Requirement Confirmation 2026-07-31T23:31:37Z
+
+- authorization: 用户输入精确口令 `确认 TASK-020 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`。
+- scope: Product Configuration server-only runtime consumer、现有详情页可见配置模块、标准/定制长度、安装、轨道包装、数量与最新一条内存 QuoteLine。
+- sequencing: 先完成 Planner REQUIREMENTS/DESIGN/IMPLEMENTATION_PLAN/受保护基线；通过后才允许 frontend TDD 实施，随后 visual QA 和 adversarial review。
+- exclusions: 多行 Basket、30 天持久化、提交 API、飞书、CMS 修改、依赖、Git 交付和部署继续禁止。
+- unique_next: 执行设计与基线门，不得先写生产代码。
+
+## TASK-020 Intake 2026-07-31T23:19:58Z
+
+- request: 用户创建“FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片”。
+- branch: `codex/TASK-020-visible-product-configurator`，基线 `main` / `origin/main` at `7c140448cb723acbe2c3debed844fc5ea4ffb267`。
+- scope: TASK-019 Product Configuration 的 server-only runtime consumer、现有详情页配置表单、标准/定制长度、安装、轨道包装、数量和一条页面内存 QuoteLine 摘要。
+- boundary: 不实现多行 Basket、30 天保存、联系表单、服务端提交、飞书、CMS 修改、依赖、部署或 Git 交付。
+- protection: TASK-019 权威 Schema/snapshot/QuoteLine 语义、CMS、用户自有 `.codex/config.toml` 与历史 resume packet 保持不变并排除。
+- unique_next: 等待精确口令 `确认 TASK-020 需求并开始执行`。
+
+## TASK-019 Closed And Archived 2026-07-31T23:19:58Z
+
+- delivery_commit: `7c140448cb723acbe2c3debed844fc5ea4ffb267`。
+- verification: TASK-019 本地/远端任务分支、本地 `main` 与远端 `main` 均指向同一正式提交。
+- transition: `ACCEPTED / FORMAL_COMMIT_PENDING` 同步为 `CLOSED / MERGED` 并归档。
+- deployment: 未执行。
+- next: 独立 TASK-020 intake；不得在 TASK-019 归档文件继续实施 UI、Basket、提交或飞书集成。
 
 ## TASK-019 Formal Delivery Authorization 2026-07-31T13:42:04Z
 

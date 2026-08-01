@@ -1,0 +1,31 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-020",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-01T07:00:24Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact revision request before any test or product mutation. Read TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R1_DISPATCH.md and close only P1-1 and P1-2 under strict TDD. Render the complete frozen customer-readable latest QuoteLine summary; associate sanitized inline errors with every builder-returned visible field; and add direct production interaction/state regressions proving invalid no-line, valid standard summary, valid custom replacement, no append, no persistence/network/raw/internal leakage. Preserve all passing A1-A5 behavior and protected bytes. Return exactly one linked execution_response. Do not modify CMS, frozen Product Configuration/QuoteLine authority, Transport, Validator, DTO, Product Detail facts, ProductCard/ProductList, package/lock, protected image, root README, Planner authority, Basket, persistence, submission, Feishu, Git, deployment, visual QA or review.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md",
+    "TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-020/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R1_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0/npm 11.16.0. No dependency change. The sandboxed focused rerun failed only with listen EPERM; unrestricted current bytes passed 9 files/84 tests. This is a narrow Planner checkpoint revision, not visual QA, review, acceptance or delivery.",
+  "done_at": "2026-08-01T07:01:39Z",
+  "updated_at": "2026-08-01T07:01:39Z"
+}

@@ -3566,3 +3566,150 @@ Each execution records:
 - Current delivery state is ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING on `codex/TASK-019-product-configuration-contract`.
 - User-owned `.codex/config.toml` and historical resume packets remain excluded.
 - Next: controlled staging, formal Chinese commit, task-branch push, fast-forward main merge and main push; no deployment.
+
+## 2026-07-31T23:19:58Z TASK-019 closure and TASK-020 intake
+
+- Independently verified local `main`, remote `main`, local TASK-019 branch and remote TASK-019 branch all resolve to formal delivery commit `7c140448cb723acbe2c3debed844fc5ea4ffb267`.
+- Archived TASK-019 as `CLOSED / ACCEPTED / MERGED`; no deployment was inferred or performed.
+- Switched from delivered `main` to new branch `codex/TASK-020-visible-product-configurator`.
+- Created only the TASK-020 requirement card and Lane Plan for the FGD X15+PVC Product Configuration runtime consumer, visible configurator and one in-memory QuoteLine `Add to Quote` result.
+- Preserved and excluded user-owned `.codex/config.toml` and historical resume packets.
+- No frontend product code, CMS, database, Feishu, external-system, Git delivery or deployment implementation started.
+- Unique next step: wait for exact phrase `确认 TASK-020 需求并开始执行`.
+
+## 2026-07-31T23:31:37Z TASK-020 requirements confirmed
+
+- User supplied the exact requirement-confirmation phrase; TASK-020 moved to `READY / NOT_ACCEPTED / DIRTY`.
+- The confirmed slice remains Product Configuration server-only runtime consumption, the existing FGD X15+PVC visible configurator and one latest in-memory QuoteLine result.
+- Full Basket, 30-day persistence, submission API, Feishu, CMS mutation, dependency change, Git delivery and deployment remain excluded.
+- TDD is mandatory: each production seam requires a directly observed missing-behavior RED before minimum GREEN.
+- Unique next step: write REQUIREMENTS, DESIGN and IMPLEMENTATION_PLAN, capture protected baselines, then dispatch frontend only after the Planner design checkpoint passes.
+
+## 2026-08-01T06:19:47Z TASK-020 A1 design and baseline PASS
+
+- Completed `REQUIREMENTS.md`, `DESIGN.md`, `IMPLEMENTATION_PLAN.md`, `BASELINE_VALIDATION.md` and `PROTECTED_BASELINE.md` without frontend product mutation.
+- Reproduced three contract verifiers, Product Configuration handoff `17/17`, focused `7 files / 80 tests`, full Vitest `26 files / 353 tests`, lint, typecheck, production build and both production smokes.
+- Reproduced WordPress Core/SCF checksums and 12-table database read-only checks against the actual GDHE MySQL on `127.0.0.1:3307`; the unrelated default 3306 start attempt exited without a PID and made no GDHE change.
+- Froze CMS, Product Configuration, QuoteLine, Product Detail, ProductCard/ProductList, package/lock, protected media and next-env boundaries; unrelated user files remain excluded.
+- TASK-020 moved `READY -> IN_PROGRESS`. Unique next step: create and deliver one controlled frontend TDD execution message; recipient must ACK before mutation.
+
+## 2026-08-01T06:24:02Z TASK-020 frontend implementation dispatch ACK
+
+- Delivered `MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION` to registered frontend session `019f88cf-f8d2-7953-bdb4-9fbbe9876445` through real turn `019fbbfd-9b08-7f20-b93a-7ce5573fe805`; dispatch-once is recorded.
+- Frontend ACKed before any test or product mutation and moved the controlled request to done.
+
+## 2026-08-01T07:01:39Z TASK-020 frontend Planner checkpoint Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION-RESPONSE`; the linked response is in done.
+- Independently inspected the production configurator, frozen requirements and presentation tests. Current customer summary contains only length/color/quantity instead of the complete frozen QuoteLine facts; base packaging and other rejected visible fields lack associated inline errors; the current test scans state source rather than exercising invalid -> standard -> custom replacement.
+- Unrestricted Node 24.18.0 focused rerun passes `9 files / 84 tests`; the first sandboxed run failed only with `listen EPERM`. This proves a coverage/acceptance gap, not a regression in the passing technical seams.
+- Verdict: `FAIL / P0=0 / P1=2 / P2=0`; A1-A5, frozen authority and protected boundaries remain passing.
+- Checked `task_transition.py reopen` safely refused because truthful state is `IN_PROGRESS`, not `AWAITING_USER`; recorded equivalent NEEDS_REVISION recovery without fabricating AWAITING_USER.
+- Created `FRONTEND_PLANNER_CHECKPOINT_P1_R1_DISPATCH.md` and sent `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1` to real frontend turn `019fbc20-09be-7e21-b795-0ae60dc34f87`.
+- Frontend ACKed before revision mutation and moved the request to done. ACK won the race with `dispatch-once`, which truthfully returned queue empty; no dispatch metadata was fabricated.
+- Unique next step: wait for the linked narrow revision response, then independently rerun the checkpoint before visual QA.
+
+## 2026-08-01T07:32:04Z TASK-020 frontend Planner checkpoint Round 2 label P1 recovery
+
+- Validated and ACKed `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE`.
+- Independent current-byte reproduction passes focused 88/88, full 403/403, all three verifiers, lint, typecheck, production build and both production smokes. Round 1 complete-summary, eight-error and scalar replacement causes are closed.
+- Fresh code/requirements comparison found one remaining P1: form controls expose enum-style labels instead of the frozen customer labels already used by the result summary.
+- Checked reopen again safely refused truthful IN_PROGRESS; no state mutation or fabricated AWAITING_USER.
+- Created `FRONTEND_PLANNER_CHECKPOINT_P1_R2_DISPATCH.md` and delivered `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2` to real turn `019fbc3b-586e-7ad2-bc13-01bffe6f19df`; frontend ACKed before mutation.
+- Unique next step: wait for linked response, reproduce the exact label markup and final gates, then unlock visual QA only if PASS.
+- Authorized scope remains A1～A6 only: fixed Product Configuration runtime consumer, public DTO/page state, pure QuoteLine builder and one visible in-memory configurator result.
+- Unique next step: wait for the linked execution response and independently reproduce its evidence; visual QA and review remain blocked.
+
+## 2026-08-01T07:53:03Z TASK-020 final implementation checkpoint PASS and visual QA ACK
+
+- Validated and ACKed `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2-RESPONSE`; form controls and result summary now share frozen customer labels without changing submitted enums or QuoteLine semantics.
+- Independently reproduced focused 88/88, full 403/403, all three verifiers, lint, typecheck, production build, both production smokes, 17/17 handoff, protected hashes/scope, diff and DPG gates.
+- Wrote `FRONTEND_PLANNER_CHECKPOINT_PASS.md`; preserved both historical failures and disclosed the evidence-only aggregate correction without changing any protected source byte.
+- Updated root README, frontend README and the Product Configuration/QuoteLine frontend contract for the visible local slice and deferred Basket/persistence/submission/Feishu boundaries.
+- Delivered `MSG-TASK-020-VISUAL-QA-R1` to registered visual_qa through real turn `019fbc4c-f233-74a2-b56f-6d19789abcca`; it ACKed before evidence capture and the request is in done.
+- Unique next step: wait for one linked visual response. No adversarial review, Git, deployment or deferred feature work before current visual PASS.
+
+## 2026-08-01T08:13:02Z TASK-020 visual R1 evidence blocker and keyboard recovery ACK
+
+- Validated and ACKed `MSG-TASK-020-VISUAL-QA-R1-RESPONSE`; visual/state/responsive/semantic/focus-rendering/network/encoding gates pass with severe/obvious/detail 0/0/0.
+- Current verdict is `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE`, because the in-app browser channel did not deliver native Tab, ArrowRight or Enter even from body/first link. No frontend defect is inferred.
+- Preserved 11/11 real PNG/hash evidence, both reports and the native full-page capture artifact. No product, server lifecycle, CMS, task authority, Git or deployment mutation occurred.
+- Checked reopen safely refused truthful IN_PROGRESS with zero mutation; recorded equivalent evidence-recovery semantics without fabricating AWAITING_USER or product NEEDS_REVISION.
+- Created `VISUAL_QA_KEYBOARD_RECOVERY_DISPATCH.md` and delivered `MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY` to real visual_qa turn `019fbc60-aede-7a22-a1e2-27d02c3fc45c`; it ACKed before system-level interaction.
+- Recovery uses the computer-use plugin-owned node_repl/sky wrapper and an independent Chrome app for continuous Tab, arrow radio, keyboard-only valid standard configuration and Enter submit.
+- Unique next step: wait for one linked recovery response. Adversarial review remains blocked until visual PASS.
+
+## 2026-08-01T11:25:47Z TASK-020 keyboard recovery PASS and favicon D1 revision ACK
+
+- Validated and ACKed `MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY-RESPONSE`; Round 1 blocker history remains preserved.
+- System-level Chrome AX proves continuous native focus traversal, arrow-key radio changes, keyboard-only standard configuration and native Enter producing one complete summary; Network stayed empty across a second Enter.
+- Current visual verdict is FAIL / severe 0 / obvious 0 / detail 1 solely because fresh Chrome loads `/favicon.ico` as 404 and reports one Console error.
+- Ran task-switch checked reopen before revision; it safely refused truthful IN_PROGRESS with zero mutation. Recorded equivalent narrow recovery without fabricating task state.
+- Created `FRONTEND_VISUAL_FAVICON_D1_R1_DISPATCH.md` and delivered `MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1` to real frontend turn `019fbd11-d76c-76a2-87fd-14ad2fa765e0`; frontend ACKed before mutation.
+- Scope is only a dependency-free local `src/app/icon.svg`, one direct test and execution evidence. No layout/page/configurator/contract/CMS/package/visual/review/Git/deployment mutation is authorized.
+- Unique next step: wait for linked frontend response and run fresh checkpoint before visual Console-only retest.
+## 2026-08-01T11:37:11Z TASK-020 favicon D1 checkpoint PASS and visual Round 2 ACK
+
+- ACKed and completed `MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1-RESPONSE`.
+- Independently reproduced local `/icon.svg` HTTP 200, 504-byte source/served parity, metadata link, focused 1/1, full 35 files/404 tests, lint, typecheck, all three verifiers, protected hashes, diff and DPG gates.
+- Wrote `FRONTEND_VISUAL_FAVICON_D1_R1_CHECKPOINT.md` and the narrow `VISUAL_QA_FAVICON_R2_DISPATCH.md`.
+- Delivered `MSG-TASK-020-VISUAL-QA-FAVICON-R2` to the registered visual_qa session through real turn `019fbd1b-4c1e-7ae0-9d4a-69edc9b5eb22`; recipient ACKed before clean-Chrome evidence capture.
+- Unique next step: wait for one linked visual response. Only a fresh 0/0/0 PASS unlocks server cleanup, pre-review validation and later adversarial review.
+## 2026-08-01T11:53:06Z TASK-020 visual Round 2 and pre-review PASS
+
+- ACKed and completed `MSG-TASK-020-VISUAL-QA-FAVICON-R2-RESPONSE`; current visual verdict is PASS 0/0/0 while all earlier BLOCKED/FAIL history remains preserved.
+- Stopped the Planner-owned dev server and confirmed no port-3000 listener. Moved the old generated dev `.next` to the recoverable Trash path, then produced a clean successful production build.
+- Reproduced full 35 files/404 tests, all three verifiers, lint, typecheck, all three production smokes, protected aggregates/hashes/diff, 20/20 visual hashes and DPG gates.
+- Wrote `PLANNER_PRE_REVIEW_VALIDATION.md` and the read-only `ADVERSARIAL_REVIEW_DISPATCH.md`.
+- Transitioned TASK-020 from IN_PROGRESS to UNDER_REVIEW; acceptance remains NOT_ACCEPTED and Git remains DIRTY.
+- Unique next step: one controlled independent adversarial review. No final validation, acceptance, Git, deployment or TASK-021 before its verdict.
+## 2026-08-01T11:56:41Z TASK-020 adversarial review Round 1 ACK
+
+- Delivered `MSG-TASK-020-ADVERSARIAL-REVIEW-R1` to registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` through real turn `019fbd2d-6977-7290-abb3-ace3a425109a`.
+- Reviewer ACKed before substantive read-only inspection; request is done.
+- Unique next step: wait for one linked PASS/FAIL response. No final validation, acceptance, Git, deployment or TASK-021 before the verdict.
+## 2026-08-01T12:07:55Z TASK-020 adversarial Round 1 FAIL recovery
+
+- Validated and ACKed `MSG-TASK-020-ADVERSARIAL-REVIEW-R1-RESPONSE`; verdict is FAIL / P0=0 / P1=1 / P2=0.
+- Reproduced finding scope from the report: a canonical but unbounded one-decimal custom length can silently round or become Infinity, yielding a false success and Schema-invalid/null serialization.
+- Ran checked `task_transition.py reopen`; current helper safely refused truthful UNDER_REVIEW because it only permits AWAITING_USER, with zero mutation. Recorded the equivalent NEEDS_REVISION recovery explicitly.
+- Created the narrow frontend RED/GREEN dispatch. Frozen authorities, normal business semantics, UI/visual evidence, CMS, deferred features, Git and deployment remain protected.
+- Unique next step: frontend pre-mutation ACK, linked revision response, fresh Planner checkpoint, then narrow adversarial Round 2.
+## 2026-08-01T12:10:56Z TASK-020 custom-length P1 frontend revision ACK
+
+- Delivered the narrow request to the registered frontend session through real turn `019fbd3a-f4d2-73b2-9206-752c4d2bfe60`.
+- Frontend ACKed before builder/test mutation; request is done.
+- Unique next step: one linked execution response, independent attack and full-gate reproduction, then narrow Round 2 only if PASS.
+## 2026-08-01T12:25:13Z TASK-020 custom-length P1 checkpoint PASS
+
+- ACKed the linked frontend response and independently inspected the scaled-tenths guard and two direct regressions.
+- Reproduced focused 13/13, full 35 files/406 tests, all three verifiers, lint, typecheck, production build, all three smokes, protected hashes/diff, 20/20 visual hashes and DPG gates.
+- Both prior attacks now fail closed; ordinary 5.8 and standard success remain frozen-Schema valid.
+- Wrote the Planner checkpoint and narrow Round 2 dispatch; moved NEEDS_REVISION -> UNDER_REVIEW while preserving Round 1 FAIL history.
+- Unique next step: one controlled narrow adversarial Round 2. No final validation, acceptance, Git or deployment before its verdict.
+## 2026-08-01T12:28:36Z TASK-020 adversarial Round 2 ACK
+
+- Delivered the narrow final review request to the registered reviewer through real turn `019fbd4b-4552-7950-b0c6-a126b0d0d74b`.
+- Reviewer ACKed before substantive read-only review; request is done.
+- Unique next step: wait for one linked final verdict. No final validation, acceptance, Git, deployment or TASK-021 before it.
+## 2026-08-01T12:43:56Z TASK-020 Round 2 PASS and Planner final validation
+
+- ACKed the final Round 2 response; current verdict PASS 0/0/0, Round 1 FAIL 0/1/0 fully preserved.
+- Reproduced focused 13/13, full 406/406, three verifiers, lint, typecheck, clean build, three smokes, Core/SCF checksums, 12-table DB, 17/17 handoff, 20/20 visual hashes, protected hashes/diff and DPG gates.
+- Removed generated build state to recoverable Trash and confirmed no port-3000 listener.
+- Wrote `PLANNER_FINAL_VALIDATION.md` and `PLANNER_SUMMARY.md`; docs RESOLVED and README UPDATED.
+- Unique next step: checked prepare-awaiting-user, then wait for exact user acceptance. No Git, deployment or TASK-021 before it.
+## 2026-08-01T12:47:58Z TASK-020 awaiting-user view sync recovery
+
+- First checked prepare succeeded at 12:46:44Z after adding the required canonical aggregate execution/validation filenames.
+- Project focus, Board and active-task narration still displayed the previous UNDER_REVIEW state.
+- Ran controlled reopen AWAITING_USER -> NEEDS_REVISION only for human-view synchronization; product, tests, visual, review, acceptance and Git facts are unchanged.
+- Unique next step: validate synchronized views and rerun checked prepare immediately, then wait for exact user acceptance.
+
+## 2026-08-01T15:26:27Z TASK-020 formal delivery authorized
+
+- User entered the exact phrase `确认 TASK-020 完成并提交到远端`.
+- `task_accept.py check` and `accept` passed; state is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Execution, final validation, Visual Round 2, Adversarial Round 2, Planner Summary and README/document impact gates remain PASS.
+- User-owned `.codex/config.toml` and historical resume packets remain explicitly excluded from staging.
+- Unique next step: stage only controlled TASK-020 delivery, create the formal Chinese commit, immediately push the task branch, fast-forward `main` and push `main`.

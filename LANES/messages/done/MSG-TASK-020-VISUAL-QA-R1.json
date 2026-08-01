@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-020-VISUAL-QA-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-020",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-01T07:49:08Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before execution. Perform only TASKS/ARTIFACTS/TASK-020/VISUAL_QA_DISPATCH.md against Planner-owned http://127.0.0.1:3000/products/fgd-x15-pvc. Capture exact 1440/1024/768/390 plus 320 CSS px evidence and directly exercise default, invalid, valid standard, valid custom replacement, keyboard/focus, reduced-motion, reflow and browser-network boundaries. Return PASS only for severe=0, obvious=0, detail=0; otherwise FAIL/BLOCKED with reproducible findings and the smallest proposed correction. Verify actual screenshot encoding/magic bytes and preserve all evidence. Write only QA/TASK-020/**, canonical TASKS/ARTIFACTS/TASK-020/VISUAL_QA_REPORT.md and visual_qa lane records. Do not start/stop/reconfigure the server, edit frontend/CMS/task authority, repair findings, run review, perform Git/deployment or implement deferred features. Return one linked response.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md",
+    "TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-020/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_PASS.md",
+    "TASKS/ARTIFACTS/TASK-020/VISUAL_QA_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-020/VISUAL_QA_REPORT.md",
+    "QA/TASK-020/EVIDENCE_INVENTORY.sha256",
+    "TASKS/ARTIFACTS/TASK-020/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Planner owns unified exec server session 45587. The QA scope is component-slice acceptance, not final whole-site branding or production readiness. Preserve Round 1 evidence if revision is required.",
+  "done_at": "2026-08-01T07:51:37Z",
+  "updated_at": "2026-08-01T07:51:37Z"
+}

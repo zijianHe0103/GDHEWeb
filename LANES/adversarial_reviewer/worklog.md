@@ -901,3 +901,39 @@ Each execution records:
 - boundaries: no product source, tests, docs, README, task authority or Planner state edit; no database/dependency/external-system mutation, acceptance, Git, deployment or later capability work; PASS is not acceptance or Git authorization
 - message_status: exact Round 2 request and the single linked final PASS review_response are both acknowledged as done; the response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
 - next: Planner owns fresh final validation plus any checked acceptance preparation
+
+### 2026-08-01T12:04:21Z - TASK-020 adversarial review round 1
+
+- task: TASK-020
+- message: MSG-TASK-020-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and acknowledged the exact controlled request before substantive review, inspected the active task, dispatch, requirements, design, plan, implementation, tests, frontend evidence, visual evidence and documentation, and performed only the authorized independent read-only review
+- preserved_history: Planner implementation checkpoint Round 1 remains FAIL P0 0 P1 2 P2 0; Visual Round 1 remains BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE 0/0/0; Keyboard Recovery remains FAIL 0/0/1; Favicon Visual Round 2 remains the current visual PASS 0/0/0
+- p1: the custom-length builder accepts an arbitrarily long syntactically one-decimal input, converts it with Number without finite or precision-preservation checks, and returns ok true with Infinity; the frozen QuoteLine Schema rejects the result and JSON serialization changes the selected length to null
+- p1_reproduction: real production builder under frozen Node 24.18.0 returned 10000000000000000 for input 9999999999999999.9 and returned Infinity for a 400-digit plus .9 input; Ajv accepted the rounded finite line but rejected the Infinity line, while JSON serialized Infinity as null
+- p1_narrow_revision: reject non-finite and precision-losing custom-length conversion, add direct regressions for both boundaries, and reprove every success against the unchanged QuoteLine Schema while preserving all normal DTO, selection, packaging, quantity and single-result semantics
+- passed_runtime: fixed anonymous Product Configuration GET, private 5000 ms timeout, no retry, four-Schema closure, authentic frozen wrapper, public frozen Adapter, public/deep server-only builds, preview zero network, CMS one resolve plus one Product Configuration and zero ProductCard/per-option, sanitized fallback and DTO-only React all remain intact
+- passed_ui_visual: exact sole GDHEPRD000172 6 m Ivory White option, ordinary resolved/custom lines, customer labels, associated errors, standard-to-custom scalar replacement, no persistence/submission/Feishu, five widths, 20/20 evidence hashes, exact PNG/JPEG disclosure, favicon 200 history and direct screenshot inspection pass
+- independent_validation: frozen Node 24.18.0 and npm 11.16.0 full 35 files 404 tests, verifiers 16/2/2 plus 8/3/6 plus 4/1/6, lint, typecheck, production build and three production smokes PASS
+- protected_scope: Product Configuration 7-file, QuoteLine 10-file and CMS 76-file aggregates reproduce; ProductCard/ProductList exact 16-file aggregate and baseline diff pass; package, lock, next-env, protected image and icon hashes reproduce; git diff check, project, messages and strict lane validation pass with zero residue
+- result: FAIL; P0 none; P1 one; P2 none; Planner final validation not allowed
+- boundaries: no product, test, docs, README, task authority, Planner state, CMS/database, dependency, visual-evidence, Git, deployment or external-system repair/mutation; PASS history is not acceptance or Git authorization
+- message_status: original request and the single linked FAIL review_response are both acknowledged as done; the response was validated, dry-run resolved exactly to the registered Planner session, delivered through the Codex thread bridge and recorded dispatch-once with the real bridge receipt
+- next: Planner owns governed FAIL recovery and may authorize only the narrow P1 revision, fresh validation and a new controlled independent review
+
+### 2026-08-01T12:35:30Z - TASK-020 adversarial review round 2 final
+
+- task: TASK-020
+- message: MSG-TASK-020-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and acknowledged the exact narrow final request before substantive review, preserved the complete Round 1 FAIL 0/1/0 and all Planner/visual history, inspected the production builder, direct tests, revision evidence and protected current bytes, and performed only the authorized read-only closure review
+- p1_closure: production now parses canonical positive custom-length strings as scaled tenths, requires a positive safe integer and an exact divide/multiply round-trip, with no frozen Product Configuration or QuoteLine authority change
+- attack_reproduction: the real builder rejects 9999999999999999.9 and a 400-digit plus .9 input with only one frozen customLength invalid error; noncanonical whitespace, newline, sign, leading-zero, zero, trailing-dot, missing-whole and two-decimal probes also fail closed
+- scaled_boundary: 900719925474099.1 reproduces safe tenths 9007199254740991 and remains Schema-valid and identical after JSON round-trip; 900719925474099.2 rejects; ordinary 0.1, 0.9, 1, 5.7, 5.8, 99999999999999.9 and the largest accepted integer form retain exact scaled values
+- success_regression: ordinary 5.8 remains custom with null Article Number, sales_follow_up, real DTO color and frozen Schema validity; standard GDHEPRD000172 6 m Ivory White remains Schema-valid; installation, packaging, Logo, protection, safe quantity and one-latest-result semantics pass
+- independent_validation: fixed Node 24.18.0 and npm 11.16.0 focused 13/13, full 35 files/406 tests, verifiers 16/2/2 plus 8/3/6 plus 4/1/6, lint, typecheck, Next 16.2.11 build and all three production smokes pass
+- protected_scope: Product Configuration 7-file, QuoteLine 10-file, CMS 76-file and ProductCard/ProductList 16-file aggregates reproduce; package, lock, next-env, protected image and icon hashes match; protected baseline diff and visual 20/20 checksums pass; no pyc, reviewer probe or port 3000 listener remains
+- governance: git whitespace, project, message and strict lane validation pass with zero issues before response creation
+- preserved_history: Round 1 remains FAIL 0/1/0; historical Planner FAIL 0/2/0, Visual BLOCKED, Keyboard Recovery FAIL 0/0/1 and current Visual Round 2 PASS 0/0/0 remain distinct and unchanged
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after linked response acknowledgement
+- boundaries: no product, test, README, documentation, task-authority, Planner-state, CMS/database, dependency, visual-byte, Git, deployment or external-system repair/mutation; PASS is not acceptance or Git authorization
+- message_status: exact Round 2 request and the single linked final PASS review_response are both acknowledged as done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner acknowledges the response and owns fresh final validation; no additional reviewer round, product repair, acceptance, Git or deployment action is authorized here

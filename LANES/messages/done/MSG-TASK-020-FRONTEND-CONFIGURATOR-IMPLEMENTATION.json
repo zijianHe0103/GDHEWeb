@@ -1,0 +1,38 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-020",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-01T06:22:50Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before any test or product mutation. Execute only TASKS/ARTIFACTS/TASK-020/FRONTEND_IMPLEMENTATION_DISPATCH.md under the frozen REQUIREMENTS, DESIGN, IMPLEMENTATION_PLAN and PROTECTED_BASELINE. Proceed sequentially through A1-A6 with directly observed missing-behavior RED evidence before each minimum GREEN, then return exactly one linked execution_response. Do not modify CMS, frozen Product Configuration/QuoteLine authority, ProductCard/ProductList, package/lock, protected image, root README or Planner authority. Do not run visual QA/review, implement Basket/persistence/submission/Feishu, perform Git delivery or deploy.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md",
+    "TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-020/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-020/IMPLEMENTATION_PLAN.md",
+    "TASKS/ARTIFACTS/TASK-020/BASELINE_VALIDATION.md",
+    "TASKS/ARTIFACTS/TASK-020/PROTECTED_BASELINE.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_IMPLEMENTATION_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0/npm 11.16.0. Root README is Planner-owned; record the exact proposed delta. Preserve unrelated .codex/config.toml and historical resume packets. Report listen EPERM to Planner for unchanged-byte reruns.",
+  "dispatched_at": "2026-08-01T06:23:32Z",
+  "delivery_key": "MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019fbbfd-9b08-7f20-b93a-7ce5573fe805",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-01T06:24:02Z",
+  "updated_at": "2026-08-01T06:24:02Z"
+}

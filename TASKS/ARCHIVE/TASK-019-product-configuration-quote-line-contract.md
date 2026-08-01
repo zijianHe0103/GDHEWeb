@@ -1,8 +1,9 @@
 # TASK-019 建立 FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同
 accepted_at: 2026-07-31T13:42:04Z
+closed_at: 2026-07-31T23:19:58Z
 
 task_id: TASK-019
-status: ACCEPTED
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +11,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-019
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-07-31T13:14:47Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -225,11 +226,14 @@ project_type: software
 - 分支：`codex/TASK-019-product-configuration-contract`
 - Worktree：当前共享项目工作区
 - 基线：`main` / `origin/main` at `4a92c0770388d4a198a123a8b667753f39431015`
+- 正式提交：`7c140448cb723acbe2c3debed844fc5ea4ffb267`
+- Remote branch：`origin/codex/TASK-019-product-configuration-contract`
+- Main：`origin/main` at `7c140448cb723acbe2c3debed844fc5ea4ffb267`
 - 用户自有 `.codex/config.toml` 和历史 resume packet 继续排除，不属于 TASK-019。
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；独立 adversarial review Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=2 / P2=1` 完整保留为历史。尚未执行部署。
+`CLOSED / ACCEPTED / MERGED`。正式提交、任务分支推送、fast-forward 合并和远端 `main` 推送均已完成；TASK-019 任务分支、远端任务分支、本地 `main` 和远端 `main` 均指向 `7c140448cb723acbe2c3debed844fc5ea4ffb267`。独立 adversarial review Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=2 / P2=1` 完整保留为历史。未执行部署。
 
 ## 恢复入口
 
@@ -237,13 +241,13 @@ project_type: software
 
 ## 下一步
 
-只暂存 TASK-019 受控交付物并创建中文正式提交；随后立即推送任务分支、fast-forward 合并到 `main` 并推送 `main`。不得暂存 `.codex/config.toml` 或历史 resume packet，不执行部署或 TASK-020。
+TASK-019 已归档。后续可见配置器与 Add to Quote 工作进入独立 TASK-020；不得在本归档任务中继续修改运行时 UI、Quote Basket、询价提交或飞书集成。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | 冻结需求与设计门、保护既有合同、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、必要 README | requirements、design checkpoint、Planner Summary | FORMAL_DELIVERY_IN_PROGRESS |
+| planner | 冻结需求与设计门、保护既有合同、调度、独立验证和用户汇报 | `PROJECT/**`、`TASKS/**`、`LANES/**`、必要 README | requirements、design checkpoint、Planner Summary | CLOSED |
 | wordpress_cms | 确认后按 TDD 建立 Product Configuration Schema/API/Fixture/Golden 和确定性清理证据；不建立 QuoteLine 存储 | TASK-019 允许的 GDHE Site、`docs/cms/**`、artifacts、lane records | RED/GREEN、authority manifest、execution report | COMPLETE_CHECKPOINT_PASS |
 | frontend | CMS checkpoint 后建立精确 Product Configuration snapshot/verifier 与独立 QuoteLine 合同；不接入运行时或 UI | TASK-019 允许的 contract snapshot、quote contract、scripts/tests、`docs/frontend/**`、artifacts、lane records | snapshot、mutation matrix、QuoteLine semantics、execution report | COMPLETE_R1_REVISION_CHECKPOINT_PASS |
 | adversarial_reviewer | 所有执行与 Planner 验证通过后独立只读审查合同、边界和证据 | canonical review report、reviewer lane records | PASS/FAIL/P0/P1/P2 | COMPLETE_R2_PASS |
@@ -287,6 +291,7 @@ project_type: software
 - 2026-07-31T13:14:47Z：受控 reopen 至 `NEEDS_REVISION`，只同步上述人类可读视图；产品、合同、证据、review、acceptance 和 Git 状态不变。视图同步后立即再次运行 checked prepare。
 - 2026-07-31T13:15:45Z：视图同步后的第二次 checked `prepare-awaiting-user` 成功；任务最终进入 `AWAITING_USER / NOT_ACCEPTED / DIRTY`，只等待精确正式交付口令。
 - 2026-07-31T13:42:04Z：用户输入精确正式交付口令；`task_accept.py accept` 成功，任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- 2026-07-31T23:19:58Z：核验正式提交 `7c140448cb723acbe2c3debed844fc5ea4ffb267` 已同时存在于本地/远端任务分支和本地/远端 `main`；TASK-019 同步为 `CLOSED / ACCEPTED / MERGED` 并归档，未执行部署。
 
 ## Execution Artifacts
 

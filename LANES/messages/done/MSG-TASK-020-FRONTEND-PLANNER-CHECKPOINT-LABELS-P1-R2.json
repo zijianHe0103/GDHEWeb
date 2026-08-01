@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-020",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-01T07:30:12Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact minimum revision before mutation. Read TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R2_DISPATCH.md. Under strict TDD, make the form controls reuse the existing closed customer-label authority so installation, packaging, Logo and protection display the frozen customer labels rather than enum-style text. Preserve every option value and QuoteLine semantic. Add one direct initial-form markup RED/GREEN. Change only the configurator component, directly corresponding presentation test, TASK-020 evidence and frontend worklog. Return one linked execution_response. Do not change CSS, A1-A5, builder, DTO, routes, Product Detail facts, ProductCard/ProductList, contracts, CMS, dependencies, root README, Basket, persistence, submission, Feishu, visual QA, review, Git or deployment.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md",
+    "TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R2_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_EXECUTION_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-020/FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md"
+  ],
+  "notes": "Use Node 24.18.0/npm 11.16.0. This is the last known implementation checkpoint correction before visual QA, not visual QA, review, acceptance or delivery.",
+  "done_at": "2026-08-01T07:31:30Z",
+  "updated_at": "2026-08-01T07:31:30Z"
+}

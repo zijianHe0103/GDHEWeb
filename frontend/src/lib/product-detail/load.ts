@@ -1,7 +1,9 @@
 import "server-only";
 
 import type { ProductDetailDto } from "../../types/product-detail";
+import type { ProductConfigurationDto } from "../../types/product-configuration";
 import { CmsHttpError, resolveCmsPath } from "../cms/server";
+import { loadProductConfiguration } from "../cms/server/product-configurations";
 import { adaptProductDetail } from "../cms/server/product-detail/adapter";
 import {
   validateCmsErrorPayload,
@@ -9,6 +11,14 @@ import {
 } from "../cms/server/validation";
 import { PRODUCT_DETAIL_PUBLIC_PATH, readProductDetailMode } from "./config";
 import { previewProductDetail } from "./preview";
+import { previewProductConfiguration } from "../product-configuration/preview";
+
+export type ProductConfigurationPageState =
+  | Readonly<{
+      kind: "ready";
+      configuration: ProductConfigurationDto;
+    }>
+  | Readonly<{ kind: "unavailable" }>;
 
 export type ProductDetailPageState =
   | Readonly<{ kind: "disabled" }>
@@ -17,6 +27,7 @@ export type ProductDetailPageState =
   | Readonly<{
       kind: "ready";
       detail: ProductDetailDto;
+      configurationState: ProductConfigurationPageState;
       preview: boolean;
     }>;
 
@@ -34,6 +45,10 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
     return Object.freeze({
       kind: "ready",
       detail: previewProductDetail,
+      configurationState: Object.freeze({
+        kind: "ready",
+        configuration: previewProductConfiguration,
+      }),
       preview: true,
     });
   }
@@ -41,9 +56,20 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
   try {
     const response = await resolveCmsPath(PRODUCT_DETAIL_PUBLIC_PATH);
     const validated = validateCmsSuccessPayload(response.body);
+    const detail = adaptProductDetail(validated);
+    let configurationState: ProductConfigurationPageState;
+    try {
+      configurationState = Object.freeze({
+        kind: "ready",
+        configuration: await loadProductConfiguration(),
+      });
+    } catch {
+      configurationState = Object.freeze({ kind: "unavailable" });
+    }
     return Object.freeze({
       kind: "ready",
-      detail: adaptProductDetail(validated),
+      detail,
+      configurationState,
       preview: false,
     });
   } catch (error) {

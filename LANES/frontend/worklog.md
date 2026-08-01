@@ -894,3 +894,109 @@ Each execution records:
 - final_governance: JSON, Markdown/trailing-whitespace, git diff check, DPG project, registry, messages and strict lane audit PASS with zero issues
 - message_result: `MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-2927`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-019-FRONTEND-ADVERSARIAL-P1-R1`
 - unique_next_step: Planner ACKs and independently reproduces the two P1 closures, then controls any new adversarial review; frontend stops without review, acceptance, Git delivery or deployment
+
+### 2026-08-01 - TASK-020 visible configurator implementation
+
+- task: TASK-020
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION
+- message_ack: exact request, frozen REQUIREMENTS/DESIGN/IMPLEMENTATION_PLAN/PROTECTED_BASELINE and dispatch read; ACK completed before test or product mutation
+- a1_tdd: missing fixed Transport RED, expanded 13-failure protocol matrix, then 14/14 GREEN for fixed URL, one GET, cache/status/content/ETag, 304, redirect, timeout, abort, network and no retry
+- a2_tdd: missing Validator RED, then exact four-Schema isolated/deep-frozen/authentic semantic gate 12/12 GREEN
+- a3_tdd: missing Adapter RED, then exact-field DTO 2/2 and real public/deep Next Client-import controls 2/2 GREEN
+- a4_tdd: current loader lacked preview/CMS configuration state and request; 2/7 RED, then preview zero-network, one resolve plus one configuration, zero ProductCard/per-option and sanitized fallback 8/8 GREEN
+- a5_tdd: missing QuoteLine builder RED, then resolved/custom frozen Schema-valid output and closed invalid matrix 11/11 GREEN
+- a6_tdd: real route lacked anchor/form/option/notice RED, then semantic accessible responsive form, one latest in-memory result and navigation-only fallback GREEN
+- focused_validation: TASK-020 plus frozen QuoteLine 9 files/84 tests PASS
+- regression_validation: full Vitest 32 files/399 tests PASS; three contract verifiers 16/2/2, 8/3/6 and 4/1/6 PASS
+- build_validation: lint, typecheck and production build PASS; route inventory unchanged
+- production_smoke: Product Detail preview/cms final 404 and CMS requests 0; ProductList preview/cms 404, root 200, integration 404 and CMS requests 0
+- protected_integrity: Product Configuration 7, QuoteLine 10/subset 9 and CMS 76 aggregates match; ProductCard/ProductList baseline source has zero diff; package/lock/next-env/protected image hashes match; no contract/CMS/ProductCard/ProductList/dependency/image mutation
+- documentation: frontend README and frontend contract document updated; exact root README semantic delta recorded for Planner without editing root
+- test_fixture_correction: existing Product Detail Client-import temporary project initially omitted the new preview module, then over-copied the builder dependency; closure was narrowed to the single preview file and both positive/guarded builds plus full suite passed
+- output_note: one full-suite orchestration lost its output session while processes completed; no PASS was claimed, duplicate processes were allowed to exit, and a fresh retained run produced 32/399 PASS
+- artifacts: FRONTEND_TDD_RED_EVIDENCE, FRONTEND_EXECUTION_REPORT, FRONTEND_TEST_OR_VALIDATION_LOG and FRONTEND_DIFF_OR_OUTPUT_SUMMARY complete
+- boundaries: no visual QA, adversarial review, acceptance, Basket, persistence, submission, Feishu, CMS/database/external mutation, root README, Planner state, Git delivery or deployment
+- message_result: `MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION-RESPONSE` received real Planner thread bridge receipt `item-3024`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-020-FRONTEND-CONFIGURATOR-IMPLEMENTATION`
+- unique_next_step: Planner independently checks current bytes and controls any later visual/review dispatch; frontend stops without review or follow-on work
+
+### 2026-08-01 - TASK-020 Planner checkpoint Round 1 P1 revision
+
+- task: TASK-020
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1
+- reopen_gate: required controlled `task_transition.py reopen` was invoked; it safely returned `ok=false` because reopen only accepts the matching task in AWAITING_USER, so current IN_PROGRESS state and Planner files remained unchanged
+- message_ack: exact revision request, canonical checkpoint FAIL and narrow dispatch read; ACK completed before test or product mutation and request moved to done
+- preserved_history: Planner checkpoint Round 1 remains `FAIL / P0=0 / P1=2 / P2=0` pending independent reproduction
+- p1_1_red: summary focused exit 1 with 2/2 failures because `LatestQuoteLineSummary` was undefined
+- p1_1_green: 2/2 PASS; customer summary now includes model, standard/custom type, length, color, installation, base packaging, Logo, protection, quantity and unit with closed labels and no Article Number/raw/internal/saved/sent output
+- p1_2_red: interaction focused exit 1 with 2/2 failures because the production result-state seam was missing
+- p1_2_green: 2/2 PASS; invalid initial submit produces no line, all eight builder-visible error fields have sanitized ID/message/aria association, valid standard then valid custom replaces one scalar latest line, and fetch/storage/append/raw/internal leakage remain absent
+- focused_validation: combined presentation 3 files/8 tests and TASK-020 plus frozen QuoteLine 11 files/88 tests PASS
+- regression_validation: full Vitest 34 files/403 tests PASS; all three verifiers 16/2/2, 8/3/6 and 4/1/6 PASS
+- build_validation: lint, typecheck and production build PASS; route inventory unchanged
+- production_smoke: Product Detail preview/cms final 404 and ProductList preview/cms final 404 with CMS requests 0; root 200 and integration 404 preserved
+- protected_integrity: Product Configuration, QuoteLine tree/subset, CMS and ProductCard/ProductList aggregates exactly match the frozen baseline; package/lock/next-env/protected image hashes match; generated `.next`, temporary roots and task-owned listener processes are absent
+- final_governance: git diff check, Markdown/trailing whitespace, DPG project, messages and strict lane audit PASS with zero issues
+- boundaries: only configurator presentation/state, two direct tests, existing TASK-020 frontend evidence and this worklog changed; no CSS, A1-A5, builder, DTO, Product Detail facts, ProductCard/ProductList, authority, package/lock, CMS, root README, Planner state, Basket, persistence, submission, Feishu, visual QA, review, Git or deployment change
+- message_result: `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-3037`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so the subsequent dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-P1-R1`
+- unique_next_step: Planner independently reproduces P1-1/P1-2 closure and controls any later review or visual QA; frontend stops without acceptance, Git delivery, deployment or follow-on work
+
+### 2026-08-01 - TASK-020 Planner checkpoint Round 2 label P1 revision
+
+- task: TASK-020
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2
+- reopen_gate: controlled `task_transition.py reopen` was invoked before revision work and safely returned `ok=false` because reopen only accepts AWAITING_USER; no Planner state was changed
+- message_ack: the first ACK attempt used obsolete argument names and exited without mutation; the exact request was then ACKed with `--id` before test or product mutation and moved to done
+- red: direct initial-form presentation exit 1 with 1/4 failures; `Ceiling Mount` was absent and output retained the old enum-style customer text
+- green: presentation 4/4 PASS; controls reuse the same closed installation/base-packaging/Logo/protection label authority already used by the latest-line summary
+- semantic_boundary: option values and QuoteLine semantics are unchanged; no CSS, A1-A5, builder, DTO, route, Product Detail fact, ProductCard/ProductList, contract, CMS, dependency, root README or deferred feature changed
+- focused_validation: TASK-020 plus frozen QuoteLine 11 files/105 tests PASS
+- regression_validation: full Vitest 34 files/403 tests, three verifiers 16/2/2, 8/3/6 and 4/1/6, lint, typecheck and production build PASS
+- production_smoke: Product Detail preview/cms final 404 with CMS requests 0; ProductList preview/cms 404, root 200, integration 404 and CMS requests 0
+- protected_integrity: Product Configuration, QuoteLine tree/subset, CMS, package/lock/next-env/protected image hashes match; ProductCard/ProductList source has zero diff from the frozen baseline
+- boundaries: no visual QA, review, acceptance, Basket, persistence, submission, Feishu, Git or deployment
+- final_governance: generated `.next` removed; diff check, DPG project/messages and strict lane audit PASS with zero issues
+- message_result: `MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2-RESPONSE` received real Planner thread bridge receipt `item-3044`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-020-FRONTEND-PLANNER-CHECKPOINT-LABELS-P1-R2`
+- unique_next_step: Planner independently reproduces the label closure and controls visual QA or later review; frontend stops without acceptance, Git delivery, deployment or follow-on work
+
+### 2026-08-01 - TASK-020 visual D1 favicon fallback revision
+
+- task: TASK-020
+- task_state_observed: IN_PROGRESS
+- message: MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1
+- reopen_gate: controlled `task_transition.py reopen` was invoked before revision work and safely returned `ok=false` because reopen only accepts AWAITING_USER; no Planner state changed
+- message_ack: exact visual D1 dispatch read and ACKed before test or product mutation; request moved to done
+- preserved_history: Visual Round 1 BLOCKED and keyboard-recovery FAIL histories remain unchanged; frontend does not claim visual PASS
+- red: focused icon test exit 1 with 1/1 ENOENT because `src/app/icon.svg` was absent
+- green: focused 1/1 PASS after adding one 504-byte local dependency-free GDHE vector fallback and no other product file
+- route_proof: production build PASS and emitted static `/icon.svg`; all five existing page routes and production 404 boundaries remain
+- focused_validation: TASK-020 plus frozen QuoteLine and icon 12 files/106 tests PASS
+- regression_validation: full Vitest 35 files/404 tests, three verifiers 16/2/2, 8/3/6 and 4/1/6, lint, typecheck and production build PASS
+- production_smoke: Product Detail preview/cms final 404 with CMS requests 0; ProductList preview/cms 404, root 200, integration 404 and CMS requests 0
+- protected_integrity: Product Configuration, QuoteLine tree/subset, CMS, package/lock/next-env/protected image hashes match; ProductCard/ProductList has zero baseline diff
+- boundaries: no layout, metadata, configurator, Product Detail, Product Configuration, QuoteLine, ProductCard/ProductList, CMS, dependencies, Next config, protected image, root README, visual evidence, review, Git or deployment change
+- residue_and_governance: no task-owned listener or temporary root remains; diff, DPG project/messages and strict lane audit PASS with zero issues. Planner/visual_qa's pre-existing `next dev` on port 3000 and its `.next` remain intentionally untouched for the independent console retest
+- message_result: `MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1-RESPONSE` received real Planner thread bridge receipt `item-3074`, was recorded as dispatched and left queue; `requires_response_to=MSG-TASK-020-FRONTEND-VISUAL-FAVICON-D1-R1`
+- unique_next_step: Planner/visual_qa independently retests the Chrome console and owns the preview runtime cleanup; frontend stops without visual verdict, review, acceptance, Git delivery, deployment or follow-on work
+
+### 2026-08-01 - TASK-020 adversarial custom-length P1 narrow revision
+
+- task: TASK-020
+- task_state_observed: NEEDS_REVISION
+- message: MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1
+- reopen_gate: controlled `task_transition.py reopen` was invoked and safely returned `ok=false` because the helper only accepts AWAITING_USER; no Planner state changed and the already-recorded NEEDS_REVISION state remained
+- message_ack: exact dispatch, canonical Round 1 FAIL report and active recovery read; request ACKed before test or product mutation and moved to done
+- preserved_history: adversarial Round 1 remains `FAIL / P0=0 / P1=1 / P2=0` pending independent reproduction; visual history and current PASS remain untouched
+- red: direct builder 13 tests with prior 11 PASS and two FAIL; finite input rounded to `10000000000000000`, and 400-digit `.9` returned `Infinity`, both as `ok:true`
+- green: focused 13/13 PASS; custom text uses a positive safe scaled-tenths representation and exact multiply-back gate before returning a number
+- preserved_semantics: ordinary `5.8` remains frozen-Schema-valid with null Article Number and sales follow-up; standard, color, installation, packaging, Logo, protection, quantity and one-latest-result behavior unchanged
+- focused_validation: TASK-020 plus frozen QuoteLine/icon 12 files/108 tests PASS
+- regression_validation: full Vitest 35 files/406 tests, three verifiers 16/2/2, 8/3/6 and 4/1/6, lint, typecheck and production build PASS
+- production_smoke: CMS integration, Product Detail and ProductList smoke PASS with existing request/final-404 boundaries
+- protected_integrity: Product Configuration, QuoteLine tree/subset, CMS, package/lock/next-env/icon/protected image hashes match; ProductCard/ProductList has zero baseline diff
+- boundaries: no authority, Transport, Validator, Adapter, loader, DTO, UI/CSS, Product Detail/Card/List, CMS, docs/README, visual evidence, dependency, external system, review, Git or deployment change
+- residue_and_governance: generated `.next` removed; no task-owned listener or temporary probe remains; diff, DPG project/messages and strict lane audit PASS with zero issues
+- message_result: `MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-3092`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1`
+- unique_next_step: Planner independently reproduces the numeric closure and controls adversarial Round 2; frontend stops without review, acceptance, Git delivery, deployment or follow-on work

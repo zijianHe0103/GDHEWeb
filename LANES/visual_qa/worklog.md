@@ -142,3 +142,68 @@ Each execution records:
 - result: report-only P2 correction complete; visual verdict remains Round 2 PASS and is not re-reviewed by this lane
 - next: return one controlled execution response linked to the encoding revision request; Planner owns narrow adversarial Round 2
 - intervention: none from visual lane
+
+## 2026-08-01
+
+### TASK-020 visual QA Round 1
+
+- task: `TASK-020`
+- message: `MSG-TASK-020-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-020/VISUAL_QA_DISPATCH.md`
+- runtime: reused Planner-owned `http://127.0.0.1:3000/products/fgd-x15-pvc`; no server lifecycle or configuration action
+- artifacts: exact-width default full-page evidence at `1440/1024/768/390/320`; invalid, standard, custom replacement and focus evidence at 390; native full-page compositor artifact; SHA-256 inventory; canonical and task-artifact reports
+- state_validation: frozen default; three associated invalid errors and no result; complete standard summary; one custom summary replacing standard; no browser-facing Article Number/raw enum/JSON/internal/sent/saved claim
+- responsive: `scrollWidth == clientWidth` at all five widths; 320 component overflow and clipping 0; 390/320 CTA `44.09375px` with center hit true; readable 16px phone text
+- accessibility: natural 12-item DOM order; all `tabIndex 0`; every target accepted per-target keyboard focus and rendered a 3px solid outline; two fieldset/legend groups; associated errors; polite live result
+- browser_boundary: 20 same-origin assets only; protected local image/Alt; console warnings/errors 0; no external/WordPress/ProductCard/submission/Feishu request; visible local notice; `noindex,nofollow`
+- reduced_motion: current preference false; rendered animation/transition set empty, so no essential-motion dependency
+- keyboard_blocker: browser channel did not deliver `Tab`, `ArrowRight` or `Enter`, including from body/first link; standard state submitted by mouse immediately, so no product defect is inferred and native continuous traversal/control/submit remains unverified
+- capture: browser screenshot bytes were JPEG/JFIF; every retained `.png` was explicitly encoded as real PNG and revalidated by file type, magic, dimensions and SHA-256; native stale-paint full-page artifact retained; formal full-page evidence is unscaled exact-width vertical composition after paint waits
+- result: `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE / severe 0 / obvious 0 / detail 0`
+- smallest_recovery: preserve all evidence and rerun only native keyboard traversal, control operation and submit in a browser-control channel that delivers real key events
+- cleanup: viewport override reset and QA tab finalized; Planner-owned server left running
+- protected_scope: no frontend/CSS/tests/docs/task authority/CMS/dependencies/Git/deployment/external-system mutation
+- next: return one controlled execution response linked to `MSG-TASK-020-VISUAL-QA-R1`; Planner owns any keyboard-evidence recovery dispatch
+- intervention: Planner/browser-channel recovery required; no frontend correction proposed
+
+### TASK-020 visual QA keyboard recovery
+
+- task: `TASK-020`
+- message: `MSG-TASK-020-VISUAL-QA-KEYBOARD-RECOVERY`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-020/VISUAL_QA_KEYBOARD_RECOVERY_DISPATCH.md`; full Round 1 history and evidence preserved
+- channel: real Google Chrome Guest window controlled with system-level native keys through computer-use sky; one initial Guest-mode click, no mouse thereafter
+- tab_order: category, Hero CTA, selected Standard radio, Published select, Ceiling radio, Packaging select, Logo checkbox, Protection select, Quantity, Add to Quote; AX focus checked after key actions; unchecked radios correctly reached through arrow keys within native groups
+- radio: Right changed Standard `1` / Custom `0` to Standard `0` / Custom `1` and moved AX focus; Left restored Standard
+- configuration: keyboard-only standard `6 m — Ivory White`, Ceiling Mount, Standard Packaging, Logo No, Protection None, quantity 2
+- submit: native Return on AX-focused Add to Quote produced one complete latest summary, canonical URL unchanged, no append/internal/persistence leakage
+- network: Chrome Network recording remained empty across a second native Return; no external/WordPress/ProductCard/submission/Feishu request
+- finding: detail — same-origin `/favicon.ico` page-load request returned 404 in Chrome Console; keyboard chain did not introduce it, but zero-console gate failed
+- smallest_correction: provide `/favicon.ico` or remove/change the missing favicon declaration
+- evidence: six minimum screenshots plus `KEYBOARD_RECOVERY_AX_LOG.md`; screenshots are JPEG/JFIF under `.png` names, `956 x 768`, magic `ffd8ffe000104a46`; hashes appended without changing Round 1 inventory entries
+- preserved_history: Round 1 remains `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE / severe 0 / obvious 0 / detail 0`
+- result: recovery `FAIL / severe 0 / obvious 0 / detail 1`; keyboard blocker closed, console detail finding remains
+- cleanup: temporary Chrome Guest window closed by native keyboard shortcut; Planner-owned server untouched
+- protected_scope: no frontend/CSS/tests/README/task authority/CMS/dependencies/review/Git/deployment/external-system mutation
+- next: return one controlled response linked to recovery message; Planner owns any favicon correction/retest dispatch
+- intervention: Planner/frontend narrow favicon correction required before a clean PASS
+
+### TASK-020 visual QA favicon Round 2
+
+- task: `TASK-020`
+- message: `MSG-TASK-020-VISUAL-QA-FAVICON-R2`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-020/VISUAL_QA_FAVICON_R2_DISPATCH.md`; prior BLOCKED, Visual R1 and Keyboard Recovery FAIL history preserved
+- context: new Chrome Guest; Console and Network recording active before canonical load; one initial Guest click and no mouse thereafter
+- favicon: rendered local `/icon.svg?icon.3pigvvo6ltwt4.svg` declaration, `image/svg+xml`; Chrome Network `200 OK`, `svg+xml`; zero `favicon.ico` request and no 404
+- console: zero messages after load and after native Enter; no warning/error AX rows
+- keyboard: smallest native-key standard configuration and native Return produced exactly one complete FGD X15+PVC latest item; focus, canonical URL and layout unchanged
+- network: 24 unique inspected-page URLs before Enter and 24 after; empty set difference; all same-origin; no external/WordPress/ProductCard/submission/Feishu request
+- evidence: three minimum screenshots plus `FAVICON_R2_AX_LOG.md`; screenshots are JPEG/JFIF under `.png` names, `956 x 768`, magic `ffd8ffe000104a46`; hashes appended without changing prior entries
+- preserved_history: Visual Round 1 `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE / severe 0 / obvious 0 / detail 0`; Keyboard Recovery `FAIL / severe 0 / obvious 0 / detail 1`
+- result: favicon Round 2 `PASS / severe 0 / obvious 0 / detail 0`; D1 closed
+- cleanup: temporary Guest window closed by native keyboard shortcut; Planner-owned server untouched
+- protected_scope: no product code/CSS/tests/README/CMS/task authority/dependencies/review/Git/deployment/external-system mutation
+- next: validate evidence, Markdown, diff and DPG gates; send one controlled execution response linked to the Round 2 request
+- intervention: none from visual lane

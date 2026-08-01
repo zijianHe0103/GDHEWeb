@@ -1,0 +1,151 @@
+.section,
+.fallback {
+  box-sizing: border-box;
+  width: min(100%, 78rem);
+  margin: clamp(4rem, 9vw, 8rem) auto 0;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.introduction,
+.card,
+.fallback {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #686861;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.introduction h2,
+.fallback h2 {
+  margin: 0.65rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+}
+
+.introduction > p:last-child,
+.fallback p {
+  color: #51514c;
+  line-height: 1.7;
+}
+
+.card,
+.fallback {
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid #cacac3;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.card form {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.card fieldset {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #cacac3;
+}
+
+.card legend,
+.field > label {
+  font-weight: 800;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.field input,
+.field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem;
+  border: 1px solid #77776f;
+  border-radius: 0.25rem;
+  background: #ffffff;
+  color: #171717;
+  font: inherit;
+}
+
+.checkbox {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.card button,
+.fallback a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #f5c400;
+  color: #171717;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.card input:focus-visible,
+.card button:focus-visible,
+.fallback a:focus-visible {
+  outline: 0.2rem solid #171717;
+  outline-offset: 0.2rem;
+}
+
+.error {
+  margin: 0;
+  color: #9d1c12;
+  font-weight: 700;
+}
+
+.notice {
+  margin: 1.5rem 0 0;
+  padding: 0.8rem;
+  border-left: 0.3rem solid #f5c400;
+  background: #fff5bd;
+  line-height: 1.5;
+}
+
+.result {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 48rem) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card button,
+  .fallback a {
+    width: 100%;
+  }
+}

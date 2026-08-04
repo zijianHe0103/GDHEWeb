@@ -6,42 +6,42 @@ import {
   applyProductConfiguratorSubmission,
   createProductConfiguratorResultState,
   getProductConfiguratorFieldError,
-  LatestQuoteLineSummary,
+  LatestPublicQuoteDraftSummary,
 } from "../src/components/product-configurator";
-import type {
-  ProductConfigurationField,
-  ProductConfigurationFormValues,
-} from "../src/lib/product-configuration/build-quote-line";
-import { previewProductConfiguration } from "../src/lib/product-configuration/preview";
+import { previewProductConfigurationV2 } from "../src/lib/product-configuration/v2/preview";
+import { projectPublicProductConfigurator } from "../src/lib/product-configuration/v2/public-configurator";
+import type { PublicProductConfiguratorField, PublicProductConfiguratorFormValues } from "../src/types/product-configurator";
+
+const publicConfiguration = projectPublicProductConfigurator(
+  previewProductConfigurationV2,
+);
 
 afterEach(() => {
   vi.unstubAllGlobals();
 });
 
 describe("ProductConfigurator production interaction state", () => {
-  it("creates no line and associates every builder-returned visible error", () => {
+  it("creates no draft and associates every builder-returned visible error", () => {
     const initial = createProductConfiguratorResultState();
     const invalid = applyProductConfiguratorSubmission(
-      previewProductConfiguration,
+      publicConfiguration,
       initial,
       {
-        mode: "custom",
+        lengthChoice: "custom",
         customLength: "5.88",
         colorCode: "unknown",
-        installationMethod: "",
         basePackaging: "",
-        logoPrinting: "yes" as unknown as boolean,
+        logoPrinting: false,
         protectionArrangement: "unknown",
         quantity: "1.5",
       },
     );
     const invalidSelection = applyProductConfiguratorSubmission(
-      previewProductConfiguration,
+      publicConfiguration,
       initial,
       {
-        mode: "standard",
-        articleNumber: "GDHEPRD999999",
-        installationMethod: "ceiling",
+        lengthChoice: "standard:999",
+        colorCode: "ivory-white",
         basePackaging: "standard",
         logoPrinting: false,
         protectionArrangement: null,
@@ -49,20 +49,18 @@ describe("ProductConfigurator production interaction state", () => {
       },
     );
 
-    expect(invalid.latestLine).toBeNull();
-    expect(invalidSelection.latestLine).toBeNull();
+    expect(invalid.latestDraft).toBeNull();
+    expect(invalidSelection.latestDraft).toBeNull();
     const returnedFields = new Set([
       ...invalid.errors,
       ...invalidSelection.errors,
     ]);
     expect(returnedFields).toEqual(
-      new Set<ProductConfigurationField>([
+      new Set<PublicProductConfiguratorField>([
         "selection",
         "customLength",
         "color",
-        "installationMethod",
         "basePackaging",
-        "logoPrinting",
         "protectionArrangement",
         "quantity",
       ]),
@@ -93,34 +91,34 @@ describe("ProductConfigurator production interaction state", () => {
 
     let state = createProductConfiguratorResultState();
     state = applyProductConfiguratorSubmission(
-      previewProductConfiguration,
+      publicConfiguration,
       state,
       standardValues,
     );
     expect(state.errors).toEqual([]);
-    expect(state.latestLine?.selection.type).toBe("article_number");
-    const standardLine = state.latestLine;
+    expect(state.latestDraft?.selection.type).toBe("standard");
+    const standardDraft = state.latestDraft;
     const standardHtml = renderToStaticMarkup(
-      createElement(LatestQuoteLineSummary, { line: state.latestLine! }),
+      createElement(LatestPublicQuoteDraftSummary, { draft: state.latestDraft! }),
     );
     expect(standardHtml).toContain("Standard Length");
-    expect(standardHtml).toContain("Ceiling Mount");
+    expect(standardHtml).not.toContain("Installation");
     expect(standardHtml).toContain("Standard Packaging");
 
     state = applyProductConfiguratorSubmission(
-      previewProductConfiguration,
+      publicConfiguration,
       state,
       customValues,
     );
     expect(state.errors).toEqual([]);
-    expect(state.latestLine).not.toBe(standardLine);
-    expect(state.latestLine?.selection.type).toBe("custom_length");
-    expect(Array.isArray(state.latestLine)).toBe(false);
+    expect(state.latestDraft).not.toBe(standardDraft);
+    expect(state.latestDraft?.selection.type).toBe("custom");
+    expect(Array.isArray(state.latestDraft)).toBe(false);
     const customHtml = renderToStaticMarkup(
-      createElement(LatestQuoteLineSummary, { line: state.latestLine! }),
+      createElement(LatestPublicQuoteDraftSummary, { draft: state.latestDraft! }),
     );
     expect(customHtml).toContain("Custom Length");
-    expect(customHtml).toContain("Wall Mount");
+    expect(customHtml).not.toContain("Installation");
     expect(customHtml).toContain("Carton Packaging");
     expect(customHtml).not.toContain("Standard Length");
     expect(customHtml).not.toMatch(
@@ -131,23 +129,21 @@ describe("ProductConfigurator production interaction state", () => {
   });
 });
 
-const standardValues: ProductConfigurationFormValues = {
-  mode: "standard",
-  articleNumber: "GDHEPRD000172",
-  installationMethod: "ceiling",
-  basePackaging: "standard",
+const standardValues: PublicProductConfiguratorFormValues = {
+  lengthChoice: "standard:6",
+  colorCode: "ivory-white",
+  basePackaging: "standard-packaging",
   logoPrinting: false,
   protectionArrangement: null,
   quantity: "2",
 };
 
-const customValues: ProductConfigurationFormValues = {
-  mode: "custom",
+const customValues: PublicProductConfiguratorFormValues = {
+  lengthChoice: "custom",
   customLength: "5.8",
   colorCode: "ivory-white",
-  installationMethod: "wall",
-  basePackaging: "carton",
+  basePackaging: "carton-packaging",
   logoPrinting: true,
-  protectionArrangement: "single_bag",
+  protectionArrangement: "single-piece-bagging",
   quantity: "1",
 };

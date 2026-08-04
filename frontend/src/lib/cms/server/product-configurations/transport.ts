@@ -30,13 +30,16 @@ export type ProductConfigurationTransportOutcome =
       metadata: ProductConfigurationResponseMetadata & { status: 304 };
     }>;
 
-function buildProductConfigurationUrl(base: URL): URL {
+function buildProductConfigurationUrl(
+  base: URL,
+  schemaVersion: "1.0.0" | "2.0.0",
+): URL {
   const url = new URL(
     `${base.pathname}/gdhe/v1/product-configurations`,
     base,
   );
   url.searchParams.set("locale", "en");
-  url.searchParams.set("schema", "1.0.0");
+  url.searchParams.set("schema", schemaVersion);
   url.searchParams.set("path", "/products/fgd-x15-pvc/");
   return url;
 }
@@ -133,7 +136,8 @@ function throwMappedFailure(
   throw new ProductConfigurationTransportError("network");
 }
 
-export async function requestProductConfiguration(
+async function requestProductConfigurationVersion(
+  schemaVersion: "1.0.0" | "2.0.0",
   callerSignal?: AbortSignal,
 ): Promise<
   ProductConfigurationTransportOutcome
@@ -146,7 +150,7 @@ export async function requestProductConfiguration(
     : timeoutController.signal;
 
   try {
-    const response = await fetch(buildProductConfigurationUrl(base), {
+    const response = await fetch(buildProductConfigurationUrl(base, schemaVersion), {
       method: "GET",
       headers: { Accept: "application/json" },
       redirect: "error",
@@ -192,4 +196,16 @@ export async function requestProductConfiguration(
   } finally {
     clearTimeout(timer);
   }
+}
+
+export function requestProductConfiguration(
+  callerSignal?: AbortSignal,
+): Promise<ProductConfigurationTransportOutcome> {
+  return requestProductConfigurationVersion("1.0.0", callerSignal);
+}
+
+export function requestProductConfigurationV2(
+  callerSignal?: AbortSignal,
+): Promise<ProductConfigurationTransportOutcome> {
+  return requestProductConfigurationVersion("2.0.0", callerSignal);
 }

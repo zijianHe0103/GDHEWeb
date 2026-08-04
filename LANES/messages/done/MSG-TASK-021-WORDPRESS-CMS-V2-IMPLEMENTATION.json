@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-021",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T15:02:52Z",
+  "requires_response_to": "",
+  "max_rounds": 3,
+  "status": "done",
+  "prompt": "Execute only TASK-021 WordPress CMS A2 under the exact dispatch. Read the context file completely, ACK before mutation, follow strict RED/GREEN, preserve all v1 bytes, and return one linked controlled execution_response. Do not start frontend, review, Git, deployment, real Feishu or related-products work.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-021/WORDPRESS_CMS_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-021/WORDPRESS_CMS_EXECUTION_REPORT.md"
+  ],
+  "notes": "",
+  "dispatched_at": "2026-08-04T15:03:20Z",
+  "delivery_key": "MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION:019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "target_session": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_id": "019fcd4c-c6ae-7513-ae36-f800f775e606",
+  "delivery_channel": "codex_app_thread",
+  "done_at": "2026-08-04T15:04:36Z",
+  "updated_at": "2026-08-04T15:04:36Z"
+}

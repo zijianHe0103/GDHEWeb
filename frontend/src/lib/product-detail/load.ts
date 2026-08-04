@@ -1,9 +1,9 @@
 import "server-only";
 
 import type { ProductDetailDto } from "../../types/product-detail";
-import type { ProductConfigurationDto } from "../../types/product-configuration";
+import type { ProductConfigurationV2Dto } from "../../types/product-configuration-v2";
 import { CmsHttpError, resolveCmsPath } from "../cms/server";
-import { loadProductConfiguration } from "../cms/server/product-configurations";
+import { loadProductConfigurationV2 } from "../cms/server/product-configurations-v2";
 import { adaptProductDetail } from "../cms/server/product-detail/adapter";
 import {
   validateCmsErrorPayload,
@@ -11,12 +11,12 @@ import {
 } from "../cms/server/validation";
 import { PRODUCT_DETAIL_PUBLIC_PATH, readProductDetailMode } from "./config";
 import { previewProductDetail } from "./preview";
-import { previewProductConfiguration } from "../product-configuration/preview";
+import { previewProductConfigurationV2 } from "../product-configuration/v2/preview";
 
 export type ProductConfigurationPageState =
   | Readonly<{
       kind: "ready";
-      configuration: ProductConfigurationDto;
+      configuration: ProductConfigurationV2Dto;
     }>
   | Readonly<{ kind: "unavailable" }>;
 
@@ -47,7 +47,7 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
       detail: previewProductDetail,
       configurationState: Object.freeze({
         kind: "ready",
-        configuration: previewProductConfiguration,
+        configuration: previewProductConfigurationV2,
       }),
       preview: true,
     });
@@ -61,7 +61,7 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
     try {
       configurationState = Object.freeze({
         kind: "ready",
-        configuration: await loadProductConfiguration(),
+        configuration: await loadProductConfigurationV2(),
       });
     } catch {
       configurationState = Object.freeze({ kind: "unavailable" });

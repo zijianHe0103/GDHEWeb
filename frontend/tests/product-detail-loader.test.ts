@@ -5,7 +5,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 
 import errors from "../src/lib/cms/contracts/samples/errors/resolve-errors.json";
 import productSample from "../src/lib/cms/contracts/samples/success/resolve-product-alpha.json";
-import configurationSample from "../src/lib/cms/product-configuration-contract/samples/success/fgd-x15-pvc.json";
+import configurationSample from "../src/lib/cms/product-configuration-v2-contract/samples/success/fgd-x15-pvc.json";
 import { loadProductDetailPage } from "../src/lib/product-detail/load";
 
 const originalEnvironment = {
@@ -84,7 +84,7 @@ describe("Product Detail page loader", () => {
 
     expect(paths).toEqual([
       "/wp-json/gdhe/v1/resolve?locale=en&path=%2Fproducts%2Ffgd-x15-pvc%2F&schema=3.0.0",
-      "/wp-json/gdhe/v1/product-configurations?locale=en&schema=1.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
+      "/wp-json/gdhe/v1/product-configurations?locale=en&schema=2.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
     ]);
     expect(paths.every((path) => !path.includes("product-cards"))).toBe(true);
   });

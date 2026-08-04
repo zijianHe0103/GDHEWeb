@@ -1,0 +1,14 @@
+{
+    "evidenceVersion": "TASK-021-PRODUCT-CONFIGURATION-V2-RUNTIME-1",
+    "schemaVersion": "2.0.0",
+    "successCount": 1,
+    "errorCount": 6,
+    "candidateExclusionCount": 14,
+    "etag304": true,
+    "globalArticleNumberUnique": true,
+    "publicChoiceUniquePerStableProduct": true,
+    "distinctProductsMaySharePublicChoice": true,
+    "stableProductIdentityConsistent": true,
+    "installationAndAccessoryAbsent": true,
+    "valid": true
+}

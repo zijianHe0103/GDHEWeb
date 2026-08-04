@@ -68,7 +68,7 @@ TASK-017 在 `/products/` 增加了一个固定 `noindex,nofollow` 的本地受�
 
 TASK-018 在 `/products/fgd-x15-pvc/` 增加了一个本地受控、固定 `noindex,nofollow` 的英语产品详情切片。它默认关闭，只能在非生产环境通过 server-only `GDHE_PRODUCT_DETAIL_MODE=preview|cms` 开启：`preview` 使用仓库内受保护测试候选且不访问网络；`cms` 只执行一次经过 Schema 3 Validator 验证的 `/resolve` 请求，并在 Product Detail DTO 边界排除 CMS 媒体、Article Number、内部产品代码和诊断信息。两种 ready 模式都明确显示本地非生产提示，production 中均强制返回 404。
 
-TASK-020 在这一本地详情页上接入了冻结的 Product Configuration 合同，新增 `Configure Your Track` 配置区。客户可选标准/定制长度、安装方式、轨道包装和数量，并使用 `Add to Quote` 在当前 React 页面内生成一条最新的临时 QuoteLine 摘要。该结果刷新即清空，尚未建立多行 Quote Basket、30 天浏览器保存、询价提交或飞书写入；生产模式仍强制 404。完整启动、验证方式与当前边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
+TASK-021 将该配置区升级到 Product Configuration `2.0.0`，并保留 QuoteLine `2.0.0` 作为未来服务端转换合同：`Track Length` 首先列出 WordPress 已验证 Article Number 动态投影出的标准长度，并在同级提供 `Custom Length`；`Color` 紧随长度并只显示真实可用组合。轨道询价不再要求客户选择 Installation。当前测试数据只有 `6 m / Ivory White`，不会虚构 `4.3 m` 或 `7 m`。Packaging、数量和 `Add to Quote` 保持单条最新的浏览器内公开询价草稿；草稿不含 Article Number 或内部 UUID，刷新即清空。完整 QuoteLine 将在未来最终 Request a Quote 时由服务端重新解析生成。当前尚未建立相关产品、Quote Basket、30 天浏览器保存、询价提交或飞书写入；生产模式继续强制 404。完整启动、验证方式与当前边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
 
 ### 前端 server-only `/resolve` Transport
 

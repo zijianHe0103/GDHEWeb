@@ -41,7 +41,7 @@ function gdhe_register_public_api_routes(): void
 
     $product_configurations = array();
     $product_configurations['methods'] = 'GET';
-    $product_configurations['callback'] = 'gdhe_rest_product_configurations';
+    $product_configurations['callback'] = 'gdhe_rest_product_configurations_versioned';
     $product_configurations['permission_callback'] = $permission;
     register_rest_route('gdhe/v1', '/product-configurations', $product_configurations);
 }

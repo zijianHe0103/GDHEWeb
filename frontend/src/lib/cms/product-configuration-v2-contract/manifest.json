@@ -1,0 +1,25 @@
+{
+  "manifestVersion": "1",
+  "sourceAuthority": {
+    "manifestPath": "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_HANDOFF_MANIFEST.json",
+    "manifestSha256": "11f3db81c1b962c387f731d9c171d2f370ba60bdc3391cc10ec991247120ac09",
+    "checksumsPath": "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "fe611983112944edcf214d88a9aefac6cc4fa4b9258f07670870414a919204ca"
+  },
+  "restApiVersion": "1",
+  "contentSchemaVersion": "3.0.0",
+  "productConfigurationSchemaVersion": "2.0.0",
+  "endpoint": "/wp-json/gdhe/v1/product-configurations",
+  "query": {"locale":"en","schema":"2.0.0","path":"required canonical public path","additionalParameters":false},
+  "roots": ["product-configuration.v2.schema.json"],
+  "schemas": [
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/article-number-option.v1.schema.json","snapshotPath":"schemas/article-number-option.v1.schema.json","sha256":"c9da8e10de98c9bc3eb1cb2775afdc81e4b05ef9b397b75b2c1c234a7b91381e"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/product-configuration.v2.schema.json","snapshotPath":"schemas/product-configuration.v2.schema.json","sha256":"90285bab8483304aa2609f2b31f77ad54ab48732e6979ad8d5616b619e127472"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json","snapshotPath":"schemas/public-path.schema.json","sha256":"9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json","snapshotPath":"schemas/uuid-v4.schema.json","sha256":"59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"}
+  ],
+  "samples": {
+    "success": [{"name":"fgd-x15-pvc","sourcePath":"TASKS/ARTIFACTS/TASK-021/golden-product-configuration-v2/fgd-x15-pvc.json","snapshotPath":"samples/success/fgd-x15-pvc.json","sha256":"014e242585b6eb15ac563ee8dd3efee72ed4b325ac371f1177542ef7dfbfec53"}],
+    "errors": {"sourcePath":"TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_ERROR_FIXTURES.json","sourceSha256":"e5aba50f7560ab89cc3ffcb56458c398ed05fd58026467e4ce20347fa84a2046","snapshotPath":"samples/errors/product-configuration-errors.json","selectors":["unknown-parameter","invalid-locale","unsupported-schema","invalid-path","missing-path","not-found"],"sha256":"16952068e5b9e31bd2dd017cf7b69734722ba703796ad11ba87f423e48d7943e"}
+  }
+}

@@ -40,6 +40,7 @@
     "routeManifest": "config/schemas/route-manifest.schema.json",
     "productCardCollection": "config/schemas/product-card-collection.v1.schema.json",
     "productConfiguration": "config/schemas/product-configuration.v1.schema.json",
+    "productConfigurationV2": "config/schemas/product-configuration.v2.schema.json",
     "modules": "config/schemas/modules"
   },
   "boundaries": {

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/quote-line/2.0.0",
+  "title": "GDHE QuoteLine 2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "product", "selection", "configuration", "quantityUnit", "quantity"],
+  "properties": {
+    "contractVersion": {"const": "2.0.0"},
+    "product": {"type":"object","additionalProperties":false,"required":["id","model","publicPath"],"properties":{"id":{"type":"string","pattern":"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"},"model":{"type":"string","minLength":1},"publicPath":{"type":"string","pattern":"^/(?:[a-z0-9](?:[a-z0-9-]{0,62})/)+$"}}},
+    "selection": {"oneOf":[
+      {"type":"object","additionalProperties":false,"required":["type","articleNumber","lengthMeters","color"],"properties":{"type":{"const":"article_number"},"articleNumber":{"type":"string","pattern":"^GDHEPRD[0-9]{6}$"},"lengthMeters":{"type":"number","exclusiveMinimum":0,"maximum":900719925474099.1,"multipleOf":0.1},"color":{"$ref":"#/$defs/color"}}},
+      {"type":"object","additionalProperties":false,"required":["type","articleNumber","lengthMeters","color","resolution"],"properties":{"type":{"const":"custom_length"},"articleNumber":{"type":"null"},"lengthMeters":{"type":"number","exclusiveMinimum":0,"maximum":900719925474099.1,"multipleOf":0.1},"color":{"$ref":"#/$defs/color"},"resolution":{"const":"sales_follow_up"}}}
+    ]},
+    "configuration": {"type":"object","additionalProperties":false,"required":["packaging"],"properties":{"packaging":{"$ref":"#/$defs/packaging"}}},
+    "quantityUnit": {"const":"piece"},
+    "quantity": {"type":"integer","minimum":1,"maximum":9007199254740991}
+  },
+  "$defs": {
+    "color":{"type":"object","additionalProperties":false,"required":["code","label"],"properties":{"code":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"label":{"type":"string","minLength":1}}},
+    "packaging":{"type":"object","additionalProperties":false,"required":["basePackaging","logoPrinting","protectionArrangement"],"properties":{"basePackaging":{"enum":["standard","carton","large_shrink_wrap"]},"logoPrinting":{"type":"boolean"},"protectionArrangement":{"type":["string","null"],"enum":["single_bag","paired",null]}}}
+  }
+}

@@ -172,6 +172,22 @@ wp gdhe task019-fixtures cleanup --path=cms
 
 `cleanup` force-deletes only manifest/marker-owned TASK-019 Product posts and its option. Each deterministic lifecycle removes exactly 13 posts, zero terms and zero uploads. Final verification must prove TASK-019 posts/source/marker meta/option/terms/termmeta/uploads plus A3 and TASK-014 markers/options are all zero. Restore the immutable SQL only after explicit authorization for a real failure; do not restore a healthy database merely to demonstrate rollback.
 
+## TASK-021 Product Configuration v2 Fixture
+
+TASK-021 adds an isolated removable v2 lifecycle and does not rewrite the TASK-019 v1 authority:
+
+```sh
+wp gdhe task021-fixtures create --path=cms
+wp gdhe task021-fixtures show --path=cms
+wp eval-file cms/wp-content/plugins/gdhe-site/tests/product-configuration-v2-contract-test.php --path=cms
+python3 cms/wp-content/plugins/gdhe-site/tests/product-configuration-v2-schema-validation.py
+wp gdhe task021-fixtures cleanup --path=cms
+```
+
+`create` refuses an existing manifest and creates only marker-owned synthetic Product posts. The single success contains the confirmed `GDHEPRD000172 / 6 m / Ivory White / piece` option; the remaining posts are unpublished, ineligible, malformed, ambiguous or private-field negatives. It creates no terms, media, uploads, users, QuoteLine records or real business content. Contract probes are short-lived and deleted in `finally`. `cleanup` force-deletes only manifest/marker-owned TASK-021 posts and its option. Final verification must prove TASK-021, TASK-019, TASK-014 and A3 fixture markers/options, posts, terms and uploads are zero.
+
+Rollback removes only the v2 route dispatcher, v2 Schema/source/Fixture/tests and its `schema.v3.json` registration, then restores the v1 route callback. Do not reconstruct or rewrite any v1 Schema, Golden, error, verifier, manifest or checksum byte.
+
 ## Routine verification
 
 Use WP-CLI to verify:

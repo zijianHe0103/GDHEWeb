@@ -1,0 +1,80 @@
+{
+    "unknown-parameter": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_parameter",
+        "message": "Query parameter is not allowed.",
+        "status": 400,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "private",
+                "code": "gdhe_invalid_parameter"
+            }
+        ]
+    },
+    "invalid-locale": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_locale",
+        "message": "Only the English locale is available.",
+        "status": 400,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "locale",
+                "code": "gdhe_invalid_locale"
+            }
+        ]
+    },
+    "unsupported-schema": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_schema",
+        "message": "Unsupported Product Configuration schema version.",
+        "status": 400,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "schema",
+                "code": "gdhe_invalid_schema"
+            }
+        ]
+    },
+    "invalid-path": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_path",
+        "message": "Path must be a canonical English public path.",
+        "status": 400,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_invalid_path"
+            }
+        ]
+    },
+    "missing-path": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_path",
+        "message": "Path must be a canonical English public path.",
+        "status": 400,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_invalid_path"
+            }
+        ]
+    },
+    "not-found": {
+        "apiVersion": "1",
+        "code": "gdhe_not_found",
+        "message": "Product configuration was not found.",
+        "status": 404,
+        "requestId": "<uuid-v4>",
+        "details": [
+            {
+                "field": "path",
+                "code": "gdhe_not_found"
+            }
+        ]
+    }
+}

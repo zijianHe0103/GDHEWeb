@@ -1,0 +1,34 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-021-VISUAL-QA-R2",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-021",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T16:46:00Z",
+  "requires_response_to": "MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this exact request before execution. Perform only TASKS/ARTIFACTS/TASK-021/VISUAL_QA_R2_DISPATCH.md against the Planner-owned same-origin preview http://127.0.0.1:3000/products/fgd-x15-pvc. Preserve Visual Round 1 FAIL and all ten evidence files. In fresh clean Chrome Guest prove hydration, standard 6 m to Ivory White, Custom Length input, invalid inline errors, valid standard then custom 5.8 m replacing one latest draft, native keyboard/focus, responsive 1440/1024/768/390/320, reduced motion, zero overflow, zero external/WordPress/Feishu requests, clean font/HMR/Console, and absence of Article Number/product UUID/articleNumber/internal diagnostics from document, Flight and visible DOM. Return PASS only for severe=0, obvious=0, detail=0; otherwise FAIL/BLOCKED with fresh reproducible evidence. Write only QA/TASK-021 Round 2 evidence, canonical visual report and visual_qa lane records. Do not start/stop/reconfigure the server, edit frontend/CMS/task authority, run review/Git/deployment, or implement deferred features. Return one linked response.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-021-track-length-color-configuration.md",
+    "TASKS/ARTIFACTS/TASK-021/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-021/FRONTEND_VISUAL_R1_REVISION_CHECKPOINT_PASS.md",
+    "TASKS/ARTIFACTS/TASK-021/VISUAL_QA_R2_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-021/VISUAL_QA_REPORT.md",
+    "QA/TASK-021/EVIDENCE_INVENTORY.sha256",
+    "TASKS/ARTIFACTS/TASK-021/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Planner owns same-origin server session 22915 on 127.0.0.1:3000. Preserve Round 1 history and files. Visual PASS is not review, acceptance, Git or deployment authorization.",
+  "dispatched_at": "2026-08-04T16:46:14Z",
+  "delivery_key": "MSG-TASK-021-VISUAL-QA-R2:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "target_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_id": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-04T16:46:29Z",
+  "updated_at": "2026-08-04T16:46:29Z"
+}

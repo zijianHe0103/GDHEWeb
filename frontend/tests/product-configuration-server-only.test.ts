@@ -17,6 +17,8 @@ describe("Product Configuration server-only boundary", () => {
   test.each([
     ["public consumer", "../src/lib/cms/server/product-configurations"],
     ["deep Adapter", "../src/lib/cms/server/product-configurations/adapter"],
+    ["v2 public consumer", "../src/lib/cms/server/product-configurations-v2"],
+    ["v2 deep Adapter", "../src/lib/cms/server/product-configurations-v2/adapter"],
   ])("rejects Client Component import of the %s", async (_name, modulePath) => {
     const positive = await buildClientImport(modulePath, true);
     const guarded = await buildClientImport(modulePath, false);

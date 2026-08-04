@@ -1000,3 +1000,54 @@ Each execution records:
 - residue_and_governance: generated `.next` removed; no task-owned listener or temporary probe remains; diff, DPG project/messages and strict lane audit PASS with zero issues
 - message_result: `MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1-RESPONSE` received real Planner thread bridge receipt `item-3092`; Planner acknowledged it and moved it to done before the local dispatch recorder ran, so dispatch-once truthfully returned `queue: empty`; `requires_response_to=MSG-TASK-020-FRONTEND-ADVERSARIAL-CUSTOM-LENGTH-P1-R1`
 - unique_next_step: Planner independently reproduces the numeric closure and controls adversarial Round 2; frontend stops without review, acceptance, Git delivery, deployment or follow-on work
+# TASK-021 frontend A4-A6 implementation 2026-08-04
+
+- message: ACKed `MSG-TASK-021-FRONTEND-V2-CONFIGURATOR` before test or product mutation; message moved to done
+- scope: only frontend A4-A6; no CMS/database/Feishu, related products, Basket, visual QA, review, Git or deployment
+- tdd: four direct missing-behavior REDs captured for v2 snapshot/verifier, QuoteLine 2.0.0, v2 runtime consumer/choice projection and visible configurator
+- implementation: independent v2 Product Configuration snapshot/runtime/DTO; QuoteLine 2.0.0; Track Length then Color UI; no Installation field/error/summary/value
+- runtime: real Product Detail route uses one resolve plus one fixed `schema=2.0.0` configuration request, zero ProductCard/per-option/browser WordPress requests
+- validation: v2 focused 11/11; non-server 407/407; four server-only files 12/12; effective 39 files/419 tests; five contract verifiers, lint, typecheck, build and three production smokes PASS
+- resource_note: combined all-at-once Vitest was resource-terminated by accumulated temporary Next builds; identical current bytes passed the complete suite split into one non-server group and four serial server-only files
+- protected: TASK-021 baseline Product Configuration v1 and QuoteLine v1 hashes exact; package/lock/protected image and next-env baseline unchanged
+- artifacts: `FRONTEND_TDD_RED_GREEN_EVIDENCE.md`, `FRONTEND_EXECUTION_REPORT.md`, `FRONTEND_VALIDATION_LOG.md`, `FRONTEND_DIFF_OR_OUTPUT_SUMMARY.md`
+- next: Planner checkpoint only; visual QA and review remain gated
+- response: `MSG-TASK-021-FRONTEND-V2-CONFIGURATOR-RESPONSE` delivered through the real Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to` points to the original request
+
+# TASK-021 frontend Visual Round 1 narrow revision 2026-08-05
+
+- message: ACKed `MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION` before test or product mutation; request moved to done
+- reopen_gate: controlled reopen was attempted before mutation and safely returned `ok=false` because the task was already `NEEDS_REVISION`; Planner state was not changed
+- preserved_history: Visual Round 1 remains `FAIL / severe=1 / obvious=1 / detail=1`; all visual reports, ten evidence files and browser log remain unchanged
+- red: real same-origin Next preview returned HTTP 200 with the correct customer fields, but focused exit 1 proved `GDHEPRD000172`, product UUID and `articleNumber` entered inline Flight bytes
+- minimum_green: server-only internal-DTO-to-public-VM projection plus browser-only public quote draft; Client Component no longer imports or receives internal DTO/Article Number/UUID; unique length-plus-color validation remains fail closed
+- behavior: Track Length then Color then Packaging then Quantity, 6 m, Ivory White, Custom Length, customer packaging labels, Quantity, no Installation and one-latest replacement unchanged
+- focused_validation: 5 files/10 tests PASS including the real Next preview response with zero forbidden markers
+- regression_validation: full Vitest 40 files/420 tests PASS; five contract verifiers, lint, typecheck and final production build PASS
+- production_smoke: CMS integration, ProductList and Product Detail production smokes PASS with existing request and production-404 boundaries
+- same_origin: frontend README now documents exact `GDHE_PRODUCT_DETAIL_MODE=preview npm run dev -- --hostname 127.0.0.1`; no `allowedDevOrigins` or security weakening
+- protected_integrity: Product Configuration v1/QuoteLine v1 baseline hashes, package/lock and protected image exact; CSS/CMS/v1 authority/ProductCard/ProductList unchanged; final next-env tracked diff empty
+- cleanup: no task-owned Next/Vitest process or temporary build root remains
+- artifacts: added `FRONTEND_VISUAL_R1_REVISION_REPORT.md` and appended fresh evidence to `FRONTEND_VALIDATION_LOG.md`; original execution/TDD/diff and visual evidence preserved
+- boundaries: no Visual QA, CMS, CSS, related products, Basket, persistence, submission, Feishu, dependency, Git or deployment work
+- message_result: `MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE` delivered through the real Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to=MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION`
+- unique_next_step: Planner independently validates current bytes, starts the exact same-origin preview runtime and controls Visual QA Round 2; frontend does not alter the preserved visual verdict
+
+# TASK-021 frontend adversarial P1 Round 1 narrow revision 2026-08-05
+
+- message: ACKed `MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1` before test or product mutation; request moved to done
+- preserved_history: Adversarial Round 1 remains `FAIL / P0=0 / P1=2 / P2=1`; Visual Round 1 FAIL and Visual Round 2 PASS evidence remain unchanged
+- final_authority: bound only to manifest `11f3db81c1b962c387f731d9c171d2f370ba60bdc3391cc10ec991247120ac09` and checksum stream `fe611983112944edcf214d88a9aefac6cc4fa4b9258f07670870414a919204ca`; literal handoff 20/20 PASS
+- p1_1_red: production v2 consumer 4 tests with prior 3 PASS and new full-root 1 FAIL because a legitimate one-decimal candidate threw `ProductConfigurationV2ContractError`; stale pin verifier 3 PASS/2 FAIL with manifest SHA mismatch
+- p1_1_green: Ajv v2 registry uses `multipleOfPrecision: 12`; full-root 4.3/5.8/6.7 PASS and 6.05 rejects; Schema/Golden/error bytes unchanged; final pins and verifier GREEN
+- p1_2_red: summary test 2 prior PASS/1 new FAIL because `LatestPublicQuoteDraftSummary` was undefined while production still used line naming
+- p1_2_green: production state/export/prop use `latestDraft`, `PublicQuoteDraft` and `LatestPublicQuoteDraftSummary`; old names exist only in negative assertions; visible copy/layout and one-latest replacement unchanged
+- future_contract: QuoteLine v2 remains isolated future server conversion authority with no production caller, route or implementation claim
+- browser_boundary: real preview HTML/Flight excludes Article Number, UUID, internal DTO/policy, raw enums, sales_follow_up, WordPress/Feishu, secret and diagnostic markers; no network/storage/submission seam
+- focused_validation: direct 4 files/14 tests and complete focused 9 files/32 tests PASS
+- full_validation: final current-byte Vitest 40 files/422 tests PASS; five verifiers, lint, typecheck, production build and three production smokes PASS
+- protected_integrity: handoff 20/20, v1/package/lock/protected image and all 23 visual hashes exact; CSS and next-env diff zero; no task-owned listener/temp/generated residue
+- artifacts: added `FRONTEND_ADVERSARIAL_P1_R1_REPORT.md`; no README/contract-doc edit because both already state PublicQuoteDraft and future server conversion truthfully
+- boundaries: no CMS, Schema/Golden/error, QuoteLine v1/v2 authority, CSS, Product Detail facts, ProductCard/ProductList, dependencies, Basket, Feishu, related products, Planner state, review, Git or deployment work
+- message_result: `MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` delivered through the real Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to=MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1`
+- unique_next_step: Planner independently validates the two P1 closures and controls any later adversarial review; frontend does not start Round 2 or acceptance

@@ -9,6 +9,7 @@ import {
   ProductConfigurator,
   ProductConfiguratorUnavailable,
 } from "../../../components/product-configurator";
+import { projectPublicProductConfigurator } from "../../../lib/product-configuration/v2/public-configurator";
 import { loadProductDetailPage } from "../../../lib/product-detail/load";
 import styles from "./page.module.css";
 
@@ -39,7 +40,9 @@ export default async function ProductDetailPage() {
           />
           {state.configurationState.kind === "ready" ? (
             <ProductConfigurator
-              configuration={state.configurationState.configuration}
+              configuration={projectPublicProductConfigurator(
+                state.configurationState.configuration,
+              )}
             />
           ) : (
             <ProductConfiguratorUnavailable />

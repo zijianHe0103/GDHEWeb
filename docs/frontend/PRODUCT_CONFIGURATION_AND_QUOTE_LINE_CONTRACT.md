@@ -58,13 +58,25 @@ npm test -- tests/quote-line-contract.test.ts
 The contract bytes remain independent and immutable. TASK-020 consumes them in
 the local-only FGD X15+PVC detail route through a fixed server-only Transport,
 exact four-Schema runtime Validator, authentic wrapper and deeply frozen public
-DTO. The visible `Configure Your Track` form can construct one latest in-memory
-resolved or custom QuoteLine from DTO facts and primitive form values.
+DTO. The TASK-020 visible form historically demonstrated one latest in-memory
+configuration result. TASK-021 now defines the live browser-side result
+precisely as a `PublicQuoteDraft`, not a complete QuoteLine. It is constructed
+from public DTO facts and primitive form values and excludes Article Number,
+stable internal Product UUID and internal resolution enums.
 
 CMS detail-ready orchestration performs one `/resolve` request followed by one
 fixed `/product-configurations` request and zero ProductCard or per-option
 requests. Configuration failure leaves the detail visible and exposes only a
 sanitized navigation fallback. Production mode remains fail-closed at 404.
+
+## TASK-021 public draft and future server conversion
+
+Add to Quote replaces one latest browser-memory public quote draft. Refresh
+clears it; there is no network request, persistence, submission or external
+write. QuoteLine 2.0.0 remains an isolated future server-side conversion
+contract. A separately authorized final Request a Quote flow will re-resolve
+the eligible option and create the complete resolved or `sales_follow_up` line
+without exposing internal identity to browser storage or Next/Flight bytes.
 
 ## Deferred capabilities
 

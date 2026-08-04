@@ -1,0 +1,90 @@
+{
+  "evidenceVersion": "TASK-021-PRODUCT-CONFIGURATION-V2-DETERMINISM-1",
+  "fixtureVersion": "TASK-021-PRODUCT-CONFIGURATION-V2-1",
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 1,
+  "goldenHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "valid": 3148,
+        "draft": 3149,
+        "ineligible": 3150,
+        "duplicate_article": 3151,
+        "duplicate_choice": 3152,
+        "guessed_length": 3153,
+        "malformed_color": 3154,
+        "malformed_length": 3155,
+        "inconsistent_color": 3156,
+        "installation_field": 3157,
+        "accessory_field": 3158,
+        "internal_field": 3159,
+        "wrong_model": 3160,
+        "wrong_path": 3161,
+        "malformed_source": 3162
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "fgd-x15-pvc.json": "014e242585b6eb15ac563ee8dd3efee72ed4b325ac371f1177542ef7dfbfec53"
+      },
+      "cleanup": {
+        "posts": 15,
+        "terms": 0,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskOptions": 0,
+        "taskTerms": 0,
+        "otherTaskPostmeta": 0,
+        "otherTaskOptions": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "valid": 3173,
+        "draft": 3174,
+        "ineligible": 3175,
+        "duplicate_article": 3176,
+        "duplicate_choice": 3177,
+        "guessed_length": 3178,
+        "malformed_color": 3179,
+        "malformed_length": 3180,
+        "inconsistent_color": 3181,
+        "installation_field": 3182,
+        "accessory_field": 3183,
+        "internal_field": 3184,
+        "wrong_model": 3185,
+        "wrong_path": 3186,
+        "malformed_source": 3187
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "fgd-x15-pvc.json": "014e242585b6eb15ac563ee8dd3efee72ed4b325ac371f1177542ef7dfbfec53"
+      },
+      "cleanup": {
+        "posts": 15,
+        "terms": 0,
+        "uploads": 0
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskOptions": 0,
+        "taskTerms": 0,
+        "otherTaskPostmeta": 0,
+        "otherTaskOptions": 0,
+        "taskUploads": 0
+      }
+    }
+  ],
+  "valid": true
+}

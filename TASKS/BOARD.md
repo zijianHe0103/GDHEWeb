@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-020
+current_task: TASK-021
 
 ## 活动任务
 
-- `TASK-020` 建立 FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -25,7 +25,7 @@ current_task: TASK-020
 
 ## 等待推送
 
-- `TASK-020` 已正式验收；等待任务分支提交/推送、fast-forward 合并及远端 `main` 推送
+- `TASK-021` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
 
 ## 已暂停
 
@@ -33,6 +33,7 @@ current_task: TASK-020
 
 ## 最近关闭
 
+- `TASK-020` 建立 FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片 — `CLOSED` / `MERGED`
 - `TASK-019` 建立 FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同 — `CLOSED` / `MERGED`
 - `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `CLOSED` / `MERGED`
 - `TASK-017` 英语站 ProductCard 本地可见列表纵向切片 — `CLOSED` / `MERGED`
@@ -114,3 +115,7 @@ current_task: TASK-020
 ## Accepted
 
 - TASK-020: ACCEPTED at 2026-08-01T15:26:27Z
+
+## Accepted
+
+- TASK-021: ACCEPTED at 2026-08-04T18:39:41Z

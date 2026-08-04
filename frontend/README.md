@@ -154,6 +154,20 @@ runtime Validator, Adapter, Product Detail or ProductList, and they do not add
 a configurator, Add to Quote control, basket, browser persistence, submission
 endpoint, WordPress write model, Feishu integration or deployment behavior.
 
+TASK-021 adds an independent Product Configuration `2.0.0` authority and
+retains QuoteLine `2.0.0` as a future server-side conversion contract without
+changing any v1 byte. The v2 CMS snapshot is bound to the
+frozen TASK-021 handoff and contains exactly four Schemas, the one confirmed
+`6 m / Ivory White` success document, and six normalized errors. QuoteLine v2
+removes Installation completely; its configuration contains Packaging only.
+The visible Add to Quote action does not create that QuoteLine contract.
+
+```sh
+node scripts/verify-product-configuration-v2-contract.mjs
+node scripts/verify-quote-line-v2-contract.mjs
+npm test -- tests/product-configuration-v2-contract-snapshot.test.ts tests/quote-line-v2-contract.test.ts
+```
+
 ## Server-only ProductCard runtime consumer
 
 `src/lib/cms/server/product-cards/` is the independent runtime consumer for the
@@ -237,8 +251,12 @@ disabled by default, always `noindex,nofollow`, and cannot be enabled when
 Render the frozen frontend-owned DTO with zero network access:
 
 ```sh
-GDHE_PRODUCT_DETAIL_MODE=preview npm run dev
+GDHE_PRODUCT_DETAIL_MODE=preview npm run dev -- --hostname 127.0.0.1
 ```
+
+Open the preview through the same `127.0.0.1` origin. Do not start it as
+`localhost` and then browse it through `127.0.0.1`; Next.js development-origin
+protection intentionally rejects that mismatch.
 
 Exercise the authentic Schema 3 `/resolve` boundary against a controlled local
 CMS:
@@ -253,7 +271,7 @@ CMS mode performs exactly one fixed English `/resolve` request for
 `/products/fgd-x15-pvc/`, validates it with the existing 16-Schema runtime
 Validator, and adapts only the exact confirmed product identity and five
 display specifications. After a ready detail, it performs exactly one fixed
-Product Configuration request; it performs no ProductCard collection request,
+Product Configuration `schema=2.0.0` request; it performs no ProductCard collection request,
 per-option request or retry. Only a validated `gdhe_not_found` HTTP 404 from
 the detail boundary becomes a page 404. A configuration failure keeps the
 detail visible and replaces the form with a sanitized navigation-only fallback.
@@ -264,19 +282,28 @@ Both ready states also display an explicit local test-candidate notice; CMS
 mode identifies itself as a non-production CMS test candidate rather than
 implying that validated data is publicly published.
 When configuration is ready, the Hero action navigates to the local
-`Configure Your Track` section. The form creates only one latest in-memory
-QuoteLine and replaces that result on the next valid action. It does not create
+`Configure Your Track` section. The form asks for Track Length first, then
+Color, Packaging and Quantity. Standard lengths and colors come only from the
+validated v2 DTO; Custom Length is a sibling length choice. Installation is
+not a configurator field or QuoteLine value, while the separate Product Detail
+fact may still describe ceiling and wall mounting support. The form creates
+only one latest browser-memory public quote draft and replaces that result on
+the next valid action. The draft contains no Article Number, internal Product
+UUID or internal resolution enum and is not a QuoteLine 2.0.0. The complete
+QuoteLine remains a future server-side conversion at final Request a Quote
+submission. The current slice does not create
 a basket, write browser storage, submit an RFQ or contact an external system.
 When configuration is unavailable, `Request a Quote` remains ordinary
 navigation to the currently deferred `/request-a-quote/` workspace. This slice
 is not a production product page, formal SEO implementation, final copy, visual
 acceptance, CMS import or deployment authorization.
 
-Run the TASK-020 focused gates with Node.js 24.18.0:
+Run the TASK-021 frontend focused gates with Node.js 24.18.0:
 
 ```sh
-npm test -- tests/product-configuration-transport.test.ts tests/product-configuration-runtime-validator.test.ts tests/product-configuration-adapter.test.ts tests/product-configuration-server-only.test.ts tests/product-configuration-quote-builder.test.ts tests/product-configurator-presentation.test.ts tests/product-detail-loader.test.ts tests/product-detail-route.test.ts
-node scripts/verify-product-configuration-contract.mjs
+npm test -- tests/product-configuration-v2-contract-snapshot.test.ts tests/product-configuration-v2-consumer.test.ts tests/quote-line-v2-contract.test.ts tests/product-configurator-v2-presentation.test.ts tests/product-configurator-interaction.test.ts tests/product-detail-loader.test.ts tests/product-detail-route.test.ts
+node scripts/verify-product-configuration-v2-contract.mjs
+node scripts/verify-quote-line-v2-contract.mjs
 ```
 
 ## Server-only CMS Transport

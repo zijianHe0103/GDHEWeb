@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-021-VISUAL-QA-R2-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-021",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T16:58:58Z",
+  "requires_response_to": "MSG-TASK-021-VISUAL-QA-R2",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-021/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-021/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "PASS; severe=0; obvious=0; detail=0. Round 1 FAIL and all ten files remain preserved. Fresh Chrome Guest proves hydrated invalid/standard/custom native-key flows, 6 m to Ivory White, Custom input, 5.8 m replacing one latest draft, canonical URL and visible focus. Document/Flight/visible DOM exclude Article Number, product UUID, articleNumber and internal markers. Font 200, HMR 101 connected, zero unexpected Console errors, 24-to-24 interaction request count with all page requests same-origin. Exact CSS 1440/1024/768/390/320 reflow has zero overflow, 44.09375px CTA/center hit, 16px body and zero motion; explicit reduced-motion at 320 passes. 23/23 evidence hashes and DPG gates pass. Visual PASS is not review, acceptance, Git or deployment authorization.",
+  "done_at": "2026-08-04T17:00:03Z",
+  "updated_at": "2026-08-04T17:00:03Z"
+}

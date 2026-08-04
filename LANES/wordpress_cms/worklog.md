@@ -550,3 +550,63 @@ Each execution records:
 - final_validation: direct TASK-019 runtime/Schema/request/two-lifecycle determinism, 17/17 handoff, all PHP/JSON/Python AST, Core, SCF, 12-table DB, POST no-route, protected scope, secret scan, diff and DPG project/registry/messages/drift/strict-lane gates PASS; temporary regression root absent
 - result: both aggregate-identity P1 findings are locally closed without changing route/version/Schema/Golden or frontend authority
 - next: send one execution_response linked to the continuation and covering both P1s; Planner performs independent Round 2 checkpoint before frontend
+
+### 2026-08-04 - TASK-021 Product Configuration v2 CMS authority complete
+
+- task: TASK-021 A2 WordPress Product Configuration Document 2.0.0 only
+- message: MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION
+- authorization: exact dispatched message and complete context read; message ACKed before mutation; branch `codex/TASK-021-track-length-color-config`, registered lane and write scope verified; existing Planner/frontend/reviewer dirty work preserved
+- tdd_red: valid missing-root-Schema, missing-v2-route, missing-eligible-projection and production color-code/label inconsistency failures observed before each minimum GREEN
+- implementation: gdhe-site 0.7.0; separate closed four-file Draft 2020-12 v2 authority; exact `schema=2.0.0` dispatch on the existing anonymous GET endpoint; v2 policy contains packaging/custom length only and excludes installation/accessory/defaults
+- invariants: complete candidate, stable UUID identity, global Article Number, per-stable-product normalized length/color choice and color-label consistency fail closed; distinct stable products may share a choice
+- truth_set: exactly `GDHEPRD000172 / 6 m / Ivory White / piece`; no 4.3 m, 7 m or accessory authority
+- runtime: one success, six normalized no-store errors, fourteen invalid/unpublished exclusions, strong ETag/bodyless 304, leakage/POST boundary and four aggregate probes PASS
+- determinism: two final 15-post lifecycles used different WordPress IDs and produced identical 1/1 Golden hash `014e242585b6eb15ac563ee8dd3efee72ed4b325ac371f1177542ef7dfbfec53`
+- cleanup: each final lifecycle removed 15 posts/0 terms/0 uploads; final TASK-021 posts/meta/option/upload plus TASK-019/TASK-014/A3 fixture markers/options all zero
+- v1_protection: TASK-019 handoff 17/17 exact SHA-256 PASS; temporary v1 positive returned Schema 1.0.0 and GDHEPRD000172, then cleaned 13 posts/0 terms/0 uploads; no v1 authority byte rewritten
+- handoff: exact four-file Schema graph, one Golden and 20/20 versioned handoff checksums PASS
+- integrity: all GDHE Site PHP lint, 16 Python AST, 45 JSON parse, WordPress Core, official SCF 6.9.2, 12-table database, active gdhe-site 0.7.0, no POST route, secret/private scan, diff and DPG project/registry/messages/strict-lane gates PASS
+- docs: only docs/cms README, REST contract and operations/rollback synchronized; documentation impact RESOLVED
+- artifacts: WORDPRESS_CMS_RED_GREEN_EVIDENCE.md, WORDPRESS_CMS_EXECUTION_REPORT.md, WORDPRESS_CMS_VALIDATION_LOG.md, WORDPRESS_CMS_DIFF_OR_OUTPUT_SUMMARY.md, PRODUCT_CONFIGURATION_V2_HANDOFF.md, four machine evidence JSON, manifest/checksums and one Golden
+- scope_boundary: no frontend, QuoteLine, related products, root README, Planner authority, Core, SCF source, theme, real content, database structure, users, Feishu, external system, review, Git delivery, acceptance or deployment
+- result: A2 implementation and exact cleanup complete; frontend remains blocked pending Planner independent A3 checkpoint
+- response: linked `MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION-RESPONSE` sent through lane_message.py, delivered to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed` through the real Codex thread bridge, dispatch-once completed and queue entry moved to dispatched
+- next: remain idle pending Planner independent A3 validation; do not start frontend, review, Git or deployment
+
+### 2026-08-05 - TASK-021 adversarial handoff P2 Round 1 closure
+
+- task: close only Adversarial Round 1 P2-1 stale Product Configuration v2 handoff evidence
+- message: `MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1` read completely and ACKed before any mutation
+- preserved_red: direct checksum returned literal 19/20; only determinism failed; stale expected `8dbc5368889025edbbb99168cfc6e18a0848ef7545041cb7dd23032ade110380`, actual before revision `113dffa3ce32ee169db2b9753636a5f5547984fc55fec39f0f8d13373e1eb876`
+- determinism: canonical final script ran once; two lifecycles used IDs 3098–3112 and 3123–3137, identical 1/1 Golden hash, public DB ID isolation and valid runtime/Schema evidence
+- cleanup: each round removed 15 posts/0 terms/0 uploads; final TASK-021 plus TASK-019/TASK-014/A3 marker/option/upload residue zero
+- final_digest: `PRODUCT_CONFIGURATION_V2_DETERMINISM.json` SHA-256 `9fc30ade00bed8eb7ad642829c6b856e1864fed765281ec3c30d39f6d23849e9`
+- handoff: canonical generator ran exactly once after final artifact stability; manifest/checksum direct verification and independent expansion literal 20/20
+- final_authority_hashes: manifest `928ff1dd18f74ff096512cb632a38ad2b781f1ead9a09d2cfbbef2d590642e83`; checksum stream `501b6b22a49142c28fc3aafb991d4795b888ff8b97f9bd553a942628d3c7c3a9`
+- protected: v2 Schema/Golden/error/runtime/Schema-validation hashes unchanged; v1 17/17; no API/runtime business behavior or Fixture truth change
+- health: all plugin PHP lint, 45 JSON parse, Core, official SCF 6.9.2, gdhe-site 0.7.0, 12-table DB, diff and DPG project/registry/messages/strict-lane PASS
+- scope_boundary: no frontend pin/code, Planner authority, visual evidence, dependencies, CMS docs, ProductCard/A3, real content, Feishu, deferred feature, review, acceptance, Git or deployment work
+- artifacts: `WORDPRESS_ADVERSARIAL_HANDOFF_P2_R1_REPORT.md` plus narrow updates to existing WordPress execution/validation/diff evidence
+- result: CMS handoff evidence P2 locally closed; task remains NEEDS_REVISION pending independent Planner validation and separate frontend P1 work
+- response: linked `MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1-RESPONSE` sent through lane_message.py, delivered to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed` through the real Codex thread bridge, dispatch-once completed and the queue entry moved to dispatched
+- next: remain idle pending Planner independent validation; do not start frontend P1, review, acceptance, Git or deployment
+
+### 2026-08-05 - TASK-021 adversarial exact-decimal P1 Round 1 CMS closure
+
+- task: close only the CMS/Python half of Adversarial Round 1 P1-1
+- message: `MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1` and exact dispatch read completely; ACKed before mutation
+- red: real complete-root float validator rejected 4.3 and 5.8 with `is not a multiple of 0.1`; 6.7 passed, preserving the exact inconsistent current result
+- minimum_green: only Python evidence parsing changed to `Decimal` for Schema and payload numbers; no scalar remainder shortcut or contract rewrite
+- full_root_matrix: 4.3/5.8/6.7 valid; 6.05 invalid; current 6 m Golden and all seven existing negatives PASS
+- validator_hashes: source `ca4877ca83e00f55130d003efbfc7eb31522b0f364d774184e0180d1c07b970b`; Schema evidence `be7bb37dbbdd97ffb597e3295320a715bdb0c2a0a63083803a752d0c47487b31`
+- determinism: exactly one final canonical run after byte stability; IDs 3148–3162 and 3173–3187; identical 1/1 Golden; final SHA-256 `c4e88b48d4e02d79bf1e5d5abdb55f2c564d5757305d03f806ad96032b39b7f5`
+- cleanup: both rounds 15 posts/0 terms/0 uploads; final TASK-021/TASK-019/TASK-014/A3 marker/option/upload residue zero
+- handoff: canonical generator ran exactly once after determinism; direct checksum and independent manifest expansion literal 20/20
+- final_authority_hashes: manifest `11f3db81c1b962c387f731d9c171d2f370ba60bdc3391cc10ec991247120ac09`; checksum stream `fe611983112944edcf214d88a9aefac6cc4fa4b9258f07670870414a919204ca`
+- protected: four Schema files, current Golden, errors, runtime, API/PHP, Fixture truth unchanged; v1 17/17
+- validation: all plugin PHP lint, 16 Python AST, 45 JSON, Core, official SCF 6.9.2, gdhe-site 0.7.0, 12-table DB, diff and DPG project/registry/messages/strict-lane PASS
+- scope_boundary: no frontend pin/code/test, public-draft/QuoteLine name, visual evidence, Planner authority, dependency, real content, Feishu, deferred feature, review, acceptance, Git or deployment
+- artifacts: `WORDPRESS_ADVERSARIAL_EXACT_DECIMAL_P1_R1_REPORT.md` plus narrow updates to existing WordPress execution/validation/diff evidence
+- result: CMS/Python exact-decimal half locally closed; task remains NEEDS_REVISION pending Planner validation and separate frontend revision
+- response: linked `MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1-RESPONSE` sent through lane_message.py, delivered to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed` through the real Codex thread bridge, dispatch-once completed and the queue entry moved to dispatched
+- next: remain idle pending Planner independent validation; do not start frontend revision, Round 2, acceptance, Git or deployment

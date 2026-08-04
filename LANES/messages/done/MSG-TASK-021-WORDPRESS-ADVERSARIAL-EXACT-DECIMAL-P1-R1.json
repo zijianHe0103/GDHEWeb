@@ -1,0 +1,27 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-021",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-04T17:48:46Z",
+  "requires_response_to": "MSG-TASK-021-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK before mutation. Execute only TASKS/ARTIFACTS/TASK-021/WORDPRESS_ADVERSARIAL_EXACT_DECIMAL_P1_R1_DISPATCH.md. Reproduce the real full-root float-based RED, then make only the Python exact-decimal evidence GREEN for 4.3, 5.8 and 6.7 positive plus 6.05 negative while preserving frozen Schema/API/PHP/Golden/Fixture business bytes. Because the validator is a handoff source, run final canonical determinism once after byte stability, regenerate handoff once, and return final literal 20/20, hashes, cleanup and protected-boundary evidence. Do not touch frontend, public-draft/QuoteLine naming, visual, Planner authority, dependencies, Git, deployment or deferred features. Return one linked response.",
+  "context_files": [],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-021/WORDPRESS_ADVERSARIAL_EXACT_DECIMAL_P1_R1_REPORT.md"
+  ],
+  "notes": "",
+  "dispatched_at": "2026-08-04T17:49:13Z",
+  "delivery_key": "MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1:019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "target_session": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_id": "019fcde4-9329-7d72-a972-98d5556df782",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-04T17:49:31Z",
+  "updated_at": "2026-08-04T17:49:31Z"
+}

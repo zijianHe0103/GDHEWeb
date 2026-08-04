@@ -1,0 +1,11 @@
+{
+  "contractVersion": "2.0.0",
+  "files": {
+    "index.ts": "d68912b6b3b0576c47febc3d1a27a527bf242a601352d487a6cc81b28e831bc3",
+    "schemas/quote-line.v2.schema.json": "7b65f339cf3c2a543d28efa2fac40a72497e76fd2400eb41db78d829a910ac20",
+    "samples/resolved.json": "e7a9ae6bd82ac48721743e494e7c426ac7f0f38b9816f24a551e8e058070674e",
+    "samples/custom.json": "c933a5cee4b88f027c5ad5bcb9693ce704e8a1ffcb6c5b12da697715082cd6e5",
+    "samples/invalid/custom-unsafe.json": "b5e565db7c22849bb4340495c1151fdabb7ec88c8495d2888fb2cdae50d05471",
+    "samples/invalid/installation.json": "69bbcdf6fd2269970cb340c0cedffd94fa4332c46bbdb2df7fb2a99f189b55d1"
+  }
+}

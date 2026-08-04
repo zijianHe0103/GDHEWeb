@@ -2,6 +2,58 @@
 
 schema_version: DPG-LANES-1.0.0
 
+## 2026-08-04T16:43:03Z
+
+### task_visual_revision_checkpoint_pass
+
+- type: task_checkpoint
+- lane: planner
+- task: TASK-021
+- summary: The server-only public configurator projection removed Article Number and product UUID from real Next browser bytes; 40-file/420-test and all protected gates passed, unlocking only same-origin Visual QA Round 2.
+
+## 2026-08-04T16:21:51Z
+
+### task_visual_qa_round_1_fail_recovery
+
+- type: task_recovery
+- lane: planner
+- task: TASK-021
+- summary: Visual QA Round 1 failed 1/1/1 because the Planner preview used mismatched localhost/127.0.0.1 origins and the internal Product Configuration DTO leaked Article Number/product UUID into Next browser bytes; only the narrow frontend/public-view and same-origin preview recovery is authorized.
+
+## 2026-08-04T15:59:55Z
+
+### task_frontend_checkpoint_pass
+
+- type: task_checkpoint
+- lane: planner
+- task: TASK-021
+- summary: Product Configuration v2, QuoteLine v2 and the Track Length then Color visible configurator passed independent 39-file/419-test, verifier, build, smoke, protected-scope and governance validation; visual QA is the sole next gate.
+
+## 2026-08-04T14:59:38Z
+
+### task_requirements_confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-021
+- summary: Exact user confirmation received; TASK-021 entered IN_PROGRESS with Product Configuration 2.0.0 and QuoteLine 2.0.0 as the breaking-version boundary. Planner design and protected baseline precede WordPress dispatch.
+
+## 2026-08-04T14:50:46Z
+
+### task_intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-021
+- summary: Created the FGD X15+PVC Track Length/Color configuration revision task, removed customer Installation selection from its confirmed boundary, and deferred the related-products carousel to the next independent small task; waiting for explicit requirement confirmation.
+
+### task_delivery_view_sync
+
+- type: task_delivery_view_sync
+- lane: planner
+- task: TASK-020
+- summary: Synchronized the stale formal-delivery view to the verified remote fact: commit 0dd3390 is present on the task branch and origin/main; TASK-020 is CLOSED/MERGED and remains undeployed.
+
 ## 2026-07-22T03:58:17Z
 
 ### bootstrap
@@ -8688,3 +8740,447 @@ schema_version: DPG-LANES-1.0.0
 - TASK-020 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; final visual and adversarial verdicts remain PASS with full history preserved.
 - The controlled delivery excludes `.codex/config.toml`, historical resume packets, deployment and TASK-021.
 - Next: formal Chinese commit, immediate task-branch push, fast-forward merge to `main`, push `main`, and verify remote refs.
+
+### 2026-08-04T15:02:52Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message queued for wordpress_cms
+
+### 2026-08-04T15:03:20Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION dispatched to wordpress_cms
+
+### 2026-08-04T15:04:36Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION moved to done
+
+### 2026-08-04T15:20:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T15:20:45Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-08-04T15:21:02Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-08-04T15:26:11Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-021
+- summary: message queued for frontend
+
+### 2026-08-04T15:26:35Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-V2-CONFIGURATOR dispatched to frontend
+
+### 2026-08-04T15:28:12Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-V2-CONFIGURATOR moved to done
+
+### 2026-08-04T15:54:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T15:55:30Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-V2-CONFIGURATOR-RESPONSE dispatched to planner
+
+### 2026-08-04T15:55:50Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-V2-CONFIGURATOR-RESPONSE moved to done
+
+### 2026-08-04T16:01:46Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-021
+- summary: message queued for visual_qa
+
+### 2026-08-04T16:02:10Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-08-04T16:02:19Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R1 moved to done
+
+### 2026-08-04T16:18:07Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T16:19:34Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R1-RESPONSE moved to done
+
+### 2026-08-04T16:23:22Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-021
+- summary: message queued for frontend
+
+### 2026-08-04T16:23:39Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION dispatched to frontend
+
+### 2026-08-04T16:25:21Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION moved to done
+
+### 2026-08-04T16:38:54Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T16:39:12Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE dispatched to planner
+
+### 2026-08-04T16:39:24Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE moved to done
+
+### 2026-08-04T16:46:00Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-021
+- summary: message queued for visual_qa
+
+### 2026-08-04T16:46:14Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R2 dispatched to visual_qa
+
+### 2026-08-04T16:46:29Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R2 moved to done
+
+### 2026-08-04T16:58:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T17:00:03Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-VISUAL-QA-R2-RESPONSE moved to done
+
+## 2026-08-04T17:04:47Z TASK-021 Visual Round 2 and pre-review validation PASS
+
+- ACKed `MSG-TASK-021-VISUAL-QA-R2-RESPONSE`; current visual verdict is `PASS / severe 0 / obvious 0 / detail 0`, with Round 1 `FAIL / 1 / 1 / 1` and all original evidence preserved.
+- Independently verified 23/23 visual hashes, actual JPEG/JFIF Round 2 encoding/dimensions, hydrated standard/custom/invalid keyboard paths, zero browser-facing internal identity, clean Console/HMR/font, same-origin Network and 1440/1024/768/390/320 reflow.
+- Reproduced non-listener 35/407, real preview 1/1 and server-only 12/12 for effective 40 files/420 tests; all five verifiers, lint, typecheck, final clean build and three production smokes pass.
+- Stopped Planner preview, confirmed port 3000 free, restored next-env baseline and moved generated `.next` to recoverable Trash; no temp root remains.
+- Wrote `PLANNER_PRE_REVIEW_VALIDATION.md` and `ADVERSARIAL_REVIEW_DISPATCH.md`; task is now UNDER_REVIEW.
+- Unique next step: one controlled independent read-only adversarial review. No final validation, acceptance, Git, deployment or deferred feature work before its verdict.
+
+## 2026-08-04T17:26:25Z TASK-021 adversarial Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-021-ADVERSARIAL-REVIEW-R1-RESPONSE`; verdict is FAIL / P0=0 / P1=2 / P2=1.
+- P1-1 independently proves legal exact one-decimal standard lengths 4.3 and 5.8 are rejected by the frontend Ajv/Python evidence boundary while CMS/Schema intend them valid.
+- P1-2 independently proves visible Add to Quote stores a public draft, not QuoteLine v2; an explicit user authority decision is required before revising either the confirmed contract wording or adding a server-owned line-build seam.
+- P2-1 proves current CMS v2 handoff is 19/20 because the final determinism artifact hash is stale in the manifest/checksum and frontend pins.
+- Ran checked reopen first; the helper safely refused true UNDER_REVIEW because it only accepts AWAITING_USER. Recorded equivalent NEEDS_REVISION recovery with no fabricated transition.
+- Preserved Visual R1 FAIL, frontend revision PASS, Visual R2 PASS and all prior evidence. Planner final validation is blocked.
+- Unique next step: obtain the user P1-2 decision, then dispatch only the three bounded revisions and narrow Round 2.
+
+## 2026-08-04T17:34:35Z TASK-021 public quote draft authority confirmed
+
+- User selected option A: Add to Quote retains one browser-memory PublicQuoteDraft and does not create QuoteLine v2 in TASK-021.
+- The draft remains free of Article Number, internal UUID and resolution enum, performs no network/persistence/submission, and is cleared by refresh.
+- QuoteLine v2 is now explicitly a future server-side conversion contract for final Request a Quote submission.
+- Synchronized Requirements, Design, active acceptance, implementation plan, root/frontend README and frontend contract docs without changing product behavior or historical evidence.
+- Unique next step: dispatch only frontend exact-decimal/public-draft naming revisions and CMS handoff 20/20 repair, then fresh validation and narrow review Round 2.
+
+### 2026-08-04T17:07:00Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-04T17:07:12Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-04T17:07:50Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-04T17:24:43Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T17:25:16Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T17:26:20Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-08-04T17:39:48Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message queued for wordpress_cms
+
+### 2026-08-04T17:40:09Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1 dispatched to wordpress_cms
+
+### 2026-08-04T17:40:52Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1 moved to done
+
+### 2026-08-04T17:44:18Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T17:44:47Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T17:44:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1-RESPONSE moved to done
+## 2026-08-04T17:46:49Z TASK-021 WordPress handoff P2 intermediate checkpoint PASS
+
+- ACKed `MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1-RESPONSE` and independently reproduced literal 20/20 checksum and manifest parity.
+- Confirmed determinism `9fc30ade...49e9`, manifest `928ff1dd...2e83`, checksum stream `501b6b22...3c7c3a9`, identical two-lifecycle Golden hashes and exact 15/0/0 cleanup per round.
+- This closes the stale-handoff P2 only as an intermediate checkpoint; the exact-decimal Python evidence file belongs to the same handoff and must be changed before the final refreeze.
+- Unique next step: one narrow WordPress exact-decimal evidence revision, then final 20/20 refreeze before frontend authority pins.
+
+### 2026-08-04T17:48:46Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message queued for wordpress_cms
+
+### 2026-08-04T17:49:13Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1 dispatched to wordpress_cms
+
+### 2026-08-04T17:49:31Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1 moved to done
+
+### 2026-08-04T17:53:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T17:54:10Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T17:54:31Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1-RESPONSE moved to done
+## 2026-08-04T17:54:53Z TASK-021 WordPress exact-decimal and final handoff checkpoint PASS
+
+- ACKed the linked WordPress response and independently reproduced full-root 4.3/5.8/6.7 PASS, 6.05 FAIL, four-file closure and all seven existing negatives.
+- Verified final determinism `c4e88b48...b7f5`, manifest `11f3db81...ac09`, checksum stream `fe611983...04ca`, literal 20/20 handoff and v1 17/17.
+- Confirmed two different-ID lifecycles, identical Golden hash, exact 15/0/0 cleanup per round and zero final residue.
+- Unique next step: the already-scoped frontend Ajv/final-pins/PublicQuoteDraft naming revision only.
+
+### 2026-08-04T17:55:58Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-021
+- summary: message queued for frontend
+
+### 2026-08-04T17:56:18Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1 dispatched to frontend
+
+### 2026-08-04T17:56:44Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1 moved to done
+
+### 2026-08-04T18:06:15Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T18:06:34Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T18:07:05Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE moved to done
+## 2026-08-04T18:10:05Z TASK-021 adversarial Round 1 revision Planner checkpoint PASS
+
+- ACKed the frontend revision response and independently reproduced focused 4/14, full 40/422, five verifiers, lint, typecheck, build and three production smokes.
+- Reproduced CMS/frontend exact one-tenth full-root behavior, final 20/20 authority/pins and PublicQuoteDraft-only production naming with zero QuoteLine v2 caller.
+- Verified 23/23 visual evidence, protected boundaries and zero runtime/generated residue; moved `.next` to recoverable Trash.
+- Advanced TASK-021 to UNDER_REVIEW. Unique next step: one controlled narrow adversarial Round 2 only.
+
+### 2026-08-04T18:11:45Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-04T18:12:07Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-08-04T18:13:35Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-08-04T18:24:14Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-021
+- summary: message queued for planner
+
+### 2026-08-04T18:24:40Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-08-04T18:24:56Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-021
+- summary: message MSG-TASK-021-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+## 2026-08-04T18:29:39Z TASK-021 Round 2 PASS and Planner final validation
+
+- ACKed the controlled final Round 2 response: PASS 0/0/0 while preserving Round 1 FAIL 0/2/1 and all visual histories.
+- Freshly reproduced CMS/frontend exact-decimal, final 20/20 handoff, full frontend 40/422, five verifiers, lint/typecheck/build, three smokes, Core/SCF/DB, v1 17/17 and 23/23 visual evidence.
+- Recorded the initial wrong-working-directory command as an operator path error and reran the affected CMS/handoff commands successfully from repository root.
+- Removed final `.next` to recoverable Trash and confirmed zero listener/generated residue.
+- Unique next step: checked prepare-awaiting-user; no acceptance, Git, deployment or deferred feature yet.
+
+### 2026-08-04T18:31:06Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-021
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-04T18:32:19Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-021
+- summary: Checked prepare succeeded, but human-readable task/state/board narration still described UNDER_REVIEW and pending prepare; reopen only to synchronize those views without changing product, evidence, review or validation.
+## 2026-08-04T18:32:19Z TASK-021 checked preparation view sync
+
+- First checked prepare succeeded at 18:31:06Z.
+- DPG Hook correctly blocked post-transition narrative writes; no partial mutation occurred.
+- Controlled reopen was used only to synchronize human-readable task/state/board/worklog views before the final checked prepare; product, tests, evidence, verdicts and Git facts are unchanged.
+- Final successful prepare leaves the unique next step as exact formal user acceptance.
+
+## 2026-08-04T18:31:06Z TASK-021 checked preparation PASS
+
+- Checked `prepare-awaiting-user` succeeded after required aggregate artifacts, Round 2 PASS, Planner final validation, documentation and governance gates passed.
+- PASS is not user acceptance; no Git delivery or deployment occurred.
+- Unique next step: wait for the exact formal delivery phrase `确认 TASK-021 完成并提交到远端`.
+
+### 2026-08-04T18:35:08Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-021
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-04T18:39:41Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-021
+- summary: TASK-021 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+## 2026-08-04T18:39:41Z TASK-021 formal delivery authorized
+
+- 用户输入精确口令 `确认 TASK-021 完成并提交到远端`。
+- `task_accept.py check` 与 `accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- Product Configuration v2、PublicQuoteDraft、CMS handoff 20/20、40/422、五套 verifier、Visual 23/23 与 Adversarial Round 2 PASS 证据保持有效。
+- 用户自有 `.codex/config.toml`、历史 resume packet 和本地预览生成物明确排除。
+- 唯一下一步：受控正式提交，推送任务分支，fast-forward 合并并推送 `main`；不部署。

@@ -2,7 +2,7 @@
 accepted_at: 2026-08-01T15:26:27Z
 
 task_id: TASK-020
-status: AWAITING_USER
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]
 review_lane: adversarial_reviewer
@@ -10,7 +10,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-020
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-01T12:47:58Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -231,7 +231,7 @@ project_type: software
 
 ## 当前状态
 
-用户已输入精确正式交付口令，`task_accept.py check/accept` 均成功；项目状态为 `ACCEPTED`，验收状态为 `ACCEPTED`，Git 为 `FORMAL_COMMIT_PENDING`。活动任务的 `status` 按当前 formal-commit Hook 契约保持 `AWAITING_USER`。Round 2 final、Planner fresh final validation、文档和 canonical artifacts 均 PASS，全部历史 FAIL/BLOCKED 保留。尚未 commit、push、merge 或 deploy。
+用户已输入精确正式交付口令，`task_accept.py check/accept` 均成功。正式提交 `0dd33907b11e2c5413dd6e15868487c819d60186` 已推送任务分支，fast-forward 合并到 `main` 并推送 `origin/main`；任务现为 `CLOSED / ACCEPTED / MERGED`，未部署。Round 2 final、Planner fresh final validation、文档和 canonical artifacts 均 PASS，全部历史 FAIL/BLOCKED 保留。
 
 ## 恢复入口
 
@@ -239,7 +239,7 @@ project_type: software
 
 ## 下一步
 
-只暂存 TASK-020 受控交付物，使用中文完整正式提交，立即推送当前任务分支，随后 fast-forward 合并到 `main` 并推送远端 `main`；不部署。
+TASK-020 已完成正式 Git 交付。后续需求必须进入新的活动任务，不在本任务历史中继续修改。
 
 审查和验证完成后，使用 `task_transition.py prepare-awaiting-user` 进入验收等待；需要修订时使用 `task_transition.py reopen`。
 

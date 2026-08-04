@@ -207,3 +207,54 @@ Each execution records:
 - protected_scope: no product code/CSS/tests/README/CMS/task authority/dependencies/review/Git/deployment/external-system mutation
 - next: validate evidence, Markdown, diff and DPG gates; send one controlled execution response linked to the Round 2 request
 - intervention: none from visual lane
+
+## 2026-08-05
+
+### TASK-021 visual QA Round 1
+
+- task: `TASK-021`
+- message: `MSG-TASK-021-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-021/VISUAL_QA_DISPATCH.md`
+- runtime: reused Planner-owned `http://127.0.0.1:3000/products/fgd-x15-pvc`; no server lifecycle or configuration action
+- responsive: exact-width 1440/1024/768/390/320 full-page evidence; `scrollWidth == clientWidth` at all widths; 16px body text; CTA 44.09375px and center-hit true at all widths; no nonzero rendered animation/transition
+- default_truth: visible order Track Length, Color, Packaging, Quantity, Add; only `6 m` plus sibling `Custom Length`; Installation absent from form; no fabricated `4.3 m` or `7 m`
+- keyboard: clean Chrome Guest with system-level native Tab, Space, Arrow and Enter; natural focus order and visible focus directly proven
+- severe_finding: native selection changes radio accessibility state, but Color never unlocks, Custom input never appears, and Enter performs default GET to canonical `?` with no inline errors; configurator is not hydrated, blocking standard/custom/invalid acceptance states
+- obvious_finding: raw `GDHEPRD000172` and internal product UUID `21000000-0000-4000-8000-000000000001` occur in an inline Next/Flight script and browser-facing document bytes, though not visible body text
+- detail_finding: clean Console has repeated same-origin webpack HMR `net::ERR_INVALID_HTTP_RESPONSE` and local `geist-latin.woff2` 403
+- network: 20 unique inspected URLs all same-origin; no WordPress/wp-json/Feishu/ProductCard/external/submission request
+- evidence: five real PNG full-page composites plus five Chrome JPEG/JFIF captures retained under `.png` names; actual magic, dimensions and SHA-256 recorded; vertical join scrollbar fragments disclosed as capture artifacts
+- result: `FAIL / severe 1 / obvious 1 / detail 1`
+- smallest_corrections: restore preview Client Component hydration; keep Article Number/product UUID server-only and serialize only public opaque option identity; serve local font and correct HMR WebSocket response
+- protected_scope: no frontend/CSS/tests/README/CMS/task authority/dependencies/review/Git/deployment/related-products/Basket/Feishu mutation
+- validation: evidence hashes, file types, magic bytes, dimensions, Markdown whitespace, `git diff --check`, project, registry and controlled-message gates PASS; strict lane audit reports only the expected pending outbound queue item
+- response: one `MSG-TASK-021-VISUAL-QA-R1-RESPONSE` execution response sent and linked to the original Round 1 request
+- next: Planner owns ACK, correction and retest dispatch; visual_qa returns to wait state
+- intervention: Planner/frontend correction required; adversarial review remains blocked
+
+### TASK-021 visual QA Round 2
+
+- task: `TASK-021`
+- message: `MSG-TASK-021-VISUAL-QA-R2`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-021/VISUAL_QA_R2_DISPATCH.md`; Round 1 FAIL, reports, log and ten evidence files preserved
+- runtime: reused Planner-owned `http://127.0.0.1:3000/products/fgd-x15-pvc`; no server lifecycle or configuration action
+- browser: fresh Chrome Guest; Console and Network recording active before canonical load; native system-level Tab/Space/Arrow/Enter used for the configuration chain
+- hydration: invalid Enter stayed canonical and rendered four inline errors; Custom exposed its input and Ivory White; 6 m exposed Ivory White; dependent UI reacted correctly
+- standard: keyboard-only `6 m / Ivory White / Standard Packaging / quantity 2` produced one complete latest temporary quote item
+- custom: native Arrow switched to Custom, 5.8 m submitted, latest count remained one and Standard Length count became zero; reload cleared the draft
+- focus: natural category, Hero CTA, 6 m, packaging, logo, protection, quantity, Add order; focus remained visible
+- browser_boundary: load and final custom state each had 24 same-origin requests, submission delta zero; no WordPress/wp-json/Feishu/external/storage/submission request
+- client_boundary: document, script/Flight and visible text all exclude Article Number, product UUID, `articleNumber`, WordPress, wp-json, Feishu, internal and diagnostic markers
+- console: font HTTP 200; HMR WebSocket 101 and connected; two informational development messages only, zero unexpected warning/error
+- responsive: Chrome exact CSS 1440/1024/768/390/320; clientWidth equals scrollWidth; overflow offenders 0; body 16px; CTA 44.09375px and center hit true; rendered motion 0
+- reduced_motion: explicit 320px `prefers-reduced-motion: reduce` emulation returned true, motion 0 and 320/320 reflow
+- evidence: 13 fresh Chrome screenshots, all actual JPEG/JFIF bytes under `.png` names, 956x768, magic `ffd8ffe000104a46`; hashes appended without changing Round 1 inventory entries
+- result: `PASS / severe 0 / obvious 0 / detail 0`; Round 1 remains `FAIL / severe 1 / obvious 1 / detail 1`
+- cleanup: Guest window closed; Planner-owned server untouched
+- protected_scope: no frontend/CSS/tests/README/CMS/task authority/dependencies/review/Git/deployment/related-products/Basket/Feishu mutation
+- validation: 23/23 R1+R2 hashes, R2 actual file type/magic/dimensions, Markdown whitespace, `git diff --check`, project, registry and controlled-message gates PASS; strict lane audit had zero issues before response
+- response: one `MSG-TASK-021-VISUAL-QA-R2-RESPONSE` execution response sent and linked to the original Round 2 request
+- next: Planner owns ACK, independent validation and any review dispatch; visual_qa returns to wait state
+- intervention: none from visual lane

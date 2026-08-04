@@ -2,14 +2,173 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-020
+current_task: TASK-021
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-01T15:26:27Z
+last_updated: 2026-08-04T18:39:41Z
 
 ## 当前焦点
 
-`TASK-020` 已由用户通过精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Adversarial Round 2 最终结论为 `PASS / P0=0 / P1=0 / P2=0`，Round 1 `FAIL / P0=0 / P1=1 / P2=0` 及全部 visual 历史保留。唯一下一步是只暂存 TASK-020 受控交付物，创建正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署，也不开始 TASK-021。
+`TASK-021` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。技术、Visual Round 2、Adversarial Round 2、Planner final validation 与文档门保持 PASS。唯一下一步是只暂存 TASK-021 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+
+## TASK-021 Formal Delivery Authorization 2026-08-04T18:39:41Z
+
+- authorization: 用户精确输入 `确认 TASK-021 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: Product Configuration v2 与 PublicQuoteDraft 实现、40/422 前端测试、五套 verifier、CMS handoff 20/20、Visual 23/23 与 Adversarial Round 2 `PASS / 0 / 0 / 0` 保持有效。
+- docs: `document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- exclusions: 用户自有 `.codex/config.toml`、历史 resume packet 与本地预览生成物不进入提交。
+- unique_next: 正式提交 TASK-021，推送任务分支，fast-forward 合并至 `main` 并推送 `main`；不部署。
+
+## TASK-021 Checked Preparation View Sync 2026-08-04T18:32:19Z
+
+- first_prepare: `prepare-awaiting-user` 于 `2026-08-04T18:31:06Z` 成功，产品、review、validation、docs 与 artifacts 门均通过。
+- hook: AWAITING_USER 状态下直接同步人类可读视图被 DPG Hook 正确阻止；未发生 partial mutation。
+- controlled_reopen: 使用 `task_transition.py reopen` 仅为同步 active task、Project State、Board 和 Planner worklog；产品、测试、证据、PASS 结论与 Git 状态不变。
+- final_prepare: 本轮同步后立即再次运行 checked prepare；成功后只等待精确用户验收。
+- unique_next: `确认 TASK-021 完成并提交到远端`；未收到前不提交、推送、合并、部署或开始延期功能。
+
+## TASK-021 Checked Preparation PASS 2026-08-04T18:31:06Z
+
+- helper: `task_transition.py prepare-awaiting-user --task TASK-021` 在 project/messages/strict lane/diff 与 required artifacts PASS 后成功。
+- state: PASS 不是用户验收，也不授权 Git 或部署。
+- artifacts: aggregate execution、validation、diff、Planner final validation、Planner Summary、Visual Round 2 与 Adversarial Round 2 均存在且当前。
+- docs: `document_impact=RESOLVED`，`readme_impact=UPDATED`。
+
+## TASK-021 Round 2 PASS And Planner Final Validation 2026-08-04T18:29:39Z
+
+- review: `MSG-TASK-021-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK/done；final verdict `PASS / P0=0 / P1=0 / P2=0`，Round 1 FAIL 0/2/1 完整保留。
+- decimal: CMS/Python 与 frontend real full-root 4.3/5.8/6.7 PASS、6.05 FAIL，并额外拒绝近邻额外精度攻击。
+- public_draft: user-A authority、requirements/design/docs 与 production latestDraft/PublicQuoteDraft/LatestPublicQuoteDraftSummary 一致；QuoteLine v2 零 production caller。
+- handoff: final manifest/checksum `11f3db81...ac09` / `fe611983...04ca`，literal 20/20，frontend pins 精确匹配。
+- final_validation: frontend 40/422、五 verifier、lint/typecheck/build、三 smoke、Core/SCF/GDHE Site 0.7.0/12 tables、v1 17/17、23/23 visual、protected/diff/DPG gates PASS。
+- command_note: 首次 CMS/handoff final group 因误在 QA 目录运行而找不到根相对路径；视觉 23/23 当场 PASS，CMS/handoff 从正确根目录重跑全部 PASS，零产品/权威修改。
+- cleanup: port 3000 无 listener；final `.next` 已移至 recoverable Trash `/Users/arron/.Trash/gdhe-task021-planner-acceptance-w8AjzR/.next`。
+- unique_next: checked prepare-awaiting-user；不得提前验收、Git、部署或延期功能。
+
+## TASK-021 Adversarial Round 1 Revision Planner Checkpoint PASS 2026-08-04T18:10:05Z
+
+- frontend_response: `MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` 已 validate、ACK/done。
+- p1_1: CMS/Python 与 frontend production Ajv 均为 full-root 4.3/5.8/6.7 PASS、6.05 FAIL；Schema 字节未改。
+- p1_2: 用户 A 权威已同步；生产只用 latestDraft/PublicQuoteDraft/LatestPublicQuoteDraftSummary，QuoteLine v2 无生产 caller。
+- p2_1: final CMS manifest/checksum 为 `11f3db81...ac09` / `fe611983...04ca`，literal 20/20，frontend pins 精确匹配。
+- independent: focused 4/14、full 40/422、五 verifier、lint/typecheck/build、三 smoke、23/23 visual、protected scope 和 DPG gates PASS。
+- cleanup: port 3000 无 listener；`.next` 已移至 recoverable Trash `/Users/arron/.Trash/gdhe-task021-planner-final-5jntFE/.next`。
+- transition: 任务进入 UNDER_REVIEW；Round 1 FAIL 历史保留，唯一下一步是受控窄 Round 2。
+
+## TASK-021 WordPress Exact Decimal And Final Handoff Checkpoint PASS 2026-08-04T17:54:53Z
+
+- response: `MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1-RESPONSE` 已 validate、ACK/done。
+- decimal: real full-root `4.3/5.8/6.7` PASS、`6.05` FAIL；positive 4、negative 7、closure 4、Golden 1。
+- final_authority: determinism `c4e88b48...b7f5`、manifest `11f3db81...ac09`、checksum stream `fe611983...04ca`；direct 和 independent 均 literal `20/20`。
+- lifecycle: 两轮不同 ID、相同 Golden hash；每轮 cleanup 15/0/0，最终 residue 零；v1 17/17。
+- preserved: v2 Schema/Golden/error/runtime/API/PHP/Fixture、frontend、visual、依赖和延期功能未改。
+- unique_next: 只派发 frontend Ajv/final pins/PublicQuoteDraft 命名窄修订；不得提前 Round 2、final validation、验收、Git 或部署。
+
+## TASK-021 WordPress Handoff P2 Intermediate Checkpoint PASS 2026-08-04T17:46:49Z
+
+- response: `MSG-TASK-021-WORDPRESS-ADVERSARIAL-HANDOFF-P2-R1-RESPONSE` 已 validate、ACK/done。
+- reproduced: 当前 checksum 与 manifest 独立展开均为 literal `20/20`；determinism、manifest、checksum-stream SHA 分别为 `9fc30ade...49e9`、`928ff1dd...2e83`、`501b6b22...3c7c3a9`。
+- lifecycle: 两轮不同 WordPress ID、相同 Golden hash；每轮 cleanup 15/0/0，最终残留零。
+- preserved: v2 Schema/Golden/error/runtime、v1、API 行为、Fixture 业务真值、frontend、visual 与延期功能未改。
+- gate: 因 P1-1 将修改 handoff 内的 Python evidence 文件，本次为中间 checkpoint；必须在 exact-decimal 修订后重新生成最终 20/20，再刷新 frontend pins。
+- unique_next: 只派发 WordPress exact-decimal evidence 窄修订；不得提前 frontend pins、Round 2、final validation、验收、Git 或部署。
+
+## TASK-021 Public Quote Draft Authority Confirmed 2026-08-04T17:34:35Z
+
+- decision: 用户选择 A；visible Add to Quote 只替换一个 browser-memory `PublicQuoteDraft`，不创建 QuoteLine 2.0.0。
+- security: draft 不含 Article Number、internal Product UUID、WordPress/Feishu ID 或 `sales_follow_up` enum；刷新清空且本任务零网络/持久化/提交。
+- future: QuoteLine 2.0.0 保留为未来最终 Request a Quote 的 server-side conversion contract，由服务端重新解析 eligible option 并生成 resolved 或 sales_follow_up line。
+- authority_sync: requirements、design、active acceptance、root/frontend README、frontend contract docs 与 implementation plan 已按 A 更新；历史 review/visual evidence不改。
+- unique_next: 派发 CMS handoff 20/20 与 frontend exact-decimal/public-draft 命名两项独立窄修订；不得扩大到 Basket、submission、Feishu、部署或相关产品。
+
+## TASK-021 Adversarial Round 1 FAIL Recovery 2026-08-04T17:26:25Z
+
+- response: `MSG-TASK-021-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done；verdict `FAIL / P0=0 / P1=2 / P2=1`。
+- p1_1: Product Configuration v2 frontend Ajv 与 Python float evidence 会拒绝 CMS/Schema 合法的 `4.3`、`5.8`；需 exact one-tenth handling 与 4.3/5.8/6.7 正例、6.05 负例。
+- p1_2: visible Add to Quote 当前只产生 `PublicQuoteDraft`，不符合 QuoteLine v2 Schema，custom 也没有 `articleNumber:null + sales_follow_up`；修订前必须由用户选择 public-draft authority 或 server-owned QuoteLine seam。
+- p2_1: Product Configuration v2 handoff determinism 实际哈希与 manifest/checksum 不一致，当前为 19/20；需 final determinism 后重冻并刷新 frontend authority pins。
+- transition: checked `task_transition.py reopen` 先执行但安全拒绝，因为 helper 只允许 `AWAITING_USER` 而真实状态为 `UNDER_REVIEW`；零修改。Planner 记录等价 `NEEDS_REVISION` recovery，不伪造 AWAITING_USER。
+- preserved: Visual Round 1 `FAIL / 1 / 1 / 1`、frontend revision PASS、Visual Round 2 `PASS / 0 / 0 / 0`、40/420、五 verifier 与 23/23 visual hash 历史保留，但不关闭新 findings。
+- unique_next: 取得用户 P1-2 选择后只派发三项窄修订，fresh validation 后执行 adversarial Round 2；不得提前 final validation、验收、Git、部署或延期功能。
+
+## TASK-021 Visual Round 2 And Pre-review Validation PASS 2026-08-04T17:04:47Z
+
+- visual_response: `MSG-TASK-021-VISUAL-QA-R2-RESPONSE` 已 validate、ACK 并进入 done；当前 verdict `PASS / severe=0 / obvious=0 / detail=0`。
+- preserved: Visual Round 1 `FAIL / 1 / 1 / 1` 与原十份证据完整保留；Round 2 新增 13 份真实浏览器证据，23/23 总哈希通过。
+- browser: hydrated invalid/standard/custom 原生键盘链、`6 m -> Ivory White`、custom `5.8 m`、单条替换、无持久化/提交、document/Flight/DOM 零内部身份、font 200、HMR 101、Console 零意外错误、全同源 Network 与五宽/reduced-motion PASS。
+- independent: non-listener 35/407、real preview 1/1、server-only 12/12，有效总计 40 files / 420 tests PASS；五 verifier、lint、typecheck、最终 clean build、三项 smoke PASS。
+- cleanup: Planner preview 已停止且 port 3000 无 listener；最终 build 恢复 next-env 基线，`.next` 已移至 recoverable Trash，零 temp root。
+- governance: project/messages/strict lane、diff 和文档影响门 PASS；状态推进为 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- unique_next: 受控派发一次独立只读 adversarial review；不得提前 final validation、验收、Git、部署或后续相关产品/Basket/飞书任务。
+
+## TASK-021 Visual R1 Revision Checkpoint PASS 2026-08-04T16:43:03Z
+
+- response: `MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE` 已 validate、ACK 并进入 done。
+- closure: server-only public configurator projection 与 public in-memory quote draft 将 Article Number、product UUID 和 internal DTO 留在服务端；真实 Next preview response 零 forbidden marker。
+- independent: non-listener 407/407、real preview 1/1、server-only 12/12，有效总计 40 files / 420 tests PASS。
+- gates: 五套 verifier、lint/typecheck/build、三项 smoke、v1/package/lock/protected-image/next-env、零 temp residue、diff 与 DPG 门 PASS。
+- preserved: Visual Round 1 `FAIL / severe 1 / obvious 1 / detail 1` 与十份证据完全保留；CSS/布局/CMS/后续功能未改。
+- unique_next: 同源 `127.0.0.1` preview + Visual QA Round 2；不得提前 review、验收、Git 或部署。
+
+## TASK-021 Visual QA Round 1 FAIL Recovery 2026-08-04T16:21:51Z
+
+- response: `MSG-TASK-021-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并进入 done；十份证据、实际编码、尺寸和 SHA-256 均保留。
+- verdict: `FAIL / severe=1 / obvious=1 / detail=1`；五宽重排、无横向溢出、CTA、焦点、reduced motion 和同源网络边界通过。
+- s1_d1_root: Planner 以 `localhost` 启动而 QA 使用 `127.0.0.1`；Next server log 明确阻止跨 origin HMR/font，导致 Client Component 未 hydrate。服务已停止；Round 2 将用 `--hostname 127.0.0.1` 同源启动。
+- o1_root: internal Product Configuration DTO 被直接传入 Client Component，Next/Flight 文档含 `GDHEPRD000172` 与内部 product UUID。
+- transition: checked `task_transition.py reopen` 因当前状态不是 AWAITING_USER 安全拒绝且零修改；Planner 记录等价 `NEEDS_REVISION` recovery，不伪造 AWAITING_USER。
+- unique_next: 派发 `FRONTEND_VISUAL_R1_REVISION_DISPATCH.md`；只做 server-only public view projection、真实 browser-byte regression 和本地同源命令文档，不改布局/CSS/CMS/后续功能。
+
+## TASK-021 Frontend Checkpoint PASS 2026-08-04T15:59:55Z
+
+- response: `MSG-TASK-021-FRONTEND-V2-CONFIGURATOR-RESPONSE` 已 validate、ACK 并进入 done；duplicate delivery guard 已回复 receipt。
+- implementation: Product Configuration v2 snapshot/runtime/DTO、QuoteLine 2.0.0，以及 `Track Length -> Color -> Packaging -> Quantity` 可见配置器完成；无 Installation。
+- independent: focused 11/11、non-server 407/407、四个 server-only 文件 12/12，有效总计 39 files / 419 tests PASS。
+- gates: 五套 verifier、lint、typecheck、production build、三项 production smoke、八项 v1 哈希、package/lock/protected image/next-env 与 DPG 门 PASS。
+- docs: root/frontend/CMS 文档已同步；document impact `RESOLVED`，README impact `UPDATED`。
+- unique_next: 启动 Planner-owned preview 并受控派发 visual QA；不得提前 review、验收、Git、部署或后续功能。
+
+## TASK-021 WordPress A2 And Planner CMS Checkpoint PASS 2026-08-04T15:24:42Z
+
+- response: `MSG-TASK-021-WORDPRESS-CMS-V2-IMPLEMENTATION-RESPONSE` 已 validate、ACK 并进入 done。
+- contract: v2 public policy 只含 packaging/customLength；installation/accessory/default 字段 fail closed；当前仅 `GDHEPRD000172 / 6 m / Ivory White / piece`。
+- independent: v2 Schema 4/1/7、handoff 20/20、v1 17/17、双生命周期不同 ID/同 Golden hash、每轮 15/0/0 cleanup。
+- regressions: isolated A3 15/15 和 ProductCard 8/8 两轮确定性 PASS；首次 A3 子进程 Python 缺依赖未计合同失败，cleanup 与固定 Python 重跑均如实记录。
+- health: Core/SCF checksums、12-table DB、29 PHP lint、零残留、project/messages/strict lane/diff PASS。
+- server: 旧 TASK-020 preview 已停止；port 3000 无 listener。frontend build 后由 Planner 重新启动新预览。
+- unique_next: 只派发 frontend v2 contract/runtime/UI；不得提前 visual/review。
+
+## TASK-021 Design And Baseline PASS 2026-08-04T15:01:46Z
+
+- artifacts: `REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`BASELINE.md` complete。
+- versions: Product Configuration `2.0.0` 与 QuoteLine `2.0.0` 为 breaking boundary；全部 v1 字节冻结。
+- baseline: v1 Product Configuration verifier `4 schemas / 1 success / 6 errors` PASS；合同 snapshot、QuoteLine 与 builder `3 files / 61 tests` PASS。
+- governance: project validate、messages、strict lane 与 `git diff --check` PASS。
+- unique_next: 创建并受控派发 wordpress_cms A2 消息；不得提前 frontend。
+
+## TASK-021 Requirement Confirmation 2026-08-04T14:59:38Z
+
+- authorization: 用户精确输入 `确认 TASK-021 需求并开始执行`。
+- scope: 真实 Article Number 派生 Track Length，Custom Length 同级，长度后联动 Color，移除客户 Installation；Packaging 与单条 Add to Quote 保持。
+- versioning: breaking change 采用 Product Configuration `2.0.0` 和 QuoteLine `2.0.0`；1.0.0 权威字节保持冻结。
+- sequence: Planner design/baseline -> wordpress_cms TDD -> Planner CMS checkpoint -> frontend TDD -> visual QA -> adversarial review -> Planner final validation。
+- unique_next: 完成设计与保护基线，只派发 wordpress_cms；不得提前修改 frontend。
+
+## TASK-021 Intake 2026-08-04T14:50:46Z
+
+- request: Track Length 直接投影飞书主数据经 WordPress 同步后的真实 Article Number 长度，Custom Length 同级，Color 紧随其后；轨道不再选择 Installation；Packaging 和 Add to Quote 保持。
+- split: 为降低回退成本，本任务不混入型号级相关产品 carousel；该功能在 TASK-021 验收后独立接收。
+- truth: 当前确认的 FGD X15+PVC 标准规格仍只有 `GDHEPRD000172 / 6 m / Ivory White / piece`；`4.3 m` 与 `7 m` 在真实 Article Number 同步前不得伪造。
+- branch: `codex/TASK-021-track-length-color-config`，基线 `main` / `origin/main` at `0dd33907b11e2c5413dd6e15868487c819d60186`。
+- exclusions: 用户 `.codex/config.toml`、历史 resume packet 与运行中本地 dev 生成的 `frontend/next-env.d.ts` 保持原样并排除。
+- unique_next: 等待精确口令 `确认 TASK-021 需求并开始执行`。
+
+## TASK-020 Formal Delivery Completed 2026-08-01
+
+- commit: `0dd33907b11e2c5413dd6e15868487c819d60186` (`TASK-020：建立可见产品配置器与单条询价行`)。
+- remote: `origin/codex/TASK-020-visible-product-configurator` 与 `origin/main` 均包含该提交，本地 `main` 与 `origin/main` 一致。
+- status: `CLOSED / ACCEPTED / MERGED`；未部署。
 
 ## TASK-020 Formal Delivery Authorization 2026-08-01T15:26:27Z
 

@@ -11,6 +11,7 @@ The transport remains `/wp-json/gdhe/v1`; every current response advertises Cont
 - `GET /route-manifest?locale=en`
 - `GET /product-cards?locale=en&schema=1.0.0&page=1&per_page=10&sort=modified_desc&filter=product_category:slug`
 - `GET /product-configurations?locale=en&schema=1.0.0&path=/products/fgd-x15-pvc/`
+- `GET /product-configurations?locale=en&schema=2.0.0&path=/products/fgd-x15-pvc/`
 
 Collections allow `post`, `product`, `market`, `reference`, `support_article` and `download`. Filters are allowlisted as `product_category` for products, `support_topic` for support articles and `document_type` for downloads. Sort is `modified_desc` or `title_asc`, with slug as the deterministic tie-break.
 
@@ -48,6 +49,8 @@ The response contains only:
 Every candidate is validated as a whole. The published Product identity must match the private source. Article Numbers are globally unique; normalized public choices are unique only within one stable Product UUID, so distinct products may share the same length and color. One stable UUID must also map to exactly one normalized model, name, public path, product kind and quantity unit; every candidate for a conflicting UUID fails closed. Duplicate, malformed, ineligible, guessed-length, guessed-accessory, invalid-policy and internal-field sources fail closed without partial output.
 
 The current removable Fixture proves exactly one standard option: `GDHEPRD000172`, `6 m`, `Ivory White`, unit `piece`. Ceiling/wall selection does not change the track Article Number. Optional accessory references remain null because the bracket Article Numbers are not confirmed. Custom length is enabled, positive and limited to one decimal place, but remains unresolved and never receives a generated Article Number.
+
+Product Configuration Schema `2.0.0` is a separate closed authority selected only by exact `schema=2.0.0`. It retains the same public product identity, complete Article Number options, packaging and unresolved custom-length policy. It excludes `installationMethods`, installation accessory references and hidden installation defaults. A normalized `(lengthMeters, color.code)` maps to exactly one Article Number within one stable Product UUID; distinct stable products may share the same choice. One color code must also keep one label within a complete candidate. Invalid or ambiguous candidates fail closed as a whole. The current v2 Fixture contains only `GDHEPRD000172 / 6 m / Ivory White / piece`; it does not infer 4.3 m, 7 m or an accessory.
 
 Success uses deterministic strong ETag, `Cache-Control: public, max-age=60`, JSON Content-Type and UUIDv4 request ID; matching `If-None-Match` returns bodyless `304`. No WordPress ID, raw meta/SCF, Feishu record ID, supplier/cost/inventory/pricing, internal note, audit or diagnostic field is public. The route accepts no QuoteLine and has no write method.
 
@@ -111,6 +114,8 @@ Transport/auth/proxy statuses such as 401, 403, 429, 502 and 503 are not remappe
 - ProductCard Fixture `TASK-014-PRODUCT-CARD-1`
 - Product Configuration Schema `1.0.0`
 - Product Configuration Fixture `TASK-019-PRODUCT-CONFIGURATION-1`
+- Product Configuration Schema `2.0.0`
+- Product Configuration Fixture `TASK-021-PRODUCT-CONFIGURATION-V2-1`
 - 15 Golden files under `TASKS/ARTIFACTS/TASK-007/golden-a3/`, including native Post and non-root Page resolve positives
 
 The Draft 2020-12 schemas are registered by `config/schema.v3.json`. Two complete fixture lifecycles with different WordPress database IDs produced identical 15/15 Golden hashes. GraphQL is not installed, implemented or adopted.

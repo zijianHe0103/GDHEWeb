@@ -8,23 +8,29 @@ import {
   ProductConfigurator,
   ProductConfiguratorUnavailable,
 } from "../src/components/product-configurator";
-import { previewProductConfiguration } from "../src/lib/product-configuration/preview";
+import { previewProductConfigurationV2 } from "../src/lib/product-configuration/v2/preview";
+import { projectPublicProductConfigurator } from "../src/lib/product-configuration/v2/public-configurator";
+
+const publicConfiguration = projectPublicProductConfigurator(
+  previewProductConfigurationV2,
+);
 
 describe("ProductConfigurator presentation", () => {
   it("renders the closed accessible initial form with one real standard choice", () => {
     const html = renderToStaticMarkup(
       createElement(ProductConfigurator, {
-        configuration: previewProductConfiguration,
+        configuration: publicConfiguration,
       }),
     );
 
     expect(html).toContain('id="configure-product"');
     expect(html).toContain("<form");
     expect(html).toContain("<fieldset");
-    expect(html).toContain("<legend>Track length</legend>");
-    expect(html).toContain("<legend>Installation</legend>");
-    expect(html).toContain('for="standard-option"');
-    expect(html).toContain("6 m — Ivory White");
+    expect(html).toContain("<legend>Track Length</legend>");
+    expect(html).toContain("<legend>Color</legend>");
+    expect(html).not.toContain("<legend>Installation</legend>");
+    expect(html).toContain("6 m");
+    expect(html).toContain("Custom Length");
     expect(html).not.toContain("4.3 m");
     expect(html).not.toContain("5.8 m");
     expect(html).not.toContain("6.7 m");
@@ -32,8 +38,8 @@ describe("ProductConfigurator presentation", () => {
     expect(html).toContain("Add to Quote");
     expect(html).toContain('aria-live="polite"');
     expect(html).toContain("has not been sent or saved");
-    expect(html).toContain(" Ceiling Mount</label>");
-    expect(html).toContain(" Wall Mount</label>");
+    expect(html).not.toContain(" Ceiling Mount</label>");
+    expect(html).not.toContain(" Wall Mount</label>");
     expect(html).toContain(">Standard Packaging<");
     expect(html).toContain(">Carton Packaging<");
     expect(html).toContain(">Large Shrink Wrap<");

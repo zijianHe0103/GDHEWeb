@@ -1,5 +1,38 @@
 # Worklog: planner
 
+## 2026-08-04T15:24:42Z TASK-021 CMS checkpoint PASS
+
+- ACKed the WordPress response and independently reproduced v2 4/1/7, 20/20 handoff, v1 17/17 and the exact one-option/no-installation Golden.
+- Reproduced two different-ID v2 lifecycles with identical Golden and zero residue.
+- Ran A3 15/15 and ProductCard 8/8 determinism in an isolated copy. The first A3 child-Python dependency stop was not counted as a contract failure; cleanup was zero and the fixed-Python rerun passed. The exact copy was moved to recoverable Trash.
+- Core/SCF, 12 database tables, PHP lint, zero residue, project/messages/strict lane and diff gates pass.
+- Stopped the old Planner preview server before frontend work; port 3000 is clear.
+- Unique next step: dispatch frontend A4-A6; visual/review remain blocked.
+
+## 2026-08-04T15:01:46Z TASK-021 design and baseline PASS
+
+- Wrote REQUIREMENTS, DESIGN, IMPLEMENTATION_PLAN and BASELINE with Product Configuration/QuoteLine 2.0.0 as the isolated breaking boundary.
+- Confirmed current truth remains GDHEPRD000172 / 6 m / Ivory White; no 4.3 m or 7 m invention.
+- Reproduced Product Configuration v1 verifier 4/1/6 and focused contract/QuoteLine/builder 61/61 PASS.
+- Project, messages, strict lane and diff gates PASS; pre-existing user/generated state remains excluded.
+- Unique next step: controlled wordpress_cms A2 dispatch; frontend remains blocked.
+
+## 2026-08-04T14:59:38Z TASK-021 requirements confirmed
+
+- User supplied exact confirmation `确认 TASK-021 需求并开始执行`.
+- Scope remains the small complete configuration revision only; related-product carousel is deferred.
+- Breaking semantics are assigned Product Configuration 2.0.0 and QuoteLine 2.0.0; all 1.0.0 authority bytes remain protected.
+- Current step: write REQUIREMENTS/DESIGN/IMPLEMENTATION_PLAN, freeze baseline, then dispatch only wordpress_cms.
+
+## 2026-08-04T14:50:46Z TASK-021 intake and TASK-020 delivery-view sync
+
+- Confirmed local `main`, `origin/main` and the TASK-020 remote branch all contain formal commit `0dd33907b11e2c5413dd6e15868487c819d60186`; synchronized the stale pending-delivery narration without changing TASK-020 product history.
+- Classified the user's new Track Length/Color/Installation/related-products feedback as substantive.
+- Created `TASK-021` on `codex/TASK-021-track-length-color-config` for the smallest complete contract/UI slice: real Article Number-derived lengths, sibling Custom Length, dependent Color, and no customer Installation selector.
+- Deferred the model-level related-product carousel to the next independent task because it has a separate relation/ProductCard rollback boundary.
+- Preserved user-owned `.codex/config.toml`, historical resume packets and the running preview server's generated `frontend/next-env.d.ts`.
+- Unique next step: wait for `确认 TASK-021 需求并开始执行`; no implementation or dispatch before confirmation.
+
 ## Usage
 
 Each execution records:
@@ -3713,3 +3746,98 @@ Each execution records:
 - Execution, final validation, Visual Round 2, Adversarial Round 2, Planner Summary and README/document impact gates remain PASS.
 - User-owned `.codex/config.toml` and historical resume packets remain explicitly excluded from staging.
 - Unique next step: stage only controlled TASK-020 delivery, create the formal Chinese commit, immediately push the task branch, fast-forward `main` and push `main`.
+
+## 2026-08-04T15:59:55Z TASK-021 frontend Planner checkpoint PASS
+
+- ACKed `MSG-TASK-021-FRONTEND-V2-CONFIGURATOR-RESPONSE` exactly once and sent a duplicate-delivery receipt; request and response are done.
+- Independently reproduced focused 11/11, non-server 407/407 and four serial server-only files 12/12, for an effective 39 files / 419 tests PASS.
+- Reproduced all five contract verifiers, lint, typecheck, production build and three production smoke gates.
+- Verified all eight Product Configuration/QuoteLine v1 baseline hashes plus package, lockfile, protected image and next-env preservation; project/messages/strict lane and diff checks pass.
+- Added `FRONTEND_PLANNER_CHECKPOINT_PASS.md`, synchronized root README and set documentation impact RESOLVED / README impact UPDATED.
+- Unique next step: start the Planner-owned local preview and dispatch independent visual QA. Review, acceptance, Git, deployment and deferred features remain blocked.
+
+## 2026-08-04T16:21:51Z TASK-021 Visual QA Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-021-VISUAL-QA-R1-RESPONSE`; preserved Round 1 `FAIL / severe=1 / obvious=1 / detail=1` and all ten evidence files.
+- Independently reproduced the browser-byte leak with a direct page fetch: `GDHEPRD000172` is present in the Next response. Source inspection confirms the internal Product Configuration DTO is passed directly to the Client Component.
+- Read the Planner-owned dev server log: both font 403 and HMR websocket errors are explicit Next development cross-origin blocks caused by starting at `localhost` and testing at `127.0.0.1`; stopped session 41007 and confirmed port 3000 is free.
+- Ran checked reopen; it safely refused because current state was IN_PROGRESS rather than AWAITING_USER. Recorded equivalent NEEDS_REVISION recovery without fabricating AWAITING_USER.
+- Wrote `FRONTEND_VISUAL_R1_REVISION_DISPATCH.md`; scope is public client projection/browser-byte regression plus exact same-origin local command documentation, with no layout/CSS/CMS/contract-v1/dependency/deferred-feature widening.
+- Unique next step: dispatch the narrow frontend revision, independently validate current bytes, restart on `127.0.0.1`, then request Visual QA Round 2 only if PASS.
+
+## 2026-08-04T16:43:03Z TASK-021 Visual R1 revision checkpoint PASS
+
+- ACKed `MSG-TASK-021-FRONTEND-VISUAL-R1-REVISION-RESPONSE`; Visual Round 1 FAIL history and all ten evidence bytes remain preserved.
+- Inspected the server-only public projection and public in-memory draft; the Client Component no longer receives Product Configuration internal DTO, Article Number or UUID.
+- Independently reproduced non-listener 35/407, real preview response 1/1 and four serial server-only files 12/12, totaling 40 files / 420 tests PASS.
+- Reproduced five verifiers, lint, typecheck, production build, three production smokes, protected-file diffs, zero temp residue and DPG gates.
+- Added the Planner checkpoint and narrow Visual QA Round 2 dispatch.
+- Unique next step: start Next with `--hostname 127.0.0.1`, then dispatch Round 2; no review, acceptance, Git, deployment or deferred feature work before current visual PASS.
+
+## 2026-08-04T17:04:47Z TASK-021 Visual Round 2 and pre-review PASS
+
+- ACKed the linked Visual Round 2 response; current verdict PASS 0/0/0 while Round 1 FAIL 1/1/1 and ten original evidence files remain preserved.
+- Independently verified all 23 evidence hashes, exact encoding/dimensions, real keyboard state transitions, browser-byte isolation, same-origin network, Console/HMR/font and five-width/reduced-motion evidence.
+- Reproduced non-listener 35/407, preview 1/1, server-only 12/12, effective 40 files/420 tests, five verifiers, lint, typecheck, clean build and all three smokes.
+- Stopped the same-origin server, confirmed port 3000 free, restored next-env baseline, moved generated `.next` to recoverable Trash and confirmed zero temp roots.
+- Created the pre-review validation and adversarial dispatch; task advanced to UNDER_REVIEW / NOT_ACCEPTED / DIRTY.
+- Unique next step: one controlled independent read-only adversarial review. No final validation, acceptance, Git, deployment or deferred feature work before its verdict.
+
+## 2026-08-04T17:26:25Z TASK-021 adversarial Round 1 FAIL recovery
+
+- ACKed the controlled Round 1 response: FAIL / P0=0 / P1=2 / P2=1.
+- P1-1: frontend Ajv and Python evidence reject legitimate exact one-decimal standard lengths such as 4.3 and 5.8 despite CMS/Schema authority.
+- P1-2: production Add to Quote stores a public browser draft, not QuoteLine v2; user authority is required to confirm public-draft semantics or authorize a server-owned QuoteLine seam.
+- P2-1: current v2 handoff literal parity is 19/20 due to a stale final determinism hash and stale frontend authority pins.
+- Ran checked reopen before recovery; it safely refused UNDER_REVIEW because the helper only accepts AWAITING_USER and changed nothing. Recorded truthful NEEDS_REVISION state manually without fabricating AWAITING_USER.
+- Preserved all visual and validation history. Planner final validation, acceptance, Git, deployment and deferred features remain blocked.
+- Unique next step: obtain the user decision for P1-2, then dispatch only the bounded three-finding revision and a narrow Round 2.
+
+## 2026-08-04T17:34:35Z TASK-021 public quote draft authority confirmed
+
+- User selected option A: browser Add to Quote creates one PublicQuoteDraft, not QuoteLine v2.
+- Frozen the security and runtime boundary: no internal identity/resolution enum in the draft, no request/persistence/submission, refresh clears the result.
+- Retained QuoteLine v2 only as a future server-side conversion contract for final Request a Quote.
+- Updated the authoritative requirements/design/acceptance and current README/contract documentation without changing product behavior or historical evidence.
+- Unique next step: dispatch only CMS handoff 20/20 repair and frontend exact-decimal/public-draft naming revision, then fresh Planner validation and narrow adversarial Round 2.
+## 2026-08-04T17:46:49Z TASK-021 WordPress handoff P2 intermediate checkpoint PASS
+
+- Validated, ACKed and moved the linked WordPress response to done.
+- Independently reproduced literal 20/20 handoff parity and exact final hashes from the current shared bytes.
+- Recorded the checkpoint as intermediate because P1-1 requires changing the Python evidence validator that is itself included in the 20-file authority.
+- Unique next step: dispatch only the exact-decimal WordPress evidence revision, then independently verify final 20/20 before frontend pins and naming work.
+## 2026-08-04T17:54:53Z TASK-021 WordPress exact-decimal and final handoff checkpoint PASS
+
+- Validated and ACKed the exact-decimal response and independently reran the real Python root validator.
+- Reproduced 4.3/5.8/6.7 positive, 6.05 negative, literal 20/20 final handoff, v1 17/17 and exact final hashes.
+- Final CMS authority now supersedes the intermediate P2 hashes and is cleared for frontend pin refresh.
+- Unique next step: dispatch only frontend Ajv one-tenth, final authority pins and PublicQuoteDraft production naming revision.
+## 2026-08-04T18:10:05Z TASK-021 adversarial Round 1 revision Planner checkpoint PASS
+
+- Validated and ACKed the frontend response, then independently reran focused/full tests, all five verifiers, lint, typecheck, build and three production smokes.
+- Reproduced the exact-decimal matrix, final CMS/frontend authority parity, PublicQuoteDraft production naming, browser-byte exclusions and protected visual/baseline hashes.
+- Cleaned the generated `.next` to recoverable Trash and confirmed no port-3000 listener or temporary root.
+- Moved the task from NEEDS_REVISION to UNDER_REVIEW while preserving Round 1 FAIL history.
+- Unique next step: dispatch one narrow independent Adversarial Round 2; no final validation, acceptance, Git or deployment before verdict.
+## 2026-08-04T18:29:39Z TASK-021 Round 2 PASS and Planner final validation
+
+- Validated and ACKed the final review response: PASS 0/0/0; preserved Round 1 FAIL 0/2/1 and visual history.
+- Freshly reproduced full 40/422, five verifiers, lint/typecheck/build, three production smokes, exact-decimal CMS/frontend roots, final 20/20 handoff, v1 17/17, Core/SCF/12-table DB and 23/23 visual evidence.
+- First CMS/handoff command group used the QA directory accidentally and could not resolve repository-root relative paths; immediately reran from root with all PASS and zero mutation.
+- Wrote aggregate execution, validation, diff, final validation and Planner summary artifacts; docs are RESOLVED and README UPDATED.
+- Moved generated `.next` to recoverable Trash and confirmed no listener or residue.
+- Unique next step: run checked prepare-awaiting-user, then wait for the exact formal acceptance phrase.
+## 2026-08-04T18:32:19Z TASK-021 checked preparation view sync
+
+- Initial checked prepare succeeded at 18:31:06Z after all required artifacts and gates passed.
+- DPG Hook correctly blocked direct post-AWAITING_USER narrative writes; the first reopen invocation omitted required reason/next-step arguments and exited without mutation, then the complete controlled reopen succeeded.
+- Reopen is only for human-readable view synchronization; no product, test, evidence, review, validation or Git fact changed.
+- Final checked prepare follows immediately. On success, wait only for the exact formal acceptance phrase.
+
+## 2026-08-04T18:39:41Z TASK-021 formal delivery authorized
+
+- User entered the exact phrase `确认 TASK-021 完成并提交到远端`.
+- `task_accept.py check` and `accept` passed; state is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Final Product Configuration v2/PublicQuoteDraft behavior, 40/422 tests, five verifiers, CMS handoff 20/20, Visual 23/23 and Adversarial Round 2 PASS remain current.
+- User-owned `.codex/config.toml`, historical resume packets and local preview output are excluded.
+- Unique next step: formal commit, immediate task-branch push, fast-forward merge to `main` and immediate `main` push; no deployment.

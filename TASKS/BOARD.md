@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-021
+current_task: TASK-022
 
 ## 活动任务
 
-- `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -25,7 +25,7 @@ current_task: TASK-021
 
 ## 等待推送
 
-- `TASK-021` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
+- `TASK-022` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
 
 ## 已暂停
 
@@ -119,3 +119,7 @@ current_task: TASK-021
 ## Accepted
 
 - TASK-021: ACCEPTED at 2026-08-04T18:39:41Z
+
+## Accepted
+
+- TASK-022: ACCEPTED at 2026-08-05T02:16:33Z

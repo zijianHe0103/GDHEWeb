@@ -9184,3 +9184,408 @@ schema_version: DPG-LANES-1.0.0
 - Product Configuration v2、PublicQuoteDraft、CMS handoff 20/20、40/422、五套 verifier、Visual 23/23 与 Adversarial Round 2 PASS 证据保持有效。
 - 用户自有 `.codex/config.toml`、历史 resume packet 和本地预览生成物明确排除。
 - 唯一下一步：受控正式提交，推送任务分支，fast-forward 合并并推送 `main`；不部署。
+
+## 2026-08-04T19:06:53Z TASK-022 intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-022
+- 从同步的 `main` / `origin/main` 提交 `8ebaba40ddb47de0f55594591e628d7a8a3a0253` 创建 `codex/TASK-022-related-products-carousel`。
+- TASK-022 只冻结 FGD X15+PVC 型号级相关产品横向推荐、真实关系到公开 ProductCard 的最小数据链、一次集合请求/零逐卡 resolve 与五宽交互验收。
+- 正式相关产品集合尚未确认；CMS/production 只接受真实已发布关系，受控 preview 可显示明确测试候选，无有效关系时隐藏推荐区。
+- 苹果式单条 PublicQuoteDraft 图文摘要卡记录为 TASK-023 候选；Basket、持久化、提交 API、飞书同步实现和部署不在本任务。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- unique_next: 等待精确口令 `确认 TASK-022 需求并开始执行`。
+
+## 2026-08-04T19:13:17Z TASK-022 visual direction refinement
+
+- type: requirement_refinement
+- lane: planner
+- task: TASK-022
+- 用户提供苹果 `You may also like` 推荐区截图作为呈现参考。
+- 冻结适配方向：`You May Also Need` 居中标题、1440 桌面三张大图卡、紧凑真实公开信息、整行 GDHE CTA；平板/手机横向浏览。
+- 不复制价格、色卡、苹果资产或 `Add to Bag` 商城语义；需要配置的产品进入详情页，简单且允许直接询价的配件才使用直接询价动作。
+- state remains: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`；无产品、CMS、数据库、飞书或 Git 交付变更。
+
+## 2026-08-04T19:21:18Z TASK-022 reordered to Quote Basket foundation
+
+- type: requirement_reorder
+- lane: planner
+- task: TASK-022
+- 用户确认先建立 Quote Basket，再让相关产品推荐消费该 Basket 接口。
+- 当前 TASK-022 重构为：多行公开询价集合、同配置合并/不同配置分行、30 天同浏览器保存、跨标签同步、产品页 Basket 入口及本地 `/request-a-quote/` 苹果式左图右参数条目。
+- Quote Basket 不是付款购物车：无价格、Checkout、Payment 或订单；产品级动作是 `Add to Quote`，未来统一提交动作是 `Request a Quote`。
+- 浏览器不保存 Article Number、内部 UUID、WordPress/飞书 ID、raw CMS 或 PII；未来服务端重新解析 QuoteLine。
+- TASK-023 现在保留为 `You May Also Need` 相关产品横向推荐；最终表单、防滥用服务端接口与飞书写入继续后置。
+- 本地分支更名为 `codex/TASK-022-quote-basket-foundation`；无 frontend、CMS、数据库、飞书、commit、push、merge 或部署变更。
+- state: `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`。
+- unique_next: 等待 `确认 TASK-022 需求并开始执行`。
+
+## 2026-08-04T19:25:58Z TASK-022 requirements confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-022
+- 用户输入精确口令 `确认 TASK-022 需求并开始执行`。
+- task transitioned: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；`NOT_ACCEPTED / DIRTY` 保持不变。
+- frozen: 多行 Quote Basket、30 天公开浏览器保存、同完整配置合并/不同配置分行、苹果式左图右参数条目、无内部身份和最终服务端重解析边界。
+- unique_next: Planner 只完成 REQUIREMENTS、DESIGN、IMPLEMENTATION_PLAN 和 protected baseline；通过前不派发 frontend。
+
+## 2026-08-04T19:34:39Z TASK-022 design and baseline PASS
+
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-022
+- 冻结 Quote Basket requirements、design、两段式 implementation plan、15 份保护哈希和现有前端验证基线。
+- baseline: focused 6/35、full 40/422、五组 verifier、lint、typecheck、build、三项 production smoke 与 DPG gates PASS。
+- 明确 Basket 只汇总条目数，不跨 `piece`、`roll` 等单位相加数量。
+- task transitioned: `READY -> IN_PROGRESS`；`NOT_ACCEPTED / DIRTY` 保持不变。
+- unique_next: 只派发 frontend A1/A2；A1/A2 Planner checkpoint 前不开始产品页、Basket 页面、visual QA、review、Git 或 TASK-023。
+
+## 2026-08-04T20:03:50Z TASK-022 A1/A2 Planner checkpoint FAIL
+
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-022
+- frontend A1/A2 response 已 ACK；focused 2/25、typecheck 和 15/15 保护哈希由 Planner 独立复现。
+- P1-1: 非精确 30 天的 `expiresAt=2099-01-01` 被接受。
+- P1-2: 恶意 `items` 数组代理可从 `map` 泄露原始诊断。
+- checkpoint: `FAIL / P0=0 / P1=2 / P2=0`。
+- unique_next: 只修这两个 P1；A3-A5、visual QA、review、Git 和部署继续阻塞。
+
+## 2026-08-04T20:15:36Z TASK-022 A1/A2 Planner checkpoint PASS after R1
+
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-022
+- P1 revision response 已 ACK；initial Planner FAIL/P1=2 历史完整保留。
+- 原始远期期限与 items Proxy 攻击均已关闭；focused 2/28、full 42/450、五 verifier、15/15 哈希、CMS/diff/DPG PASS。
+- 全量复核生成物已恢复/可恢复清理，冻结 `next-env.d.ts` 哈希一致。
+- checkpoint: `PASS_AFTER_R1`；不等于用户验收。
+- unique_next: 只派发 frontend A3-A5；visual QA、review、Git、TASK-023 和外部集成仍阻塞。
+
+### 2026-08-04T19:36:15Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-022
+- summary: message queued for frontend
+
+### 2026-08-04T19:36:46Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION dispatched to frontend
+
+### 2026-08-04T19:38:21Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION moved to done
+
+### 2026-08-04T20:00:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T20:01:35Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-08-04T20:01:36Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION-RESPONSE moved to done
+
+### 2026-08-04T20:05:04Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-022
+- summary: message queued for frontend
+
+### 2026-08-04T20:05:20Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1 dispatched to frontend
+
+### 2026-08-04T20:06:24Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1 moved to done
+
+### 2026-08-04T20:12:23Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T20:12:41Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T20:12:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1-RESPONSE moved to done
+
+### 2026-08-04T20:17:12Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-022
+- summary: message queued for frontend
+
+### 2026-08-04T20:17:26Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION dispatched to frontend
+
+### 2026-08-04T20:19:33Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION moved to done
+
+### 2026-08-04T20:38:00Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T20:38:41Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION-RESPONSE dispatched to planner
+
+### 2026-08-04T20:38:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION-RESPONSE moved to done
+
+## 2026-08-04T20:47:03Z TASK-022 A3-A5 Planner checkpoint PASS
+
+- A3-A5 response is validated and ACK/done; Planner independently checked the product/Basket implementation and applied the root documentation handoff.
+- Broader focused 14/81, full 44/459, five verifiers, lint/typecheck/build, four production smokes, protected hashes, CMS/diff and DPG gates pass.
+- Generated `.next` is recoverably outside the workspace and no listener remains.
+- Result is `PASS_FOR_VISUAL_QA`; only local visual QA is released. Review, acceptance, Git, deployment, TASK-023 and external integration remain blocked.
+
+### 2026-08-04T20:53:29Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-022
+- summary: message queued for visual_qa
+
+### 2026-08-04T20:53:50Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-022
+- summary: message MSG-TASK-022-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-08-04T20:54:05Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-022
+- summary: message MSG-TASK-022-VISUAL-QA-R1 moved to done
+
+### 2026-08-04T21:16:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T21:17:15Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-VISUAL-QA-R1-RESPONSE moved to done
+
+## 2026-08-04T21:19:52Z TASK-022 visual Round 1 and pre-review validation PASS
+
+- Visual response is validated and ACK/done; current verdict is `PASS / severe 0 / obvious 0 / detail 0`.
+- Planner independently verified all 15 screenshot hashes, actual JPEG/JFIF encoding and dimensions, and directly inspected representative 1440/390 Basket, empty and product-success evidence.
+- Real add/merge/split/reload/cross-tab/quantity/remove, disabled no-submit final action, five-width/320 reflow, keyboard/AX/live, same-origin network and zero-internal-identity evidence pass.
+- Planner preview is stopped, port 3000 is clear, next-env is restored and `.next` is recoverably outside the workspace.
+- TASK-022 transitioned `IN_PROGRESS -> UNDER_REVIEW`; acceptance remains NOT_ACCEPTED and Git remains DIRTY.
+- Unique next step: one controlled independent read-only adversarial review only.
+
+### 2026-08-04T21:24:16Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-04T21:24:37Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-04T21:25:22Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-04T21:40:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T21:40:55Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T21:41:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+## 2026-08-04T21:41:26Z TASK-022 adversarial Round 1 FAIL recovery
+
+- ACKed the linked Round 1 response: `FAIL / P0=0 / P1=2 / P2=2`; Planner final validation is blocked.
+- Findings are limited to trap-safe domain/date errors, hostile storage error classification, expiry-boundary add/merge status and final-remove live-region persistence.
+- Historical A1/A2 Planner FAIL/recovery, Visual R1 PASS and ordinary green regression evidence remain preserved.
+- Checked reopen was run first and safely refused the real UNDER_REVIEW state because the helper is AWAITING_USER-only; equivalent NEEDS_REVISION recovery is recorded.
+- Only the four bounded frontend RED/GREEN closures, direct regressions, fresh validation and narrow Round 2 are released.
+
+## 2026-08-04T21:59:43Z TASK-022 Round 1 revision Planner checkpoint PASS
+
+- Frontend revision response is ACK/done; four exact REDs preceded minimum GREEN.
+- Planner independently reproduced direct 40/40, full 463/463, five verifiers, lint/typecheck/build, four production smokes, 15/15 visual and protected hashes.
+- Domain/storage sanitization, one-time same-base add/merge truth and persistent final-remove live region are closed without CSS/contract/deferred-feature expansion.
+- Generated output is recoverably outside the workspace; next-env and listener cleanup pass.
+- TASK-022 moved `NEEDS_REVISION -> UNDER_REVIEW`; Round 1 FAIL remains historical and only narrow Round 2 is released.
+
+### 2026-08-04T21:43:18Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-022
+- summary: message queued for frontend
+
+### 2026-08-04T21:43:34Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1 dispatched to frontend
+
+### 2026-08-04T21:45:58Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1 moved to done
+
+### 2026-08-04T21:56:17Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T21:56:48Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1-RESPONSE dispatched to planner
+
+### 2026-08-04T21:57:03Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1-RESPONSE moved to done
+
+### 2026-08-04T22:01:47Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-04T22:02:03Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-08-04T22:02:20Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-08-04T22:13:24Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-022
+- summary: message queued for planner
+
+### 2026-08-04T22:13:51Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-08-04T22:14:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-022
+- summary: message MSG-TASK-022-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+### 2026-08-04T22:16:05Z - review_recovery_recorded
+- type: review_recovery_recorded
+- lane: planner
+- task: TASK-022
+- summary: Adversarial Round 2 PASS 0/0/0 acknowledged; Round 1 history preserved and fresh Planner final validation released
+
+### 2026-08-04T22:16:05Z - planner_final_validation_passed
+- type: planner_final_validation_passed
+- lane: planner
+- task: TASK-022
+- summary: direct 40, full 463, five verifiers, build/smokes, visual 15 and protected/DPG gates passed; checked prepare is next
+
+### 2026-08-04T22:22:34Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-022
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-04T22:23:06Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-022
+- summary: Checked prepare succeeded, but human-readable Project State and Task Board retained stale UNDER_REVIEW narration; reopen only for controlled rendered-view synchronization.
+
+### 2026-08-04T22:23:18Z - prepared_view_synchronized
+- type: prepared_view_synchronized
+- lane: planner
+- task: TASK-022
+- summary: Human-readable task, state and board views synchronized to the checked AWAITING_USER target; final prepare remains the only next step
+
+### 2026-08-04T22:24:07Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-022
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-05T02:16:33Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-022
+- summary: TASK-022 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-08-05T02:16:33Z - formal_delivery_authorized
+- type: formal_delivery_authorized
+- lane: planner
+- task: TASK-022
+- summary: Exact user phrase accepted TASK-022; formal commit, task-branch push, main fast-forward and main push are the only authorized next steps

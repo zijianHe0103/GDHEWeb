@@ -1051,3 +1051,73 @@ Each execution records:
 - boundaries: no CMS, Schema/Golden/error, QuoteLine v1/v2 authority, CSS, Product Detail facts, ProductCard/ProductList, dependencies, Basket, Feishu, related products, Planner state, review, Git or deployment work
 - message_result: `MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` delivered through the real Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to=MSG-TASK-021-FRONTEND-ADVERSARIAL-P1-R1`
 - unique_next_step: Planner independently validates the two P1 closures and controls any later adversarial review; frontend does not start Round 2 or acceptance
+
+# TASK-022 frontend A1/A2 implementation 2026-08-05
+
+- message: completely read the controlled dispatch and all nine required context files; ACKed `MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION` before test or production mutation
+- scope: only the public `QuoteBasketDocument 1.0.0`, pure immutable domain, 30-day storage and same-origin storage-event reconciliation; no product page, UI/route, related products, final submission, CMS, visual QA, review, Git or deployment
+- red: missing domain import exit 1; missing `persistQuoteBasket` exit 1; duplicate identity plus traversal media 14/16 PASS with 2 intended failures; Proxy reflection diagnostic 16/17 PASS with 1 intended failure
+- green: closed public-only validation/deep freeze; zero/one/N immutable create/add/merge/set/remove/summary; complete identity split/merge; safe-integer atomicity; display refresh; sanitized errors
+- persistence: fixed `gdhe.quote-basket.v1`, TTL `2_592_000_000` ms, exported UTF-8 ceiling `262_144` bytes; corrupt/expired/unknown/extra/oversized/quota/security fail closed; reads do not refresh and successful mutations do
+- reconciliation: latest valid stored revision is read before mutation; event candidates use revision/timestamp/writer/mutation lexicographic order; only strictly newer legal snapshots are adopted; explicitly non-transactional last-writer-wins
+- focused_validation: TASK-022 2 files/25 tests PASS; existing configurator plus QuoteLine 6 files/35 tests PASS
+- regression_validation: full Vitest 42 files/447 tests PASS; five existing contract verifiers, lint and typecheck PASS; build intentionally not required because A1/A2 adds no server-only/Client boundary or route
+- protected_integrity: all 15 baseline hashes exact; package/lock/PublicQuoteDraft/Product Configuration/QuoteLine/product UI/protected image/next-env unchanged; CMS and protected tracked diff zero
+- cleanup: full suite temporarily generated `.next` and dev next-env reference; next-env restored through apply_patch to exact hash and `.next` moved recoverably to macOS Trash; no runtime residue remains
+- governance: project schema, message validation and strict lane PASS; additional strict repository audit truthfully retains out-of-lane pre-existing multiple-active/dirty/WordPress-core warnings
+- artifacts: `FRONTEND_A1_A2_TDD_RED_EVIDENCE.md`, `FRONTEND_A1_A2_EXECUTION_REPORT.md`, `FRONTEND_A1_A2_VALIDATION_LOG.md`, `FRONTEND_A1_A2_DIFF_SUMMARY.md`, and `docs/frontend/QUOTE_BASKET_CONTRACT.md`
+- message_result: `MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION-RESPONSE` was delivered through the real Codex thread bridge, recorded with `delivery_id=019f857b-3e04-73d2-9335-edcff61b30ed`, ACKed by Planner and moved to done; `requires_response_to=MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION`
+- unique_next_step: Planner independently validates the A1/A2 checkpoint; frontend must not start A3 product integration, A4 Basket UI, visual QA, review, acceptance, Git or deployment
+
+# TASK-022 frontend A1/A2 Planner P1 R1 2026-08-05
+
+- message: processed and ACKed `MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1` before test/product mutation; historical lane PASS and Planner `FAIL / P0=0 / P1=2 / P2=0` preserved
+- reopen_gate: required `task_transition.py reopen` was attempted first and safely returned `ok=false` because reopen requires `AWAITING_USER`; current `IN_PROGRESS` Planner recovery state was not hand-edited
+- red: direct domain run exit 1 with prior 17 PASS and exactly 3 new FAIL for non-exact TTL, raw `items.map` Proxy diagnostic and illegal/reflection-failing array shapes
+- green: exact `expiresAt = updatedAt + 2_592_000_000 ms`; descriptor-only dense array copy; sparse/accessor/symbol/non-enumerable/reflection rejection; structured-clone Proxy rejection with zero attacker getter invocation; stable sanitized `QuoteBasketDomainError`
+- focused_validation: domain 1 file/20 tests and domain+storage 2 files/28 tests PASS; exact boundary, read-no-refresh, mutation-refresh, zero/one/N and duplicate identity behavior preserved
+- regression_validation: frozen configurator+QuoteLine 6/35, full Vitest 42/450, five verifiers, lint and typecheck PASS
+- protected_integrity: all 15 baseline hashes exact; package/lock/product/UI/QuoteLine/Product Configuration/protected image/next-env unchanged; CMS/protected tracked diff zero
+- cleanup: full suite `.next` moved recoverably to Trash and generated dev next-env reference restored through apply_patch; no frontend runtime residue remains
+- governance: DPG project schema, messages and strict lane PASS with zero lane issues
+- boundaries: only Quote Basket domain, direct domain test, four existing A1/A2 evidence files and this worklog changed; no storage API, A3-A5, UI/routes, CMS, docs beyond evidence, review, Git or deployment
+- message_result: `MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1-RESPONSE` was delivered through the real Codex thread bridge, recorded with Planner delivery ID, ACKed and moved to done; `requires_response_to=MSG-TASK-022-FRONTEND-A1-A2-PLANNER-P1-R1`
+- unique_next_step: Planner independently re-checks the two P1 closures; frontend stops and does not start A3-A5
+
+# TASK-022 frontend A3-A5 implementation 2026-08-05
+
+- message: completely read the A3-A5 dispatch, active task, frozen requirements/design/plan, A1/A2 execution history and Planner `PASS_AFTER_R1`; ACKed `MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION` before test or product mutation
+- scope: only server public Basket projection, product Add to Quote integration, browser adapter/hook, local `/request-a-quote/`, direct frontend docs/tests/evidence; no related products, contact/final API, Feishu, visual QA, review, Git or deployment
+- a3_red: missing browser/product projection module caused zero-test import failure; presentation then failed 2 direct expectations because production still rendered refresh-cleared one-latest state and lacked `useQuoteBasket`
+- a3_green: server projection emits only model/name/public path/protected local image; valid builder output adds/merges validated 30-day Basket, invalid input performs zero write; status, line count and View Quote Basket replace the live latest-draft result
+- a4_red: absent local route caused zero-test module failure; a separate 3-pass/1-fail regression proved storage events bypassed frozen newer-snapshot reconciliation
+- a4_green: preview/cms-only noindex route, hydration loading/empty/unavailable/one-N states, Apple-inspired protected rows, positive-safe-integer quantity and exact Remove, disabled truthful final action, and A1/A2 reconciliation composition
+- security: real Next preview product and Basket HTTP responses exclude Article Number, Product/Media UUID, internal enums, WordPress media/origin, raw payload, Feishu, secret and diagnostic markers; runtime has zero CMS/TASKS imports and zero network seam
+- focused_validation: 13 files/73 tests PASS; real preview response 1 file/2 tests PASS
+- complete_validation: full Vitest 44 files/459 tests; five verifiers; lint; typecheck; production build; CMS integration, ProductList, Product Detail and Quote Basket production smokes all PASS
+- production_boundary: `/request-a-quote` emitted dynamic but preview/cms production smokes both final 404, CMS requests 0 and submission endpoints 0
+- protected_integrity: 13 baseline files exact; only ProductConfigurator and Product Detail page have explicitly authorized A3 changes; package/lock, configuration/QuoteLine authorities, both CSS baselines, protected image and next-env exact; CMS zero task-owned diff
+- documentation: updated frontend README and two docs/frontend contracts; root README, architecture contract and ADR-006 are excluded by registered frontend write scope, so exact Planner-owned deltas are recorded in `FRONTEND_A3_A5_PLANNER_DOC_DELTAS.md`
+- cleanup_and_governance: generated `.next` moved recoverably to Trash; next-env restored to exact hash; no listener remains; diff check, DPG project/messages and strict lane PASS with zero issues
+- result: `PASS_FOR_PLANNER_CHECKPOINT_WITH_DOCUMENT_SCOPE_HANDOFF`; this is not visual PASS, review, acceptance or deployment
+- artifacts: `FRONTEND_A3_A5_TDD_RED_EVIDENCE.md`, `FRONTEND_A3_A5_EXECUTION_REPORT.md`, `FRONTEND_A3_A5_VALIDATION_LOG.md`, `FRONTEND_A3_A5_DIFF_SUMMARY.md`, `FRONTEND_A3_A5_PLANNER_DOC_DELTAS.md`
+- message_result: `MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION-RESPONSE` was delivered through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; it left queue and `requires_response_to=MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION`
+- unique_next_step: Planner applies its owned doc deltas and independently checks current bytes before any visual QA dispatch; frontend stops
+
+# TASK-022 frontend adversarial P1/P2 Round 1 revision 2026-08-05
+
+- message: read and ACKed `MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1` before test or product mutation; historical A1/A2 Planner FAIL/recovery, Visual Round 1 PASS and canonical review remain unchanged
+- direct_red: one command produced 4 intended failures with 36 prior passes: secondary thrown Proxy escaped the domain boundary, hostile quota Proxy escaped storage classification, expiry-boundary add sampled time twice, and empty final-remove lacked the persistent content/live seam
+- p1_1_green: every exported domain operation has one no-inspection stable boundary; helper catches do not use `instanceof`; exact TTL construction rejects unrepresentable Date results before `toISOString`; create/clone/add/set/remove regressions are sanitized and atomic
+- p1_2_green: native trusted DOMException name getter preserves native quota classification while hostile Proxy, Proxy-wrapped DOMException and unsafe name objects become only `storage_unavailable`; original persisted bytes remain exact
+- p2_1_green: browser add samples one operation time and classifies from the same loaded/created base and persisted mutation result; ordinary merge/split and cross-tab ordering remain covered
+- p2_2_green: one `QuoteBasketContent` live node persists across loading/error/empty/one/N; real browser adapter final-line removal renders the empty state with exact `Item removed from your Quote Basket.`; CSS and visual evidence bytes are untouched
+- focused_validation: final direct 4 files/40 tests PASS
+- complete_validation: full Vitest 44 files/463 tests; five verifiers; lint; typecheck; production build; CMS integration, ProductList, Product Detail and Quote Basket production smokes all PASS
+- protected_integrity: package/lock, PublicQuoteDraft, Product Configuration, QuoteLine, protected image/CSS and next-env hashes exact; Visual Round 1 inventory 15/15 exact; production leakage scan zero
+- cleanup: generated `.next` removed after smokes and is build-reproducible; protected next-env hash restored by production build; no task-owned listener remains
+- artifacts: added aggregate revision `TDD_RED_EVIDENCE.md`, `EXECUTION_REPORT.md`, `TEST_OR_VALIDATION_LOG.md` and `DIFF_OR_OUTPUT_SUMMARY.md`; no root docs, canonical review, Planner authority or visual evidence changed
+- boundaries: no CMS, dependency, final RFQ submission, Feishu, TASK-023, Git or deployment work
+- result: `PASS_FOR_PLANNER_RECHECK`; this is not review PASS, acceptance or delivery
+- message_result: `MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to=MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1`
+- unique_next_step: Planner independently validates and controls any further adversarial review; frontend stops

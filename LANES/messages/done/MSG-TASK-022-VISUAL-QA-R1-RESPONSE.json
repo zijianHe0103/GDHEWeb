@@ -1,0 +1,24 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-022-VISUAL-QA-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-022",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T21:16:08Z",
+  "requires_response_to": "MSG-TASK-022-VISUAL-QA-R1",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-022 Visual QA Round 1 completed: PASS / severe 0 / obvious 0 / detail 0.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-022/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-022/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "Real empty/add/merge/split/reload/cross-tab/quantity/remove and disabled non-submission passed; five widths, native keyboard/focus/live, reduced motion, protected local media, Console/Network and document/Flight/DOM/localStorage boundaries passed. Fifteen screenshots are truthfully recorded as JPEG/JFIF bytes under .png names with exact dimensions and SHA-256. No product code, task authority, CMS, dependency, Git, deployment, external-system or server lifecycle mutation.",
+  "done_at": "2026-08-04T21:17:15Z",
+  "updated_at": "2026-08-04T21:17:15Z"
+}

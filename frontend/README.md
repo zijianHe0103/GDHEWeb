@@ -286,15 +286,16 @@ When configuration is ready, the Hero action navigates to the local
 Color, Packaging and Quantity. Standard lengths and colors come only from the
 validated v2 DTO; Custom Length is a sibling length choice. Installation is
 not a configurator field or QuoteLine value, while the separate Product Detail
-fact may still describe ceiling and wall mounting support. The form creates
-only one latest browser-memory public quote draft and replaces that result on
-the next valid action. The draft contains no Article Number, internal Product
+fact may still describe ceiling and wall mounting support. The form creates a
+public quote draft, then adds or merges it into the browser-local Quote Basket
+retained for 30 days. The Basket contains no Article Number, internal Product
 UUID or internal resolution enum and is not a QuoteLine 2.0.0. The complete
 QuoteLine remains a future server-side conversion at final Request a Quote
-submission. The current slice does not create
-a basket, write browser storage, submit an RFQ or contact an external system.
-When configuration is unavailable, `Request a Quote` remains ordinary
-navigation to the currently deferred `/request-a-quote/` workspace. This slice
+submission. The local `/request-a-quote/` page shows protected public rows,
+supports quantity and Remove, and remains `noindex,nofollow` plus production
+404. Its disabled final action makes clear that no RFQ is submitted and no
+external system is contacted. When configuration is unavailable, `Request a
+Quote` remains ordinary navigation to that local Basket workspace. This slice
 is not a production product page, formal SEO implementation, final copy, visual
 acceptance, CMS import or deployment authorization.
 

@@ -71,16 +71,19 @@ sanitized navigation fallback. Production mode remains fail-closed at 404.
 
 ## TASK-021 public draft and future server conversion
 
-Add to Quote replaces one latest browser-memory public quote draft. Refresh
-clears it; there is no network request, persistence, submission or external
-write. QuoteLine 2.0.0 remains an isolated future server-side conversion
+TASK-022 now converts a valid public quote draft into a public-only Quote
+Basket item and stores the validated multi-line Basket in the same browser for
+30 days. Equal public configuration merges quantity; different configuration
+remains a separate line. There is still no submission or external write.
+QuoteLine 2.0.0 remains an isolated future server-side conversion
 contract. A separately authorized final Request a Quote flow will re-resolve
 the eligible option and create the complete resolved or `sales_follow_up` line
 without exposing internal identity to browser storage or Next/Flight bytes.
 
 ## Deferred capabilities
 
-The local consumer does not create a basket, 30-day browser storage, contact
-form, submission endpoint, server-side revalidation service, WordPress
+The local consumer now creates the public-only Basket and 30-day browser
+storage. It does not create a contact form, submission endpoint, server-side
+revalidation service, WordPress
 QuoteLine storage, Feishu access, email, Webhook, deployment or production
 publication.

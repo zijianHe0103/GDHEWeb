@@ -978,3 +978,43 @@ Each execution records:
 - boundaries: no product, CMS, test, README, task-authority or Planner-state repair; no database/dependency/visual-byte/external-system mutation, acceptance, Git, deployment or deferred feature work; PASS is not acceptance or Git authorization
 - message_status: exact Round 2 request and the single linked final PASS review_response are both acknowledged as done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
 - next: Planner owns fresh final validation and any checked acceptance preparation
+
+### 2026-08-04T21:37:08Z - TASK-022 adversarial review round 1
+
+- task: TASK-022
+- message: MSG-TASK-022-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and ACKed the exact controlled request before substantive work, inspected the dispatch, frozen requirements/design/plan, active task, current implementation/tests, frontend and Planner evidence, visual evidence, documentation and protected scope, and performed only the authorized independent read-only review
+- preserved_history: A1/A2 Planner initial FAIL P0 0 P1 2 P2 0 remains historical with exact 30-day and items-array Proxy recovery PASS_AFTER_R1; current Visual Round 1 remains PASS severe 0 obvious 0 detail 0 with all 15 evidence bytes preserved
+- p1_domain: a Basket Proxy that throws a second hostile Proxy from getPrototypeOf causes error instanceof QuoteBasketDomainError to leak TASK022_PRIVATE_SECONDARY_DIAGNOSTIC; a valid Date 1000 ms below the JavaScript maximum passes canonicalNow but TTL addition exposes raw RangeError Invalid time value
+- p1_storage: a storage setItem that throws a Proxy causes error instanceof DOMException in quota classification to run the trap once and leak TASK022_PRIVATE_STORAGE_DIAGNOSTIC instead of returning only QuoteBasketStorageError
+- p2_mutation_label: two clock samples around the exact expiry boundary rebuild a fresh quantity-2 one-line Basket but compare it with the earlier one-line snapshot and report merged; genuine merge would have produced quantity 4
+- p2_live_region: final-line Remove sets the empty Basket and exact removal announcement together, but QuoteBasketView returns its empty branch before the only aria-live node, so the resulting tree cannot retain the final removal announcement
+- passing_contract: exact 1.0.0 closure, 30-day interval, 262144-byte ceiling, ordinary hostile arrays/accessors/symbols/non-enumerables, merge/split, safe integer, immutable atomic operations and lexicographic newer-only reconciliation remain green
+- independent_validation: frozen Node 24.18.0 direct Basket 4 files/36 tests and full 44 files/459 tests PASS; five verifiers, lint, typecheck, Next 16.2.11 build and four production smokes PASS
+- visual_scope: exact 15/15 hashes, JPEG/JFIF magic/dimensions, 1440 and 390 two-line, 320 final-empty and native Remove-focus inspection pass; normal-path storage/DOM/Flight/network evidence retains zero protected/internal/commercial/PII marker or external request
+- protected_scope: thirteen immutable baseline hashes exact and only the two authorized configurator/product page seams differ; package/lock/PublicQuoteDraft/Product Configuration/QuoteLine/protected image/CMS unchanged; next-env restored, .next and reviewer probe removed, no port 3000 listener
+- governance: git diff check, project validation, controlled-message validation and strict lane audit pass with zero issues before response creation
+- result: FAIL; P0 none; P1 two; P2 two; Planner final validation not allowed
+- boundaries: no product, CMS, test, README, task-authority, Planner-state, visual-byte, dependency, Git, deployment or external-system repair/mutation; no TASK-023, final RFQ or Feishu work
+- message_status: original review request and the single linked FAIL review_response are both ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner acknowledges the linked FAIL, records governed recovery and may authorize only both stable-error P1s, both narrow P2s, direct regressions, fresh validation and a narrow independent Round 2
+
+### 2026-08-04T22:11:06Z - TASK-022 adversarial review round 2 final
+
+- task: TASK-022
+- message: MSG-TASK-022-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, acknowledged the exact final Round 2 request before substantive work, preserved A1/A2 Planner FAIL/recovery, Visual Round 1 PASS and Adversarial Round 1 FAIL 0/2/2, and independently reviewed only the four requested closures plus direct regressions
+- p1_domain_closure: reviewer Vite SSR probe exercised clone/add/set/remove/summarize with an outer Proxy that threw a second hostile Proxy; all five returned stable QuoteBasketDomainError invalid_basket, the second prototype trap ran zero times, and Date maximum minus 1000 ms returned the same stable error with no raw RangeError
+- p1_storage_closure: hostile thrown Proxy, Proxy-wrapped native quota and unsafe own name getter all returned storage_unavailable; hostile prototype and name getter reads were zero; trusted native quota remained storage_full and original serialized bytes were exact after every rejected write
+- p2_add_closure: independent exact-boundary probe sampled one operation time; one millisecond before expiry merged quantity 2 to 4 and reported merged, exact expiry created fresh quantity 2 and reported added; different-color split and newer cross-tab adoption remained correct
+- p2_live_closure: persistent QuoteBasketContent live region remains in the same final empty tree and the direct real add/remove render contains exact sanitized removal announcement with aria-live polite
+- independent_validation: frozen Node 24.18.0/npm 11.16.0 direct 4 files/40 tests and full 44 files/463 tests PASS; five verifiers, lint, typecheck, Next 16.2.11 production build and four production smokes PASS
+- visual_scope: all 15 Visual Round 1 files reproduce exact hashes, JPEG/JFIF magic and dimensions; visual PASS 0/0/0 and bytes remain unchanged; Quote Basket CSS hash remains a10f02f43d683d2ffbc678193dff5aec931ca9b48faed4caabb066a80999823b
+- protected_scope: thirteen immutable baseline hashes, package, lock, PublicQuoteDraft, Product Configuration, QuoteLine, protected image/CSS, CMS and production next-env are exact; no runtime CMS/TASKS import, network/submission seam, internal identity, price/payment/checkout, PII, secret or diagnostic leakage was found
+- cleanup: generated .next and TypeScript cache plus reviewer probe were precisely removed; production next-env hash is restored and port 3000 is clear
+- governance: git whitespace, project, controlled-message and strict lane checks pass before response creation; task/project/board remain UNDER_REVIEW NOT_ACCEPTED DIRTY while the linked response is pending
+- preserved_history: A1/A2 Planner FAIL 0/2/0 and PASS_AFTER_R1, Visual Round 1 PASS 0/0/0, and Adversarial Round 1 FAIL 0/2/2 remain distinct and unmodified
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after linked response acknowledgement and governed review recovery
+- boundaries: no product, test, README/docs, task-authority, Planner-state, CMS/database, dependency, visual-byte, Git, deployment or external-system repair/mutation; no TASK-023, final RFQ or Feishu work; PASS is not acceptance or Git authorization
+- message_status: exact Round 2 request and the single linked final PASS review_response are both ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner owns governed review recovery, fresh final validation and any checked acceptance preparation

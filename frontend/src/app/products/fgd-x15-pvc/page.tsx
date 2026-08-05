@@ -11,6 +11,7 @@ import {
 } from "../../../components/product-configurator";
 import { projectPublicProductConfigurator } from "../../../lib/product-configuration/v2/public-configurator";
 import { loadProductDetailPage } from "../../../lib/product-detail/load";
+import { projectQuoteBasketProduct } from "../../../lib/product-detail/quote-basket-product";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default async function ProductDetailPage() {
               configuration={projectPublicProductConfigurator(
                 state.configurationState.configuration,
               )}
+              product={projectQuoteBasketProduct(state.detail)}
             />
           ) : (
             <ProductConfiguratorUnavailable />

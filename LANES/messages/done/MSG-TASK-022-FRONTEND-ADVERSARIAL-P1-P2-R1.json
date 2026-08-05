@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-022",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T21:43:18Z",
+  "requires_response_to": "MSG-TASK-022-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this controlled revision before mutation. Close only the four Adversarial Round 1 findings exactly as defined in TASKS/ARTIFACTS/TASK-022/ADVERSARIAL_R1_FRONTEND_REVISION_DISPATCH.md using strict RED/GREEN. Preserve the historical A1/A2 Planner FAIL/recovery, Visual R1 PASS, canonical review report, frozen contracts, current layout and all deferred boundaries. Return one linked execution_response after direct and full validation. Do not modify Planner authority, CMS, root docs, visual bytes, dependencies, Git, deployment, TASK-023, final RFQ submission or Feishu.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-022/ADVERSARIAL_R1_FRONTEND_REVISION_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-022/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-022-quote-basket-foundation.md",
+    "TASKS/ARTIFACTS/TASK-022/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-022/DESIGN.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-022/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-022/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-022/DIFF_OR_OUTPUT_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-022/TDD_RED_EVIDENCE.md"
+  ],
+  "notes": "Only four bounded Round 1 closures. No review, acceptance, Git, deployment, CMS, TASK-023, submission or Feishu work.",
+  "dispatched_at": "2026-08-04T21:43:34Z",
+  "delivery_key": "MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-04T21:45:58Z",
+  "updated_at": "2026-08-04T21:45:58Z"
+}

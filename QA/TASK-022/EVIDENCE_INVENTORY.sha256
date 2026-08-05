@@ -1,0 +1,17 @@
+# TASK-022 visual QA evidence inventory
+# All files below contain JPEG/JFIF bytes under .png names. Magic prefix: ffd8ffe000104a4649460001.
+e3e7730c9a1d06a5a8dff2fa6c813bb8e5f871be14e80f20cb38075a9f967122  task022-basket-one-1440.png  JPEG/JFIF  1440x1280
+b2cfc3c1761a6e29b20e67a8b0687344b0e80457a57d2ea32282bf398b5c2628  task022-basket-two-1024.png  JPEG/JFIF  1024x1534
+84ab748cbefdc1f62ca43bf06d9bd1fb75bcf8a621a5c0267dcbe86ddb6a6f2d  task022-basket-two-1440.png  JPEG/JFIF  1440x1881
+4762f4caf4c022a2498b53a2efa88335dd06052a97da1f6a7e71370bfb7c85ba  task022-basket-two-320.png  JPEG/JFIF  320x2397
+d489127bf565830142ca52a6ac97b88832dd1d5cf566a3b6ba3409fc2dd285f1  task022-basket-two-390.png  JPEG/JFIF  390x2356
+d39b627dffd08f78677956cd03f02e5bb41f331f5371741e95f705e52baeb4b8  task022-basket-two-768.png  JPEG/JFIF  768x2468
+4754e8e9cd700ae7a391bb922f3cfab6772856c976af0b14031487befb617273  task022-empty-1440.png  JPEG/JFIF  1440x900
+19eaa7079e15855982d327ca9b7a3f4dfc8eb5a339919095a8011572988cb7bd  task022-empty-final-320.png  JPEG/JFIF  320x900
+88d0e942b8c4d6e587ba24fe4215024ec8c49e94489b038033c681a76fa5093e  task022-native-added.png  JPEG/JFIF  956x768
+f22d02ac5da806e10cef4eb7b107ea77cae5d08de5ca2136f945ef5a73a773b9  task022-native-focus-add.png  JPEG/JFIF  956x768
+38708dee7c9bce85e486ce3e1376b48f8ae27aad830af500c89ba2dbd12fb0cf  task022-native-focus-remove.png  JPEG/JFIF  956x768
+093ebf81e5ff23000bfdd2cadf2433a4d5a4e3f971d3e22c06eb3920393bf853  task022-native-network-320.png  JPEG/JFIF  956x768
+384ddd4ccbfa806892761402f522a6532aeeb159fff300331e933dfb9281b983  task022-native-reduced-320.png  JPEG/JFIF  956x768
+47a8f5df7debcb921f62d17940f07936c504df8720228c6065d09f41e06f9626  task022-product-success-1440.png  JPEG/JFIF  1440x2868
+25b7ea38e050f3c7b6d88f3be5ff1fa6410b6ae1b128d301b6da510835b72a77  task022-product-success-390.png  JPEG/JFIF  390x3107

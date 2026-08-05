@@ -2,14 +2,142 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-021
+current_task: TASK-022
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-04T18:39:41Z
+last_updated: 2026-08-05T02:16:33Z
 
 ## 当前焦点
 
-`TASK-021` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。技术、Visual Round 2、Adversarial Round 2、Planner final validation 与文档门保持 PASS。唯一下一步是只暂存 TASK-021 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+`TASK-022` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Round 2、Fresh Planner final validation 和文档门保持 PASS。唯一下一步是只暂存 TASK-022 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+
+## TASK-022 Formal Delivery Authorization 2026-08-05T02:16:33Z
+
+- authorization: 用户精确输入 `确认 TASK-022 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: Quote Basket、direct 40/40、full 463/463、五 verifier、四 smoke、Visual 15/15 与 Adversarial Round 2 `PASS / 0 / 0 / 0` 保持有效。
+- docs: `document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- exclusions: 用户自有 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021 closure edits、历史 resume packet 与本地预览生成物不进入提交。
+- unique_next: 正式提交 TASK-022，推送任务分支，fast-forward 合并至 `main` 并推送 `main`；不部署。
+
+## TASK-022 Checked Preparation View Sync 2026-08-04T22:23:18Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-08-04T22:22:34Z` 成功。
+- render_sync: 机器状态已变更但 State/Board 仍保留旧 `UNDER_REVIEW` 文字；受控 reopen 仅用于同步人类可读视图。
+- preserved: 产品、测试、视觉证据、Round 2 PASS、final validation 和 Git 状态均未改变。
+- unique_next: 本轮渲染同步后立即再次 checked prepare，只等待用户精确验收口令。
+
+## TASK-022 Planner Final Validation PASS 2026-08-04T22:16:05Z
+
+- tests: direct 4/40、full 44/463、五 verifier、lint/typecheck/build 与四 production smoke 全部 PASS。
+- evidence: visual hash/magic/dimensions 15/15，不可变保护哈希 13/13，CMS 零 diff、runtime forbidden scan、next-env 与 DPG gates PASS。
+- boundary: Basket production preview/cms 最终 404，CMS 0，submission 0；最终 RFQ API、飞书、TASK-023、部署与 Git 均未开始。
+- cleanup: `.next` 与 TypeScript cache 已可恢复移至 `/Users/arron/.Trash/gdhe-task022-final-iPv2Tb`，port 3000 无 listener。
+- unique_next: checked `task_transition.py prepare-awaiting-user --task TASK-022`。
+
+## TASK-022 Adversarial Round 2 Final PASS Recovery 2026-08-04T22:16:05Z
+
+- response: `MSG-TASK-022-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK/done；最终 verdict `PASS / P0=0 / P1=0 / P2=0`。
+- closures: domain hostile Proxy/日期上界、storage hostile quota、单次时钟 add/merge 真值与 final-remove aria-live 四项均由独立攻击复核关闭。
+- evidence: direct 4/40、full 44/463、五 verifier、lint/typecheck/build、四 smoke、15/15 visual、保护范围、清理与 DPG gates 独立 PASS。
+- preserved: A1/A2 Planner FAIL/恢复、Visual R1 PASS 与 Adversarial Round 1 FAIL 0/2/2 历史均不改写。
+- unique_next: 只执行 fresh Planner final validation，之后才可 checked prepare-awaiting-user。
+
+## TASK-022 Round 1 Revision Planner Checkpoint PASS 2026-08-04T21:59:43Z
+
+- response: frontend narrow revision response 已 validate、ACK/done；四项严格 RED 先得到 4 new FAIL / 36 prior PASS，当前 direct 4/40 PASS。
+- closures: domain 二次 Proxy/日期上界稳定脱敏、storage hostile quota 分类、单次时钟 same-base add/merge、persistent final-remove live region 均关闭。
+- independent: full 44/463、五 verifier、lint/typecheck/build、四 production smoke、15/15 visual、保护哈希、diff 和 DPG gates PASS。
+- cleanup: `.next` 可恢复移至 `/Users/arron/.Trash/gdhe-task022-r1-recheck-wI0M1Y/.next`，next-env 冻结哈希、无 listener。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；Round 1 FAIL 历史不改写。
+- unique_next: 只派发 narrow independent Adversarial Round 2。
+
+## TASK-022 Adversarial Round 1 FAIL Recovery 2026-08-04T21:41:26Z
+
+- response: `MSG-TASK-022-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK/done；verdict `FAIL / P0=0 / P1=2 / P2=2`。
+- p1: domain `instanceof`/日期上界可泄露二次 Proxy 诊断或 raw RangeError；storage quota `instanceof DOMException` 可泄露 hostile Proxy 诊断。
+- p2: 过期临界点两次时钟读取可把 fresh add 误报为 merged；最后一行 Remove 后 empty branch 移除唯一 aria-live 节点。
+- passing: ordinary 4/36、full 44/459、五 verifier、lint/typecheck/build、四 smoke、15/15 visual、保护哈希与治理门继续 PASS。
+- helper: checked `task_transition.py reopen` 已先运行，但当前 helper 只允许匹配任务处于 AWAITING_USER，故对真实 UNDER_REVIEW 安全拒绝且零修改；Planner 记录等价 NEEDS_REVISION recovery。
+- preserved: 历史 A1/A2 Planner FAIL 0/2/0 及恢复、Visual R1 PASS 0/0/0 均不改写。
+- unique_next: 只派发四项 bounded frontend revision、direct regressions、fresh validation 和 narrow Round 2。
+
+## TASK-022 Visual Round 1 And Pre-review Validation PASS 2026-08-04T21:19:52Z
+
+- visual: `MSG-TASK-022-VISUAL-QA-R1-RESPONSE` 已 validate、ACK/done；当前 verdict `PASS / severe 0 / obvious 0 / detail 0`。
+- flow: empty/add/merge/split/reload/cross-tab/quantity/remove/final-empty、disabled Request a Quote、原生键盘/焦点/AX/live 与 reduced motion 通过。
+- evidence: Planner 独立验证 15/15 哈希、实际 JPEG/JFIF 编码和精确尺寸，并直接检查桌面/手机 Basket、空态和产品成功画面。
+- boundary: Network/DOM/Flight/localStorage 零外部、WordPress、Feishu、提交请求和内部身份；受保护媒体保持本地。
+- cleanup: preview 已停止，port 3000 无 listener，`next-env.d.ts` 恢复冻结哈希，`.next` 可恢复移至 `/Users/arron/.Trash/gdhe-task022-visual-WEK1O8/.next`。
+- transition: `IN_PROGRESS -> UNDER_REVIEW`；acceptance 仍 `NOT_ACCEPTED`，Git 仍 `DIRTY`。
+- unique_next: 只派发一次独立只读 adversarial review。
+
+## TASK-022 A3-A5 Planner Checkpoint PASS 2026-08-04T20:47:03Z
+
+- response: `MSG-TASK-022-FRONTEND-A3-A5-IMPLEMENTATION-RESPONSE` 已 validate、ACK/done。
+- product: Add to Quote 已接入 30 天公开 Basket；本地 `/request-a-quote/` 已支持保护图条目、数量修改和 Remove，最终提交保持真实禁用。
+- validation: broader focused 14/81、full 44/459、五 verifier、lint/typecheck/build、四 production smoke、保护哈希、CMS/diff/DPG PASS。
+- docs: 根 README、frontend README、前端合同、架构合同和 ADR-006 已同步；`document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- cleanup: `.next` 已可恢复移至 `/Users/arron/.Trash/gdhe-task022-planner-a3a5-zvsx5l/.next`，port 3000 无 listener，`next-env.d.ts` 保持冻结哈希。
+- unique_next: 只启动 Planner-owned 本地 preview 并派发 visual QA；不得提前 review、验收、Git、部署或外部集成。
+
+## TASK-022 A1/A2 Planner Checkpoint PASS After R1 2026-08-04T20:15:36Z
+
+- response: P1 revision response 已 validate、ACK/done；历史 initial FAIL/P1=2 保留。
+- attacks: `expiresAt=2099` 现在以 `invalid_basket` 拒绝；恶意 items Proxy 在 0 次 get 下同样拒绝且不泄露 private text。
+- validation: focused 2/28、full 42/450、五组 verifier、lint/typecheck、15/15 哈希、CMS/diff/DPG PASS。
+- cleanup: Planner 全量复核生成的 `.next` 已可恢复移至 `/Users/arron/.Trash/gdhe-task022-planner-checkpoint-SYHt5D/.next`，`next-env.d.ts` 恢复冻结哈希。
+- unique_next: 只派发 frontend A3-A5；视觉、review、验收、Git、外部集成仍阻塞。
+
+## TASK-022 A1/A2 Planner Checkpoint FAIL 2026-08-04T20:03:50Z
+
+- response: `MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION-RESPONSE` 已 validate、ACK/done。
+- passing: Planner 独立复现 focused 2/25、typecheck、15/15 保护哈希；lane 报告 full 42/447 与五组 verifier PASS。
+- P1-1: 当前只要求 `expiresAt > updatedAt`，实际探针证明 `2099-01-01` 被接受；必须绑定精确 30 天。
+- P1-2: `items` 数组 Proxy 可从 `map` 访问抛出原始 `private items trap`；必须在数组反射边界 fail closed 并统一脱敏。
+- unique_next: 只派发两个 P1 的严格 RED/GREEN 修订，随后重做独立 A1/A2 checkpoint。
+
+## TASK-022 Design And Baseline PASS 2026-08-04T19:34:39Z
+
+- artifacts: requirements、design、implementation plan、15 份保护哈希与 baseline validation 已冻结。
+- baseline: focused 6/35、full 40/422、五组 verifier、lint、typecheck、production build 和三项 smoke 全部 PASS。
+- correction: Basket 摘要只显示条目数；不同 `piece`、`roll` 等单位的数量不得相加成误导性总数。
+- transition: `READY -> IN_PROGRESS`；acceptance 仍为 `NOT_ACCEPTED`，Git 仍为 `DIRTY`。
+- unique_next: 只派发 frontend A1/A2，收到 execution response 后执行独立 Planner checkpoint。
+
+## TASK-022 Requirement Confirmation 2026-08-04T19:25:58Z
+
+- authorization: 用户精确输入 `确认 TASK-022 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；acceptance 仍为 `NOT_ACCEPTED`，Git 仍为 `DIRTY`。
+- frozen: Quote Basket 非支付语义、30 天公开浏览器存储、同配置合并/不同配置分行、苹果式条目、无 Article Number/internal ID、最终服务端重解析和后续任务边界。
+- unique_next: 完成 REQUIREMENTS、DESIGN、IMPLEMENTATION_PLAN 和 protected baseline；通过后只派发 frontend 实现。
+
+## TASK-022 Quote Basket Reorder 2026-08-04T19:21:18Z
+
+- user_decision: 同意先建立 Quote Basket，再让相关产品消费 Basket 接口。
+- task_scope: 多行公开 Basket、相同完整配置合并数量、不同配置分行、30 天浏览器保存、跨标签同步、产品页入口与本地 `/request-a-quote/` 苹果式左图右参数条目。
+- terminology: 产品级 `Add to Quote`；集合中心 `Quote Basket`；未来最终动作 `Request a Quote`。无价格、Checkout、Payment 或订单。
+- security: localStorage/Flight/DOM 不保存 Article Number、内部 UUID、WordPress/飞书 ID、raw CMS、PII 或秘密；最终提交时由服务端重新解析 QuoteLine。
+- deferred: TASK-023 为型号级 `You May Also Need` 相关产品推荐；最终联系表单、防滥用服务端接口与飞书写入继续后置。
+- branch: 本地分支更名为 `codex/TASK-022-quote-basket-foundation`，基线仍为 `8ebaba40ddb47de0f55594591e628d7a8a3a0253`。
+- unique_next: 等待精确口令 `确认 TASK-022 需求并开始执行`。
+
+## TASK-022 Intake 2026-08-04T19:06:53Z
+
+- request: 完成 TASK-021 延期的型号级相关产品横向推荐；单条 Add to Quote 草稿的苹果式图文摘要另拆为下一小任务。
+- scope: FGD X15+PVC 本地可见 `Related Products`、型号级真实关系到公开 ProductCard 的最小数据链、一次集合请求、零逐卡 resolve、横向指针/触摸/键盘交互和五宽视觉验收。
+- truth: 正式关联集合尚未确认，production/CMS 只接受真实已发布关系；受控 preview 可以使用明确测试候选，无有效关系时隐藏推荐区。
+- branch: `codex/TASK-022-related-products-carousel`，基线 `main` / `origin/main` at `8ebaba40ddb47de0f55594591e628d7a8a3a0253`。
+- exclusions: Apple 风格草稿卡、Basket、持久化、提交 API、飞书同步实现、部署、用户 `.codex/config.toml` 和历史 resume packet 均排除。
+- unique_next: 等待精确口令 `确认 TASK-022 需求并开始执行`。
+
+## TASK-022 Visual Direction Refinement 2026-08-04T19:13:17Z
+
+- reference: 用户提供苹果 `You may also like` 推荐区截图作为信息层级参考。
+- layout: 可见标题 `You May Also Need`；1440 桌面同屏三张大图卡片，名称与至多两项公开属性在图下，整行 CTA；平板/手机减少同屏数量并横向浏览。
+- adaptation: 使用 GDHE 字体、颜色、媒体保护和动作矩阵；不复制价格、色卡、苹果资产或 `Add to Bag` 商城语义。
+- action: 需要配置或有详情页的产品进入 `View Product`；只有无需卡内补选规格且公开资格允许的简单配件才使用直接询价动作。
+- state: 仍为需求确认等待，未实施页面或数据合同。
 
 ## TASK-021 Formal Delivery Authorization 2026-08-04T18:39:41Z
 

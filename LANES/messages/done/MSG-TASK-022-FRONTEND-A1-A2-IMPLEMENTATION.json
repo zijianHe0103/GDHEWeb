@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-022",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-04T19:36:15Z",
+  "requires_response_to": "",
+  "max_rounds": 4,
+  "status": "done",
+  "prompt": "Execute only TASK-022 frontend A1/A2 under the exact controlled dispatch. Read every context file completely, ACK before mutation, use strict RED then minimum GREEN, preserve all frozen PublicQuoteDraft/Product Configuration/QuoteLine/package/lock/product/UI bytes, and return one linked controlled execution_response with the required evidence. Stop after the public Basket contract, pure immutable domain, 30-day storage and same-origin tab reconciliation. Do not start product-page integration, Basket UI/route, related products, final submission, CMS, visual QA, review, Git or deployment.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-022/FRONTEND_A1_A2_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-022/FRONTEND_A1_A2_EXECUTION_REPORT.md"
+  ],
+  "notes": "Planner design and protected baseline PASS at 2026-08-04T19:34:39Z; A3-A5 remain blocked by the independent A1/A2 checkpoint.",
+  "dispatched_at": "2026-08-04T19:36:46Z",
+  "delivery_key": "MSG-TASK-022-FRONTEND-A1-A2-IMPLEMENTATION:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex_app_thread",
+  "done_at": "2026-08-04T19:38:21Z",
+  "updated_at": "2026-08-04T19:38:21Z"
+}

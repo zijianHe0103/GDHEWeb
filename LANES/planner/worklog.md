@@ -3841,3 +3841,123 @@ Each execution records:
 - Final Product Configuration v2/PublicQuoteDraft behavior, 40/422 tests, five verifiers, CMS handoff 20/20, Visual 23/23 and Adversarial Round 2 PASS remain current.
 - User-owned `.codex/config.toml`, historical resume packets and local preview output are excluded.
 - Unique next step: formal commit, immediate task-branch push, fast-forward merge to `main` and immediate `main` push; no deployment.
+
+## 2026-08-04T19:06:53Z TASK-022 intake
+
+- Verified local `main`, `origin/main` and the TASK-021 formal commit at `8ebaba40ddb47de0f55594591e628d7a8a3a0253` before creating `codex/TASK-022-related-products-carousel`.
+- Created the TASK-022 requirement card for the deferred FGD X15+PVC model-level Related Products horizontal slice.
+- Frozen the safety boundary: real relations only in CMS/production, controlled preview candidates only for local visibility, optional recommendations, one collection request and zero per-card resolve.
+- Recorded the Apple-style left-image/right-details PublicQuoteDraft card as TASK-023 candidate only; no second task or product implementation was created.
+- Preserved user `.codex/config.toml`, historical resume packets and all closed TASK-021 product/evidence bytes.
+- State is `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`.
+- Unique next step: wait for `确认 TASK-022 需求并开始执行`.
+
+## 2026-08-04T19:13:17Z TASK-022 visual direction refinement
+
+- Accepted the user-provided Apple recommendation screenshot as an information-hierarchy reference only.
+- Refined TASK-022 to a centered `You May Also Need` heading, three large-image cards at 1440, compact public details, full-width GDHE CTA and responsive horizontal browsing.
+- Kept prices, swatches, Apple assets and ecommerce `Add to Bag` semantics excluded; configuration remains on product detail and only eligible simple accessories may use the frozen direct-RFQ action.
+- No product/CMS/external/Git delivery work occurred. Requirement confirmation remains the sole gate.
+
+## 2026-08-04T19:21:18Z TASK-022 reordered to Quote Basket foundation
+
+- User agreed to establish Quote Basket before the related-products slice.
+- Renamed the local branch to `codex/TASK-022-quote-basket-foundation` and replaced the unconfirmed task card with a frontend-only Basket vertical slice.
+- Scope now covers a versioned public Basket contract, deterministic merge/split, safe quantity edits, 30-day no-login browser persistence, same-origin tab synchronization, product-page status/entry and local `/request-a-quote/` Apple-style rows.
+- Preserved the TASK-021 public-only browser boundary: no Article Number/internal identity in storage or Flight; complete QuoteLine is re-resolved only by a future server submission task.
+- Reassigned related products to TASK-023 candidate and kept final form, abuse controls, Feishu and deployment deferred.
+- No frontend/CMS/database/external implementation or Git delivery occurred.
+- State remains `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`; unique next step is `确认 TASK-022 需求并开始执行`.
+
+## 2026-08-04T19:25:58Z TASK-022 requirements confirmed
+
+- User supplied exact phrase `确认 TASK-022 需求并开始执行`.
+- Transitioned TASK-022 from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`; acceptance remains NOT_ACCEPTED and Git remains DIRTY.
+- Frozen the no-payment Quote Basket, 30-day public browser persistence, merge/split, Apple-style row, internal-identity exclusion and future server re-resolution boundaries.
+- Unique next step: Planner requirements/design/implementation plan and protected baseline only; no frontend dispatch before that gate.
+
+## 2026-08-04T19:34:39Z TASK-022 design and baseline PASS
+
+- Froze TASK-022 requirements, design and two-checkpoint implementation plan for the non-payment Quote Basket.
+- Recorded fifteen protected hashes and independently reproduced focused 6 files / 35 tests, full 40 files / 422 tests, five verifiers, lint, typecheck, build and three production smokes.
+- Corrected the public summary to line count only; quantities with different public units must never be combined into a misleading total.
+- Project, message, strict lane and diff gates pass; no TASK-022 frontend/CMS product change exists at this checkpoint.
+- Transitioned `READY -> IN_PROGRESS`. Unique next step is a controlled frontend A1/A2 dispatch only.
+
+## 2026-08-04T20:03:50Z TASK-022 A1/A2 Planner checkpoint FAIL
+
+- Validated and acknowledged the linked frontend A1/A2 execution response.
+- Independently reproduced focused 2 files / 25 tests, TypeScript and all fifteen protected hashes.
+- P1-1: a legal-looking document with the frozen update time and `expiresAt=2099-01-01` is accepted, so the 30-day retention invariant is not authoritative.
+- P1-2: an Array Proxy throwing from its `map` property leaks the caller's raw diagnostic through the public domain seam.
+- Checkpoint is `FAIL / P0=0 / P1=2 / P2=0`; only the two bounded RED/GREEN fixes are released. A3-A5 remain blocked.
+
+## 2026-08-04T20:15:36Z TASK-022 A1/A2 Planner checkpoint PASS after R1
+
+- Acknowledged the linked P1 revision response while preserving the initial Planner FAIL history.
+- Replayed both original attacks: far-future expiry now fails with `invalid_basket`; hostile items Proxy fails with zero getter calls and no diagnostic leakage.
+- Independently reproduced focused 2/28, full 42/450, five verifiers, lint/typecheck, 15/15 protected hashes, CMS zero diff and DPG gates.
+- Restored generated `next-env.d.ts` and moved `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-planner-checkpoint-SYHt5D/.next`.
+- A1/A2 is `PASS_AFTER_R1`; unique next step is one controlled frontend A3-A5 dispatch.
+
+## 2026-08-04T20:47:03Z TASK-022 A3-A5 Planner checkpoint PASS
+
+- Validated and acknowledged the linked A3-A5 response; independently read the product, Basket, route, tests and frontend documentation.
+- Applied the exact Planner-owned terminology handoff to root README, architecture contract and ADR-006; browser-public Basket identity and future server re-resolution are now distinct.
+- Independently reproduced broader focused 14/81, full 44/459, five verifiers, lint, typecheck, production build and four production smokes.
+- Verified thirteen immutable protected hashes, two authorized source changes, CMS zero diff, next-env baseline, diff and all DPG gates.
+- Moved generated `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-planner-a3a5-zvsx5l/.next`; port 3000 has no listener.
+- Result is `PASS_FOR_VISUAL_QA`; unique next step is Planner-owned same-origin local preview and one controlled visual QA dispatch. Review, acceptance, Git, deployment, TASK-023 and external integration remain blocked.
+
+## 2026-08-04T21:19:52Z TASK-022 visual Round 1 and pre-review validation PASS
+
+- Validated and ACKed the controlled visual response; current verdict is PASS / severe 0 / obvious 0 / detail 0.
+- Independently reproduced 15/15 screenshot hashes, actual JPEG/JFIF encoding and dimensions, and directly inspected the desktop/mobile Basket, empty state and product success evidence.
+- Confirmed the real merge/split/persistence/cross-tab/quantity/remove flow, disabled non-submitting final action, five-width/320 reflow, keyboard/accessibility and public-only browser boundary evidence.
+- Stopped the Planner preview, restored the frozen next-env hash, moved `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-visual-WEK1O8/.next`, and confirmed no port-3000 listener.
+- Transitioned TASK-022 `IN_PROGRESS -> UNDER_REVIEW`; unique next step is one controlled independent read-only adversarial review.
+
+## 2026-08-04T21:41:26Z TASK-022 adversarial Round 1 FAIL recovery
+
+- Validated and ACKed the linked review response: FAIL / P0=0 / P1=2 / P2=2.
+- P1s are trap-safe domain/date error normalization and hostile storage quota classification; P2s are expiry-boundary add/merge truth and persistent final-remove aria-live output.
+- Preserved historical A1/A2 Planner FAIL/recovery, Visual R1 PASS and all ordinary 4/36, full 44/459, verifier/build/smoke/protected evidence.
+- Ran checked `task_transition.py reopen` first; it safely refused because the helper accepts only AWAITING_USER, so Planner recorded the equivalent NEEDS_REVISION recovery without fabricating AWAITING_USER.
+- Unique next step is one controlled frontend RED/GREEN revision for only the four findings, followed by fresh validation and narrow Round 2.
+
+## 2026-08-04T21:59:43Z TASK-022 Round 1 revision Planner checkpoint PASS
+
+- ACKed the linked frontend revision response and independently read the exact four production seams and regressions.
+- Reproduced direct 4/40, full 44/463, five verifiers, lint/typecheck/build and four production smokes.
+- Reconfirmed 15/15 visual hashes and all protected package/contract/media/CSS/next-env hashes.
+- Moved independent `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-r1-recheck-wI0M1Y/.next`; no listener or generated residue remains.
+- Returned TASK-022 to UNDER_REVIEW while preserving Round 1 FAIL 0/2/2; unique next step is narrow independent Round 2 only.
+
+## 2026-08-04T22:16:05Z TASK-022 adversarial Round 2 final PASS recovery
+
+- Validated and acknowledged the linked Round 2 response: PASS / P0=0 / P1=0 / P2=0.
+- Preserved A1/A2 Planner FAIL/recovery, Visual R1 PASS and Adversarial Round 1 FAIL 0/2/2 as distinct history.
+- Recorded independent closure of the two stable-error findings, one-time add classification and persistent final-remove live region.
+- Kept TASK-022 UNDER_REVIEW / NOT_ACCEPTED / DIRTY; unique next step is fresh Planner final validation only.
+
+## 2026-08-04T22:16:05Z TASK-022 Planner final validation PASS
+
+- Reproduced direct 4/40 and full 44/463 on frozen Node 24.18.0.
+- Reproduced five contract verifiers, lint, typecheck, production build and all four production smokes.
+- Verified visual SHA/magic/dimensions 15/15, immutable protected hashes 13/13, CMS zero diff, runtime forbidden scan, next-env and DPG gates.
+- Moved generated `.next` and TypeScript cache recoverably to `/Users/arron/.Trash/gdhe-task022-final-iPv2Tb`; port 3000 is clear.
+- Created aggregate Planner final validation and summary artifacts. Unique next step is checked prepare-awaiting-user; no acceptance or Git delivery is inferred.
+
+## 2026-08-04T22:23:18Z TASK-022 checked preparation view sync
+
+- The first checked prepare passed at 22:22:34Z and changed machine state to AWAITING_USER.
+- Human-readable Project State and Task Board retained stale UNDER_REVIEW narration, so controlled reopen was used only for rendered-view synchronization.
+- Product, tests, evidence, review verdict, final validation and Git state were unchanged.
+- Synchronized active task, Project State and Task Board to the prepared target; unique next step is rerun checked prepare and then wait for exact user acceptance.
+
+## 2026-08-05T02:16:33Z TASK-022 formal delivery authorized
+
+- User supplied exact phrase `确认 TASK-022 完成并提交到远端`.
+- `task_accept.py check` and `accept` both passed; acceptance is ACCEPTED and Git is FORMAL_COMMIT_PENDING.
+- Stopped the local preview and moved its generated `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-delivery-68O4fm`; port 3000 is clear.
+- Unique next step is a scoped formal Chinese commit, immediate task-branch push, fast-forward merge to main and main push. Deployment and TASK-023 remain blocked.

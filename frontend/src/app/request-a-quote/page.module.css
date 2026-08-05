@@ -1,0 +1,33 @@
+.main {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+  background: #f4f3ed;
+  color: #171717;
+}
+
+.content {
+  width: min(100%, 78rem);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #686861;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.content > h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1;
+}
+
+.introduction {
+  max-width: 44rem;
+  color: #51514c;
+  line-height: 1.7;
+}

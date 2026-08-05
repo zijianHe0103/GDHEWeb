@@ -94,7 +94,8 @@ describe("FGD X15+PVC local Product Detail route", () => {
     expect(html).toContain("Add to Quote");
     expect(html).toContain("6 m");
     expect(html).toContain("Choose a track length first.");
-    expect(html).toContain("has not been sent or saved");
+    expect(html).toContain("Saved in this browser for 30 days");
+    expect(html).toContain('href="/request-a-quote/"');
     expect(html).not.toMatch(/wp-content|wordpress|GDHEPRD|productCode/i);
   });
 

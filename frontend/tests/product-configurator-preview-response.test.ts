@@ -72,6 +72,20 @@ describe("ProductConfigurator real preview response", () => {
       expect(browserBytes).not.toContain(marker);
     }
   });
+
+  it("serves the local Basket route without internal identity or an active submission", async () => {
+    const response = await fetch(`${origin}/request-a-quote/`);
+    const browserBytes = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(browserBytes).toContain("Quote Basket");
+    expect(browserBytes).toContain("Loading your saved quote items");
+    expect(browserBytes).toContain("noindex");
+    expect(browserBytes).not.toMatch(/fetch\(|sendBeacon|submission succeeded/i);
+    for (const marker of forbiddenBrowserMarkers) {
+      expect(browserBytes).not.toContain(marker);
+    }
+  });
 });
 
 async function reservePort(): Promise<number> {

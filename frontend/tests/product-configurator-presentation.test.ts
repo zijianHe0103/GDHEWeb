@@ -10,6 +10,8 @@ import {
 } from "../src/components/product-configurator";
 import { previewProductConfigurationV2 } from "../src/lib/product-configuration/v2/preview";
 import { projectPublicProductConfigurator } from "../src/lib/product-configuration/v2/public-configurator";
+import { projectQuoteBasketProduct } from "../src/lib/product-detail/quote-basket-product";
+import { previewProductDetail } from "../src/lib/product-detail/preview";
 
 const publicConfiguration = projectPublicProductConfigurator(
   previewProductConfigurationV2,
@@ -20,6 +22,7 @@ describe("ProductConfigurator presentation", () => {
     const html = renderToStaticMarkup(
       createElement(ProductConfigurator, {
         configuration: publicConfiguration,
+        product: projectQuoteBasketProduct(previewProductDetail),
       }),
     );
 
@@ -37,7 +40,10 @@ describe("ProductConfigurator presentation", () => {
     expect(html).toContain('type="submit"');
     expect(html).toContain("Add to Quote");
     expect(html).toContain('aria-live="polite"');
-    expect(html).toContain("has not been sent or saved");
+    expect(html).toContain("Saved in this browser for 30 days");
+    expect(html).toContain('href="/request-a-quote/"');
+    expect(html).toContain("View Quote Basket");
+    expect(html).not.toContain("Latest temporary quote item");
     expect(html).not.toContain(" Ceiling Mount</label>");
     expect(html).not.toContain(" Wall Mount</label>");
     expect(html).toContain(">Standard Packaging<");
@@ -62,12 +68,13 @@ describe("ProductConfigurator presentation", () => {
     expect(html).not.toContain("Add to Quote");
   });
 
-  it("contains no persistence or network implementation seam", async () => {
+  it("uses only the public Basket client seam and no network implementation", async () => {
     const source = await readFile(
       new URL("../src/components/product-configurator/index.tsx", import.meta.url),
       "utf8",
     );
-    expect(source).not.toMatch(/localStorage|sessionStorage|indexedDB|\bfetch\s*\(|XMLHttpRequest|navigator\.sendBeacon/);
+    expect(source).toContain("useQuoteBasket");
+    expect(source).not.toMatch(/\bfetch\s*\(|XMLHttpRequest|navigator\.sendBeacon/);
   });
 
   it("uses width-safe local CSS with a single-column narrow breakpoint", async () => {

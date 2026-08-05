@@ -258,3 +258,27 @@ Each execution records:
 - response: one `MSG-TASK-021-VISUAL-QA-R2-RESPONSE` execution response sent and linked to the original Round 2 request
 - next: Planner owns ACK, independent validation and any review dispatch; visual_qa returns to wait state
 - intervention: none from visual lane
+
+### TASK-022 visual QA Round 1
+
+- task: `TASK-022`
+- message: `MSG-TASK-022-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- scope: only `TASKS/ARTIFACTS/TASK-022/VISUAL_QA_DISPATCH.md`
+- runtime: reused Planner-owned `http://127.0.0.1:3000`; no server lifecycle or configuration action
+- state_flow: real empty/add/identical-merge/distinct-logo-split/reload/cross-tab/quantity/remove/final-empty flow directly passed
+- disabled_boundary: forced activation of disabled `Request a Quote` did not navigate or create a resource delta; negative non-submission wording remained visible
+- native_keyboard: fresh Chrome Guest system-level Tab/Shift+Tab/Space/Arrow/Up/Return proved continuous focus order, radio operation, standard configuration, Add, View Basket, quantity and Remove with AX/live state
+- responsive: Basket exact 1440/1024/768/390/320; product success 1440/390; all measured `scrollWidth == clientWidth`, body 16px, no overflow offender; Add CTA 44.09375px and center-hit true
+- reduced_motion: explicit 320px `prefers-reduced-motion: reduce` emulation returned true, `320/320/320`, moving count 0
+- protected_media: same-origin protected test candidate, exact alt, natural 800x800; no external media
+- browser_boundary: clean Guest Console had two development informational messages and zero error; Network/asset inventories remained same-origin with no CMS/WordPress/Feishu/per-item/submission request
+- data_boundary: document, Flight, visible DOM and localStorage marker scans empty; storage contained only public Basket data plus expected browser-generated writer/mutation/entry UUIDs
+- evidence: 15 screenshots; all actual JPEG/JFIF bytes under `.png` names; exact magic, dimensions and SHA-256 recorded without re-encoding
+- result: `PASS / severe 0 / obvious 0 / detail 0`
+- cleanup: IAB tabs finalized and viewport reset; temporary Chrome Guest window closed; Planner-owned server untouched
+- protected_scope: no frontend/CSS/tests/docs/CMS/task authority/dependencies/Git/deployment/external-system mutation
+- validation: 15/15 hashes, actual file type/magic/dimensions, Markdown whitespace, scoped diff, project, registry and controlled-message gates PASS; strict lane audit had zero issues before response
+- response: one `MSG-TASK-022-VISUAL-QA-R1-RESPONSE` execution response sent and linked to the original Round 1 request
+- next: Planner owns ACK, independent validation and any adversarial-review dispatch; visual_qa returns to wait state
+- intervention: none from visual lane

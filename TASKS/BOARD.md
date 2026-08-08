@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-022
+current_task: TASK-023
 
 ## 活动任务
 
-- `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-023` 建立 FGD X15+PVC 型号级 You May Also Need 渐进式相关产品推荐纵向切片 — `AWAITING_USER`
 
 ## 等待需求确认
 
@@ -15,17 +15,21 @@ current_task: TASK-022
 
 - 暂无。
 
+## 需要修订
+
+- 暂无。
+
 ## 审查中
 
 - 暂无。
 
 ## 等待用户验收
 
-- 暂无。
+- `TASK-023` — closure R4 与 fresh Planner final validation PASS；待用户验收，未验收、未提交。
 
 ## 等待推送
 
-- `TASK-022` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
+- 暂无。
 
 ## 已暂停
 
@@ -33,6 +37,8 @@ current_task: TASK-022
 
 ## 最近关闭
 
+- `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `CLOSED` / `MERGED`
+- `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `CLOSED` / `MERGED`
 - `TASK-020` 建立 FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片 — `CLOSED` / `MERGED`
 - `TASK-019` 建立 FGD X15+PVC Article Number、Product Configuration 与 QuoteLine 数据合同 — `CLOSED` / `MERGED`
 - `TASK-018` FGD X15 本地可见产品详情页最小纵向切片 — `CLOSED` / `MERGED`
@@ -123,3 +129,7 @@ current_task: TASK-022
 ## Accepted
 
 - TASK-022: ACCEPTED at 2026-08-05T02:16:33Z
+
+## Accepted
+
+- TASK-023: ACCEPTED at 2026-08-08T16:26:33Z

@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "wordpress_cms",
+  "to_lane": "planner",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T07:52:51Z",
+  "requires_response_to": "MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-023 error-evidence determinism correction is complete under strict RED/GREEN. RED proved two full lifecycles produced different error hashes while all real requestIds were UUIDv4. GREEN normalizes only the saved evidence copy to fixed non-production UUID 00000000-0000-4000-8000-000000000023. Final two lifecycles have identical error hash e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c, unchanged 4/4 positive Golden hashes, UUID-conflict PASS, exact 12/3 cleanup and zero residue. Final handoff is 26/26; manifest 809fe879374e604553311217e6085f5f2b605c4a78bcb00258b8c6b2965cf51e; checksum stream fc3552dc84c8e6eacb954654b4d858a326eab03261eda02da440aa48bddfde90. ProductCard/CMS/TASK-014 protected authority and all CMS/platform/DPG gates pass. Whole-tree protected comparison is currently BLOCKED at 21/27 because frontend/next-env.d.ts has a concurrent generated dev-types import in addition to five disclosed authorized frontend differences; wordpress_cms did not and cannot modify it. Please restore/revalidate that frontend-owned protected byte, then rebind the frontend snapshot to these final hashes.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-023/WORDPRESS_ERROR_EVIDENCE_DETERMINISM_R1.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/WORDPRESS_ERROR_EVIDENCE_DETERMINISM_R1.md"
+  ],
+  "notes": "CMS evidence complete; shared protected gate blocked only by concurrent frontend/next-env.d.ts drift; no runtime/API/Schema/frontend/Git/deploy change",
+  "dispatched_at": "2026-08-06T07:53:11Z",
+  "delivery_key": "MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-06T07:53:16Z",
+  "updated_at": "2026-08-06T07:53:16Z"
+}

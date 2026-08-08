@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/frontend/quote-basket/v2/quote-basket.v2.schema.json",
+  "title": "GDHE Public Quote Basket 2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "revision", "writerId", "mutationId", "updatedAt", "expiresAt", "items"],
+  "properties": {
+    "schemaVersion": { "const": "2.0.0" },
+    "revision": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "writerId": { "$ref": "#/$defs/uuid" },
+    "mutationId": { "$ref": "#/$defs/uuid" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/configuredProduct" },
+          { "$ref": "#/$defs/catalogAccessory" }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "publicPath": {
+      "type": "string",
+      "pattern": "^/[a-z0-9]+(?:[/-][a-z0-9]+)*/$"
+    },
+    "positiveSafeInteger": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "width", "height", "alt"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^/test-candidates/[A-Za-z0-9][A-Za-z0-9._-]*$" },
+        "width": { "$ref": "#/$defs/positiveSafeInteger" },
+        "height": { "$ref": "#/$defs/positiveSafeInteger" },
+        "alt": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "lengthMeters", "color"],
+      "properties": {
+        "type": { "enum": ["standard", "custom"] },
+        "lengthMeters": { "type": "number", "exclusiveMinimum": 0, "multipleOf": 0.1 },
+        "color": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["code", "label"],
+          "properties": {
+            "code": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "label": { "type": "string", "minLength": 1, "maxLength": 500 }
+          }
+        }
+      }
+    },
+    "packaging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basePackaging", "logoPrinting", "protectionArrangement"],
+      "properties": {
+        "basePackaging": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label"],
+          "properties": { "label": { "type": "string", "minLength": 1, "maxLength": 500 } }
+        },
+        "logoPrinting": { "type": "boolean" },
+        "protectionArrangement": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label"],
+              "properties": { "label": { "type": "string", "minLength": 1, "maxLength": 500 } }
+            }
+          ]
+        }
+      }
+    },
+    "configuredProduct": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "createdAt", "product", "selection", "packaging", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "configured_product" },
+        "entryId": { "$ref": "#/$defs/uuid" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "product": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model", "name", "publicPath", "image"],
+          "properties": {
+            "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "name": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "publicPath": { "$ref": "#/$defs/publicPath" },
+            "image": { "$ref": "#/$defs/image" }
+          }
+        },
+        "selection": { "$ref": "#/$defs/selection" },
+        "packaging": { "$ref": "#/$defs/packaging" },
+        "quantityUnit": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "catalogAccessory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "createdAt", "product", "catalogPath", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "catalog_accessory" },
+        "entryId": { "$ref": "#/$defs/uuid" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "product": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model", "name", "image"],
+          "properties": {
+            "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "name": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "image": { "$ref": "#/$defs/image" }
+          }
+        },
+        "catalogPath": { "$ref": "#/$defs/publicPath" },
+        "quantityUnit": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    }
+  }
+}

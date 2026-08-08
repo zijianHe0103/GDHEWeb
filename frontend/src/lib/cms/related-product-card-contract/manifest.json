@@ -1,0 +1,109 @@
+{
+  "manifestVersion": "1",
+  "sourceAuthority": {
+    "task": "TASK-023",
+    "contract": "RelatedProductCardCollection",
+    "manifestPath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "manifestSha256": "809fe879374e604553311217e6085f5f2b605c4a78bcb00258b8c6b2965cf51e",
+    "checksumsPath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "fc3552dc84c8e6eacb954654b4d858a326eab03261eda02da440aa48bddfde90"
+  },
+  "restApiVersion": "1",
+  "productCardSchemaVersion": "1.0.0",
+  "relatedProductCardSchemaVersion": "1.0.0",
+  "endpoint": "/wp-json/gdhe/v1/related-product-cards",
+  "roots": [
+    "related-product-card-collection.v1.schema.json"
+  ],
+  "schemas": [
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/card-action.v1.schema.json",
+      "snapshotPath": "schemas/card-action.v1.schema.json",
+      "sha256": "6639d8ac895baa3eb4400b2e8cadd6c5032d0290caac3872eb1550cd3aa6b6e4"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/card-attribute.v1.schema.json",
+      "snapshotPath": "schemas/card-attribute.v1.schema.json",
+      "sha256": "3c2828ee795863f2bc153a5a26d3c1564677d3681aaa3bb15daf4f29a57cc821"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/product-card.v1.schema.json",
+      "snapshotPath": "schemas/product-card.v1.schema.json",
+      "sha256": "615e6dd00c33e3b1b366a1640ccc5300b93d5733413be63b24e7853f5d1dec7a"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json",
+      "snapshotPath": "schemas/public-path.schema.json",
+      "sha256": "9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-protected-media.v1.schema.json",
+      "snapshotPath": "schemas/public-protected-media.v1.schema.json",
+      "sha256": "c8fc9afc35db82d91f5c75f84cce289a1f0f68c2884490405e734a26194ccd5c"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/public-taxonomy-ref.v1.schema.json",
+      "snapshotPath": "schemas/public-taxonomy-ref.v1.schema.json",
+      "sha256": "a2c7dc8ba7cdaa0f64ec9d7a67186b64343cf71ae95e062a99340ba7017fe5a8"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/related-product-card-collection.v1.schema.json",
+      "snapshotPath": "schemas/related-product-card-collection.v1.schema.json",
+      "sha256": "d7ef6b4d67a8fed2fe6d0751ede3f83d2b17f9e4fddc7e3f4d1584b7cac71d06"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/related-product-card-item.v1.schema.json",
+      "snapshotPath": "schemas/related-product-card-item.v1.schema.json",
+      "sha256": "fca2da467f07f385d4b2a7d26beeb7be1b8840edd816141c5d583d6a7085cfa2"
+    },
+    {
+      "sourcePath": "cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json",
+      "snapshotPath": "schemas/uuid-v4.schema.json",
+      "sha256": "59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"
+    }
+  ],
+  "samples": {
+    "success": [
+      {
+        "name": "four-plus",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/four-plus.json",
+        "snapshotPath": "samples/success/four-plus.json",
+        "sha256": "5359939897c49200644497fde7a0e145a0e8e3656e8425450ef1db5a447472e1"
+      },
+      {
+        "name": "one",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/one.json",
+        "snapshotPath": "samples/success/one.json",
+        "sha256": "1c337364157486db1c09cf56d99152db0cdc4ce3f4f3c50a4792caf42e203b2b"
+      },
+      {
+        "name": "three",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/three.json",
+        "snapshotPath": "samples/success/three.json",
+        "sha256": "e260f2c66b21fe709e834519bf8ae3f128d1a9cf54dc3ab79aa98e35ad6ce780"
+      },
+      {
+        "name": "zero",
+        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/zero.json",
+        "snapshotPath": "samples/success/zero.json",
+        "sha256": "10c511e8e8bdf7c2ee294c9f2562fbeadf4d0002eb549ff9b60b7c9574d0b805"
+      }
+    ],
+    "errors": {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_ERROR_FIXTURES.json",
+      "snapshotPath": "samples/errors/related-product-errors.json",
+      "sha256": "e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c",
+      "selectors": [
+        "locale",
+        "malformed-relations",
+        "not-found",
+        "over-20",
+        "path",
+        "schema",
+        "source-conflict",
+        "source-ineligible",
+        "unknown"
+      ]
+    }
+  }
+}

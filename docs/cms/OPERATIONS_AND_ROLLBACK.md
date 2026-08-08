@@ -188,6 +188,22 @@ wp gdhe task021-fixtures cleanup --path=cms
 
 Rollback removes only the v2 route dispatcher, v2 Schema/source/Fixture/tests and its `schema.v3.json` registration, then restores the v1 route callback. Do not reconstruct or rewrite any v1 Schema, Golden, error, verifier, manifest or checksum byte.
 
+## TASK-023 RelatedProductCard Fixture
+
+TASK-023 uses a removable local TEST_CANDIDATE lifecycle and does not write Feishu, real business content, users, attachments or uploads:
+
+```sh
+wp gdhe task023-fixtures create --path=cms
+wp gdhe task023-fixtures show --path=cms
+wp eval-file cms/wp-content/plugins/gdhe-site/tests/related-product-card-contract-test.php --path=cms
+python3 cms/wp-content/plugins/gdhe-site/tests/related-product-card-schema-test.py
+wp gdhe task023-fixtures cleanup --path=cms
+```
+
+`create` refuses an existing manifest. It creates one source Product, four eligible ordered targets, published and unpublished negative targets, one category landing and three task-scoped terms. Self and duplicate relations are stored only to prove exclusion. The contract test temporarily exercises 0/1/3/4+, over-20, source conflict and source-ineligible states and restores the original relationship set in `finally`. `cleanup` force-deletes only manifest/marker-owned posts and terms. Each deterministic lifecycle removes exactly 11 posts and three terms; final checks must prove matching posts, marker/source meta, terms, termmeta, option and uploads are all zero.
+
+Rollback for this additive slice is deletion of only the TASK-023 MU bootstrap, related-product PHP/Schema/Fixture/tests, `schema.v3.json` registrations and TASK-023 artifacts after the fixture cleanup and zero-residue gate. ProductCard `1.0.0`, TASK-014 authority, WordPress Core, SCF, database structure and existing content are not rollback targets.
+
 ## Routine verification
 
 Use WP-CLI to verify:

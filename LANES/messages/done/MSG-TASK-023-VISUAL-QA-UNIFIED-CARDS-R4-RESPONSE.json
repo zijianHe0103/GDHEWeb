@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE",
+  "type": "review_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-07T16:33:05Z",
+  "requires_response_to": "MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-023 unified-card Visual QA R4 complete: PASS / severe 0 / obvious 0 / detail 0. Exact 1440/1024/768/390/320 reflow uses one equal-media/information/bottom-action card format with zero recommendation quantity UI or overflow. Exact 3->6->7, live/focus, one accessory Add producing Basket quantity 1 then Basket edit/remove, true pointer canonical navigation and browser Back exact restoration, native keyboard, reduced motion, same-origin network and no internal/CMS/commerce leakage all pass. Visual R1/R2 FAIL, R3 PASS and canonical 50/50 historical evidence remain unchanged; 31 isolated R4 JPEG/JFIF-under-.png files pass exact hashes and magic.",
+  "context_files": [
+    "QA/TASK-023/unified-card-r4/EVIDENCE_INVENTORY.sha256",
+    "QA/TASK-023/unified-card-r4/task023-unified-r4-card-row-1440.png",
+    "QA/TASK-023/unified-card-r4/task023-unified-r4-basket-quantity-1-390.png",
+    "QA/TASK-023/unified-card-r4/task023-unified-r4-return-restored-pointer-390.png"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_UNIFIED_CARD_R4_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_UNIFIED_CARD_R4_MANIFEST.sha256"
+  ],
+  "notes": "Planner-owned preview PID 45765 remained untouched. Early locator-assisted return diagnostics are preserved but the final true-coordinate pointer pair is authoritative. This is Visual QA only; Planner owns cleanup and checkpoint.",
+  "dispatched_at": "2026-08-07T16:33:05Z",
+  "delivery_key": "MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-07T16:33:49Z",
+  "updated_at": "2026-08-07T16:33:49Z"
+}

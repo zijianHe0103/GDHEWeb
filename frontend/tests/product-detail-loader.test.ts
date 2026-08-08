@@ -6,6 +6,8 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import errors from "../src/lib/cms/contracts/samples/errors/resolve-errors.json";
 import productSample from "../src/lib/cms/contracts/samples/success/resolve-product-alpha.json";
 import configurationSample from "../src/lib/cms/product-configuration-v2-contract/samples/success/fgd-x15-pvc.json";
+import relatedSample from "../src/lib/cms/related-product-card-contract/samples/success/four-plus.json";
+import relatedErrors from "../src/lib/cms/related-product-card-contract/samples/errors/related-product-errors.json";
 import { loadProductDetailPage } from "../src/lib/product-detail/load";
 
 const originalEnvironment = {
@@ -55,7 +57,7 @@ describe("Product Detail page loader", () => {
     expect(fetchSpy).not.toHaveBeenCalled();
   });
 
-  test("uses exactly one fixed resolve request and zero ProductCard requests", async () => {
+  test("adds exactly one related collection request and zero per-card resolve", async () => {
     const paths: string[] = [];
     await withLoopbackServer((path, response) => {
       paths.push(path);
@@ -63,6 +65,56 @@ describe("Product Detail page loader", () => {
         sendJson(response, 200, configurationSample, {
           etag: '"configuration"',
           "cache-control": "public, max-age=60",
+        });
+      } else if (path.startsWith("/wp-json/gdhe/v1/related-product-cards?")) {
+        sendJson(response, 200, relatedSample, {
+          etag: '"related"',
+          "cache-control": "public, max-age=60",
+        });
+      } else {
+        sendJson(response, 200, candidatePayload());
+      }
+    }, async (baseUrl) => {
+      process.env.GDHE_PRODUCT_DETAIL_MODE = "cms";
+      process.env.WORDPRESS_API_URL = baseUrl;
+
+      const state = await loadProductDetailPage();
+      expect(state).toMatchObject({
+        kind: "ready",
+        preview: false,
+        detail: { model: "FGD X15+PVC" },
+        configurationState: {
+          kind: "ready",
+          configuration: { options: [{ articleNumber: "GDHEPRD000172" }] },
+        },
+      });
+      expect(state.kind === "ready" && state.relatedProducts.items).toHaveLength(4);
+      expect(
+        state.kind === "ready" && state.relatedProducts.items[0].card.model,
+      ).toBe("Flow Control Task-023-detail-alpha");
+    });
+
+    expect(paths).toEqual([
+      "/wp-json/gdhe/v1/resolve?locale=en&path=%2Fproducts%2Ffgd-x15-pvc%2F&schema=3.0.0",
+      "/wp-json/gdhe/v1/product-configurations?locale=en&schema=2.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
+      "/wp-json/gdhe/v1/related-product-cards?locale=en&schema=1.0.0&source_path=%2Fproducts%2Ffgd-x15-pvc%2F",
+    ]);
+    expect(paths.every((path) => !path.includes("/gdhe/v1/product-cards?"))).toBe(true);
+    expect(paths.filter((path) => path.includes("/resolve?"))).toHaveLength(1);
+  });
+
+  test("keeps the detail ready and omits only related products on related failure", async () => {
+    const paths: string[] = [];
+    await withLoopbackServer((path, response) => {
+      paths.push(path);
+      if (path.startsWith("/wp-json/gdhe/v1/product-configurations?")) {
+        sendJson(response, 200, configurationSample, {
+          etag: '"configuration"',
+          "cache-control": "public, max-age=60",
+        });
+      } else if (path.startsWith("/wp-json/gdhe/v1/related-product-cards?")) {
+        sendJson(response, 400, relatedErrors.unknown, {
+          "cache-control": "no-store",
         });
       } else {
         sendJson(response, 200, candidatePayload());
@@ -73,20 +125,11 @@ describe("Product Detail page loader", () => {
 
       await expect(loadProductDetailPage()).resolves.toMatchObject({
         kind: "ready",
-        preview: false,
-        detail: { model: "FGD X15+PVC" },
-        configurationState: {
-          kind: "ready",
-          configuration: { options: [{ articleNumber: "GDHEPRD000172" }] },
-        },
+        configurationState: { kind: "ready" },
+        relatedProducts: { items: [] },
       });
     });
-
-    expect(paths).toEqual([
-      "/wp-json/gdhe/v1/resolve?locale=en&path=%2Fproducts%2Ffgd-x15-pvc%2F&schema=3.0.0",
-      "/wp-json/gdhe/v1/product-configurations?locale=en&schema=2.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
-    ]);
-    expect(paths.every((path) => !path.includes("product-cards"))).toBe(true);
+    expect(paths).toHaveLength(3);
   });
 
   test("maps only a validated gdhe_not_found HTTP 404 to not_found", async () => {
@@ -123,8 +166,8 @@ describe("Product Detail page loader", () => {
         configurationState: { kind: "unavailable" },
       });
     });
-    expect(paths).toHaveLength(2);
-    expect(paths.every((path) => !path.includes("product-cards"))).toBe(true);
+    expect(paths).toHaveLength(3);
+    expect(paths.every((path) => !path.includes("/gdhe/v1/product-cards?"))).toBe(true);
   });
 
   test.each([

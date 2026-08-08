@@ -16,6 +16,7 @@ import {
 } from "../src/components/product-detail";
 import productSample from "../src/lib/cms/contracts/samples/success/resolve-product-alpha.json";
 import configurationSample from "../src/lib/cms/product-configuration-v2-contract/samples/success/fgd-x15-pvc.json";
+import relatedSample from "../src/lib/cms/related-product-card-contract/samples/success/four-plus.json";
 import { previewProductDetail } from "../src/lib/product-detail/preview";
 
 const originalEnvironment = {
@@ -96,6 +97,10 @@ describe("FGD X15+PVC local Product Detail route", () => {
     expect(html).toContain("Choose a track length first.");
     expect(html).toContain("Saved in this browser for 30 days");
     expect(html).toContain('href="/request-a-quote/"');
+    expect(html).toContain("You May Also Need");
+    expect((html.match(/<li><article/g) ?? [])).toHaveLength(3);
+    expect(html).toContain("Show More Products");
+    expect(html).toContain("Protected TEST_CANDIDATE");
     expect(html).not.toMatch(/wp-content|wordpress|GDHEPRD|productCode/i);
   });
 
@@ -113,6 +118,13 @@ describe("FGD X15+PVC local Product Detail route", () => {
           "cache-control": "public, max-age=60",
         });
         response.end(JSON.stringify(configurationSample));
+      } else if (path.startsWith("/wp-json/gdhe/v1/related-product-cards?")) {
+        response.writeHead(200, {
+          "content-type": "application/json",
+          etag: '"related"',
+          "cache-control": "public, max-age=60",
+        });
+        response.end(JSON.stringify(relatedSample));
       } else {
         response.writeHead(200, { "content-type": "application/json" });
         response.end(JSON.stringify(hostileCmsCandidate(hostileUrl)));
@@ -126,8 +138,10 @@ describe("FGD X15+PVC local Product Detail route", () => {
       expect(paths).toEqual([
         "/wp-json/gdhe/v1/resolve?locale=en&path=%2Fproducts%2Ffgd-x15-pvc%2F&schema=3.0.0",
         "/wp-json/gdhe/v1/product-configurations?locale=en&schema=2.0.0&path=%2Fproducts%2Ffgd-x15-pvc%2F",
+        "/wp-json/gdhe/v1/related-product-cards?locale=en&schema=1.0.0&source_path=%2Fproducts%2Ffgd-x15-pvc%2F",
       ]);
-      expect(paths[0]).not.toContain("product-cards");
+      expect(paths.filter((path) => path.includes("/resolve?"))).toHaveLength(1);
+      expect(paths.every((path) => !path.includes("/gdhe/v1/product-cards?"))).toBe(true);
       expect(html).toContain("/test-candidates/fgd-x15-protected.png");
       expect(html).toContain(
         "Local CMS test candidate — not a production product page",
@@ -135,6 +149,8 @@ describe("FGD X15+PVC local Product Detail route", () => {
       expect(html).not.toContain(hostileOrigin);
       expect(html).not.toContain(hostileUrl);
       expect(html).not.toContain("wp-content");
+      expect(html).not.toContain("media.gdhe.example");
+      expect(html).not.toContain("You May Also Need");
       expect(html).not.toMatch(/<link[^>]+rel="preload"[^>]+https?:/);
       expect(html).not.toMatch(/<img[^>]+https?:/);
       expect(html).not.toMatch(

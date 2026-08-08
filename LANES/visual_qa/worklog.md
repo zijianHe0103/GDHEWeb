@@ -282,3 +282,93 @@ Each execution records:
 - response: one `MSG-TASK-022-VISUAL-QA-R1-RESPONSE` execution response sent and linked to the original Round 1 request
 - next: Planner owns ACK, independent validation and any adversarial-review dispatch; visual_qa returns to wait state
 - intervention: none from visual lane
+
+## 2026-08-06
+
+### TASK-023 visual QA Round 1
+
+- task: `TASK-023`
+- message: `MSG-TASK-023-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- runtime: reused Planner-owned `http://127.0.0.1:3000`; no server lifecycle or configuration action
+- progressive_disclosure: initial 3, first reveal 6, final reveal 7; stable order, zero navigation/resource delta; pointer and native Return focus/live rules passed
+- responsive: exact 1440/1024/768/390/320 full-page evidence; 3/2/2/1/1 columns; `scrollWidth == clientWidth`, body 16px and zero overflow at every width
+- cards: seven explicit protected TEST_CANDIDATE cards; local 800x800 protected media with distinct alts; quantity labels and positive-safe-integer disable/enable gates passed
+- basket: Wall Bracket quantity 2 added as `catalog_accessory`, changed to 3 and removed; no fabricated track configuration or submission
+- native_keyboard: clean Chrome Guest continuous Tab/Return, visible focus, first/final Show More focus outcomes and accessory Add directly passed
+- browser_boundary: reduced motion true with zero rendered motion; same-origin requests only; no WordPress/Feishu/external/submission or internal identity/commerce leakage; development-only Next LCP advisory disclosed
+- finding: all four visible View Product targets (`test-candidate-1/3/5/7`) return final HTTP 404; browser activation reproduced the 404 page
+- result: `FAIL / severe 0 / obvious 1 / detail 0`
+- smallest_correction: provide resolvable same-origin TEST_CANDIDATE detail routes or omit actions/cards without resolvable routes, preserving candidate truth
+- evidence: 19 screenshots, all actual JPEG/JFIF under `.png` names; exact magic, dimensions and SHA-256 recorded without re-encoding
+- protected_scope: no frontend/CSS/tests/docs/CMS/task authority/dependencies/review/Git/deployment/external-system mutation; Planner server untouched
+- validation: 19/19 hashes, actual JPEG/JFIF type/magic/dimensions, Markdown whitespace, scoped diff, project, registry and controlled-message gates PASS; strict lane audit had zero issues before response
+- response: one `MSG-TASK-023-VISUAL-QA-R1-RESPONSE` execution response sent, linked to the original request and delivered to Planner through the real Codex thread bridge
+- post_response_audit: project, registry and message validation remained valid; strict audit reports only the expected dispatched response pending Planner ACK
+- next: Planner owns ACK, correction and any retest dispatch; visual_qa returns to wait state
+- intervention: frontend correction required; adversarial review remains outside this checkpoint
+
+### TASK-023 visual QA Round 2
+
+- task: `TASK-023`
+- message: `MSG-TASK-023-VISUAL-QA-R2`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- preservation: Round 1 `FAIL / severe 0 / obvious 1 / detail 0`, 19 screenshots, hashes and JPEG/JFIF-under-PNG disclosure verified and unchanged
+- runtime: reused Planner-owned `http://127.0.0.1:3000`; no server lifecycle or configuration action
+- o1_closure: visible actions for candidates 1/3/5/7 each reached final same-origin HTTP 200 with explicit TEST_CANDIDATE/non-production navigation-preview text, `noindex,nofollow`, local protected 800x800 media, zero action/external asset/internal identity/commerce/compatibility marker
+- negative_routes: candidates 2/4/6/8, `/products/accessories/test-candidates` and unknown product remained final HTTP 404
+- main_regression: 1440/1024/768/390/320 initial 3 and 3/2/2/1/1 columns, zero overflow; 1440 exact 3 -> 6 -> 7, stable order/URL, zero new asset, focus/live rules PASS
+- native_keyboard: Guest continuous Tab to Show More, disabled accessory Add skipped; first Return retained focus and final Return moved focus to candidate 7; exact live text exposed
+- reduced_motion: exact 320 CSS px returned reduced=true, 320/320 and moving=0
+- accessory_basket: Wall Bracket quantity 2 enabled Add and produced protected catalog_accessory line quantity 2; Basket zero overflow, no fabricated configuration and final submission disabled
+- new_finding: candidate landing pages do not reflow below 832 CSS px; at 768/390/320 client widths the scrollWidth was 832 and the 800px image plus text exceeded the viewport
+- result: `FAIL / severe 0 / obvious 1 / detail 0`; original O1 closed but new O2 responsive overflow remains
+- smallest_correction: constrain candidate landing container to available width, make protected image responsive with proportional height and wrap text; do not hide overflow/clipping
+- evidence: 17 fresh R2 screenshots, all actual JPEG/JFIF under `.png` names; exact magic, dimensions and SHA-256 appended without changing Round 1 entries
+- cleanup: in-app viewport reset/tabs finalized; temporary Guest window closed; Planner server untouched
+- protected_scope: no frontend/CSS/tests/docs/CMS/task authority/dependencies/review/Git/deployment/external-system mutation
+- validation: canonical 36/36 and Round 2 17/17 hash streams, R1 first-19 preservation, actual JPEG/JFIF magic/dimensions, Markdown whitespace, scoped diff, project, registry, message and strict lane gates PASS; strict audit zero issues before response
+- next: send one linked R2 execution response; Planner owns correction and any subsequent retest
+- response: one `MSG-TASK-023-VISUAL-QA-R2-RESPONSE` execution response sent, linked to the R2 request and delivered to Planner through the real Codex thread bridge
+- post_response_audit: project, registry and message validation, R2 17/17 hashes and diff check remained valid; strict audit reports only the expected dispatched response pending Planner ACK; server PID 1784 remained untouched
+- intervention: frontend responsive correction required; adversarial review remains blocked
+
+### TASK-023 visual QA Round 3
+
+- task: `TASK-023`
+- message: `MSG-TASK-023-VISUAL-QA-R3`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- preservation: Round 1 `FAIL / 0 / 1 / 0`, Round 2 `FAIL / 0 / 1 / 0` and canonical 36/36 prior hashes preserved unchanged
+- runtime: reused Planner-owned `http://127.0.0.1:3000`; PID 9095 remained untouched
+- o2_closure: visible candidates 1/3/5/7 each reached final HTTP 200; all 16 candidate-width measurements at 1440/768/390/320 had `innerWidth == clientWidth == scrollWidth`, zero offender, proportional protected image and wrapped text
+- public_boundary: TEST_CANDIDATE/navigation-preview truth, `noindex,nofollow`, protected same-origin media, zero action/commerce/internal/compatibility/external marker passed; candidates 2/4/6/8, accessory and unknown remained 404
+- bounded_regression: main initial 3 and exact 3 -> 6 -> 7, stable order/network, Wall Bracket quantity 2 Add/Basket, native Guest Tab/Return focus/live outcomes passed
+- evidence: 14 fresh R3 screenshots, all actual JPEG/JFIF under `.png` names; exact magic, dimensions and SHA-256 recorded; prior evidence not overwritten
+- result: `PASS / severe 0 / obvious 0 / detail 0`; prior two FAIL results remain historical truth
+- protected_scope: no frontend/CSS/tests/docs/CMS/task authority/dependencies/Git/deployment/external mutation; Planner server untouched
+- validation: R3 14/14 and canonical 50/50 hashes, actual encoding/magic/dimensions, report section parity, Markdown whitespace, diff, project, registry, message and strict lane gates PASS
+- response: one `MSG-TASK-023-VISUAL-QA-R3-RESPONSE` execution response sent and linked to the original Round 3 request
+- next: Planner owns ACK and any adversarial-review dispatch; visual_qa returns to wait state
+
+## 2026-08-08
+
+### TASK-023 unified-card visual QA Round 4
+
+- task: `TASK-023`
+- message: `MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- preservation: Visual Round 1 `FAIL / 0 / 1 / 0`, Round 2 `FAIL / 0 / 1 / 0`, Round 3 `PASS / 0 / 0 / 0` and canonical prior `50/50` hashes preserved unchanged
+- runtime: reused Planner-owned `http://127.0.0.1:3000`; PID 45765 remained untouched
+- unified_geometry: 1440/1024/768/390/320 used one `figure + information + footer action` card format; equal media/row/action bottoms, 44 px full-width actions, zero recommendation quantity UI and zero overflow/clipping
+- progressive_disclosure: exact 3 -> 6 -> 7, stable order/URL/23 assets, first focus retained, final focus moved to candidate 7 and exact live announcements; zero browser CMS/per-card request
+- accessory_basket: one Wall Bracket Add produced quantity 1, Basket-owned quantity changed to 3 and Remove returned empty; no price/payment/checkout/submission
+- return: true coordinate pointer navigation to canonical candidate 5 and browser Back restored six cards, `scrollY=5244` and recommendation position with exact zero delta; no return query parameter
+- native_keyboard: clean Chrome Guest continuous Tab/Return, visible focus and mixed action order passed
+- reduced_motion: explicit 320 CSS px reduce emulation returned true, 320/320 and zero moving elements
+- browser_boundary: clean Guest Console had informational development messages only; page Network same-origin; document/Flight/DOM excluded WordPress/Feishu/internal UUID/Article Number/raw diagnostic/commerce leakage
+- evidence: 31 new files isolated under `QA/TASK-023/unified-card-r4`; all actual JPEG/JFIF under `.png` names with exact magic, dimensions and SHA-256; diagnostic locator-scroll captures retained and final pointer pair identified as authoritative
+- result: `PASS / severe 0 / obvious 0 / detail 0`
+- protected_scope: no frontend/CSS/tests/contracts/CMS/Planner authority/dependencies/Git/deployment/external mutation; historical QA bytes untouched
+- validation: R4 31/31 hashes and JPEG/JFIF magic, canonical historical 50/50 hashes, Markdown diff, project, registry, controlled-message and strict lane gates PASS before response
+- response: one `MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE` review response sent and linked to the original unified-card request through the real Codex thread bridge
+- next: Planner owns ACK, cleanup and checkpoint; visual_qa returns to wait state

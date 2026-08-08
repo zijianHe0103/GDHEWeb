@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-VISUAL-QA-R3",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T05:24:23Z",
+  "requires_response_to": "MSG-TASK-023-FRONTEND-VISUAL-O2-R2-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this exact O2 closure retest before work. Independently execute TASK-023 Visual QA Round 3 against current shared bytes and the Planner-owned preview at http://127.0.0.1:3000/products/fgd-x15-pvc/. Preserve unchanged Visual Round 1 FAIL 0/1/0, Round 2 FAIL 0/1/0 and all 36 canonical prior evidence files/hashes/encoding disclosures. Retest only the corrected candidate landing cause plus bounded regressions: reach visible candidates 1/3/5/7 through their View Product actions and at 1440/768/390/320 directly measure innerWidth, document clientWidth/scrollWidth, main/article/image bounds and image aspect ratio; PASS requires scrollWidth==clientWidth, no element beyond viewport, protected image scales proportionally without clipping and headings/paragraphs wrap. Confirm TEST_CANDIDATE/noindex/nofollow/protected same-origin media/zero commerce/internal/external behavior and unchanged 2/4/6/8/accessory/unknown 404 matrix. Sample the main product initial 3 and 3->6->7 plus accessory/Basket and keyboard/focus to ensure no regression, but do not repeat unrelated evidence where prior hashes suffice. Capture distinct task023-r3-* evidence and append a Round 3 section/manifest without editing earlier evidence. Return PASS only for severe=0, obvious=0, detail=0; otherwise FAIL with exact current evidence. Do not edit frontend/CMS/Planner authority, start or stop the server, begin adversarial review, commit, deploy or touch external systems.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-023-related-products-progressive-slice.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O2_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O2_VALIDATION_LOG.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_EVIDENCE_R3_MANIFEST.sha256"
+  ],
+  "notes": "This is a narrow O2 closure retest, not a repeated full review. Planner preview is already running at 127.0.0.1:3000; do not stop or reconfigure it. PASS is not adversarial review, acceptance, Git or deployment authorization.",
+  "dispatched_at": "2026-08-06T05:24:45Z",
+  "delivery_key": "MSG-TASK-023-VISUAL-QA-R3:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "target_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_id": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-06T05:26:02Z",
+  "updated_at": "2026-08-06T05:26:02Z"
+}

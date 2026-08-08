@@ -1,0 +1,37 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-07T15:57:33Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this exact user-authorized TASK-023 revision before work. Preserve all historical Visual and Adversarial evidence, then use strict TDD to change only the RelatedProducts frontend presentation and public UI return-state seam. First capture real REDs for: one, the current view and quote cards having different card-level structures and heights because quote cards contain quantity controls; two, direct accessory Add to Quote not creating a valid quantity-1 Basket line without card input; and three, Show More expansion not deterministically restoring when a customer follows canonical View Product and then uses browser Back. Minimum GREEN: every recommendation uses one semantic card skeleton with the same media, information and bottom action regions; View Product and Add to Quote retain distinct truthful labels but identical button geometry and alignment; remove the accessory card quantity label, input and error UI and do not add a modal, Quick Add panel or new route; a deliberate simple-accessory Add to Quote creates a valid catalog_accessory line with initial quantity 1, while all later quantity editing and removal remains in the existing Quote Basket and repeat-add uses existing deterministic merge semantics. Preserve canonical View Product hrefs and SEO URLs; retain only the minimum session-scoped public UI state needed to restore the source recommendation visibleCount and browser scroll position on Back, clamped to the current item count, with no product UUID, Article Number, CMS or Feishu identity, raw response or long-term business data. Keep initial 3, next 3 and final 7 behavior, focus and live announcements, View Quote Basket, protected media, one collection request and zero per-card resolve, production and CMS fail-closed behavior, server-only and hostile-input boundaries. Do not modify CMS, API, Schema, snapshots, Quote Basket contract bytes, package or lock, final RFQ, Feishu, Planner authority, existing QA evidence or Git. Reproduce direct presentation, navigation and Basket tests, all TASK-023 focused tests, full Vitest in safe groups if required, seven verifiers, lint, typecheck, production build and four production smokes; prove browser-facing HTML, Flight and session UI state contain no internal identity. Update only TASK-023 frontend execution artifacts, frontend README if behavior text requires it, and frontend worklog. Return one linked execution_response and stop for Planner checkpoint; do not start a preview, Visual QA, review, commit, push, merge or deployment.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-023-related-products-progressive-slice.md",
+    "TASKS/ARTIFACTS/TASK-023/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-023/DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-023/IMPLEMENTATION_PLAN.md",
+    "frontend/src/components/related-products/index.tsx",
+    "frontend/src/components/related-products/related-products.module.css",
+    "frontend/src/lib/quote-basket/use-quote-basket.ts",
+    "frontend/src/lib/quote-basket/v2/domain.ts"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UNIFIED_CARD_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UNIFIED_CARD_REVISION_VALIDATION_LOG.md"
+  ],
+  "notes": "User explicitly confirmed the design on 2026-08-07. Initial accessory quantity is exactly 1; quantity editing belongs in Quote Basket. This revision replaces the prior card-level explicit-quantity presentation only, not its historical evidence or the closed public contracts.",
+  "dispatched_at": "2026-08-07T15:58:33Z",
+  "delivery_key": "MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-07T15:59:04Z",
+  "updated_at": "2026-08-07T15:59:04Z"
+}

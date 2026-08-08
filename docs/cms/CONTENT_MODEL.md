@@ -50,7 +50,7 @@ Product details are structured, not a free-form specification blob:
 
 Market details include benefits, requirements and CTA. Reference details include location, challenge, CMS-sanitized solution HTML, results and CTA. Support details include one support topic, problem/goal, CMS-sanitized instructions and optional HTTPS video. Download details include one document type, version, issue date, locale `en`, a public file DTO and description.
 
-Relations supply bidirectional consumption. A related record appears publicly only when it is published, viewable, carries a UUIDv4 public identifier, has a valid unique canonical path and satisfies its complete Schema 3 envelope.
+Relations supply bidirectional consumption. General Schema 3 relation references appear publicly only when they are published, viewable, carry a UUIDv4 public identifier, have a valid unique canonical path and satisfy the complete Schema 3 envelope. The independent TASK-023 related-product projection reads only `relationships.products` in stored order, caps the raw source set at 20, and then requires every returned target to satisfy the complete ProductCard `1.0.0` contract. It omits self, duplicates, unpublished/ineligible targets and hostile media. Active catalog accessories additionally require an explicit closed direct-quote quantity unit; no compatibility or unit is inferred.
 
 ## Publication and safety
 

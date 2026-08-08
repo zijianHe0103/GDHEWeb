@@ -2,8 +2,10 @@ import "server-only";
 
 import type { ProductDetailDto } from "../../types/product-detail";
 import type { ProductConfigurationV2Dto } from "../../types/product-configuration-v2";
+import type { RelatedProductCardCollectionDto } from "../../types/related-product-card";
 import { CmsHttpError, resolveCmsPath } from "../cms/server";
 import { loadProductConfigurationV2 } from "../cms/server/product-configurations-v2";
+import { loadRelatedProductCardCollection } from "../cms/server/related-product-cards";
 import { adaptProductDetail } from "../cms/server/product-detail/adapter";
 import {
   validateCmsErrorPayload,
@@ -28,6 +30,7 @@ export type ProductDetailPageState =
       kind: "ready";
       detail: ProductDetailDto;
       configurationState: ProductConfigurationPageState;
+      relatedProducts: RelatedProductCardCollectionDto;
       preview: boolean;
     }>;
 
@@ -49,6 +52,7 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
         kind: "ready",
         configuration: previewProductConfigurationV2,
       }),
+      relatedProducts: emptyRelatedProducts(),
       preview: true,
     });
   }
@@ -66,10 +70,19 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
     } catch {
       configurationState = Object.freeze({ kind: "unavailable" });
     }
+    let relatedProducts: RelatedProductCardCollectionDto;
+    try {
+      relatedProducts = await loadRelatedProductCardCollection(
+        PRODUCT_DETAIL_PUBLIC_PATH,
+      );
+    } catch {
+      relatedProducts = emptyRelatedProducts();
+    }
     return Object.freeze({
       kind: "ready",
       detail,
       configurationState,
+      relatedProducts,
       preview: false,
     });
   } catch (error) {
@@ -78,6 +91,17 @@ export async function loadProductDetailPage(): Promise<ProductDetailPageState> {
     }
     return Object.freeze({ kind: "unavailable" });
   }
+}
+
+function emptyRelatedProducts(): RelatedProductCardCollectionDto {
+  return Object.freeze({
+    apiVersion: "1",
+    schemaVersion: "1.0.0",
+    locale: "en",
+    type: "related_product_card",
+    sourcePath: PRODUCT_DETAIL_PUBLIC_PATH,
+    items: Object.freeze([]),
+  });
 }
 
 function isValidatedNotFound(error: unknown): boolean {

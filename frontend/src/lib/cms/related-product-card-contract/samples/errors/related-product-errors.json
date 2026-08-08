@@ -1,0 +1,101 @@
+{
+    "locale": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_locale",
+        "message": "Only the English locale is available.",
+        "status": 400,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "locale",
+                "code": "gdhe_invalid_locale"
+            }
+        ]
+    },
+    "schema": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_schema",
+        "message": "Unsupported RelatedProductCard schema version.",
+        "status": 400,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "schema",
+                "code": "gdhe_invalid_schema"
+            }
+        ]
+    },
+    "path": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_path",
+        "message": "Source path must be a canonical English public path.",
+        "status": 400,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "source_path",
+                "code": "gdhe_invalid_path"
+            }
+        ]
+    },
+    "unknown": {
+        "apiVersion": "1",
+        "code": "gdhe_invalid_parameter",
+        "message": "Query parameter is not allowed.",
+        "status": 400,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "page",
+                "code": "gdhe_invalid_parameter"
+            }
+        ]
+    },
+    "not-found": {
+        "apiVersion": "1",
+        "code": "gdhe_not_found",
+        "message": "Related-product source was not found.",
+        "status": 404,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "source_path",
+                "code": "gdhe_not_found"
+            }
+        ]
+    },
+    "over-20": {
+        "apiVersion": "1",
+        "code": "gdhe_contract_invariant",
+        "message": "Related-product relationships do not satisfy the public contract.",
+        "status": 500,
+        "requestId": "00000000-0000-4000-8000-000000000023"
+    },
+    "malformed-relations": {
+        "apiVersion": "1",
+        "code": "gdhe_contract_invariant",
+        "message": "Related-product relationships do not satisfy the public contract.",
+        "status": 500,
+        "requestId": "00000000-0000-4000-8000-000000000023"
+    },
+    "source-conflict": {
+        "apiVersion": "1",
+        "code": "gdhe_route_conflict",
+        "message": "Related-product source path is not unique.",
+        "status": 409,
+        "requestId": "00000000-0000-4000-8000-000000000023",
+        "details": [
+            {
+                "field": "source_path",
+                "code": "gdhe_route_conflict"
+            }
+        ]
+    },
+    "source-ineligible": {
+        "apiVersion": "1",
+        "code": "gdhe_contract_invariant",
+        "message": "Related-product source does not satisfy the public contract.",
+        "status": 500,
+        "requestId": "00000000-0000-4000-8000-000000000023"
+    }
+}

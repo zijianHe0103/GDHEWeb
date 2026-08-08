@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "wordpress_cms",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T07:46:29Z",
+  "requires_response_to": "MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK before work. Sequential convergence found one test-evidence determinism gap after the UUID P1 fix: RELATED_PRODUCT_ERROR_FIXTURES.json rewrites nine valid runtime requestId values on every lifecycle, so the authority handoff cannot remain byte-stable for the frontend snapshot. Perform only a test/evidence correction under strict RED/GREEN: first prove two complete lifecycles produce different error-fixture hashes; then keep validating each real runtime requestId as UUID v4 but normalize only the saved TASK-023 evidence copy to a fixed valid non-production UUID, so two lifecycles have identical 9-error bytes. Do not alter the REST runtime response, error Schema, code/message/status/cache behavior, product projection, API/version or positive Goldens. Rerun UUID conflict regression, two lifecycle determinism including error hash equality, exact cleanup, 26/26 handoff refreeze, ProductCard/platform/protected/DPG gates and update WordPress evidence/worklog. Stop at Planner checkpoint; frontend remains blocked until final hashes.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UUID_HANDOFF_REBIND_R1.md",
+    "TASKS/ARTIFACTS/TASK-023/WORDPRESS_ADVERSARIAL_UUID_P1_R1.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/WORDPRESS_ERROR_EVIDENCE_DETERMINISM_R1.md"
+  ],
+  "notes": "Test-evidence determinism only. Runtime requestId generation remains unchanged. No frontend, UI, Basket, review PASS, Git, deployment or external authorization.",
+  "dispatched_at": "2026-08-06T07:46:48Z",
+  "delivery_key": "MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1:019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "target_session": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_id": "019f88d0-05f9-7213-abad-e8b1ada660b5",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-06T07:47:15Z",
+  "updated_at": "2026-08-06T07:47:15Z"
+}

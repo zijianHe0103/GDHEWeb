@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-07T17:00:14Z",
+  "requires_response_to": "MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before substantive review. Perform one narrow read-only independent TASK-023 closure review on current shared bytes, limited to the Unified Cards Round 3 return-state pre-parse P1 revision. Preserve Adversarial Round 1 FAIL, Round 2 PASS, Unified Cards Round 3 FAIL, Visual Round 1 and 2 FAIL, Visual Round 3 PASS and Unified Visual Round 4 PASS as immutable history. Independently reproduce: (1) a hostile null-prototype Proxy returns null before reflection or coercion, with get, getPrototypeOf, ownKeys, getOwnPropertyDescriptor and Symbol.toPrimitive counters all zero; (2) a legal exact-key 256-character primitive string reaches JSON.parse exactly once and remains valid; the same legal state at 257 characters returns null before JSON.parse with zero parse calls; (3) ordinary exact-key state, item-count clamp, scrollY, one-time session consume, canonical View Product navigation and sessionStorage-unavailable degradation remain correct; (4) unified semantic card skeleton, identical action geometry, zero recommendation quantity input, accessory quantity-one Basket add or merge, Basket-owned edit and removal, 3 to 6 to 7 reveal, focus, aria-live, reduced-motion, one related collection and zero per-card resolve remain unchanged; (5) browser identity isolation, protected media, server-only and production or CMS fail-closed boundaries remain; (6) direct and focused tests, seven contract verifiers, frontend full-inventory evidence, lint, typecheck, build, four production smokes, Visual hashes, next-env production hash, cleanup and DPG evidence are truthful and sufficient. Do not repair product, tests, CMS, contracts, task authority, visual bytes, dependencies, Git, deployment or external systems. Return one linked review_response with explicit PASS or FAIL and P0, P1, P2 counts. PASS only permits fresh Planner final validation and checked acceptance preparation; it is not user acceptance or Git authorization.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-023-related-products-progressive-slice.md",
+    "TASKS/ARTIFACTS/TASK-023/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/PLANNER_RETURN_STATE_P1_R3_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_RETURN_STATE_P1_R3.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_RETURN_STATE_P1_R3_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-023/PLANNER_UNIFIED_CARD_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-023/PLANNER_UNIFIED_CARD_VISUAL_R4_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_UNIFIED_CARD_R4_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Closure review only for the isolated pre-parse boundary. Preserve all historical review and visual evidence. No acceptance, Git delivery, deployment, Feishu or final RFQ authorization.",
+  "dispatched_at": "2026-08-07T17:03:19Z",
+  "delivery_key": "MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-07T17:03:37Z",
+  "updated_at": "2026-08-07T17:03:37Z"
+}

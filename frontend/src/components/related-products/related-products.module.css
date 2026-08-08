@@ -1,0 +1,127 @@
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 90rem;
+  margin: clamp(3rem, 8vw, 7rem) auto 0;
+  overflow: hidden;
+}
+
+.heading p,
+.model,
+.candidate {
+  margin: 0;
+  color: #5b5b55;
+}
+
+.heading h2 {
+  margin: 0.4rem 0 1.5rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  height: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.media {
+  margin: 0;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 1.25rem;
+  overflow-wrap: break-word;
+}
+
+.body h3 {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.action {
+  display: flex;
+  align-items: flex-end;
+}
+
+.actionControl,
+.more,
+.basketLink {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+.actionControl {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.actionControl,
+.basketLink {
+  color: #fff;
+  background: #171717;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+.more {
+  margin-top: 1.5rem;
+  padding: 0 1.25rem;
+}
+
+.live {
+  min-height: 1.5rem;
+}
+
+.actionControl:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.actionControl:focus-visible,
+.more:focus-visible,
+.basketLink:focus-visible {
+  outline: 3px solid #2367d1;
+  outline-offset: 3px;
+}
+
+@media (max-width: 64rem) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 40rem) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .body { padding: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section * { scroll-behavior: auto; transition: none; }
+}

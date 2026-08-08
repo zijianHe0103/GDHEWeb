@@ -1,0 +1,30 @@
+{
+  "accessoryWithSelection": {
+    "lineKind": "catalog_accessory",
+    "entryId": "66666666-6666-4666-8666-666666666666",
+    "createdAt": "2026-08-06T00:00:00.000Z",
+    "product": { "model": "Accessory", "name": "Accessory", "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Test" } },
+    "catalogPath": "/products/accessories/test-candidates/",
+    "quantityUnit": "piece",
+    "quantity": 1,
+    "selection": { "lengthMeters": 6 }
+  },
+  "unsafeQuantity": {
+    "lineKind": "catalog_accessory",
+    "entryId": "66666666-6666-4666-8666-666666666666",
+    "createdAt": "2026-08-06T00:00:00.000Z",
+    "product": { "model": "Accessory", "name": "Accessory", "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Test" } },
+    "catalogPath": "/products/accessories/test-candidates/",
+    "quantityUnit": "piece",
+    "quantity": 9007199254740992
+  },
+  "remoteMedia": {
+    "lineKind": "catalog_accessory",
+    "entryId": "66666666-6666-4666-8666-666666666666",
+    "createdAt": "2026-08-06T00:00:00.000Z",
+    "product": { "model": "Accessory", "name": "Accessory", "image": { "url": "https://wordpress.example/wp-content/a.png", "width": 800, "height": 800, "alt": "Test" } },
+    "catalogPath": "/products/accessories/test-candidates/",
+    "quantityUnit": "piece",
+    "quantity": 1
+  }
+}

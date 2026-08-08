@@ -1,0 +1,132 @@
+{
+    "apiVersion": "1",
+    "schemaVersion": "1.0.0",
+    "locale": "en",
+    "type": "related_product_card",
+    "sourcePath": "/products/fgd-x15-pvc/",
+    "items": [
+        {
+            "card": {
+                "id": "60000000-0000-4000-8000-000000000002",
+                "kind": "detail_product",
+                "model": "Flow Control Task-023-detail-alpha",
+                "name": "TASK-023 Detail Alpha",
+                "publicPath": "/products/task-023-detail-alpha/",
+                "image": {
+                    "id": "62000000-0000-4000-8000-002903568947",
+                    "url": "https://media.gdhe.example/task-023/detail-alpha.webp",
+                    "width": 1200,
+                    "height": 800,
+                    "alt": "Protected synthetic TASK-023 related product image"
+                },
+                "primaryCategory": {
+                    "id": "61000000-0000-4000-8000-000000000001",
+                    "label": "TASK-023 Related Products",
+                    "publicPath": "/products/accessories/task-023-related-products/"
+                },
+                "series": [],
+                "applications": [],
+                "summary": "Synthetic TASK-007-A3-REVIEW-R1 summary.",
+                "keyAttributes": [
+                    {
+                        "key": "accessory_category",
+                        "label": "Category",
+                        "value": "Synthetic test candidate",
+                        "unit": null
+                    }
+                ],
+                "lifecycle": "active",
+                "action": {
+                    "mode": "view_product",
+                    "label": "View Product",
+                    "targetPath": "/products/task-023-detail-alpha/"
+                },
+                "modifiedAt": "2026-08-06T03:00:00+00:00"
+            },
+            "directQuote": null
+        },
+        {
+            "card": {
+                "id": "60000000-0000-4000-8000-000000000003",
+                "kind": "catalog_accessory",
+                "model": "Flow Control Task-023-accessory-beta",
+                "name": "TASK-023 Accessory Beta",
+                "publicPath": null,
+                "image": {
+                    "id": "62000000-0000-4000-8000-002479376504",
+                    "url": "https://media.gdhe.example/task-023/accessory-beta.webp",
+                    "width": 1200,
+                    "height": 800,
+                    "alt": "Protected synthetic TASK-023 related product image"
+                },
+                "primaryCategory": {
+                    "id": "61000000-0000-4000-8000-000000000001",
+                    "label": "TASK-023 Related Products",
+                    "publicPath": "/products/accessories/task-023-related-products/"
+                },
+                "series": [],
+                "applications": [],
+                "summary": "Synthetic TASK-007-A3-REVIEW-R1 summary.",
+                "keyAttributes": [
+                    {
+                        "key": "accessory_category",
+                        "label": "Category",
+                        "value": "Synthetic test candidate",
+                        "unit": null
+                    }
+                ],
+                "lifecycle": "active",
+                "action": {
+                    "mode": "direct_rfq",
+                    "label": "Request a Quote",
+                    "targetPath": "/request-a-quote/"
+                },
+                "modifiedAt": "2026-08-06T03:00:00+00:00"
+            },
+            "directQuote": {
+                "kind": "catalog_accessory",
+                "quantityUnit": "piece"
+            }
+        },
+        {
+            "card": {
+                "id": "60000000-0000-4000-8000-000000000004",
+                "kind": "detail_product",
+                "model": "Flow Control Task-023-detail-gamma",
+                "name": "TASK-023 Detail Gamma",
+                "publicPath": "/products/task-023-detail-gamma/",
+                "image": {
+                    "id": "62000000-0000-4000-8000-003115522856",
+                    "url": "https://media.gdhe.example/task-023/detail-gamma.webp",
+                    "width": 1200,
+                    "height": 800,
+                    "alt": "Protected synthetic TASK-023 related product image"
+                },
+                "primaryCategory": {
+                    "id": "61000000-0000-4000-8000-000000000001",
+                    "label": "TASK-023 Related Products",
+                    "publicPath": "/products/accessories/task-023-related-products/"
+                },
+                "series": [],
+                "applications": [],
+                "summary": "Synthetic TASK-007-A3-REVIEW-R1 summary.",
+                "keyAttributes": [
+                    {
+                        "key": "accessory_category",
+                        "label": "Category",
+                        "value": "Synthetic test candidate",
+                        "unit": null
+                    }
+                ],
+                "lifecycle": "active",
+                "action": {
+                    "mode": "view_product",
+                    "label": "View Product",
+                    "targetPath": "/products/task-023-detail-gamma/"
+                },
+                "modifiedAt": "2026-08-06T03:00:00+00:00"
+            },
+            "directQuote": null
+        }
+    ]
+}

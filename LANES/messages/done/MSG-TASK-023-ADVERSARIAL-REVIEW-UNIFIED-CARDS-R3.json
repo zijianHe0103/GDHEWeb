@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-07T16:37:48Z",
+  "requires_response_to": "MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this exact request before substantive review. Perform one new read-only independent TASK-023 adversarial review limited to the user-confirmed unified recommendation-card revision on current shared bytes. Preserve all historical Visual Round 1/2 FAIL, Round 3 PASS, unified Visual Round 4 PASS, Adversarial Round 1 FAIL and prior Round 2 PASS; do not rewrite earlier evidence. Independently challenge: (1) View Product and Add to Quote render through one semantic card skeleton and identical bottom action geometry, with zero recommendation quantity input; (2) one accessory click creates or deterministically merges a catalog_accessory Quote Basket line at quantity 1, while all later quantity editing/removal remains Basket-owned and no price/payment/submission semantics appear; (3) View Product uses unchanged canonical href with no return query, and browser Back restoration stores only exact public UI keys version/visibleCount/scrollY, is one-time consumed, clamps to the current item count, and cannot leak internal UUID, Article Number, CMS/Feishu identity, raw payload or diagnostics; (4) sessionStorage unavailable, throwing, malformed, oversized and reflective/hostile boundaries fail safely without preventing canonical navigation or emitting attacker diagnostics; (5) reveal 3/6/7, focus/live/reduced-motion, one related collection/zero per-card resolve, protected media, server-only and production/CMS fail-closed boundaries remain; (6) Visual R4 report, 31-file hashes, actual JPEG/JFIF encoding disclosure, next-env production hash and zero generated/listener residue are truthful. Reproduce proportionate focused/full/verifier/lint/typecheck/build/smoke/protected/DPG evidence as needed. Do not repair product, tests, CMS, contracts, Planner state, visual bytes, dependencies, Git, deployment or external systems. Return one linked review_response with explicit PASS or FAIL and P0/P1/P2 counts. PASS only permits fresh Planner final validation; it is not acceptance or Git authorization.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-023-related-products-progressive-slice.md",
+    "TASKS/ARTIFACTS/TASK-023/PLANNER_UNIFIED_CARD_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-023/PLANNER_UNIFIED_CARD_VISUAL_R4_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UNIFIED_CARDS_R1_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UNIFIED_CARDS_R1_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_UNIFIED_CARD_R4_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "New review scope is only the user-confirmed unified-card revision. Historical findings and prior PASS remain immutable. No acceptance, Git delivery or deployment.",
+  "dispatched_at": "2026-08-07T16:38:19Z",
+  "delivery_key": "MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-07T16:38:37Z",
+  "updated_at": "2026-08-07T16:38:37Z"
+}

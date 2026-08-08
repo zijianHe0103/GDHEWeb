@@ -5,13 +5,18 @@ import { useCallback, useEffect, useState } from "react";
 import type { PublicQuoteDraft } from "../../types/product-configurator";
 import type {
   PublicQuoteBasketProduct,
-  QuoteBasketDocument,
 } from "../../types/quote-basket";
+import type {
+  CatalogAccessoryDraft,
+  QuoteBasketDocumentV2,
+} from "../../types/quote-basket-v2";
 import {
   QUOTE_BASKET_STORAGE_KEY,
-  parseQuoteBasket,
-  reconcileQuoteBasketStorageEvent,
 } from "./storage";
+import {
+  parseQuoteBasketV2,
+  reconcileQuoteBasketV2StorageEvent as reconcileQuoteBasketStorageEvent,
+} from "./v2";
 import {
   createBrowserQuoteBasketAdapter,
   type BrowserQuoteBasketAdapter,
@@ -20,10 +25,11 @@ import {
 
 export type QuoteBasketClientState = Readonly<{
   hydrated: boolean;
-  basket: QuoteBasketDocument | null;
+  basket: QuoteBasketDocumentV2 | null;
   error: string | null;
   announcement: string;
   add(product: PublicQuoteBasketProduct, draft: PublicQuoteDraft): QuoteBasketMutation | null;
+  addAccessory(draft: CatalogAccessoryDraft): QuoteBasketMutation | null;
   setQuantity(entryId: string, quantity: number): boolean;
   remove(entryId: string): boolean;
 }>;
@@ -32,7 +38,7 @@ const storageError = "Your Quote Basket is unavailable in this browser.";
 
 export function useQuoteBasket(): QuoteBasketClientState {
   const [adapter, setAdapter] = useState<BrowserQuoteBasketAdapter | null>(null);
-  const [basket, setBasket] = useState<QuoteBasketDocument | null>(null);
+  const [basket, setBasket] = useState<QuoteBasketDocumentV2 | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [announcement, setAnnouncement] = useState("");
@@ -61,7 +67,7 @@ export function useQuoteBasket(): QuoteBasketClientState {
       if (event.key !== QUOTE_BASKET_STORAGE_KEY) return;
       if (event.newValue === null) return;
       try {
-        const incoming = parseQuoteBasket(event.newValue, new Date());
+        const incoming = parseQuoteBasketV2(event.newValue, new Date());
         setBasket((current) =>
           current
             ? reconcileQuoteBasketStorageEvent(current, event, new Date())
@@ -101,6 +107,24 @@ export function useQuoteBasket(): QuoteBasketClientState {
     [adapter],
   );
 
+  const addAccessory = useCallback((draft: CatalogAccessoryDraft) => {
+    try {
+      if (!adapter) throw new Error();
+      const result = adapter.addAccessory(draft);
+      setBasket(result.basket);
+      setError(null);
+      setAnnouncement(
+        result.mutation === "added"
+          ? "Added to your Quote Basket."
+          : "Updated the matching Quote Basket item.",
+      );
+      return result.mutation;
+    } catch {
+      setError(storageError);
+      return null;
+    }
+  }, [adapter]);
+
   const setQuantity = useCallback((entryId: string, quantity: number) => {
     try {
       if (!adapter) throw new Error();
@@ -133,6 +157,7 @@ export function useQuoteBasket(): QuoteBasketClientState {
     error,
     announcement,
     add,
+    addAccessory,
     setQuantity,
     remove,
   });

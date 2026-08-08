@@ -5,13 +5,25 @@ import { createConnection } from "node:net";
 
 const frontendDirectory = new URL("..", import.meta.url);
 const detailPath = "/products/fgd-x15-pvc/";
+const closedCandidatePaths = [
+  "/products/test-candidate-1/",
+  "/products/test-candidate-3/",
+  "/products/test-candidate-5/",
+  "/products/test-candidate-7/",
+  "/products/test-candidate-2/",
+  "/products/test-candidate-4/",
+  "/products/test-candidate-6/",
+  "/products/test-candidate-8/",
+  "/products/accessories/test-candidates/",
+  "/products/unknown-product/",
+];
 
-for (const mode of ["preview", "cms"]) {
+for (const mode of [undefined, "preview", "cms"]) {
   await verifyProductionMode(mode);
 }
 
 console.log(
-  "Product detail production smoke passed: preview/cms final 404; CMS requests 0.",
+  "Product detail production smoke passed: default/preview/cms detail and candidate paths final 404; CMS requests 0.",
 );
 
 async function verifyProductionMode(mode) {
@@ -29,17 +41,23 @@ async function verifyProductionMode(mode) {
   }
 
   const port = await reservePort();
+  const environment = {
+    ...process.env,
+    NODE_ENV: "production",
+    WORDPRESS_API_URL: `http://127.0.0.1:${cmsAddress.port}/wp-json`,
+  };
+  if (mode === undefined) {
+    delete environment.GDHE_PRODUCT_DETAIL_MODE;
+  } else {
+    environment.GDHE_PRODUCT_DETAIL_MODE = mode;
+  }
+
   const nextProcess = spawn(
     process.execPath,
     ["node_modules/next/dist/bin/next", "start", "-H", "127.0.0.1", "-p", String(port)],
     {
       cwd: frontendDirectory,
-      env: {
-        ...process.env,
-        NODE_ENV: "production",
-        GDHE_PRODUCT_DETAIL_MODE: mode,
-        WORDPRESS_API_URL: `http://127.0.0.1:${cmsAddress.port}/wp-json`,
-      },
+      env: environment,
       stdio: ["ignore", "pipe", "pipe"],
     },
   );
@@ -54,34 +72,21 @@ async function verifyProductionMode(mode) {
 
   try {
     await waitForServer(port, nextProcess);
-    const initialResponse = await fetch(
-      `http://127.0.0.1:${port}${detailPath}`,
-      {
-        redirect: "manual",
-      },
-    );
-    const response =
-      initialResponse.status === 308
-        ? await fetch(
-            new URL(
-              initialResponse.headers.get("location") ?? "",
-              `http://127.0.0.1:${port}${detailPath}`,
-            ),
-            { redirect: "manual" },
-          )
-        : initialResponse;
-    if (response.status !== 404) {
-      throw new Error(
-        `Production ${mode} exposed Product Detail: expected 404, received ${response.status}.`,
-      );
-    }
-    const html = await response.text();
-    if (/wp-content|WORDPRESS_API_URL|wordpress origin/i.test(html)) {
-      throw new Error(`Production ${mode} leaked CMS data.`);
+    for (const path of [detailPath, ...closedCandidatePaths]) {
+      const response = await fetchFinalResponse(port, path);
+      if (response.status !== 404) {
+        throw new Error(
+          `Production ${mode ?? "default"} exposed ${path}: expected 404, received ${response.status}.`,
+        );
+      }
+      const html = await response.text();
+      if (/wp-content|WORDPRESS_API_URL|wordpress origin/i.test(html)) {
+        throw new Error(`Production ${mode ?? "default"} leaked CMS data.`);
+      }
     }
     if (cmsRequests !== 0) {
       throw new Error(
-        `Production ${mode} contacted CMS ${cmsRequests} time(s).`,
+        `Production ${mode ?? "default"} contacted CMS ${cmsRequests} time(s).`,
       );
     }
   } catch (error) {
@@ -92,6 +97,19 @@ async function verifyProductionMode(mode) {
     cmsServer.close();
     await once(cmsServer, "close");
   }
+}
+
+async function fetchFinalResponse(port, path) {
+  const origin = `http://127.0.0.1:${port}`;
+  const initialResponse = await fetch(`${origin}${path}`, {
+    redirect: "manual",
+  });
+  return initialResponse.status === 308
+    ? fetch(
+        new URL(initialResponse.headers.get("location") ?? "", `${origin}${path}`),
+        { redirect: "manual" },
+      )
+    : initialResponse;
 }
 
 async function reservePort() {

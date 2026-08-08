@@ -70,6 +70,8 @@ TASK-018 在 `/products/fgd-x15-pvc/` 增加了一个本地受控、固定 `noin
 
 TASK-021 将该配置区升级到 Product Configuration `2.0.0`，并保留 QuoteLine `2.0.0` 作为未来服务端转换合同：`Track Length` 首先列出 WordPress 已验证 Article Number 动态投影出的标准长度，并在同级提供 `Custom Length`；`Color` 紧随长度并只显示真实可用组合。轨道询价不再要求客户选择 Installation。当前测试数据只有 `6 m / Ivory White`，不会虚构 `4.3 m` 或 `7 m`。TASK-022 已将 Packaging、数量和 `Add to Quote` 接入版本化的公开 Quote Basket：完整相同的公开配置合并数量，不同配置保留独立行，并在同一浏览器中保存 30 天。浏览器内容不含 Article Number 或内部 UUID；完整 QuoteLine 将在未来最终 Request a Quote 时由服务端重新解析生成。本地 `/request-a-quote/` 可查看、修改和删除条目，但最终提交与飞书写入仍未建立；相关产品亦保留给后续任务。生产模式继续强制 404。完整启动、验证方式与当前边界见 [`frontend/README.md`](frontend/README.md#local-only-fgd-x15pvc-product-detail-slice)。
 
+TASK-023 又在本地 FGD X15+PVC 详情切片中接入一次完整的 RelatedProductCard 集合，并在配置器之后显示受保护的 `You May Also Need` 测试模块。复杂产品使用 `View Product`；明确允许直接询价的目录配件必须填写大于零的整数数量后，才可加入浏览器本地 Quote Basket。Quote Basket `2.0.0` 可以读取既有 `1.0.0` 数据，并在下一次合法修改时写入“已配置产品或目录配件”的闭合联合结构。该能力仍是本地、`noindex` 且生产强制 404 的纵向切片，不代表最终询价提交、飞书同步、价格、付款、结账或部署。
+
 ### 前端 server-only `/resolve` Transport
 
 前端已建立英语 Schema 3 `/resolve` 的 server-only 匿名只读 Transport，并通过真实 Next.js Client Component 导入负例验证隔离。运行时使用 `WORDPRESS_API_URL`；本地明文 loopback 必须带显式端口，生产 CMS 使用 HTTPS。返回 JSON 仍为 `unknown`，当前不包含 Validator、DTO Adapter 或可见页面；配置、测试与验证命令见 [`frontend/README.md`](frontend/README.md#server-only-cms-transport)。

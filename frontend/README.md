@@ -199,6 +199,41 @@ npm run verify:product-card-contract
 npm run verify:cms-contract
 ```
 
+## RelatedProductCard and Quote Basket 2.0
+
+TASK-023 adds an independent frontend-local snapshot of the final 26-file
+RelatedProductCard handoff under `src/lib/cms/related-product-card-contract/`.
+Its Node-built-in verifier is hard-bound to the frozen WordPress manifest and
+checksum stream and fails closed on inventory, checksum, authority-path,
+source-byte, traversal and unknown-reference drift:
+
+```sh
+node scripts/verify-related-product-card-contract.mjs
+```
+
+The server-only consumer validates the exact nine-Schema closure and performs
+one fixed English `related-product-cards` collection request for the Product
+Detail source path. It never resolves cards individually. Invalid responses
+and normalized errors are sanitized; an unavailable related collection omits
+only the recommendation module. Until an approved production media origin and
+Next Image allowlist exist, remote CMS media is rejected before React. Preview
+receives only public local `TEST_CANDIDATE` projections without Product, Media
+or taxonomy UUIDs, raw action enums or CMS diagnostics.
+
+Quote Basket `2.0.0` is an additive closed public union of
+`configured_product` and `catalog_accessory` lines. Canonical `1.0.0` browser
+data remains readable and is mapped losslessly in memory; it is written as
+canonical `2.0.0` only on the next valid mutation. The existing storage key,
+256 KiB ceiling, exact 30-day TTL and same-origin last-writer-wins behavior are
+preserved. Catalog accessories require a complete public descriptor, catalog
+path, explicit quantity unit and positive safe-integer quantity, and never
+fabricate track length, color, installation or packaging. Its local contract
+gate is:
+
+```sh
+node scripts/verify-quote-basket-v2-contract.mjs
+```
+
 ## Local-only ProductCard list slice
 
 `/products/` is a controlled English ProductCard presentation slice. It is
@@ -271,8 +306,10 @@ CMS mode performs exactly one fixed English `/resolve` request for
 `/products/fgd-x15-pvc/`, validates it with the existing 16-Schema runtime
 Validator, and adapts only the exact confirmed product identity and five
 display specifications. After a ready detail, it performs exactly one fixed
-Product Configuration `schema=2.0.0` request; it performs no ProductCard collection request,
-per-option request or retry. Only a validated `gdhe_not_found` HTTP 404 from
+Product Configuration `schema=2.0.0` request and one complete
+RelatedProductCard `schema=1.0.0` collection request; it performs no ProductCard
+collection request, per-card `/resolve`, per-option request or retry. Only a
+validated `gdhe_not_found` HTTP 404 from
 the detail boundary becomes a page 404. A configuration failure keeps the
 detail visible and replaces the form with a sanitized navigation-only fallback.
 
@@ -291,7 +328,23 @@ public quote draft, then adds or merges it into the browser-local Quote Basket
 retained for 30 days. The Basket contains no Article Number, internal Product
 UUID or internal resolution enum and is not a QuoteLine 2.0.0. The complete
 QuoteLine remains a future server-side conversion at final Request a Quote
-submission. The local `/request-a-quote/` page shows protected public rows,
+submission. The `You May Also Need` module appears after the configurator.
+Preview starts with three protected local candidates and reveals at most three
+more per button activation without another request. Detail products use `View
+Product`; catalog accessories use the same card skeleton and `Add to Quote`
+button geometry, add an initial quantity of `1`, stay on the page and expose
+`View Quote Basket`. Quantity editing and removal remain in the Basket. A
+canonical `View Product` navigation stores only session-scoped public
+`visibleCount` and scroll position so browser Back restores the source
+recommendation state without URL parameters or product/CMS identity.
+In preview mode only, the declared detail candidates at
+`/products/test-candidate-1/`, `-3/`, `-5/` and `-7/` resolve to closed,
+`noindex,nofollow` navigation landings using the same protected local media.
+They remain explicit non-production `TEST_CANDIDATE` pages with no network or
+commerce action. Other candidate paths, catalog-accessory paths, unset/disabled
+mode, CMS mode and every production build remain final 404.
+CMS mode with no safely renderable eligible media omits the module entirely.
+The local `/request-a-quote/` page shows protected public rows,
 supports quantity and Remove, and remains `noindex,nofollow` plus production
 404. Its disabled final action makes clear that no RFQ is submitted and no
 external system is contacted. When configuration is unavailable, `Request a

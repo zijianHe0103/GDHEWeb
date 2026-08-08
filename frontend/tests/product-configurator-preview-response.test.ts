@@ -20,6 +20,14 @@ const forbiddenBrowserMarkers = [
   "feishu",
   "secret",
   "diagnostic",
+  "60000000-",
+  "61000000-",
+  "62000000-",
+  "view_product",
+  "direct_rfq",
+  "media.gdhe.example",
+  "modifiedAt",
+  "directQuote",
 ] as const;
 
 let nextProcess: ChildProcess | undefined;
@@ -68,6 +76,8 @@ describe("ProductConfigurator real preview response", () => {
     expect(browserBytes).toContain("Configure Your Track");
     expect(browserBytes).toContain("6 m");
     expect(browserBytes).toContain("Ivory White");
+    expect(browserBytes).toContain("You May Also Need");
+    expect(browserBytes).toContain("Show More Products");
     for (const marker of forbiddenBrowserMarkers) {
       expect(browserBytes).not.toContain(marker);
     }
@@ -85,6 +95,39 @@ describe("ProductConfigurator real preview response", () => {
     for (const marker of forbiddenBrowserMarkers) {
       expect(browserBytes).not.toContain(marker);
     }
+  });
+
+  it.each([
+    ["test-candidate-1", "Ceiling Bracket"],
+    ["test-candidate-3", "Track Connector"],
+    ["test-candidate-5", "Glider Set"],
+    ["test-candidate-7", "Suspension Kit"],
+  ])("serves declared preview detail %s without internal identity", async (slug, name) => {
+    const response = await fetch(`${origin}/products/${slug}/`);
+    const browserBytes = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(browserBytes).toContain(name);
+    expect(browserBytes).toContain("Protected TEST_CANDIDATE");
+    expect(browserBytes).toContain("not production product data");
+    expect(browserBytes).toContain("navigation preview only");
+    expect(browserBytes).toContain("noindex");
+    for (const marker of forbiddenBrowserMarkers) {
+      expect(browserBytes).not.toContain(marker);
+    }
+  });
+
+  it.each([
+    "/products/test-candidate-2/",
+    "/products/test-candidate-4/",
+    "/products/test-candidate-6/",
+    "/products/test-candidate-8/",
+    "/products/accessories/test-candidates/",
+    "/products/unknown-product/",
+  ])("keeps closed preview path %s at final 404", async (path) => {
+    const response = await fetch(`${origin}${path}`);
+
+    expect(response.status).toBe(404);
   });
 });
 

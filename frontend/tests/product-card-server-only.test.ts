@@ -77,6 +77,10 @@ describe("ProductCard server-only boundary", () => {
     ["deep transport", "../src/lib/cms/server/product-cards/transport"],
     ["deep validator", "../src/lib/cms/server/product-cards/validation"],
     ["deep adapter", "../src/lib/cms/server/product-cards/adapter"],
+    ["RelatedProductCard public entry", "../src/lib/cms/server/related-product-cards"],
+    ["RelatedProductCard deep transport", "../src/lib/cms/server/related-product-cards/transport"],
+    ["RelatedProductCard deep validator", "../src/lib/cms/server/related-product-cards/validation"],
+    ["RelatedProductCard deep adapter", "../src/lib/cms/server/related-product-cards/adapter"],
   ])("rejects a real Client Component import of the %s", async (_name, path) => {
     const output = await buildClientImport(path);
     expect(output).toMatch(/server-only|Client Component/i);

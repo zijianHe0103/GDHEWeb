@@ -4,10 +4,11 @@ import Image from "next/image";
 
 import { useQuoteBasket } from "../../lib/quote-basket/use-quote-basket";
 import type { QuoteBasketDocument } from "../../types/quote-basket";
+import type { QuoteBasketDocumentV2 } from "../../types/quote-basket-v2";
 import styles from "./quote-basket.module.css";
 
 type RowsProps = Readonly<{
-  basket: QuoteBasketDocument;
+  basket: QuoteBasketDocument | QuoteBasketDocumentV2;
   onQuantity(entryId: string, quantity: number): void;
   onRemove(entryId: string): void;
 }>;
@@ -18,7 +19,10 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
       <ul className={styles.rows}>
         {basket.items.map((item) => (
           <li className={styles.row} key={item.entryId}>
-            <a className={styles.imageLink} href={item.product.publicPath}>
+            <a
+              className={styles.imageLink}
+              href={"lineKind" in item && item.lineKind === "catalog_accessory" ? item.catalogPath : item.product.publicPath}
+            >
               <Image
                 src={item.product.image.url}
                 width={item.product.image.width}
@@ -28,15 +32,15 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
             </a>
             <div className={styles.information}>
               <p className={styles.model}>{item.product.model}</p>
-              <h2><a href={item.product.publicPath}>{item.product.name}</a></h2>
-              <dl>
+              <h2><a href={"lineKind" in item && item.lineKind === "catalog_accessory" ? item.catalogPath : item.product.publicPath}>{item.product.name}</a></h2>
+              {!("lineKind" in item) || item.lineKind === "configured_product" ? <dl>
                 <div><dt>Length Type</dt><dd>{item.selection.type === "standard" ? "Standard Length" : "Custom Length"}</dd></div>
                 <div><dt>Length</dt><dd>{item.selection.lengthMeters} m</dd></div>
                 <div><dt>Color</dt><dd>{item.selection.color.label}</dd></div>
                 <div><dt>Base Packaging</dt><dd>{item.packaging.basePackaging.label}</dd></div>
                 <div><dt>Customer Logo Printing</dt><dd>{item.packaging.logoPrinting ? "Yes" : "No"}</dd></div>
                 <div><dt>Protection Arrangement</dt><dd>{item.packaging.protectionArrangement?.label ?? "None"}</dd></div>
-              </dl>
+              </dl> : <p>Catalog accessory</p>}
               <div className={styles.actions}>
                 <label htmlFor={`quantity-${item.entryId}`}>Quantity ({item.quantityUnit})</label>
                 <input
@@ -69,7 +73,12 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
   );
 }
 
-export function QuoteBasketContent(state: ReturnType<typeof useQuoteBasket>) {
+type QuoteBasketContentState = Pick<
+  ReturnType<typeof useQuoteBasket>,
+  "hydrated" | "basket" | "error" | "announcement" | "setQuantity" | "remove"
+> & Partial<Pick<ReturnType<typeof useQuoteBasket>, "add" | "addAccessory">>;
+
+export function QuoteBasketContent(state: QuoteBasketContentState) {
   let content;
   if (!state.hydrated) {
     content = <p className={styles.status}>Loading your saved quote items…</p>;

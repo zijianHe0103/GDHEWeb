@@ -1,0 +1,9 @@
+{
+  "contract": "GDHE Public Quote Basket",
+  "schemaVersion": "2.0.0",
+  "files": {
+    "samples/errors/invalid.json": "df5c61b65e1dfb5912f022c973d69812f2f2877054f15345b40af79e030f427c",
+    "samples/success/mixed.json": "70f7d58c52dde27c3458fc145c099da7b3d3efe74c3e3fb432a7f45e13751687",
+    "schemas/quote-basket.v2.schema.json": "0fb78fa7f12d479b02a8a347305cf0928dd0987ded4158da7051414a15f07eb3"
+  }
+}

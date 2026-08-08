@@ -1121,3 +1121,121 @@ Each execution records:
 - result: `PASS_FOR_PLANNER_RECHECK`; this is not review PASS, acceptance or delivery
 - message_result: `MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; `requires_response_to=MSG-TASK-022-FRONTEND-ADVERSARIAL-P1-P2-R1`
 - unique_next_step: Planner independently validates and controls any further adversarial review; frontend stops
+# TASK-023 frontend A3-A6 2026-08-06
+
+- date: 2026-08-06
+- task: TASK-023 frontend A3-A6
+- message: ACKed `MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6` before implementation after reading the active task, A0 design/plan/baseline and final WordPress handoff/evidence
+- tdd: observed independent missing-behavior REDs for the RelatedProductCard verifier/snapshot, Transport, runtime Adapter, Product Detail related orchestration, Quote Basket v2 domain/verifier and RelatedProducts component before each minimum GREEN
+- a3: exact 9-Schema/4-success/9-error local snapshot plus authority-bound Node-built-in verifier; frozen WordPress manifest/checksum identities and bytes enforced; ProductCard 1.0 unchanged
+- a4: server-only fixed Transport, exact static Validator/authentic wrapper, deep-frozen Adapter and sanitized loader; CMS detail mode performs one resolve + one configuration + one related collection, zero per-card resolve; remote media is rejected before React and related failure omits only the module
+- a5: closed Quote Basket 2.0 configured/accessory union and verifier; canonical v1 read/memory migration then v2 write on next valid mutation; exact TTL/ceiling/key/newer-wins preserved; accessory add/merge/split/quantity/remove and configured/v1 regressions PASS
+- a6: public UUID/action/diagnostic-free projection, seven protected preview candidates, semantic 3/2/1 progressive UI, at-most-three reveal, view/add actions, explicit safe quantity, focus/live/reduced-motion/320px gates; no price/payment/checkout/submission/external write
+- validation: focused 14 files/110 tests PASS; full 50/511 PASS; real preview HTML/Flight 2/2 PASS; server-only 8/8 PASS; seven verifiers PASS; lint/typecheck/build PASS; four production smokes PASS; protected hashes/scope/leakage/residue/diff PASS
+- governance: project validation, message validation and strict lane audit PASS with zero issues; `.next` moved recoverably to Trash; next-env baseline restored with zero diff
+- documentation: frontend README updated; exact root README/architecture/ADR Planner deltas recorded in `TASKS/ARTIFACTS/TASK-023/PLANNER_OWNED_DOCUMENT_DELTAS.md`
+- outcome: PASS_FOR_PLANNER_CHECKPOINT; no visual QA, review, acceptance, Git delivery or deployment started
+- message_result: `MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, moved to done and linked with `requires_response_to=MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6`
+- unique_next_step: Planner independently validates current shared bytes and controls the checkpoint and any later visual QA/review dispatch
+# TASK-023 frontend Visual O1 narrow revision 2026-08-06
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-VISUAL-O1-R1` before test or product mutation; canonical Visual Round 1 `FAIL / severe 0 / obvious 1 / detail 0` and all 19 historical evidence files remain unchanged
+- red: focused Vitest reported one failed suite because the preview candidate detail route module was absent, matching the four visible same-origin 404 actions
+- implementation: one server-only renderer plus exactly four literal Next routes for TEST_CANDIDATE 1/3/5/7; no generic slug route, CSS/layout, candidate data/action/order, FGD route or contract change
+- truth: routes are preview-only, noindex/nofollow, protected-local-media navigation landings with explicit non-production TEST_CANDIDATE wording and no network, internal identity or commerce action
+- closed_paths: preview candidates 2/4/6/8, catalog accessory and unknown remain final 404; unset/disabled/cms and all production modes return 404 before CMS access
+- focused_validation: direct 1/14 and related/Product Detail 3/30 PASS; Planner-owned live preview independently confirmed declared 200 and closed 404 outcomes
+- complete_validation: full Vitest 51/535; seven verifiers; lint; typecheck; Next 16.2.11 build; CMS/ProductList/ProductDetail/QuoteBasket production smokes all PASS
+- production_boundary: default/preview/cms FGD detail plus every declared/undeclared/catalog candidate path final 404; CMS requests 0
+- protected_integrity: package/lock, protected image, ProductCard/QuoteLine authorities and 19/19 Visual Round 1 hashes exact; candidate leakage scan and diff check PASS; next-env restored by final production build
+- artifacts: `FRONTEND_VISUAL_O1_REVISION_REPORT.md` and `FRONTEND_VISUAL_O1_VALIDATION_LOG.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; no Visual Round 2, review, acceptance, Git delivery or deployment started
+- unique_next_step: Planner independently validates the current bytes and alone decides whether to dispatch Visual QA Round 2
+# TASK-023 frontend Visual O2 narrow revision 2026-08-06
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-VISUAL-O2-R2` before test or product mutation; Visual Round 1 and Round 2 `FAIL / severe 0 / obvious 1 / detail 0` histories remain unchanged
+- red: direct real-source test produced exactly 1 new failure with 14 prior route/security tests passing; the renderer lacked any CSS module/import/class width seam, matching the measured 832px overflow cause
+- green: added only semantic `main > article` class bindings and one local CSS Module; main/content are width-constrained, protected 800x800 Image is `width/max-width:100%` with `height:auto`, and text wraps with no overflow clipping
+- preserved: exact routes 1/3/5/7, noindex/nofollow, TEST_CANDIDATE truth, protected source/alt, zero network/internal/commerce behavior and all closed CMS/production/unknown/accessory paths remain unchanged
+- focused_validation: direct 1/15 and route/presentation/Product Detail 3/31 PASS
+- complete_validation: full Vitest 51/536; seven verifiers; lint; typecheck; Next 16.2.11 build; four production smokes PASS
+- integrity: package/lock/next-env/protected image and ProductCard/QuoteLine authorities exact; canonical visual 36/36 and Round 2 17/17 hashes PASS; leakage/no-clipping/diff checks PASS
+- artifacts: `FRONTEND_VISUAL_O2_REVISION_REPORT.md` and `FRONTEND_VISUAL_O2_VALIDATION_LOG.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; no persistent preview, Visual QA, review, acceptance, Git or deployment started
+- unique_next_step: Planner independently validates current bytes and alone controls the O2 closure visual retest
+# TASK-023 frontend Adversarial Transport P2-1 revision 2026-08-06
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-ADVERSARIAL-TRANSPORT-P2-R1` before test or production mutation; canonical Adversarial Round 1 `FAIL / P0=0 / P1=1 / P2=2` remains unchanged
+- red: direct public Transport produced exactly 4 new failures with 5 prior tests passing; hostile Proxy, revoked Proxy, unsafe cause accessor and unsafe nested message accessor each escaped a raw diagnostic/type error
+- green: reject all Proxy/revoked Proxy values through Node server-only `util.types.isProxy`; preserve only real trusted internal error instances; redirect reads only own data-descriptor cause/message under a guarded classifier; all unsafe/unclassifiable values become fixed network error
+- preserved: one request, zero retry, HTTP/304/redirect/caller-abort/5000ms-timeout semantics and Product Detail empty-module degradation remain passing
+- focused_validation: direct 1/9 and RelatedProductCard/Product Detail 5/45 PASS
+- complete_validation: full Vitest 51/540; seven verifiers; lint; typecheck; Next 16.2.11 build; four production smokes PASS
+- integrity: package/lock/next-env/protected image and ProductCard/QuoteLine authorities exact; canonical visual 50/50 and Round 3 14/14 hashes PASS; diagnostic/diff checks PASS
+- cleanup: `.next` and `tsconfig.tsbuildinfo` moved recoverably to Trash; no Next listener remains
+- artifact: `FRONTEND_ADVERSARIAL_TRANSPORT_P2_R1.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; no CMS, review PASS, acceptance, Git, deployment or external work
+- unique_next_step: Planner independently validates current bytes and coordinates the separate WordPress P1 before any Round 2 review
+
+# TASK-023 frontend UUID handoff authority rebind R1 2026-08-06
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1`; sequential WordPress UUID P1 convergence and final 26/26 authority identities were confirmed before mutation
+- stale_pin_red: direct verifier exited 1 with `TASK-023 authority manifest SHA-256 mismatch`
+- authorized_change: updated only manifest/checksum-stream authority pins in the local RelatedProductCard manifest and verifier to `9d9b089...9527ff` and `3409b296...7c01f`; no Schema/sample copy or verifier relaxation
+- direct_result: verifier still exits 1 with `samples.errors authority checksum mismatch`; focused contract suite is 3 prior mutation tests PASS / 1 positive authority test FAIL
+- exact_comparison: 9 Schema and 4 success samples are byte-identical; local error snapshot hash `eaca3ca...9b78f` differs from final authority fixture `015ef39e...36bc` only through nine changed request IDs
+- blocker: existing verifier intentionally binds authority checksum, source, manifest entry and snapshot to one exact hash; latest scope permits neither copying the error sample nor changing projection/verifier semantics, so pin-only closure is impossible
+- preserved: Transport P2 fix hash `de0a4645...882d1`; UI/CSS/routes/Basket/contracts/runtime/visual/CMS boundaries untouched; `git diff --check` PASS
+- cleanup_and_governance: stale `.next` moved recoverably to Trash; no `.next`, TypeScript build cache or Next listener remains; project/messages/strict lane validations PASS
+- skipped_gates: full 540, seven-verifier aggregate, lint/typecheck/build/four smokes were not run or claimed because the required direct 9/4/9 gate failed first
+- artifact: `FRONTEND_UUID_HANDOFF_REBIND_R1.md`
+- outcome: `BLOCKED_AT_DIRECT_GATE`; not Planner checkpoint PASS, review, acceptance, Git delivery or deployment
+- unique_next_step: Planner must explicitly choose exact final error-byte replacement or a deterministic requestId-free error projection before frontend can continue
+
+# TASK-023 frontend final authority convergence R1 2026-08-06
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-FINAL-AUTHORITY-CONVERGENCE-R1` before mutation; prior pin-only `BLOCKED_AT_DIRECT_GATE` history preserved
+- convergence: restored production `next-env` import/hash; updated only final manifest/checksum pins and error hash in the local manifest/verifier; replaced only the local error snapshot with deterministic fixture `e431d023...2c91c`
+- parity: exact byte comparison proves 9 Schema and 4 success samples remain unchanged; local error snapshot exactly equals the final authority fixture
+- direct_and_focused: direct 9/4/9 PASS; snapshot/mutation 1/4 PASS; related focused 5/45 PASS
+- complete_validation: full Vitest 51/540; seven verifiers; lint; typecheck; Next 16.2.11 production build; CMS/ProductList/ProductDetail/QuoteBasket production smokes PASS
+- integrity: Transport P2 hash `de0a4645...882d1`; package/lock/next-env/protected image/ProductCard/QuoteLine/CMS ProductCard/TASK-014 hashes exact; Visual canonical 50/50 and Round 3 14/14 PASS
+- cleanup: `.next` and TypeScript build cache moved recoverably to Trash; no Next listener; final next-env production hash `7b550dda...2651`
+- governance: diff, project, messages and strict lane gates PASS
+- artifact: `FRONTEND_FINAL_AUTHORITY_CONVERGENCE_R1.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Adversarial Round 2 PASS, acceptance, Git delivery or deployment
+- unique_next_step: Planner independently validates current bytes and alone controls any Round 2 review dispatch
+
+# TASK-023 frontend unified cards R1 2026-08-08
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1` before mutation; historical Visual Round 1/2 FAIL, Visual Round 3 PASS, Adversarial Round 1 FAIL and Round 2 PASS evidence remains unchanged
+- red: direct presentation command ran 10 tests with 6 prior PASS and 4 intended failures: no shared semantic figure region, direct accessory draft rejected without quantity input, return-state seam absent and card quantity UI still present
+- unified_green: every recommendation uses one `article > figure + body(information + footer action)` skeleton; View Product and Add to Quote keep truthful labels/canonical URLs but share one full-width geometry; card quantity label/input/error UI is removed
+- basket_green: deliberate accessory Add constructs a valid quantity-1 catalog_accessory draft; real browser adapter adds it and repeat-add deterministically merges to quantity 2; later edit/remove remain in the existing Quote Basket
+- back_green: canonical View Product stores and consumes only session-scoped `version`, `visibleCount` and `scrollY`; closed exact-key parser rejects identity-bearing extensions and clamps expansion to current item count before scroll restoration
+- leakage: direct static markup and real preview HTML/Flight tests exclude Product/Media/taxonomy UUIDs, Article Number, raw action/internal/CMS/WordPress/Feishu/secret/diagnostic markers; serialized session state contains no internal identity or long-term business data
+- focused_validation: direct 1/10 PASS; TASK-023 focused 15 files/141 tests PASS
+- complete_validation: full inventory reproduced in three safe non-overlapping groups, 51 files/542 tests PASS; seven verifiers, lint, typecheck, Next 16.2.11 production build and four production smokes PASS
+- protected_integrity: package/lock/next-env/protected image/ProductCard/QuoteLine/CMS ProductCard/TASK-014 hashes exact; canonical Visual 50/50 and Round 3 14/14 exact; no QA/review evidence changed
+- cleanup_and_governance: generated `.next` and `tsconfig.tsbuildinfo` moved recoverably to Trash; no listener/residue; diff check, DPG project/messages and strict lane gates PASS
+- artifacts: `FRONTEND_UNIFIED_CARDS_R1_REPORT.md` and `FRONTEND_UNIFIED_CARDS_R1_VALIDATION_LOG.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Visual QA, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1-RESPONSE` was delivered once through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; it left queue and remains linked with `requires_response_to=MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1`
+- unique_next_step: Planner independently validates current bytes and alone controls the next checkpoint
+
+# TASK-023 frontend return-state P1 R3 2026-08-08
+
+- message: read and ACKed `MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3` before test or product mutation; Unified Cards Adversarial Round 3 `FAIL / P0=0 / P1=1 / P2=0`, Visual Round 4 PASS and all historical evidence remain unchanged
+- direct_red: focused presentation ran 12 tests with 10 prior PASS and exactly 2 intended failures; hostile null-prototype Proxy was coerced/accepted and legal 257-character JSON was parsed/accepted
+- minimum_green: parser public boundary now accepts unknown and short-circuits unless the input is a primitive string of at most 256 characters; no post-parse exact-key/descriptor/clamp/scroll logic changed
+- hostile_proof: direct production parser returns null with zero get, getPrototypeOf, ownKeys, descriptor or Symbol.toPrimitive callback reads
+- size_proof: legal exactly-256-character state parses once and is accepted; legal 257-character state returns null before JSON.parse with zero parse calls
+- focused_validation: direct 1/12 PASS; TASK-023 focused 15 files/143 tests PASS
+- complete_validation: exact full 51-file inventory reproduced in three non-overlapping safe groups for 544 tests PASS; seven verifiers, lint, typecheck, Next 16.2.11 production build and four production smokes PASS
+- protected_integrity: package/lock/next-env/protected media/ProductCard/QuoteLine/CMS ProductCard/TASK-014 exact; historical Visual canonical 50/50, R3 14/14 and Unified R4 31/31 exact
+- cleanup_and_governance: generated `.next` and `tsconfig.tsbuildinfo` moved recoverably to Trash; no listener/residue; diff, DPG project/messages and strict lane gates PASS before response dispatch
+- scope: only parser source, direct presentation test, dedicated R3 evidence and frontend worklog changed; CSS, Basket, CMS, contracts, dependencies, README, Planner state, QA evidence, Git and deployment untouched
+- artifacts: `FRONTEND_RETURN_STATE_P1_R3.md` and `FRONTEND_RETURN_STATE_P1_R3_VALIDATION_LOG.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not closure review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE` was delivered once through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; it left queue and remains linked with `requires_response_to=MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3`
+- unique_next_step: Planner independently validates current bytes before any narrow closure review

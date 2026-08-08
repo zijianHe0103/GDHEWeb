@@ -10,6 +10,7 @@ The transport remains `/wp-json/gdhe/v1`; every current response advertises Cont
 - `GET /navigation?locale=en`
 - `GET /route-manifest?locale=en`
 - `GET /product-cards?locale=en&schema=1.0.0&page=1&per_page=10&sort=modified_desc&filter=product_category:slug`
+- `GET /related-product-cards?locale=en&schema=1.0.0&source_path=/products/fgd-x15-pvc/`
 - `GET /product-configurations?locale=en&schema=1.0.0&path=/products/fgd-x15-pvc/`
 - `GET /product-configurations?locale=en&schema=2.0.0&path=/products/fgd-x15-pvc/`
 
@@ -32,6 +33,14 @@ The frozen runtime evidence includes `per_page=1&page=1`: anonymous HTTP `200`, 
 Eligibility is applied before filtering, `total` and pagination. Only published Product records with a valid private source document, local-only test-candidate or production source class, explicit website eligibility, protected image, valid public category, valid model/UUID, allowed attributes and a consistent kind/lifecycle/path matrix enter the result. The four actions are derived by the server: detail products always use `view_product`; active catalog accessories use `direct_rfq`; discontinued catalog accessories use `replacement_contact`.
 
 The endpoint accepts only English, ProductCard Schema `1.0.0`, integer pagination, `modified_desc|title_asc`, and an optional `product_category:<slug>` filter. Page values must fit the native integer and produce an integer-safe offset; overflow is rejected before query/slicing through normalized `gdhe_invalid_pagination` HTTP `400` with `no-store`. Other parameters fail closed. Content Schema `3.0.0`, `/resolve`, `/collection/{type}`, navigation and route manifest are unchanged.
+
+## RelatedProductCard collection
+
+`/related-product-cards` is a separate anonymous read-only contract at Schema `1.0.0`. Its closed query accepts only `locale=en`, `schema=1.0.0` and one canonical `source_path`. The source path must resolve uniquely to a published, complete Schema 3 Product. Its raw `relationships.products` array is the only ordering authority, must be an array and may contain at most 20 entries. The response has no pagination and returns the complete eligible set in one request.
+
+The closed root contains `apiVersion`, `schemaVersion`, `locale`, `type: related_product_card`, `sourcePath` and `items`. Each item contains an exact ProductCard `1.0.0` object plus `directQuote`. Detail products retain `view_product` and use `directQuote: null`. An active `catalog_accessory` retains its frozen `direct_rfq` action but enters this collection only when the independent related-product mirror explicitly provides `{kind: catalog_accessory, quantityUnit: piece}`. Missing, malformed or unsupported units fail closed; category, name or kind is never used to guess one.
+
+Self references, later duplicates, unpublished records, revoked website eligibility, invalid ProductCards, non-protected media, missing direct-quote units and replacement-contact action mismatches are omitted without reordering valid predecessors. A malformed or over-20 source relationship set is a normalized `gdhe_contract_invariant` response. Success uses the standard strong ETag/public 60-second cache and bodyless conditional `304`; every error uses the existing normalized envelope and `no-store`.
 
 ## Product Configuration document
 
@@ -112,6 +121,8 @@ Transport/auth/proxy statuses such as 401, 403, 429, 502 and 503 are not remappe
 - Fixture `TASK-007-A3-REVIEW-R1`
 - ProductCard Schema `1.0.0`
 - ProductCard Fixture `TASK-014-PRODUCT-CARD-1`
+- RelatedProductCardCollection Schema `1.0.0`
+- RelatedProductCard Fixture `TASK-023-RELATED-PRODUCT-CARD-1`
 - Product Configuration Schema `1.0.0`
 - Product Configuration Fixture `TASK-019-PRODUCT-CONFIGURATION-1`
 - Product Configuration Schema `2.0.0`

@@ -2,6 +2,33 @@
 
 schema_version: DPG-LANES-1.0.0
 
+## 2026-08-06T02:56:00Z
+
+### task_design_baseline_pass
+
+- type: task_checkpoint
+- lane: planner
+- task: TASK-023
+- summary: Planner A0 froze the independent RelatedProductCard contract and additive Quote Basket 2.0 boundary; frontend 44/463, five verifiers, build, WordPress/ProductCard/database and protected baselines passed, releasing only WordPress A1/A2.
+
+## 2026-08-06T02:46:50Z
+
+### task_requirements_confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-023
+- summary: Exact user confirmation moved TASK-023 to READY; Planner design and protected baseline are the only released work before the sequential WordPress and frontend checkpoints.
+
+## 2026-08-06T02:36:32Z
+
+### task_intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-023
+- summary: Created the FGD X15+PVC model-level You May Also Need progressive related-products slice on a dedicated branch; default three cards and Show More batches are frozen for requirement confirmation, with CMS/frontend/Feishu/Git delivery still unstarted.
+
 ## 2026-08-04T16:43:03Z
 
 ### task_visual_revision_checkpoint_pass
@@ -9185,6 +9212,15 @@ schema_version: DPG-LANES-1.0.0
 - 用户自有 `.codex/config.toml`、历史 resume packet 和本地预览生成物明确排除。
 - 唯一下一步：受控正式提交，推送任务分支，fast-forward 合并并推送 `main`；不部署。
 
+## 2026-08-04T18:48:00Z TASK-021 formal delivery completed
+
+- Formal commit `8ebaba40ddb47de0f55594591e628d7a8a3a0253` was created with the required Chinese task/change/validation/documentation sections.
+- The task branch was pushed successfully after a recoverable HTTPS transport retry; temporary repository-local HTTP settings were removed immediately after success.
+- `main` fast-forwarded from `0dd33907b11e2c5413dd6e15868487c819d60186` to the TASK-021 commit and `origin/main` was pushed.
+- Independent remote checks confirm local main, remote main and the remote TASK-021 branch all point to `8ebaba40ddb47de0f55594591e628d7a8a3a0253`.
+- User-owned `.codex/config.toml` and historical resume packets remain uncommitted; no deployment occurred.
+- State closed as `CLOSED / ACCEPTED / MERGED`. Next work requires a new task.
+
 ## 2026-08-04T19:06:53Z TASK-022 intake
 
 - type: task_intake
@@ -9589,3 +9625,942 @@ schema_version: DPG-LANES-1.0.0
 - lane: planner
 - task: TASK-022
 - summary: Exact user phrase accepted TASK-022; formal commit, task-branch push, main fast-forward and main push are the only authorized next steps
+
+## 2026-08-05T02:25:25Z TASK-022 formal delivery completed
+
+- Formal commit `6c5b7644c8bbabf8771223eb7baadb2964498e6b` was created with the required Chinese task/change/validation/documentation sections.
+- The task branch was pushed after one recoverable HTTP 400; retry used command-local transport settings and left no persistent Git configuration.
+- `main` fast-forwarded from `8ebaba40ddb47de0f55594591e628d7a8a3a0253` to the TASK-022 commit and `origin/main` was pushed.
+- Remote checks confirm local main, remote main and remote TASK-022 branch all point to the same formal commit.
+- Excluded tracked changes and historical resume packets remain uncommitted; no deployment occurred.
+- State closed as `CLOSED / ACCEPTED / MERGED`. Next work requires a new task.
+
+### 2026-08-06T02:59:03Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message queued for wordpress_cms
+
+### 2026-08-06T02:59:44Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2 dispatched to wordpress_cms
+
+### 2026-08-06T03:01:16Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2 moved to done
+
+### 2026-08-06T03:18:53Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T03:19:37Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2-RESPONSE dispatched to planner
+
+### 2026-08-06T03:19:50Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2-RESPONSE moved to done
+
+## 2026-08-06T03:23:17Z TASK-023 WordPress A1/A2 Planner checkpoint PASS
+
+- ACKed the controlled WordPress response and independently read the route, Schemas, Fixture, tests, CMS docs and evidence.
+- Reproduced 9-file Schema closure, 4/4 Goldens, 7/7 negative mutations, 26/26 handoff, 27/27 protected hashes, PHP lint, Core/SCF/DB and DPG gates.
+- Replayed the two-lifecycle Fixture in an isolated repository copy: database IDs changed, all four hashes stayed identical, each round cleaned 11 posts and 3 terms, and current database residue is zero.
+- Only frontend A3-A6 is released. Visual QA, review, acceptance, Git delivery, Feishu and deployment remain blocked.
+
+### 2026-08-06T03:26:31Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T03:27:00Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6 dispatched to frontend
+
+### 2026-08-06T03:28:16Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6 moved to done
+
+### 2026-08-06T04:07:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T04:08:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RELATED-PRODUCTS-A3-A6-RESPONSE moved to done
+
+## 2026-08-06T04:14:26Z TASK-023 frontend A3-A6 checkpoint PASS
+
+- ACKed the controlled frontend response and independently inspected the contract consumer, basket migration, orchestration and visible module.
+- Reproduced focused 14/110, full 50/511, seven verifiers, lint/typecheck/build and four production smokes; confirmed one related collection and zero per-card resolve.
+- Verified v1 Quote Basket remains byte-frozen on read, valid mutation writes v2, browser output excludes internal IDs and CMS remote media fails closed.
+- Synchronized root README, architecture contract and ADR-006; moved generated build output recoverably to Trash.
+- Visual QA is the sole next gate. Review, acceptance, Git delivery, Feishu, final RFQ and deployment remain blocked.
+
+### 2026-08-06T04:17:35Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-023
+- summary: message queued for visual_qa
+
+### 2026-08-06T04:18:35Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-08-06T04:18:48Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R1 moved to done
+
+### 2026-08-06T04:32:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T04:32:55Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T04:34:25Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R1-RESPONSE moved to done
+
+## 2026-08-06T04:34:55Z TASK-023 Visual QA Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-023-VISUAL-QA-R1-RESPONSE`; verdict is FAIL / severe 0 / obvious 1 / detail 0.
+- The only obvious difference is that all four visible preview View Product actions resolve to 404; 19/19 evidence hashes and encoding disclosures pass.
+- All five-width, progressive disclosure, quantity/Basket, keyboard/AX, protected-media, network and leakage gates remain passing and preserved.
+- Checked reopen safely refused from the real IN_PROGRESS state; Planner recorded equivalent NEEDS_REVISION recovery.
+- Frontend receives only the same-origin preview TEST_CANDIDATE landing closure; later gates remain blocked.
+
+## 2026-08-06T04:54:53Z TASK-023 Visual O1 revision checkpoint PASS
+
+- ACKed the frontend response and independently verified the four closed preview-only TEST_CANDIDATE landings.
+- Reproduced focused 3/30, full 51/535, seven verifiers, lint, clean typecheck, production build and four production smokes.
+- Confirmed undeclared candidates, CMS and production remain final 404 with zero CMS requests; 19/19 historical visual hashes and protected authorities remain exact.
+- Recovered malformed interrupted-preview output to Trash and retained no generated validation residue beyond the fresh build needed for preview startup.
+- TASK-023 returned to IN_PROGRESS; Visual QA Round 2 is the only released next step.
+
+## 2026-08-06T05:12:44Z TASK-023 Visual QA Round 2 FAIL recovery
+
+- ACKed the controlled visual response; verdict is FAIL / severe 0 / obvious 1 / detail 0 while Round 1 history remains intact.
+- O1 is closed, but the candidate landing is 832px wide at 768/390/320 and visibly overflows.
+- Reproduced all 17 Round 2 and 36 canonical evidence hashes; original product/recommendation/Basket visual regressions remain passing.
+- Checked reopen safely refused outside AWAITING_USER with no mutation; Planner recorded equivalent NEEDS_REVISION recovery.
+- Only the responsive candidate landing correction is released; review and later gates remain blocked.
+
+## 2026-08-06T05:22:40Z TASK-023 Visual O2 revision checkpoint PASS
+
+- ACKed the linked frontend response and independently validated the width-constrained semantic landing and responsive protected image/text CSS.
+- Reproduced direct 15/15, focused 31/31, full 536/536, seven verifiers, lint, typecheck, build and four smokes.
+- Protected contracts/media, exact candidate route matrix and all 36 historical visual evidence files remain unchanged.
+- TASK-023 returned to IN_PROGRESS; only the O2 closure visual retest is released.
+
+### 2026-08-06T04:36:17Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T04:36:33Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O1-R1 dispatched to frontend
+
+### 2026-08-06T04:38:16Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O1-R1 moved to done
+
+### 2026-08-06T04:50:26Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T04:50:54Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O1-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T04:51:01Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O1-R1-RESPONSE moved to done
+
+### 2026-08-06T04:57:31Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-023
+- summary: message queued for visual_qa
+
+### 2026-08-06T04:57:54Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R2 dispatched to visual_qa
+
+### 2026-08-06T04:58:07Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R2 moved to done
+
+### 2026-08-06T05:10:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T05:11:06Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R2-RESPONSE dispatched to planner
+
+### 2026-08-06T05:12:21Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R2-RESPONSE moved to done
+
+### 2026-08-06T05:14:20Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T05:14:39Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O2-R2 dispatched to frontend
+
+### 2026-08-06T05:15:14Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O2-R2 moved to done
+
+### 2026-08-06T05:20:27Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T05:20:47Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O2-R2-RESPONSE dispatched to planner
+
+### 2026-08-06T05:21:07Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-VISUAL-O2-R2-RESPONSE moved to done
+
+### 2026-08-06T05:24:23Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-023
+- summary: message queued for visual_qa
+
+### 2026-08-06T05:24:45Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R3 dispatched to visual_qa
+
+### 2026-08-06T05:26:02Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R3 moved to done
+
+### 2026-08-06T05:36:04Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T05:36:04Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R3-RESPONSE dispatched to planner
+
+### 2026-08-06T05:36:55Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-R3-RESPONSE moved to done
+
+## 2026-08-06T05:37:41Z TASK-023 Visual QA Round 3 and pre-review validation PASS
+
+- ACKed `MSG-TASK-023-VISUAL-QA-R3-RESPONSE`; current verdict is PASS / severe 0 / obvious 0 / detail 0, with Round 1/2 FAIL history preserved.
+- Candidate routes 1/3/5/7 pass at 1440/768/390/320 without overflow; protected images remain 1:1 and text wraps safely.
+- Round 3 14/14 and canonical 50/50 evidence hashes, exact encoding disclosure, positive/negative route matrix, main 3-to-6-to-7 flow, accessory Basket and keyboard/focus regressions pass.
+- Preview is stopped, port 3000 has no listener, generated output was moved recoverably to `/Users/arron/.Trash/gdhe-task023-visual-r3.N6x3GW`, and next-env matches its protected baseline.
+- TASK-023 entered UNDER_REVIEW; only one independent read-only adversarial review is released.
+
+## 2026-08-06T06:10:14Z TASK-023 Adversarial Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-023-ADVERSARIAL-REVIEW-R1-RESPONSE`; verdict is FAIL / P0=0 / P1=1 / P2=2.
+- P1: distinct eligible WordPress targets sharing one public UUID use first-wins instead of rejecting every conflicting card.
+- P2: RelatedProductCard Transport can leak a hostile thrown diagnostic to its server caller; the prior active-task review narration was stale and is synchronized here.
+- All other focused/full, verifier, build/smoke, WordPress, Visual, protected-scope and cleanup evidence remains PASS.
+- Checked reopen safely refused because TASK-023 is not AWAITING_USER; no mutation occurred. Planner recorded the equivalent NEEDS_REVISION state.
+- Only the two bounded code revisions, fresh validation and independent Round 2 are released.
+
+### 2026-08-06T05:43:31Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-06T05:43:54Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-06T05:44:35Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-06T06:08:56Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T06:09:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T06:10:04Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-08-06T06:12:23Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message queued for wordpress_cms
+
+### 2026-08-06T06:12:24Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T06:12:53Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-ADVERSARIAL-TRANSPORT-P2-R1 dispatched to frontend
+
+### 2026-08-06T06:12:53Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ADVERSARIAL-UUID-P1-R1 dispatched to wordpress_cms
+
+### 2026-08-06T06:13:24Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ADVERSARIAL-UUID-P1-R1 moved to done
+
+### 2026-08-06T06:13:30Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-ADVERSARIAL-TRANSPORT-P2-R1 moved to done
+
+### 2026-08-06T06:20:07Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T06:20:35Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-ADVERSARIAL-TRANSPORT-P2-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T06:20:41Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-ADVERSARIAL-TRANSPORT-P2-R1-RESPONSE moved to done
+
+### 2026-08-06T06:23:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T06:24:31Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ADVERSARIAL-UUID-P1-R1-RESPONSE moved to done
+
+### 2026-08-06T06:29:52Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T06:30:15Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1 dispatched to frontend
+
+### 2026-08-06T06:30:44Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1 moved to done
+
+### 2026-08-06T07:44:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T07:45:43Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T07:46:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1-RESPONSE moved to done
+
+### 2026-08-06T07:46:29Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message queued for wordpress_cms
+
+### 2026-08-06T07:46:48Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1 dispatched to wordpress_cms
+
+### 2026-08-06T07:47:15Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1 moved to done
+
+### 2026-08-06T07:52:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T07:53:11Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T07:53:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE moved to done
+
+### 2026-08-06T07:55:04Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-06T07:55:26Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-FINAL-AUTHORITY-CONVERGENCE-R1 dispatched to frontend
+
+### 2026-08-06T07:55:58Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-FINAL-AUTHORITY-CONVERGENCE-R1 moved to done
+
+### 2026-08-06T08:02:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T08:02:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-FINAL-AUTHORITY-CONVERGENCE-R1-RESPONSE dispatched to planner
+
+### 2026-08-06T08:02:48Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-FINAL-AUTHORITY-CONVERGENCE-R1-RESPONSE moved to done
+
+## 2026-08-06T08:08:06Z TASK-023 Round 1 revision Planner checkpoint PASS
+
+- Final WordPress UUID-conflict and deterministic error-evidence revisions plus frontend trap-safe Transport and authority convergence are complete.
+- Planner independently reproduced 26/26 handoff, 9/4/9, focused 5/45, full 51/540, seven verifiers, lint/typecheck/build, four smokes, protected and Visual hashes, cleanup and DPG gates.
+- Adversarial Round 1 FAIL 0/1/2 and all Visual history remain preserved; TASK-023 is UNDER_REVIEW and only narrow Round 2 is released.
+
+### 2026-08-06T08:12:10Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-06T08:12:31Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-08-06T08:14:50Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-08-06T08:22:40Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T08:22:53Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-R2-GENERATED-CLEANUP dispatched to planner
+
+### 2026-08-06T08:23:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-R2-GENERATED-CLEANUP moved to done
+
+### 2026-08-06T08:26:13Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-06T08:26:35Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-08-06T08:26:44Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+## 2026-08-06T08:31:35Z TASK-023 Adversarial Round 2 and final validation PASS
+
+- ACKed the final independent Round 2 PASS / P0=0 / P1=0 / P2=0 while preserving Round 1 FAIL 0/1/2 and Visual Round 1/2 FAIL plus Round 3 PASS.
+- Planner freshly reproduced 26/26 handoff, seven verifiers, 5/45 focused, 51/540 full, lint/typecheck/build, four production smokes, WordPress platform, protected and Visual gates.
+- Generated output was moved recoverably to `/Users/arron/.Trash/gdhe-task023-planner-final-validation.Xo3Ymi`; next-env remains protected and no listener remains.
+- TASK-023 remains UNDER_REVIEW / NOT_ACCEPTED / DIRTY until checked `prepare-awaiting-user`; no Git, deployment, Feishu or final RFQ action is authorized.
+
+### 2026-08-06T08:34:13Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-06T08:34:41Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-023
+- summary: Checked preparation succeeded but human-readable current status, next-step text and Board still render the pre-preparation UNDER_REVIEW state; reopen only to synchronize views without changing product, evidence or PASS conclusions.
+
+## 2026-08-06T08:34:41Z TASK-023 checked-preparation view synchronization
+
+- The first checked preparation succeeded at 08:34:13Z but did not update the human-readable current-status and Board views.
+- Controlled reopen was used only to synchronize those views; no product, test, evidence, PASS, Git or deployment fact changed.
+- TASK-023 is prepared to return immediately to AWAITING_USER and then wait only for the exact formal delivery phrase.
+
+### 2026-08-06T08:35:33Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-06T09:28:43Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-023
+- summary: User-authorized local preview and screenshots generated frontend/.next and changed next-env.d.ts to the dev route-types import. Reopen only to restore the protected production baseline and clean preview residue.
+
+### 2026-08-06T09:29:00Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-07T07:37:47Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-023
+- summary: 用户认为相关产品区域存在两种视觉格式，要求在同一区域内统一呈现
+
+### 2026-08-07T15:57:33Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-07T15:58:33Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1 dispatched to frontend
+
+### 2026-08-07T15:59:04Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1 moved to done
+
+### 2026-08-07T16:13:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T16:14:24Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1-RESPONSE dispatched to planner
+
+### 2026-08-07T16:14:50Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-UNIFIED-CARDS-R1-RESPONSE moved to done
+
+### 2026-08-07T16:19:11Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-023
+- summary: message queued for visual_qa
+
+### 2026-08-07T16:19:39Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4 dispatched to visual_qa
+
+### 2026-08-07T16:20:04Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4 moved to done
+
+### 2026-08-07T16:33:05Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T16:33:05Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE dispatched to planner
+
+### 2026-08-07T16:33:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE moved to done
+
+### 2026-08-07T16:37:48Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-07T16:38:19Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3 dispatched to adversarial_reviewer
+
+### 2026-08-07T16:38:37Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3 moved to done
+
+## 2026-08-07T16:38:19Z TASK-023 unified-card Visual R4 PASS and adversarial dispatch
+
+- Visual QA Round 4 passed `0/0/0`; 31/31 hashes, five-width unified card geometry, quantity-1 Basket flow and true browser Back restoration were independently checked.
+- Planner stopped preview, restored next-env production bytes and moved generated `.next` recoverably to Trash.
+- The new bounded read-only adversarial review was dispatched and ACKed; TASK-023 is `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`.
+
+## 2026-08-07T16:47:22Z TASK-023 unified-card Adversarial R3 FAIL recovery
+
+- Linked verdict is `FAIL / P0=0 / P1=1 / P2=0`; only the return-state pre-parse primitive-string and size boundary failed.
+- Reviewer build residue was recoverably cleared and next-env production bytes restored; this cleanup is not a product finding.
+- Checked reopen safely refused truthful UNDER_REVIEW under its AWAITING_USER-only precondition; equivalent `NEEDS_REVISION` recovery is recorded, with only the narrow frontend revision released.
+
+### 2026-08-07T16:42:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T16:43:12Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-UNIFIED-R3-GENERATED-CLEANUP dispatched to planner
+
+### 2026-08-07T16:43:24Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-UNIFIED-R3-GENERATED-CLEANUP moved to done
+
+### 2026-08-07T16:46:22Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T16:46:45Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3-RESPONSE dispatched to planner
+
+### 2026-08-07T16:47:02Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3-RESPONSE moved to done
+
+### 2026-08-07T16:49:04Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-023
+- summary: message queued for frontend
+
+### 2026-08-07T16:49:32Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3 dispatched to frontend
+
+### 2026-08-07T16:50:01Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3 moved to done
+
+### 2026-08-07T16:55:22Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T16:55:43Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE dispatched to planner
+
+### 2026-08-07T16:55:55Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE moved to done
+
+## 2026-08-07T17:00:21Z TASK-023 return-state P1 R3 Planner checkpoint PASS
+
+- ACKed the linked frontend response and independently reproduced the primitive-string zero-read and exact 256/257 pre-parse boundary.
+- Direct 1/12, seven verifiers, lint/typecheck, complete 544/544 evidence, protected hashes, cleanup and DPG gates pass.
+- TASK-023 moved to `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`; only the narrow return-state closure review is released.
+
+## 2026-08-07T17:06:46Z TASK-023 return-state closure R4 dispatch and cleanup
+
+- The narrow review request is ACKed/done in the registered reviewer session; direct 1/12 and focused 15/143 have passed independently.
+- Reviewer-generated `.next` was moved recoverably to Trash, next-env production bytes were restored, and no build cache or listener remains.
+- TASK-023 remains `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`; the linked final verdict is the only next step.
+
+## 2026-08-07T17:12:40Z TASK-023 return-state closure R4 PASS
+
+- ACKed the linked final response: `PASS / P0=0 / P1=0 / P2=0`.
+- The hostile zero-read and 256/257 pre-parse P1 is closed; unified cards, Basket, Back restoration, visual, network and production boundaries remain passing.
+- Only fresh Planner final validation and checked acceptance preparation are now released; no acceptance, Git or deployment action is authorized.
+
+## 2026-08-07T17:14:37Z TASK-023 unified-card fresh Planner final validation PASS
+
+- Fresh focused 15/143, seven verifiers, lint/typecheck/build and four production smokes pass.
+- Handoff 26/26, all four visual inventories, protected hashes, cleanup and governance gates pass; full audit has no HIGH.
+- The only next step is checked prepare-awaiting-user; Git, deployment, Feishu and final RFQ remain blocked.
+
+## 2026-08-07T17:17:19Z TASK-023 checked-preparation view and evidence sync
+
+- The first checked preparation passed at 17:16:22Z.
+- Controlled reopen was used only because Project/Board retained the pre-prepare view and historical result labels sat inside the current validation section.
+- Current evidence is now PASS-only, history is preserved separately, and the rendered target is AWAITING_USER; final checked prepare is the sole next step.
+
+### 2026-08-07T17:00:14Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-07T17:03:19Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4 dispatched to adversarial_reviewer
+
+### 2026-08-07T17:03:37Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4 moved to done
+
+### 2026-08-07T17:05:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T17:05:18Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-R4-GENERATED-CLEANUP dispatched to planner
+
+### 2026-08-07T17:05:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-R4-GENERATED-CLEANUP moved to done
+
+### 2026-08-07T17:09:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-023
+- summary: message queued for planner
+
+### 2026-08-07T17:09:31Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4-RESPONSE dispatched to planner
+
+### 2026-08-07T17:09:48Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-023
+- summary: message MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4-RESPONSE moved to done
+
+### 2026-08-07T17:16:22Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-07T17:17:19Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-023
+- summary: Checked preparation succeeded, but Project State and Board retained the pre-prepare UNDER_REVIEW view and the audit parser found historical FAIL labels inside the current Validation Evidence section.
+
+### 2026-08-07T17:18:59Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-08T00:44:32Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-023
+- summary: 治理审计将当前 Adversarial Review 中的 fail closed 误判为当前 FAIL；需同步最终 AWAITING_USER 叙述并保留全部历史审查记录。
+
+## 2026-08-08T00:46:46Z TASK-023 governance closure correction preflight PASS
+
+- 用户明确授权治理收口；受控 reopen 已将任务合法退回 `NEEDS_REVISION`。
+- 只修正当前审查区误判术语、active task 当前状态/唯一下一步和 Project 当前焦点；历史审查与验证记录完整保留。
+- governance audit 无 HIGH；project、registry、messages、strict lane 和 whitespace gates PASS。
+- 产品代码、测试、视觉证据、受保护哈希、Git 与部署边界均未改变；生成物和 port 3000 listener 仍为零。
+- 唯一下一步：checked `prepare-awaiting-user`；成功后只等待用户验收。
+
+### 2026-08-08T00:47:34Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-023
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-08T16:26:33Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-023
+- summary: TASK-023 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

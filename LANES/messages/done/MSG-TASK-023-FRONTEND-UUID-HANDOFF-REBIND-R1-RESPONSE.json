@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1-RESPONSE",
+  "type": "revision_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T07:44:41Z",
+  "requires_response_to": "MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-023 frontend authority rebind is BLOCKED_AT_DIRECT_GATE after applying only the two authorized pins. Pre-change RED was the stale authority manifest hash. The manifest and verifier now bind manifest 9d9b0895503ed6823b92c7823983ba5425a944ab2690fa06b00d537f9a9527ff and checksum stream 3409b2960773ddb6740b3d1cd0268152e6bbe24f44e2eb7c596c310938d7c01f, but direct verification exits 1 with ; focused snapshot tests are 3 prior mutation tests PASS / 1 positive authority test FAIL. Exact comparison proves 9 Schemas and 4 success samples are byte-identical. The local error snapshot is eaca3ca80d85ac34ebb15c9773b932504bcfc899db878f29e5c4f95fc1a9b78f while final authority error fixture is 015ef39e239a974bd0c533d90d9369fb9a6822545db5427ba5ca1e47d39736bc; they differ only in nine requestId values. Current scope forbids copying the sample or changing verifier semantics, so the remaining full/verifier/build/smoke gates were not run or claimed. Transport P2 fix and all protected product boundaries remain unchanged; cleanup and DPG gates PASS. Evidence: TASKS/ARTIFACTS/TASK-023/FRONTEND_UUID_HANDOFF_REBIND_R1.md. Planner must explicitly authorize either exact final error-byte replacement or a deterministic requestId-free projection before continuation.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UUID_HANDOFF_REBIND_R1.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_UUID_HANDOFF_REBIND_R1.md"
+  ],
+  "notes": "Controlled BLOCKED response; no scope expansion, review, Git or deployment.",
+  "dispatched_at": "2026-08-06T07:45:43Z",
+  "delivery_key": "MSG-TASK-023-FRONTEND-UUID-HANDOFF-REBIND-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-06T07:46:14Z",
+  "updated_at": "2026-08-06T07:46:14Z"
+}

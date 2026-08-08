@@ -1,0 +1,131 @@
+{
+  "evidenceVersion": "TASK-023-RELATED-PRODUCT-CARD-DETERMINISM-ERROR-R1",
+  "fixtureVersion": "TASK-023-RELATED-PRODUCT-CARD-P1-R1",
+  "lifecycleCount": 2,
+  "goldenCountPerRound": 4,
+  "goldenHashesIdentical": true,
+  "errorFixtureHashesIdentical": true,
+  "databaseIdsChangedBetweenRounds": true,
+  "publicContractUsesDatabaseIds": false,
+  "rounds": [
+    {
+      "round": 1,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-023-RELATED-PRODUCT-CARD-P1-R1",
+        "posts": {
+          "category_landing": 3404,
+          "source": 3405,
+          "detail_alpha": 3406,
+          "accessory_beta": 3407,
+          "detail_gamma": 3408,
+          "accessory_delta": 3409,
+          "unpublished": 3410,
+          "revoked": 3411,
+          "hostile_media": 3412,
+          "missing_unit": 3413,
+          "action_mismatch": 3414,
+          "uuid_conflict_alpha": 3415
+        },
+        "terms": {
+          "category": 493,
+          "series": 494,
+          "installation": 495
+        },
+        "orderedRelations": [
+          3406,
+          3407,
+          3408,
+          3409,
+          3405,
+          3406,
+          3410,
+          3411,
+          3412,
+          3413,
+          3414
+        ]
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "four-plus.json": "5359939897c49200644497fde7a0e145a0e8e3656e8425450ef1db5a447472e1",
+        "one.json": "1c337364157486db1c09cf56d99152db0cdc4ce3f4f3c50a4792caf42e203b2b",
+        "three.json": "e260f2c66b21fe709e834519bf8ae3f128d1a9cf54dc3ab79aa98e35ad6ce780",
+        "zero.json": "10c511e8e8bdf7c2ee294c9f2562fbeadf4d0002eb549ff9b60b7c9574d0b805"
+      },
+      "errorFixtureSha256": "e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c",
+      "cleanup": {
+        "posts": 12,
+        "terms": 3
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskTermmeta": 0,
+        "taskUploads": 0
+      }
+    },
+    {
+      "round": 2,
+      "fixtureDatabaseIds": {
+        "fixtureVersion": "TASK-023-RELATED-PRODUCT-CARD-P1-R1",
+        "posts": {
+          "category_landing": 3416,
+          "source": 3417,
+          "detail_alpha": 3418,
+          "accessory_beta": 3419,
+          "detail_gamma": 3420,
+          "accessory_delta": 3421,
+          "unpublished": 3422,
+          "revoked": 3423,
+          "hostile_media": 3424,
+          "missing_unit": 3425,
+          "action_mismatch": 3426,
+          "uuid_conflict_alpha": 3427
+        },
+        "terms": {
+          "category": 496,
+          "series": 497,
+          "installation": 498
+        },
+        "orderedRelations": [
+          3418,
+          3419,
+          3420,
+          3421,
+          3417,
+          3418,
+          3422,
+          3423,
+          3424,
+          3425,
+          3426
+        ]
+      },
+      "runtimeValid": true,
+      "schemaValid": true,
+      "goldenSha256": {
+        "four-plus.json": "5359939897c49200644497fde7a0e145a0e8e3656e8425450ef1db5a447472e1",
+        "one.json": "1c337364157486db1c09cf56d99152db0cdc4ce3f4f3c50a4792caf42e203b2b",
+        "three.json": "e260f2c66b21fe709e834519bf8ae3f128d1a9cf54dc3ab79aa98e35ad6ce780",
+        "zero.json": "10c511e8e8bdf7c2ee294c9f2562fbeadf4d0002eb549ff9b60b7c9574d0b805"
+      },
+      "errorFixtureSha256": "e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c",
+      "cleanup": {
+        "posts": 12,
+        "terms": 3
+      },
+      "residue": {
+        "taskPosts": 0,
+        "taskPostmeta": 0,
+        "taskTerms": 0,
+        "taskOptions": 0,
+        "taskTermmeta": 0,
+        "taskUploads": 0
+      }
+    }
+  ],
+  "valid": true
+}

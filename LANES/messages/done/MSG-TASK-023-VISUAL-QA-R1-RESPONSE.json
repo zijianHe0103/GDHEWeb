@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-VISUAL-QA-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "visual_qa",
+  "to_lane": "planner",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T04:32:27Z",
+  "requires_response_to": "MSG-TASK-023-VISUAL-QA-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-023 Visual QA Round 1: FAIL / severe 0 / obvious 1 / detail 0. Progressive 3-to-6-to-7 disclosure, five-width layout, pointer/native keyboard focus rules, live regions, quantity/Add/Basket, reduced motion, protected media, zero overflow, same-origin network and no internal/commerce leakage all passed. O1: all four visible View Product actions resolve to final HTTP 404; browser activation reproduced the Next 404. Smallest correction is to provide resolvable same-origin TEST_CANDIDATE detail routes or omit actions/cards without resolvable routes while preserving candidate truth. Planner owns correction and retest dispatch.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_EVIDENCE_MANIFEST.sha256"
+  ],
+  "notes": "19 screenshots preserved; all actual JPEG/JFIF under .png names with exact magic, dimensions and SHA-256 disclosed. No frontend/CMS/task-authority/Git/deployment/server mutation. This is not adversarial review or acceptance.",
+  "dispatched_at": "2026-08-06T04:32:55Z",
+  "delivery_key": "MSG-TASK-023-VISUAL-QA-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "MSG-TASK-023-VISUAL-QA-R1-RESPONSE",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-06T04:34:25Z",
+  "updated_at": "2026-08-06T04:34:25Z"
+}

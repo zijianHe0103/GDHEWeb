@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-023-FRONTEND-VISUAL-O2-R2",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-023",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-06T05:14:20Z",
+  "requires_response_to": "MSG-TASK-023-VISUAL-QA-R2-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this exact narrow revision before work. Close only TASK-023 Visual Round 2 O2 with strict TDD. First add a direct RED proving the current preview TEST_CANDIDATE landing lacks a width-constrained semantic container and responsive protected image/text behavior at 768/390/320; the RED must fail on the actual code cause, not a screenshot stub. Then implement the minimum local response: constrain the landing main/content to available viewport width, make the existing protected 800x800 Next Image render at max-width:100% with proportional height, and allow headings/paragraphs to wrap within the container. Do not use overflow:hidden or clipping. Preserve exact routes 1/3/5/7, noindex,nofollow, TEST_CANDIDATE truth, protected image source/alt, zero network/internal identity/commerce action, closed 2/4/6/8/accessory/unknown/CMS/production routes and all existing Product Detail/Related Products/Quote Basket behavior. Do not change contracts, APIs, DTOs, route inventory, candidate data, package/lock, CMS, Planner authority, visual evidence or Git. Reproduce focused route/style tests, full Vitest, seven verifiers, lint, typecheck, production build, four production smokes, protected hashes and governance gates. Record Round 2 FAIL history and this O2 revision in TASK-023 frontend artifacts/worklog, return one linked execution_response, and stop for Planner checkpoint. Do not start a server or visual QA.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-023-related-products-progressive-slice.md",
+    "TASKS/ARTIFACTS/TASK-023/VISUAL_QA_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O1_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O1_VALIDATION_LOG.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O2_REVISION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-023/FRONTEND_VISUAL_O2_VALIDATION_LOG.md"
+  ],
+  "notes": "Planner stopped its preview before dispatch. Historical Visual R1 FAIL 0/1/0 and Visual R2 FAIL 0/1/0 plus all evidence must remain unchanged. Only responsive O2 code/tests are authorized.",
+  "dispatched_at": "2026-08-06T05:14:39Z",
+  "delivery_key": "MSG-TASK-023-FRONTEND-VISUAL-O2-R2:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex_thread",
+  "done_at": "2026-08-06T05:15:14Z",
+  "updated_at": "2026-08-06T05:15:14Z"
+}

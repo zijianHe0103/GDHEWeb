@@ -541,6 +541,9 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
    - 英语站统一主询价 CTA 使用 `Request a Quote`。正常在售产品的同一主转化路径不得混用 `Ask for Quotation` 或 `Get a Quote`；停产产品继续使用已确认的 `Contact Us for Replacement`。
    - 正常在售产品的配置级动作使用 `Add to Quote`，将当前公开规格/选项和数量加入 `Quote Basket`；客户可继续浏览并添加其他产品。集合层最终主动作使用 `Request a Quote`，未来在统一步骤填写联系信息并一次提交。产品 CTA 不直接触发单产品表单提交，也不代表在线下单。
    - TASK-022 的浏览器 Quote Basket 只使用完整公开配置作为合并身份，不保存 Article Number、内部 Product/Media UUID 或 WordPress/飞书身份。同一公开产品路径且长度、颜色、包装、Logo、保护方式和数量单位等全部配置相同时，重复添加累加到同一行；任一配置不同则保留独立行。未来服务端必须把每行当作不可信输入，重新解析 Article Number 与完整配置后才能一次提交。
+   - TASK-023 使用固定匿名 `GET /gdhe/v1/related-product-cards?locale=en&schema=1.0.0&source_path=<canonical path>` 读取型号级推荐。产品详情只发起一次完整集合请求，且不为每张卡片调用 `/resolve`；响应经过精确九份 Schema 的运行时校验、真实 opaque wrapper 和深冻结 server DTO 后才可消费。
+   - RelatedProductCard 的公开 Client 投影移除 Product、Media、taxonomy UUID、时间戳、原始动作枚举和诊断；未批准的远程媒体在进入 React 前被拒绝。生产 HTTPS 媒体来源与 Next Image allowlist 仍是部署门。推荐集合失败只隐藏推荐模块，不能移除已经 ready 的产品详情或配置器。
+   - TASK-023 的 Quote Basket `2.0.0` 是闭合的 `configured_product | catalog_accessory` 公开联合结构，沿用 v1 的存储键、30 天 TTL、256 KiB 上限和同源 newer-wins 规则。合法 v1 数据只在内存中迁移；下一次有效修改才写回 v2。目录配件行不得伪造轨道长度、颜色或包装。
    - 每一个加入 quotation request 的产品或配件 RFQ 行项目都必须填写数量；缺少数量的行项目不能作为完整询价提交。数量只能是大于零的整数，最小值为 `1`；空值、`0`、负数和小数均无效。未来实现必须在浏览器交互层与服务端 intake 校验层同时执行该约束。
    - 公开 RFQ 数量单位按产品类别固定：轨道按“支”，布带和线珠按“卷”，电机、遥控器及其他配件按“个”。飞书产品主数据为每个 Article Number 保存长度换算字段；飞书报价系统接收 Article Number 和客户数量后读取该字段，将轨道、布带和线珠换算为总米数，配件继续按个计算，并根据包装方式折算各类包装件数。总米数、包装件数和计算公式属于飞书报价系统责任，不要求访客在网页端输入，也不进入 WordPress、GDHE REST API 或 Next.js 的实现范围。系统统一使用 `Article Number`，不创建 `Part Number` 字段或别名。
 2. 可独立询价的配件可以脱离主产品成为报价请求中的独立行；每个配件拥有独立 Article Number，并沿用全公司范围不重复的 Article Number 规则。公开页面身份按产品类型决定：同款、同型号、出厂配套的电机与遥控器共用一个组合产品页面；布带、transparent tape 和用户所称“线珠”等可独立表达的大类建立类型详情页；轨道封口、走珠、顶码、墙码等小型安装配件只在相关主产品区域展示。类型页承载其真实可订购规格，不为每个规格创建独立页面。

@@ -610,3 +610,62 @@ Each execution records:
 - result: CMS/Python exact-decimal half locally closed; task remains NEEDS_REVISION pending Planner validation and separate frontend revision
 - response: linked `MSG-TASK-021-WORDPRESS-ADVERSARIAL-EXACT-DECIMAL-P1-R1-RESPONSE` sent through lane_message.py, delivered to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed` through the real Codex thread bridge, dispatch-once completed and the queue entry moved to dispatched
 - next: remain idle pending Planner independent validation; do not start frontend revision, Round 2, acceptance, Git or deployment
+
+### 2026-08-06 - TASK-023 RelatedProductCard WordPress A1/A2 complete
+
+- task: execute only TASK-023 WordPress A1/A2 under the frozen A0 design and protected baseline
+- message: `MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2` read completely and ACKed before implementation; branch `codex/TASK-023-related-products-progressive`, registered session and write scope verified
+- tdd_red: missing RelatedProductCard root Schema, missing REST route and missing relation projection each produced a real focused exit-1 failure before the corresponding minimum GREEN behavior
+- implementation: independent anonymous read-only `RelatedProductCardCollection 1.0.0`; GET `/wp-json/gdhe/v1/related-product-cards`; closed locale/schema/source_path query; unique published Schema 3 Product source; stored `relationships.products` order; maximum 20
+- eligibility: self/later duplicate skipped; unpublished, revoked, invalid ProductCard, hostile media, missing explicit quantity unit and replacement-contact action mismatch omitted; malformed/non-array and over-20 source relations fail closed
+- direct_quote: detail ProductCard keeps `view_product` with `directQuote: null`; active catalog accessory keeps frozen `direct_rfq` and is returned only with explicit `{kind: catalog_accessory, quantityUnit: piece}`; no guessing
+- runtime: ordered 0/1/3/4 evidence; four-item positive includes detail and simple accessory; one collection request and zero per-card resolve; strong ETag/public cache/bodyless 304; nine normalized no-store errors
+- schema: exact nine-file Draft 2020-12 closure; four runtime Goldens PASS; seven hostile/contract negative mutations rejected
+- determinism: final two complete lifecycles used post IDs 3253–3263 and 3264–3274; exact 4/4 Golden hashes identical and public contract contains no database ID
+- cleanup: each final lifecycle removed exactly 11 posts and three terms; final TASK-023 posts, marker/source meta, option, terms, termmeta and uploads all zero
+- protection: 27/27 protected baseline hashes exact, including gdhe-site boot/public-api/product-cards, ProductCard Schemas, TASK-014 authorities, frontend/package/lock and Quote Basket bytes
+- integration: protected boot bytes required one additive GDHE-owned task-scoped MU bootstrap; no Core, SCF, theme or third-party source change
+- handoff: 26/26 checksums PASS; final manifest `aa466ac6020deb0769d2d63c63bd5927702f99a4e0f26aa72feb42c7e1771284`; checksum stream `b6c5a94e4bbe12f6f2ffa1cd207aee5d6e8ca7d2570b5534dff5cf9cf83e6124`
+- regression: all gdhe-site PHP lint, ProductCard 8-file/8-Golden Schema regression, route/empty runtime, JSON/Python AST, Core, official SCF 6.9.2, gdhe-site 0.7.0 active, 12-table DB, secret, diff and DPG project/message/strict-lane gates PASS
+- docs: CMS README, content model, REST contract and operations/rollback synchronized; root README intentionally untouched at this checkpoint
+- scope_boundary: no frontend, Quote Basket, real relationship set, Feishu, real data, database structure, dependency, Planner authority, review, acceptance, Git or deployment
+- result: WordPress A1/A2 and exact cleanup complete; frontend remains blocked pending independent Planner checkpoint
+- response: linked `MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2-RESPONSE` sent through lane_message.py, delivered to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed` through the real Codex thread bridge, dispatch-once completed and Planner ACK moved the message to `done`
+- next: remain idle pending independent Planner checkpoint; do not start frontend, visual QA, review, Git or deployment
+
+### 2026-08-06 - TASK-023 adversarial public UUID P1 Round 1 complete
+
+- task: close only the WordPress P1 from adversarial Round 1; TASK-023 remains `NEEDS_REVISION` and not accepted
+- message: `MSG-TASK-023-WORDPRESS-ADVERSARIAL-UUID-P1-R1` read and ACKed before work; registered branch, lane and write scope verified; concurrent Planner/frontend/visual changes preserved
+- tdd_red: added a second distinct independently eligible published Fixture post with the same public UUID as `detail_alpha`; anonymous contract exited 1 at exact assertion `Distinct eligible posts sharing one public UUID did not all fail closed.`; RED cleanup removed 12 posts/3 terms and residue was 0/0/0
+- minimum_green: RelatedProductCard aggregation now de-duplicates identical post IDs, projects eligible candidates, records distinct post ownership for each public UUID including the source, then emits only UUIDs with exactly one owner
+- regression: both conflicting cards/actions omitted; repeated identical post remains an ordinary duplicate; unrelated surviving IDs remain in stored order `...0003`, `...0004`, `...0005`; ProductCard/API/Schema/field/action boundaries unchanged
+- determinism: final two lifecycles used post IDs 3332–3343 and 3344–3355; database IDs changed; all 4/4 Golden hashes remained byte-identical to the pre-revision authority
+- cleanup: each final lifecycle removed exactly 12 posts and 3 terms; final task posts, marker/source meta, option, terms, termmeta and uploads all zero
+- handoff: 26/26 exact checksum verification PASS; manifest `48f3d356a17b37d802364ec89f9eed3e343a3ef78cd355baabd005b4050aabe0`; checksum stream `f460c3122ad0e3a3c7322d9290ef940a6c3bbe9725e976b4cc881cb9e15b658e`
+- product_card: exact 8-file closure, inline positive, 6 negatives, 8 runtime Goldens and anonymous empty-route regression PASS; protected ProductCard/CMS/TASK-014 authority bytes exact
+- platform: 35 PHP lint, 50 JSON parse, 19 Python AST, Core checksum, official SCF 6.9.2 checksum, 12-table DB, plugin activity, secret, Python-cache and diff gates PASS
+- protected_truth: current shared tree is 22/27 against task-start baseline; the five differences are disclosed authorized frontend/Quote Basket paths outside this Lane and were not modified here
+- artifacts: `WORDPRESS_ADVERSARIAL_UUID_P1_R1.md`; refreshed WordPress RED/execution/validation/diff, runtime/determinism/handoff and checksum evidence
+- scope_boundary: no ProductCard 1.0, API version, frontend, UI, Basket, real data, visual evidence, Planner authority, dependency, Git, deployment, review or acceptance work
+- result: WordPress P1 is locally closed and ready for Planner independent checkpoint validation
+- response: linked `MSG-TASK-023-WORDPRESS-ADVERSARIAL-UUID-P1-R1-RESPONSE` sent through `lane_message.py` and the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; Planner receipt moved the queued response to `done`
+- next: remain idle pending Planner independent checkpoint validation; do not start frontend P2, Round 2, Git, deployment or acceptance
+
+### 2026-08-06 - TASK-023 error-evidence determinism R1 complete
+
+- task: close only volatile `requestId` bytes in saved TASK-023 error evidence; runtime response and product contracts remain frozen
+- message: `MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1` read completely and ACKed before work; existing WordPress P1 and frontend rebind blocker evidence read; registered scope preserved
+- tdd_red: canonical two-lifecycle test first captured error fixture hashes `e884e643ffc70adbda3b9a2c76e3a8a7df3b904ab31027a8ea6d06dc3b39d0cb` and `06f583b58f3573b2b6f5f5d2564781cc67cadaeb691eb9ad953f471436fcda1c`; all 9 live request IDs per round were UUIDv4, 4/4 positive hashes matched, cleanup was 12/3 and zero residue, but `errorFixtureHashesIdentical=false`, `valid=false`, exit 1
+- minimum_green: after validating each real runtime error, only a copied evidence array replaces `requestId` with fixed valid non-production UUID `00000000-0000-4000-8000-000000000023`; production REST/error generation is untouched
+- determinism: final post IDs 3404–3415 and 3416–3427; database IDs changed; both error evidence hashes equal `e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c`; all four positive Golden hashes remain unchanged
+- regression: public UUID conflict, 9/4/7 RelatedProductCard Schema/runtime, 8/8/6 ProductCard Schema/runtime and anonymous ProductCard empty route PASS; error objects excluding `requestId` match the earlier frontend snapshot
+- cleanup: each final lifecycle removed 12 posts and 3 terms; task posts, marker/source meta, option, terms, termmeta and uploads all zero
+- handoff: 26/26 exact checksum verification PASS; manifest `809fe879374e604553311217e6085f5f2b605c4a78bcb00258b8c6b2965cf51e`; checksum stream `fc3552dc84c8e6eacb954654b4d858a326eab03261eda02da440aa48bddfde90`
+- platform: 35 PHP lint, 50 JSON parse, 19 Python AST, WordPress Core checksum, official SCF 6.9.2 checksum, 12-table DB, plugin activity, secret, Python-cache and diff gates PASS
+- protected: ProductCard/CMS/TASK-014 authority remains exact; five previously disclosed authorized frontend/Quote Basket differences remain outside this Lane; current generated `frontend/next-env.d.ts` is an additional concurrent protected drift and was not modified here
+- artifacts: `WORDPRESS_ERROR_EVIDENCE_DETERMINISM_R1.md`; refreshed RED/execution/validation/diff, runtime/determinism/error/handoff evidence and checksums
+- scope_boundary: no production PHP, runtime response, Schema, API/version, product projection, positive Golden, frontend, UI, Basket, real data, Planner authority, dependency, review, acceptance, Git or deployment change
+- result: CMS evidence bytes and final handoff hashes are locally stable; shared-tree protected gate still depends on the frontend owner restoring generated `next-env.d.ts`
+- response: linked `MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE` sent through `lane_message.py`, delivered through the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, and Planner receipt moved it to `done`
+- next: remain idle pending Planner/frontend restoration and independent revalidation of the shared protected gate; do not modify frontend or start review, Git, deployment or acceptance

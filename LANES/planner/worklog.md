@@ -3842,6 +3842,15 @@ Each execution records:
 - User-owned `.codex/config.toml`, historical resume packets and local preview output are excluded.
 - Unique next step: formal commit, immediate task-branch push, fast-forward merge to `main` and immediate `main` push; no deployment.
 
+## 2026-08-04T18:48:00Z TASK-021 formal delivery completed
+
+- Created formal commit `8ebaba40ddb47de0f55594591e628d7a8a3a0253` with all required Chinese delivery sections.
+- First two HTTPS task-branch pushes returned HTTP 400 without a remote ref. A bounded retry with temporary repository-local HTTP/1.1 and post-buffer settings succeeded; both settings were removed afterward.
+- Pushed `codex/TASK-021-track-length-color-config`, fast-forwarded local `main`, and pushed `origin/main`.
+- Independently verified local main, remote main and remote task branch all equal the formal commit.
+- Preserved uncommitted user `.codex/config.toml` and historical resume packets; stopped local preview, removed generated runtime output and performed no deployment.
+- Final state is `CLOSED / ACCEPTED / MERGED`; future scope requires a new task.
+
 ## 2026-08-04T19:06:53Z TASK-022 intake
 
 - Verified local `main`, `origin/main` and the TASK-021 formal commit at `8ebaba40ddb47de0f55594591e628d7a8a3a0253` before creating `codex/TASK-022-related-products-carousel`.
@@ -3961,3 +3970,201 @@ Each execution records:
 - `task_accept.py check` and `accept` both passed; acceptance is ACCEPTED and Git is FORMAL_COMMIT_PENDING.
 - Stopped the local preview and moved its generated `.next` recoverably to `/Users/arron/.Trash/gdhe-task022-delivery-68O4fm`; port 3000 is clear.
 - Unique next step is a scoped formal Chinese commit, immediate task-branch push, fast-forward merge to main and main push. Deployment and TASK-023 remain blocked.
+
+## 2026-08-05T02:25:25Z TASK-022 formal delivery completed
+
+- Created formal commit `6c5b7644c8bbabf8771223eb7baadb2964498e6b` with all required Chinese delivery sections.
+- The first task-branch push returned HTTP 400 and created no remote ref; a bounded command-local HTTP/1.1/post-buffer retry succeeded without persistent Git configuration.
+- Pushed `codex/TASK-022-quote-basket-foundation`, fast-forwarded local `main`, and pushed `origin/main`.
+- Independently verified local main, remote main and the remote task branch all equal the formal commit.
+- Restored excluded tracked changes from stash, preserved all historical resume packets, stopped preview, removed generated runtime output and performed no deployment.
+- Final state is `CLOSED / ACCEPTED / MERGED`; future work requires a new task.
+
+## 2026-08-06T02:36:32Z TASK-023 intake
+
+- Verified TASK-022 is formally delivered and local/origin main share `6c5b7644c8bbabf8771223eb7baadb2964498e6b`; no active task or existing TASK-023 branch existed.
+- Created `codex/TASK-023-related-products-progressive` while preserving excluded user and historical local changes.
+- Registered the FGD X15+PVC model-level `You May Also Need` slice with a progressive initial-three / next-three interaction, replacing horizontal carousel as the primary interaction.
+- Frozen Feishu model-level relation authority, WordPress read-only/publication gates, one collection request and zero per-card resolve, protected media, DTO isolation and Quote Basket action boundaries.
+- Current state is `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`; no dispatch, CMS/frontend implementation, real Feishu action, review, commit, push or deployment occurred.
+
+## 2026-08-06T02:46:50Z TASK-023 requirements confirmed
+
+- Received the exact confirmation phrase and moved TASK-023 from AWAITING_REQUIREMENT_CONFIRMATION to READY.
+- Preserved the confirmed progressive initial-three/next-three UI, Feishu relation authority, WordPress read-only mirror, one collection/zero per-card resolve and Quote Basket boundaries.
+- Released only Planner REQUIREMENTS/DESIGN/IMPLEMENTATION_PLAN and protected baseline; wordpress_cms, frontend, visual QA and review remain blocked by their checkpoints.
+- Acceptance remains NOT_ACCEPTED and Git remains DIRTY; no product implementation, external action, commit, push or deployment occurred.
+
+## 2026-08-06T02:56:00Z TASK-023 A0 design and baseline PASS
+
+- Froze REQUIREMENTS, DESIGN, IMPLEMENTATION_PLAN and 27 protected hashes.
+- Resolved the simple-accessory mismatch by designing an additive Quote Basket 2.0 configured/accessory union and deterministic v1 migration while preserving v1 bytes.
+- Reproduced frontend 44/463, five verifiers, lint, typecheck and production build; moved generated output recoverably to Trash.
+- Reproduced WordPress/Core/PHP/plugin/database, ProductCard 8-file Schema evidence, PHP lint and zero fixture-option residue.
+- Advanced TASK-023 READY -> IN_PROGRESS and released only wordpress_cms A1/A2; frontend and all later gates remain blocked.
+
+## 2026-08-06T03:23:17Z TASK-023 WordPress A1/A2 checkpoint PASS
+
+- ACKed `MSG-TASK-023-WORDPRESS-RELATED-PRODUCTS-A1-A2-RESPONSE`.
+- Independently verified the new related-product route/contract, exact 9-file Schema closure, 0/1/3/4 Goldens, 7 Schema negatives, 9 normalized errors, 26 handoff hashes and all 27 protected hashes.
+- Reproduced two different-ID Fixture lifecycles in an isolated copy; hashes were identical, cleanup was exact and current DB residue remains zero.
+- Frontend A3-A6 is the sole released step. Visual QA, review, Git and deployment remain blocked.
+
+## 2026-08-06T04:14:26Z TASK-023 frontend A3-A6 Planner checkpoint PASS
+
+- ACKed the controlled frontend response and independently inspected the RelatedProductCard consumer, Quote Basket 2.0 migration/domain, Product Detail orchestration and progressive public UI.
+- Reproduced focused 14 files / 110 tests, full 50 / 511, seven contract verifiers, lint, typecheck, Next 16.2.11 production build and all four production smokes on Node 24.18.0.
+- Confirmed one related collection request, zero per-card resolve, protected local preview media, remote CMS media rejection, v1 no-write-on-read migration and public-browser identity isolation.
+- Applied the exact root README, architecture contract and ADR-006 impacts; documentation is RESOLVED/UPDATED.
+- Moved generated `.next` and TypeScript cache recoverably to `/Users/arron/.Trash/gdhe-task023-planner-checkpoint.7RnZm1`; no port-3000 listener remains.
+- Only visual_qa is released. Review, acceptance, Git, deployment, Feishu and final RFQ remain blocked.
+
+## 2026-08-06T04:34:55Z TASK-023 Visual QA Round 1 FAIL recovery
+
+- ACKed the linked visual response: FAIL / severe 0 / obvious 1 / detail 0.
+- Reproduced 19/19 evidence hashes and read the browser log; the sole O1 is four visible View Product test-candidate links ending in same-origin Next 404.
+- Preserved the passing five-width layout, 3-to-6-to-7 disclosure, network, quantity/Basket, native focus, AX, reduced-motion, protected-media and leakage evidence.
+- Ran checked `task_transition.py reopen`; it safely refused because TASK-023 is not AWAITING_USER, so Planner recorded the equivalent NEEDS_REVISION recovery without fabricating acceptance state.
+- Only a closed preview-only TEST_CANDIDATE detail landing revision is released. Visual Round 2, review, acceptance, Git and deployment remain blocked.
+
+## 2026-08-06T04:54:53Z TASK-023 Visual O1 revision Planner checkpoint PASS
+
+- ACKed the controlled frontend response and independently inspected the closed static candidate renderer, exact routes and direct regressions.
+- Reproduced focused 3/30 and full 51/535; all seven contract verifiers, lint, clean typecheck, production build and four production smokes passed.
+- Confirmed preview exposes only candidates 1/3/5/7, while other candidates, CMS and every production mode remain 404 with zero CMS requests.
+- Reverified 19/19 historical Visual R1 hashes and immutable package/lock/next-env/media/ProductCard/QuoteLine/TASK-014 authority hashes.
+- Moved the interrupted preview's malformed `.next` recoverably to `/Users/arron/.Trash/gdhe-task023-planner-o1-recheck.xQyFYD` before clean validation.
+- Returned TASK-023 to IN_PROGRESS while preserving Visual R1 FAIL 0/1/0; Visual QA Round 2 is the sole next gate.
+
+## 2026-08-06T05:12:44Z TASK-023 Visual QA Round 2 FAIL recovery
+
+- ACKed the linked visual response: FAIL / severe 0 / obvious 1 / detail 0; preserved Round 1 history.
+- Confirmed O1 closure for candidates 1/3/5/7 and the closed 404 matrix for undeclared candidates.
+- Independently reproduced R2 17/17 and canonical 36/36 hashes plus actual JPEG/JFIF encoding disclosure.
+- Recorded O2: candidate landing scrollWidth is 832 at 768/390/320 because the 800px image and text do not shrink.
+- Checked reopen safely refused from IN_PROGRESS because the helper requires AWAITING_USER; no mutation occurred.
+- TASK-023 is NEEDS_REVISION; only a real responsive landing-container/image/text correction is released.
+
+## 2026-08-06T05:22:40Z TASK-023 Visual O2 revision Planner checkpoint PASS
+
+- ACKed the frontend response and independently inspected the semantic container, local CSS Module and exact no-clipping regressions.
+- Reproduced direct 1/15, focused 3/31, full 51/536, seven verifiers, lint/typecheck/build and four production smokes.
+- Reconfirmed exact 1/3/5/7 route inventory, closed candidates/CMS/production, and unchanged Product/Related/Basket behavior.
+- Reverified canonical visual 36/36, R2 visual 17/17 and immutable package/contract/media authority hashes.
+- Returned TASK-023 to IN_PROGRESS while preserving both prior visual FAILs; only the O2 closure visual retest is released.
+
+## 2026-08-06T05:37:41Z TASK-023 Visual QA Round 3 and pre-review validation PASS
+
+- ACKed `MSG-TASK-023-VISUAL-QA-R3-RESPONSE`; verdict is PASS / severe 0 / obvious 0 / detail 0 while preserving both earlier visual FAILs.
+- Independently reproduced 14/14 Round 3 and canonical 50/50 visual hashes, actual JPEG/JFIF encoding disclosure, candidate 1/3/5/7 positive routes and the closed negative route matrix.
+- Confirmed all 16 candidate/viewport combinations have equal inner, client and scroll widths, no overflow offender, a responsive protected 1:1 image and wrapping text.
+- Rechecked the 3-to-6-to-7 disclosure, accessory Basket action, native keyboard/focus regression and production/CMS 404 boundaries.
+- Stopped preview, confirmed no port-3000 listener, moved generated output recoverably to `/Users/arron/.Trash/gdhe-task023-visual-r3.N6x3GW`, and restored the protected next-env hash.
+- TASK-023 entered UNDER_REVIEW. One independent read-only adversarial review is the sole released next step.
+
+## 2026-08-06T06:10:14Z TASK-023 Adversarial Round 1 FAIL recovery
+
+- ACKed `MSG-TASK-023-ADVERSARIAL-REVIEW-R1-RESPONSE`; verdict is FAIL / P0=0 / P1=1 / P2=2.
+- The P1 is two distinct eligible WordPress targets sharing one public UUID and producing a first-wins public card instead of rejecting all conflicting identities.
+- P2-1 is trap-unsafe RelatedProductCard Transport classification of hostile thrown values; P2-2 is stale Planner narration, closed by this recovery sync.
+- Preserved all independently passing focused/full, seven verifier, build/smoke, WordPress handoff/platform, Visual 50/50 and R3 14/14, protected-hash and cleanup evidence.
+- Ran checked reopen as required; it safely refused because the helper only reopens AWAITING_USER and made zero mutation. Recorded the equivalent NEEDS_REVISION recovery.
+- Only the WordPress UUID-conflict and frontend Transport-error revisions are released. Round 2, final validation, acceptance, Git and deployment remain blocked.
+
+## 2026-08-06T08:08:06Z TASK-023 Round 1 revision Planner checkpoint PASS
+
+- ACKed the WordPress UUID/evidence responses and the frontend Transport/final-authority responses; the intermediate frontend direct-gate BLOCKED history remains preserved.
+- Independently reproduced final 26/26 CMS handoff, RelatedProductCard 9/4/9, focused 5/45, full 51/540, seven verifiers, lint/typecheck, Next 16.2.11 build and four production smokes.
+- Reconfirmed exactly five authorized protected-baseline differences, 22 unchanged protected files, Visual 50/50 plus R3 14/14, production next-env hash, zero listener and DPG gates.
+- Moved generated `.next` and TypeScript cache recoverably to `/Users/arron/.Trash/gdhe-task023-planner-final-convergence.Dbcx30`.
+- Transitioned NEEDS_REVISION -> UNDER_REVIEW while preserving Adversarial Round 1 FAIL 0/1/2 and all Visual history. The unique next step is one narrow independent Adversarial Round 2.
+
+## 2026-08-06T08:31:35Z TASK-023 Round 2 and final validation PASS
+
+- ACKed `MSG-TASK-023-ADVERSARIAL-REVIEW-R2-RESPONSE`; final verdict is PASS / P0=0 / P1=0 / P2=0 while preserving Round 1 and all Visual history.
+- Freshly reproduced 26/26 handoff, seven verifiers, RelatedProductCard 9/4/9, focused 5/45, full 51/540, lint/typecheck/build and four production smokes.
+- Rechecked WordPress Core/SCF/12-table DB/35 PHP, JSON, protected 22+5 and Visual 50/50 plus R3 14/14.
+- Moved generated output and the temporary lint log recoverably to `/Users/arron/.Trash/gdhe-task023-planner-final-validation.Xo3Ymi`; no port-3000 listener remains and next-env retains its frozen hash.
+- Final validation artifact is `TASKS/ARTIFACTS/TASK-023/PLANNER_FINAL_VALIDATION.md`; the sole next step is checked `prepare-awaiting-user`.
+
+## 2026-08-06T08:34:41Z TASK-023 checked-preparation view sync
+
+- First checked preparation succeeded at 08:34:13Z and set the machine task state to AWAITING_USER.
+- The helper left human-readable task/State/Board narration on the prior UNDER_REVIEW view, so controlled reopen was used only for render synchronization.
+- Updated only Planner-owned current narration and Board placement; product bytes, tests, review/visual history, PASS conclusions and Git state are unchanged.
+- The unique next action is an immediate second checked preparation, then user acceptance only.
+
+## 2026-08-07T16:38:19Z TASK-023 unified-card Visual R4 PASS and adversarial dispatch
+
+- ACKed `MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE`; verdict `PASS / severe 0 / obvious 0 / detail 0` while preserving Visual R1/R2 FAIL and R3 PASS.
+- Independently verified all 31 R4 evidence hashes from the evidence directory and confirmed the disclosed JPEG/JFIF-under-png encoding for representative card, Basket and Back-restoration captures.
+- Stopped preview, confirmed port 3000 is clear, restored next-env production hash `7b550dda9686c16f36a17bf9051d5dbf31e98555b30d114ac49fc49a1e712651`, and moved `.next` recoverably to `/Users/arron/.Trash/gdhe-task023-unified-card-visual-r4.51h8Y4`.
+- Created `PLANNER_UNIFIED_CARD_VISUAL_R4_CHECKPOINT.md` and dispatched `MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3` to the registered reviewer session; request is ACKed/done.
+- Transitioned `NEEDS_REVISION -> UNDER_REVIEW`; unique next step is the linked current verdict. No acceptance, Git, deployment, Feishu or final RFQ action is authorized.
+
+## 2026-08-07T16:47:22Z TASK-023 unified-card Adversarial R3 FAIL recovery
+
+- ACKed `MSG-TASK-023-ADVERSARIAL-REVIEW-UNIFIED-CARDS-R3-RESPONSE`; verdict `FAIL / P0=0 / P1=1 / P2=0`.
+- The isolated P1 is the return-state pre-parse boundary: oversized valid JSON and hostile non-string coercion are accepted before exact-key validation; all visual, Basket, canonical navigation, normal restore, CMS/network and protected boundaries passed.
+- ACKed the reviewer-generated cleanup request, moved only `.next` recoverably to `/Users/arron/.Trash/gdhe-task023-adversarial-unified-r3-cleanup.1P70nE`, restored next-env production hash and verified no port-3000 listener or TypeScript cache.
+- Ran checked `task_transition.py reopen` first; it safely refused truthful UNDER_REVIEW because the helper only accepts AWAITING_USER, with zero mutation. Recorded equivalent `NEEDS_REVISION / NOT_ACCEPTED / DIRTY` recovery.
+- Unique next step: frontend-only primitive-string zero-coercion and fixed small pre-parse size gate plus direct regressions; no closure review, final validation, acceptance, Git or deployment before Planner checkpoint PASS.
+
+## 2026-08-07T17:00:21Z TASK-023 return-state P1 R3 Planner checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE`; the controlled request and response are done.
+- Independently inspected the only production change and direct regressions: non-primitive input exits before reflection or coercion, exact 256 characters parse once, and 257 characters exit before parse.
+- Reproduced direct 1/12, all seven contract verifiers, lint and typecheck; inspected complete frontend 51-file/544-test, build and four-smoke current-byte evidence.
+- Reconfirmed next-env production hash, zero `.next`/tsbuildinfo/listener residue, protected boundaries, diff and DPG gates.
+- Created `PLANNER_RETURN_STATE_P1_R3_CHECKPOINT.md`; transitioned TASK-023 to UNDER_REVIEW while preserving Adversarial R3 FAIL and all Visual history.
+- Unique next step: dispatch `MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4` through the registered reviewer thread and wait for its linked verdict. No acceptance, Git or deployment action is authorized.
+
+## 2026-08-07T17:06:46Z TASK-023 return-state closure R4 dispatched and reviewer residue cleared
+
+- Delivered `MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4` through the registered reviewer thread and recorded the real Codex bridge receipt; the request is ACKed/done.
+- Reviewer independently passed direct 1/12 and focused 15/143 before requesting generated-output cleanup.
+- ACKed `MSG-TASK-023-ADVERSARIAL-RETURN-STATE-R4-GENERATED-CLEANUP`; moved only reviewer-generated `.next` recoverably to `/Users/arron/.Trash/gdhe-task023-return-state-r4-cleanup.ooZlYu`.
+- Restored next-env production hash, confirmed no `.next`, tsbuildinfo, port-3000 listener or checkout-specific Next/frontend Node process, and notified the reviewer.
+- Unique next step: wait for the single linked closure R4 verdict. Do not start final validation, acceptance preparation, Git or deployment before PASS.
+
+## 2026-08-07T17:12:40Z TASK-023 return-state closure R4 PASS
+
+- Validated and ACKed `MSG-TASK-023-ADVERSARIAL-RETURN-STATE-CLOSURE-R4-RESPONSE`; final narrow verdict is PASS / P0=0 / P1=0 / P2=0.
+- Reviewer independently reproduced hostile zero-read and exact 256/257 parse boundaries, normal restore, unified cards, quantity-one Basket, 3/6/7, AX, one collection/zero resolve and production fail-closed behavior.
+- Historical Adversarial Round 1 FAIL, Round 2 PASS, Unified Cards Round 3 FAIL and every Visual FAIL/PASS remain preserved.
+- PASS authorizes only fresh Planner final validation and checked acceptance preparation; it is not acceptance, Git delivery or deployment.
+- Unique next step: finish current-byte tests/verifiers/build/smokes, clean generated output, record final evidence, then run checked prepare-awaiting-user.
+
+## 2026-08-07T17:14:37Z TASK-023 unified-card fresh Planner final validation PASS
+
+- Freshly reproduced TASK-023 focused 15/143, seven verifiers, lint, typecheck, Next 16.2.11 build and all four production smokes.
+- Rechecked RelatedProductCard handoff 26/26 and visual manifests 50/50, 17/17, 14/14 and unified 31/31.
+- Reconfirmed package, lock, production next-env, protected image, return-state production code and direct-test hashes.
+- Moved generated `.next` and tsbuildinfo recoverably to `/Users/arron/.Trash/gdhe-task023-return-state-final-validation.xkyrYg`; no port-3000 or checkout-specific frontend listener remains.
+- Project, registry, messages, strict lane and diff gates pass; full audit has no HIGH. Evidence is `PLANNER_UNIFIED_CARD_FINAL_VALIDATION.md`.
+- Unique next step: checked `prepare-awaiting-user`; no acceptance, Git delivery or deployment before the helper succeeds and the user later accepts.
+
+## 2026-08-07T17:17:19Z TASK-023 checked-preparation view and evidence sync
+
+- First checked prepare succeeded and set the machine task state to AWAITING_USER.
+- Post-prepare audit found only stale Project/Board rendering plus historical result labels inside the current Validation Evidence section; product, review and validation remain PASS.
+- Ran checked reopen from the valid AWAITING_USER state. Scope is only Planner-owned view synchronization and Validation History/current Evidence separation.
+- Board and current narrative now target AWAITING_USER; current Validation Evidence is PASS-only while all historical results remain preserved under Validation History.
+- Unique next step: rerun full audit; if HIGH is zero, execute final checked prepare and stop for user acceptance.
+
+## 2026-08-08T00:46:46Z TASK-023 governance closure correction preflight PASS
+
+- User explicitly authorized the narrow governance closure correction.
+- Controlled reopen succeeded from `AWAITING_USER`; no task switch, product repair or review rerun was performed.
+- Replaced only the current review phrase that the audit regex treated as a failure token and synchronized the active-task/Project current-state narrative to the final user-acceptance boundary.
+- Fresh governance audit has zero HIGH; project, registry, messages, strict lane and whitespace gates pass.
+- Frozen product/test/package/lock/next-env/protected-image hashes remain exact; generated output and port-3000 listener remain absent.
+- Unique next step: checked `prepare-awaiting-user`; after success, wait for user acceptance and do not commit, push, merge or deploy.
+
+## 2026-08-08T16:26:33Z TASK-023 formal delivery authorized
+
+- 用户输入精确正式交付口令 `确认 TASK-023 完成并提交到远端`；`task_accept.py check/accept` 均 PASS。
+- 当前字节重新验证完整前端 `51 files / 544 tests`、七套 verifier、lint、typecheck、Next production build 与四项 production smoke 全部 PASS；最终审查和 RelatedProductCard `26/26` 权威交接保持 PASS。
+- 验证生成的 `.next` 与 `tsconfig.tsbuildinfo` 已可恢复移至 `/Users/arron/.Trash/gdhe-task023-formal-preflight.KeA8wt`，next-env 生产哈希保持且 port 3000 无 listener。
+- 只暂存 TASK-023 受控交付物；明确排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021/TASK-022 closure edits 和历史 resume packet。
+- 唯一下一步：正式提交，推送任务分支，fast-forward 合并并推送 `main`；不部署。

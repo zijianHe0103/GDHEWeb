@@ -1,6 +1,6 @@
 # GDHE WordPress CMS
 
-The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` transport. TASK-014 adds an independent ProductCard collection contract at Schema `1.0.0`; TASK-019 keeps Product Configuration `1.0.0`, and TASK-021 adds separate Product Configuration `2.0.0` behavior. None changes the existing content envelope. WordPress remains the editing system; QuoteLine `2.0.0` and frontend consumption are outside this CMS slice.
+The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` transport. TASK-014 adds an independent ProductCard collection contract at Schema `1.0.0`; TASK-019 keeps Product Configuration `1.0.0`, TASK-021 adds separate Product Configuration `2.0.0` behavior, and TASK-023 adds an independent RelatedProductCardCollection `1.0.0`. None changes the existing content envelope or ProductCard bytes. WordPress remains the editing system; Quote Basket and frontend consumption are outside this CMS slice.
 
 ## Current runtime
 
@@ -11,6 +11,7 @@ The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` 
 - Content Schema `3.0.0`
 - Module Schema `1.0.0`
 - ProductCard Schema `1.0.0`
+- RelatedProductCardCollection Schema `1.0.0`
 - Product Configuration Schemas `1.0.0` and `2.0.0`
 - Locale `en`
 
@@ -37,5 +38,7 @@ ProductCard category, series and application references are accepted only when e
 The reference role is also closed: primary category uses only the frozen curtain-track/accessory category families, series uses `/series/`, and applications uses `/applications/`. A valid UUID/path pair under another role fails closed.
 
 The removable TASK-014 Fixture includes a real anonymous one-item ProductCard response and one valid card with non-empty identity-bound series and application references. These are contract evidence only, not production content.
+
+TASK-023 reads the source Product's Schema 3 `relationships.products` mirror in stored order and returns one complete anonymous related-card collection with no pagination or per-card resolve request. It accepts at most 20 stored relations. Self, duplicate, unpublished, revoked, invalid ProductCard, hostile-media and incomplete direct-quote targets are omitted. A detail product carries `directQuote: null`; an active catalog accessory is eligible only when the independent private mirror explicitly supplies the closed `piece` quantity unit. The endpoint never guesses a unit or changes ProductCard `1.0.0`.
 
 GraphQL, multilingual, preview, webhooks, cache invalidation, inquiry writes, real content import, frontend work and deployment remain deferred.

@@ -1,0 +1,24 @@
+{
+    "fixtureVersion": "TASK-025-ARTICLE-NUMBER-BATCH-1",
+    "relatedProductCardVersions": [
+        "1.0.0",
+        "2.0.0"
+    ],
+    "mixedQuoteLineSchemaVersion": "1.0.0",
+    "successGoldenCount": 7,
+    "successGoldenSha256": {
+        "custom-sales-follow-up.json": "155fafb8c8e02e253fcddfd33446168144bfd705e8be33d9e34669a8c0badbbd",
+        "migrated-standard-refresh.json": "89f922edadf27bd56943c30e4986b942eb48cef33f88473eb42f152a3029f84e",
+        "mixed-fifty-line.json": "3dc61694d9a2ce0b99daa9f16fdaa81f78973ea34ac1830f647383667a2f8775",
+        "mixed-two-line.json": "9d783c93590e01f00abd969b98d88d7ca58743748d5c195b5b3e350c2de20342",
+        "related-product-card-v1.json": "0f284929321c9a84fd9f4e1981f80bdbc72f6bbdfdf294c2588e9f5487d03293",
+        "related-product-card-v2.json": "5c2a5a6838899b6e7e9408243e271fb291bc9b6f97c1ef2ab4de47f09a4d7ce0",
+        "standard-ready.json": "3de07075dd719a0a3cf6490c8cfd6820d5fca8c50338a5d31537372543141675"
+    },
+    "errorCount": 23,
+    "candidateQueryCount": 2,
+    "publicSubrequestCount": 0,
+    "articleNumberIndexRepeatable": true,
+    "globalArticleNumberConflictFailsClosed": true,
+    "valid": true
+}

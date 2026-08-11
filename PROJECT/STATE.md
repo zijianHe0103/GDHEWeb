@@ -2,14 +2,127 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-024
+current_task: TASK-025
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-11T04:46:02Z
+last_updated: 2026-08-11T13:51:29Z
 
 ## 当前焦点
 
-`TASK-024` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Closure review `PASS / P0=0 / P1=0 / P2=0`、Fresh Planner final validation 和 checked acceptance preparation 保持 PASS；Round 1 `FAIL / 0/2/1` 与 Round 2 `FAIL / 0/1/1` 历史保留。唯一下一步是只暂存 TASK-024 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+`TASK-025` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。历史完整审核 `FAIL / 0/2/0`、定向 finding closure `PASS / 0/0/0`、Planner final validation 与 checked preparation 保持有效。唯一下一步是只暂存 TASK-025 受控交付物，正式提交并立即推送任务分支，再合并并推送 `main`；不部署、不开始 final RFQ 或飞书。
+
+## TASK-025 Formal Delivery Authorization 2026-08-11T13:51:29Z
+
+- authorization: 用户精确输入 `确认 TASK-025 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均 PASS；任务为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: finding closure `PASS / P0=0 / P1=0 / P2=0`、Planner final validation、文档影响与 acceptance artifacts 保持 PASS。
+- exclusions: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～024 closure edits 与历史 resume packets 不进入提交。
+- unique_next: 创建正式提交，推送任务分支，合并并推送 `main`；不部署。
+
+## TASK-025 Finding Closure and Planner Final Validation PASS 2026-08-11T13:46:06Z
+
+- closure_response: `MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE-RESPONSE` 已 validate、ACK/done；verdict `PASS / P0=0 / P1=0 / P2=0`。
+- review_truth: 一次完整审核的历史 `FAIL / 0/2/0` 保留；修复后只做两个 finding 的定向关闭确认，没有第二次完整审核。
+- final_validation: preceding fresh full `66/579`、lint/typecheck/build/四 smokes 保持当前；post-ACK focused `2/6`、九 verifier、12/12 frozen bytes、保护图、production next-env、零 generated residue/listener、DPG 与 diff 全 PASS。
+- documentation: `document_impact=RESOLVED`，`readme_impact=UPDATED`。
+- checked_prepare_history: 首次 `task_transition.py prepare-awaiting-user` 于 `2026-08-11T13:48:12Z` 成功；`2026-08-11T13:49:01Z` 仅为同步最终人类可读叙述受控 reopen。
+- unique_next: 重跑 checked `prepare-awaiting-user`；成功后等待用户精确输入 `确认 TASK-025 完成并提交到远端`，口令前不 commit、push、merge、deploy、final RFQ 或飞书。
+
+## TASK-025 Frontend P1 Planner Checkpoint PASS 2026-08-11T13:32:37Z
+
+- response: `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` 已 validate、ACK/done。
+- P1_1_closed: plain DTO application helper 为私有路径，只能在 authentic A3 Transport/Validator/wrapper/Adapter/semantic binding 后执行；缺 root/model、额外 root/line key 和非法 locale 均拒绝且 Basket 不变。
+- P1_2_closed: v3 ingress 在 duplicate/merge 检查前小写规范化 writer/mutation/entry UUID；uppercase v1/v2/v3 可迁移，case-fold collision fail closed，一个 frozen v2 uppercase standard line 通过一次 mixed POST 升级 ready。
+- validation: focused `2/6`、完整资源安全 `66 files / 579 tests`、九 verifier、lint/typecheck/build、四 production smoke、12/12 frozen bytes、保护图、generated cleanup 和 diff 全 PASS。
+- review_policy: 用户确认实施 checkpoint 不应成为多轮审核；全部实现完成后只做一次完整独立审核。若审核 FAIL，修复后只由同一 reviewer 确认 finding closure，不重跑完整 scope。
+- unique_next: 只派发两个 finding 的窄关闭确认；不开始 final validation、验收、Git、部署、final RFQ 或飞书。
+
+## TASK-025 Frontend P1 Revision Dispatched 2026-08-11T13:13:47Z
+
+- message: `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1` 已完成 queue、validate、dry-run、真实注册 frontend thread bridge 与 dispatch-once。
+- request_state: frontend 在 mutation 前 ACK/done，并独立确认两个 finding 成立。
+- scope: 仅关闭 plain/incomplete response bypass 与 uppercase stored UUID mixed-batch compatibility；CMS、冻结 Schema、依赖、UI、final RFQ、飞书、Git 与部署均不动。
+- unique_next: 等待 linked execution response 并执行 fresh supported-runtime Planner checkpoint。
+
+## TASK-025 Adversarial Round 1 FAIL Recovery 2026-08-11T13:10:26Z
+
+- response: `MSG-TASK-025-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并移入 done；verdict `FAIL / P0=0 / P1=2 / P2=0`。
+- P1_1: exported `applyQuoteBasketV3Validation` 接受 plain DTO，缺失 response root metadata 与 line model 仍可升级 migrated Basket line。
+- P1_2: frozen Basket v2/v3 接受并保留大写 UUID，但 mixed request frontend/CMS 只接受小写，合法历史 standard line 无法进入唯一 batch upgrade。
+- generated_cleanup: reviewer 生成的 `.next` 与 `tsconfig.tsbuildinfo` 已可恢复移入 Trash；`next-env.d.ts` 恢复生产哈希，端口与 listener 清空。
+- checked_reopen: 按系统要求执行 `task_transition.py reopen`；helper 因只支持匹配的 `AWAITING_USER` 而安全拒绝、零 mutation，当前以等价受控 recovery 同步 `NEEDS_REVISION`。
+- unique_next: 仅派发 frontend 两项窄 TDD 修订、fresh supported-runtime Planner checkpoint 和同一 reviewer 的 finding closure；不重复完整审查或扩展范围。
+
+## TASK-025 Adversarial Review Round 1 Dispatched 2026-08-11T12:11:41Z
+
+- message: `MSG-TASK-025-ADVERSARIAL-REVIEW-R1` 已完成 queue、message validation、dry-run、真实注册 reviewer thread bridge 与 dispatch-once。
+- request_state: reviewer 在实质审查前 ACK 并将请求移入 done。
+- scope: 只读检查 Article Number public/untrusted/non-display、WordPress mixed batch、frontend A3、Quote Basket 3.0、保护范围、文档与非实施边界；禁止修复、验收、Git、部署、final RFQ 或飞书。
+- unique_next: 等待一个 linked PASS/FAIL/P0/P1/P2 response；不提前 final validation。
+
+## TASK-025 Frontend A4 Planner Checkpoint PASS 2026-08-11T12:06:32Z
+
+- response: `MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4-RESPONSE` 已 validate、ACK 并移入 done。
+- contract: Quote Basket `3.0.0`、同 key v1/v2 确定性迁移、标准/配件 Article Number 传播与 custom null/sales_follow_up 均独立复现。
+- boundary: Article Number 允许进入 browser data/storage/Flight，但不主动渲染到客户可见或可访问输出；批量 seam 保持 one POST、zero legacy per-line calls。
+- tests: 九个 verifiers、focused `8/13`、完整资源安全 inventory `65 files / 575 tests`、lint、typecheck、build 和四个 production smokes PASS。
+- integrity: protected hashes、generated cleanup、diff 和文档同步 PASS；`document_impact=RESOLVED`、`readme_impact=UPDATED`。
+- unique_next: 仅派发一次完整 TASK-025 独立只读 adversarial review；final validation、验收、Git、部署、final RFQ 与飞书继续 blocked。
+
+## TASK-025 Frontend A3 Planner Checkpoint PASS 2026-08-11T08:58:41Z
+
+- response: `MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3-RESPONSE` 已 validate、ACK 并移入 done。
+- contracts: 新 verifier `11/5/5`，全部八个 frontend verifier PASS，并精确绑定最终 CMS manifest/checksum。
+- runtime: server-only fixed POST、静态 Validator、语义绑定、opaque wrapper、deep-frozen DTO 与 one-call orchestration 均独立复现。
+- tests: focused `6/18`；完整 inventory 以四个不重叠资源安全组复现为 `57 files / 562 tests PASS`；一次 unsplit 并发时序 non-PASS 历史保留。
+- production: lint、typecheck、build、四个 production smoke、保护哈希、清理、diff 与 DPG gates PASS。
+- unique_next: 仅派发 frontend A4 Quote Basket 3.0、确定性迁移、标准/配件 add 与 Article Number 非展示证明；final RFQ、review、验收、Git 与部署继续 blocked。
+
+## TASK-025 WordPress Planner Checkpoint Round 2 PASS 2026-08-11T08:12:43Z
+
+- response: `MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1-RESPONSE` 已 validate、ACK 并移入 done。
+- P1_1_closed: Anaconda jsonschema 4.17.3 与 system 4.21.1 均离线通过完整 positive/negative roots；17 个内部 refs 已绑定精确 root `$id`。
+- P1_2_closed: `TASK025_INJECT_POST_CREATE_FAILURE=1` 保留原失败并在返回前清理；即时数据库残留为 `0/0/0/0`。
+- P2_1_closed: TDD artifact 当前状态为 RED/GREEN complete，12 个 RED 历史保留。
+- handoff: 52/52；manifest `9bfb794e...bce5f`，checksum stream `512b27a4...1e25a`。
+- validation: Core/SCF/DB、DPG project/messages/strict lane、diff 与 generated residue 全 PASS。
+- unique_next: 受控派发 frontend A3 contract foundation 并在结束后执行 Planner checkpoint；A4、final review、验收、Git 与部署继续 blocked。
+
+## TASK-025 WordPress Planner Checkpoint Round 1 FAIL 2026-08-11T07:48:00Z
+
+- passing: response 已 ACK/done；52/52 handoff、10/10 normal-path hashes、1/50 HTTP、Product Configuration 2.0、RelatedProductCard 1.0、Core/SCF/DB 和 DPG gates PASS。
+- P1_1: mixed Request/Response fragment-only internal refs 在 `jsonschema 4.17.3` 通过、在已安装 `4.21.1` full-root validation 失败；内存证明明确 root `$id` refs 可在后者通过。
+- P1_2: determinism 在 Fixture create 后的注入失败未执行 cleanup，实际留下 4 posts / 1 option / 3 terms / 3 private-meta；Planner 已受控 cleanup 并确认最终 `0/0/0/0`。
+- P2_1: TDD artifact 与当前 task/board/state narration 仍称 GREEN/response pending，需要同步但保留十次 RED 历史。
+- helper: 按治理要求运行 checked `task_transition.py reopen`；因真实状态为 `IN_PROGRESS` 安全拒绝、零 mutation。任务保留实现循环内 `IN_PROGRESS`，不伪造 review 或 AWAITING_USER。
+- unique_next: 仅派发 WordPress 窄修订、故障注入回归、fresh validation 和 refrozen handoff；通过 Planner Round 2 前 frontend 保持 blocked。
+
+## TASK-025 A0 PASS 2026-08-11T06:58:04Z
+
+- artifacts: REQUIREMENTS、DESIGN、TDD_SEAMS、IMPLEMENTATION_PLAN、PROTECTED_BASELINE、A0 validation/checkpoint 已完成。
+- architecture: 复用 Product Configuration 2.0；新增 RelatedProductCard 2.0、Quote Basket 3.0 和 MixedQuoteLineValidation 1.0；不实现 opaque key。
+- batch: anonymous no-store JSON POST，`1..50`、`163840` bytes、整批原子、最多两次有界 domain candidate query、零逐行 public endpoint call。
+- validation: 26/26 保护哈希、零 TASK-025 product diff、diff/project/registry/messages/strict lane 全 PASS。
+- transition: `READY -> IN_PROGRESS`；验收仍为 `NOT_ACCEPTED`。
+- unique_next: 受控派发 WordPress A1/A2 并等待其 ACK/response；frontend 在 CMS handoff checkpoint 前保持 blocked。
+
+## TASK-025 Requirements Confirmed 2026-08-11T06:46:18Z
+
+- authorization: 用户精确输入 `确认 TASK-025 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；验收仍为 `NOT_ACCEPTED`，Git 仍为 `DIRTY`。
+- released_scope: 仅 Planner A0 requirements/design/protected baseline、版本化 seam 与顺序 checkpoint。
+- preserved_exclusions: 最终 RFQ intake、客户表单、持久化、飞书、幂等、challenge、Git delivery 与部署仍未授权。
+- unique_next: 完成并独立验证 Planner A0；通过后才可受控派发 WordPress CMS 第一实施切片。
+
+## TASK-025 Intake 2026-08-11T06:38:09Z
+
+- request: 创建 TASK-025，允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验。
+- superseding_decision: Article Number 不是 secret 或隐私数据，可以进入 API、HTML/Flight、客户端状态、浏览器存储和 RFQ 请求；普通 UI、accessible name 与客户摘要仍不主动显示它。
+- trust_boundary: 浏览器提交的 Article Number 仍不可信，服务端必须重新验证唯一性、发布/询价资格、角色、配置归属与单位；不得因此省略服务端校验。
+- batch_scope: 新建一次最多 `50` 行、保持输入顺序、整批 fail-closed、零逐行公开接口 N+1 的只读混合行权威校验；不实现最终 RFQ intake、客户表单、持久化、飞书、幂等、challenge 或部署。
+- delivery_shape: 历史 TASK-022/024 冻结字节保持不变；后续只以明确的新版本合同、CMS handoff、frontend server-only consumer 与确定性迁移扩展。
+- branch: `codex/TASK-025-article-number-batch-validation`，基线 `a048a96b2d5af321234b9e51be9adf991510f85a`。
+- unique_next: 等待用户精确输入 `确认 TASK-025 需求并开始执行`；确认前不派发实施 lane，不修改 WordPress/frontend 产品文件。
 
 ## TASK-024 Formal Delivery Authorization 2026-08-11T04:46:02Z
 

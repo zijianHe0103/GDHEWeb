@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-024
+current_task: TASK-025
 
 ## 活动任务
 
-- `TASK-024` 冻结最终 RFQ Submission Contract、客户信息字段与服务端安全边界 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-025` 允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -29,7 +29,7 @@ current_task: TASK-024
 
 ## 等待推送
 
-- `TASK-024` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
+- `TASK-025` — 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
 
 ## 已暂停
 
@@ -138,3 +138,7 @@ current_task: TASK-024
 ## Accepted
 
 - TASK-024: ACCEPTED at 2026-08-11T04:46:02Z
+
+## Accepted
+
+- TASK-025: ACCEPTED at 2026-08-11T13:51:29Z

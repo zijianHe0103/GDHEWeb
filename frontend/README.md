@@ -276,6 +276,39 @@ configured here. Product details, working RFQ/contact targets, real production
 products, public SEO, filtering, pagination, visual QA and deployment are also
 outside this slice.
 
+## Article Number batch contract consumer
+
+TASK-025 A3 adds an independent frontend-owned snapshot under
+`src/lib/cms/article-number-batch-contract/`. It contains the exact 11-Schema
+transitive closure needed by RelatedProductCard `2.0.0` and
+MixedQuoteLineValidation Request/Response `1.0.0`, five ordered authority
+success samples and the frozen sanitized error evidence. Its Node-built-in-only
+verifier is hard-bound to the final 52-file WordPress handoff manifest and
+checksum stream:
+
+```sh
+node scripts/verify-article-number-batch-contract.mjs
+```
+
+The verifier reads CMS/TASKS authority only during this explicit offline parity
+command. Production modules import only the frontend-local snapshot and every
+entry and deep module under `src/lib/cms/server/article-number-batch/` is
+`server-only`.
+
+The public server entry `validateMixedQuoteLines(lines, callerSignal?)` builds
+the exact English `1.0.0` request and performs one anonymous JSON `POST` to the
+fixed `/wp-json/gdhe/v1/quote-line-validations` endpoint. It uses `no-store`,
+refuses redirects, times out after 5000 ms and never retries. Both request and
+response pass the static local Schema roots plus ordering and identity semantic
+gates before a deeply frozen DTO is returned. Normalized errors are allowlisted
+against the frozen 400/409/413/415/500 matrix and lose their body after
+validation.
+
+Article Number is intentionally present in the server/browser-facing DTO as
+public but untrusted order identity. A3 adds no Client Component or UI and does
+not display it. It also adds no Quote Basket `3.0.0`, migration, RFQ intake,
+customer form, persistence, Feishu call or deployment behavior.
+
 ## Local-only FGD X15+PVC Product Detail slice
 
 `/products/fgd-x15-pvc/` is a controlled English Product Detail slice for the
@@ -325,10 +358,23 @@ validated v2 DTO; Custom Length is a sibling length choice. Installation is
 not a configurator field or QuoteLine value, while the separate Product Detail
 fact may still describe ceiling and wall mounting support. The form creates a
 public quote draft, then adds or merges it into the browser-local Quote Basket
-retained for 30 days. The Basket contains no Article Number, internal Product
-UUID or internal resolution enum and is not a QuoteLine 2.0.0. The complete
-QuoteLine remains a future server-side conversion at final Request a Quote
-submission. The `You May Also Need` module appears after the configurator.
+retained for 30 days. Quote Basket `3.0.0` keeps the same storage key, exact
+30-day expiry and 262144-byte ceiling. A new standard configured line and an
+eligible catalog accessory carry the exact public but untrusted Article Number
+in Basket data; custom length remains a sales follow-up with a null Article
+Number. Article Number is never rendered in customer-visible or accessible
+Basket, configurator or recommendation copy. Legacy standard lines remain
+recoverable as `requires_validation`, legacy accessories remain
+`requires_readd`, and both render customer-readable recovery instructions
+without exposing raw state values or internal identity. Contract-valid stored
+Basket UUIDs are canonicalized to lowercase at the v3 ingress before duplicate
+and merge-identity checks, so historical uppercase UUIDs remain batch-valid
+while case-fold collisions fail closed. A server-only batch
+seam can validate one ordered group of up to 50 eligible lines with one mixed
+validation POST and atomically upgrade migrated standard lines; the browser
+does not call WordPress directly. Final Request a Quote intake and Basket
+clearing remain unimplemented. The `You May Also Need` module appears after
+the configurator.
 Preview starts with three protected local candidates and reveals at most three
 more per button activation without another request. Detail products use `View
 Product`; catalog accessories use the same card skeleton and `Add to Quote`

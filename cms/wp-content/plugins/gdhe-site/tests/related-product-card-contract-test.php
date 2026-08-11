@@ -223,7 +223,7 @@ function gdhe_task023_run_contract_test(): array
             'gdhe_invalid_locale'
         );
         $errors['schema'] = gdhe_task023_test_error(
-            array_merge(gdhe_task023_test_params(), array('schema' => '2.0.0')),
+            array_merge(gdhe_task023_test_params(), array('schema' => '9.9.9')),
             400,
             'gdhe_invalid_schema'
         );

@@ -72,6 +72,7 @@ ADR-003 的小批次验收仍有效，但其历史阶段描述可能被解释为
 46. 已接受 RFQ 的客户身份、联系方式和留言自最后一次真实人工业务互动起保留 24 个月；自动同步、轮询、重试和页面访问不重置时钟。官网不提供专门的自助删除入口，但适用法律下的有效请求仍可通过 Privacy Policy 普通联系渠道人工处理。脱敏应用/错误日志保留 30 天、安全事件 90 天、keyed 限流/联系指纹 48 小时、不可识别汇总指标 13 个月；普通日志禁止完整请求、联系方式、原始 IP、Article Number 清单、幂等键、challenge token、凭据和下游原始错误。
 47. RFQ 后续实施必须按小任务顺序推进：先建立无详情目录配件的 opaque public quote key / additive Basket submission 版本，再建立最多 50 行混合 Basket 的服务端批量重新解析合同；然后是 Next.js intake + 持久幂等 + 隔离 stub、可见英语表单和回执、真实飞书映射只读核查、受控 connector 与不确定结果对账、HTTPS Staging/安全/隐私/运维验收。前一步通过不自动授权后一步，任何一步都不得把 RFQ 变成价格、订单、付款或 Checkout。
 48. TASK-024 的 Draft 2020-12 machine contract、RFC 8785 canonical payload、versioned secret-key HMAC、两组固定向量、闭合 receipt/error 及 snapshot clear token 位于任务 artifacts；后续 runtime 必须精确复用或生成等价字节，并在独立任务中验证，不能由实现阶段自行选择另一套字段或摘要规则。
+49. TASK-025 以用户最新决定取代第 34、42、47 项中与 Article Number/opaque key 冲突的实施边界：Article Number 是公开、非敏感但始终不可信的订购身份，可以进入 GDHE REST、HTML/Flight、客户端状态、浏览器存储、网络请求、开发者工具和未来公开 RFQ 请求，但不得主动显示在客户可见文本、可访问名称、配置摘要、推荐卡、Quote Basket 行或客户回执。新标准配置和可直接询价目录配件携带全局唯一 Article Number；自定义长度继续为 `articleNumber:null / sales_follow_up`。无详情目录配件不再需要 opaque public quote key。TASK-025 使用独立 RelatedProductCard `2.0.0`、Quote Basket `3.0.0` 和一次 `1..50` 行的 WordPress 混合批量校验合同；Next.js 仅通过 server-only consumer 使用该端点，整批原子失败且零逐行 `/resolve`、Product Configuration 或 RelatedProductCard 请求。TASK-024 的 v1 Schema/向量保持历史不改；未来最终 RFQ runtime 必须先建立允许 Article Number 的 additive submission 版本和新固定向量，不能把本决定解释为已授权客户表单、持久幂等、飞书写入或部署。
 
 ## 19/16 合同口径
 

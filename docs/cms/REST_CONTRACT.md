@@ -13,6 +13,8 @@ The transport remains `/wp-json/gdhe/v1`; every current response advertises Cont
 - `GET /related-product-cards?locale=en&schema=1.0.0&source_path=/products/fgd-x15-pvc/`
 - `GET /product-configurations?locale=en&schema=1.0.0&path=/products/fgd-x15-pvc/`
 - `GET /product-configurations?locale=en&schema=2.0.0&path=/products/fgd-x15-pvc/`
+- `GET /related-product-cards?locale=en&schema=2.0.0&source_path=/products/.../`
+- `POST /quote-line-validations`
 
 Collections allow `post`, `product`, `market`, `reference`, `support_article` and `download`. Filters are allowlisted as `product_category` for products, `support_topic` for support articles and `document_type` for downloads. Sort is `modified_desc` or `title_asc`, with slug as the deterministic tie-break.
 
@@ -35,6 +37,42 @@ Eligibility is applied before filtering, `total` and pagination. Only published 
 The endpoint accepts only English, ProductCard Schema `1.0.0`, integer pagination, `modified_desc|title_asc`, and an optional `product_category:<slug>` filter. Page values must fit the native integer and produce an integer-safe offset; overflow is rejected before query/slicing through normalized `gdhe_invalid_pagination` HTTP `400` with `no-store`. Other parameters fail closed. Content Schema `3.0.0`, `/resolve`, `/collection/{type}`, navigation and route manifest are unchanged.
 
 ## RelatedProductCard collection
+
+Version `1.0.0` remains exact. Additive `schema=2.0.0` keeps the same endpoint,
+source, relation ordering, cache behavior and ProductCard `1.0.0` projection.
+Only an eligible active catalog accessory gains the exact public action payload
+`{kind:"catalog_accessory",articleNumber:"GDHEPRD000901",quantityUnit:"piece"}`.
+Detail products remain `directQuote:null`. Missing, duplicate or inconsistent
+source/index/global Article Number authority omits every affected action.
+
+## Mixed quote-line validation
+
+`POST /gdhe/v1/quote-line-validations` is anonymous, read-only and always
+`Cache-Control:no-store`; it has no ETag or `304`. The media type must be exact
+`application/json`, the raw body is capped at `163840` bytes, and the closed
+Request `1.0.0` contains `1..50` ordered configured-product or catalog-accessory
+lines. Duplicate entry IDs and complete merge identities fail before product
+resolution.
+
+Configured products use canonical path, complete length/color selection,
+packaging, `piece` and quantity. A ready standard line carries its Article
+Number; a migrated standard may use `refresh_from_selection`; a controlled
+custom line carries `articleNumber:null / sales_follow_up`. Accessories carry
+only Article Number, `piece` and quantity beyond common identity. Success
+preserves count/order and returns current model, nullable public path,
+authoritative Article Number or controlled null, normalized configuration,
+server-owned unit and submitted quantity. Stable Product UUIDs, WordPress IDs,
+source meta, Feishu identity, price and media are excluded.
+
+The resolver performs at most one bounded canonical-path query and one bounded
+Article Number candidate query, each using a 101-candidate overflow sentinel.
+It makes zero per-line `/resolve`, Product Configuration or RelatedProductCard
+subrequests. Any unknown, stale, unpublished, ambiguous, role/unit/path,
+source/index/global-uniqueness or configuration conflict rejects the whole
+batch. Errors are sanitized as `gdhe_invalid_quote_line_request` (400),
+`gdhe_quote_lines_changed` (409), `gdhe_quote_line_request_too_large` (413),
+`gdhe_unsupported_media_type` (415), or
+`gdhe_quote_line_validation_unavailable` (500).
 
 `/related-product-cards` is a separate anonymous read-only contract at Schema `1.0.0`. Its closed query accepts only `locale=en`, `schema=1.0.0` and one canonical `source_path`. The source path must resolve uniquely to a published, complete Schema 3 Product. Its raw `relationships.products` array is the only ordering authority, must be an array and may contain at most 20 entries. The response has no pagination and returns the complete eligible set in one request.
 

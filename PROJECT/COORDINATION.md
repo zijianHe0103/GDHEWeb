@@ -38,6 +38,8 @@ Each implementation batch follows:
 
 planner -> task-intake -> owning lane -> execution evidence -> visual/localization QA as applicable -> adversarial review -> planner -> user acceptance.
 
+Implementation checkpoints are owned by Planner and are not separate adversarial-review rounds. After all implementation slices and evidence are consolidated, the task is sent once to `adversarial_reviewer` for a complete independent review. If that review finds a real issue, the owning lane repairs only the findings and the same reviewer performs a narrow closure confirmation; the task is not subjected to another full-scope review unless the user explicitly authorizes it.
+
 ## Protocols
 
 - `TASKS/` remains the task fact layer.

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { useQuoteBasket } from "../../lib/quote-basket/use-quote-basket";
 import type { CatalogAccessoryDraft } from "../../types/quote-basket-v2";
+import type { ReadyCatalogAccessoryDraftV3 } from "../../types/quote-basket-v3";
 import type { PublicRelatedProduct } from "../../types/related-products";
 import styles from "./related-products.module.css";
 
@@ -33,6 +34,26 @@ export function buildCatalogAccessoryDraft(
       product: item.product,
       catalogPath: item.action.catalogPath,
       quantityUnit: item.action.quantityUnit,
+      quantity: 1,
+    }),
+  });
+}
+
+export function buildCatalogAccessoryDraftV3(
+  item: PublicRelatedProduct,
+): Readonly<{ ok: true; draft: ReadyCatalogAccessoryDraftV3 }> | Readonly<{ ok: false }> {
+  if (
+    item.action.kind !== "quote" ||
+    typeof item.action.articleNumber !== "string" ||
+    !/^GDHEPRD[0-9]{6}$/.test(item.action.articleNumber)
+  ) return Object.freeze({ ok: false });
+  return Object.freeze({
+    ok: true,
+    draft: Object.freeze({
+      product: item.product,
+      catalogPath: item.action.catalogPath,
+      articleNumber: item.action.articleNumber,
+      quantityUnit: "piece",
       quantity: 1,
     }),
   });
@@ -146,7 +167,7 @@ export function RelatedProducts({
   }
 
   function addAccessory(item: PublicRelatedProduct): void {
-    const result = buildCatalogAccessoryDraft(item);
+    const result = buildCatalogAccessoryDraftV3(item);
     if (!result.ok) {
       setAnnouncement("This item could not be added to your Quote Basket.");
       return;

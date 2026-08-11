@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/related-product-card/v2/related-product-card-item.v2.schema.json",
+  "title": "GDHE Related Product Card Item 2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["card", "directQuote"],
+  "properties": {
+    "card": {"$ref": "https://gdhe.example/schemas/product-card/v1/product-card.v1.schema.json"},
+    "directQuote": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "articleNumber", "quantityUnit"],
+          "properties": {
+            "kind": {"const": "catalog_accessory"},
+            "articleNumber": {"type": "string", "pattern": "^GDHEPRD[0-9]{6}$"},
+            "quantityUnit": {"const": "piece"}
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "card": {"properties": {"kind": {"const": "detail_product"}}},
+        "directQuote": {"type": "null"}
+      }
+    },
+    {
+      "properties": {
+        "card": {
+          "properties": {
+            "kind": {"const": "catalog_accessory"},
+            "lifecycle": {"const": "active"},
+            "action": {"properties": {"mode": {"const": "direct_rfq"}}}
+          }
+        },
+        "directQuote": {"type": "object"}
+      }
+    }
+  ]
+}

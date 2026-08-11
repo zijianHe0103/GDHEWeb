@@ -1,40 +1,37 @@
-import type { PublicQuoteDraft } from "../../types/product-configurator";
 import type {
   PublicQuoteBasketProduct,
 } from "../../types/quote-basket";
 import type {
-  CatalogAccessoryDraft,
-  QuoteBasketDocumentV2,
-} from "../../types/quote-basket-v2";
-import {
-  createEmptyQuoteBasket,
-} from "./domain";
+  QuoteBasketDocumentV3,
+  ReadyCatalogAccessoryDraftV3,
+  ReadyConfiguredDraftV3,
+} from "../../types/quote-basket-v3";
 import {
   type QuoteBasketStorage,
 } from "./storage";
 import {
-  addCatalogAccessory,
-  addConfiguredProductV2,
-  loadQuoteBasketV2,
-  migrateQuoteBasketV1,
-  persistQuoteBasketV2,
-  removeQuoteBasketV2Item,
-  setQuoteBasketV2ItemQuantity,
-} from "./v2";
+  addCatalogAccessoryV3,
+  addConfiguredProductV3,
+  createEmptyQuoteBasketV3,
+  loadQuoteBasketV3,
+  persistQuoteBasketV3,
+  removeQuoteBasketV3Item,
+  setQuoteBasketV3ItemQuantity,
+} from "./v3";
 
 export type QuoteBasketMutation = "added" | "merged";
 
 export type BrowserQuoteBasketAdapter = Readonly<{
-  load(): QuoteBasketDocumentV2 | null;
+  load(): QuoteBasketDocumentV3 | null;
   add(
     product: PublicQuoteBasketProduct,
-    draft: PublicQuoteDraft,
-  ): Readonly<{ basket: QuoteBasketDocumentV2; mutation: QuoteBasketMutation }>;
+    draft: ReadyConfiguredDraftV3,
+  ): Readonly<{ basket: QuoteBasketDocumentV3; mutation: QuoteBasketMutation }>;
   addAccessory(
-    draft: CatalogAccessoryDraft,
-  ): Readonly<{ basket: QuoteBasketDocumentV2; mutation: QuoteBasketMutation }>;
-  setQuantity(entryId: string, quantity: number): QuoteBasketDocumentV2;
-  remove(entryId: string): QuoteBasketDocumentV2;
+    draft: ReadyCatalogAccessoryDraftV3,
+  ): Readonly<{ basket: QuoteBasketDocumentV3; mutation: QuoteBasketMutation }>;
+  setQuantity(entryId: string, quantity: number): QuoteBasketDocumentV3;
+  remove(entryId: string): QuoteBasketDocumentV3;
 }>;
 
 export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
@@ -46,7 +43,7 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
   const uuid = dependencies.uuid ?? (() => crypto.randomUUID());
 
   return Object.freeze({
-    load: () => loadQuoteBasketV2(dependencies.storage, now()),
+    load: () => loadQuoteBasketV3(dependencies.storage, now()),
     add: (product, draft) => {
       const operationTime = now();
       const ids = {
@@ -55,16 +52,16 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
         entryId: uuid(),
       };
       const base =
-        loadQuoteBasketV2(dependencies.storage, operationTime) ??
-        migrateQuoteBasketV1(createEmptyQuoteBasket(operationTime, ids));
-      const basket = addConfiguredProductV2(
+        loadQuoteBasketV3(dependencies.storage, operationTime) ??
+        createEmptyQuoteBasketV3(operationTime, ids);
+      const basket = addConfiguredProductV3(
         base,
         product,
         draft,
         operationTime,
         ids,
       );
-      persistQuoteBasketV2(dependencies.storage, basket);
+      persistQuoteBasketV3(dependencies.storage, basket);
       return Object.freeze({
         basket,
         mutation: basket.items.length === base.items.length ? "merged" : "added",
@@ -78,10 +75,10 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
         entryId: uuid(),
       };
       const base =
-        loadQuoteBasketV2(dependencies.storage, operationTime) ??
-        migrateQuoteBasketV1(createEmptyQuoteBasket(operationTime, ids));
-      const basket = addCatalogAccessory(base, draft, operationTime, ids);
-      persistQuoteBasketV2(dependencies.storage, basket);
+        loadQuoteBasketV3(dependencies.storage, operationTime) ??
+        createEmptyQuoteBasketV3(operationTime, ids);
+      const basket = addCatalogAccessoryV3(base, draft, operationTime, ids);
+      persistQuoteBasketV3(dependencies.storage, basket);
       return Object.freeze({
         basket,
         mutation: basket.items.length === base.items.length ? "merged" : "added",
@@ -91,7 +88,7 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
       const operationTime = now();
       return persistAndReturn(
         dependencies.storage,
-        setQuoteBasketV2ItemQuantity(
+        setQuoteBasketV3ItemQuantity(
           requireBasket(dependencies.storage, operationTime),
           entryId,
           quantity,
@@ -104,7 +101,7 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
       const operationTime = now();
       return persistAndReturn(
         dependencies.storage,
-        removeQuoteBasketV2Item(
+        removeQuoteBasketV3Item(
           requireBasket(dependencies.storage, operationTime),
           entryId,
           operationTime,
@@ -118,16 +115,16 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
 function requireBasket(
   storage: QuoteBasketStorage,
   now: Date,
-): QuoteBasketDocumentV2 {
-  const basket = loadQuoteBasketV2(storage, now);
+): QuoteBasketDocumentV3 {
+  const basket = loadQuoteBasketV3(storage, now);
   if (!basket) throw new Error("Quote Basket is unavailable.");
   return basket;
 }
 
 function persistAndReturn(
   storage: QuoteBasketStorage,
-  basket: QuoteBasketDocumentV2,
-): QuoteBasketDocumentV2 {
-  persistQuoteBasketV2(storage, basket);
+  basket: QuoteBasketDocumentV3,
+): QuoteBasketDocumentV3 {
+  persistQuoteBasketV3(storage, basket);
   return basket;
 }

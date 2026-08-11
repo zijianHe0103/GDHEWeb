@@ -1,0 +1,167 @@
+{
+    "normalizedRequestId": "25000000-0000-4000-8000-000000000099",
+    "errors": [
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request contains duplicate identity.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request contains duplicate identity.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_unsupported_media_type",
+            "message": "Content-Type must be application/json.",
+            "status": 415,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_line_request_too_large",
+            "message": "Request body is too large.",
+            "status": 413,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_invalid_quote_line_request",
+            "message": "Quote-line request is invalid.",
+            "status": 400,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_lines_changed",
+            "message": "One or more quote lines changed.",
+            "status": 409,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_line_validation_unavailable",
+            "message": "Quote-line validation is unavailable.",
+            "status": 500,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        },
+        {
+            "apiVersion": "1",
+            "code": "gdhe_quote_line_validation_unavailable",
+            "message": "Quote-line validation is unavailable.",
+            "status": 500,
+            "requestId": "25000000-0000-4000-8000-000000000099"
+        }
+    ],
+    "sanitized": true
+}

@@ -2,6 +2,33 @@
 
 schema_version: DPG-LANES-1.0.0
 
+## 2026-08-11T06:58:04Z
+
+### task_execution_started
+
+- type: task_checkpoint
+- lane: planner
+- task: TASK-025
+- summary: Planner A0 froze the additive Article Number, RelatedProductCard 2.0, Quote Basket 3.0 and one-request mixed validation design; 26/26 protected hashes and all DPG gates passed, moving the task to IN_PROGRESS and releasing only WordPress A1/A2.
+
+## 2026-08-11T06:46:18Z
+
+### task_requirements_confirmed
+
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-025
+- summary: Exact user confirmation moved TASK-025 from AWAITING_REQUIREMENT_CONFIRMATION to READY; only Planner A0 design, protected baseline and sequential checkpoints are released before WordPress/frontend implementation.
+
+## 2026-08-11T06:38:09Z
+
+### task_intake
+
+- type: task_intake
+- lane: planner
+- task: TASK-025
+- summary: Created the governed TASK-025 intake and branch to supersede the opaque-key route with browser-allowed but non-displayed Article Number identity, plus a bounded read-only 1..50 mixed-line authority validation plan; implementation remains blocked pending exact user confirmation.
+
 ## 2026-08-11T04:46:02Z
 
 ### task_formal_delivery_authorized
@@ -11154,3 +11181,356 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-024
 - summary: TASK-024 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+### 2026-08-11T07:02:37Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2 moved to done
+
+### 2026-08-11T07:35:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T07:36:23Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2-RESPONSE dispatched to planner
+
+### 2026-08-11T07:39:33Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2-RESPONSE moved to done
+
+### 2026-08-11T07:56:14Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-025
+- summary: message queued for wordpress_cms
+
+### 2026-08-11T07:58:15Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1 dispatched to wordpress_cms
+
+### 2026-08-11T07:59:15Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1 moved to done
+
+### 2026-08-11T08:08:21Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T08:09:07Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1-RESPONSE moved to done
+
+### 2026-08-11T08:15:39Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-025
+- summary: message queued for frontend
+
+### 2026-08-11T08:17:26Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3 moved to done
+
+### 2026-08-11T08:49:29Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T08:49:59Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3-RESPONSE dispatched to planner
+
+### 2026-08-11T08:50:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3-RESPONSE moved to done
+
+### 2026-08-11T08:58:41Z - planner_checkpoint_passed
+- type: planner_checkpoint_passed
+- lane: planner
+- task: TASK-025
+- summary: Frontend A3 independently passed 8 verifiers, 57 files and 562 tests, lint, typecheck, build, smokes, protected scope and governance; only A4 is released.
+
+### 2026-08-11T09:02:39Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-025
+- summary: message queued for frontend
+
+### 2026-08-11T09:03:16Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4 dispatched to frontend
+
+### 2026-08-11T09:03:51Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4 moved to done
+
+### 2026-08-11T11:34:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T11:34:43Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4-RESPONSE dispatched to planner
+
+### 2026-08-11T11:54:39Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4-RESPONSE moved to done
+
+### 2026-08-11T12:06:32Z - planner_checkpoint_passed
+- type: planner_checkpoint_passed
+- lane: planner
+- task: TASK-025
+- summary: Frontend A4 independently passed nine verifiers, 65 files and 575 tests, lint, typecheck, build, four smokes, protected scope, cleanup and documentation gates; only complete read-only adversarial review is released.
+
+### 2026-08-11T12:10:31Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1 queued for adversarial_reviewer
+
+### 2026-08-11T12:11:06Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-11T12:11:41Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1 moved to done after reviewer ACK; linked verdict pending
+
+### 2026-08-11T13:05:47Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1-RESPONSE ACKed/done with FAIL / P0=0 / P1=2 / P2=0
+
+### 2026-08-11T13:10:26Z - review_recovery_recorded
+- type: review_recovery_recorded
+- lane: planner
+- task: TASK-025
+- summary: Checked reopen safely rejected its unsupported UNDER_REVIEW source; equivalent NEEDS_REVISION recovery releases only incomplete-response and uppercase-legacy-UUID frontend revisions before Round 2.
+
+### 2026-08-11T13:12:33Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1 queued for frontend
+
+### 2026-08-11T13:13:07Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1 dispatched to frontend
+
+### 2026-08-11T13:13:47Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-025
+- summary: frontend ACKed/done the two-P1 revision request before mutation; linked execution response pending
+
+### 2026-08-11T12:10:31Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-11T12:11:06Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-11T12:11:41Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-11T13:02:49Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T13:03:09Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-R1-GENERATED-CLEANUP dispatched to planner
+
+### 2026-08-11T13:04:47Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-R1-GENERATED-CLEANUP moved to done
+
+### 2026-08-11T13:07:54Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T13:08:18Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-11T13:08:53Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-08-11T13:12:33Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-025
+- summary: message queued for frontend
+
+### 2026-08-11T13:13:07Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1 dispatched to frontend
+
+### 2026-08-11T13:13:47Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1 moved to done
+
+### 2026-08-11T13:23:36Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T13:24:00Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-11T13:24:10Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE moved to done
+
+## 2026-08-11T13:32:37Z TASK-025 Frontend P1 Planner Checkpoint PASS
+
+- Planner independently reproduced the two P1 closures and complete supported-runtime gates: focused `2/6`, full `66/579`, nine verifiers, lint/typecheck/build, four production smokes, protected hashes and generated cleanup all PASS.
+- User simplified the default review flow to one complete independent review after consolidated implementation; a failed review is followed only by narrow finding-closure confirmation after repair, not another full review.
+- TASK-025 is `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`; historical review FAIL is preserved. Unique next is the same reviewer's two-finding closure confirmation only.
+
+## 2026-08-11T13:46:06Z TASK-025 Finding Closure and Planner Final Validation PASS
+
+- Same-reviewer finding closure returned `PASS / P0=0 / P1=0 / P2=0` and was validated/ACKed; the historical complete-review `FAIL / 0/2/0` remains preserved.
+- This was a bounded closure confirmation, not a second full TASK-025 review.
+- Planner final validation refreshed the direct `2/6`, all nine verifiers, protected bytes, cleanup/listener and governance/diff gates after the closure ACK; preceding fresh full `66/579`, lint/typecheck/build and four production smokes remain current-byte evidence.
+- Added final execution/validation/diff/final-validation artifacts. Unique next is checked `prepare-awaiting-user`; acceptance, Git, deployment, final RFQ and Feishu remain unauthorized.
+
+## 2026-08-11T13:49:01Z TASK-025 Checked Preparation Narrative Sync
+
+- First checked preparation succeeded at `13:48:12Z`; controlled reopen was used only to synchronize the final human-readable AWAITING_USER narration.
+- No product, review, validation, documentation-impact or acceptance truth changed. Unique next is final checked preparation, then exact user acceptance.
+
+## 2026-08-11T13:51:29Z TASK-025 Formal Delivery Authorized
+
+- User supplied the exact formal-delivery phrase; controlled acceptance check and transition passed.
+- Current state is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Only TASK-025 deliverables will be staged. Next is formal commit, task-branch push, main merge and main push; deployment remains excluded.
+
+### 2026-08-11T13:35:15Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-11T13:35:58Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE dispatched to adversarial_reviewer
+
+### 2026-08-11T13:36:40Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE moved to done
+
+### 2026-08-11T13:42:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-025
+- summary: message queued for planner
+
+### 2026-08-11T13:43:20Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE-RESPONSE dispatched to planner
+
+### 2026-08-11T13:43:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-025
+- summary: message MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE-RESPONSE moved to done
+
+### 2026-08-11T13:48:12Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-025
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-11T13:49:01Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-025
+- summary: Synchronize final human-readable task, board and project narration after successful checked preparation; no product, review or acceptance change.
+
+### 2026-08-11T13:49:48Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-025
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-11T13:51:29Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-025
+- summary: TASK-025 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

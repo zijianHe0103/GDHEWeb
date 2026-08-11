@@ -1,0 +1,8 @@
+{
+  "readyStandardMissingArticleNumber": { "lineKind": "configured_product", "state": "ready", "selectionType": "standard", "articleNumber": null, "resolution": "standard_ready", "quantity": 1 },
+  "readyCustomWithArticleNumber": { "lineKind": "configured_product", "state": "ready", "selectionType": "custom", "articleNumber": "GDHEPRD000172", "resolution": "sales_follow_up", "quantity": 1 },
+  "requiresValidationWithArticleNumber": { "lineKind": "configured_product", "state": "requires_validation", "selectionType": "standard", "articleNumber": "GDHEPRD000172", "resolution": "refresh_from_selection", "quantity": 1 },
+  "readyAccessoryMissingArticleNumber": { "lineKind": "catalog_accessory", "state": "ready", "articleNumber": null, "quantity": 1 },
+  "requiresReaddWithArticleNumber": { "lineKind": "catalog_accessory", "state": "requires_readd", "articleNumber": "GDHEPRD000901", "quantity": 1 },
+  "unsafeQuantity": { "lineKind": "catalog_accessory", "state": "ready", "articleNumber": "GDHEPRD000901", "quantity": 9007199254740992 }
+}

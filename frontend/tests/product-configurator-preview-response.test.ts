@@ -7,9 +7,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 const forbiddenBrowserMarkers = [
-  "GDHEPRD000172",
   "21000000-0000-4000-8000-000000000001",
-  "articleNumber",
   "productKind",
   "configurationPolicy",
   "large_shrink_wrap",
@@ -68,9 +66,10 @@ afterAll(async () => {
 }, 10_000);
 
 describe("ProductConfigurator real preview response", () => {
-  it("keeps internal product identity out of browser-facing HTML and Flight bytes", async () => {
+  it("carries public Article Number in Flight data without rendering it as customer copy", async () => {
     const response = await fetch(`${origin}/products/fgd-x15-pvc/`);
     const browserBytes = await response.text();
+    const visibleMarkup = browserBytes.split("<script", 1)[0]!;
 
     expect(response.status).toBe(200);
     expect(browserBytes).toContain("Configure Your Track");
@@ -78,6 +77,9 @@ describe("ProductConfigurator real preview response", () => {
     expect(browserBytes).toContain("Ivory White");
     expect(browserBytes).toContain("You May Also Need");
     expect(browserBytes).toContain("Show More Products");
+    expect(browserBytes).toContain("GDHEPRD000172");
+    expect(browserBytes).toContain("articleNumber");
+    expect(visibleMarkup).not.toMatch(/GDHEPRD[0-9]{6}|Article Number/i);
     for (const marker of forbiddenBrowserMarkers) {
       expect(browserBytes).not.toContain(marker);
     }

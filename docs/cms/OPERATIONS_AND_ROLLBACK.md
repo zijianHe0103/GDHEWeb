@@ -218,3 +218,18 @@ wp plugin status gdhe-site --path=cms
 Never edit files below `secure-custom-fields`. Update by repeating the official-source, backup and checksum gates in a new confirmed task.
 
 After recovery or ordinary reactivation, verify `gdhe-site` reapplies the exact configured capability counts. Do not grant or remove unrelated role capabilities manually.
+## TASK-025 Article Number batch Fixture
+
+The local-only `gdhe task025-fixtures create|show|cleanup` commands manage the
+removable TASK-025 test candidate set. Creation adds one configured FGD X15+PVC
+authority candidate, one related-product source, one protected synthetic
+catalog accessory and their temporary category/taxonomy records. It does not
+touch real content or database structure.
+
+Run cleanup after every test lifecycle. A complete cleanup removes four posts,
+three terms and one manifest option. Verify zero
+`_gdhe_task025_fixture_marker`, `gdhe_task025_fixture_manifest` and
+`task-025-*` term residue, and stop any temporary loopback WordPress server.
+Rollback of the implementation removes only the TASK-025 MU bootstrap, new
+runtime/Fixture/Schemas and the additive RelatedProductCard version-dispatch
+seam; it does not change Product Configuration 2.0 or RelatedProductCard 1.0.

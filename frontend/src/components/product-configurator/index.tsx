@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import {
   buildPublicProductConfiguratorDraft,
+  buildPublicProductConfiguratorDraftV3,
   projectPublicColorChoices,
   projectPublicTrackLengthChoices,
 } from "../../lib/product-configuration/v2/build-public-draft";
@@ -14,6 +15,7 @@ import type {
   PublicQuoteDraft,
 } from "../../types/product-configurator";
 import type { PublicQuoteBasketProduct } from "../../types/quote-basket";
+import type { ReadyConfiguredDraftV3 } from "../../types/quote-basket-v3";
 import styles from "./product-configurator.module.css";
 
 type Props = Readonly<{
@@ -32,6 +34,16 @@ type BasketDraftResult =
       ok: false;
       errors: readonly PublicProductConfiguratorField[];
     }>;
+type BasketDraftResultV3 =
+  | Readonly<{
+      ok: true;
+      draft: ReadyConfiguredDraftV3;
+      mutation: "added" | "merged";
+    }>
+  | Readonly<{
+      ok: false;
+      errors: readonly PublicProductConfiguratorField[];
+    }>;
 
 const messages:Record<PublicProductConfiguratorField,string>={selection:"Choose a track length.",customLength:"Enter a positive length with at most one decimal place.",color:"Choose an available color.",basePackaging:"Choose a base packaging option.",logoPrinting:"Choose whether customer logo printing is required.",protectionArrangement:"Choose an available protection arrangement.",quantity:"Enter a positive whole-number quantity."};
 
@@ -43,6 +55,21 @@ export function submitPublicQuoteDraftToBasket(
   add: (draft: PublicQuoteDraft) => Readonly<{ mutation: "added" | "merged" }>,
 ): BasketDraftResult {
   const result = buildPublicProductConfiguratorDraft(configuration, values);
+  if (!result.ok) {
+    return Object.freeze({
+      ok: false,
+      errors: Object.freeze(result.errors.map(({ field }) => field)),
+    });
+  }
+  const mutation = add(result.draft).mutation;
+  return Object.freeze({ ok: true, draft: result.draft, mutation });
+}
+export function submitPublicQuoteDraftToBasketV3(
+  configuration: PublicProductConfiguratorViewModel,
+  values: PublicProductConfiguratorFormValues,
+  add: (draft: ReadyConfiguredDraftV3) => Readonly<{ mutation: "added" | "merged" }>,
+): BasketDraftResultV3 {
+  const result = buildPublicProductConfiguratorDraftV3(configuration, values);
   if (!result.ok) {
     return Object.freeze({
       ok: false,
@@ -72,7 +99,7 @@ export function ProductConfigurator({configuration,product}:Props){
   const lengths=projectPublicTrackLengthChoices(configuration);const selection=lengthChoice==="custom"?{kind:"custom" as const}:lengthChoice.startsWith("standard:")?{kind:"standard" as const,lengthMeters:Number(lengthChoice.slice(9))}:null;const colors=selection?projectPublicColorChoices(configuration,selection):[];
   const error=(field:PublicProductConfiguratorField)=>getProductConfiguratorFieldError(field,result.errors);
   function chooseLength(value:string){setLengthChoice(value);const next=value==="custom"?{kind:"custom" as const}:{kind:"standard" as const,lengthMeters:Number(value.slice(9))};if(!projectPublicColorChoices(configuration,next).some((color)=>color.code===colorCode))setColorCode("");}
-  function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();const submission=submitPublicQuoteDraftToBasket(configuration,{lengthChoice,customLength,colorCode,basePackaging,logoPrinting,protectionArrangement:protectionArrangement||null,quantity},(draft)=>({mutation:quoteBasket.add(product,draft)??"added"}));setResult((current)=>submission.ok?Object.freeze({errors:Object.freeze([]),latestDraft:current.latestDraft}):Object.freeze({errors:submission.errors,latestDraft:current.latestDraft}));}
+  function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();const submission=submitPublicQuoteDraftToBasketV3(configuration,{lengthChoice,customLength,colorCode,basePackaging,logoPrinting,protectionArrangement:protectionArrangement||null,quantity},(draft)=>({mutation:quoteBasket.add(product,draft)??"added"}));setResult((current)=>submission.ok?Object.freeze({errors:Object.freeze([]),latestDraft:current.latestDraft}):Object.freeze({errors:submission.errors,latestDraft:current.latestDraft}));}
   return <section id="configure-product" className={styles.section} aria-labelledby="configurator-title"><div className={styles.introduction}><p className={styles.eyebrow}>Local configuration test</p><h2 id="configurator-title">Configure Your Track</h2><p>Choose the published track specification and packaging details for your Quote Basket.</p></div><div className={styles.card}><form onSubmit={submit} noValidate>
     <fieldset aria-invalid={error("selection")?.invalid} aria-describedby={error("selection")?.describedBy}><legend>Track Length</legend>{lengths.map((choice)=>{const value=choice.kind==="custom"?"custom":`standard:${choice.lengthMeters}`;return <label key={value}><input type="radio" name="track-length" value={value} checked={lengthChoice===value} onChange={()=>chooseLength(value)}/> {choice.label}</label>;})}<ErrorText field="selection" errors={result.errors}/></fieldset>
     {lengthChoice==="custom"&&<div className={styles.field}><label htmlFor="custom-length">Custom length (m)</label><input id="custom-length" inputMode="decimal" value={customLength} onChange={(event)=>setCustomLength(event.target.value)} aria-invalid={error("customLength")?.invalid} aria-describedby={error("customLength")?.describedBy}/><ErrorText field="customLength" errors={result.errors}/></div>}

@@ -1,0 +1,37 @@
+{
+  "schemaRoots": [
+    "related-product-card-collection.v2.schema.json",
+    "mixed-quote-line-validation-request.v1.schema.json",
+    "mixed-quote-line-validation-response.v1.schema.json"
+  ],
+  "schemaRootCount": 3,
+  "runtimeGoldenCount": 7,
+  "runtimeGoldens": [
+    "custom-sales-follow-up.json",
+    "migrated-standard-refresh.json",
+    "mixed-fifty-line.json",
+    "mixed-two-line.json",
+    "related-product-card-v1.json",
+    "related-product-card-v2.json",
+    "standard-ready.json"
+  ],
+  "requestPositiveCount": 1,
+  "requestNegativeCount": 6,
+  "requestNegativeNames": [
+    "fifty-one-lines",
+    "unknown-line-field",
+    "unknown-root",
+    "unsafe-quantity",
+    "wrong-unit",
+    "zero-lines"
+  ],
+  "draft": "2020-12",
+  "valid": true,
+  "responseNegativeCount": 2,
+  "responseNegativeNames": [
+    "custom-wrong-resolution",
+    "uppercase-entry-id"
+  ],
+  "mixedRootInternalRefs": "absolute-root-id-plus-fragment",
+  "networkResolution": "forbidden"
+}

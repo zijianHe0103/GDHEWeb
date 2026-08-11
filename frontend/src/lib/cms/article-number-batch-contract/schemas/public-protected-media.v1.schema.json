@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/product-card/v1/public-protected-media.v1.schema.json",
+  "title": "GDHE Public Protected Media 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "url", "width", "height", "alt"],
+  "properties": {
+    "id": {
+      "$ref": "uuid-v4.schema.json"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "maxLength": 2048
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "alt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    }
+  }
+}

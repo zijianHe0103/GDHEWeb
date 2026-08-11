@@ -1,6 +1,6 @@
 # GDHE WordPress CMS
 
-The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` transport. TASK-014 adds an independent ProductCard collection contract at Schema `1.0.0`; TASK-019 keeps Product Configuration `1.0.0`, TASK-021 adds separate Product Configuration `2.0.0` behavior, and TASK-023 adds an independent RelatedProductCardCollection `1.0.0`. None changes the existing content envelope or ProductCard bytes. WordPress remains the editing system; Quote Basket and frontend consumption are outside this CMS slice.
+The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` transport. TASK-014 adds an independent ProductCard collection contract at Schema `1.0.0`; TASK-019 keeps Product Configuration `1.0.0`, TASK-021 adds separate Product Configuration `2.0.0` behavior, TASK-023 keeps RelatedProductCardCollection `1.0.0`, and TASK-025 adds its `2.0.0` Article Number projection plus independent MixedQuoteLineValidation Request/Response `1.0.0`. None changes the existing content envelope, ProductCard, Product Configuration 2.0 or RelatedProductCard 1.0 bytes. WordPress remains the editing system; Quote Basket and frontend consumption are outside this CMS slice.
 
 ## Current runtime
 
@@ -12,6 +12,8 @@ The English content contract remains Schema `3.0.0` on the read-only `/gdhe/v1` 
 - Module Schema `1.0.0`
 - ProductCard Schema `1.0.0`
 - RelatedProductCardCollection Schema `1.0.0`
+- RelatedProductCardCollection Schema `2.0.0`
+- MixedQuoteLineValidation Request/Response Schema `1.0.0`
 - Product Configuration Schemas `1.0.0` and `2.0.0`
 - Locale `en`
 
@@ -30,6 +32,8 @@ ProductCard test candidates use a private versioned source document only in the 
 Product Configuration uses the private mirror key `_gdhe_product_configuration_v1_source` and exposes only a complete validated public projection. The current removable test candidate contains exactly `FGD X15+PVC / GDHEPRD000172 / 6 m / Ivory White / piece`, ceiling and wall installation with no invented accessory Article Number, the frozen curtain-track packaging policy and unresolved custom-length policy. It is contract evidence, not a second editable product-master authority or production publication.
 
 Product Configuration `2.0.0` uses an independent private test/production mirror and the same read-only endpoint with exact `schema=2.0.0`. Its public policy keeps packaging and unresolved custom length but omits installation methods, installation accessories and hidden installation defaults. The removable evidence still exposes only the confirmed `GDHEPRD000172 / 6 m / Ivory White / piece` option. Article Numbers are global, length/color choices are unique per stable Product UUID, and conflicting identity or color-label mappings fail closed. Version `1.0.0` remains byte-frozen.
+
+TASK-025 keeps that source unchanged and adds a repeatable Article Number lookup index. Catalog accessories use a separate closed private quote mirror and must remain active, public-contract eligible, `catalog_accessory`, `piece` and pathless. The index is never authority: missing, extra, duplicate or source-inconsistent values fail closed. Anonymous `POST /gdhe/v1/quote-line-validations` validates one complete ordered `1..50` batch without mutation or per-line public REST calls. Article Number is public order identity but is not deliberately rendered by CMS documentation or UI copy.
 
 WordPress exposes no QuoteLine, basket, session, inquiry storage or REST write route. QuoteLine remains a future Next.js inquiry-domain contract and must revalidate untrusted client input server-side when separately implemented.
 

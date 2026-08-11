@@ -1,0 +1,24 @@
+{
+  "runtimeBase": "http://127.0.0.1:8080",
+  "method": "POST",
+  "path": "/wp-json/gdhe/v1/quote-line-validations",
+  "contentType": "application/json",
+  "anonymous": true,
+  "oneLine": {
+    "status": 200,
+    "cacheControl": "no-store",
+    "etagPresent": false,
+    "requestIdPresent": true,
+    "lineCount": 1,
+    "sha256": "2a99662c4d85f43aabd50f9d8d661e0d386c33df4ba1d2671cdedd6532601f1e"
+  },
+  "fiftyLines": {
+    "status": 200,
+    "cacheControl": "no-store",
+    "etagPresent": false,
+    "requestIdPresent": true,
+    "lineCount": 50,
+    "sha256": "28a6e13750bb508e5356ffc4e3c278966a4c090cd51bcce2807a9c0033eb6072"
+  },
+  "valid": true
+}

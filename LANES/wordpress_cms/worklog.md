@@ -703,3 +703,41 @@ Each execution records:
 - validation: required-claim/Markdown/diff/secret and message Schema checks PASS; final strict lane audit has no issue
 - response: linked `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE` delivered through the real Codex thread bridge and dispatch-once to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; Planner ACKed it and the response is now `done`
 - next: remain idle pending Planner ACK/checkpoint; do not implement any residual gate
+
+### 2026-08-11 - TASK-025 WordPress Article Number batch A1/A2 complete
+
+- task: execute only confirmed TASK-025 WordPress A1/A2; task remains `IN_PROGRESS` and frontend remains blocked
+- message: `MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2` read completely and ACKed before implementation; registered branch/session/write scope verified
+- tdd: 10 real REDs captured before minimum GREEN: missing roots, source/route, three-query refresh, Core JSON envelope bypass, inconsistent source/index uniqueness, conflicting canonical path, escaped internal exception, open query parameters, uppercase UUID and under-constrained response Schema
+- implementation: additive RelatedProductCard `2.0.0`; private exact accessory quote source; repeatable `_gdhe_public_article_number_v1` index; independent MixedQuoteLineValidation Request/Response `1.0.0`; anonymous no-store POST `/gdhe/v1/quote-line-validations`
+- runtime: exact JSON and 163840-byte boundary; 1..50 ordered configured/accessory lines; standard ready, unique migrated-standard refresh and controlled custom sales follow-up; duplicate pre-resolution rejection; whole-batch atomic sanitized errors; maximum two bounded candidate queries with 101 sentinel and zero public subrequests
+- fixture: removable configured FGD X15+PVC `GDHEPRD000172`, one protected synthetic accessory `GDHEPRD000901`, related source and temporary taxonomy; real anonymous HTTP 1/50 both 200/no-store/no ETag
+- determinism: final two lifecycles used WordPress IDs 3557–3560 and 3563–3566; 10 evidence hashes matched exactly; each cleanup removed 4 posts, 3 terms and 1 option; final posts/options/terms/private-meta residue 0/0/0/0 and port 8080 listener absent
+- regression: Product Configuration 2.0 contract/exact-decimal Schema PASS; RelatedProductCard 1.0 contract/nine-file Schema PASS after changing only its unsupported-version probe from newly valid 2.0.0 to 9.9.9
+- protection: all 12 frozen baseline rows and 13 unaffected shared seams exact; only declared additive `includes/related-product-cards.php` seam changed; frontend/TASK-024/Core/SCF/real data/Feishu/dependencies untouched
+- platform: 52/52 immutable handoff checksums PASS; manifest `0dbdf81c44fccfb04db744587c48886cfda38c0ebc6de4edbf993bc2769e8d0d`; checksum stream `8417b63fc9752959cbe307e49e693606e2a3d82326d74b4cbdd831f37d71222e`; PHP/JSON/Draft 2020-12/diff/Core/SCF/DB gates PASS
+- artifacts: `WORDPRESS_TDD_RED_EVIDENCE.md`, execution/validation/diff reports, runtime/Schema/error/determinism/HTTP JSON, seven Goldens and immutable handoff manifest/checksums
+- docs: CMS README, content model, REST contract and operations/rollback synchronized; root README intentionally untouched
+- scope_boundary: no frontend, Quote Basket, TASK-024 authority, WordPress Core, SCF, themes, real content, Feishu, dependencies, review, acceptance, Git or deployment
+- result: WordPress A1/A2 complete and ready for independent Planner checkpoint validation
+- response: linked `MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2-RESPONSE` delivered through the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; dispatch-once completed and the response is in `dispatched` pending Planner ACK
+- next: remain idle pending independent Planner checkpoint; do not start frontend, review, Git or deployment
+
+### 2026-08-11 - TASK-025 Planner P1/P2 Round 1 narrow revision complete
+
+- task: close only Planner Round 1 `P1=2/P2=1`; TASK-025 remains `IN_PROGRESS`, not accepted
+- message: `MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1` read completely and ACKed before mutation; checked `reopen` safely refused because the task already remained `IN_PROGRESS`
+- schema_red: new static/cross-validator guard found 8 Request and 9 Response fragment-only internal refs; both Anaconda `jsonschema 4.17.3` and system `4.21.1` exited 1 before correction
+- schema_green: all 17 internal refs bind to exact mixed-root `$id` plus fragment; complete positive/negative roots pass offline under both installed validators with network handlers forbidden; business fields, API, route, versions and runtime documents unchanged
+- cleanup_red: controlled post-create failure re-raised `Injected TASK-025 post-create failure.` and left exact `4/1/3/3`; controlled cleanup restored `0/0/0/0` before the GREEN edit
+- cleanup_green: every lifecycle post-create path now runs exact cleanup/residue verification in `finally`; the same original sanitized failure is re-raised only after cleanup and immediate residue is `0/0/0/0`
+- tdd: original ten RED histories preserved; RED 11/12 added; current evidence status corrected to `RED/GREEN complete`
+- determinism: final normal lifecycles used IDs `3685..3688` and `3691..3694`; 10/10 evidence hashes equal; each removed 4 posts, 3 terms and 1 option; final residue `0/0/0/0`
+- regression: anonymous HTTP 1/50 returned 200/no-store/no ETag; Product Configuration 2.0 exact-decimal and RelatedProductCard 1.0 Schema/runtime authority passed; all 25 protected exact rows outside the declared RelatedProductCard v2 seam remained exact
+- platform: all GDHE PHP lint, TASK-025 JSON, Python compile/cache cleanup, WordPress Core, official SCF, 12-table DB and port-8080 cleanup PASS
+- handoff: final 52/52 exact verification PASS; manifest `9bfb794e6dace0e4a15aef5f2d5a755b333482d297d1a071f74bbbb1277bce5f`; checksum stream `512b27a4b6d42b94cc73f45943b11a4b20ce4d08bd7305382f556e9a0c41e25a`
+- artifacts: existing WordPress execution/validation/diff/TDD/runtime/Schema/determinism/HTTP/handoff evidence refreshed; `WORDPRESS_PLANNER_CHECKPOINT_R2.md` added as execution evidence, not a Planner verdict
+- scope_boundary: no frontend, TASK-024, Planner authority, runtime business behavior, v1/v2 frozen bytes, real data, Feishu, dependency, review, acceptance, Git or deployment work
+- result: both P1s and stale P2 narration are locally closed; ready for independent Planner Round 2 checkpoint
+- response: linked `MSG-TASK-025-WORDPRESS-PLANNER-P1-P2-R1-RESPONSE` sent through `lane_message.py` and the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; dispatch-once completed and the response is now `done`
+- next: stop for independent Planner Round 2 checkpoint; frontend remains blocked

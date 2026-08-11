@@ -8,7 +8,7 @@ import { adaptRelatedProductCardCollection } from "../src/lib/cms/server/related
 import { validateRelatedProductCardCollection } from "../src/lib/cms/server/related-product-cards/validation";
 import {
   RelatedProducts,
-  buildCatalogAccessoryDraft,
+  buildCatalogAccessoryDraftV3,
   nextRelatedProductVisibleCount,
 } from "../src/components/related-products";
 import { projectPublicRelatedProducts } from "../src/lib/related-products/public-view";
@@ -93,11 +93,12 @@ describe("You May Also Need presentation", () => {
     if (!accessory || accessory.action.kind !== "quote") {
       throw new Error("Expected preview catalog accessory.");
     }
-    expect(buildCatalogAccessoryDraft(accessory!)).toEqual({
+    expect(buildCatalogAccessoryDraftV3(accessory!)).toEqual({
       ok: true,
       draft: {
         product: accessory.product,
         catalogPath: accessory.action.catalogPath,
+        articleNumber: accessory.action.articleNumber,
         quantityUnit: "piece",
         quantity: 1,
       },
@@ -121,14 +122,14 @@ describe("You May Also Need presentation", () => {
       now: () => new Date("2026-08-07T00:00:00.000Z"),
       uuid: () => ids.shift()!,
     });
-    const result = buildCatalogAccessoryDraft(accessory!);
+    const result = buildCatalogAccessoryDraftV3(accessory!);
     if (!result.ok) throw new Error("Expected a quantity-1 accessory draft.");
 
     expect(adapter.addAccessory(result.draft).mutation).toBe("added");
     const repeated = adapter.addAccessory(result.draft);
     expect(repeated.mutation).toBe("merged");
     expect(repeated.basket.items).toMatchObject([
-      { lineKind: "catalog_accessory", quantity: 2 },
+      { lineKind: "catalog_accessory", state: "ready", quantity: 2 },
     ]);
     expect(values.get(QUOTE_BASKET_STORAGE_KEY)).toContain('"quantity":2');
   });

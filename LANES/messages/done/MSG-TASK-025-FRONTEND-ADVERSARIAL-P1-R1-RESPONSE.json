@@ -1,0 +1,31 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-025",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-11T13:23:36Z",
+  "requires_response_to": "MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-025 frontend Adversarial Round 1 P1 revision is complete with result PASS_FOR_PLANNER_CHECKPOINT. P1-1 is closed by making the plain MixedQuoteLineValidationDto apply helper private to the authentic validateQuoteBasketV3 orchestration after A3 validation/adapter; public negatives for missing root metadata/model, extra root/line keys and invalid locale reject with stable sanitized contract errors and leave the Basket unchanged. P1-2 is closed by lowercasing valid writer/mutation/entry UUIDs at v3 ingress before duplicate/merge checks; uppercase v1/v2/v3 coverage and case-fold collision rejection pass, and a frozen v2 uppercase standard line completes exactly one mixed POST and upgrades ready. Revision 1/4, revision+batch 2/6, TASK-025 15/35, Basket-related 18/83 and complete resource-safe 66 files/579 tests PASS. All nine verifiers, lint, typecheck, build, four smokes, protected hashes, cleanup, diff and DPG gates PASS. No CMS/authority/dependency/Planner/final RFQ/Feishu/Git/deployment work was performed. Please independently validate the current shared bytes and decide the revision checkpoint.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-025/FRONTEND_ADVERSARIAL_P1_R1_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-025/FRONTEND_ADVERSARIAL_P1_R1_VALIDATION.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-025/FRONTEND_ADVERSARIAL_P1_R1_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-025/FRONTEND_ADVERSARIAL_P1_R1_VALIDATION.md"
+  ],
+  "notes": "Two P1 closures only; Round 1 FAIL remains history. Not Round 2 review, final validation, acceptance, Git delivery or deployment.",
+  "dispatched_at": "2026-08-11T13:24:00Z",
+  "delivery_key": "MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-11T13:24:10Z",
+  "updated_at": "2026-08-11T13:24:10Z"
+}

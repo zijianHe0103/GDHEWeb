@@ -148,8 +148,14 @@ describe("local Quote Basket route", () => {
         publicPath: basket.items[0]!.product.publicPath,
       },
       selection: basket.items[0]!.selection,
-      packaging: basket.items[0]!.packaging,
-      quantityUnit: basket.items[0]!.quantityUnit,
+      packaging: {
+        basePackaging: { key: "standard", label: "Standard Packaging" },
+        logoPrinting: false,
+        protectionArrangement: null,
+      },
+      articleNumber: "GDHEPRD000172",
+      resolution: "standard_ready",
+      quantityUnit: "piece",
       quantity: basket.items[0]!.quantity,
     });
     const removed = adapter.remove(adapter.load()!.items[0]!.entryId);

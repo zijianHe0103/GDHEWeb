@@ -4445,3 +4445,117 @@ Each execution records:
 - Closure review `PASS / P0=0 / P1=0 / P2=0`、机器合同与治理门保持 PASS；文档影响 RESOLVED，README 不适用。
 - 只暂存 TASK-024 受控交付物；排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～023 closure edits 和历史 resume packet。
 - 唯一下一步：正式提交并推送任务分支，fast-forward 合并并推送 `main`；不部署、不开始 TASK-025 或 runtime 实现。
+## 2026-08-11T06:38:09Z TASK-025 intake
+
+- 用户创建 `TASK-025：允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验`。
+- 已从已交付 `main` 基线 `a048a96b2d5af321234b9e51be9adf991510f85a` 创建分支 `codex/TASK-025-article-number-batch-validation`。
+- Intake 冻结 Article Number 为可进入浏览器但不主动在普通 UI、accessible name 或客户摘要展示的非敏感身份；它仍是不可信客户端输入，必须由服务端重新校验。
+- 后续范围只包含版本化公开合同、WordPress 一次 `1..50` 混合行批量权威校验、frontend server-only consumer、Quote Basket 迁移与证据；不包含最终 RFQ intake、客户资料、持久化、飞书、幂等、挑战、提交或部署。
+- `wordpress_cms -> frontend -> adversarial_reviewer` 为顺序 lane；需求确认前不派发消息、不实施产品代码。
+- 当前为 `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`；唯一下一步是等待 `确认 TASK-025 需求并开始执行`。
+
+## 2026-08-11T06:46:18Z TASK-025 requirements confirmed
+
+- 用户输入精确需求确认口令；TASK-025 从 `AWAITING_REQUIREMENT_CONFIRMATION` 进入 `READY / NOT_ACCEPTED / DIRTY`。
+- 当前只放行 Planner A0：superseding decision、版本化合同 seam、混合批量校验 seam、Quote Basket 迁移 seam、保护基线和顺序 checkpoint。
+- TDD seam 以活动任务已确认验收标准为用户确认事实源：WordPress 匿名只读 batch API、frontend server-only consumer、versioned Basket migration 和普通 UI 非展示边界。
+- A0 通过前不修改 WordPress/frontend 产品代码，不派发实施 lane；最终 RFQ intake、飞书、持久化、Git delivery 与部署仍排除。
+- 唯一下一步：完成 Planner A0 文档和保护基线，fresh validation 后再决定是否释放 WordPress CMS 第一切片。
+
+## 2026-08-11T06:58:04Z TASK-025 Planner A0 PASS
+
+- 已冻结 REQUIREMENTS、DESIGN、TDD_SEAMS、IMPLEMENTATION_PLAN、PROTECTED_BASELINE 与两份 A0 证据。
+- 最小架构复用现有 Product Configuration 2.0；只新增 RelatedProductCard 2.0、Quote Basket 3.0、MixedQuoteLineValidation 1.0 和 server-only consumer，不再引入 opaque key。
+- batch seam 固定为一个匿名 no-store JSON POST，`1..50`、`163840` raw bytes、整批原子、最多两次有界 domain candidate query、零逐行 public endpoint call。
+- 26/26 保护哈希、零 TASK-025 product code diff、git diff、project/registry/messages/strict lane 均 PASS。
+- TASK-025 从 `READY` 进入 `IN_PROGRESS`；当前只释放 wordpress_cms A1/A2，frontend/review/acceptance/Git/deployment 仍 blocked。
+- 唯一下一步：创建并投递受控 WordPress execution request，等待 ACK 和 linked response 后执行独立 Planner checkpoint。
+# 2026-08-11 TASK-025 WordPress Planner Checkpoint Round 1 FAIL
+
+- linked response `MSG-TASK-025-WORDPRESS-ARTICLE-NUMBER-BATCH-A1-A2-RESPONSE` validated, ACKed and moved to done.
+- independent passing evidence: handoff `52/52`, normal-path determinism `10/10`, real HTTP `1/50`, Product Configuration 2.0 and RelatedProductCard 1.0 regressions, Core/SCF/DB and DPG gates.
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`.
+- P1: mixed fragment-only root refs fail the installed `jsonschema 4.21.1`; determinism lacks guaranteed cleanup after post-create failure and the injected failure left `4/1/3/3` residue before controlled cleanup.
+- P2: TDD and current authority narration remained stale after the completed response.
+- checked reopen was safely rejected because TASK-025 truthfully remains `IN_PROGRESS`; equivalent narrow revision recovery is recorded without fabricating AWAITING_USER.
+- unique next: dispatch only the WordPress R1 narrow revision; frontend remains blocked.
+# 2026-08-11 TASK-025 WordPress Planner Checkpoint Round 2 PASS
+
+- linked WordPress narrow-revision response validated, ACKed and moved to done.
+- independently reproduced offline full-root validation under jsonschema 4.17.3 and 4.21.1; exact root-id refs and no-network gate PASS.
+- independently injected post-create failure: original marker returned with immediate `0/0/0/0` database residue.
+- final handoff `52/52`; manifest `9bfb794e...bce5f`, checksum stream `512b27a4...1e25a`; Core/SCF/DB and DPG gates PASS.
+- verdict: `PASS / P0=0 / P1=0 / P2=0`; Round 1 FAIL history preserved.
+- unique next: dispatch frontend A3 contract foundation only and stop for checkpoint; A4, review, acceptance, Git and deployment remain blocked.
+
+# 2026-08-11 TASK-025 Frontend A3 Planner Checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3-RESPONSE`; controlled response moved to done.
+- Independently reproduced all eight verifiers, A3 `6/18`, complete non-overlapping `57 files / 562 tests`, lint, typecheck, production build and four production smokes.
+- Verified one mixed POST and zero legacy endpoint calls for 1/50 lines, public/deep `server-only` build negatives, frontend-local runtime closure and protected hashes.
+- Preserved the disclosed unsplit concurrent timing non-PASS history; fresh Planner build residue was moved recoverably to system Trash and protected `next-env`/`tsconfig` hashes remain exact.
+- Verdict: `PASS / P0=0 / P1=0 / P2=0`.
+- Unique next: dispatch frontend A4 only; review, final RFQ, acceptance, Git and deployment remain blocked.
+
+## 2026-08-11T12:06:32Z TASK-025 Frontend A4 Planner Checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4-RESPONSE`; the controlled response is done.
+- Independently reproduced all nine verifiers, A4 focused `8/13`, the complete non-overlapping resource-safe `65 files / 575 tests`, lint, typecheck, production build and four production smokes.
+- Verified the same storage key, exact v1/v2 migration states, Article Number public-data/non-display boundary, one batch POST, zero legacy per-line calls and atomic no-partial application.
+- Protected hashes remain exact; generated `.next` and `tsconfig.tsbuildinfo` were moved recoverably to Trash and no task-owned listener remains.
+- Root README, architecture contract, ADR-006 and decisions index now reflect the superseding TASK-025 rule; document impact is RESOLVED and README is UPDATED.
+- Verdict: `PASS / P0=0 / P1=0 / P2=0`.
+- Unique next: one controlled independent read-only adversarial review; final validation, acceptance, Git, deployment, final RFQ and Feishu remain blocked.
+
+## 2026-08-11T12:11:41Z TASK-025 Adversarial Review Round 1 Dispatched
+
+- Created `ADVERSARIAL_REVIEW_DISPATCH.md` and queued `MSG-TASK-025-ADVERSARIAL-REVIEW-R1` with `max_rounds=2`.
+- Message validation and dry-run resolved the registered reviewer session; the exact envelope was sent through the real Codex thread bridge and recorded with dispatch-once.
+- Reviewer ACKed and moved the request to done before substantive review.
+- Unique next: wait for the single linked PASS/FAIL/P0/P1/P2 response and record governed recovery; do not run final validation early.
+
+## 2026-08-11T13:10:26Z TASK-025 Adversarial Round 1 FAIL Recovery
+
+- Validated and ACKed `MSG-TASK-025-ADVERSARIAL-REVIEW-R1-RESPONSE`: `FAIL / P0=0 / P1=2 / P2=0`.
+- Independently checked both findings against current code and contracts: a plain incomplete DTO can bypass the A3 wrapper at the exported application seam; uppercase legacy UUIDs remain valid Basket identities but fail the lowercase mixed-request boundary.
+- Reviewer generated residue was recoverably cleaned and the protected production `next-env.d.ts` hash restored.
+- Ran the required checked `task_transition.py reopen`; it safely rejected because the helper only accepts `AWAITING_USER`, with zero mutation. Recorded the equivalent controlled NEEDS_REVISION recovery across current Planner-owned state.
+- Unique next: dispatch only the two frontend RED/GREEN closures, then fresh supported-runtime validation and configured Round 2. No final RFQ, Feishu, Git or deployment.
+
+## 2026-08-11T13:13:47Z TASK-025 Frontend P1 Revision Dispatched
+
+- Queued, validated, dry-ran and sent `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1` through the registered frontend Codex thread, then recorded dispatch-once.
+- Frontend ACKed before mutation and independently confirmed both findings.
+- Released only raw apply-boundary closure and canonical lowercase UUID/collision closure under strict TDD.
+- Unique next: wait for one linked execution response and independently reproduce supported-runtime evidence before any Round 2.
+
+## 2026-08-11T13:32:37Z TASK-025 Frontend P1 Planner Checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE`; the controlled response is done.
+- Independently inspected the private response-application seam and canonical lowercase UUID ingress before collision checks.
+- Fresh Node 24.18.0 results: focused `2/6`, full resource-safe inventory `66 files / 579 tests`, all nine verifiers, lint, typecheck, Next build and four production smokes PASS.
+- Frozen baseline `12/12`, protected image, final CMS authority pins, production `next-env`, generated cleanup, listener and diff gates PASS.
+- User simplified project review policy: implementation checkpoints are Planner validation; one complete independent review occurs only after implementation consolidation. A failed review may receive only a narrow finding-closure confirmation, not another full-scope review.
+- Historical independent review remains `FAIL / P0=0 / P1=2 / P2=0`; task returns to `UNDER_REVIEW` only for those two findings' closure confirmation.
+- Unique next: dispatch one narrow closure-confirmation request to the same reviewer; no full review repetition, final validation, acceptance, Git, deployment, final RFQ or Feishu.
+
+## 2026-08-11T13:46:06Z TASK-025 Finding Closure and Planner Final Validation PASS
+
+- Validated and ACKed `MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE-RESPONSE`; the same reviewer returned `PASS / P0=0 / P1=0 / P2=0` for only the two original findings.
+- Preserved the one complete review's historical `FAIL / 0/2/0`; no second full-scope review was run.
+- Fresh final gate used the preceding current-byte `66/579`, lint/typecheck/build and four-smoke evidence, then refreshed focused `2/6`, all nine verifiers, frozen `12/12`, protected image/next-env, residue/listener and DPG/diff checks; all PASS.
+- Added canonical execution, validation, diff and Planner final-validation artifacts; documentation remains RESOLVED and README UPDATED.
+- Unique next: checked `prepare-awaiting-user`, then wait for the exact acceptance phrase. No final RFQ, Feishu, Git or deployment.
+
+## 2026-08-11T13:49:01Z TASK-025 Checked Preparation Narrative Sync
+
+- First checked `prepare-awaiting-user` succeeded at `13:48:12Z`; the task was then controlled-reopened only to synchronize final human-readable task, board and project narration.
+- Product bytes, historical review FAIL, finding-closure PASS, final-validation PASS, documentation impact and `NOT_ACCEPTED` remain unchanged.
+- Unique next: rerun checked preparation and wait for the exact acceptance phrase; no additional review, Git, deployment, final RFQ or Feishu work.
+
+## 2026-08-11T13:51:29Z TASK-025 Formal Delivery Authorized
+
+- User entered the exact phrase `确认 TASK-025 完成并提交到远端`; `task_accept.py check` and `accept` both passed.
+- TASK-025 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; review, final validation, documentation and checked preparation evidence remain valid.
+- Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-024 closure edits and historical resume packets.
+- Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.

@@ -40,6 +40,7 @@ export function projectPublicProductConfigurator(
       throw new Error("Product configuration option identity is ambiguous.");
     }
     return Object.freeze({
+      articleNumber: option.articleNumber,
       lengthMeters: option.lengthMeters,
       color: Object.freeze({ ...option.color }),
     });

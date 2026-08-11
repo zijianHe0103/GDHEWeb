@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/related-product-card/v2/related-product-card-collection.v2.schema.json",
+  "title": "GDHE Related Product Card Collection 2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "schemaVersion", "locale", "type", "sourcePath", "items"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "2.0.0"},
+    "locale": {"const": "en"},
+    "type": {"const": "related_product_card"},
+    "sourcePath": {"$ref": "https://gdhe.example/schemas/product-card/v1/public-path.schema.json"},
+    "items": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {"$ref": "related-product-card-item.v2.schema.json"}
+    }
+  }
+}

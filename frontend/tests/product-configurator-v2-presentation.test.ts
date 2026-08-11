@@ -23,9 +23,13 @@ describe("ProductConfigurator 2.0.0 presentation", () => {
     expect(markup).toContain("Custom Length");
     expect(markup).toContain("Choose a track length first.");
     expect(publicConfiguration.standardOptions.map(({color}) => color.label)).toEqual(["Ivory White"]);
-    expect(JSON.stringify(publicConfiguration)).not.toMatch(
-      /GDHEPRD000172|21000000-0000-4000-8000-000000000001|articleNumber|sales_follow_up/,
+    expect(publicConfiguration.standardOptions[0]?.articleNumber).toBe(
+      "GDHEPRD000172",
     );
+    expect(JSON.stringify(publicConfiguration)).not.toMatch(
+      /21000000-0000-4000-8000-000000000001|sales_follow_up/,
+    );
+    expect(markup).not.toMatch(/GDHEPRD000172|Article Number/i);
     expect(markup).not.toMatch(/4\.3 m|7 m|Installation/);
   });
 });

@@ -225,24 +225,48 @@ describe("Quote Basket 2.0 public union", () => {
     });
     const rawV1 = values.get(QUOTE_BASKET_STORAGE_KEY);
 
-    expect(adapter.load()?.schemaVersion).toBe("2.0.0");
+    expect(adapter.load()?.schemaVersion).toBe("3.0.0");
     expect(values.get(QUOTE_BASKET_STORAGE_KEY)).toBe(rawV1);
-    const result = adapter.addAccessory(accessory);
+    const result = adapter.addAccessory({
+      ...accessory,
+      articleNumber: "GDHEPRD000901",
+    });
     expect(result.mutation).toBe("added");
     expect(values.get(QUOTE_BASKET_STORAGE_KEY)).toContain(
-      '"schemaVersion":"2.0.0"',
+      '"schemaVersion":"3.0.0"',
     );
     expect(result.basket.items.map((item) => item.lineKind)).toEqual([
       "configured_product",
       "catalog_accessory",
     ]);
-    const configured = adapter.add(product, draft);
-    expect(configured.mutation).toBe("merged");
+    const configured = adapter.add(product, {
+      ...draft,
+      packaging: {
+        basePackaging: {
+          key: "standard",
+          label: draft.packaging.basePackaging.label,
+        },
+        logoPrinting: false,
+        protectionArrangement: null,
+      },
+      articleNumber: "GDHEPRD000172",
+      resolution: "standard_ready",
+    });
+    expect(configured.mutation).toBe("added");
     expect(configured.basket.items.map((item) => item.lineKind)).toEqual([
       "configured_product",
       "catalog_accessory",
+      "configured_product",
     ]);
-    expect(configured.basket.items[0]?.quantity).toBe(4);
+    expect(configured.basket.items[0]).toMatchObject({
+      state: "requires_validation",
+      quantity: 2,
+    });
+    expect(configured.basket.items[2]).toMatchObject({
+      state: "ready",
+      articleNumber: "GDHEPRD000172",
+      quantity: 2,
+    });
   });
 
   test("fails closed on hostile item-array reflection without invoking an accessor", () => {

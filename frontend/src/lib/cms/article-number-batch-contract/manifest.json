@@ -1,0 +1,55 @@
+{
+  "manifestVersion": "1",
+  "sourceAuthority": {
+    "task": "TASK-025",
+    "manifestPath": "TASKS/ARTIFACTS/TASK-025/WORDPRESS_HANDOFF_MANIFEST.json",
+    "manifestSha256": "9bfb794e6dace0e4a15aef5f2d5a755b333482d297d1a071f74bbbb1277bce5f",
+    "checksumsPath": "TASKS/ARTIFACTS/TASK-025/WORDPRESS_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "512b27a4b6d42b94cc73f45943b11a4b20ce4d08bd7305382f556e9a0c41e25a"
+  },
+  "apiVersion": "1",
+  "relatedProductCardVersion": "2.0.0",
+  "mixedQuoteLineValidationVersion": "1.0.0",
+  "relatedProductCardEndpoint": "/wp-json/gdhe/v1/related-product-cards",
+  "mixedValidationEndpoint": "/wp-json/gdhe/v1/quote-line-validations",
+  "mixedValidationMethod": "POST",
+  "roots": [
+    "mixed-quote-line-validation-request.v1.schema.json",
+    "mixed-quote-line-validation-response.v1.schema.json",
+    "related-product-card-collection.v2.schema.json"
+  ],
+  "schemas": [
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/card-action.v1.schema.json","snapshotPath":"schemas/card-action.v1.schema.json","sha256":"6639d8ac895baa3eb4400b2e8cadd6c5032d0290caac3872eb1550cd3aa6b6e4"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/card-attribute.v1.schema.json","snapshotPath":"schemas/card-attribute.v1.schema.json","sha256":"3c2828ee795863f2bc153a5a26d3c1564677d3681aaa3bb15daf4f29a57cc821"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/mixed-quote-line-validation-request.v1.schema.json","snapshotPath":"schemas/mixed-quote-line-validation-request.v1.schema.json","sha256":"0cfcda5173aba8cf4cbd7647def0b9a256f3f6e27c3dfe490a0cc850a102f4af"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/mixed-quote-line-validation-response.v1.schema.json","snapshotPath":"schemas/mixed-quote-line-validation-response.v1.schema.json","sha256":"216ae743620b6ad62865d84a53e7053f8794f8cad311b1ebe16573465203b511"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/product-card.v1.schema.json","snapshotPath":"schemas/product-card.v1.schema.json","sha256":"615e6dd00c33e3b1b366a1640ccc5300b93d5733413be63b24e7853f5d1dec7a"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/public-path.schema.json","snapshotPath":"schemas/public-path.schema.json","sha256":"9f4951888329bd7d989251188e23ef475d6975bedfe1c187d5676feab3c823ce"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/public-protected-media.v1.schema.json","snapshotPath":"schemas/public-protected-media.v1.schema.json","sha256":"c8fc9afc35db82d91f5c75f84cce289a1f0f68c2884490405e734a26194ccd5c"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/public-taxonomy-ref.v1.schema.json","snapshotPath":"schemas/public-taxonomy-ref.v1.schema.json","sha256":"a2c7dc8ba7cdaa0f64ec9d7a67186b64343cf71ae95e062a99340ba7017fe5a8"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/related-product-card-collection.v2.schema.json","snapshotPath":"schemas/related-product-card-collection.v2.schema.json","sha256":"80afd26ef563f7ad092ece4c5268eda0f9062f0ab7e1d719c57132b82f77a28d"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/related-product-card-item.v2.schema.json","snapshotPath":"schemas/related-product-card-item.v2.schema.json","sha256":"fd53e7cfd573a5045e5f4a1b9fd2b3252bf91c40a6203f4fa90b8dba5bb42438"},
+    {"sourcePath":"cms/wp-content/plugins/gdhe-site/config/schemas/uuid-v4.schema.json","snapshotPath":"schemas/uuid-v4.schema.json","sha256":"59dbd4173aa8f63ab09b25239b4b8181b394a87de4fb6cdb462ddbdeedbaa1cb"}
+  ],
+  "samples": {
+    "success": [
+      {"name":"custom-sales-follow-up","sourcePath":"TASKS/ARTIFACTS/TASK-025/golden-wordpress/custom-sales-follow-up.json","snapshotPath":"samples/success/custom-sales-follow-up.json","sha256":"155fafb8c8e02e253fcddfd33446168144bfd705e8be33d9e34669a8c0badbbd"},
+      {"name":"migrated-standard-refresh","sourcePath":"TASKS/ARTIFACTS/TASK-025/golden-wordpress/migrated-standard-refresh.json","snapshotPath":"samples/success/migrated-standard-refresh.json","sha256":"89f922edadf27bd56943c30e4986b942eb48cef33f88473eb42f152a3029f84e"},
+      {"name":"mixed-two-line","sourcePath":"TASKS/ARTIFACTS/TASK-025/golden-wordpress/mixed-two-line.json","snapshotPath":"samples/success/mixed-two-line.json","sha256":"9d783c93590e01f00abd969b98d88d7ca58743748d5c195b5b3e350c2de20342"},
+      {"name":"related-product-card-v2","sourcePath":"TASKS/ARTIFACTS/TASK-025/golden-wordpress/related-product-card-v2.json","snapshotPath":"samples/success/related-product-card-v2.json","sha256":"5c2a5a6838899b6e7e9408243e271fb291bc9b6f97c1ef2ab4de47f09a4d7ce0"},
+      {"name":"standard-ready","sourcePath":"TASKS/ARTIFACTS/TASK-025/golden-wordpress/standard-ready.json","snapshotPath":"samples/success/standard-ready.json","sha256":"3de07075dd719a0a3cf6490c8cfd6820d5fca8c50338a5d31537372543141675"}
+    ],
+    "errors": {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-025/QUOTE_LINE_ERROR_EVIDENCE.json",
+      "snapshotPath": "samples/errors/quote-line-errors.json",
+      "sha256": "8749e1962f5de1f939a6d32447d5f8e43feaed28ca554a222b99192b51dda814",
+      "matrix": [
+        {"status":400,"code":"gdhe_invalid_quote_line_request"},
+        {"status":409,"code":"gdhe_quote_lines_changed"},
+        {"status":413,"code":"gdhe_quote_line_request_too_large"},
+        {"status":415,"code":"gdhe_unsupported_media_type"},
+        {"status":500,"code":"gdhe_quote_line_validation_unavailable"}
+      ]
+    }
+  }
+}

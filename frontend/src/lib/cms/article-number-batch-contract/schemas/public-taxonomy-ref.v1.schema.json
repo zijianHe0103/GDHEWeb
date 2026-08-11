@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/product-card/v1/public-taxonomy-ref.v1.schema.json",
+  "title": "GDHE Public Taxonomy Reference 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "label", "publicPath"],
+  "properties": {
+    "id": {
+      "$ref": "uuid-v4.schema.json"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "publicPath": {
+      "$ref": "public-path.schema.json"
+    }
+  }
+}

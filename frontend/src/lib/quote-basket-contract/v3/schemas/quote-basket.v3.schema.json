@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/frontend/quote-basket/v3/quote-basket.v3.schema.json",
+  "title": "GDHE Public Quote Basket 3.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "revision", "writerId", "mutationId", "updatedAt", "expiresAt", "items"],
+  "properties": {
+    "schemaVersion": { "const": "3.0.0" },
+    "revision": { "$ref": "#/$defs/positiveSafeInteger" },
+    "writerId": { "$ref": "#/$defs/uuid" },
+    "mutationId": { "$ref": "#/$defs/uuid" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/configuredReadyStandard" },
+          { "$ref": "#/$defs/configuredReadyCustom" },
+          { "$ref": "#/$defs/configuredRequiresValidation" },
+          { "$ref": "#/$defs/accessoryReady" },
+          { "$ref": "#/$defs/accessoryRequiresReadd" }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "articleNumber": {
+      "type": "string",
+      "pattern": "^GDHEPRD[0-9]{6}$"
+    },
+    "publicPath": {
+      "type": "string",
+      "pattern": "^/[a-z0-9]+(?:[/-][a-z0-9]+)*/$"
+    },
+    "positiveSafeInteger": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "width", "height", "alt"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^/test-candidates/[A-Za-z0-9][A-Za-z0-9._-]*$" },
+        "width": { "$ref": "#/$defs/positiveSafeInteger" },
+        "height": { "$ref": "#/$defs/positiveSafeInteger" },
+        "alt": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "configuredProduct": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "name", "publicPath", "image"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "publicPath": { "$ref": "#/$defs/publicPath" },
+        "image": { "$ref": "#/$defs/image" }
+      }
+    },
+    "accessoryProduct": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "name", "image"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "image": { "$ref": "#/$defs/image" }
+      }
+    },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "label"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "label": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "lengthMeters", "color"],
+      "properties": {
+        "type": { "enum": ["standard", "custom"] },
+        "lengthMeters": { "type": "number", "exclusiveMinimum": 0, "multipleOf": 0.1 },
+        "color": { "$ref": "#/$defs/color" }
+      }
+    },
+    "labeledChoice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label"],
+      "properties": {
+        "key": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "label": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "packaging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basePackaging", "logoPrinting", "protectionArrangement"],
+      "properties": {
+        "basePackaging": {
+          "allOf": [
+            { "$ref": "#/$defs/labeledChoice" },
+            { "properties": { "key": { "enum": ["standard", "carton", "large_shrink_wrap"] } } }
+          ]
+        },
+        "logoPrinting": { "type": "boolean" },
+        "protectionArrangement": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "allOf": [
+                { "$ref": "#/$defs/labeledChoice" },
+                { "properties": { "key": { "enum": ["single_bag", "paired"] } } }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "configuredCommon": {
+      "type": "object",
+      "required": ["lineKind", "entryId", "createdAt", "product", "selection", "packaging", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "configured_product" },
+        "entryId": { "$ref": "#/$defs/uuid" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "product": { "$ref": "#/$defs/configuredProduct" },
+        "selection": { "$ref": "#/$defs/selection" },
+        "packaging": { "$ref": "#/$defs/packaging" },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "configuredReadyStandard": {
+      "allOf": [
+        { "$ref": "#/$defs/configuredCommon" },
+        {
+          "type": "object",
+          "required": ["state", "articleNumber", "resolution"],
+          "properties": {
+            "state": { "const": "ready" },
+            "selection": { "allOf": [{ "$ref": "#/$defs/selection" }, { "properties": { "type": { "const": "standard" } } }] },
+            "articleNumber": { "$ref": "#/$defs/articleNumber" },
+            "resolution": { "const": "standard_ready" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "configuredReadyCustom": {
+      "allOf": [
+        { "$ref": "#/$defs/configuredCommon" },
+        {
+          "type": "object",
+          "required": ["state", "articleNumber", "resolution"],
+          "properties": {
+            "state": { "const": "ready" },
+            "selection": { "allOf": [{ "$ref": "#/$defs/selection" }, { "properties": { "type": { "const": "custom" } } }] },
+            "articleNumber": { "type": "null" },
+            "resolution": { "const": "sales_follow_up" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "configuredRequiresValidation": {
+      "allOf": [
+        { "$ref": "#/$defs/configuredCommon" },
+        {
+          "type": "object",
+          "required": ["state", "articleNumber", "resolution"],
+          "properties": {
+            "state": { "const": "requires_validation" },
+            "selection": { "allOf": [{ "$ref": "#/$defs/selection" }, { "properties": { "type": { "const": "standard" } } }] },
+            "articleNumber": { "type": "null" },
+            "resolution": { "const": "refresh_from_selection" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "accessoryCommon": {
+      "type": "object",
+      "required": ["lineKind", "entryId", "createdAt", "product", "catalogPath", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "catalog_accessory" },
+        "entryId": { "$ref": "#/$defs/uuid" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "product": { "$ref": "#/$defs/accessoryProduct" },
+        "catalogPath": { "$ref": "#/$defs/publicPath" },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "accessoryReady": {
+      "allOf": [
+        { "$ref": "#/$defs/accessoryCommon" },
+        {
+          "type": "object",
+          "required": ["state", "articleNumber"],
+          "properties": {
+            "state": { "const": "ready" },
+            "articleNumber": { "$ref": "#/$defs/articleNumber" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "accessoryRequiresReadd": {
+      "allOf": [
+        { "$ref": "#/$defs/accessoryCommon" },
+        {
+          "type": "object",
+          "required": ["state", "articleNumber"],
+          "properties": {
+            "state": { "const": "requires_readd" },
+            "articleNumber": { "type": "null" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

@@ -52,6 +52,13 @@ Market details include benefits, requirements and CTA. Reference details include
 
 Relations supply bidirectional consumption. General Schema 3 relation references appear publicly only when they are published, viewable, carry a UUIDv4 public identifier, have a valid unique canonical path and satisfy the complete Schema 3 envelope. The independent TASK-023 related-product projection reads only `relationships.products` in stored order, caps the raw source set at 20, and then requires every returned target to satisfy the complete ProductCard `1.0.0` contract. It omits self, duplicates, unpublished/ineligible targets and hostile media. Active catalog accessories additionally require an explicit closed direct-quote quantity unit; no compatibility or unit is inferred.
 
+TASK-025 adds no editable content type or database table. It uses the existing
+Product Configuration `2.0.0` private mirror for configured products, a closed
+private catalog-accessory quote mirror, and repeatable
+`_gdhe_public_article_number_v1` post-meta values as a lookup index. The source
+mirror remains authority; the index must match it exactly and globally unique
+Article Number ownership is required before public quote validation succeeds.
+
 ## Publication and safety
 
 - Anonymous output is English and published-only.

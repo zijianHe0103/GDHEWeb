@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-025-ADVERSARIAL-R1-GENERATED-CLEANUP",
+  "type": "recovery_request",
+  "from_lane": "adversarial_reviewer",
+  "to_lane": "planner",
+  "task_id": "TASK-025",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-08-11T13:02:49Z",
+  "requires_response_to": "MSG-TASK-025-ADVERSARIAL-REVIEW-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-025 independent focused review, lint and typecheck completed but generated frontend/.next and frontend/tsconfig.tsbuildinfo. Reviewer write scope forbids moving or deleting those frontend generated paths. Please recoverably move only those two generated items, preserve frontend/next-env.d.ts at the declared production SHA-256 7b550dda9686c16f36a17bf9051d5dbf31e98555b30d114ac49fc49a1e712651, verify port 3000 and checkout-specific Node/Next listeners are clear, ACK this request and notify this reviewer. Do not change product, tests, docs, task state, CMS, dependencies, Git or external systems.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-025/ADVERSARIAL_REVIEW_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-025/PROTECTED_BASELINE.md"
+  ],
+  "expected_artifacts": [
+    "frontend/next-env.d.ts"
+  ],
+  "notes": "Reviewer-generated residue cleanup only; not a product finding, new review round or business repair.",
+  "dispatched_at": "2026-08-11T13:03:09Z",
+  "delivery_key": "MSG-TASK-025-ADVERSARIAL-R1-GENERATED-CLEANUP:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-11T13:04:47Z",
+  "updated_at": "2026-08-11T13:04:47Z"
+}

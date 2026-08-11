@@ -4,6 +4,7 @@ import type {
   PublicProductConfiguratorViewModel,
   PublicQuoteDraft,
 } from "../../../types/product-configurator";
+import type { ReadyConfiguredDraftV3 } from "../../../types/quote-basket-v3";
 
 export type PublicProductConfiguratorBuildResult =
   | Readonly<{ ok: true; draft: PublicQuoteDraft }>
@@ -14,6 +15,10 @@ export type PublicProductConfiguratorBuildResult =
         code: "invalid";
       }>[];
     }>;
+
+export type PublicProductConfiguratorBuildResultV3 =
+  | Readonly<{ ok: true; draft: ReadyConfiguredDraftV3 }>
+  | Extract<PublicProductConfiguratorBuildResult, Readonly<{ ok: false }>>;
 
 export type PublicTrackLengthChoice =
   | Readonly<{ kind: "standard"; lengthMeters: number; label: string }>
@@ -154,6 +159,68 @@ export function buildPublicProductConfiguratorDraft(
       },
       quantityUnit: configuration.product.quantityUnit,
       quantity,
+    },
+  });
+}
+
+export function buildPublicProductConfiguratorDraftV3(
+  configuration: PublicProductConfiguratorViewModel,
+  values: PublicProductConfiguratorFormValues,
+): PublicProductConfiguratorBuildResultV3 {
+  const legacy = buildPublicProductConfiguratorDraft(configuration, values);
+  if (!legacy.ok) return legacy;
+  const { draft } = legacy;
+  const standard = draft.selection.type === "standard"
+    ? configuration.standardOptions.find((option) =>
+        option.lengthMeters === draft.selection.lengthMeters &&
+        option.color.code === draft.selection.color.code)
+    : undefined;
+  if (draft.selection.type === "standard" && !standard) {
+    return deepFreeze({ ok: false, errors: [{ field: "selection", code: "invalid" }] });
+  }
+  const baseKeys: Readonly<Record<string, "standard" | "carton" | "large_shrink_wrap">> = {
+    "standard-packaging": "standard",
+    "carton-packaging": "carton",
+    "large-shrink-wrap": "large_shrink_wrap",
+  };
+  const baseKey = baseKeys[values.basePackaging];
+  const protectionKeys: Readonly<Record<string, "single_bag" | "paired">> = {
+    "single-piece-bagging": "single_bag",
+    "paired-interlocking": "paired",
+  };
+  const protectionKey = values.protectionArrangement === null
+    ? null
+    : protectionKeys[values.protectionArrangement];
+  if (!baseKey || protectionKey === undefined) {
+    return deepFreeze({ ok: false, errors: [{ field: "basePackaging", code: "invalid" }] });
+  }
+  if (draft.packaging.protectionArrangement !== null && protectionKey === null) {
+    return deepFreeze({ ok: false, errors: [{ field: "protectionArrangement", code: "invalid" }] });
+  }
+  return deepFreeze({
+    ok: true,
+    draft: {
+      product: draft.product,
+      selection: draft.selection,
+      packaging: {
+        basePackaging: {
+          key: baseKey,
+          label: draft.packaging.basePackaging.label,
+        },
+        logoPrinting: draft.packaging.logoPrinting,
+        protectionArrangement: draft.packaging.protectionArrangement === null
+          ? null
+          : protectionKey === "single_bag" || protectionKey === "paired"
+            ? {
+              key: protectionKey,
+              label: draft.packaging.protectionArrangement.label,
+            }
+            : null,
+      },
+      articleNumber: standard?.articleNumber ?? null,
+      resolution: standard ? "standard_ready" : "sales_follow_up",
+      quantityUnit: "piece",
+      quantity: draft.quantity,
     },
   });
 }

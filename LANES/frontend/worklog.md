@@ -1292,3 +1292,66 @@ Each execution records:
 - validation: exact references and Markdown fences PASS; `git diff --check` PASS; all six protected hashes exact; no product/CMS diff in audited scope; DPG project/message/strict-lane gates PASS with zero issues before response dispatch; no product suite rerun because no product/test byte changed
 - message_result: `MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3-RESPONSE` was delivered once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, ACKed by Planner and moved to done with `requires_response_to=MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3`
 - unique_next_step: Planner receives the linked R3 confirmation; no frontend implementation is authorized
+
+# TASK-025 frontend contract consumer A3 2026-08-11
+
+- message: fully read TASK-025/A0/final CMS handoff/Planner Round 2 authority and ACKed `MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3` before product mutation
+- scope: executed frontend A3 only; A4 Quote Basket 3.0/migration/browser/UI and all RFQ/Feishu/review/Git/deployment work remained blocked
+- tdd: eight recorded vertical RED closures covering missing verifier, request query, Transport, HTTP matrix, Adapter, one-call consumer, error/status mismatch and frozen duplicate-identity error variant
+- snapshot: independent 18-file local inventory with exact 11-Schema closure, five ordered success samples and frozen error evidence; verifier hard-bound to manifest `9bfb794e...bce5f` and checksum stream `512b27a4...1e25a`
+- verifier_security: missing/extra/tampered/symlink/non-canonical/traversal/remote/unknown-ref/authority substitution/source drift all fail closed in temporary repository copies
+- consumer: fixed server-only JSON POST, `en / apiVersion 1 / schemaVersion 1.0.0`, 5000 ms, no-store, redirect refusal, zero retry, static roots, semantic response binding, opaque wrapper, deep-frozen DTO and sanitized frozen HTTP matrix
+- one_call: real 1-line and 50-line ordered requests each perform exactly one `/quote-line-validations` POST and zero `/resolve`, Product Configuration or RelatedProductCard calls
+- article_number: retained in server/browser-facing DTO as public untrusted identity; A3 added no visible or accessible UI
+- server_only: public and deep Adapter Client Component builds fail; marker-stripped positive controls pass; temporary roots clean
+- focused: new verifier `11/5/5`; all seven existing verifiers PASS; A3 focused `6 files / 18 tests`; lint and typecheck PASS
+- full_tests: one unsplit concurrent attempt exposed a timing failure in the exact 5000 ms test and was not claimed PASS; complete non-overlapping resource-safe inventory is `57 files / 562 tests PASS` across `6/18 + 10/159 + 28/254 + 13/131`
+- production: Next 16.2.11 build and CMS/ProductList/ProductDetail/QuoteBasket smokes PASS
+- protected: next-env/tsconfig/package/lock/protected image/TASK-024/Quote Basket v2/QuoteLine v2/Product Configuration v2/Article Number option v1/RelatedProductCard v1 hashes exact; old frontend contract/verifier trees unchanged
+- cleanup: `.next` and `tsconfig.tsbuildinfo` moved recoverably with system Trash; no temporary A3 root, listener or generated residue remains
+- docs: frontend README updated; Planner-owned root README/architecture/ADR remain intentionally untouched
+- artifacts: `FRONTEND_A3_EXECUTION_REPORT.md`, `FRONTEND_A3_TDD_RED_EVIDENCE.md`, `FRONTEND_A3_VALIDATION_LOG.md`, `FRONTEND_A3_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Planner checkpoint PASS, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue as `dispatched` and remains linked with `requires_response_to=MSG-TASK-025-FRONTEND-CONTRACT-CONSUMER-A3`; Planner ACK is pending at this log update
+- unique_next_step: send one linked response, then stop until Planner independently checks A3 and explicitly releases A4
+
+# TASK-025 frontend Quote Basket v3 A4 2026-08-11
+
+- message: read the full A4 dispatch, A3 Planner PASS checkpoint and linked authority, then ACKed `MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4` before product mutation
+- scope: executed frontend A4 only; final RFQ/customer form/Basket clearing/Feishu/CMS/visual QA/review/Git/deployment remain blocked
+- tdd: direct RED/GREEN closures covered missing v3 verifier, domain/migration, configured draft, RelatedProductCard v2 projection, browser adapter, batch module/orchestration and recovery-markup UUID leakage
+- contract: independent four-file Quote Basket `3.0.0` snapshot plus offline verifier; direct result `1 schema / 1 success / 6 invalid`, with tamper/extra/symlink mutations rejected
+- domain_storage: same `gdhe.quote-basket.v1` key, exact 30-day TTL and 262144-byte ceiling; closed legal states, safe-integer merge/split/set/remove, LWW reconciliation, and corrupt/unknown/duplicate/reflective input fail closed
+- migration: v1/v2 standard -> `requires_validation`; custom -> ready null/`sales_follow_up`; v2 accessory -> `requires_readd`; no guessed Article Number and customer/entry identity preserved
+- new_lines: standard configured and eligible RelatedProductCard 2.0 accessory carry exact public untrusted Article Number; custom remains null; Article Number is present in data/storage/Flight but absent from deliberate customer-visible and accessible output
+- batch: server-only ordered eligible projection, `requires_readd` excluded, atomic response application, one real A3 POST for 1/50 lines and zero `/resolve`/Product Configuration/RelatedProductCard calls
+- presentation: readable recovery instructions; quantity label/input association now uses local row indexes so markup does not expose Basket entry UUIDs; no raw state/resolution/Article Number/diagnostic copy
+- focused: A4 `8 files / 13 tests PASS`; Basket/Configurator/Related `17 / 79 PASS`; all nine verifiers, lint and typecheck PASS
+- full: supported complete current inventory `65 files / 575 tests PASS`; first run's superseded TASK-021 Flight assertion was truthfully corrected to TASK-025's explicit data-allowed/non-display rule; unsupported reporter startup attempt excluded
+- production: Next 16.2.11 build and all four CMS/ProductList/ProductDetail/QuoteBasket smokes PASS
+- protected: package/lock/tsconfig/next-env/protected image/TASK-024/Quote Basket v2/QuoteLine v2/Product Configuration v2/Article Number option v1/RelatedProductCard v1 hashes exact
+- cleanup: generated `.next`, `tsconfig.tsbuildinfo` and interrupted temporary Next roots moved recoverably to Trash; no task-owned listener or generated residue remains
+- artifacts: `FRONTEND_A4_EXECUTION_REPORT.md`, `FRONTEND_A4_TDD_RED_EVIDENCE.md`, `FRONTEND_A4_VALIDATION_LOG.md`, `FRONTEND_A4_DIFF_SUMMARY.md`
+- docs: frontend README updated; root README/architecture/ADR remain Planner-owned and untouched
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; this is not Planner checkpoint PASS, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue as `dispatched` and is linked with `requires_response_to=MSG-TASK-025-FRONTEND-QUOTE-BASKET-V3-A4`; post-send strict audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice
+- unique_next_step: stop for independent Planner A4 verification; do not resend or start later work
+
+# TASK-025 frontend Adversarial Round 1 P1 revision 2026-08-11
+
+- message: read the canonical Round 1 FAIL, recovery state and exact revision dispatch, then ACKed `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1` before mutation
+- scope: closed only P1-1 plain response application bypass and P1-2 uppercase legacy UUID incompatibility; preserved Round 1 `FAIL / P0=0 / P1=2 / P2=0` history
+- red_1: new public-surface regression found exported `applyQuoteBasketV3Validation`; authentic incomplete-response orchestration negatives already passed, locating the bypass precisely at the deep plain apply export
+- green_1: apply helper is private and callable only after `validateMixedQuoteLines` returns an authentic A3 DTO; missing root/model, extra root/line and invalid-locale responses reject through stable contract errors with original Basket bytes unchanged
+- red_2: frozen v1/v2 uppercase UUIDs remained uppercase and a v3 case-only entry collision was accepted; the legacy v2 line could not reach the lowercase mixed request
+- green_2: v3 ingress canonicalizes writer/mutation/entry UUIDs before collision checks; uppercase v1/v2/v3 covered, case-fold collision fails closed, and a real uppercase v2 standard line completes one POST and upgrades to ready
+- focused: revision `1/4 PASS`; revision plus batch `2/6 PASS`; TASK-025 `15/35 PASS`; Basket/Configurator/Related `18/83 PASS`
+- full: exact Node 24.18.0 resource-safe current inventory `66 files / 579 tests PASS` across `15/35 + 10/159 + 28/254 + 13/131`
+- gates: all nine verifiers, lint, typecheck, Next 16.2.11 build and four production smokes PASS
+- protected: final CMS handoff pins, twelve frozen baseline rows, package/lock/tsconfig/next-env and protected image exact; no CMS/Schema/handoff authority byte changed
+- cleanup: generated `.next` and `tsconfig.tsbuildinfo` moved recoverably to Trash; no listener or temporary root remains
+- docs: one frontend README sentence records lowercase UUID canonicalization and case-fold collision behavior; no other documentation expanded
+- artifacts: `FRONTEND_ADVERSARIAL_P1_R1_REPORT.md`, `FRONTEND_ADVERSARIAL_P1_R1_VALIDATION.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Round 2 review PASS, final validation, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1`; post-send strict audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice
+- unique_next_step: stop for independent Planner revision checkpoint; do not resend or start Round 2

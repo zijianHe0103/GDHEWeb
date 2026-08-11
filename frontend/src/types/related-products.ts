@@ -24,8 +24,9 @@ export type PublicRelatedProduct = Readonly<{
   action:
     | Readonly<{ kind: "view"; href: string }>
     | Readonly<{
-        kind: "quote";
-        catalogPath: string;
-        quantityUnit: "piece";
+      kind: "quote";
+      catalogPath: string;
+      articleNumber?: string;
+      quantityUnit: "piece";
       }>;
 }>;

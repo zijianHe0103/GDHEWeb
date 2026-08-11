@@ -5,10 +5,11 @@ import Image from "next/image";
 import { useQuoteBasket } from "../../lib/quote-basket/use-quote-basket";
 import type { QuoteBasketDocument } from "../../types/quote-basket";
 import type { QuoteBasketDocumentV2 } from "../../types/quote-basket-v2";
+import type { QuoteBasketDocumentV3 } from "../../types/quote-basket-v3";
 import styles from "./quote-basket.module.css";
 
 type RowsProps = Readonly<{
-  basket: QuoteBasketDocument | QuoteBasketDocumentV2;
+  basket: QuoteBasketDocument | QuoteBasketDocumentV2 | QuoteBasketDocumentV3;
   onQuantity(entryId: string, quantity: number): void;
   onRemove(entryId: string): void;
 }>;
@@ -17,7 +18,7 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
   return (
     <>
       <ul className={styles.rows}>
-        {basket.items.map((item) => (
+        {basket.items.map((item, index) => (
           <li className={styles.row} key={item.entryId}>
             <a
               className={styles.imageLink}
@@ -41,10 +42,16 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
                 <div><dt>Customer Logo Printing</dt><dd>{item.packaging.logoPrinting ? "Yes" : "No"}</dd></div>
                 <div><dt>Protection Arrangement</dt><dd>{item.packaging.protectionArrangement?.label ?? "None"}</dd></div>
               </dl> : <p>Catalog accessory</p>}
+              {"state" in item && item.state === "requires_validation" ? (
+                <p>We need to refresh this saved configuration before it can be submitted.</p>
+              ) : null}
+              {"state" in item && item.state === "requires_readd" ? (
+                <p>Please remove this saved accessory and add it again to refresh availability.</p>
+              ) : null}
               <div className={styles.actions}>
-                <label htmlFor={`quantity-${item.entryId}`}>Quantity ({item.quantityUnit})</label>
+                <label htmlFor={`quantity-${index}`}>Quantity ({item.quantityUnit})</label>
                 <input
-                  id={`quantity-${item.entryId}`}
+                  id={`quantity-${index}`}
                   type="number"
                   min="1"
                   step="1"

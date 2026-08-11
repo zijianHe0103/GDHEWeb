@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
   submitPublicQuoteDraftToBasket,
+  submitPublicQuoteDraftToBasketV3,
 } from "../src/components/product-configurator";
 import { createBrowserQuoteBasketAdapter } from "../src/lib/quote-basket/browser";
 import {
@@ -100,12 +101,12 @@ describe("Quote Basket product integration", () => {
     const product = projectQuoteBasketProduct(previewProductDetail);
     const add = (draft: Parameters<typeof adapter.add>[1]) =>
       adapter.add(product, draft);
-    const firstDraft = submitPublicQuoteDraftToBasket(
+    const firstDraft = submitPublicQuoteDraftToBasketV3(
       configuration,
       validValues,
       add,
     );
-    const secondDraft = submitPublicQuoteDraftToBasket(
+    const secondDraft = submitPublicQuoteDraftToBasketV3(
       configuration,
       validValues,
       add,
@@ -169,18 +170,26 @@ describe("Quote Basket product integration", () => {
         color: { code: "ivory-white", label: "Ivory White" },
       },
       packaging: {
-        basePackaging: { label: "Standard Export Packaging" },
+        basePackaging: { key: "standard", label: "Standard Export Packaging" },
         logoPrinting: false,
         protectionArrangement: null,
       },
+      articleNumber: "GDHEPRD000172",
+      resolution: "standard_ready",
       quantityUnit: "piece",
       quantity: 2,
     });
 
     expect(now).toHaveBeenCalledTimes(1);
-    expect(result).toMatchObject({ mutation: "merged" });
-    expect(result.basket.items[0]?.quantity).toBe(4);
-    expect(storage.values.get(QUOTE_BASKET_STORAGE_KEY)).toContain('"quantity":4');
+    expect(result).toMatchObject({ mutation: "added" });
+    expect(result.basket.items).toHaveLength(2);
+    expect(result.basket.items[0]).toMatchObject({ state: "requires_validation" });
+    expect(result.basket.items[1]).toMatchObject({
+      state: "ready",
+      articleNumber: "GDHEPRD000172",
+      quantity: 2,
+    });
+    expect(storage.values.get(QUOTE_BASKET_STORAGE_KEY)).toContain('"schemaVersion":"3.0.0"');
   });
 
   it("routes storage events through the frozen newer-snapshot reconciliation", async () => {

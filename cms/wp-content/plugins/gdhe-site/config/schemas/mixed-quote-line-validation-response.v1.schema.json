@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json",
+  "title": "GDHE Mixed Quote Line Validation Response 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "schemaVersion", "locale", "type", "lines"],
+  "properties": {
+    "apiVersion": {"const": "1"},
+    "schemaVersion": {"const": "1.0.0"},
+    "locale": {"const": "en"},
+    "type": {"const": "mixed_quote_line_validation"},
+    "lines": {"type": "array", "minItems": 1, "maxItems": 50, "items": {"oneOf": [{"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/configuredLine"}, {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/accessoryLine"}]}}
+  },
+  "$defs": {
+    "entryId": {"type": "string", "format": "uuid", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"},
+    "articleNumber": {"type": ["string", "null"], "pattern": "^GDHEPRD[0-9]{6}$"},
+    "color": {"type": "object", "additionalProperties": false, "required": ["code", "label"], "properties": {"code": {"type": "string"}, "label": {"type": "string"}}},
+    "selection": {"type": "object", "additionalProperties": false, "required": ["type", "articleNumber", "lengthMeters", "color"], "properties": {"type": {"enum": ["article_number", "custom_length"]}, "articleNumber": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/articleNumber"}, "lengthMeters": {"type": "number", "exclusiveMinimum": 0, "multipleOf": 0.1}, "color": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/color"}}},
+    "packaging": {"type": "object", "additionalProperties": false, "required": ["basePackaging", "logoPrinting", "protectionArrangement"], "properties": {"basePackaging": {"enum": ["standard", "carton", "large_shrink_wrap"]}, "logoPrinting": {"type": "boolean"}, "protectionArrangement": {"type": ["string", "null"], "enum": ["single_bag", "paired", null]}}},
+    "configuredLine": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entryId", "lineKind", "resolution", "model", "publicPath", "articleNumber", "selection", "packaging", "quantityUnit", "quantity"],
+      "properties": {
+        "entryId": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/entryId"}, "lineKind": {"const": "configured_product"},
+        "resolution": {"enum": ["resolved_article_number", "sales_follow_up"]}, "model": {"type": "string", "minLength": 1, "maxLength": 200},
+        "publicPath": {"$ref": "https://gdhe.example/schemas/product-card/v1/public-path.schema.json"}, "articleNumber": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/articleNumber"},
+        "selection": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/selection"}, "packaging": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/packaging"}, "quantityUnit": {"const": "piece"},
+        "quantity": {"type": "integer", "minimum": 1, "maximum": 9007199254740991}
+      },
+      "allOf": [
+        {"if": {"properties": {"resolution": {"const": "resolved_article_number"}}}, "then": {"properties": {"articleNumber": {"type": "string"}, "selection": {"properties": {"type": {"const": "article_number"}, "articleNumber": {"type": "string"}}}}}},
+        {"if": {"properties": {"resolution": {"const": "sales_follow_up"}}}, "then": {"properties": {"articleNumber": {"type": "null"}, "selection": {"properties": {"type": {"const": "custom_length"}, "articleNumber": {"type": "null"}}}}}}
+      ]
+    },
+    "accessoryLine": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entryId", "lineKind", "resolution", "model", "publicPath", "articleNumber", "quantityUnit", "quantity"],
+      "properties": {
+        "entryId": {"$ref": "https://gdhe.example/schemas/mixed-quote-line-validation/v1/mixed-quote-line-validation-response.v1.schema.json#/$defs/entryId"}, "lineKind": {"const": "catalog_accessory"}, "resolution": {"const": "resolved_article_number"},
+        "model": {"type": "string", "minLength": 1, "maxLength": 200}, "publicPath": {"type": "null"},
+        "articleNumber": {"type": "string", "pattern": "^GDHEPRD[0-9]{6}$"}, "quantityUnit": {"const": "piece"},
+        "quantity": {"type": "integer", "minimum": 1, "maximum": 9007199254740991}
+      }
+    }
+  }
+}

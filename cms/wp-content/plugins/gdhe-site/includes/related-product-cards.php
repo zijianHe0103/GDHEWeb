@@ -5,6 +5,7 @@ declare(strict_types=1);
 defined('ABSPATH') || exit;
 
 const GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION = '1.0.0';
+const GDHE_RELATED_PRODUCT_CARD_V2_SCHEMA_VERSION = '2.0.0';
 const GDHE_RELATED_PRODUCT_CARD_SOURCE_META = '_gdhe_related_product_card_v1_source';
 
 function gdhe_register_related_product_card_route(): void
@@ -39,11 +40,15 @@ function gdhe_validate_related_product_card_request($request)
             'locale'
         );
     }
-    if ((string) gdhe_request_param(
+    $schema = (string) gdhe_request_param(
         $request,
         'schema',
         GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION
-    ) !== GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION) {
+    );
+    if (!in_array($schema, array(
+        GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION,
+        GDHE_RELATED_PRODUCT_CARD_V2_SCHEMA_VERSION,
+    ), true)) {
         return gdhe_rest_error(
             'gdhe_invalid_schema',
             'Unsupported RelatedProductCard schema version.',
@@ -63,7 +68,11 @@ function gdhe_validate_related_product_card_request($request)
     return true;
 }
 
-function gdhe_related_product_card_direct_quote(array $card, int $post_id)
+function gdhe_related_product_card_direct_quote(
+    array $card,
+    int $post_id,
+    string $schema = GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION
+)
 {
     $mode = (string) ($card['action']['mode'] ?? '');
     if ($mode === 'view_product'
@@ -75,6 +84,18 @@ function gdhe_related_product_card_direct_quote(array $card, int $post_id)
         || ($card['kind'] ?? '') !== 'catalog_accessory'
         || ($card['lifecycle'] ?? '') !== 'active') {
         return false;
+    }
+    if ($schema === GDHE_RELATED_PRODUCT_CARD_V2_SCHEMA_VERSION) {
+        $source = gdhe_validate_catalog_accessory_quote_source(get_post($post_id));
+        if (!is_array($source)
+            || gdhe_post_article_number_index($post_id) !== array($source['articleNumber'])) {
+            return false;
+        }
+        return array(
+            'kind' => 'catalog_accessory',
+            'articleNumber' => $source['articleNumber'],
+            'quantityUnit' => 'piece',
+        );
     }
     $raw = get_post_meta($post_id, GDHE_RELATED_PRODUCT_CARD_SOURCE_META, true);
     $source = is_string($raw) ? json_decode($raw, true) : null;
@@ -92,14 +113,17 @@ function gdhe_related_product_card_direct_quote(array $card, int $post_id)
     );
 }
 
-function gdhe_related_product_card_item($post)
+function gdhe_related_product_card_item(
+    $post,
+    string $schema = GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION
+)
 {
     $card = gdhe_product_card_for_post($post);
     if (!is_array($card)) {
         return null;
     }
     $post_id = (int) gdhe_object_value($post, 'ID', 0);
-    $direct_quote = gdhe_related_product_card_direct_quote($card, $post_id);
+    $direct_quote = gdhe_related_product_card_direct_quote($card, $post_id, $schema);
     if ($direct_quote === false) {
         return null;
     }
@@ -117,6 +141,11 @@ function gdhe_rest_related_product_cards($request)
         return $contract;
     }
     $source_path = (string) gdhe_request_param($request, 'source_path');
+    $schema = (string) gdhe_request_param(
+        $request,
+        'schema',
+        GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION
+    );
     $matches = gdhe_find_public_posts_by_path($source_path);
     if ($matches === array()) {
         return gdhe_rest_error(
@@ -178,7 +207,7 @@ function gdhe_rest_related_product_cards($request)
             continue;
         }
         $seen_posts[$candidate_id] = true;
-        $item = gdhe_related_product_card_item(get_post($candidate_id));
+        $item = gdhe_related_product_card_item(get_post($candidate_id), $schema);
         if (!is_array($item)) {
             continue;
         }
@@ -196,15 +225,54 @@ function gdhe_rest_related_product_cards($request)
         );
     }
     $items = array();
+    $article_owners = array();
+    if ($schema === GDHE_RELATED_PRODUCT_CARD_V2_SCHEMA_VERSION) {
+        $articles = array();
+        foreach ($projected as $candidate) {
+            $article = $candidate['item']['directQuote']['articleNumber'] ?? null;
+            if (is_string($article)) {
+                $articles[$article] = true;
+            }
+        }
+        $candidates = gdhe_quote_line_candidate_query(array(), array_keys($articles));
+        if ($candidates['overflow']) {
+            return gdhe_rest_error(
+                'gdhe_contract_invariant',
+                'Related-product Article Number authority is unavailable.',
+                500
+            );
+        }
+        foreach ($candidates['article'] as $article_post) {
+            $source = gdhe_quote_source_for_post($article_post);
+            if (!is_array($source)) {
+                foreach (gdhe_claimed_article_numbers_for_post($article_post) as $article) {
+                    if (isset($articles[$article])) {
+                        $article_owners[$article] = 2;
+                    }
+                }
+                continue;
+            }
+            $source_articles = $source['kind'] === 'configured_product'
+                ? array_column($source['document']['articleNumberOptions'], 'articleNumber')
+                : array($source['document']['articleNumber']);
+            foreach ($source_articles as $article) {
+                $article_owners[$article] = ($article_owners[$article] ?? 0) + 1;
+            }
+        }
+    }
     foreach ($projected as $candidate) {
         if (count($public_id_owners[$candidate['publicId']]) !== 1) {
+            continue;
+        }
+        $article = $candidate['item']['directQuote']['articleNumber'] ?? null;
+        if (is_string($article) && ($article_owners[$article] ?? 0) !== 1) {
             continue;
         }
         $items[] = $candidate['item'];
     }
     $data = array(
         'apiVersion' => '1',
-        'schemaVersion' => GDHE_RELATED_PRODUCT_CARD_SCHEMA_VERSION,
+        'schemaVersion' => $schema,
         'locale' => 'en',
         'type' => 'related_product_card',
         'sourcePath' => $source_path,

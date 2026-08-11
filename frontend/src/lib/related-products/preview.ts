@@ -38,6 +38,7 @@ export const previewRelatedProducts: readonly PublicRelatedProduct[] =
       : Object.freeze({
           kind: "quote" as const,
           catalogPath: "/products/accessories/test-candidates/",
+          articleNumber: `GDHEPRD${String(900 + index).padStart(6, "0")}`,
           quantityUnit: "piece" as const,
         }),
   })));

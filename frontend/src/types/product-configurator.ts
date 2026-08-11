@@ -5,6 +5,7 @@ export type PublicProductConfiguratorViewModel = Readonly<{
     quantityUnit: "piece";
   }>;
   standardOptions: readonly Readonly<{
+    articleNumber: string;
     lengthMeters: number;
     color: Readonly<{ code: string; label: string }>;
   }>[];

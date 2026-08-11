@@ -1151,3 +1151,39 @@ Each execution records:
 - boundaries: no business deliverable, product, test, CMS, dependency, Planner state, Feishu, Git, deployment or external-system mutation; PASS is not user acceptance or delivery authorization
 - message_status: exact closure request and the single linked PASS review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real receipt
 - next: Planner owns fresh final validation and checked acceptance preparation after linked response acknowledgement
+
+### 2026-08-11T13:05:47Z - TASK-025 adversarial review round 1
+
+- task: TASK-025
+- message: MSG-TASK-025-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and ACKed the exact request before substantive work, preserved WordPress Planner Round 1 FAIL 0/2/1 plus all later checkpoints, and independently reviewed current WordPress, A3, Basket 3.0, documentation and protected bytes without repairing deliverables
+- p1_incomplete_response: exported server-only applyQuoteBasketV3Validation accepts a plain response that omits all required root metadata and the configured line model, then upgrades the migrated standard line; the A3 Schema, authentic wrapper and DTO boundary are bypassed
+- p1_uuid_case: frozen Basket 2.0 and new Basket 3.0 accept uppercase UUID hexadecimal and migration preserves it, but the mixed request Schema, frontend A3 validator and WordPress runtime require lowercase; a valid legacy line therefore cannot reach its only batch-upgrade route
+- reviewer_probe: isolated current-byte attack probe passed 1 file and 2 tests, recording both defects with stable outcomes
+- wordpress_evidence: both Schema validators, final 52/52 handoff, PHP syntax, route/source seam and read-only residue 0/0/0/0 pass; two-lifecycle and injected-failure cleanup evidence remains cross-lane because the reviewer did not mutate the database
+- frontend_evidence: current-task focused 14 files and 31 tests, nine verifiers, lint and typecheck pass; bundled Node 24.14 unsplit full run passed 63/65 files and 573/575 tests with two unrelated timeout-body failures, while fresh Planner exact Node 24.18/npm 11.16 evidence records resource-safe 65/575, build and four smokes PASS
+- protected_scope: all 12 frozen baseline rows reproduce after controlled cleanup; package, lock, TypeScript config, production next-env, TASK-024, Basket 2.0, QuoteLine 2.0, Product Configuration 2.0, Article Number option 1.0 and RelatedProductCard 1.0 remain exact
+- cleanup: reviewer validation generated only frontend .next and TypeScript cache and changed generated next-env; controlled request MSG-TASK-025-ADVERSARIAL-R1-GENERATED-CLEANUP is ACKed/done, Planner recoverably moved only those generated paths and restored next-env; reviewer rechecked zero residue, exact production hash, clear port and no checkout listener
+- governance: task, Project State and Board remain UNDER_REVIEW NOT_ACCEPTED DIRTY; document/readme impacts are resolved/updated; project, registry, messages, strict lane and whitespace checks pass
+- result: FAIL; P0 none; P1 two; P2 none; Planner final validation not allowed
+- boundaries: no product, test, CMS, docs/README, task authority, Planner state, database fixture, dependency, Git, deployment, Feishu or external-system repair/mutation; FAIL is not acceptance or Git authorization
+- message_status: the single linked FAIL review_response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge, recorded dispatch-once with the real receipt and is ACKed/done
+- next: Planner owns governed recovery, the two bounded revisions, fresh supported-runtime validation and any separately authorized Round 2
+
+### 2026-08-11T13:41:09Z - TASK-025 two-finding adversarial closure
+
+- task: TASK-025
+- message: MSG-TASK-025-ADVERSARIAL-FINDING-CLOSURE
+- action: restored the registered reviewer lane, read and ACKed the exact request before substantive work, preserved Round 1 FAIL 0/2/0, and reviewed only the two authorized P1 closures plus proportionate direct regressions
+- authentic_boundary: applyQuoteBasketV3Validation is module-private and absent from production exports/re-exports; its sole caller first traverses the fixed A3 Transport, closed 11-Schema Validator, authentic opaque wrapper, caller-isolated Adapter and exact request/response semantic binding
+- malformed_response_regression: the real public validateQuoteBasketV3 surface rejects missing root metadata, missing model, extra root or line keys and invalid locale with stable existing errors while preserving the source Basket serialization
+- uuid_closure: v3 ingress canonicalizes writerId, mutationId and every configured/accessory entryId to lowercase before duplicate/merge checks; v1/v2/v3 uppercase identities upgrade deterministically, case-fold collisions reject, and a frozen v2 uppercase standard line uses one lowercase POST then becomes ready with GDHEPRD000172 without mutating the caller input
+- independent_evidence: focused current regression PASS 2 files/6 tests; reviewer closure probe PASS 1 file/4 tests; Article Number verifier PASS 11/5/5; Quote Basket 3 verifier PASS 1/1/6; immutable handoff PASS 52/52 with manifest 9bfb794e6dace0e4a15aef5f2d5a755b333482d297d1a071f74bbbb1277bce5f and checksum stream 512b27a4b6d42b94cc73f45943b11a4b20ce4d08bd7305382f556e9a0c41e25a
+- cross_lane_regression: Planner fresh supported-runtime checkpoint records Node 24.18.0, npm 11.16.0, 66 files/579 tests, nine verifiers, lint/typecheck/build and four smokes PASS; inspected as regression evidence and not mislabeled as an independent full rerun
+- protected_cleanup: all 12 frozen baseline hashes reproduce; production next-env hash is exact; .next, TypeScript cache and .vitest are absent; port 3000 and checkout listeners are clear; changed-file ESLint and whitespace pass
+- governance: project, registry, messages and strict reviewer lane validate with issues empty; task/project/board remain UNDER_REVIEW NOT_ACCEPTED DIRTY while the linked response is pending
+- preserved_history: canonical Round 1 FAIL 0/2/0 remains complete and distinct; this is a narrow finding closure rather than a second full TASK-025 review
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after linked response acknowledgement
+- boundaries: no product, test, docs/README, task authority, Planner state, CMS/database, dependency, Git, deployment, Feishu or external-system mutation; PASS is not acceptance or Git authorization
+- message_status: the exact closure request and single linked PASS review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner owns fresh final validation and any checked acceptance preparation; no further reviewer work is authorized by this closure PASS

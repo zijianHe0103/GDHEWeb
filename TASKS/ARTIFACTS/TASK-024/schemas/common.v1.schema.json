@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json",
+  "title": "GDHE RFQ 1.0.0 common definitions",
+  "$defs": {
+    "uuidV4": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "utcTimestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{3}Z$"
+    },
+    "positiveSafeInteger": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "hexSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "publicPath": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 2048,
+      "pattern": "^/(?:[a-z0-9](?:[a-z0-9-]{0,62})/)+$"
+    },
+    "articleNumber": {
+      "type": "string",
+      "pattern": "^GDHEPRD[0-9]{6}$"
+    },
+    "publicReference": {
+      "type": "string",
+      "pattern": "^RFQ-[A-Z2-9]{12}$"
+    },
+    "requestReference": {
+      "type": "string",
+      "pattern": "^REQ-[A-Z2-9]{12}$"
+    },
+    "sourceBasketSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "revision", "writerId", "mutationId", "updatedAt", "expiresAt"],
+      "properties": {
+        "schemaVersion": { "const": "2.0.0" },
+        "revision": { "$ref": "#/$defs/positiveSafeInteger" },
+        "writerId": { "$ref": "#/$defs/uuidV4" },
+        "mutationId": { "$ref": "#/$defs/uuidV4" },
+        "updatedAt": { "$ref": "#/$defs/utcTimestamp" },
+        "expiresAt": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    },
+    "colorChoice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "label"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "label": { "type": "string", "minLength": 1, "maxLength": 128 }
+      }
+    },
+    "configuredSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "lengthTenths", "color"],
+      "properties": {
+        "type": { "enum": ["standard", "custom"] },
+        "lengthTenths": { "$ref": "#/$defs/positiveSafeInteger" },
+        "color": { "$ref": "#/$defs/colorChoice" }
+      }
+    },
+    "packagingChoice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basePackaging", "logoPrinting", "protectionArrangement"],
+      "properties": {
+        "basePackaging": { "enum": ["standard", "carton", "large_shrink_wrap"] },
+        "logoPrinting": { "type": "boolean" },
+        "protectionArrangement": {
+          "type": ["string", "null"],
+          "enum": ["single_bag", "paired", null]
+        }
+      }
+    },
+    "configuredPublicLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "resolutionIdentity", "selection", "packaging", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "configured_product" },
+        "entryId": { "$ref": "#/$defs/uuidV4" },
+        "resolutionIdentity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "value"],
+          "properties": {
+            "kind": { "const": "canonical_path" },
+            "value": { "$ref": "#/$defs/publicPath" }
+          }
+        },
+        "selection": { "$ref": "#/$defs/configuredSelection" },
+        "packaging": { "$ref": "#/$defs/packagingChoice" },
+        "quantityUnit": { "enum": ["piece", "roll"] },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "accessoryPublicLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "resolutionIdentity", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "catalog_accessory" },
+        "entryId": { "$ref": "#/$defs/uuidV4" },
+        "resolutionIdentity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "value"],
+          "properties": {
+            "kind": { "const": "opaque_public_quote_key" },
+            "value": {
+              "type": "string",
+              "minLength": 23,
+              "maxLength": 83,
+              "pattern": "^aq_[A-Za-z0-9_-]{20,80}$"
+            }
+          }
+        },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "publicBasketSubmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contractVersion", "sourceBasket", "items"],
+      "properties": {
+        "contractVersion": { "const": "1.0.0" },
+        "sourceBasket": { "$ref": "#/$defs/sourceBasketSnapshot" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": {
+            "oneOf": [
+              { "$ref": "#/$defs/configuredPublicLine" },
+              { "$ref": "#/$defs/accessoryPublicLine" }
+            ]
+          }
+        }
+      }
+    },
+    "publicCustomer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fullName", "companyName", "countryRegion", "city"],
+      "properties": {
+        "fullName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "companyName": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "whatsApp": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "weChat": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "businessEmail": { "type": "string", "minLength": 3, "maxLength": 254, "format": "email" },
+        "phone": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "countryRegion": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "city": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "companyWebsite": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 2048,
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "message": { "type": "string", "minLength": 1, "maxLength": 2000 }
+      },
+      "anyOf": [
+        { "properties": { "whatsApp": true }, "required": ["whatsApp"] },
+        { "properties": { "weChat": true }, "required": ["weChat"] },
+        { "properties": { "businessEmail": true }, "required": ["businessEmail"] },
+        { "properties": { "phone": true }, "required": ["phone"] }
+      ]
+    },
+    "privacyNotice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "presentedAt"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "presentedAt": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "contractVersion": "1.0.0",
+  "error": {
+    "code": "invalid_quantity",
+    "requestReference": "REQ-ABCDEFGHJKLM",
+    "messageKey": "rfq.error.invalid_quantity",
+    "fieldErrors": [
+      {
+        "field": "fullName",
+        "code": "required"
+      }
+    ]
+  }
+}

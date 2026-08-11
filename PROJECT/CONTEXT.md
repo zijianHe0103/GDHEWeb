@@ -16,6 +16,15 @@ schema_version: DPG-LANES-1.0.0
 - `公开保护图`：允许进入官网的品牌化产品成品图，必须包含可见水印、品牌标识或品牌底纹等防盗用元素；可同时包含型号和尺寸标注。它不同于内部原始图，公开站不以“无水印”为发布目标。
 - `测试产品数据`：用于验证页面归组、规格组合、询价和同步行为的非最终数据。它可以验证产品模型和流程，但不能作为生产目录、最终兼容关系或网站发布事实。
 
+## 询价领域术语
+
+- `Quote Basket`：客户在同一浏览器中临时收集多个公开产品配置和配件的询价集合；它不是订单、购物结算或付款篮。避免使用 `Cart`、`Shopping Bag`、`Checkout`。
+- `Public RFQ Submission Draft`：客户提交给网站的公开询价草稿，包含从本地 Basket 派生的最小提交投影、联系信息和隐私告知记录，但不含展示图片、Article Number 或任何内部系统身份；它始终是不可信输入。避免使用 `Order`、`Quotation`。
+- `Authoritative RFQ`：服务端重新验证全部客户输入和产品行后形成的一次完整业务询价；所有行共同接受或共同拒绝。避免使用 `Confirmed Order`、`Paid Order`。
+- `Public RFQ Receipt`：网站确认收到或正在处理一份 RFQ 的客户可见回执，不包含报价、价格、Article Number 或内部记录身份。避免使用 `Quote`、`Order Confirmation`。
+- `Sales Follow-up Line`：稳定产品身份和客户选择仍有效、但按已批准规则需要业务员后续解析 Article Number 或定制细节的询价行；它不是对篡改、过期或模糊数据的自动兜底。
+- `Meaningful Business Interaction`：由业务人员或客户产生的回复、报价、谈判、样品跟进等真实业务事件；系统同步、轮询、重试和页面访问不属于该事件。
+
 ## 运行说明
 
 - 项目根目录已初始化 Git，当前无正式提交。

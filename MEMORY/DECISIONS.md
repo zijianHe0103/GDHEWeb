@@ -13,4 +13,5 @@ schema_version: DPG-LANES-1.0.0
 
 ## 待决策
 
-- 包管理器、草稿预览、Webhook/缓存失效、媒体和询盘接口的实施细节。
+- 包管理器、草稿预览、Webhook/缓存失效与媒体实施细节。
+- RFQ 的公开/权威/回执/错误 Schema、RFC 8785 + versioned-secret HMAC、固定向量、Basket 快照清除 token、重放优先级和 30 天保留锚点已冻结；仍待后续决策/实施的是无详情配件 opaque public quote key、additive Basket/submission 版本、1～50 行混合批量重新解析接口、持久幂等/恢复存储、challenge 供应商、真实飞书字段映射、生产来源拓扑和可观测供应商。服务端形态已冻结为 Next.js-only，不再把 NestJS 作为默认候选。

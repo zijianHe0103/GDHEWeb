@@ -4168,3 +4168,280 @@ Each execution records:
 - 验证生成的 `.next` 与 `tsconfig.tsbuildinfo` 已可恢复移至 `/Users/arron/.Trash/gdhe-task023-formal-preflight.KeA8wt`，next-env 生产哈希保持且 port 3000 无 listener。
 - 只暂存 TASK-023 受控交付物；明确排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021/TASK-022 closure edits 和历史 resume packet。
 - 唯一下一步：正式提交，推送任务分支，fast-forward 合并并推送 `main`；不部署。
+
+## 2026-08-08T16:32:36Z TASK-023 formal delivery completed
+
+- 正式提交 `89da6ca2b948a881cd3d1ecfc4454d568363aa08` 已推送 `origin/codex/TASK-023-related-products-progressive`。
+- 本地 `main` 从 `6c5b7644c8bbabf8771223eb7baadb2964498e6b` fast-forward 到正式提交并推送 `origin/main`；三方 ref 已核对一致。
+- 合并后重新通过完整前端 `51 files / 544 tests`、七 verifier、lint、typecheck、build、四 smoke 与治理门。
+- 首次任务分支推送 HTTP 400 且远端无 ref；一次性 HTTP/1.1/缓冲重试成功，未修改持久 Git 配置。
+- 用户已有配置、前序 closure edits 与历史 resume packet 继续保留在工作区且未提交；任务收口为 `CLOSED / ACCEPTED / MERGED`，未部署。
+
+## 2026-08-10T02:20:52Z TASK-024 intake
+
+- 确认 TASK-023 已为 `CLOSED / ACCEPTED / MERGED`，本地/`origin/main` 同指 `89da6ca2b948a881cd3d1ecfc4454d568363aa08`。
+- 从 `main` 创建 `codex/TASK-024-rfq-submission-contract`，保留用户自有、前序 closure 和历史 resume packet 改动。
+- 创建仅合同的 TASK-024 需求卡：客户联系字段、公开草稿/服务端权威询价/公开回执三层边界、重新解析、幂等、反滥用和失败原子性。
+- 未开始表单、API、NestJS、frontend/CMS 代码、飞书现场读写、审查、Git 交付或部署。
+- 入项验证：project、registry、messages、strict lane 和 `git diff --check` PASS；full audit 无 HIGH，仅保留已知 DIRTY/历史 active-card MEDIUM 与 WordPress Core 命名 LOW。
+- 唯一下一步：等待用户精确口令 `确认 TASK-024 需求并开始执行`。
+
+## 2026-08-10T02:45:44Z TASK-024 requirements confirmed
+
+- 用户输入精确需求确认口令；TASK-024 从 `AWAITING_REQUIREMENT_CONFIRMATION` 进入 `READY`。
+- 放行范围仅为 Planner A0 保护基线、逐项字段/安全决策和后续只读 feasibility audit。
+- 产品代码、表单/API/NestJS、飞书现场、依赖、Git 交付和部署仍未授权。
+- 唯一下一步：记录受保护基线，然后按一次一个业务问题冻结客户联系字段矩阵。
+
+## 2026-08-10T02:48:14Z TASK-024 A0 protected baseline PASS
+
+- 创建 `BASELINE.md`、`BASELINE_CHECKSUMS.sha256` 和 `DECISION_LOG.md`，保护 20 份已交付架构/依赖/前端/CMS 关键文件。
+- 20/20 SHA-256、`git diff --check`、DPG project/registry/messages/strict lane 全部 PASS；严格 lane issue 为 0。
+- 用户自有、TASK-021～023 closure 和历史 resume packet 改动继续原样保留。
+- 唯一下一步：向用户提出字段决策 1，确认 Full Name 与 Company Name 的必填/可选关系。
+
+## 2026-08-10T02:58:21Z TASK-024 customer field decision 1 confirmed
+
+- 用户选择 `A`：`Full Name` 与 `Company Name` 均为必填。
+- `Company Website` 继续为选填；未借此推断联系方式组合或验证方式。
+- baseline 和产品代码不变，frontend/wordpress_cms lane 仍未派发。
+- 唯一下一步：逐项确认 Business Email、WhatsApp、WeChat、Phone 的至少一种可联系渠道组合规则。
+
+## 2026-08-10T03:07:01Z TASK-024 customer field decision 2 confirmed
+
+- 用户选择 `A`：Business Email、WhatsApp、WeChat、Phone 各自选填，但至少一种必须填写并有效。
+- 公开顺序冻结为 WhatsApp、WeChat、Business Email、Phone；允许同时填写多个渠道。
+- 未自行决定 WhatsApp/WeChat 格式或验证强度；baseline 和产品代码不变，lane 仍未派发。
+- 唯一下一步：逐项确认 WhatsApp 与 WeChat 的输入、规范化和验证规则。
+
+## 2026-08-10T03:10:22Z TASK-024 customer field decision 3 confirmed
+
+- 用户选择 `B`：WhatsApp 与 WeChat 均采用相互独立的自由文本，可同时填写。
+- 只做 trim、非空和后续统一确认的长度上限；不强制号码/微信号格式，不改写标识，不做 OTP 或账号真实性验证。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认 Country/Region 与 City 的必填/选填关系。
+
+## 2026-08-10T03:19:53Z TASK-024 customer field decision 4 confirmed
+
+- 用户选择 `B`：`Country/Region` 与 `City` 均必填。
+- 当前只冻结必填性；输入控件、国家规范值和精确长度仍待合同限额收敛。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认 `Message`（Additional Requirements / Project Details）的必填性。
+
+## 2026-08-10T16:14:31Z TASK-024 customer field decision 5 confirmed
+
+- 连续收到两次相同 `A`，按一次有效选择处理，未将重复回复带入下一决策。
+- `Message` / `Additional Requirements` / `Project Details` 冻结为选填；无 Message 不阻止有效 RFQ。
+- Message 仅承载额外上下文，不覆盖结构化配置/数量，且受后续长度与载荷限额约束。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认隐私告知、确认框与营销同意分离规则。
+
+## 2026-08-10T16:26:31Z TASK-024 customer field decision 6 confirmed
+
+- 用户选择 `A`：提交处显示隐私用途说明和 Privacy Policy 链接，不设置必选 checkbox。
+- 服务端仅记录所展示告知版本和提交时间；不把提交动作记作 consent，不收集或推断营销同意。
+- 客户资料只用于接收、校验、分派和回应 RFQ；生产法律基础与最终文案仍需适用司法辖区法律审核。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认 Next.js-only 或同源 Next.js intake + 独立 NestJS 服务。
+
+## 2026-08-10T16:34:53Z TASK-024 architecture decision 7 confirmed
+
+- 用户明确确认 `B：Next.js-only`。
+- 浏览器只调用同源 Next.js server intake；WordPress 保持 CMS/公开内容只读职责，飞书凭据、重新解析、幂等、安全门与受控写入均留在 Next.js 服务端。
+- 当前不引入 NestJS 或第二套部署；未来只有实证复杂度门出现后才用新任务/ADR 复评。
+- Next.js-only 仍需持久幂等与恢复机制；实现留待后续服务端任务。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认单次 RFQ 最大 Basket 行数。
+
+## 2026-08-10T16:43:15Z TASK-024 security limit decision 8 confirmed
+
+- 用户选择 `B`：单次 RFQ 最多 `50` 条不同 Basket 行；行内 quantity 不计为新增行。
+- `51+` 行由服务端整单拒绝，不截断、不部分交付、不产生成功回执，浏览器保留完整 Basket 并提示拆分。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认公开 RFQ HTTP 请求正文最大字节数。
+
+## 2026-08-10T16:44:48Z TASK-024 security limit decision 9 confirmed
+
+- 用户选择 `A`：公开 RFQ 原始 HTTP request body 上限为 `256 KiB` / `262144` bytes。
+- Next.js intake 必须在 JSON/业务解析和任何下游调用前执行声明长度与真实流式字节硬门；此端点不接受文件/base64/二进制附件。
+- 超限整单拒绝，Basket 保留，无成功回执或部分下游记录。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认客户字段最大 Unicode 字符数。
+
+## 2026-08-10T16:47:41Z TASK-024 security limit decision 10 confirmed
+
+- 用户选择字段上限组合 `A`：Full Name 120、Company 160、Email 254、WhatsApp/WeChat 各 128、Phone 64、Country/City 各 100、Website 2048、Message 2000 个 Unicode code points。
+- Email/Website 另做格式与 URL 安全验证；任一字段超限整单拒绝，不静默截断或部分接受。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认反机器人挑战策略。
+
+## 2026-08-10T16:50:26Z TASK-024 security decision 11 confirmed
+
+- 用户选择 `A`：冻结按风险触发的自适应人机验证。
+- 蜜罐、最短填写时间和服务端限流始终生效；只在风险或后续软阈值触发时显示挑战。
+- 挑战仅是纵深防御；不替代验证、Origin/CSRF、限流、幂等、重解析或下游隔离。
+- 本任务不采购或接入挑战供应商；未派发 lane，未修改 frontend/CMS 运行时。
+- 唯一下一步：确认软挑战、短窗硬限制、24 小时来源与联系指纹的数值化限流组合。
+
+## 2026-08-10T16:52:55Z TASK-024 security limit decision 12 confirmed
+
+- 用户选择均衡组合 `A`：同一来源 10 分钟内第 4～5 次需挑战，第 6 次起 `429`；24 小时第 21 次起 `429`。
+- 同一规范化联系指纹 24 小时最多创建 10 个新 RFQ；幂等重试仍计网络来源流量但不新增业务意图。
+- 限流指纹由服务端使用 keyed 隐私保护表示；硬拒绝保留 Basket、无成功回执且无下游调用。
+- baseline 与产品代码不变，lane 仍未派发。
+- 唯一下一步：确认幂等记录、首次请求重放窗口和下游超时组合。
+
+## 2026-08-10T16:56:37Z TASK-024 security decision 13 confirmed
+
+- 用户选择 `A`：冻结 30 分钟服务端提交凭证、30 天幂等记录、10 秒飞书单次超时和 15 秒入口总预算。
+- 同键同载荷只返回同一回执或当前状态，同键异载荷拒绝；不确定下游结果不盲目重发、不伪造成功。
+- 无法持久幂等/状态时 fail closed；Basket 在确认接受前保留。
+- 未选择持久库、恢复工作器或飞书对账实现；lane 仍未派发。
+- 唯一下一步：确认已接受 RFQ 和客户联系内容的业务保留周期。
+
+## 2026-08-10T17:00:04Z TASK-024 privacy decision 14 confirmed
+
+- 用户选择 `A`：已接受 RFQ 的客户身份、联系方式和留言自最后真实业务互动起保留 24 个月。
+- 仅真实人工业务事件重置时钟；同步、维护、轮询、页面访问和幂等重试不重置。
+- 到期删除或不可逆匿名化；转为正式客户/合同/订单则转入独立保留政策，实际法律保留除外。
+- 未创建飞书字段、工作流或删除任务；lane 仍未派发。
+- 唯一下一步：确认已验证删除/匿名化请求的目标完成时限。
+
+## 2026-08-10T17:23:26Z TASK-024 privacy decision 15 confirmed
+
+- 用户明确不需要在官网或 RFQ 流程提供删除资料选项。
+- 冻结无公开自助 checkbox/按钮/表单/账户页/API/飞书自动删除流程。
+- 无自助入口不排除适用法律下经 Privacy Policy 普通联系渠道人工处理的有效请求；本任务不承诺通用法定时限。
+- 未派发 lane，未修改表单/代码，未执行任何飞书或删除操作。
+- 唯一下一步：确认普通应用日志、安全事件元数据和限流指纹的保留期。
+
+## 2026-08-10T17:27:00Z TASK-024 observability decision 16 confirmed
+
+- 用户选择 `A`：脱敏应用/错误日志 30 天，安全事件 90 天，keyed 限流指纹 48 小时，不可识别汇总指标 13 个月。
+- 日志禁止完整表单/联系方式/原始 IP/Article Number 清单/幂等键/挑战 token/凭据/下游原始错误；仅特定事故/法律保留可受限延期。
+- 全部当前用户决策门已关闭；未选供应商，未派发 lane，未修改运行时或外部系统。
+- 唯一下一步：Planner 正式化 requirements/contract/field/security/failure/sequence 文档，验证后派发 frontend/wordpress_cms 只读核查。
+
+## 2026-08-10T17:37:43Z TASK-024 contract drafting complete
+
+- 依据用户确认的决策 1～16，完成六份 RFQ requirements/contract/field/security/failure/sequence 正式初稿。
+- 明确三层数据边界、Next.js-only、50 行批量重新解析、公开字段/内部身份隔离、整单原子失败、30 分钟 intent、30 天幂等、24 个月业务保留与技术日志保留。
+- 更新项目领域术语、架构契约第 11/14 节、ADR-006 第 41～47 项和决策索引；未修改任何 frontend/CMS 产品代码或外部系统。
+- A0 保护核对中 18 个未授权文件保持，架构契约和 ADR-006 为两份预期授权变化。
+- 唯一下一步：完成文档、保护范围与 DPG 验证，然后向 frontend/wordpress_cms 创建并受控派发只读 audit 消息。
+
+## 2026-08-10T17:41:48Z TASK-024 feasibility audits dispatched
+
+- Planner 文档/保护/DPG 验证 PASS，结果记录于 `PLANNER_CONTRACT_VALIDATION.md`。
+- 创建并通过真实 Codex thread bridge 投递 `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT` 与 `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT`。
+- 两条消息完成 dispatch-once；消息队列为空、message validation PASS。
+- frontend/wordpress_cms 只读范围明确，不允许产品、Schema、API、数据库、飞书或外部系统修改。
+- 唯一下一步：等待两条 linked response，分别做 Planner checkpoint；未完成前不派发 adversarial review。
+
+## 2026-08-10T17:59:36Z TASK-024 feasibility contract narrow revision
+
+- 已 validate、ACK 并完成 frontend/wordpress_cms 两项第一轮只读 audit response；分别识别 Basket 媒体/尺寸冲突与任意配件身份/混合批量解析缺口。
+- checked `task_transition.py reopen` 仅作为状态安全核对运行，因任务真实状态已经是 `IN_PROGRESS` 而正确拒绝，未改动状态。
+- 网络合同改为从 Quote Basket `2.0.0` 派生 `PublicRfqBasketSubmission 1.0.0` 最小投影；排除名称、图片和创建时间，保留 snapshot/entry/public identity/choice/packaging/unit/quantity。
+- 尺寸边界改为投影 `163840` bytes、raw `262144` bytes、信封 `98304` bytes；intent/privacy version/challenge token 取得显式上限。
+- configured product 用 canonical path；catalog accessory 在 future opaque public quote key、additive Basket/submission version 与 batch resolver 交付前继续阻塞，不按名称、型号或关系位置猜测。
+- frontend/CMS runtime、冻结合同、数据库、飞书和外部系统均未修改。
+- 唯一下一步：刷新 Planner validation，再派发两项 narrow read-only re-audit；通过前不开始 review 或 implementation。
+
+## 2026-08-10T18:11:00Z TASK-024 pre-review Planner checkpoint PASS
+
+- WordPress/CMS re-audit R2 `PASS` 并 ACK/done；现有 CMS 能力未被夸大，剩余 opaque-key/additive-version/batch-runtime/real-data/deployment 均明示为后续门。
+- frontend re-audit R2 关闭两个 Round 1 冲突并发现公开 model 措辞门；Planner 从 public projection 删除 model/name/image/display-only data，frontend R3 `PASS` 并 ACK/done。
+- R3 提到的 section 5 “submitted name/image” 非阻塞编辑残留已删除；authoritative current model 只可由 successful unique server resolution 生成。
+- 当前检查：11/11 artifacts、size arithmetic、stale scan、public-model scan、零 product diff、18/20 protected unchanged + 2 authorized docs、git diff、project/registry/messages/strict-lane 全 PASS。
+- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与 `DIFF_OR_OUTPUT_SUMMARY.md` 已完成；任务同步为 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- 唯一下一步：只派发 independent adversarial review；不得开始 implementation、acceptance、Git 或 deployment。
+
+## 2026-08-10T18:13:00Z TASK-024 adversarial review Round 1 dispatched
+
+- 创建并验证 `MSG-TASK-024-ADVERSARIAL-REVIEW-R1`，通过真实 registered reviewer thread bridge 发送并 dispatch-once。
+- review challenge 覆盖用户决策、projection/internal boundary、accessory future gates、UTF-8/Unicode limits、contact/privacy、atomic/idempotency/failure/security/retention、sequence、protected evidence 和治理真值。
+- strict audit 的唯一 pending MEDIUM 是 reviewer 尚未 ACK 的 dispatched request，符合当前 `UNDER_REVIEW`。
+- 唯一下一步：等待 linked verdict；不开始 repair、implementation、acceptance、Git 或 deployment。
+
+## 2026-08-10T18:30:40Z TASK-024 adversarial Round 1 FAIL recovery
+
+- `MSG-TASK-024-ADVERSARIAL-REVIEW-R1-RESPONSE` 已验证、ACK 并移入 done；verdict `FAIL / P0=0 / P1=2 / P2=1`。
+- checked reopen 因 helper 只允许从 `AWAITING_USER` 重开而对真实 `UNDER_REVIEW` 安全拒绝，未产生自动修改；Planner 如实同步 `NEEDS_REVISION`。
+- 只放行精确机器 Schema/向量、重放与限流/保留优先级和当前叙述的最小文档修订；无 runtime、CMS、飞书、Git 或部署权限。
+
+## 2026-08-10T18:56:06Z TASK-024 Round 1 revision checkpoint PASS
+
+- 冻结五份闭合 Draft 2020-12 Schema、两份 public request/HMAC/snapshot 固定向量和四份 authoritative/receipt/error 样本。
+- existing same-key replay 在 new-attempt hard limit 前返回 stored state；unseen/expired key 才进入限流。pre-reservation failure 不建 durable business state，first successful reservation 固定 30 天锚点。
+- fresh evidence：Schema `5/5`、positive `6/6`、negative `6/6`、crypto `2/2`、TTL `2/2`、artifacts `33/33`、broken links `0`、protected `18/20` + 两份授权文档、零产品/CMS diff、diff/DPG gates PASS。
+- 任务进入 `UNDER_REVIEW`；Round 1 FAIL 历史保留，唯一下一步是 narrow Round 2。
+
+## 2026-08-10T18:59:36Z TASK-024 adversarial Round 2 dispatched
+
+- 创建并验证 `MSG-TASK-024-ADVERSARIAL-REVIEW-R2`，通过注册 reviewer thread bridge 投递并 dispatch-once。
+- review 只检查 Round 1 两个 P1、一个 P2 的闭合与既有 passing boundaries；无修复、runtime、CMS、飞书或 Git 权限。
+- request 于 `18:59:49Z` ACK/done；当前唯一下一步是等待 linked final verdict，不提前 final validation。
+
+## 2026-08-10T19:12:18Z TASK-024 adversarial Round 2 FAIL recovery
+
+- `MSG-TASK-024-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK/done；verdict `FAIL / P0=0 / P1=1 / P2=1`，Round 1 FAIL 历史保留。
+- P1-2 replay/retention 已独立关闭；只放行 duplicate line identity、error category pairing、authoritative state matrix 和 current narration 修订。
+- checked reopen 对真实 `UNDER_REVIEW` 安全拒绝，Planner 如实同步 `NEEDS_REVISION`。
+- configured `max_rounds=2` 已用完；未获用户授权不得再派发 review。
+
+## 2026-08-10T19:26:40Z TASK-024 Round 2 bounded repair validation PASS
+
+- 增加公开/权威 entry ID 唯一性和 TASK-022 完整公开 merge identity 唯一性；重复 ID 或重复业务行在 digest/reservation 前整单拒绝。
+- public error 已机器化限定六个可带 fieldErrors 的码/字段类别；两个 reviewer 方向均为固定负向向量。
+- authoritative source outcome 固定为 `new_intent`，status/delivery/attempt 只允许六个精确组合。
+- fresh evidence：Schema `5/5`、refs `61`、positive `12`、negative `6`、crypto `2/2`、artifacts `41`、JSON `18/18`、protected `18/20` + 2 authorized docs、forbidden frontend/CMS diff `0`、diff/DPG gates PASS。
+- 唯一下一步：等待用户明确授权一次额外 independent closure review；不开始 runtime、acceptance、Git 或 deployment。
+
+## 2026-08-11T03:25:26Z TASK-024 user-authorized closure review dispatched
+
+- 用户精确授权一次额外 independent closure review，不扩展为 implementation、acceptance、Git 或 deployment 权限。
+- `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW` 完成 queue、DPG dry-run、registered reviewer thread bridge 与 dispatch-once；real Codex bridge receipt 已记录。
+- Project、registry、messages 与 diff 校验 PASS；strict lane 唯一 MEDIUM 是该已投递请求待 ACK，符合 `UNDER_REVIEW`。
+- 唯一下一步：等待 reviewer ACK 和单一 linked PASS/FAIL/P0/P1/P2 response；不提前 final validation、验收、Git、runtime 或部署。
+
+## 2026-08-11T03:26:26Z TASK-024 closure review request ACK
+
+- Reviewer 在实质复核前 ACK `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW`，受控请求已移入 done。
+- 后续 project、registry、messages、strict lane 与 diff 校验全部 PASS，lane issues 为零。
+- 唯一下一步：等待 linked PASS/FAIL/P0/P1/P2 response；不提前 final validation、验收、Git、runtime 或部署。
+
+## 2026-08-11T03:33:46Z TASK-024 closure review PASS
+
+- Validate 并 ACK/done `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE`；最终 verdict `PASS / P0=0 / P1=0 / P2=0`。
+- Reviewer 独立复现 Schema 5/refs 61、两个重复身份的 pre-stateful rejection、错误类别矩阵、六个权威状态组合、重放/保留和两组密码向量；protected `18/20` + 2 authorized docs 与零 forbidden product diff PASS。
+- Round 1 `FAIL / 0/2/1` 与 Round 2 `FAIL / 0/1/1` 作为历史保留；closure PASS 不是用户验收或 Git/部署授权。
+- 唯一下一步：fresh Planner final validation；通过后仅执行 checked `prepare-awaiting-user`。
+
+## 2026-08-11T03:40:55Z TASK-024 Planner final validation PASS
+
+- Node 24.18.0 机器合同复现为 Schema `5` / refs `61` / positive `12` / negative `6` / crypto `2` / failures `0`。
+- 42 份 artifacts、JSON 18/18、newline/link、protected 18/20 + 2 authorized docs、零 forbidden frontend/CMS diff、project/registry/messages/strict lane/diff 全部 PASS。
+- Full strict audit 无 HIGH；仅已知 dirty/historical-active MEDIUM 与 WordPress Core filename LOW。
+- `PLANNER_FINAL_VALIDATION.md` 与 Planner Final Summary 已完成；文档影响 RESOLVED，README 不适用。
+- 唯一下一步：checked `prepare-awaiting-user`；不实施、验收、Git 或部署。
+
+## 2026-08-11T03:47:17Z TASK-024 checked preparation narrative sync
+
+- 首次 checked prepare 于 `03:45:01Z` 成功；DPG 随后阻止 AWAITING_USER 状态下的直接叙述修改。
+- 按受控流程 reopen 到 `NEEDS_REVISION`，只同步人类可读 current-state/board/worklog/activity；业务合同、closure PASS、final validation 和 `NOT_ACCEPTED` 不变。
+- 唯一下一步：fresh governance 校验后重跑 checked prepare。
+
+## 2026-08-11T03:49:04Z TASK-024 final awaiting-user narrative sync
+
+- 第二次 checked prepare 于 `03:48:42Z` 成功；最后一次受控 reopen 仅预先将 Active Task/State/Board 同步为最终 `AWAITING_USER`。
+- 业务合同、closure PASS、final validation、document impact 和 `NOT_ACCEPTED` 不变。
+- 唯一下一步：最终 checked prepare 确认后等待精确用户交付口令。
+
+## 2026-08-11T04:46:02Z TASK-024 formal delivery authorized
+
+- 用户输入精确口令 `确认 TASK-024 完成并提交到远端`。
+- `task_accept.py check` 与 `accept` 均 PASS；当前语义状态为 `ACCEPTED / ACCEPTED`，Git 状态为 `FORMAL_COMMIT_PENDING`。
+- Closure review `PASS / P0=0 / P1=0 / P2=0`、机器合同与治理门保持 PASS；文档影响 RESOLVED，README 不适用。
+- 只暂存 TASK-024 受控交付物；排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～023 closure edits 和历史 resume packet。
+- 唯一下一步：正式提交并推送任务分支，fast-forward 合并并推送 `main`；不部署、不开始 TASK-025 或 runtime 实现。

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/rfq/1.0.0/public-rfq-receipt.v1.schema.json",
+  "title": "GDHE PublicRfqReceipt 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "publicReference", "status", "receivedAt", "lineCount", "messageKey", "submittedBasketSnapshot", "submittedBasketToken"],
+  "properties": {
+    "contractVersion": { "const": "1.0.0" },
+    "publicReference": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicReference" },
+    "status": { "enum": ["accepted", "processing"] },
+    "receivedAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" },
+    "lineCount": { "type": "integer", "minimum": 1, "maximum": 50 },
+    "messageKey": { "enum": ["rfq.accepted", "rfq.processing"] },
+    "submittedBasketSnapshot": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/sourceBasketSnapshot" },
+    "submittedBasketToken": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/hexSha256" },
+    "retryAfterSeconds": { "type": "integer", "minimum": 1, "maximum": 3600 }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": { "status": { "const": "accepted" }, "messageKey": { "const": "rfq.accepted" } },
+      "not": { "type": "object", "properties": { "retryAfterSeconds": true }, "required": ["retryAfterSeconds"] }
+    },
+    {
+      "type": "object",
+      "properties": { "status": { "const": "processing" }, "messageKey": { "const": "rfq.processing" }, "retryAfterSeconds": true },
+      "required": ["retryAfterSeconds"]
+    }
+  ]
+}

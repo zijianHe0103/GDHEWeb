@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/rfq/1.0.0/authoritative-rfq-document.v1.schema.json",
+  "title": "GDHE AuthoritativeRfqDocument 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "rfqId", "publicReference", "receivedAt", "status", "customer", "privacyNotice", "lines", "payloadDigest", "idempotency", "sourceSecurity", "delivery"],
+  "properties": {
+    "contractVersion": { "const": "1.0.0" },
+    "rfqId": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+    "publicReference": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicReference" },
+    "receivedAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" },
+    "status": { "enum": ["idempotency_reserved", "resolving_lines", "delivery_pending", "accepted", "delivery_indeterminate", "rejected_before_delivery"] },
+    "customer": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicCustomer" },
+    "privacyNotice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "presentedAt", "receivedAt"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "presentedAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" },
+        "receivedAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" }
+      }
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/configuredStandardLine" },
+          { "$ref": "#/$defs/configuredCustomLine" },
+          { "$ref": "#/$defs/catalogAccessoryLine" }
+        ]
+      }
+    },
+    "payloadDigest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keyVersion", "value"],
+      "properties": {
+        "keyVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$" },
+        "value": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/hexSha256" }
+      }
+    },
+    "idempotency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keyFingerprint", "createdAt", "expiresAt"],
+      "properties": {
+        "keyFingerprint": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/hexSha256" },
+        "createdAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" },
+        "expiresAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" }
+      }
+    },
+    "sourceSecurity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceFingerprint", "outcomeCode"],
+      "properties": {
+        "sourceFingerprint": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/hexSha256" },
+        "contactFingerprint": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/hexSha256" },
+        "outcomeCode": { "const": "new_intent" }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "attemptCount", "lastTransitionAt"],
+      "properties": {
+        "state": { "enum": ["not_started", "pending", "accepted", "indeterminate", "rejected"] },
+        "attemptCount": { "type": "integer", "minimum": 0, "maximum": 1 },
+        "lastTransitionAt": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/utcTimestamp" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "idempotency_reserved" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "not_started" }, "attemptCount": { "const": 0 } } }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "resolving_lines" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "not_started" }, "attemptCount": { "const": 0 } } }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "delivery_pending" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "pending" }, "attemptCount": { "const": 1 } } }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "accepted" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "accepted" }, "attemptCount": { "const": 1 } } }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "delivery_indeterminate" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "indeterminate" }, "attemptCount": { "const": 1 } } }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": { "const": "rejected_before_delivery" },
+            "delivery": { "type": "object", "properties": { "state": { "const": "rejected" }, "attemptCount": { "const": 0 } } }
+          }
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "configuredStandardLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "resolution", "stableProductUuid", "articleNumber", "publicPath", "model", "quantityUnit", "quantity", "selection", "packaging"],
+      "properties": {
+        "lineKind": { "const": "configured_product" },
+        "entryId": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "resolution": { "const": "resolved_article_number" },
+        "stableProductUuid": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "articleNumber": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/articleNumber" },
+        "publicPath": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicPath" },
+        "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "quantityUnit": { "enum": ["piece", "roll"] },
+        "quantity": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/positiveSafeInteger" },
+        "selection": {
+          "allOf": [
+            { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/configuredSelection" },
+            { "type": "object", "properties": { "type": { "const": "standard" } } }
+          ]
+        },
+        "packaging": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/packagingChoice" }
+      }
+    },
+    "configuredCustomLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "resolution", "stableProductUuid", "articleNumber", "publicPath", "model", "quantityUnit", "quantity", "selection", "packaging", "followUpReason"],
+      "properties": {
+        "lineKind": { "const": "configured_product" },
+        "entryId": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "resolution": { "const": "sales_follow_up" },
+        "stableProductUuid": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "articleNumber": { "type": "null" },
+        "publicPath": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicPath" },
+        "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "quantityUnit": { "enum": ["piece", "roll"] },
+        "quantity": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/positiveSafeInteger" },
+        "selection": {
+          "allOf": [
+            { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/configuredSelection" },
+            { "type": "object", "properties": { "type": { "const": "custom" } } }
+          ]
+        },
+        "packaging": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/packagingChoice" },
+        "followUpReason": { "const": "custom_length" }
+      }
+    },
+    "catalogAccessoryLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineKind", "entryId", "resolution", "stableProductUuid", "articleNumber", "publicPath", "model", "quantityUnit", "quantity"],
+      "properties": {
+        "lineKind": { "const": "catalog_accessory" },
+        "entryId": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "resolution": { "const": "resolved_article_number" },
+        "stableProductUuid": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" },
+        "articleNumber": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/articleNumber" },
+        "publicPath": { "type": "null" },
+        "model": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/positiveSafeInteger" }
+      }
+    }
+  }
+}

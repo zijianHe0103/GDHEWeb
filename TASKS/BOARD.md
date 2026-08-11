@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-023
+current_task: TASK-024
 
 ## 活动任务
 
-- `TASK-023` 建立 FGD X15+PVC 型号级 You May Also Need 渐进式相关产品推荐纵向切片 — `AWAITING_USER`
+- `TASK-024` 冻结最终 RFQ Submission Contract、客户信息字段与服务端安全边界 — `AWAITING_USER` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -25,11 +25,11 @@ current_task: TASK-023
 
 ## 等待用户验收
 
-- `TASK-023` — closure R4 与 fresh Planner final validation PASS；待用户验收，未验收、未提交。
+- 暂无。
 
 ## 等待推送
 
-- 暂无。
+- `TASK-024` 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
 
 ## 已暂停
 
@@ -37,6 +37,7 @@ current_task: TASK-023
 
 ## 最近关闭
 
+- `TASK-023` 建立 FGD X15+PVC 型号级 You May Also Need 渐进式相关产品推荐纵向切片 — `CLOSED` / `MERGED`
 - `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `CLOSED` / `MERGED`
 - `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `CLOSED` / `MERGED`
 - `TASK-020` 建立 FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片 — `CLOSED` / `MERGED`
@@ -133,3 +134,7 @@ current_task: TASK-023
 ## Accepted
 
 - TASK-023: ACCEPTED at 2026-08-08T16:26:33Z
+
+## Accepted
+
+- TASK-024: ACCEPTED at 2026-08-11T04:46:02Z

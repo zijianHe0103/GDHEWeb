@@ -2,6 +2,15 @@
 
 schema_version: DPG-LANES-1.0.0
 
+## 2026-08-11T04:46:02Z
+
+### task_formal_delivery_authorized
+
+- type: task_acceptance
+- lane: planner
+- task: TASK-024
+- summary: Exact user phrase accepted TASK-024 after closure review, fresh final validation and checked preparation PASS; only the controlled TASK-024 delivery scope may now be committed, pushed, fast-forward merged to main and pushed to origin, with deployment and runtime work still excluded.
+
 ## 2026-08-06T02:56:00Z
 
 ### task_design_baseline_pass
@@ -10564,3 +10573,584 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-023
 - summary: TASK-023 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+## 2026-08-08T16:32:36Z TASK-023 formal delivery completed
+
+- 正式提交 `89da6ca2b948a881cd3d1ecfc4454d568363aa08` 已推送任务分支。
+- 本地 `main` fast-forward 合并后已推送 `origin/main`；本地/远端 `main` 与远端任务分支三方一致。
+- 合并后完整前端 `51 files / 544 tests`、七 verifier、lint、typecheck、build、四 production smoke 与治理门重新 PASS。
+- 任务收口为 `CLOSED / ACCEPTED / MERGED`；未部署，最终 RFQ 与飞书写入仍后置。
+
+## 2026-08-10T02:20:52Z TASK-024 intake
+
+- 基于已交付 `main` 创建 `codex/TASK-024-rfq-submission-contract`。
+- 登记最终 RFQ 三层数据合同、客户联系字段、服务端重新解析、幂等、反滥用、日志/隐私和原子失败边界。
+- 任务仅入项；表单、API、NestJS、飞书现场、前端/CMS 运行时、外部写入、Git 交付和部署均未开始。
+- 当前为 `AWAITING_REQUIREMENT_CONFIRMATION / NOT_ACCEPTED / DIRTY`；等待精确需求确认口令。
+
+## 2026-08-10T02:45:44Z TASK-024 requirements confirmed
+
+- 用户已精确确认 TASK-024 需求；任务进入 `READY / NOT_ACCEPTED / DIRTY`。
+- 只放行 Planner 保护基线、客户字段/安全决策逐项确认和后续只读可行性审计。
+- 表单、API、NestJS、飞书现场、前端/CMS 运行时、外部写入、Git 交付和部署继续阻塞。
+
+## 2026-08-10T02:48:14Z TASK-024 A0 protected baseline PASS
+
+- 完成 20 份关键文件的 SHA-256 保护基线和显式决策日志。
+- 20/20 checksum、diff 与 DPG project/registry/messages/strict-lane 门通过。
+- 产品代码和外部系统零修改；当前进入客户字段决策 1。
+
+## 2026-08-10T02:58:21Z TASK-024 customer field decision 1 confirmed
+
+- 用户选择 `A`，正式冻结 `Full Name` 与 `Company Name` 均必填。
+- `Company Website` 保持选填；联系方式组合和验证规则仍待逐项确认。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认至少一种联系方式规则及其参与渠道。
+
+## 2026-08-10T03:07:01Z TASK-024 customer field decision 2 confirmed
+
+- 用户选择 `A`，正式冻结 Business Email、WhatsApp、WeChat、Phone 各自选填但至少一种必须有效。
+- 公开展示顺序为 WhatsApp、WeChat、Business Email、Phone；多个渠道可以同时填写。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认 WhatsApp/WeChat 输入与验证规则。
+
+## 2026-08-10T03:10:22Z TASK-024 customer field decision 3 confirmed
+
+- 用户选择 `B`，正式冻结 WhatsApp/WeChat 的宽松自由文本输入策略。
+- 仅 trim、非空和待确认长度上限；不强制格式、不重写、不做账号验证，允许两项同时填写。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认 Country/Region 与 City 的必填关系。
+
+## 2026-08-10T03:19:53Z TASK-024 customer field decision 4 confirmed
+
+- 用户选择 `B`，正式冻结 `Country/Region` 与 `City` 均必填。
+- 输入控件、国家规范值和长度上限仍属于后续合同收敛项。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认 Message 字段的必填性。
+
+## 2026-08-10T16:14:31Z TASK-024 customer field decision 5 confirmed
+
+- 连续两次相同 `A` 只处理一次，未将重复输入用于下一项决策。
+- 正式冻结 Message / Additional Requirements 为选填；无 Message 不阻止有效 RFQ。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认隐私告知与同意边界。
+
+## 2026-08-10T16:26:31Z TASK-024 customer field decision 6 confirmed
+
+- 用户选择 `A`，冻结提交处清晰隐私用途告知和 Privacy Policy 链接，不设置必选框。
+- 记录告知版本与提交时间，但不命名为 consent，不收集或推断营销同意。
+- 最终生产法律文案和法律基础保留为司法辖区法律审核门。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认服务端实现形态。
+
+## 2026-08-10T16:34:53Z TASK-024 architecture decision 7 confirmed
+
+- 用户明确确认 `B：Next.js-only`。
+- 冻结同源 Next.js 服务端 intake、WordPress CMS/只读内容与服务端秘密飞书写入的职责边界。
+- 当前不初始化 NestJS；未来复评必须有多客户端、复杂工作流、多集成或独立扩容的实证需要。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认单次 RFQ 最大 Basket 行数。
+
+## 2026-08-10T16:43:15Z TASK-024 security limit decision 8 confirmed
+
+- 用户选择 `B`，冻结单次 RFQ 最多 `50` 条不同 Basket 行。
+- `51+` 行整单拒绝，不截断、不部分成功，Basket 保留并提示客户拆分。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认公开 RFQ 请求正文最大字节数。
+
+## 2026-08-10T16:44:48Z TASK-024 security limit decision 9 confirmed
+
+- 用户选择 `A`，冻结公开 RFQ 原始请求正文最大 `256 KiB` / `262144` bytes。
+- 字节门先于 JSON/业务解析和所有下游调用；禁止文件/base64/二进制附件。
+- 超限整单拒绝且 Basket 保留。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认客户字段最大 Unicode 字符数。
+
+## 2026-08-10T16:47:41Z TASK-024 security limit decision 10 confirmed
+
+- 用户选择字段字符上限组合 `A`，九类客户字段的 Unicode code-point 上限已冻结。
+- Email/Website 保留额外格式/URL 安全验证；超限整单拒绝，不截断或部分接受。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认反机器人挑战策略。
+
+## 2026-08-10T16:50:26Z TASK-024 security decision 11 confirmed
+
+- 用户选择 `A`，冻结自适应人机验证：服务端蜜罐、最短填写时间与限流始终生效，挑战仅在风险或软阈值触发时出现。
+- 需要挑战时，缺失/失效/过期/重放整单拒绝，Basket 保留且不调用下游。
+- 供应商选择、采购、隐私和 CSP 检查留待后续独立实施任务；本次无代码或外部操作。
+- 唯一下一步：确认数值化提交限流组合。
+
+## 2026-08-10T16:52:55Z TASK-024 security limit decision 12 confirmed
+
+- 用户选择均衡限流 `A`：10 分钟来源窗口前 3 次无频率挑战，第 4～5 次需挑战，第 6 次起 `429`；24 小时来源第 21 次起 `429`。
+- 同一规范化联系指纹 24 小时最多创建 10 个新 RFQ；同键同载荷重试不新增业务记录。
+- 来源/联系方式仅用服务端 keyed 指纹做限流；普通日志不写完整原值。限流拒绝保留 Basket 且不调用下游。
+- 未派发 lane，未修改 frontend/CMS 运行时，未执行外部操作。
+- 唯一下一步：确认幂等、重放与下游超时数值组合。
+
+## 2026-08-10T16:56:37Z TASK-024 security decision 13 confirmed
+
+- 用户选择 `A`：冻结提交凭证首用 30 分钟、幂等记录 30 天、飞书单次调用 10 秒和入口总超时 15 秒。
+- 同键同载荷不产生第二条业务记录；同键异载荷冲突拒绝。飞书结果不确定时不伪造成功、不盲目重发。
+- 无持久幂等状态则 fail closed，未确认接受前 Basket 保留。
+- 未派发 lane，未修改 frontend/CMS 运行时，未连接飞书或执行其他外部操作。
+- 唯一下一步：确认已接受 RFQ 和客户联系内容的默认保留周期。
+
+## 2026-08-10T17:00:04Z TASK-024 privacy decision 14 confirmed
+
+- 用户选择 `A`：已接受 RFQ 联系资料自最后真实业务互动起保留 24 个月。
+- 自动同步、状态轮询、系统维护、页面访问和幂等重试不重置时钟；到期删除或不可逆匿名化。
+- 转为正式客户/合同/订单/财务记录后改用独立业务保留政策；实际法律保留或争议范围可暂停删除。
+- 未派发 lane，未连接飞书或实施删除/备份操作。
+- 唯一下一步：确认已验证删除/匿名化请求的目标处理时限。
+
+## 2026-08-10T17:23:26Z TASK-024 privacy decision 15 confirmed
+
+- 用户明确不需要官网/RFQ 公开删除资料选项；本任务移除自助删除功能与专用处理时限决策。
+- 不建立删除 checkbox、按钮、表单、账户页、API 或飞书自动删除流程。
+- 适用法律下经普通隐私联系渠道提出的有效请求仍可按批准政策人工处理；本决策不执行任何当前删除。
+- 未派发 lane，未修改 frontend/CMS 运行时或连接飞书。
+- 唯一下一步：确认技术日志、安全事件和限流指纹保留组合。
+
+## 2026-08-10T17:27:00Z TASK-024 observability decision 16 confirmed
+
+- 用户选择均衡组合 `A`：脱敏应用/错误日志 30 天、安全事件 90 天、keyed 限流指纹 48 小时、不可识别汇总指标 13 个月。
+- 技术日志不是浏览器 Basket 或飞书业务 RFQ，且禁止完整请求/联系方式/原始 IP/Article Number 清单/凭据/下游原始错误。
+- TASK-024 当前全部用户决策门关闭；未派发 lane，未修改 frontend/CMS 代码，未连接飞书或选择供应商。
+
+## 2026-08-10T17:37:43Z TASK-024 Planner contract draft
+
+- 完成六份正式 RFQ 合同/矩阵初稿：requirements、三层 submission contract、customer field matrix、server security boundary、failure/idempotency matrix 和 implementation sequence。
+- 同步项目 RFQ 领域术语、架构契约第 11/14 节、ADR-006 第 41～47 项和决策索引。
+- 18 份未授权 A0 基线文件原哈希保持；架构契约和 ADR-006 是任务明确授权的两份预期文档变化。
+- 未修改 frontend/CMS 运行时、Schema、依赖、数据库或飞书；未开始表单、Route Handler、connector、采购、部署或审查。
+- 唯一下一步：Planner 文档/治理验证 PASS 后，受控派发 frontend 与 wordpress_cms 只读可行性核查。
+
+## 2026-08-10T17:41:48Z TASK-024 read-only feasibility audits dispatched
+
+- Planner 合同验证为 `PASS_FOR_READONLY_FEASIBILITY_DISPATCH`。
+- 通过注册线程向 frontend 派发公开 Basket/Next.js intake/receipt/持久状态只读核查，向 wordpress_cms 派发 50 行混合重新解析/Article Number/accessory/N+1 只读核查。
+- 两条受控消息均完成 dry-run、真实 thread bridge 和 dispatch-once；队列为空且 messages validate PASS。
+- 两个 lane 只可写 TASK-024 audit artifact 与自身 worklog，不可修改 frontend/CMS/Schema/API/数据库/飞书。
+- 唯一下一步：等待 linked responses，Planner 独立核查后再决定窄修订或独立审查。
+- 唯一下一步：Planner 完成正式 RFQ 合同文档、本地验证，再派发 frontend/wordpress_cms 只读可行性核查。
+
+### 2026-08-10T17:40:18Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-024
+- summary: message queued for frontend
+
+### 2026-08-10T17:40:18Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message queued for wordpress_cms
+
+### 2026-08-10T17:40:56Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT dispatched to frontend
+
+### 2026-08-10T17:41:24Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT moved to done
+
+### 2026-08-10T17:41:33Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT dispatched to wordpress_cms
+
+### 2026-08-10T17:41:49Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT moved to done
+
+### 2026-08-10T17:48:17Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T17:48:51Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-08-10T17:48:58Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT-RESPONSE moved to done
+
+### 2026-08-10T17:50:55Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T17:51:23Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT-RESPONSE dispatched to planner
+
+### 2026-08-10T17:51:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT-RESPONSE moved to done
+
+## 2026-08-10T17:59:36Z TASK-024 feasibility contract narrow revision
+
+- 两项第一轮只读 feasibility response 均已 ACK/done；frontend 结果为 `BLOCKED_FOR_IMPLEMENTATION`，wordpress_cms 为 `FOLLOW_UP_REQUIRED`。
+- Planner 将公开网络提交从完整 Quote Basket 改为闭合 `PublicRfqBasketSubmission 1.0.0` 最小投影，排除 `/test-candidates/` 图片和展示元数据。
+- 尺寸预算冻结为 Basket projection `163840` bytes、完整 raw request `262144` bytes、信封 reserve `98304` bytes，并给 intent/privacy version/challenge token 增加闭合上限。
+- configured product 使用 canonical path；无详情 catalog accessory 必须等待不泄露内部身份的 opaque public quote key、additive Basket/submission 版本和一次有界的 1～50 行混合 server-only batch resolver。
+- 没有修改冻结 Basket、frontend/CMS 产品代码、API/Schema、数据库、飞书或外部系统。
+- 唯一下一步：刷新 Planner 文档/保护/治理验证，然后受控派发 frontend 与 wordpress_cms 窄范围只读 re-audit。
+
+## 2026-08-10T18:11:00Z TASK-024 pre-review Planner checkpoint PASS
+
+- wordpress_cms R2 `PASS`：configured canonical path、opaque accessory quote key 门、additive version 和一个有界 mixed batch resolver 的真实边界一致。
+- frontend R2 关闭媒体/尺寸冲突并发现 model 措辞门；Planner 删除 public projection 的 model，frontend R3 `PASS`。最后一处 “submitted name/image” impossible-input 编辑残留也已移除。
+- 当前验证：11/11 合同/audit 文件，`163840 + 98304 = 262144`，零陈旧预算/model 残留，零 frontend/CMS 产品 diff，18 unchanged + 2 authorized docs，diff 与全部 DPG gates PASS。
+- 标准 execution/validation/diff artifacts 已完成；document impact `RESOLVED`，README impact `NOT_APPLICABLE`。
+- TASK-024 进入 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- 唯一下一步：只派发一次独立 adversarial review；不授权实现、验收、Git、部署或外部写入。
+
+## 2026-08-10T18:13:00Z TASK-024 adversarial review Round 1 dispatched
+
+- `MSG-TASK-024-ADVERSARIAL-REVIEW-R1` 已经 queue、dry-run、真实 thread bridge 并 dispatch-once 到注册 adversarial_reviewer 会话。
+- scope: 16 项用户决策、三层/投影数据边界、公开/内部身份隔离、尺寸、联系方式组合、原子/幂等/失败、安全/隐私、后续任务与 protected/governance evidence。
+- reviewer 只读，不得修复文档、产品、CMS、Task authority 或外部系统。
+- 当前 strict lane audit 唯一 MEDIUM 是该已派发 review 消息尚待 ACK，符合进行中状态。
+- 唯一下一步：等待 linked verdict；PASS/FAIL 均不等于用户验收或 Git 授权。
+
+### 2026-08-10T18:03:13Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-024
+- summary: message queued for frontend
+
+### 2026-08-10T18:03:13Z - message_queued
+- type: message_queued
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message queued for wordpress_cms
+
+### 2026-08-10T18:03:43Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2 dispatched to frontend
+
+### 2026-08-10T18:04:02Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2 moved to done
+
+### 2026-08-10T18:04:05Z - message_dispatched
+- type: message_dispatched
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2 dispatched to wordpress_cms
+
+### 2026-08-10T18:04:18Z - message_done
+- type: message_done
+- lane: wordpress_cms
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2 moved to done
+
+### 2026-08-10T18:06:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T18:07:05Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE dispatched to planner
+
+### 2026-08-10T18:07:27Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE moved to done
+
+### 2026-08-10T18:08:39Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T18:08:58Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE dispatched to planner
+
+### 2026-08-10T18:09:11Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE moved to done
+
+### 2026-08-10T18:09:40Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-024
+- summary: message queued for frontend
+
+### 2026-08-10T18:10:04Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3 dispatched to frontend
+
+### 2026-08-10T18:11:07Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3 moved to done
+
+### 2026-08-10T18:13:07Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T18:13:26Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3-RESPONSE dispatched to planner
+
+### 2026-08-10T18:13:34Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3-RESPONSE moved to done
+
+### 2026-08-10T18:16:41Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-10T18:17:08Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-10T18:17:45Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-10T18:27:41Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T18:28:17Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+## 2026-08-10T18:30:40Z TASK-024 adversarial Round 1 FAIL recovery
+
+- response: `MSG-TASK-024-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 ACK/done，verdict `FAIL / P0=0 / P1=2 / P2=1`。
+- transition: helper 的 AWAITING_USER-only `reopen` 对真实 `UNDER_REVIEW` 安全拒绝且零 mutation；Planner 同步真实 `NEEDS_REVISION` 恢复入口。
+- scope: 仅机器合同/固定向量、重放/限流/保留冲突与叙述同步；产品运行时、CMS、飞书、Git 和部署均禁止。
+- next: 最小修订、fresh validation、narrow Round 2。
+
+## 2026-08-10T18:56:06Z TASK-024 Round 1 revision checkpoint PASS
+
+- contract: 五份闭合 Schema、两份 public request/摘要固定向量和四份 authoritative/receipt/error 样本已冻结；HMAC key notation 与 Basket clear token 唯一。
+- precedence: unexpired stored replay 优先于 new-attempt hard limit；pre-reservation failure 无 business state；first successful reservation 固定 30 天锚点。
+- validation: strict Schema 5/5、positive 6/6、negative 6/6、crypto 2/2、TTL 2/2、artifacts 33/33、protected 18/20 + 两份授权 docs、零产品/CMS diff、diff/DPG 全 PASS。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；Round 1 FAIL 保留。
+- next: 受控派发 narrow Adversarial Round 2；不开始实现、验收、Git 或部署。
+
+## 2026-08-10T18:59:36Z TASK-024 adversarial Round 2 dispatched
+
+- message: `MSG-TASK-024-ADVERSARIAL-REVIEW-R2` 完成 queue/dry-run/thread bridge/dispatch-once。
+- scope: 只复核 Round 1 P1/P2 closure 与既有 passing boundaries；reviewer 只读。
+- request_state: `18:59:49Z` ACK/done；当前只等待 linked final verdict，不提前 final validation、acceptance、Git 或 deployment。
+
+### 2026-08-10T18:58:48Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-10T18:59:36Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R2 dispatched to adversarial_reviewer
+
+### 2026-08-10T18:59:49Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R2 moved to done
+
+### 2026-08-10T19:11:07Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-10T19:11:31Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R2-RESPONSE dispatched to planner
+
+### 2026-08-10T19:12:18Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-REVIEW-R2-RESPONSE moved to done
+
+## 2026-08-10T19:12:18Z TASK-024 adversarial Round 2 FAIL recovery
+
+- response: `MSG-TASK-024-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK/done；verdict `FAIL / P0=0 / P1=1 / P2=1`。
+- recovery: checked reopen 安全拒绝后，Planner 按实际 review verdict 同步 `NEEDS_REVISION`；Round 1/2 历史均保留。
+- scope: 只放行 duplicate line identity、error category pairing、authoritative state matrix 和 narration 修订。
+- review_budget: configured `max_rounds=2` 已用完，extra review 需用户明确授权。
+
+## 2026-08-10T19:26:40Z TASK-024 Round 2 bounded repair validation PASS
+
+- repair: 重复 entry ID/完整公开行身份、两个 cross-domain error 方向、accepted/not-started 与 accepted/pre-reservation 全部纳入固定负向证据。
+- machine: strict Schema `5/5`、refs `61`、positive `12`、negative `6`、crypto `2/2`、failures `0`。
+- integrity: artifacts `41`、JSON `18/18`、newline/broken links `0`、protected `18/20` + 2 authorized docs、forbidden frontend/CMS diff `0`、diff/DPG PASS。
+- truth: Planner fresh validation 不改写 Round 2 FAIL，不冒充 independent review PASS。
+- next: 等待用户授权一次额外 closure review；不实施 runtime、Git 或部署。
+
+### 2026-08-11T03:18:24Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-11T03:25:26Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW dispatched to adversarial_reviewer
+
+## 2026-08-11T03:25:26Z TASK-024 user-authorized closure review dispatched
+
+- authorization: 用户精确授权一次额外 independent closure review，不授权 implementation、acceptance、Git 或 deployment。
+- delivery: `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW` 完成 queue/dry-run/registered reviewer thread bridge/dispatch-once，真实 Codex bridge receipt 已记录。
+- state: Active Task、Project State 与 Board 一致为 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`；Round 1/2 FAIL 历史保留。
+- next: 等待 reviewer ACK 与唯一 linked verdict；不提前 final validation、验收、Git、runtime 或部署。
+
+### 2026-08-11T03:26:26Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW moved to done
+
+## 2026-08-11T03:26:26Z TASK-024 closure review request ACK
+
+- reviewer: 在实质复核前 ACK 并完成受控 request；当前 reviewer 会话正在独立复现机器合同与回归边界。
+- governance: project、registry、messages、strict lane 和 diff 校验 PASS，lane issues 为零。
+- next: 只等待 linked PASS/FAIL/P0/P1/P2 response；不提前 final validation、验收、Git、runtime 或部署。
+
+### 2026-08-11T03:31:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-024
+- summary: message queued for planner
+
+### 2026-08-11T03:32:08Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE dispatched to planner
+
+### 2026-08-11T03:33:46Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-024
+- summary: message MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE moved to done
+
+## 2026-08-11T03:33:46Z TASK-024 closure review PASS
+
+- response: `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE` 已 validate、ACK/done；最终 `PASS / P0=0 / P1=0 / P2=0`。
+- evidence: Reviewer 独立复现 Schema 5/refs 61、两类重复身份的 pre-stateful rejection、cross-domain error rejection、权威状态矩阵、重放/保留与 HMAC/Basket 向量。
+- history: Round 1 `FAIL / 0/2/1` 与 Round 2 `FAIL / 0/1/1` 保留；closure PASS 不是验收、Git 或部署授权。
+- next: fresh Planner final validation；通过后仅执行 checked `prepare-awaiting-user`。
+
+## 2026-08-11T03:40:55Z TASK-024 Planner final validation PASS
+
+- machine: Node 24.18.0，Schema `5` / refs `61` / positive `12` / negative `6` / crypto `2` / failures `0`。
+- integrity: artifacts `42`、JSON `18/18`、newline/link、protected `18/20` + 2 authorized docs、forbidden frontend/CMS diff `0`。
+- governance: project/registry/messages/strict lane/diff PASS，full strict audit 无 HIGH。
+- docs: `PLANNER_FINAL_VALIDATION.md` 和 Planner Final Summary 已完成，document impact RESOLVED，README impact NOT_APPLICABLE。
+- next: 仅运行 checked `prepare-awaiting-user`；不实施、验收、Git 或部署。
+
+### 2026-08-11T03:45:01Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-024
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+## 2026-08-11T03:47:17Z TASK-024 checked preparation narrative sync
+
+- first_prepare: `03:45:01Z` checked prepare 成功。
+- reopen: 只同步 Active Task/Project State/Board/worklog/activity 当前叙述，不改业务合同、closure PASS、final validation 或 `NOT_ACCEPTED`。
+- next: fresh governance 校验后重跑 checked `prepare-awaiting-user`。
+
+## 2026-08-11T03:49:04Z TASK-024 final awaiting-user narrative sync
+
+- prior_prepare: `03:48:42Z` 第二次 checked prepare 成功。
+- sync: 受控 reopen 仅预同步 Active Task/Project State/Board 的最终 `AWAITING_USER` 叙述；不改业务与证据字节。
+- next: 最终 helper 确认后等待精确用户验收口令。
+
+### 2026-08-11T03:47:17Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-024
+- summary: Synchronize human-readable current-state, board, worklog and activity narrative after the successful checked preparation; business contracts, review PASS and validation remain unchanged.
+
+### 2026-08-11T03:48:42Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-024
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-11T03:49:04Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-024
+- summary: Final narrative synchronization after the second successful checked preparation so human-readable current state and Board match the helper-owned AWAITING_USER state.
+
+### 2026-08-11T03:50:44Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-024
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-11T04:46:02Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-024
+- summary: TASK-024 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

@@ -669,3 +669,37 @@ Each execution records:
 - result: CMS evidence bytes and final handoff hashes are locally stable; shared-tree protected gate still depends on the frontend owner restoring generated `next-env.d.ts`
 - response: linked `MSG-TASK-023-WORDPRESS-ERROR-EVIDENCE-DETERMINISM-R1-RESPONSE` sent through `lane_message.py`, delivered through the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, and Planner receipt moved it to `done`
 - next: remain idle pending Planner/frontend restoration and independent revalidation of the shared protected gate; do not modify frontend or start review, Git, deployment or acceptance
+
+### 2026-08-11 - TASK-024 WordPress/CMS read-only feasibility audit
+
+- task: audit only the current CMS feasibility for the frozen TASK-024 RFQ authoritative line-resolution boundary
+- message: `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT` read completely and ACKed before work; registered session, branch and narrowed two-file write boundary verified
+- outcome: `FOLLOW_UP_REQUIRED`; current `/resolve`, Product Configuration 2.0, ProductCard and RelatedProductCard provide useful fail-closed components but no one bounded atomic `1..50` mixed `configured_product`/`catalog_accessory` resolver
+- configured_product: unique published path/UUID and exact standard Article Number resolution are directly usable for eligible Product Configuration 2.0 documents; current explicit custom-length policy is `sales_follow_up`; no broader manual policy exists
+- catalog_accessory: explicit `catalog_accessory/piece` prevents guessing, but RelatedProductCard discovery remains tied to one source Product's ordered `relationships.products` and accessory `publicPath` is null; independent arbitrary Basket-line resolution requires a separate authority
+- conflict_boundary: current 400/404/409/500 and candidate omission rules fail closed locally, but silent recommendation omission/404 collapsing cannot replace TASK-024 whole-RFQ deterministic 409 mapping
+- performance: no existing endpoint can prove the 15-second atomic intake without up to 50 origin requests; a separate additive server-only batch Schema/API plus bounded query/request benchmark is required, followed by deployment proof
+- runtime_readonly: WordPress 7.0.2, gdhe-site 0.7.0 active, SCF 6.9.2 active, Core/SCF checksums and DB check PASS; four relevant routes GET-only; no Product/config/card/related source meta or Product records; three historical Fixture-path GET probes returned normalized 404/no-store
+- evidence_caveat: TASK-023 handoff verifies 26/26; TASK-021 historical stream is 19/20 only because later TASK-023 changed shared `schema.v3.json`; do not present old 20/20 as current whole-tree proof
+- artifact: `TASKS/ARTIFACTS/TASK-024/WORDPRESS_CMS_READONLY_FEASIBILITY_AUDIT.md`
+- scope_boundary: no CMS/plugin/Schema/API/test/runtime/database/content/Fixture, frontend, authority, Planner, Feishu/external, Git, review, acceptance or deployment mutation
+- validation: Markdown/diff/required-classification/secret checks PASS; message Schema valid; final strict lane audit has no issue
+- response: linked `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT-RESPONSE` delivered through the real Codex thread bridge to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; dispatch-once completed, Planner ACKed it and the message is now `done`
+- next: remain idle pending Planner ACK/checkpoint; do not implement the proposed batch contract
+
+### 2026-08-11 - TASK-024 WordPress/CMS feasibility re-audit R2 PASS
+
+- task: narrow read-only re-audit after Planner corrected the RFQ feasibility contract
+- message: `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2` read completely and ACKed; same TASK-024 remained `IN_PROGRESS`, so no task-switch/reopen was needed
+- result: `PASS` at contract-truthfulness level; current capabilities are no longer overstated and both Round 1 identity/shape conflicts are explicitly preserved as future gates
+- configured_product: revised submission identity is canonical public Product path, aligned with Basket configured lines, Product Configuration 2.0 path binding and Schema 3 `/resolve`
+- catalog_accessory: revised authority requires a dedicated bounded opaque public quote key that cannot equal or reversibly encode Article Number, stable Product UUID, WordPress/database ID or Feishu identity; model/name/category/catalog path/relation order/image are forbidden substitutes
+- basket_truth: current Quote Basket 2.0 accessory still has model/name/test-candidate image/catalogPath/submitted unit and no opaque key; its local equality is not authoritative identity, so production accessory submission is truthfully blocked
+- cms_truth: current GDHE runtime exposes only existing GET routes and contains no opaque-key or mixed-batch implementation; RelatedProductCard remains one source Product's ordered max-20 recommendation collection, not arbitrary Basket resolution
+- first_future_gate: additive accessory identity and Basket/submission version, then one bounded server-only `1..50` mixed-line atomic resolver with exact role/unit/Article Number/custom policy and no per-line public N+1
+- residual_gates: opaque-key lifecycle/non-reversibility, additive migration/blocked state, closed batch Schema/API, conflict atomicity, bounded query/request proof, 15-second production benchmark, representative real data and independent review
+- artifact: `TASKS/ARTIFACTS/TASK-024/WORDPRESS_CMS_READONLY_FEASIBILITY_AUDIT_R2.md`
+- scope_boundary: no CMS/API/Schema/test/runtime/database/content/Fixture, frontend, task/architecture/ADR authority, Planner, Feishu/external, Git, review, acceptance or deployment mutation
+- validation: required-claim/Markdown/diff/secret and message Schema checks PASS; final strict lane audit has no issue
+- response: linked `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE` delivered through the real Codex thread bridge and dispatch-once to Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`; Planner ACKed it and the response is now `done`
+- next: remain idle pending Planner ACK/checkpoint; do not implement any residual gate

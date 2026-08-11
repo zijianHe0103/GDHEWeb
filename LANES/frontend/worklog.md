@@ -1239,3 +1239,56 @@ Each execution records:
 - outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not closure review, acceptance, Git delivery or deployment
 - message_result: `MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3-RESPONSE` was delivered once through the real Planner Codex thread bridge and recorded by `dispatch-once --execute`; it left queue and remains linked with `requires_response_to=MSG-TASK-023-FRONTEND-RETURN-STATE-P1-R3`
 - unique_next_step: Planner independently validates current bytes before any narrow closure review
+
+# TASK-024 frontend read-only feasibility audit 2026-08-11
+
+- message: recovered the registered frontend lane, read the complete TASK-024 contract set and ACKed `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT` before audit work
+- scope: current shared bytes only; no frontend product/test/package/runtime/route, CMS, Schema, authority, Planner, database, Feishu or external-system mutation
+- directly_usable: closed public Quote Basket 2.0 union, positive safe-integer quantities, exact 30-day TTL, fail-closed deep-frozen Basket validation, in-memory v1-to-v2 migration, public snapshot revision identity, Next 16 App Router and established `server-only`/sanitized-wrapper conventions
+- internal_identity: current Basket contains only public product/configuration/presentation fields plus browser-generated Basket bookkeeping UUIDs; it contains no Article Number, stable Product/Media UUID, WordPress/SCF/Feishu ID, price or credential
+- follow_up_required: mixed 1–50 line batch authority, RFQ envelope/customer/receipt/error validators, streamed pre-parse byte gate, intent, canonical digest, durable idempotency/recovery, challenge, public form/states, exact-snapshot clearing and stable HTTP semantics do not exist
+- forbidden_reuse: browser localStorage is not durable state; Basket JSON serialization is not the full RFQ canonical digest; the fixed FGD X15 Product Configuration request must not become a 50-line loop; QuoteLine v2 must not enter browser/public draft bytes or be treated as the mixed authoritative RFQ document
+- atomicity: future browser sends one public Basket to one same-origin endpoint; the server must use one bounded mixed-line authority and build the complete authoritative document before one controlled delivery, with zero per-line `/resolve`/Product Configuration requests and zero browser Article Number exposure
+- contract_conflict_1: exact Basket v2 media accepts only `/test-candidates/...`, so it cannot represent production protected media without a Planner-owned version/contract decision
+- contract_conflict_2: Basket serialization and the complete RFQ request both use a `262144`-byte ceiling, but the latter must also contain customer/privacy/intent/idempotency/anti-abuse fields; no envelope reserve or submit-time Basket budget is frozen
+- deployment_gates: durable-store topology, exact HTTPS origin/trusted proxy, key store/rotation, challenge provider, Feishu mapping/connector/reconciliation, logging/retention and production exposure remain deferred
+- production_boundary: current `/request-a-quote/` is noindex, has a disabled submission action and is forced to final 404 in production; the production smoke expects zero CMS requests and zero submission endpoints
+- protected_integrity: observed current hashes match the TASK-024 baseline for Basket Schema, QuoteLine Schema, request-a-quote page, package and lock; pre-existing `frontend/tsconfig.json` drift was not touched
+- artifact: `TASKS/ARTIFACTS/TASK-024/FRONTEND_READONLY_FEASIBILITY_AUDIT.md`
+- validation: exact references and Markdown fences PASS; `git diff --check` PASS; protected frontend hash sample PASS; DPG project/message/strict-lane PASS with zero issues after Planner ACK; no product suite was rerun because the audit changed no product/test byte
+- outcome: `BLOCKED_FOR_IMPLEMENTATION`; frontend feasibility is positive after two contract conflicts are closed, but this audit is not implementation, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT-RESPONSE` was sent through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, ACKed by Planner, moved to done and is linked with `requires_response_to=MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT`
+- unique_next_step: Planner resolves the two contract conflicts and coordinates the separately confirmed mixed-line CMS batch-authority task before any frontend intake or form implementation
+
+# TASK-024 frontend narrow feasibility re-audit R2 2026-08-11
+
+- message: read and ACKed `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2`; same TASK-024 remained `IN_PROGRESS`, so no task-switch or reopen transition was needed
+- scope: read-only re-audit of revised TASK-024 authority and current shared frontend bytes; only the dedicated R2 artifact and this worklog were written
+- projection: PASS — `PublicRfqSubmissionDraft 1.0.0` now embeds derived closed `PublicRfqBasketSubmission 1.0.0`, not exact Quote Basket `2.0.0` storage bytes
+- media: PASS — projection excludes image URL/dimensions/Alt, product name and line creation time, so `/test-candidates/` does not cross the RFQ network boundary and frozen Basket bytes remain unchanged
+- wording_gate: `RFQ_SUBMISSION_CONTRACT.md` still retains `model` and calls it an `untrusted display hint`; Planner must either describe it as an explicit public customer-meaning/staleness hint or omit it before claiming every display-only field is excluded
+- size: PASS — canonical projection `163840`, reserve `98304`, complete raw `262144`; explicit intent `8192` bytes, privacy version `128` code points and challenge `16384` bytes; conservative bounded-variable envelope calculation is `61880`, leaving `36424` bytes for JSON/fixed fields, while exact raw gate still controls
+- configured_identity: PASS — canonical path is the closed public resolution identity and remains untrusted until server-side unique current resolution
+- accessory_identity: FOLLOW_UP_REQUIRED — current Basket lacks opaque public quote key; additive Basket/submission version plus one bounded `1..50` mixed server-only resolver remain mandatory and no catalog path/model/name/relation/image heuristic is allowed
+- capability_truth: PASS — Next 16 App Router/server-only conventions are available, but no RFQ Route Handler, projection/receipt runtime, intent, byte limiter, HMAC digest, durable state, challenge, batch consumer or Feishu connector exists; current route remains disabled-action/local and production 404
+- protected_integrity: Basket Schema, QuoteLine Schema, request-a-quote page, production smoke, package and lock hashes remain unchanged; no task product diff exists under frontend source/tests/package/lock or CMS
+- validation: exact references, Markdown fences and `git diff --check` PASS; protected frontend hashes PASS; DPG project/message/strict-lane PASS with zero issues before response dispatch; product suites were not rerun because no product/test byte changed
+- artifact: `TASKS/ARTIFACTS/TASK-024/FRONTEND_READONLY_FEASIBILITY_AUDIT_R2.md`
+- outcome: `FOLLOW_UP_REQUIRED`; both R1 contract conflicts are closed, while accessory identity/version/batch authority and exact executable contracts remain future gates; not implementation, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2-RESPONSE` was sent through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and is linked with `requires_response_to=MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-REAUDIT-R2`; Planner ACK was pending at this log update
+- unique_next_step: Planner narrows the `model` wording/shape and coordinates the separately confirmed opaque accessory identity plus mixed batch-authority contract before any frontend intake implementation
+
+# TASK-024 frontend model-omission confirmation R3 2026-08-11
+
+- message: read and ACKed `MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3`; same TASK-024 remained `IN_PROGRESS`, so no task transition was needed
+- scope: final narrow read-only confirmation; only the existing R2 audit artifact and this frontend worklog were appended
+- outcome: `PASS` — browser `PublicRfqBasketSubmission 1.0.0` now excludes product model/name, image URL/dimensions/Alt, line creation time and all display-only Basket storage fields
+- authority_boundary: `AuthoritativeRfqDocument 1.0.0` may add the current public model only after successful server-side resolution of one unique current published product through the closed public identity
+- conflict_closure: R1 `/test-candidates/` media and request-envelope size conflicts remain closed; projection/raw/reserve limits remain `163840` / `262144` / `98304` bytes
+- future_gates: catalog-accessory opaque public quote key, additive Basket/submission version and one bounded `1..50` mixed-line server authority remain explicitly unavailable prerequisites
+- protected_integrity: Basket Schema `0fb78fa...7eb3`, QuoteLine Schema `7b65f339...ac20`, request-a-quote page `3237ac87...ec2a`, production smoke `a34a8423...19c3`, package `958e8c89...2bce` and lock `dda25a90...52a7` remain unchanged; no product/CMS diff exists in the audited scope
+- residual_wording: `RFQ_SUBMISSION_CONTRACT.md` section 5 rule 3 still says “submitted name/image”; this is an impossible-input editorial residue under the now-closed projection, not a reopened shape conflict, and remains Planner-owned for later cleanup before executable Schema freeze
+- artifact: appended R3 confirmation to `TASKS/ARTIFACTS/TASK-024/FRONTEND_READONLY_FEASIBILITY_AUDIT_R2.md`
+- validation: exact references and Markdown fences PASS; `git diff --check` PASS; all six protected hashes exact; no product/CMS diff in audited scope; DPG project/message/strict-lane gates PASS with zero issues before response dispatch; no product suite rerun because no product/test byte changed
+- message_result: `MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3-RESPONSE` was delivered once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, ACKed by Planner and moved to done with `requires_response_to=MSG-TASK-024-FRONTEND-MODEL-OMISSION-READONLY-CONFIRMATION-R3`
+- unique_next_step: Planner receives the linked R3 confirmation; no frontend implementation is authorized

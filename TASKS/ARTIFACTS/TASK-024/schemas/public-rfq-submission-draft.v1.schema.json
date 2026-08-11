@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/rfq/1.0.0/public-rfq-submission-draft.v1.schema.json",
+  "title": "GDHE PublicRfqSubmissionDraft 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "submissionIntent", "idempotencyKey", "basket", "customer", "privacyNotice", "antiAbuse"],
+  "properties": {
+    "contractVersion": { "const": "1.0.0" },
+    "submissionIntent": {
+      "type": "string",
+      "minLength": 32,
+      "maxLength": 8192,
+      "pattern": "^[A-Za-z0-9._~-]+$"
+    },
+    "idempotencyKey": {
+      "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4"
+    },
+    "basket": {
+      "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicBasketSubmission"
+    },
+    "customer": {
+      "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/publicCustomer"
+    },
+    "privacyNotice": {
+      "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/privacyNotice"
+    },
+    "antiAbuse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["honeypot"],
+      "properties": {
+        "honeypot": { "const": "" },
+        "challengeToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 16384,
+          "pattern": "^[A-Za-z0-9._~-]+$"
+        }
+      }
+    }
+  }
+}

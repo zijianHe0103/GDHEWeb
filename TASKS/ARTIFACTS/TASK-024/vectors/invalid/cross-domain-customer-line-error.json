@@ -1,0 +1,15 @@
+{
+  "contractVersion": "1.0.0",
+  "error": {
+    "code": "invalid_customer_fields",
+    "requestReference": "REQ-ABCDEFGHJKLM",
+    "messageKey": "rfq.error.invalid_customer_fields",
+    "fieldErrors": [
+      {
+        "field": "quantity",
+        "code": "invalid",
+        "entryId": "44444444-4444-4444-8444-444444444444"
+      }
+    ]
+  }
+}

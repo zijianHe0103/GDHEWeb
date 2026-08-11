@@ -2,14 +2,315 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-023
+current_task: TASK-024
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-08T16:26:33Z
+last_updated: 2026-08-11T04:46:02Z
 
 ## 当前焦点
 
-`TASK-023` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Return-state Closure Round 4、fresh Planner final validation 和文档门保持 PASS。唯一下一步是只暂存 TASK-023 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+`TASK-024` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。Closure review `PASS / P0=0 / P1=0 / P2=0`、Fresh Planner final validation 和 checked acceptance preparation 保持 PASS；Round 1 `FAIL / 0/2/1` 与 Round 2 `FAIL / 0/1/1` 历史保留。唯一下一步是只暂存 TASK-024 受控交付物，正式提交并立即推送任务分支，再 fast-forward 合并并推送 `main`；不部署。
+
+## TASK-024 Formal Delivery Authorization 2026-08-11T04:46:02Z
+
+- authorization: 用户精确输入 `确认 TASK-024 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均成功；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: closure review `PASS / P0=0 / P1=0 / P2=0`；机器合同 Schema `5`、refs `61`、positive `12`、negative `6`、crypto `2`、failures `0`；治理与保护范围门保持 PASS。
+- docs: `document_impact=RESOLVED`，`readme_impact=NOT_APPLICABLE`。
+- exclusions: 用户自有 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～023 closure edits、历史 resume packet 与本地生成物不进入提交。
+- unique_next: 正式提交 TASK-024，推送任务分支，fast-forward 合并至 `main` 并推送远端 `main`；不部署。
+
+## TASK-024 Checked Preparation Narrative Sync 2026-08-11T03:47:17Z
+
+- first_prepare: `2026-08-11T03:45:01Z` checked prepare 成功。
+- reopen: 仅同步 Active Task、Project State、Board、Planner worklog 和 Activity 的当前叙述；不改业务交付物、review PASS、validation PASS 或 acceptance state。
+- unique_next: fresh governance 校验后重跑 checked `prepare-awaiting-user`；成功后等待精确验收口令。
+
+## TASK-024 Final Awaiting-user Narrative 2026-08-11T03:49:04Z
+
+- checked_prepare: `03:45:01Z` 和 `03:48:42Z` 两次 checked prepare 均成功；最后一次 reopen 仅为预同步最终叙述。
+- state_target: `AWAITING_USER / NOT_ACCEPTED / DIRTY`；不改业务合同、closure PASS、final validation 或文档影响。
+- unique_next: helper 最终确认后等待 `确认 TASK-024 完成并提交到远端`。
+
+## TASK-024 Planner Final Validation PASS 2026-08-11T03:40:55Z
+
+- machine: Node `24.18.0`，Schema `5`，refs `61`，positive `12`，negative `6`，crypto `2`，failures `0`。
+- integrity: artifacts `42`，JSON `18/18`，newline/link 零错误，protected `18/20` + 2 authorized docs，forbidden frontend/CMS diff `0`。
+- governance: project/registry/messages/strict lane/diff PASS，strict lane issues `[]`；full strict audit 无 HIGH，仅已知 dirty/historical-active MEDIUM 与 WordPress Core filename LOW。
+- documentation: `document_impact: RESOLVED`，`readme_impact: NOT_APPLICABLE`。
+- unique_next: 仅运行 checked `prepare-awaiting-user`；成功后等待精确用户交付口令，不实施、commit、push、merge 或 deploy。
+
+## TASK-024 User-authorized Closure Review 2026-08-11T03:18:50Z
+
+- authorization: 用户精确输入 `授权 TASK-024 进行一次额外独立 closure review`。
+- request: `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW` 已完成 queue/dry-run/registered thread bridge/dispatch-once，`max_rounds=1`，只复核 Round 2 bounded repair 与 passing regressions。
+- state: Active Task、Project State 与 Board 在唤醒 reviewer 前一致恢复为 `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`。
+- preserved: Round 1/2 FAIL 不改写；不授权修复业务交付物、runtime、CMS、飞书、验收、Git 或部署。
+- dispatch: `2026-08-11T03:25:26Z` 通过 registered reviewer 会话 `019f88d0-018d-75e2-8e28-54a904a6bf8c` 投递 exact envelope，并以真实 Codex bridge receipt 完成 dispatch-once。
+- request_state: reviewer 于 `2026-08-11T03:26:26Z` 在实质复核前 ACK/done；后续 project/registry/messages/strict lane/diff 校验零 issue。
+- response: `MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW-RESPONSE` 于 `2026-08-11T03:33:46Z` ACK/done；最终 `PASS / P0=0 / P1=0 / P2=0`。
+- reproduced: Schema `5` / refs `61`、两类重复身份先于 stateful work 拒绝、cross-domain error 拒绝、六个权威状态组合、重放/保留与两组密码向量均独立 PASS。
+- unique_next: 执行 fresh Planner final validation；全部通过后仅运行 checked `prepare-awaiting-user`，不开始验收、Git、runtime 或部署。
+
+## TASK-024 Round 2 Bounded Repair Validation PASS 2026-08-10T19:26:40Z
+
+- repair: 公开/权威 `entryId` 唯一，公开完整 merge identity 也唯一；两个 cross-domain field-error 方向、accepted/not-started 与 accepted/pre-reservation 均有固定负向向量。
+- machine: strict Schema `5/5`、refs `61`、positive `12`、negative `6`、crypto `2/2`、failures `0`。
+- integrity: artifacts `41`、JSON `18/18`、newline/broken links `0`；protected `18/20` + 2 authorized docs；forbidden frontend/CMS diff `0`；diff/DPG gates PASS。
+- truth: Round 1/2 FAIL 历史不改写，fresh Planner validation 不等于 independent review PASS。
+- review_budget: configured `max_rounds=2` 已用完；不自行派发第三轮。
+- unique_next: 等待用户明确授权一次额外 closure review；不实施 runtime、验收、Git 或部署。
+
+## TASK-024 Adversarial Round 2 FAIL Recovery 2026-08-10T19:12:18Z
+
+- response: `MSG-TASK-024-ADVERSARIAL-REVIEW-R2-RESPONSE` 已 validate、ACK/done；verdict `FAIL / P0=0 / P1=1 / P2=1`。
+- p1: remaining gap is duplicate entry identity, exact error-code/field category pairing and authoritative status/delivery/outcome cross-field invariants; P1-2 replay/retention semantics independently passed.
+- p2: Round 2 request 已完成但 current narration 仍显示 waiting/ready；本 recovery 同步真实状态。
+- transition: checked reopen 对真实 `UNDER_REVIEW` 安全拒绝，因为 helper 只接受 `AWAITING_USER`；Planner 手工同步 `NEEDS_REVISION`，未伪造验收状态。
+- review_budget: configured `max_rounds=2` 已用完；不自行派发第三轮。
+- unique_next: 完成限定机器合同修订与 fresh validation，然后请求用户明确授权一次额外 closure review；不实施 runtime、验收、Git 或部署。
+
+## TASK-024 Adversarial Round 2 Dispatched 2026-08-10T18:59:36Z
+
+- message: `MSG-TASK-024-ADVERSARIAL-REVIEW-R2` 已完成 queue、dry-run、registered thread bridge 和 dispatch-once。
+- scope: 只复核 Round 1 P1/P2 closure，并回归此前 passing boundaries；reviewer 不得修复业务文档或 Planner authority。
+- governance: dispatched message pending 是当前唯一 strict-lane MEDIUM，符合 `UNDER_REVIEW`。
+- request_state: reviewer 于 `2026-08-10T18:59:49Z` ACK/done；无 pending request residue。
+- unique_next: 等待 linked final PASS/FAIL/P0/P1/P2；不提前 final validation、验收、Git 或部署。
+
+## TASK-024 Round 1 Revision Checkpoint 2026-08-10T18:56:06Z
+
+- machine_contract: 五份闭合 Draft 2020-12 Schema、两份 public request/HMAC/snapshot 固定向量与四份 authoritative/receipt/error 样本已冻结。
+- validation: strict Schema `5/5`、positive `6/6`、negative `6/6`、crypto `2/2`、TTL `2/2`、artifacts `33/33` final newline、broken links `0` 全 PASS。
+- semantics: unexpired existing-key replay 在 new-attempt hard limit 前返回已存状态；unseen/expired key 才进入 intent/rate/challenge。所有 pre-reservation failure 不建 durable business state；first successful reservation 固定 30 天锚点且 replay 不延长。
+- integrity: protected `18/20` exact；仅架构契约与 ADR-006 为授权差异；frontend/CMS 禁止范围 diff 为 `0`；git diff/DPG project/registry/messages/strict lane PASS。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；Round 1 FAIL 历史保留，当前只放行 narrow Round 2。
+- unique_next: 派发 Round 2 并等待 linked verdict；不开始 runtime、验收、Git 或部署。
+
+## TASK-024 Adversarial Round 1 FAIL Recovery 2026-08-10T18:30:40Z
+
+- response: `MSG-TASK-024-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并移入 done。
+- verdict: `FAIL / P0=0 / P1=2 / P2=1`；Round 1 历史与所有通过边界保留。
+- P1_1: 当前公开/权威 line、receipt/error、canonical/HMAC 和 Basket snapshot clear 合同仍不够精确，必须增加闭合机器 Schema 与固定向量。
+- P1_2: existing-key replay 与 hard source limit、pre-reservation rejection 及 reserved/indeterminate retention anchor 存在冲突，必须冻结一个一致优先级。
+- P2_1: active task、Planner validation 和 board/state 的当前叙述已落后；本恢复先同步真实状态，后续修订继续保留历史证据。
+- checked_reopen: `task_transition.py reopen` 因只支持匹配的 `AWAITING_USER` 而安全拒绝，没有自动 mutation；Planner 按真实 review verdict 手工同步 `NEEDS_REVISION`。
+- unique_next: 只完成文档级窄修订、fresh validation 和新的 Round 2；不实施 runtime、CMS、飞书、部署或 Git 交付。
+
+## TASK-024 Pre-review Planner Checkpoint 2026-08-10T18:11:00Z
+
+- audits: frontend R3 `PASS`；wordpress_cms R2 `PASS`。Round 1 发现、修订过程和未来入口门均保留。
+- contract: browser projection 不含 model/name/image/display-only storage fields；authoritative current model 只能在 unique server resolution 后生成。
+- validation: 11/11 artifacts、`163840 + 98304 = 262144`、零 stale budget/model residue、零 product diff、18 unchanged + 2 authorized docs、diff/DPG gates 全部 PASS。
+- document_impact: `RESOLVED`；README 不改变当前运行方式，`NOT_APPLICABLE`。
+- unique_next: 只派发一次 independent adversarial review；不授权实现、验收、Git 或部署。
+
+## TASK-024 Feasibility Contract Revision 2026-08-10T17:59:36Z
+
+- frontend_audit: `BLOCKED_FOR_IMPLEMENTATION`，确认现有 Basket `2.0.0` 的 `/test-candidates/` 展示媒体不能进入生产 RFQ，同时 Basket 与完整请求共用 256 KiB 会缺少信封预算。
+- wordpress_audit: `FOLLOW_UP_REQUIRED`，确认现有接口没有一次有界解析 1～50 行 mixed Basket 的 authority，RelatedProductCard 也不是任意配件提交身份。
+- revision: `PublicRfqBasketSubmission 1.0.0` 只保留 Basket snapshot、entry/public resolution identity、客户选择、包装、unit 与 quantity；排除名称、图片和创建时间。configured product 使用 canonical path；catalog accessory 等待 opaque public quote key。
+- size: projection `163840` bytes，raw request `262144` bytes，envelope reserve `98304` bytes；intent/privacy version/challenge token 另有闭合上限，最终完整请求仍执行 raw 硬门。
+- boundary: 当前 Basket 2.0、frontend/CMS/API/Schema/数据库/飞书均未修改；现有能力缺口被记录为后续任务入口门，不冒充已实现。
+- unique_next: 刷新 Planner 验证后，分别派发 frontend 与 wordpress_cms 窄范围只读 re-audit；通过前不开始 adversarial review 或任何实现。
+
+## TASK-024 Read-only Feasibility Dispatch 2026-08-10T17:41:48Z
+
+- frontend: `MSG-TASK-024-FRONTEND-READONLY-FEASIBILITY-AUDIT` 已投递注册会话，检查公开 Basket、Next.js server-only/intake、receipt/Basket clearing、持久状态和生产边界；禁止产品修改。
+- wordpress_cms: `MSG-TASK-024-WORDPRESS-CMS-READONLY-FEASIBILITY-AUDIT` 已投递注册会话，检查最多 50 行混合重新解析、Article Number/custom follow-up、catalog accessory 和 N+1 缺口；禁止 CMS/数据库修改。
+- governance: 两条消息均完成 queue -> dry-run -> thread bridge -> dispatch-once；当前 queue empty，messages validate PASS。
+- unique_next: 等待两条 ACK/linked response；Planner 分别独立核查审计证据后决定是否需要合同窄修订或进入 adversarial review。
+
+## TASK-024 Planner Contract Draft 2026-08-10T17:37:43Z
+
+- artifacts: `REQUIREMENTS.md`、`RFQ_SUBMISSION_CONTRACT.md`、`CUSTOMER_CONTACT_FIELD_MATRIX.md`、`SERVER_SECURITY_BOUNDARY.md`、`FAILURE_AND_IDEMPOTENCY_MATRIX.md`、`IMPLEMENTATION_SEQUENCE.md`。
+- architecture: 冻结 Next.js-only、三层 RFQ 文档、50 行批量重新解析、原子失败、幂等/保留边界；移除 WordPress 询价库和本端点附件上传的默认路线。
+- domain: `PROJECT/CONTEXT.md` 新增 Quote Basket、公开草稿、权威 RFQ、公开回执、Sales Follow-up Line 与 Meaningful Business Interaction 规范术语。
+- protected_baseline: 18 份未授权文件保持原哈希；两份预期变化仅为任务明确允许的架构契约和 ADR-006。
+- implementation: 未修改 frontend/CMS 运行时、Schema、依赖、数据库或飞书；未实现 intake/form/connector。
+- unique_next: 完成 Planner 文档/治理验证，然后受控派发 frontend 与 wordpress_cms 只读可行性核查。
+
+## TASK-024 Observability Decision 16 2026-08-10T17:27:00Z
+
+- user_choice: `A` balanced。
+- retention: 脱敏应用/错误日志 30 天；安全事件元数据 90 天；keyed 限流/联系指纹 48 小时；不可识别汇总指标 13 个月。
+- forbidden_logs: 不写完整请求/RFQ、完整联系方式、原始 IP、Article Number 清单、幂等键、挑战 token、secret/飞书凭据或下游原始错误。
+- boundary: 技术记录在服务端，不是浏览器 Basket 或飞书业务 RFQ；本任务不选供应商。
+- incident_exception: 仅经记录的具体安全事故/法律保留可在受限访问下延长所需事件证据，不延长全部常规日志。
+- unique_next: Planner 完成 TASK-024 正式合同/矩阵/实施顺序文档，验证后派发 frontend 与 wordpress_cms 只读核查。
+
+## TASK-024 Privacy Decision 15 2026-08-10T17:23:26Z
+
+- user_direction: 不在官网、RFQ 表单、Quote Basket 或回执中提供专用删除资料选项。
+- no_feature: 不建立公开删除 checkbox、按钮、表单、账户页、API 或飞书自动删除工作流。
+- legal_boundary: 无自助 UI 不等于排除适用法律权利；若经 Privacy Policy 普通联系途径收到法律上有效请求，按批准政策与法定时间人工处理。
+- no_action: 本决策不新增客户字段，不授权删除当前数据或执行外部操作。
+- unique_next: 隐私/可观测决策 16，确认技术日志和安全事件保留期。
+
+## TASK-024 Privacy Decision 14 2026-08-10T17:00:04Z
+
+- user_choice: `A`。
+- retention: 已接受 RFQ 的客户身份、联系方式与留言自最后真实业务互动起保留 24 个月。
+- clock: 客户回复、报价、谈判、样品/销售跟进可重置；页面访问、同步、轮询、系统维护和幂等重试不重置。
+- expiry: 到期删除或不可逆匿名化可识别联系内容；仅允许不可重构/重联客户的非识别聚合统计继续保留。
+- conversion: 转为正式客户、合同、订单或财务记录后，转入独立批准的业务/法定保留政策。
+- exception: 仅对实际法律保留、争议或强制法定义务范围暂停删除；上线前仍需法律审核。
+- unique_next: 隐私决策 15，确认已验证删除/匿名化请求的处理时限。
+
+## TASK-024 Security Decision 13 2026-08-10T16:56:37Z
+
+- user_choice: `A` balanced。
+- submission_intent: 服务端凭证首次使用有效期 30 分钟，绑定幂等键和预期提交上下文。
+- idempotency: 首次持久接受后保留 30 天；同键同规范化载荷返回同一回执/状态，同键异载荷稳定冲突拒绝。
+- timeout: 飞书单次调用硬超时 10 秒，公开 intake 总预算 15 秒。
+- indeterminate: 下游结果不确定时不报成功、不盲目重发；仅返回持久的 processing/暂时不可用状态，Basket 保留。
+- fail_closed: 无法先持久幂等/状态记录时稳定失败，不伪造成功回执。
+- unique_next: 隐私决策 14，确认已接受 RFQ 与客户联系内容的默认保留周期。
+
+## TASK-024 Security Limit Decision 12 2026-08-10T16:52:55Z
+
+- user_choice: `A` balanced。
+- rolling_10m: 同一来源桶前 3 次不因频率触发挑战，第 4～5 次需挑战，第 6 次起硬性 `429`。
+- rolling_24h_source: 同一来源桶第 21 次起 `429`。
+- rolling_24h_contact: 同一规范化联系指纹最多创建 10 个新 RFQ 业务意图。
+- retry_semantics: 同键同载荷重试仍计入来源流量，但不创建或计为新 RFQ。
+- privacy_and_failure: 来源/联系方式用服务端 keyed 指纹；不信任浏览器转发 header，普通日志不写完整原值。硬拒绝返回稳定 `429`/`Retry-After`，Basket 保留且无下游调用。
+- unique_next: 安全决策 13，确认幂等、重放和下游超时数值组合。
+
+## TASK-024 Security Decision 11 2026-08-10T16:50:26Z
+
+- user_choice: `A`。
+- always_on: 服务端蜜罐、最短填写时间和数值限流始终生效。
+- adaptive_challenge: 只在风险信号或后续确认的软频率阈值触发时要求人机验证，普通有效客户通常无可见挑战。
+- failure: 需要挑战时，缺失、失效、过期或重放均稳定地整单拒绝，Basket 保留且不调用下游。
+- provider_gate: 本任务不采购、选择或接入挑战供应商；后续实施需独立授权与隐私/CSP 审核。
+- defense_in_depth: 挑战不替代 Schema、Origin/CSRF、限流、幂等、权威重解析和下游隔离。
+- unique_next: 安全决策 12，确认数值化提交限流组合。
+
+## TASK-024 Security Limit Decision 10 2026-08-10T16:47:41Z
+
+- user_choice: `A`。
+- code_point_limits: Full Name 120；Company 160；Email 254；WhatsApp/WeChat 各 128；Phone 64；Country/City 各 100；Website 2048；Message 2000。
+- extra_format: Email 仍需 email 格式；Website 仍需绝对 HTTP/HTTPS URL 与后续 URL 安全策略。
+- no_truncation: 任一字段超限整单拒绝，前后端不得静默截断、改写或部分接受。
+- normalization: 空的选填字段从规范化文档省略；既有必填与至少一种联系方式规则不变。
+- unique_next: 安全决策 11，确认反机器人挑战策略。
+
+## TASK-024 Security Limit Decision 9 2026-08-10T16:44:48Z
+
+- user_choice: `A`。
+- maximum_raw_body: `256 KiB` / `262144` bytes，包含完整 JSON。
+- pre_parse_gate: Next.js intake 在 JSON/业务解析和任何 WordPress/飞书调用前执行 Content-Length 与真实流式字节硬门。
+- no_uploads: 此端点禁止文件、base64 媒体和二进制附件。
+- atomic_failure: 超限整单拒绝、稳定不泄漏错误、Basket 保留、无成功回执或部分下游记录。
+- unique_next: 安全限额决策 10，确认客户字段最大 Unicode 字符数。
+
+## TASK-024 Security Limit Decision 8 2026-08-10T16:43:15Z
+
+- user_choice: `B`。
+- maximum_lines: 单次 RFQ 最多 `50` 条不同 Basket 行；quantity 不增加行数。
+- server_gate: 服务端在闭合 Schema 解析后、权威重新解析与下游交付前再次执行上限校验。
+- atomic_failure: `51+` 行整单拒绝，不截断、不部分接受、不产生成功回执。
+- client_recovery: 浏览器保留完整 Basket，并提示减少或拆分询价。
+- unique_next: 安全限额决策 9，确认公开 RFQ 请求正文最大字节数。
+
+## TASK-024 Architecture Decision 7 2026-08-10T16:34:53Z
+
+- user_confirmation: `B: Next.js-only`。
+- public_path: 浏览器只调用同源 Next.js Route Handler/intake，不直连飞书或 WordPress 写端点。
+- authority_split: WordPress 继续 CMS/公开结构化内容只读职责；Next.js 服务端承担 RFQ 校验、重新解析、安全门、幂等与受控飞书交付。
+- secret_boundary: 飞书凭据和下游原始响应只存在服务端，不进入浏览器/HTML/Flight/公开回执/日志。
+- no_nestjs: 当前不初始化、部署或依赖 NestJS；未来只有在多客户端、复杂后台工作流、多集成或独立扩容等实证门出现后才新开任务复评。
+- preserved_requirement: Next.js-only 仍必须具备持久幂等与恢复机制，具体实现留给后续服务端任务。
+- unique_next: 安全限额决策 8，确认单次 RFQ 最大 Basket 行数。
+
+## TASK-024 Customer Field Decision 6 2026-08-10T16:26:31Z
+
+- user_choice: `A`。
+- disclosure: RFQ 提交处显示明确用途说明和 Privacy Policy 链接。
+- no_required_checkbox: 不设置必选框，技术记录不把提交动作命名为 consent。
+- audit_record: 服务端记录已展示告知版本与提交时间。
+- no_marketing: 不收集、不推断营销订阅或营销同意；资料仅用于接收、校验、分派和回应本次 RFQ。
+- legal_gate: 生产法律基础和最终文案须按适用司法辖区另行审核。
+- unique_next: 架构决策 7，确认 Next.js-only 或同源 Next.js intake + 独立 NestJS。
+
+## TASK-024 Customer Field Decision 5 2026-08-10T16:14:31Z
+
+- user_choice: `A`；连续两次相同回复只记为一次有效决策。
+- optional: `Message` / `Additional Requirements` / `Project Details`。
+- submission_gate: 无 Message 仍可凭有效 Basket 与必填客户/联系方式提交。
+- boundary: Message 不能覆盖结构化产品配置或数量；如填写则受后续长度与载荷上限约束。
+- unique_next: 字段决策 6，确认隐私告知、确认框和营销同意分离规则。
+
+## TASK-024 Customer Field Decision 4 2026-08-10T03:19:53Z
+
+- user_choice: `B`。
+- required: `Country/Region`、`City` 均必填。
+- validation_boundary: 规范化后必须非空，并遵守后续冻结的字段限额。
+- deferred_detail: 输入控件、国家规范值和精确长度在合同中继续收敛，不猜测生产标识。
+- unique_next: 字段决策 5，确认 Message 是否必填。
+
+## TASK-024 Customer Field Decision 3 2026-08-10T03:10:22Z
+
+- user_choice: `B`。
+- input: WhatsApp 与 WeChat 为相互独立的自由文本，可同时填写。
+- normalization: 仅 trim；填写后必须非空，最大长度留待统一安全限额决策。
+- no_pattern_guessing: 不强制国际号码、E.164、微信号或绑定手机号格式，不重写客户标识。
+- no_account_verification: 不做 OTP、账号归属或真实性验证。
+- unique_next: 字段决策 4，确认 Country/Region 与 City 的必填关系。
+
+## TASK-024 Customer Field Decision 2 2026-08-10T03:07:01Z
+
+- user_choice: `A`。
+- individually_optional: `Business Email`、`WhatsApp`、`WeChat`、`Phone`。
+- combination_gate: 四种渠道中至少一种必须填写并通过对应验证。
+- public_order: `WhatsApp -> WeChat -> Business Email -> Phone`。
+- compatibility: 可同时填写多个渠道，不设互斥。
+- unique_next: 字段决策 3，确认 WhatsApp/WeChat 的输入、规范化与验证规则。
+
+## TASK-024 Customer Field Decision 1 2026-08-10T02:58:21Z
+
+- user_choice: `A`。
+- required: `Full Name`、`Company Name`。
+- optional: `Company Website`，保持既有决定。
+- preserved: 本决定不推断联系方式必填组合，也不改变 WhatsApp/WeChat 优先展示。
+- unique_next: 字段决策 2，确认 Business Email、WhatsApp、WeChat、Phone 的至少一种可联系渠道组合规则。
+
+## TASK-024 A0 Protected Baseline PASS 2026-08-10T02:48:14Z
+
+- baseline: 架构/ADR、package/lock、Quote Basket/QuoteLine/Product Configuration、前端 Basket/route 和 CMS Product Configuration 共 20 份关键文件已记录 SHA-256。
+- verification: 20/20 checksum、`git diff --check`、DPG project/registry/messages/strict-lane 全部 PASS，strict issues `0`。
+- preserved: frontend/CMS 运行时、依赖、数据库、飞书、外部系统和用户既有改动零修改。
+- unique_next: 字段决策 1，确认 Full Name 与 Company Name 的必填性。
+
+## TASK-024 Requirement Confirmation 2026-08-10T02:45:44Z
+
+- authorization: 用户输入精确口令 `确认 TASK-024 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；acceptance 保持 `NOT_ACCEPTED`，Git 保持 `DIRTY`。
+- released: 只放行 Planner 保护基线、客户字段/安全决策逐项确认和后续受控只读可行性审计。
+- blocked: frontend/CMS 运行时修改、表单/API/NestJS、飞书现场读写、依赖、部署、Git 交付仍阻塞。
+- unique_next: 完成 A0 基线，然后向用户逐项确认客户字段矩阵，不以默认值替代业务决策。
+
+## TASK-024 Intake 2026-08-10T02:20:52Z
+
+- request: 冻结最终 RFQ Submission Contract、客户信息字段与服务端安全边界。
+- confirmed: B2B Quote Basket 一次提交、无价格/付款；公司网站可选；WhatsApp/WeChat 优先展示；浏览器不得直连飞书；服务端必须重新解析不可信 Basket。
+- decision_gates: 联系字段必填矩阵、至少一种联系方式、安全数值与保留周期、Next.js-only 或同源 Next.js + 独立 NestJS 运行形态仍需在本任务内明确确认。
+- branch: `codex/TASK-024-rfq-submission-contract` 基于 `main` / `origin/main` `89da6ca2b948a881cd3d1ecfc4454d568363aa08`。
+- exclusions: 不实现表单/API/后端，不读写飞书现场，不修改 frontend/CMS/已冻结合同，不安装依赖、部署或 Git 交付。
+- unique_next: 等待精确口令 `确认 TASK-024 需求并开始执行`；未确认前不派发 lane 或修改交付物。
+
+## TASK-023 Formal Delivery Completed 2026-08-08T16:32:36Z
+
+- commit: `89da6ca2b948a881cd3d1ecfc4454d568363aa08` (`TASK-023：建立渐进式相关产品推荐与询价篮接入`)。
+- task_branch: `origin/codex/TASK-023-related-products-progressive` 已推送并指向正式提交。
+- main: 本地 `main` fast-forward 合并后已推送 `origin/main`；本地/远端 `main` 和远端任务分支三者一致。
+- verification: 合并后重新通过完整前端 `51 files / 544 tests`、七套 verifier、lint、typecheck、Next production build、四项 production smoke、治理与差异门。
+- transport: 首次任务分支推送返回 HTTP 400 且远端 ref 不存在；使用仅限该命令的 HTTP/1.1 与缓冲参数重试成功，未写入持久 Git 配置。
+- cleanup: 合并后验证生成的 `.next` 与 `tsconfig.tsbuildinfo` 已可恢复移至 `/Users/arron/.Trash/gdhe-task023-main-postmerge.n8UY83`；port 3000 无 listener，next-env 生产哈希保持。
+- exclusions: 用户自有 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021/TASK-022 closure edits 与历史 resume packet 保持未提交。
+- transition: `ACCEPTED / FORMAL_COMMIT_PENDING` 收口为 `CLOSED / MERGED`；未部署。
+- unique_next: 等待用户创建下一项小任务；不自动开始最终 RFQ、飞书写入或部署。
 
 ## TASK-023 Formal Delivery Authorization 2026-08-08T16:26:33Z
 

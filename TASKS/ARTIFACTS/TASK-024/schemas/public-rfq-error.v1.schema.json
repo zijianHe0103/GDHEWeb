@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.gdhe.local/rfq/1.0.0/public-rfq-error.v1.schema.json",
+  "title": "GDHE PublicRfqError 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "error"],
+  "properties": {
+    "contractVersion": { "const": "1.0.0" },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "requestReference", "messageKey"],
+      "properties": {
+        "code": {
+          "enum": [
+            "invalid_request",
+            "invalid_submission_intent",
+            "request_not_allowed",
+            "challenge_required_or_invalid",
+            "rate_limited",
+            "unsupported_media_type",
+            "payload_too_large",
+            "basket_too_large_to_submit",
+            "invalid_customer_fields",
+            "invalid_line_count",
+            "invalid_quantity",
+            "basket_refresh_required",
+            "product_unavailable",
+            "configuration_changed",
+            "idempotency_conflict",
+            "service_temporarily_unavailable"
+          ]
+        },
+        "requestReference": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/requestReference" },
+        "messageKey": {
+          "type": "string",
+          "pattern": "^rfq\\.error\\.(?:invalid_request|invalid_submission_intent|request_not_allowed|challenge_required_or_invalid|rate_limited|unsupported_media_type|payload_too_large|basket_too_large_to_submit|invalid_customer_fields|invalid_line_count|invalid_quantity|basket_refresh_required|product_unavailable|configuration_changed|idempotency_conflict|service_temporarily_unavailable)$"
+        },
+        "fieldErrors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["field", "code"],
+                "properties": {
+                  "field": { "enum": ["fullName", "companyName", "whatsApp", "weChat", "businessEmail", "phone", "countryRegion", "city", "companyWebsite", "message", "contactMethods", "privacyNotice"] },
+                  "code": { "enum": ["required", "invalid", "too_long", "at_least_one_required"] }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["field", "code"],
+                "properties": {
+                  "field": { "enum": ["basket", "lineCount"] },
+                  "code": { "enum": ["required", "invalid", "expired", "changed", "unavailable"] }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["field", "code", "entryId"],
+                "properties": {
+                  "field": { "enum": ["quantity", "selection", "packaging"] },
+                  "code": { "enum": ["invalid", "changed", "unavailable"] },
+                  "entryId": { "$ref": "https://contracts.gdhe.local/rfq/1.0.0/common.v1.schema.json#/$defs/uuidV4" }
+                }
+              }
+            ]
+          }
+        },
+        "retryAfterSeconds": { "type": "integer", "minimum": 1, "maximum": 86400 }
+      },
+      "allOf": [
+        {
+          "oneOf": [
+            { "type": "object", "properties": { "code": { "const": "invalid_request" }, "messageKey": { "const": "rfq.error.invalid_request" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "invalid_submission_intent" }, "messageKey": { "const": "rfq.error.invalid_submission_intent" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "request_not_allowed" }, "messageKey": { "const": "rfq.error.request_not_allowed" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "challenge_required_or_invalid" }, "messageKey": { "const": "rfq.error.challenge_required_or_invalid" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "rate_limited" }, "messageKey": { "const": "rfq.error.rate_limited" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "unsupported_media_type" }, "messageKey": { "const": "rfq.error.unsupported_media_type" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "payload_too_large" }, "messageKey": { "const": "rfq.error.payload_too_large" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "basket_too_large_to_submit" }, "messageKey": { "const": "rfq.error.basket_too_large_to_submit" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "invalid_customer_fields" }, "messageKey": { "const": "rfq.error.invalid_customer_fields" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "invalid_line_count" }, "messageKey": { "const": "rfq.error.invalid_line_count" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "invalid_quantity" }, "messageKey": { "const": "rfq.error.invalid_quantity" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "basket_refresh_required" }, "messageKey": { "const": "rfq.error.basket_refresh_required" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "product_unavailable" }, "messageKey": { "const": "rfq.error.product_unavailable" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "configuration_changed" }, "messageKey": { "const": "rfq.error.configuration_changed" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "idempotency_conflict" }, "messageKey": { "const": "rfq.error.idempotency_conflict" } }, "required": ["code", "messageKey"] },
+            { "type": "object", "properties": { "code": { "const": "service_temporarily_unavailable" }, "messageKey": { "const": "rfq.error.service_temporarily_unavailable" } }, "required": ["code", "messageKey"] }
+          ]
+        },
+        {
+          "if": { "type": "object", "properties": { "code": { "const": "rate_limited" } }, "required": ["code"] },
+          "then": { "type": "object", "properties": { "retryAfterSeconds": true }, "required": ["retryAfterSeconds"] },
+          "else": { "not": { "type": "object", "properties": { "retryAfterSeconds": true }, "required": ["retryAfterSeconds"] } }
+        },
+        {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "invalid_customer_fields" },
+                "fieldErrors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "field": { "enum": ["fullName", "companyName", "whatsApp", "weChat", "businessEmail", "phone", "countryRegion", "city", "companyWebsite", "message", "contactMethods", "privacyNotice"] },
+                      "code": { "enum": ["required", "invalid", "too_long", "at_least_one_required"] }
+                    }
+                  }
+                }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "invalid_line_count" },
+                "fieldErrors": { "type": "array", "items": { "type": "object", "properties": { "field": { "const": "lineCount" }, "code": { "const": "invalid" } } } }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "invalid_quantity" },
+                "fieldErrors": { "type": "array", "items": { "type": "object", "properties": { "field": { "const": "quantity" }, "code": { "const": "invalid" } } } }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "basket_refresh_required" },
+                "fieldErrors": { "type": "array", "items": { "type": "object", "properties": { "field": { "const": "basket" }, "code": { "enum": ["expired", "changed", "unavailable"] } } } }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "product_unavailable" },
+                "fieldErrors": { "type": "array", "items": { "type": "object", "properties": { "field": { "const": "selection" }, "code": { "const": "unavailable" } } } }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "const": "configuration_changed" },
+                "fieldErrors": { "type": "array", "items": { "type": "object", "properties": { "field": { "enum": ["selection", "packaging"] }, "code": { "enum": ["changed", "unavailable"] } } } }
+              },
+              "required": ["code", "fieldErrors"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "code": { "enum": ["invalid_request", "invalid_submission_intent", "request_not_allowed", "challenge_required_or_invalid", "rate_limited", "unsupported_media_type", "payload_too_large", "basket_too_large_to_submit", "idempotency_conflict", "service_temporarily_unavailable"] }
+              },
+              "required": ["code"],
+              "not": { "required": ["fieldErrors"] }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

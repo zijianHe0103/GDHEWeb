@@ -552,14 +552,15 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
    - 配件类别基数为多对一：每个具体配件必须且只能关联一个配件类别，同一 Article Number 不得同时出现在多个配件类别中；一个配件类别可以包含多个配件。筛选结果按该唯一类别归属生成，不复制配件记录。
    - 配件不强制每个 Article Number 都有独立型号。布带按“型号 → 多个规格/Article Number”组织：型号由颜色与钉子材质共同决定；同一型号下，宽度、钉距和长度变化产生不同可订购规格及 Article Number。当前已知宽度为 30mm、45mm、60mm，钉距包括 125mm、145mm、165mm、170mm 及更多值，长度包括 30m、40m、50m、60m 等。封口、顶码、吊码、走珠等其他配件通常同时有型号和 Article Number，但不得据“通常”把型号设为所有配件的强制字段。
    - 线珠按“型号 → 珠距/卷长规格”组织，型号由颜色与具体珠型共同决定。当前珠型包括尚飞大方珠系列的单扣、双扣和大圆扣，以及用户所称佳丽斯中方珠/珠系列的单扣佳丽斯中方珠、双扣佳丽斯中方珠和小圆扣佳丽斯珠。常见珠距为 6cm、6.6cm、7cm、8cm、10.2cm；10.2cm 目前只记录为双扣常见规格，不设排他规则。珠距和卷长共同确定具体规格；任一变化都产生独立 Article Number，但不改变型号。
-3. 浏览器向同源 Next.js intake Route Handler 提交表单，不直接 POST WordPress 公共 REST。
-4. 文本字段做 schema 校验、长度限制、反垃圾、速率限制、Origin/CSRF 防护和隐私同意记录。
-5. 文件先取得短时预签名上传地址，写入隔离对象存储的 quarantine 区。
-6. 服务端校验扩展名、MIME、文件签名和大小，重命名对象并执行病毒/沙箱扫描；扫描通过后才可供内部人员访问。
-7. 邮件/CRM 通知异步发送；失败可重试，不能让浏览器假成功。
-8. 如需在 `wp-admin` 查看线索，可在后续任务创建非公开 `gdhe_inquiry` 类型，只保存最小化元数据、处理状态和短时签名文件引用；文件本体仍在隔离存储。
-9. 用户已确认 quotation request 最终要在指定飞书多维表格中新增记录，由业务员在飞书完成报价；实现前必须读取真实 Base、表、字段、关联、权限和幂等键，不得凭口述猜 ID 或字段。
-10. 报价请求的精确字段、数量规则、CTA 英文标签、飞书写入失败/重试/去重/状态回传、保留期限、允许格式/容量、邮件和扫描供应商均需要继续逐项确认。
+3. 最终 RFQ 服务端形态冻结为 **Next.js-only**：浏览器只调用同源 Next.js Route Handler；WordPress 继续提供 CMS/结构化产品只读权威，不作为询价接收数据库；飞书凭据、重新解析、幂等、安全门和受控写入全部留在 Next.js 服务端。当前不引入 NestJS 或第二套后端部署；未来只有出现多客户端、复杂持久工作流、多集成或独立扩缩容等实证需求，才可通过新任务和 ADR 复评。
+4. RFQ 合同分为三层：不可信的 `PublicRfqSubmissionDraft 1.0.0`、服务端重新解析后形成的 `AuthoritativeRfqDocument 1.0.0`、不含内部身份的 `PublicRfqReceipt 1.0.0`。公开草稿不原样嵌入本地 Quote Basket，而是包含从已验证 Basket `2.0.0` 派生的 `PublicRfqBasketSubmission 1.0.0` 最小投影、客户联系信息、隐私告知记录和一次提交意图；投影排除图片/展示元数据，不得含 Article Number、内部 UUID、WordPress/飞书 ID、价格、库存、成本、供应商或 secret。完整字段和状态见 `TASKS/ARTIFACTS/TASK-024/`。
+5. 客户字段冻结为 Full Name、Company Name、Country/Region 和 City 必填；WhatsApp、WeChat、Business Email、Phone 各自选填但至少一种有效，公开顺序为 WhatsApp、WeChat、Business Email、Phone；Company Website 和 Additional Requirements 选填。提交处展示隐私用途告知与 Privacy Policy 链接，不设置强制 checkbox，也不把提交技术记录标为 consent 或营销订阅。
+6. Next.js 必须把整个公开 Basket 投影视为不可信输入，在服务端用一个有界批量合同重新解析稳定 Product 身份、角色、有效选项、Article Number 和数量单位。配置产品使用 canonical path；无独立详情页的目录配件必须使用未来独立合同签发的 opaque public quote key，不能使用内部 UUID/Article Number，也不能按型号、名称、catalog path、类别、关系顺序、图片或轨道宽度猜测。当前 Basket `2.0.0` 尚无该 key，因此生产配件提交在 additive Basket/submission 版本通过前保持阻塞。标准选项必须唯一命中 Article Number；明确允许的 custom/manual-sales-follow-up 才能以 Article Number 为空进入人工跟进。最多 50 行的生产路径不得逐行调用公开 `/resolve` 或 Product Configuration 形成 N+1。
+7. 单次公开请求最多 50 个不同 Basket 行；Basket 最小提交投影的 canonical UTF-8 上限为 `163840` bytes（160 KiB），完整原始 JSON 正文上限为 `262144` bytes（256 KiB），固定保留 `98304` bytes（96 KiB）给客户/告知/intent/幂等/反滥用信封；最终精确序列化的完整请求仍必须通过 raw-body 上限。超过任一门均整单拒绝、保留本地 Basket、不截断。端点不接受文件、base64 或二进制附件。Origin/Content-Type、闭合 Schema、字段 Unicode code-point 上限、honeypot、最短填写时间、服务端限流和按风险触发的 challenge 均在任何下游调用前执行。
+8. 服务端提交意图首次使用窗口为 30 分钟；pre-reservation 失败不创建业务幂等状态，首次持久 reservation 固定 `createdAt`，reserved/rejected/accepted/indeterminate 均以该时刻为锚保留 30 天且重放不延长。同键同规范化载荷在闭合请求验证后、new-attempt hard limit 前返回原 `200/202/409` 状态，同键不同载荷拒绝；重放仍计来源流量但不调用 CMS/飞书。飞书单次调用上限 10 秒，公开 intake 总预算 15 秒；不确定下游结果必须形成持久 `processing/indeterminate` 状态，不得伪造成功或盲目重发。所有行必须原子验证和交付；失败或 processing 不清空浏览器 Basket。
+9. 询价最终进入指定飞书多维表格，由业务员完成报价；它不反向修改飞书产品主数据。实现前必须只读取得真实 Base、表、字段、关联、权限和稳定外部 RFQ/幂等映射，不得凭截图或口述猜 ID。WordPress 不创建 `gdhe_inquiry` 作为默认接收库，也不保存飞书凭据或客户询价正文。
+10. 已接受 RFQ 的身份、联系方式和留言自最后一次真实人工业务互动起保留 24 个月；官网不提供专门的自助删除按钮、表单或 API。脱敏应用/错误日志保留 30 天、安全事件元数据 90 天、keyed 限流/联系指纹 48 小时、不可识别汇总指标 13 个月。日志禁止完整请求、完整联系方式、原始 IP、Article Number 清单、幂等键、挑战 token、凭据和下游原始错误；最终法律文案、合法基础、供应商和保留执行仍是生产门。
+11. TASK-024 的闭合机器合同位于 `TASKS/ARTIFACTS/TASK-024/schemas/` 与 `MACHINE_CONTRACT.md`：公开/权威 line、receipt/error、RFC 8785 canonical bytes、versioned secret-key HMAC、固定向量和 exact Basket snapshot token/clear rule 均为后续实现不可放宽的入口门；当前未创建运行时 endpoint。
 
 ## 12. 安全、权限与隐私
 
@@ -700,8 +701,9 @@ TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Sche
    - 每个正式模板同时交付自身技术 SEO、可访问性、状态码、媒体和内容缺失边界；内容 SEO 持续迭代。
 
 8. **询盘、CRM/协作系统、分析与隐私**
-   - 主业务动作已冻结为 B2B quotation request，不引入购物车、在线结算或支付。目标协作系统已确认为飞书多维表格：询价新增飞书记录，业务员在飞书报价。阶段 1 继续冻结产品/规格/配件/数量等最小询价数据合同、精确 CTA 标签、飞书表/字段/关联/状态/幂等/失败恢复；复杂表单、上传、对象存储、扫描、邮件、保留/删除、Cookie/Analytics 和隐私同意在本阶段独立实施。
-   - 浏览器不得直接向 WordPress 公共 REST 上传机密文件；CAD/客户附件不得进入公开 Media Library。
+   - 主业务动作是 B2B quotation request，不引入购物结算、在线订单或支付。TASK-024 冻结 `PublicRfqSubmissionDraft -> AuthoritativeRfqDocument -> PublicRfqReceipt` 三层边界、客户字段、Next.js-only、安全/限流/幂等/失败原子性与保留规则；当前仍未实现 Route Handler、表单提交、持久状态或飞书连接。
+   - 实施顺序固定为：先关闭目录配件公开 quote key / additive Basket 投影版本，以及最多 50 行混合 Basket 的服务端批量重新解析缺口；再实现 Next.js intake、持久幂等和隔离 stub sink；然后实现可见英语联系表单；随后只读核对真实飞书映射；再实现受控飞书 connector/对账；最后进入 HTTPS Staging、安全、隐私和运维验收。每步都是独立任务和停止门。
+   - 浏览器不得直接连接飞书、调用 WordPress 写端点或获得服务端凭据。当前 RFQ 端点不接受文件；CAD/客户附件不得进入公开 Media Library。Cookie/Analytics、邮件和未来附件服务继续独立于 RFQ 最小合同。
 
 9. **上线加固**
    - 完成性能、可访问性、安全、浏览器、技术 SEO、redirect/404、备份/恢复、Preview/cache/Webhook、监控、告警、日志、权限、供应链和部署/回滚演练。

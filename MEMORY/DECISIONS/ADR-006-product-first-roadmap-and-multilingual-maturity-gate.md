@@ -64,6 +64,14 @@ ADR-003 的小批次验收仍有效，但其历史阶段描述可能被解释为
 38. TASK-023 继续以飞书 `relationships.products` 作为型号级关联关系的业务维护权威；WordPress 只保存下一次完整成功同步后的只读公开顺序镜像。当前任务不实现真实飞书同步，也不把本地 TEST_CANDIDATE 当作生产关联数据。
 39. `You May Also Need` 对一次已经完整加载的关联集合执行渐进展示：初始最多三项，每次 `Show More Products` 再展示最多三项，不产生新的 CMS 请求或逐卡 `/resolve`。
 40. 目录配件的 `Add to Quote` 只将客户主动选择、数量合法的公开配件行加入 Quote Basket；不得伪造轨道配置、价格、付款、结账或最终询价提交。公开发布仍以经批准的真实关联数据、HTTPS 保护媒体来源与 Next Image allowlist、视觉 QA、对抗审查和部署验证为前置门。
+41. 最终 RFQ 服务端采用 **Next.js-only**。浏览器只连接同源 Next.js intake；WordPress 保持 CMS/结构化产品只读权威，不作为 RFQ 接收库；飞书凭据、服务端重新解析、幂等、安全门和受控写入都在 Next.js 服务端。当前不引入 NestJS 或第二套后端部署；未来只有经过实测的多客户端、复杂持久工作流、多集成或独立扩缩容需求，才可用新任务和 ADR 复评。
+42. RFQ 数据边界分为 `PublicRfqSubmissionDraft 1.0.0`、`AuthoritativeRfqDocument 1.0.0` 和 `PublicRfqReceipt 1.0.0`。浏览器草稿不原样嵌入本地 Basket，而使用从已验证 Basket `2.0.0` 派生的 `PublicRfqBasketSubmission 1.0.0` 最小投影；它排除图片/展示元数据，始终不可信且不含 Article Number、内部 UUID、WordPress/飞书 ID、价格、库存、成本、供应商或 secret。服务端必须对整篮逐行重新解析并形成一个原子权威询价；公开回执不得返回内部身份或下游原始状态。
+43. 客户联系字段采用最小 B2B 组合：Full Name、Company Name、Country/Region、City 必填；WhatsApp、WeChat、Business Email、Phone 各自选填但至少一种有效，展示顺序为 WhatsApp、WeChat、Business Email、Phone；Company Website 和 Additional Requirements 选填。WhatsApp/WeChat 是自由文本，不强制账号格式或 OTP。提交处显示用途告知和 Privacy Policy 链接，不设置强制 checkbox，不收集或推断营销同意。
+44. 单次 RFQ 最多 50 个不同 Basket 行；Basket 最小提交投影最多 `163840` canonical UTF-8 bytes（160 KiB），完整原始 JSON 正文最多 `262144` bytes（256 KiB），固定保留 `98304` bytes（96 KiB）给客户和安全信封，且最终精确序列化的完整请求仍必须通过 raw-body 上限；不接受文件/base64/二进制。服务端对 Origin、Content-Type、闭合结构、Unicode code-point 字段上限、honeypot、最短填写时间、来源/联系指纹限流和自适应 challenge 进行验证；challenge 仅在风险或 unseen/expired key 的 10 分钟第 4～5 次来源尝试时要求，第 6 次起和 24 小时第 21 次起返回 `429`，同一联系指纹 24 小时最多 10 个新 RFQ。
+45. 服务端提交意图首次使用窗口为 30 分钟；pre-reservation 失败不创建业务幂等状态，首次持久 reservation 锚定所有状态的 30 天记录且重放不延长。同键同规范化载荷在闭合请求验证后、new-attempt hard limit 前返回原 `200/202/409` 状态，同键不同载荷拒绝；同键重放仍计来源流量但不创建新业务意图或调用 CMS/飞书。飞书单次调用上限 10 秒，public intake 总预算 15 秒；不确定下游结果不得伪造成功或盲目重发。全部行验证和交付必须原子；只有 receipt 为 `accepted` 且当前六字段 Basket snapshot 与 SHA-256 token 均精确相同，才能清除所提交的浏览器 Basket 快照。
+46. 已接受 RFQ 的客户身份、联系方式和留言自最后一次真实人工业务互动起保留 24 个月；自动同步、轮询、重试和页面访问不重置时钟。官网不提供专门的自助删除入口，但适用法律下的有效请求仍可通过 Privacy Policy 普通联系渠道人工处理。脱敏应用/错误日志保留 30 天、安全事件 90 天、keyed 限流/联系指纹 48 小时、不可识别汇总指标 13 个月；普通日志禁止完整请求、联系方式、原始 IP、Article Number 清单、幂等键、challenge token、凭据和下游原始错误。
+47. RFQ 后续实施必须按小任务顺序推进：先建立无详情目录配件的 opaque public quote key / additive Basket submission 版本，再建立最多 50 行混合 Basket 的服务端批量重新解析合同；然后是 Next.js intake + 持久幂等 + 隔离 stub、可见英语表单和回执、真实飞书映射只读核查、受控 connector 与不确定结果对账、HTTPS Staging/安全/隐私/运维验收。前一步通过不自动授权后一步，任何一步都不得把 RFQ 变成价格、订单、付款或 Checkout。
+48. TASK-024 的 Draft 2020-12 machine contract、RFC 8785 canonical payload、versioned secret-key HMAC、两组固定向量、闭合 receipt/error 及 snapshot clear token 位于任务 artifacts；后续 runtime 必须精确复用或生成等价字节，并在独立任务中验证，不能由实现阶段自行选择另一套字段或摘要规则。
 
 ## 19/16 合同口径
 

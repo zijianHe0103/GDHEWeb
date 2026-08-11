@@ -1096,3 +1096,58 @@ Each execution records:
 - boundaries: no product, test, CMS, contract, task-authority, Planner-state, visual-byte, dependency, Git, deployment, Feishu or external-system repair/mutation; PASS is not acceptance or Git authorization
 - message_status: exact closure request, generated-cleanup request and the single linked PASS review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real receipt
 - next: Planner owns fresh final validation, governed review recovery and any checked acceptance preparation; no additional reviewer work is authorized by this PASS
+
+### 2026-08-10T18:25:38Z - TASK-024 adversarial review round 1
+
+- task: TASK-024
+- message: MSG-TASK-024-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, verified the current session and write scope, read and ACKed the exact controlled request before substantive work, then independently reviewed the active task, all TASK-024 contracts/audits/evidence, current Basket authority, architecture/ADR/README and protected baseline without modifying business deliverables
+- p1_closed_shape: PublicRfqBasketLine and AuthoritativeRfqLine retain open selection/packaging prose; receipt/error references, messages, codes and bounds remain placeholders; fixed-order canonical bytes/test vectors and the exact submitted-snapshot compare-and-clear token are not frozen; the written HMAC formula uses keyVersion as its key argument despite the adjacent secret-key requirement
+- p1_replay_precedence: every POST counts toward a hard sixth-attempt 429 before idempotency inspection, while the same accepted key/digest is also required to return its same 200/202 state; pre-reservation validation failures may either create no state or a rejected reservation, and reserved/indeterminate records have no defined 30-day retention anchor
+- p2_narration: the active task still lists confirmed Decisions 1 through 16 as pending assumptions and retains draft/pre-audit wording; the old Planner validation still presents a narrow-reaudit result and says adversarial review is unauthorized despite the current independent-review gate
+- passing_contract: sixteen decision headings and non-goals, Next.js-only server boundary, public/internal identity exclusion, configured canonical path, explicit future accessory key/additive Basket/mixed resolver gates, customer/privacy/security/atomicity/follow-up boundaries and zero runtime implementation were independently confirmed
+- size_evidence: 163840 plus 98304 equals 262144; superseded 196608/65536 values are absent from current authority; a conservative maximum high-variance envelope remains below the fixed reserve and the final raw ceiling remains mandatory
+- protected_scope: baseline is 18/20 byte-identical plus the two authorized architecture/ADR hashes; base/main/origin main are 89da6ca2b948a881cd3d1ecfc4454d568363aa08; product/CMS/package diff is empty; no RFQ runtime route/symbol or secret/external identifier was added; README non-implementation wording remains true
+- governance: project, messages, strict lane and diff checks pass; task/project/board remain UNDER_REVIEW NOT_ACCEPTED DIRTY; no Planner-owned state was modified
+- result: FAIL; P0 none; P1 two; P2 one; Planner final validation not allowed
+- boundaries: no contract repair, product, test, CMS, database, dependency, task authority, Planner state, Feishu, Git, deployment or external-system mutation; review result is not acceptance or delivery authorization
+- message_status: exact request and the single linked FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real receipt
+- next: Planner owns governed recovery, the minimum document-only revision, fresh validation and any separately authorized narrow Round 2 review
+
+### 2026-08-10T19:10:09Z - TASK-024 adversarial review round 2 final
+
+- task: TASK-024
+- message: MSG-TASK-024-ADVERSARIAL-REVIEW-R2
+- action: restored the registered reviewer lane, read and ACKed the exact configured narrow Round 2 request before substantive work, preserved Round 1 FAIL 0/2/1, and independently reviewed only the two P1 closures, the narration P2 and direct regressions on current shared bytes
+- machine_contract_reproduction: Node 24.18.0 with Ajv 8.20.0 and ajv-formats 3.0.1 compiled all five Draft 2020-12 Schemas in strict mode; all 61 references remained local and the declared positive/negative union, receipt and error matrix passed 37/37
+- p1_residual: the public request still accepts two otherwise identical lines sharing one entryId but carrying different quantities; the public error Schema accepts customer-code/line-error and quantity-code/customer-error cross-domain pairings; the authoritative document accepts accepted plus not-started/zero-attempt delivery and accepted plus rejected-before-reservation source outcome, despite the prose requiring distinct untrusted lines, category-local errors and zero durable business state before reservation
+- p1_minimum_revision: freeze machine-testable entry identity uniqueness, exact code-to-field-error category pairing and authoritative status/outcome/delivery/attempt cross-field invariants, add the reproduced negatives, and remove pre-reservation-only outcomes from the durable document or separate them into non-business telemetry
+- p1_2_closure: existing-key replay precedes new-attempt limits; all named pre-reservation failures are no-state; first successful reservation fixes the exact 2592000000 ms anchor across reserved/rejected/accepted/indeterminate; replay does not extend expiry and expiry does not auto resend
+- crypto_snapshot: both RFC 8785 canonical strings, both HMAC-SHA-256 secretKey[keyVersion] digests, both Basket snapshot tokens and ten accepted-only exact six-field clear/retain probes reproduced exactly
+- p2_residual: the active task records the Round 2 request ACK/done but its unique next step still waits for that ACK and its current review paragraph still calls Round 2 ready for dispatch; Project State, Board and execution/validation evidence otherwise preserve the current UNDER_REVIEW gate and historical FAIL
+- protected_scope: protected baseline is 18/20 exact with only architecture 910a468b159936a437a6c5cfe51c38c2d7ad3d9402b7a3702061bbd6f0a084ef and ADR-006 6311d17c94e15ade15439c9fedfb4317c5d9c6557c940a626bf60cdd171bc1f4 authorized; baseline and worktree frontend source/test/package/lock plus CMS diffs are zero
+- future_gates: opaque accessory identity, additive Basket/submission version, bounded mixed batch resolver, durable runtime, form and Feishu integration remain future non-authorized gates; no implementation or deployment is claimed
+- governance: TASK-024 artifacts have 33 files, 12 JSON files and zero missing final newline; project, registry, controlled-message, strict lane and diff checks pass before response creation
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- boundaries: no business document, product, test, CMS, database, dependency, task authority, Planner state, Feishu, Git, deployment or external-system repair/mutation; this final review is not acceptance or delivery authorization
+- message_status: exact Round 2 request and the single linked final FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real receipt
+- next: Planner owns governed recovery, the bounded machine-contract and current-narration corrections, fresh validation and any user-authorized later review
+
+### 2026-08-11T03:30:24Z - TASK-024 user-authorized adversarial closure review
+
+- task: TASK-024
+- message: MSG-TASK-024-ADVERSARIAL-CLOSURE-REVIEW
+- action: restored the registered reviewer lane, verified current session 019f88d0-018d-75e2-8e28-54a904a6bf8c and reviewer-only write scope, read and ACKed the exact user-authorized request before substantive work, preserved Round 1 FAIL 0/2/1 and Round 2 FAIL 0/1/1, and reviewed only the bounded Round 2 repair plus direct regressions
+- machine_closure: independent Node 24 read-only probe and the normative verifier compiled exactly five Draft 2020-12 Schemas in strict mode, counted exactly 61 closed local references, accepted all twelve positive/state cases, rejected all six negatives and returned failures zero
+- duplicate_boundaries: duplicate-entry-id and duplicate complete configured merge-identity vectors remain structurally Schema-valid, then reject as duplicate_entry_id and duplicate_line_identity before simulated digest lookup or reservation; both stateful counters remained exactly zero
+- error_state_closure: both reviewer-originated cross-domain error directions reject; sourceSecurity outcomeCode is exactly new_intent; all six status/delivery/attempt cells validate while accepted/not-started and accepted/pre-reservation reject
+- replay_retention: existing-key replay remains before new-attempt hard limits; pre-reservation failures remain no-state; first reservation fixes the exact 2592000000 ms lifetime for every live state; replay never extends and expiry never auto resends
+- crypto_snapshot: both canonical business and source-Basket strings, both fixed HMAC digests, both snapshot tokens and both exact 2592000000 ms Basket TTLs reproduce
+- protected_scope: baseline remains 18/20 exact with only architecture 910a468b159936a437a6c5cfe51c38c2d7ad3d9402b7a3702061bbd6f0a084ef and ADR-006 6311d17c94e15ade15439c9fedfb4317c5d9c6557c940a626bf60cdd171bc1f4 authorized; baseline and worktree frontend source/test/package/lock plus CMS diffs are zero
+- artifact_governance: 41 artifacts, 18 JSON parses, zero missing newline, zero broken local link; git diff, project, registry, messages and strict lane gates pass with issues empty
+- state_truth: active task, Project State and Board are UNDER_REVIEW NOT_ACCEPTED DIRTY; Round 1/2 messages are historical ACK/done and the current closure request is ACKed/done in controlled-message truth; no earlier pending ACK is presented as the current gate
+- future_gates: opaque accessory key, additive Basket/submission version, bounded mixed resolver, durable runtime, form and Feishu connector remain future non-authorized work
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation and checked acceptance preparation allowed only after linked response ACK
+- boundaries: no business deliverable, product, test, CMS, dependency, Planner state, Feishu, Git, deployment or external-system mutation; PASS is not user acceptance or delivery authorization
+- message_status: exact closure request and the single linked PASS review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real receipt
+- next: Planner owns fresh final validation and checked acceptance preparation after linked response acknowledgement

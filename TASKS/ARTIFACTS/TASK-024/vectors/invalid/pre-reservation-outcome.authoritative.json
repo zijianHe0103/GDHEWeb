@@ -1,0 +1,63 @@
+{
+  "contractVersion": "1.0.0",
+  "rfqId": "66666666-6666-4666-8666-666666666666",
+  "publicReference": "RFQ-ABCDEFGHJKLM",
+  "receivedAt": "2026-08-10T00:01:01.000Z",
+  "status": "accepted",
+  "customer": {
+    "fullName": "Ada Buyer",
+    "companyName": "Example Contracting Ltd",
+    "whatsApp": "+1 202 555 0100",
+    "countryRegion": "United States",
+    "city": "Seattle"
+  },
+  "privacyNotice": {
+    "version": "rfq-privacy-en-2026-08",
+    "presentedAt": "2026-08-10T00:01:00.000Z",
+    "receivedAt": "2026-08-10T00:01:01.000Z"
+  },
+  "lines": [
+    {
+      "lineKind": "configured_product",
+      "entryId": "44444444-4444-4444-8444-444444444444",
+      "resolution": "resolved_article_number",
+      "stableProductUuid": "77777777-7777-4777-8777-777777777777",
+      "articleNumber": "GDHEPRD000172",
+      "publicPath": "/products/fgd-x15-pvc/",
+      "model": "FGD X15+PVC",
+      "quantityUnit": "piece",
+      "quantity": 2,
+      "selection": {
+        "type": "standard",
+        "lengthTenths": 60,
+        "color": {
+          "code": "ivory-white",
+          "label": "Ivory White"
+        }
+      },
+      "packaging": {
+        "basePackaging": "standard",
+        "logoPrinting": false,
+        "protectionArrangement": null
+      }
+    }
+  ],
+  "payloadDigest": {
+    "keyVersion": "test-rfq-hmac-v1",
+    "value": "dc2aeeb47e6ab57a2c06b2b9d94305835ffd9c2719e5c18bf2aa35192f81ca44"
+  },
+  "idempotency": {
+    "keyFingerprint": "1111111111111111111111111111111111111111111111111111111111111111",
+    "createdAt": "2026-08-10T00:01:01.000Z",
+    "expiresAt": "2026-09-09T00:01:01.000Z"
+  },
+  "sourceSecurity": {
+    "sourceFingerprint": "2222222222222222222222222222222222222222222222222222222222222222",
+    "outcomeCode": "rejected_before_reservation"
+  },
+  "delivery": {
+    "state": "accepted",
+    "attemptCount": 1,
+    "lastTransitionAt": "2026-08-10T00:01:02.000Z"
+  }
+}

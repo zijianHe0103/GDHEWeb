@@ -33,8 +33,24 @@ export {
   type RfqLocalIntakeDependencies,
   type RfqLocalIntakeResult,
   type RfqIntakeDependencies,
-  type RfqReservationInput,
 } from "./intake";
+export {
+  createRfqRepositoryLookupResult,
+  createRfqRepositoryReservationResult,
+  createRfqRepositoryTransitionResult,
+  readRfqRepositoryLookupResult,
+  readRfqRepositoryReservationResult,
+  readRfqRepositoryTransitionResult,
+  type RfqRepository,
+  type RfqRepositoryLookupInput,
+  type RfqRepositoryLookupResult,
+  type RfqRepositoryPublicDocument,
+  type RfqRepositoryReservationResult,
+  type RfqRepositoryState,
+  type RfqRepositoryTransitionInput,
+  type RfqRepositoryTransitionResult,
+  type RfqReservationInput,
+} from "./repository";
 export {
   StubRfqRepository,
   type StubRfqLookupInput,

@@ -1,0 +1,30 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-029",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T16:18:15Z",
+  "requires_response_to": "MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-029 frontend A4 is PASS_FOR_PLANNER_CHECKPOINT. Real MySQL proof covers twenty same-key requests across two independent Repository instances, two simultaneous controlled Next processes, both-process replay, stop/restart recovery, every frozen crash window, expired pending and indeterminate recovery, exact accepted receipt replay, ambiguous failure normalization, one row/reference/mixed batch/attempt and zero automatic resend. Fresh gates: direct A4 1 file/13 tests, focused 5 files/46 tests, complete serial 92 files/738 tests, ten verifiers, lint, non-incremental typecheck, production build, five production smokes, exact mysql2/migration, MySQL/WordPress/protected hashes/residue/diff/DPG PASS. Database ends with exactly two tables and zero business rows; no usable credential is retained. Review the four A4 artifacts and perform the independent Planner checkpoint. A5 remains blocked.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-029/FRONTEND_A4_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-029/FRONTEND_A4_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-029/FRONTEND_A4_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-029/FRONTEND_A4_DIFF_SUMMARY.md"
+  ],
+  "expected_artifacts": [],
+  "notes": "A4 only; no A5, review, Git or deployment.",
+  "dispatched_at": "2026-08-12T16:18:37Z",
+  "delivery_key": "MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T16:19:00Z",
+  "updated_at": "2026-08-12T16:19:00Z"
+}

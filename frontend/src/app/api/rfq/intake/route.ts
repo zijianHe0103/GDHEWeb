@@ -10,9 +10,14 @@ import {
   validatePublicRfqSubmission,
   type RfqIntakeConfig,
   type RfqLocalIntakeResult,
+  type RfqRepository,
 } from "../../../../lib/rfq/server/v2";
 import { readRfqIntakeConfig } from "../../../../lib/rfq/server/v2/config";
 import { verifyLocalRfqIntent } from "../../../../lib/rfq/server/v2/intent";
+import {
+  createMySqlRfqConnectionFactory,
+  MySqlRfqRepository,
+} from "../../../../lib/rfq/server/v2/mysql-repository";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -65,13 +70,12 @@ function publicError(
   return response(getValidatedRfqBody(document, "public_error"), status);
 }
 
-function configuredRuntime(config: Extract<RfqIntakeConfig, { enabled: true }>) {
-  const key = `${config.origin}\n${config.keyVersion}\n${config.sinkOutcome}`;
-  if (activeRuntime && activeKey === key) return activeRuntime;
-  const repository = new StubRfqRepository();
+function createConfiguredRuntime(
+  config: Extract<RfqIntakeConfig, { enabled: true }>,
+  repository: RfqRepository,
+) {
   const sink = new StubRfqSink(config.sinkOutcome);
-  activeKey = key;
-  activeRuntime = createRfqIntakeRuntime({
+  return createRfqIntakeRuntime({
     clock: { now: () => new Date().toISOString() },
     ids: {
       nextRfqId: () => randomUUID(),
@@ -88,6 +92,24 @@ function configuredRuntime(config: Extract<RfqIntakeConfig, { enabled: true }>) 
     validateMixedQuoteLines,
     sink,
   });
+}
+
+function configuredRuntime(config: Extract<RfqIntakeConfig, { enabled: true }>) {
+  if (config.mode === "persistent_stub") {
+    const connect = createMySqlRfqConnectionFactory({
+      host: "127.0.0.1",
+      port: 3307,
+      user: "gdhe_rfq_app",
+      password: config.mysqlPassword,
+      database: "gdhe_rfq",
+    });
+    return createConfiguredRuntime(config, new MySqlRfqRepository({ connect }));
+  }
+  const key = `${config.origin}\n${config.keyVersion}\n${config.sinkOutcome}`;
+  if (activeRuntime && activeKey === key) return activeRuntime;
+  const repository = new StubRfqRepository();
+  activeKey = key;
+  activeRuntime = createConfiguredRuntime(config, repository);
   return activeRuntime;
 }
 

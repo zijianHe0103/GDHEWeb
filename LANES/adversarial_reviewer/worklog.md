@@ -1303,3 +1303,41 @@ Each execution records:
 - boundaries: no product/test/docs/task-authority/Planner-state/Visual/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; PASS is not acceptance or Git authorization
 - message_status: exact closure request and the single linked PASS closure response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real thread receipt
 - next: Planner owns fresh final validation and checked acceptance preparation; no further reviewer work is authorized by this bounded closure PASS
+
+### 2026-08-12T16:55:24Z - TASK-029 unique complete adversarial review
+
+- task: TASK-029
+- message: MSG-TASK-029-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, ACKed the exact canonical request before substantive work, read the frozen dispatch and A0-A5 evidence, then independently reviewed current migration, Repository, Intake, Route, tests, documentation, protected scope and governance without modifying business deliverables or MySQL/WordPress state
+- p1_state_version: the migration constrains only row_version at least one and the stored-row parser accepts any positive safe integer; a reserved fixture changed only from rowVersion 1 to 2 passes every current predicate and replays even though the frozen acyclic state machine can never produce that pair
+- p1_migration_recovery: down-if-empty and failed-initialization cleanup drop the runtime account before the Schema; interruption between non-transactional DDL leaves the Schema present and account absent, while up, verify and down-if-empty all call full verification and fail runtime_account_missing before the existing repair call, so no supported command recovers that half-state
+- p2_consolidated_docs: consolidated execution/diff artifacts still call Planner root README and architecture deltas unapplied/unmodified, while A5 Planner checkpoint, active task and current diffs show both were applied and document impact resolved
+- p2_review_narration: active task frontmatter/current state/message list correctly show UNDER_REVIEW and ACK/done, but its dedicated Adversarial Review section still says the unique review has not started
+- independent_evidence: supported Node 24.18/npm 11.16 safe focused rerun PASS 5 files/26 tests; ten contract verifiers, lint and non-incremental typecheck PASS; current audit remains 7 all and 4 production with no mysql2 finding
+- mysql_read_only: Node 24 migration plan/verify and direct read-only inspection PASS at MySQL 8.4.10 port 3307 with exact two tables, zero RFQ rows, three runtime DML grants and twelve WordPress tables; mutating/account-rotating integration and HTTP smokes were not rerun and their A1-A5 results remain explicitly cross-lane evidence
+- protected_cleanup: thirteen immutable A0 paths and selected current hashes match; no next build, TypeScript cache, temp root, Python bytecode or port-3000 listener remains; git diff check passes
+- passing_boundaries: replay/conflict/new-key flow, atomic reserve/duplicate reread/CAS, no-auto-resend state handling, closed stored documents/errors, server-only/production 404, exact dependency, WordPress isolation and truthful non-production docs pass apart from the two P1 gaps
+- result: FAIL; P0 none; P1 two; P2 two; Planner final validation not allowed
+- boundaries: no product/test/docs/task-authority/Planner-state/database/CMS/dependency/Git/deployment/external-system repair or mutation; only a same-reviewer bounded closure of these four original findings may follow and the complete review must not be repeated
+- message_status: exact request and the single linked FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: send the linked FAIL response; Planner owns governed recovery, four bounded corrections, fresh validation and any same-reviewer finding closure
+
+### 2026-08-12T17:27:29Z - TASK-029 four-finding bounded adversarial closure
+
+- task: TASK-029
+- message: MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE
+- action: restored the registered reviewer lane, ACKed the exact same-reviewer bounded request before substantive work, preserved the unique complete-review FAIL 0/2/2 as immutable history, and checked only P1-1, P1-2, P2-1 and P2-2 on current bytes
+- p1_1_parser: reviewer-only fake-connection probe covered seven impossible state/row-version classes across all six states and both rejected bounds; 7/7 returned stable malformed_record and the probe was removed
+- p1_1_mysql: read-only MySQL 8.4.10/3307 inspection found the installed exact CHECK and evaluated the full legal/impossible matrix; only reserved 1, resolving 2, pending 3, accepted 4, indeterminate 4 and rejected 3/4 were allowed; exact two tables and zero business rows remain
+- p1_1_regression: current legal-transition tests retain reservation, resolving, pending, accepted, indeterminate and both rejected paths; fresh Planner Repository 9/9 and migration 3/3 were inspected as cross-lane evidence, not relabeled as reviewer execution
+- p1_2_recovery: current code performs database-first/account-second cleanup, zero-row and WordPress checks before rollback, missing-account repair before full verify, four Schema/account state coverage and four destructive-DDL interruption recoveries; an independent nine-cell source gate passed
+- p1_2_boundary: read-only migration verify returned verified true and businessRows 0; reviewer did not rerun the account-rotating/destructive integration under the read-only stop boundary, while matching current test code and fresh frontend/Planner 3/3 real-MySQL results were inspected
+- p2_1: consolidated execution/diff artifacts now attribute the original unapplied frontend handoff and Planner's later A5 root README/architecture application as distinct facts
+- p2_2: task, Project State and Board consistently show UNDER_REVIEW NOT_ACCEPTED DIRTY, preserve complete FAIL 0/2/2 and identify this bounded closure as the sole gate; relevant request/response ACK facts are current
+- independent_gates: Node 24.18 reviewer probe 1 file/7 tests, affected ESLint, non-incremental typecheck, migration read-only verify, DPG project/messages/strict lane and git diff check PASS
+- cleanup: reviewer probe, frontend .next and tsconfig.tsbuildinfo are absent; no product/test/docs/task-authority/Planner-state/database-account/CMS/dependency/Git/deployment/external-system mutation
+- preserved_history: canonical complete-review FAIL P0=0/P1=2/P2=2 remains intact above the appended bounded closure; this is not a second complete review
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after linked response ACK
+- boundaries: PASS is not user acceptance or Git/deployment/production/external-integration authorization
+- message_status: closure request and the single linked PASS closure response are ACKed/done; response validation, dry-run, exact Planner thread bridge delivery and dispatch-once receipt all completed
+- next: Planner owns fresh final validation and checked acceptance preparation; no further reviewer work is authorized by this bounded closure PASS

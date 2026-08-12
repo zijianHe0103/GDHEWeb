@@ -535,7 +535,7 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
 
 ## 11. 询盘、文件、邮件与 CRM 边界
 
-当前已实现浏览器本地 Quote Basket、TASK-027 的本地非生产 Next.js intake，以及 TASK-028 的客户可见本地提交闭环；生产持久化/安全门、飞书/CRM/邮件和部署仍未实现：
+当前已实现浏览器本地 Quote Basket、TASK-027 的本地非生产 Next.js intake、TASK-028 的客户可见本地提交闭环，以及 TASK-029 的本地 `persistent_stub` MySQL 幂等 Repository 与跨重启恢复证据；生产 TLS、备份/恢复、高可用、托管密钥、完整安全门、真实 Sink/对账、飞书/CRM/邮件和部署仍未实现：
 
 1. GDHE 官网是 B2B 询价站，不是面向消费者的在线商城。访客选择所需型号、规格、配件及其他必要选项后提交 quotation request；当前业务范围不提供购物车结算、在线订单确认或在线支付。
    - 英语站统一主询价 CTA 使用 `Request a Quote`。正常在售产品的同一主转化路径不得混用 `Ask for Quotation` 或 `Get a Quote`；停产产品继续使用已确认的 `Contact Us for Replacement`。
@@ -547,6 +547,7 @@ HTTP Header 包含 key ID、时间戳和请求体 HMAC。Next.js 校验时间窗
    - TASK-025 新增 RelatedProductCard `2.0.0`、Quote Basket `3.0.0` 和匿名 no-store `POST /gdhe/v1/quote-line-validations`。Next.js 仅在 server-only consumer 中对 `1..50` 条有资格的配置产品/目录配件执行一次有界混合校验；保持输入顺序、整批原子失败，并且不逐行调用公开 `/resolve`、Product Configuration 或 RelatedProductCard。浏览器仍不直接访问 WordPress 批量端点。
    - TASK-027 在 `frontend/` 建立了独立 RFQ Submission `2.0.0` 快照与 server-only 本地 `POST /api/rfq/intake/`。端点仅在非生产 exact stub 配置和显式 loopback Origin 下启用，执行 raw Origin/media/`262144`-byte/fatal-UTF-8/one-parse 门、一次完整 TASK-025 mixed batch、进程内 Repository 和隔离 Stub Sink，并返回闭合公开 receipt/error。相同 intent 可本地重放，冲突 fail closed；production、disabled 和未配置均最终 404。该状态不持久，重启即丢失，也不等于客户表单、30 分钟 intent issuer、rate limiter/challenge、trusted proxy、生产 secret、飞书/邮件/queue、外部交付或部署。
    - TASK-028 在同一 `/request-a-quote/` 本地切片加入 Full Name、Company Name、Country/Region、City、WhatsApp、WeChat、Business Email、Phone、Company Website 和 Additional Requirements 十字段表单。新提交先取得绑定精确 Basket 快照、loopback Origin 和 30 分钟窗口的本地 intent，再执行一次同源 intake；公开响应必须通过 RFQ Submission `2.0.0` 闭合验证。只有 authentic accepted 回执、提交快照、当前存储快照和 snapshot token 全部匹配时才删除唯一 Quote Basket key；变化 Basket、processing 和全部错误整篮保留。客户只能显式重试，未引入自动重试、轮询或 attempt 持久化。该能力仍依赖进程内 Stub，重启丢失服务端状态；production、未配置和禁用模式下页面、intent 和 intake 均最终 404 且零业务调用。
+   - TASK-029 在当前本地 MySQL `8.4.10` 上建立与 WordPress `GDHE` 逻辑隔离的 `gdhe_rfq` Schema、显式版本化 migration、仅有 `SELECT/INSERT/UPDATE` 的运行账号，以及 server-only MySQL Repository。本地 `persistent_stub` 模式已证明两个 Repository、两个 Next 进程、20 个同 Key 并发请求、跨重启原结果重放与冻结崩溃窗口；同 Key/同内容零重复 mixed batch/Sink，同 Key/不同内容稳定冲突，新 Key 仍是新合法 RFQ。隔离 Stub Sink 仍是进程内；`delivery_pending` 和 `delivery_indeterminate` 不自动重发、删除或伪造成功，只保留未来受控对账入口。production、未配置和禁用模式仍在读取 Request、Repository、WordPress 或 Sink 前最终 404。该证据不代表生产数据库、TLS、备份/恢复、高可用、托管密钥、限流/challenge/trusted-proxy、后台 Worker、真实 Sink、飞书/CRM/邮件、部署或公开发布已完成。
    - 每一个加入 quotation request 的产品或配件 RFQ 行项目都必须填写数量；缺少数量的行项目不能作为完整询价提交。数量只能是大于零的整数，最小值为 `1`；空值、`0`、负数和小数均无效。未来实现必须在浏览器交互层与服务端 intake 校验层同时执行该约束。
    - 公开 RFQ 数量单位按产品类别固定：轨道按“支”，布带和线珠按“卷”，电机、遥控器及其他配件按“个”。飞书产品主数据为每个 Article Number 保存长度换算字段；飞书报价系统接收 Article Number 和客户数量后读取该字段，将轨道、布带和线珠换算为总米数，配件继续按个计算，并根据包装方式折算各类包装件数。总米数、包装件数和计算公式属于飞书报价系统责任，不要求访客在网页端输入，也不进入 WordPress、GDHE REST API 或 Next.js 的实现范围。系统统一使用 `Article Number`，不创建 `Part Number` 字段或别名。
 2. 可独立询价的配件可以脱离主产品成为报价请求中的独立行；每个配件拥有独立 Article Number，并沿用全公司范围不重复的 Article Number 规则。公开页面身份按产品类型决定：同款、同型号、出厂配套的电机与遥控器共用一个组合产品页面；布带、transparent tape 和用户所称“线珠”等可独立表达的大类建立类型详情页；轨道封口、走珠、顶码、墙码等小型安装配件只在相关主产品区域展示。类型页承载其真实可订购规格，不为每个规格创建独立页面。
@@ -704,8 +705,8 @@ TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Sche
    - 每个正式模板同时交付自身技术 SEO、可访问性、状态码、媒体和内容缺失边界；内容 SEO 持续迭代。
 
 8. **询盘、CRM/协作系统、分析与隐私**
-   - 主业务动作是 B2B quotation request，不引入购物结算、在线订单或支付。TASK-024 的 v1 历史边界保持不改；TASK-026 已完成基于 Quote Basket `3.0.0` 与 Article Number 的 additive RFQ Submission `2.0.0` 五 Schema、字段映射和固定向量。TASK-027 已将该合同接入本地、非生产、进程内 Stub intake；TASK-028 又完成本地客户表单、intent、公开回执和精确 Basket 清除，但两者都不代表生产持久状态、安全供应商、飞书/CRM/邮件连接或部署已经实现。
-   - 已完成顺序为：TASK-025 关闭 Article Number/目录配件身份与最多 50 行 mixed batch 缺口，TASK-026 关闭 additive v2 submission/receipt/error/向量缺口，TASK-027 建立 Next.js local-only intake + 进程内 Stub Repository/Sink，TASK-028 建立本地英语客户表单、回执和精确 accepted 清除。后续仍按独立任务与停止门推进：生产持久幂等与安全门 → 真实飞书映射只读核查 → 受控飞书 connector/对账 → HTTPS Staging、安全、隐私和运维验收。
+   - 主业务动作是 B2B quotation request，不引入购物结算、在线订单或支付。TASK-024 的 v1 历史边界保持不改；TASK-026 已完成基于 Quote Basket `3.0.0` 与 Article Number 的 additive RFQ Submission `2.0.0`，TASK-027/028 已建立本地 intake/客户表单闭环，TASK-029 已建立本地 `persistent_stub` MySQL Repository、并发与跨重启证据。它们仍不代表生产安全门、托管密钥、真实 Sink、飞书/CRM/邮件或部署已完成。
+   - 已完成顺序为：TASK-025 关闭 Article Number/目录配件身份与最多 50 行 mixed batch 缺口，TASK-026 关闭 additive v2 submission/receipt/error/向量缺口，TASK-027 建立 Next.js local-only intake + 进程内 Stub Repository/Sink，TASK-028 建立本地英语客户表单、回执和精确 accepted 清除，TASK-029 建立本地持久幂等、崩溃保守恢复与跨进程/跨重启证据。后续仍按独立任务和停止门推进：生产数据库/TLS/备份/高可用/托管密钥与完整安全门 → 真实飞书映射只读核查 → 受控飞书 connector/对账 → HTTPS Staging、安全、隐私和运维验收。
    - 浏览器不得直接连接飞书、调用 WordPress 写端点或获得服务端凭据。当前 RFQ 端点不接受文件；CAD/客户附件不得进入公开 Media Library。Cookie/Analytics、邮件和未来附件服务继续独立于 RFQ 最小合同。
 
 9. **上线加固**

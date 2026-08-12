@@ -1649,3 +1649,114 @@ Each execution records:
 - final_governance: source/native-attribute scan, Markdown fences/trailing whitespace, `git diff --check`, generated cleanup and DPG project/messages/strict-lane PASS with zero issues before response creation
 - message_result: `MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue, was ACKed/done by Planner and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1`
 - unique_next_step: stop for independent Planner validation and Planner-owned P2 closure, then only the same-reviewer bounded finding closure; do not resend or repeat complete review
+
+# TASK-029 frontend Repository and MySQL migration A1 2026-08-12
+
+- message: restored the registered frontend lane, completely read A0 authority and A1 dispatch, then ACKed `MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1` before mutation; the duplicate delivery was not re-ACKed or re-executed
+- scope: executed A1 only; A2 MySQL Repository, persistent mode/Route/UI, A4 process/restart/crash proof, A5 consolidated docs, review, Git, deployment and external systems remain blocked
+- credential_boundary: no Keychain or durable secret file; integration creates a transient in-memory password, proves the permission matrix, rotates the account to a fresh unknown random password in `finally`, and retains no usable credential
+- tdd: real REDs captured missing common Repository, missing migration plan/command, missing real integration, accepting an extra private lookup field, and missing exact column/index/session evidence before minimum GREEN
+- repository: one server-only common interface plus trap-safe authentic closed lookup results; Stub and Intake consume the interface while public RFQ `2.0.0` semantics and existing behavior remain green
+- migration: exact `mysql2@3.23.3`, explicit versioned SQL and plan/up/verify/down-if-empty tool; no import/start/request DDL or GRANT and no A2 lookup/reserve/transition implementation
+- mysql_result: local MySQL `8.4.10`/3307 has exact lowercase `gdhe_rfq`, two InnoDB tables, 0 business rows and `gdhe_rfq_app`@127.0.0.1 with only SELECT/INSERT/UPDATE; usable credential retained false
+- permission_and_drift: DML, UTC/READ-COMMITTED/strict session, repeat no-op, checksum/object/column/index drift, failure cleanup and non-empty rollback refusal pass; DELETE/DDL/GRANT/migration-read/WordPress-read are rejected
+- validation: common/affected `6 files / 21 tests`, migration `1/2`, server-only `1/11`, ten verifiers, lint, non-incremental typecheck, production build, Core/SCF/12-table DB and direct final verify pass
+- protection: A0 `15 exact + 4 A1-authorized differences`; production next-env and pre-existing dirty tsconfig exact; CMS/WordPress/root docs/Planner files preserved
+- audit_truth: npm audit retains unrelated existing `7` findings (`4 high`, `3 moderate`), production `4` (`2 high`, `2 moderate`); none is through mysql2 and A1 did not widen dependencies to remediate them
+- cleanup_and_governance: generated `.next` removed by exact path, no TypeScript cache/temp root/listener/secret file or secret environment remains; diff check and DPG project/messages/strict lane PASS with zero lane issues
+- artifacts: `FRONTEND_A1_TDD_RED_EVIDENCE.md`, `FRONTEND_A1_EXECUTION_REPORT.md`, `FRONTEND_A1_VALIDATION_LOG.md`, `FRONTEND_A1_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not review, acceptance, Git delivery, deployment or A2 authorization
+- message_result: `MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1`
+- post_response_governance: message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+- unique_next_step: stop for independent Planner A1 checkpoint; do not resend or start A2
+
+# TASK-029 frontend MySQL Repository A2 2026-08-12
+
+- message: restored the registered frontend lane, read the active task, all A0 authority, A1 artifacts/checkpoint, exact A2 dispatch and current shared code, then ACKed `MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2` before mutation
+- scope: executed A2 only; A3 `persistent_stub` Route/runtime wiring, A4 two-process/restart/concurrency/crash proof, A5 consolidated docs, review, Git, deployment and external systems remain blocked
+- tdd: preserved six direct RED/GREEN cycles for the missing MySQL module, missing CAS transition, hostile driver reflection escape, missing runtime target binding, unauthenticated transition result and acquired-handle leak
+- repository: added one server-only dependency-injected MySQL Repository bound to MySQL 8.4.10/127.0.0.1:3307/`gdhe_rfq`/`gdhe_rfq_app`; every connection sets UTC, READ COMMITTED and strict SQL mode before a bounded primary-key read or one mutation
+- atomicity: one reservation insert, duplicate-key re-read, authentic closed results, exact conflict/expiry precedence, six state cells, frozen allowed edges, expected-state plus row-version CAS, monotonic transition time and no retry
+- contract_integrity: every incoming/stored public or authoritative JSON passes existing RFQ Submission 2.0.0 validation and identity/state/digest/timestamp/Basket-token binding; malformed rows and hostile driver values fail closed without SQL, credential, payload or diagnostic leakage
+- orchestration_regression: Stub and local Intake now persist the processing receipt at reservation, transition reserved-to-resolving before mixed validation, transition resolving-to-pending before Sink and persist exactly one terminal result; concurrent same-key loser receives stored 202 and performs zero duplicate downstream work
+- mysql_result: real focused suite `1 file / 8 tests PASS`; actual duplicate race converges to one row; exact cleanup restores `rfq_intake_records=0`; runtime account is rotated to a fresh unknown random password and retains no usable credential
+- validation: affected `4 files / 19 tests`, full serial `90 files / 719 tests`, ten verifiers, lint, non-incremental typecheck, production build, exact mysql2 dependency, migration verify and WordPress Core/SCF/GDHE Site/12-table protection PASS
+- protection: all 15 non-A1-authorized A0 hashes exact; A1 package/lock/migration hashes unchanged; production next-env and pre-existing tsconfig exact; Route/config/Sink/Schemas/vectors/Article Number batch and shared dirty changes preserved
+- cleanup_and_governance: generated `.next` and `tsconfig.tsbuildinfo` moved recoverably to Trash; no listener/temp root/secret file remains; diff check and DPG project/messages/strict lane PASS with zero issues before response creation
+- artifacts: `FRONTEND_A2_TDD_RED_EVIDENCE.md`, `FRONTEND_A2_EXECUTION_REPORT.md`, `FRONTEND_A2_VALIDATION_LOG.md`, `FRONTEND_A2_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not review, acceptance, Git delivery, deployment or A3 authorization
+- message_result: `MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2-RESPONSE` was sent exactly once through the real Planner Codex thread bridge and was ACKed/moved to done by Planner before the post-receipt `dispatch-once --execute` check; it remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2`
+- unique_next_step: stop for independent Planner A2 checkpoint; do not resend or start A3
+
+# TASK-029 frontend persistent Stub runtime A3 2026-08-12
+
+- message: restored the registered frontend lane, read the active task/A0/A1/A2 authority and exact A3 dispatch, then ACKed `MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3` before mutation
+- scope: executed A3 only; A4 two-process/restart/twenty-request/crash-window work, A5 docs, review, Git, deployment and external systems remain blocked
+- tdd: captured a config RED (`1 file / 2 failed`) for missing explicit modes and persistent credential acceptance, then a real-MySQL Route RED (`1 file / 4 failed`) proving `201` created zero durable rows and reconstruction changed stored public results
+- config: `stub` stays available; `persistent_stub` is local non-production only and requires one bounded server-only MySQL password while host/port/account/Schema remain the A2 constants
+- runtime: only `persistent_stub` selects a new A2 MySQL Repository/runtime per request; exact replay is therefore database-backed, while process-local `stub` retains its existing cache behavior
+- behavior: accepted `201` replays stored `200`; same-key changed content returns customer-safe `409 idempotency_conflict`; a distinct key with the same canonical content creates a distinct RFQ; indeterminate/rejected results replay without another mixed batch
+- http: one real Next process produced `201/200/409/201`, two persistent accepted rows, two mixed calls, zero legacy calls and no public raw key/credential/Article Number/WordPress diagnostic leakage; exact cleanup returned the table to zero rows
+- regression: the MySQL Route dependency exposed a marker-stripped Client-build positive-control defect; a temporary-copy-only same-shape Stub restored causal proof, and the final public/deep server-only matrix including MySQL passed `12/12`
+- validation: focused `5 files / 28 tests`, complete serial `91 files / 725 tests`, ten verifiers, lint, non-incremental typecheck, production build, persistent HTTP smoke, existing RFQ/Quote Basket smokes and exact dependency/migration checks PASS
+- protection: thirteen immutable A0 paths, A1 package/lock/migration, A2 Repository/common/Intake/Stub, RFQ contracts, production next-env and pre-existing dirty tsconfig hashes remain exact
+- database: MySQL `8.4.10`, `gdhe_rfq` two tables/zero rows; runtime grants remain only SELECT/INSERT/UPDATE and every transient integration credential was rotated to a fresh unknown random value
+- cleanup: generated `.next` moved to macOS Trash; TypeScript cache, temporary Client-build roots, port 3000 listener, test rows and usable runtime credentials are absent
+- artifacts: `FRONTEND_A3_TDD_RED_EVIDENCE.md`, `FRONTEND_A3_EXECUTION_REPORT.md`, `FRONTEND_A3_VALIDATION_LOG.md`, `FRONTEND_A3_DIFF_SUMMARY.md`
+- docs: no README/architecture consolidation in A3; A5 remains the frozen owner
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A4 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3`
+- unique_next_step: stop for independent Planner A3 checkpoint; do not resend the delivered response or start A4
+
+# TASK-029 frontend restart, concurrency and crash-window A4 2026-08-13
+
+- message: restored the registered frontend lane, read the current task/A3 checkpoint/frozen state machine/TDD seams/A4 dispatch, confirmed this was the next phase of the same `IN_PROGRESS` task rather than a switch, and ACKed `MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4` before mutation
+- scope: executed A4 proof only; no production source, package/lock, migration, Schema, UI, CMS, external system or A5 documentation byte changed
+- tdd_red: captured the missing focused A4 test, corrected one real durable-attempt versus Sink-count modeling RED, captured the missing HTTP smoke and reproduced the Next Turbopack external-symlink RED before the minimum test-only `--webpack` correction
+- concurrency: real MySQL `1 file / 13 tests` proves twenty same-key calls across two independent Repository instances converge to one row/Public Reference/mixed validation/Sink call and one durable attempt
+- crash_matrix: before/after reservation, before/after resolving, during mixed, after mixed/before pending, after pending/before Sink, during/after Sink, after indeterminate and after accepted persistence all retain the frozen conservative state; replay never auto-resends, and accepted response loss replays the exact receipt/reference
+- expiry: pending and indeterminate records at the exact expiry boundary remain stored and return only the closed recovery-required public error; no mixed/Sink call, delete or accepted claim occurs
+- http: two simultaneous isolated Next processes split 20 HTTP requests, both replayed the same accepted receipt, then a stopped/restarted process replayed the same receipt; totals remained one row/reference/mixed/attempt and zero legacy calls
+- validation: focused `5 files / 46 tests`, complete serial `92 files / 738 tests`, ten verifiers, lint, non-incremental typecheck, production build, five production smokes, exact mysql2/migration, MySQL/WordPress/protected hashes and diff PASS
+- database: MySQL `8.4.10`/3307, exactly two `gdhe_rfq` tables and zero business rows; runtime grants remain only SELECT/INSERT/UPDATE and every transient credential was rotated to a fresh unknown value
+- cleanup: workspace `.next` moved recoverably to Trash; TypeScript cache, A4 temporary roots, Node/Next listeners, test rows and usable credentials are absent; production next-env and pre-existing dirty tsconfig hashes are exact
+- artifacts: `FRONTEND_A4_TDD_RED_EVIDENCE.md`, `FRONTEND_A4_EXECUTION_REPORT.md`, `FRONTEND_A4_VALIDATION_LOG.md`, `FRONTEND_A4_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A5 authorization, complete review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4`
+- unique_next_step: stop for independent Planner A4 checkpoint; do not resend the delivered response or start A5
+
+# TASK-029 frontend consolidation A5 2026-08-13
+
+- message: restored the registered frontend lane, read the current task/A4 Planner checkpoint/A5 dispatch and exact controlled request, confirmed A5 is the next phase of the same `IN_PROGRESS` task, and ACKed `MSG-TASK-029-FRONTEND-CONSOLIDATION-A5` before edits
+- scope: consolidation only; no product source, test, package/lock, Schema, migration, runtime, UI, CMS, external system, Planner authority or Git byte changed in A5
+- frontend_docs: updated `frontend/README.md` with explicit `persistent_stub` migration/verify, transient credential, local start, replay/restart, cleanup and limitation truth; corrected only the directly contradictory process-local-only descriptions
+- planner_docs: left root README and architecture untouched and provided exact unapplied replacement/insertion text in `FRONTEND_A5_PLANNER_DOC_DELTAS.md`
+- regression: TASK-025–029 focused serial `47 files / 245 tests PASS`; complete serial `92 files / 738 tests PASS`; ten verifiers, lint, non-incremental typecheck, Next build, five production smokes and two persistent local HTTP smokes PASS
+- concurrency_recovery: A4 real HTTP again proves two simultaneous Next processes, twenty same-key requests, one reference/row/mixed/attempt, both-process replay and stop/restart replay; A3 single-process accepted/replay/conflict/new-key remains PASS
+- security: browser static 22-file forbidden-token scan and 114-file Client-source boundary scan PASS; server-only build negatives and public result sanitization remain in the full suite; no env/credential file or private database/authority diagnostic is retained
+- audit_truth: fresh npm audit remains the known pre-existing baseline at all `7 total = 4 high + 3 moderate` and production `4 total = 2 high + 2 moderate`; affected chains are existing Next/PostCSS/Ajv/Vite tooling and `mysql2Finding=false`; no out-of-scope upgrade was attempted
+- database: MySQL `8.4.10`/3307, exact two `gdhe_rfq` tables, zero rows, runtime only INSERT/SELECT/UPDATE; WordPress Core/SCF `6.9.2`/GDHE Site `0.7.0`/12 tables intact
+- protection: thirteen immutable A0 paths plus all A1–A3 implementation, package/lock/migration/runtime, protected image, restored production next-env and pre-existing dirty tsconfig hashes exact
+- cleanup: generated `.next` moved recoverably to Trash; TypeScript cache, frontend and `/tmp` roots, Node/Next listeners, test fingerprints and usable credentials absent; pre-existing MySQL 3307 listener preserved
+- artifacts: `FRONTEND_A5_EXECUTION_REPORT.md`, `FRONTEND_A5_VALIDATION_LOG.md`, `FRONTEND_A5_DIFF_SUMMARY.md`, `FRONTEND_A5_PLANNER_DOC_DELTAS.md`, `EXECUTION_REPORT.md`, `TEST_OR_VALIDATION_LOG.md`, `DIFF_OR_OUTPUT_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; complete review, user acceptance, Git, deployment, production enablement, real Sink and external integration remain unstarted
+- message_result: `MSG-TASK-029-FRONTEND-CONSOLIDATION-A5-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, ACKed/done by Planner and remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-CONSOLIDATION-A5`
+- unique_next_step: stop for the final implementation Planner checkpoint; do not resend the delivered response or start the unique complete review
+
+# TASK-029 frontend adversarial findings narrow repair R1 2026-08-13
+
+- message: restored the registered frontend lane, read the canonical unique complete review `FAIL / P0=0 / P1=2 / P2=2`, exact bounded dispatch and Planner recovery, then ACKed `MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1` before mutation
+- scope: repaired only P1-1 exact state/row-version binding, P1-2 non-transactional DDL half-state recovery and P2-1 consolidated narration; Planner-owned P2-2 recovery, canonical review, task/Project/Board, CMS, external systems and Git remain untouched
+- p1_1_red: stored-row focused test exited `1` because impossible `idempotency_reserved / 2` resolved as a 202 replay; migration focused test exited `1` because the real constraint evidence field was absent
+- p1_1_green: the migration CHECK and parser now share the exact legal mapping `reserved/1`, `resolving/2`, `pending/3`, `accepted|indeterminate/4`, `rejected/3|4`; seven impossible parser categories and one real-MySQL constraint negative PASS while the legal CAS/replay path remains green
+- p1_2_red: the focused migration integration exited `1` because no four-state/destructive-boundary recovery result existed
+- p1_2_green: `up` and `down-if-empty` now converge all four Schema/account states; database-first/account-second cleanup is fault-injected after each destructive DDL in initialization cleanup and uninstall, then recovered through the same supported commands with zero-row, WordPress 12-table and exact-grant checks preserved
+- regression_order: one intentionally parallel affected run failed from destructive migration/consumer race; safe order then passed migration `1/3`, Repository/persistent runtime `4/27`, and complete serial Vitest `92/740` in `193.54s`
+- validation: ten verifiers, lint, non-incremental typecheck, production build, five production smokes, A3/A4 persistent HTTP smokes, MySQL exact two-table/zero-row/minimal-grant checks, WordPress Core/SCF/GDHE Site protection, leakage/protected hashes and generated frontend cleanup PASS
+- documentation: consolidated EXECUTION_REPORT and DIFF summary now state the frontend lane originally handed off unapplied Planner deltas and Planner later applied root README/architecture at A5; historical A5 artifacts/docs remain unchanged
+- artifacts: `FRONTEND_ADVERSARIAL_FINDINGS_R1.md`, `FRONTEND_ADVERSARIAL_FINDINGS_R1_VALIDATION_LOG.md`, refreshed consolidated execution/validation/diff evidence
+- outcome: `PASS_FOR_PLANNER_RECHECK`; unique complete review remains historical FAIL and only a separately dispatched same-reviewer bounded closure may follow Planner validation
+- pre_response_governance: Markdown whitespace, `git diff --check`, DPG project/messages and strict lane validation PASS with zero lane issues
+- message_result: `MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, left queue, was ACKed/done by Planner and remains linked with `requires_response_to=MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1`
+- post_response_governance: response queue path absent; message validation, strict lane audit and `git diff --check` remain PASS with zero issues
+- unique_next_step: stop for fresh Planner validation and only a separately dispatched same-reviewer bounded original-finding closure; do not resend, repeat review or start Git/deployment/external work

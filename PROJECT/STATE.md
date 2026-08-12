@@ -2,14 +2,156 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-028
+current_task: TASK-029
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-12T12:29:13Z
+last_updated: 2026-08-12T17:38:09Z
 
 ## 当前焦点
 
-`TASK-028` 已通过用户正式验收，当前为 `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。唯一完整 review `FAIL 0/1/1` 历史保留，同一 reviewer bounded closure `PASS 0/0/0`；fresh final validation `87/707`、十 verifier、lint/typecheck/build、五 smoke、visual/protected/cleanup/DPG PASS。下一步只暂存 TASK-028 授权变更、生成中文正式提交、推送任务分支，再合并并推送 `main`。不部署。
+`TASK-029` 已由用户使用精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。唯一完整审核 `FAIL / P0=0 / P1=2 / P2=2` 与同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0` 历史均保留；fresh Planner final validation 与 checked acceptance preparation PASS。下一步只允许创建 TASK-029 正式提交、推送任务分支、合并并推送 `main`；部署和飞书仍阻塞。
+
+## TASK-029 Formal Delivery Authorized 2026-08-12T17:38:09Z
+
+- authorization: 用户精确输入 `确认 TASK-029 完成并提交到远端`；checked `task_accept.py accept` PASS。
+- acceptance: `ACCEPTED`；execution、bounded review closure、validation、README/document impact 与 acceptance artifacts 已满足。
+- git_scope: 只提交 TASK-029 产品、migration、测试、文档和治理证据；排除 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～028 active-card closure edits 和历史 resume packets。
+- unique_next: 创建中文正式提交，立即推送任务分支，合并到 `main` 并立即推送 `main`；不部署、不连接外部系统。
+
+## TASK-029 Acceptance Preparation View Sync 2026-08-12T17:34:32Z
+
+- first_prepare: checked `prepare-awaiting-user` 于 `2026-08-12T17:33:26Z` 成功，机器状态正确进入 `AWAITING_USER`。
+- compatibility: 仅在 canonical review 与 validation artifact 中补充治理解析器要求的 plain `verdict: PASS` / `status: PASS`；未改变历史 verdict、证据、产品或测试。
+- controlled_reopen: AWAITING_USER Hook 阻止同步旧 Board/当前叙述后，checked `reopen` 仅将机器状态暂时推进到 `NEEDS_REVISION` 以同步治理视图；未重开实现、测试或审核。
+- final_prepare: 治理视图同步后重新运行 checked `prepare-awaiting-user` 并进入 `AWAITING_USER`。
+- unique_next: 只等待用户精确正式交付口令；不得提前 commit、push、merge、deploy 或开始下一任务。
+
+## TASK-029 Bounded Closure and Final Validation PASS 2026-08-12T17:30:25Z
+
+- review: `MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE-RESPONSE` 已 ACK/done；bounded closure `PASS / P0=0 / P1=0 / P2=0`，不是第二次完整审核。
+- final_validation: current Repository `9/9`、migration verify、typecheck、MySQL 两表/零行、生成物/哈希/diff/DPG PASS；lane full `92/740`、十 verifier、build、七 smoke 与 real migration `3/3` 已检查。
+- artifacts: `FINAL_VALIDATION.md` 与 `PLANNER_SUMMARY.md` 已完成。
+- unique_next: checked `prepare-awaiting-user`；成功后等待用户精确验收口令，不 commit、push、merge 或 deploy。
+
+## TASK-029 Bounded Revision Planner Recheck PASS 2026-08-12T17:19:20Z
+
+- response: `MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1-RESPONSE` 已 validate、ACK 并进入 done。
+- repair: exact state/row-version binding；四种 Schema/account 组合与每个 destructive DDL interruption 的受支持恢复；consolidated narration 归因修正；Planner recovery 保留。
+- validation: 独立 Repository `9/9`、migration/recovery `3/3`、migration verify、lint/typecheck、MySQL `8.4.10` 两表/零行/三项 DML、WordPress Core/SCF/12 表、generated/hash/diff/DPG 全 PASS；lane full `92/740` 及构建/smoke/verifier 证据已检查。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；完整 FAIL 历史不变。
+- unique_next: 只派发同 reviewer bounded finding closure；禁止第二次完整审核。
+
+## TASK-029 Unique Complete Review FAIL Recovery 2026-08-12T16:58:06Z
+
+- response: `MSG-TASK-029-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done；唯一完整审核结论为 `FAIL / P0=0 / P1=2 / P2=2`。
+- P1: 不可能的 state/`row_version` 配对当前未 fail closed；rollback/初始化清理可在非事务 DDL 中断后留下 Schema-present/account-absent 且受支持命令均无法恢复的半状态。
+- P2: consolidated current evidence 仍称 Planner 文档 delta 未应用；active task review 叙述仍称未开始。
+- transition_helper: checked `task_transition.py reopen` 因 helper 只接受 `AWAITING_USER` 而对真实 `UNDER_REVIEW` 安全拒绝且零 mutation；Planner 记录等价 `NEEDS_REVISION` recovery。
+- unique_next: 只派发四项 bounded correction；fresh Planner validation 后只请求同一 reviewer finding closure，禁止第二次完整审核。
+
+## TASK-029 A5 Planner Checkpoint PASS 2026-08-12T16:40:43Z
+
+- response: `MSG-TASK-029-FRONTEND-CONSOLIDATION-A5-RESPONSE` 已 validate、ACK 并进入 done；七份 A5/consolidated artifacts 已检查。
+- validation: frontend current-byte focused `47/245`、full `92/738`、十 verifier、lint/typecheck/build、五 production smoke、A3/A4 HTTP 均通过；Planner 独立复现 focused `5/29`、关键合同/typecheck、MySQL/文档/diff/DPG。
+- database: MySQL 8.4.10、精确两表、零业务行、运行账号仅三项 DML；WordPress Core/SCF/GDHE Site/12 表保持。
+- docs: frontend README、根 README 与架构契约已同步本地持久 Repository、进程内 Stub Sink、production fail-closed 和剩余生产门；document impact `RESOLVED`。
+- transition: `IN_PROGRESS -> UNDER_REVIEW`；只释放一次完整只读审核。
+- unique_next: 等待唯一完整 review verdict；FAIL 后只做同一 reviewer bounded finding closure。
+
+## TASK-029 Unique Complete Review Dispatched 2026-08-12T16:43:52Z
+
+- message: `MSG-TASK-029-ADVERSARIAL-REVIEW-R1` 已 validate、通过真实 reviewer Codex thread bridge 投递并由 `dispatch-once` 记录。
+- scope: 一次完整只读审核；reviewer 只写 canonical report 和自身 lane/message 记录，不修产品。
+- policy: 若 FAIL，只允许原 finding 最小修订与同一 reviewer bounded closure；禁止第二次完整审核。
+- unique_next: 等待唯一 verdict；PASS 仍不等于用户验收或 Git/deployment 授权。
+
+## TASK-029 A4 Planner Checkpoint PASS 2026-08-12T16:21:05Z
+
+- response: `MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE` 已 validate、ACK 并进入 done；四份 A4 artifacts 已检查。
+- behavior: 两个 Repository、两个受控 Next 进程和 20 个同键请求收敛为一条记录/公开编号/mixed batch/attempt；双进程和停止重启后均重放同一结果。全部冻结崩溃窗口、过期 pending/indeterminate 零自动重发和 accepted 响应丢失重放通过。
+- validation: Planner 独立复现 real-MySQL `13/13` 和双 Next/重启 HTTP proof；十 verifier、lint、非增量 typecheck、migration verify、MySQL 两表/零行/三项 DML、WordPress Core/SCF/GDHE Site/12 表、protected/diff/DPG 全部 PASS。
+- cleanup: `.next`、TypeScript cache、端口 3000 listener、测试行和可用运行密码均无残留；production next-env/package/lock 与 pre-existing tsconfig 哈希准确。
+- boundary: 未做 A5、review、Git、deployment、真实 Sink 或外部系统。
+- unique_next: 只派发 frontend A5 文档/完整回归/安全与 residual 收口；A5 Planner checkpoint 前不得进入完整审核。
+
+## TASK-029 Frontend A5 Dispatched 2026-08-12T16:22:55Z
+
+- message: `MSG-TASK-029-FRONTEND-CONSOLIDATION-A5` 已 validate、通过真实 Codex thread bridge 投递并由 `dispatch-once` 记录。
+- scope: 仅完整回归、安全/泄漏/权限/迁移/残留、frontend README、七份 consolidated evidence 及 Planner-owned 根 README/架构文档精确 delta。
+- blocked: 新功能、production enablement、真实 Sink、retry/polling/reconciliation、外部系统、完整 review、Git 和 deployment。
+- unique_next: 等待一个 linked A5 response 并执行最终实施 Planner checkpoint；不得提前进入审核。
+
+## TASK-029 A3 Planner Checkpoint PASS 2026-08-12T15:56:52Z
+
+- response: `MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3-RESPONSE` 已 validate、ACK 并进入 done；四份 A3 artifacts 已检查。
+- implementation: 显式本地 `persistent_stub` 只在服务端选择 A2 MySQL Repository；既有 `stub` 保留。首次/重放/冲突/新 Key 与 indeterminate/rejected 重放已通过，production/unset/disabled 继续 final 404。
+- validation: Planner 独立复现 focused `5 files / 29 tests`、十 verifier、lint、非增量 typecheck、Next 16.2.11 build、migration verify、MySQL 两表/零行/三项 DML 权限、diff 与 DPG 全部 PASS；lane 完整串行证据为 `91/725`。
+- cleanup: Planner build `.next` 已 recoverably 移入 Trash；production next-env、package/lock 与 pre-existing tsconfig 哈希准确；没有业务行、可用测试密码、缓存或测试监听器残留。
+- boundary: 未证明双进程、跨重启、20 并发或崩溃窗口；未做 A5、review、Git、deployment 或外部系统。
+- unique_next: 只派发 frontend A4 并在 A5 前再次执行 Planner checkpoint。
+
+## TASK-029 Frontend A3 Dispatched 2026-08-12T15:30:41Z
+
+- message: `MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3` 已 validate、通过真实 Codex thread bridge 投递并由 `dispatch-once` 记录。
+- scope: 仅显式本地 `persistent_stub` mode、既有 Intake 到 A2 MySQL Repository 接线、一次 mixed-batch/至多一次 Stub Sink、同进程重放/冲突/新 Key 和 production/unset/disabled final 404。
+- blocked: 双 Next 进程、跨重启、20 并发和崩溃窗口 A4；A5 docs、完整 review、Git、deployment、Feishu/CRM/email 继续阻塞。
+- unique_next: 等待一个 linked A3 execution response，随后执行 Planner 独立 checkpoint；不得提前 A4。
+
+## TASK-029 A2 Planner Checkpoint PASS 2026-08-12T15:28:42Z
+
+- response: `MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2-RESPONSE` 已 validate、ACK 并进入 done；四份 A2 execution artifacts 已检查。
+- implementation: A2 MySQL Repository 已实现目标/会话绑定、bounded lookup、atomic reserve、duplicate re-read、六状态、expected-state + row-version CAS、RFQ 2.0 authority binding 与安全错误归一化；现有 Stub/Intake 共享同一合同。
+- validation: Planner 独立复现 focused `4 files / 20 tests`、完整串行 `90 files / 719 tests`、十 verifier、lint、非增量 typecheck、Next 16.2.11 production build、migration verify、WordPress Core/SCF/GDHE Site/12 表、protected/diff/DPG 全部 PASS。
+- database: MySQL 8.4.10，`gdhe_rfq` 精确两表/零业务行；运行账号仍仅 `SELECT/INSERT/UPDATE`，测试后密码轮换为未知随机值且无可用凭据保留。
+- boundary: 未接 `persistent_stub` Route/runtime，未做双进程、跨重启、20 并发、崩溃窗口、UI、外部系统、review、Git 或 deployment。
+- unique_next: 只派发 frontend A3 本地 `persistent_stub` Intake 接线并在 A4 前再次执行 Planner checkpoint。
+
+## TASK-029 A1 Planner Checkpoint PASS 2026-08-12T14:44:41Z
+
+- implementation: common server-only Repository/authentic lookup boundary, exact `mysql2@3.23.3`, explicit migration `plan/up/verify/down-if-empty`, and retained Stub implementation are present; MySQL lookup/reserve/transition implementation remains absent.
+- database: `gdhe_rfq` is `utf8mb4_0900_bin` with exactly two tables and zero business rows; migration checksum is exact; `gdhe_rfq_app`@`127.0.0.1` uses `caching_sha2_password` and has only SELECT/INSERT/UPDATE on `rfq_intake_records`.
+- credentials: integration used only transient in-memory passwords and rotated the account before exit; no usable credential was retained or disclosed.
+- validation: affected `4 files / 16 tests`, migration `2/2`, ten contract verifiers, lint, non-incremental typecheck, WordPress 7.0.2 Core, SCF 6.9.2 and 12-table DB, `15 exact + 4 A1-authorized` protected paths, diff and DPG gates PASS.
+- boundary: no Route/UI/persistent mode, cross-restart/concurrency/crash test, external system, review, Git delivery or deployment was performed.
+- unique_next: dispatch only frontend A2 MySQL Repository implementation and require another Planner checkpoint before A3.
+
+## TASK-029 A0 PASS 2026-08-12T14:01:32Z
+
+- environment: MySQL 8.4.10 at 3307, InnoDB transactions/XA/savepoints, target `gdhe_rfq` absent; WordPress `GDHE` remains 12 tables and its existing account is not reused.
+- platform: WordPress 7.0.2, SCF 6.9.2, GDHE Site 0.7.0, Core/SCF/DB PASS; Node 24.18.0/npm 11.16.0 target present.
+- design: froze two v1 tables, six exact RFQ state cells, atomic insert/duplicate re-read/row-version CAS, stable processing receipt from reservation, fixed 30-day anchor, nonterminal reconciliation and no automatic resend.
+- permissions: runtime account is loopback `gdhe_rfq_app` with only SELECT/INSERT/UPDATE on the business table; migration authority remains separate and no credentials are recorded.
+- validation: ten existing frontend contract verifiers, 19/19 protected hashes, DPG project/messages/strict lane and `git diff --check` PASS.
+- mutation: no MySQL DDL/DML/account/grant write, dependency, product source, build output, Git delivery, deployment or external-system action occurred in A0.
+- transition: `READY -> IN_PROGRESS`; `NOT_ACCEPTED / DIRTY` unchanged.
+- unique_next: dispatch only frontend A1 and require a Planner checkpoint before A2.
+
+## TASK-029 Requirements Confirmed 2026-08-12T13:59:00Z
+
+- authorization: 用户精确输入 `确认 TASK-029 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；`NOT_ACCEPTED / DIRTY` 不变。
+- released_scope: 仅 Planner A0 只读核验与设计冻结；MySQL 写入、依赖安装、产品代码和 frontend A1 仍由 A0 checkpoint 阻塞。
+- review_policy: 全部实施收敛后只进行一次完整独立审核；如有 finding，仅由同一 reviewer 做 bounded closure。
+- unique_next: 建立任务分支并完成 A0；A0 独立验证 PASS 后才进入 `IN_PROGRESS` 并派发 frontend A1。
+
+## TASK-029 Intake 2026-08-12T13:53:55Z
+
+- request: 建立基于独立 MySQL Schema 的 RFQ 持久幂等 Repository 与跨重启恢复最小纵向切片，继续使用隔离 Stub Sink。
+- database: 用户确认使用当前 MySQL 服务；目标为独立 `gdhe_rfq` Schema，不写 WordPress `GDHE` 数据库。实施前 A0 必须重新核验 `127.0.0.1:3307`、权限、migration 和精确状态模型。
+- idempotency: 同 Key/同规范化内容只返回原结果且零重复下游；同 Key/不同内容返回 `409`；新 Key 始终是新的合法业务意图，不按客户或内容跨 Key 自动合并。
+- scope: 只做持久 Repository、`persistent_stub` 本地接线、跨重启/双实例/并发/故障窗口和最小权限验证；完整限流/Challenge、飞书/CRM/邮件、生产开放和部署排除。
+- review_policy: 实施全部收敛后只做一次完整审核；FAIL 后只做同 reviewer bounded finding closure。
+- unique_next: 等待用户精确输入 `确认 TASK-029 需求并开始执行`；确认前不创建/修改 MySQL 对象，不修改产品代码，不 dispatch。
+
+## TASK-028 Formal Delivery Completed 2026-08-12T12:34:29Z
+
+- commit: `fc2a5395da10520683133bfd947085a6dbc75486`，正式中文提交包含任务内容、主要变更、验证结果与文档更新。
+- push: `origin/codex/TASK-028-customer-rfq-form` 已成功推送。
+- integration: 本地 `main` 从 `8891df61759f377cc9e2f110ecb41aabb7cd15fb` 快进至正式提交，远端 `main` 推送成功。
+- verification: 本地任务分支、本地 `main`、远端任务分支、远端 `main` 四个引用均为 `fc2a5395da10520683133bfd947085a6dbc75486`。
+- preserved: `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021–027 收口修改和历史 resume packets 保持在正式提交之外。
+- boundary: 未部署，未连接 Feishu/CRM/email，未新增生产持久化或生产安全供应商。
+- unique_next: 等待用户决定下一项任务。
 
 ## TASK-028 Formal Delivery Authorization 2026-08-12T12:29:13Z
 

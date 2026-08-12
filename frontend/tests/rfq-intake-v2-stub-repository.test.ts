@@ -14,6 +14,7 @@ describe("TASK-027 process-local Stub RFQ repository", () => {
   test("implements the five frozen replay decisions without extending expiry", async () => {
     const repository = new StubRfqRepository();
     const receipt = validatePublicRfqReceipt(acceptedReceipt);
+    const processing = validatePublicRfqReceipt(processingReceipt);
 
     expect(await repository.lookup({
       keyFingerprint: KEY_FINGERPRINT,
@@ -34,10 +35,35 @@ describe("TASK-027 process-local Stub RFQ repository", () => {
       publicReference: acceptedReceipt.publicReference,
       createdAt: "2026-08-12T03:02:00.000Z",
       expiresAt: "2026-09-11T03:02:00.000Z",
-    })).toBe(true);
+      document: processing,
+    })).toMatchObject({ kind: "reserved", rowVersion: 1 });
     await repository.transition({
       keyFingerprint: KEY_FINGERPRINT,
+      expectedState: "idempotency_reserved",
+      expectedRowVersion: 1,
+      state: "resolving_lines",
+      lastTransitionAt: "2026-08-12T03:02:00.000Z",
+      authoritativeDocument: null,
+      httpStatus: 202,
+      document: processing,
+    });
+    await repository.transition({
+      keyFingerprint: KEY_FINGERPRINT,
+      expectedState: "resolving_lines",
+      expectedRowVersion: 2,
+      state: "delivery_pending",
+      lastTransitionAt: "2026-08-12T03:02:00.000Z",
+      authoritativeDocument: null,
+      httpStatus: 202,
+      document: processing,
+    });
+    await repository.transition({
+      keyFingerprint: KEY_FINGERPRINT,
+      expectedState: "delivery_pending",
+      expectedRowVersion: 3,
       state: "accepted",
+      lastTransitionAt: "2026-08-12T03:02:00.000Z",
+      authoritativeDocument: null,
       httpStatus: 201,
       document: receipt,
     });
@@ -79,6 +105,7 @@ describe("TASK-027 process-local Stub RFQ repository", () => {
 
   test("preserves an expired indeterminate record for controlled reconciliation", async () => {
     const repository = new StubRfqRepository();
+    const processing = validatePublicRfqReceipt(processingReceipt);
     await repository.reserve({
       keyFingerprint: KEY_FINGERPRINT,
       payloadDigest: {
@@ -91,12 +118,37 @@ describe("TASK-027 process-local Stub RFQ repository", () => {
       publicReference: acceptedReceipt.publicReference,
       createdAt: "2026-07-01T03:02:00.000Z",
       expiresAt: "2026-07-31T03:02:00.000Z",
+      document: processing,
     });
     await repository.transition({
       keyFingerprint: KEY_FINGERPRINT,
-      state: "delivery_indeterminate",
+      expectedState: "idempotency_reserved",
+      expectedRowVersion: 1,
+      state: "resolving_lines",
+      lastTransitionAt: "2026-07-01T03:02:00.000Z",
+      authoritativeDocument: null,
       httpStatus: 202,
-      document: validatePublicRfqReceipt(processingReceipt),
+      document: processing,
+    });
+    await repository.transition({
+      keyFingerprint: KEY_FINGERPRINT,
+      expectedState: "resolving_lines",
+      expectedRowVersion: 2,
+      state: "delivery_pending",
+      lastTransitionAt: "2026-07-01T03:02:00.000Z",
+      authoritativeDocument: null,
+      httpStatus: 202,
+      document: processing,
+    });
+    await repository.transition({
+      keyFingerprint: KEY_FINGERPRINT,
+      expectedState: "delivery_pending",
+      expectedRowVersion: 3,
+      state: "delivery_indeterminate",
+      lastTransitionAt: "2026-07-01T03:02:00.000Z",
+      authoritativeDocument: null,
+      httpStatus: 202,
+      document: processing,
     });
     const before = repository.inspect();
 
@@ -105,7 +157,7 @@ describe("TASK-027 process-local Stub RFQ repository", () => {
       comparisonToken: vectors.comparisonTokenSha256Hex,
       payloadDigest: vectors.payloadDigestHmacSha256Hex,
       now: "2026-08-12T03:02:00.000Z",
-    })).toEqual({ kind: "expired_indeterminate" });
+    })).toEqual({ kind: "recovery_required" });
     expect(repository.inspect()).toEqual(before);
   });
 });

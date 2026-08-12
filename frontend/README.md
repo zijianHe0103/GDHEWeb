@@ -378,10 +378,82 @@ persistence, durable idempotency, rate limiter or challenge, trusted-proxy
 policy, production secret provisioning, Feishu, email, queue, CMS mutation,
 external delivery or deployment. Those remain separate gated work.
 
+## Local persistent RFQ replay
+
+TASK-029 adds a second local-only mode, `persistent_stub`. It replaces only the
+process-local Repository with the MySQL-backed Repository while retaining the
+same validated RFQ Submission `2.0.0` flow and isolated process-local Stub
+Sink. It is a restart/concurrency test seam, not production enablement.
+
+The explicit migration workflow targets only MySQL `8.4.10` on
+`127.0.0.1:3307`, creates the separate `gdhe_rfq` Schema and verifies exactly
+`rfq_schema_migrations` plus `rfq_intake_records`:
+
+```sh
+npm run rfq:mysql -- plan
+RFQ_MYSQL_MIGRATION_PASSWORD="$RFQ_TASK029_MIGRATION_SECRET" npm run rfq:mysql -- up
+RFQ_MYSQL_MIGRATION_PASSWORD="$RFQ_TASK029_MIGRATION_SECRET" npm run rfq:mysql -- verify
+```
+
+Keep `RFQ_TASK029_MIGRATION_SECRET` outside the repository and shell history.
+The migration authority is never used by Next.js. The runtime account is
+exactly `gdhe_rfq_app@127.0.0.1` with only `SELECT`, `INSERT` and `UPDATE` on
+`gdhe_rfq.rfq_intake_records`; it cannot read migration metadata or WordPress
+tables and has no DDL, `DELETE` or grant authority. An authorized local setup
+must rotate that account to a fresh transient password, expose the value only
+to the intended process, and rotate it again to a fresh unknown value after
+the proof. No usable credential is stored by the migration or test workflow.
+
+Start the local runtime only after migration verification, using an
+out-of-repository transient runtime value:
+
+```sh
+WORDPRESS_API_URL=http://127.0.0.1:8080/wp-json \
+GDHE_PRODUCT_DETAIL_MODE=preview \
+GDHE_RFQ_INTAKE_MODE=persistent_stub \
+GDHE_RFQ_INTAKE_ORIGIN=http://127.0.0.1:3000 \
+GDHE_RFQ_HMAC_KEY_VERSION=local-placeholder-v1 \
+GDHE_RFQ_HMAC_KEY_HEX=0000000000000000000000000000000000000000000000000000000000000000 \
+GDHE_RFQ_STUB_SINK_OUTCOME=accepted \
+GDHE_RFQ_MYSQL_PASSWORD="$RFQ_TASK029_RUNTIME_SECRET" \
+npm run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+The placeholder HMAC key is for controlled local testing only. A same-key,
+same-payload replay returns the stored public result without another mixed-line
+validation or Sink attempt. A same-key, different-payload request is a stable
+conflict; a new key remains a new legal RFQ. The fixed expiry anchor is 30
+days and replay never extends it. `delivery_pending` and
+`delivery_indeterminate` are retained for future controlled reconciliation;
+request traffic never retries, resends, deletes or promotes them. A stored
+accepted receipt survives a Next.js restart and replays with the same Public
+Reference.
+
+The real local proof is intentionally self-cleaning:
+
+```sh
+npm test -- tests/rfq-persistent-stub-runtime.test.ts tests/rfq-persistent-stub-a4.test.ts
+node tests/rfq-persistent-stub-http-smoke.mjs
+node tests/rfq-persistent-stub-a4-http-smoke.mjs
+```
+
+It covers two Repository instances, two controlled Next processes, twenty
+same-key requests, restart replay and the frozen crash windows. It removes only
+its exact test fingerprints, rotates the transient runtime credential and
+leaves the two-table Schema with zero business rows. `down-if-empty` is an
+explicit operator rollback and refuses to run when a business row exists.
+
+The Stub Sink remains process-local and is not a durable delivery ledger. This
+mode does not supply TLS, backup/restore, high availability, managed secrets,
+source rate limiting, adaptive challenge, trusted-proxy policy, automated
+reconciliation, a real Sink, Feishu/CRM/email, deployment or public release.
+Production, unset and malformed configurations still fail closed with final
+`404` before Repository, WordPress or Sink work.
+
 ## Local-only customer RFQ form and submission loop
 
 TASK-028 connects the browser-local Quote Basket `3.0.0` to the TASK-027
-process-local Stub only for controlled local testing. The page, intent Route
+local Stub modes only for controlled local testing. The page, intent Route
 and intake Route are available together only when Product Detail preview/CMS
 mode and the complete RFQ Stub configuration are enabled. Use the exact same
 loopback origin for the browser and `GDHE_RFQ_INTAKE_ORIGIN`:
@@ -431,11 +503,13 @@ npm test -- tests/rfq-intake-v2-*.test.ts
 node tests/rfq-intake-production-smoke.mjs
 ```
 
-This remains a `noindex,nofollow`, non-production acceptance slice. The Stub
-Repository and Sink are process-local and lose state on restart. There is no
-durable storage, distributed idempotency, production secret provisioning,
-rate-limit store, challenge supplier, trusted-proxy policy, CRM/Feishu/email,
-queue, worker, deployment or production release.
+This remains a `noindex,nofollow`, non-production acceptance slice. In `stub`
+mode the Repository and Sink both lose state on restart. In `persistent_stub`
+mode only the MySQL Repository is durable; the isolated Stub Sink remains
+process-local, and the conservative state machine prevents automatic resend.
+There is no production persistence, distributed delivery ledger, production
+secret provisioning, rate-limit store, challenge supplier, trusted-proxy
+policy, CRM/Feishu/email, queue, worker, deployment or production release.
 
 ## Local-only FGD X15+PVC Product Detail slice
 
@@ -501,7 +575,7 @@ while case-fold collisions fail closed. A server-only batch
 seam can validate one ordered group of up to 50 eligible lines with one mixed
 validation POST and atomically upgrade migrated standard lines; the browser
 does not call WordPress directly. TASK-028 adds only the local customer form,
-process-local Stub submission and exact accepted-snapshot clearing described
+local Stub Sink submission and exact accepted-snapshot clearing described
 above; durable production intake and external delivery remain unimplemented.
 The `You May Also Need` module appears after the configurator.
 Preview starts with three protected local candidates and reveals at most three

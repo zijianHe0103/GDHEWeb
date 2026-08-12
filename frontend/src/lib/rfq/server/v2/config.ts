@@ -6,27 +6,32 @@ type Environment = Readonly<Record<string, string | undefined>>;
 
 export type RfqIntakeConfig =
   | Readonly<{ enabled: false }>
-  | Readonly<{
+  | (Readonly<{
       enabled: true;
       origin: string;
       keyVersion: string;
       secretKey: Uint8Array;
       sinkOutcome: StubRfqSinkOutcome;
-    }>;
+    }> & (
+      | Readonly<{ mode: "stub" }>
+      | Readonly<{ mode: "persistent_stub"; mysqlPassword: string }>
+    ));
 
 const DISABLED = Object.freeze({ enabled: false } as const);
 
 export function readRfqIntakeConfig(
   environment: Environment = process.env,
 ): RfqIntakeConfig {
+  const mode = environment.GDHE_RFQ_INTAKE_MODE;
   if (
     environment.NODE_ENV === "production" ||
-    environment.GDHE_RFQ_INTAKE_MODE !== "stub"
+    (mode !== "stub" && mode !== "persistent_stub")
   ) return DISABLED;
   const origin = environment.GDHE_RFQ_INTAKE_ORIGIN;
   const keyVersion = environment.GDHE_RFQ_HMAC_KEY_VERSION;
   const keyHex = environment.GDHE_RFQ_HMAC_KEY_HEX;
   const sinkOutcome = environment.GDHE_RFQ_STUB_SINK_OUTCOME;
+  const mysqlPassword = environment.GDHE_RFQ_MYSQL_PASSWORD;
   if (
     typeof origin !== "string" ||
     typeof keyVersion !== "string" ||
@@ -53,11 +58,20 @@ export function readRfqIntakeConfig(
   } catch {
     return DISABLED;
   }
-  return Object.freeze({
+  const common = {
     enabled: true,
     origin,
     keyVersion,
     secretKey: Uint8Array.from(Buffer.from(keyHex, "hex")),
     sinkOutcome: sinkOutcome as StubRfqSinkOutcome,
-  });
+  } as const;
+  if (mode === "persistent_stub") {
+    if (
+      typeof mysqlPassword !== "string" ||
+      mysqlPassword.length === 0 ||
+      mysqlPassword.length > 255
+    ) return DISABLED;
+    return Object.freeze({ ...common, mode, mysqlPassword });
+  }
+  return Object.freeze({ ...common, mode });
 }

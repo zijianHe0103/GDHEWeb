@@ -22,9 +22,14 @@ import {
 } from "./contract";
 import { RfqIntakeError } from "./errors";
 import {
-  readStubRfqLookupResult,
-  StubRfqRepository,
-} from "./stub-repository";
+  readRfqRepositoryLookupResult,
+  readRfqRepositoryReservationResult,
+  readRfqRepositoryTransitionResult,
+  type RfqRepository,
+  type RfqRepositoryTransitionInput,
+  type RfqRepositoryTransitionResult,
+  type RfqReservationInput,
+} from "./repository";
 import { StubRfqSink } from "./stub-sink";
 
 const RETENTION_MS = 2_592_000_000;
@@ -36,17 +41,6 @@ type IntakeLookupResult =
   | Readonly<{ kind: "miss" }>
   | Readonly<{ kind: "existing" }>
   | Readonly<{ kind: "expired_indeterminate" }>;
-
-export type RfqReservationInput = Readonly<{
-  keyFingerprint: string;
-  payloadDigest: Readonly<{ keyVersion: string; value: string }>;
-  comparisonToken: string;
-  basketSnapshotToken: string;
-  rfqId: string;
-  publicReference: string;
-  createdAt: string;
-  expiresAt: string;
-}>;
 
 export type RfqIntakeDependencies = Readonly<{
   clock: Readonly<{ now: () => string }>;
@@ -94,7 +88,7 @@ export type RfqLocalIntakeDependencies = Readonly<{
   }>;
   keyMaterial: RfqIntakeDependencies["keyMaterial"];
   sourceSecurity: RfqIntakeDependencies["sourceSecurity"];
-  repository: StubRfqRepository;
+  repository: RfqRepository;
   preReservationGate: RfqIntakeDependencies["preReservationGate"];
   validateMixedQuoteLines: RfqIntakeDependencies["validateMixedQuoteLines"];
   sink: StubRfqSink;
@@ -242,11 +236,15 @@ export function createRfqIntakeRuntime(
   }
 
   async function persistLocalResult(
-    input: Parameters<StubRfqRepository["transition"]>[0],
-  ): Promise<void> {
+    input: RfqRepositoryTransitionInput,
+  ): Promise<RfqRepositoryTransitionResult> {
     if (!localDependencies) throw new RfqIntakeError("dependency_failed");
     try {
-      await localDependencies.repository.transition(input);
+      const result = readRfqRepositoryTransitionResult(
+        await localDependencies.repository.transition(input),
+      );
+      if (!result) throw new RfqIntakeError("dependency_failed");
+      return result;
     } catch {
       throw new RfqIntakeError("dependency_failed");
     }
@@ -298,7 +296,7 @@ export function createRfqIntakeRuntime(
         throw new RfqIntakeError("dependency_failed");
       }
       if (localDependencies) {
-        const lookup = readStubRfqLookupResult(lookupInput);
+        const lookup = readRfqRepositoryLookupResult(lookupInput);
         if (!lookup) throw new RfqIntakeError("dependency_failed");
         if (lookup.kind === "replay") {
           return localResult(lookup.httpStatus, lookup.document);
@@ -306,7 +304,7 @@ export function createRfqIntakeRuntime(
         if (lookup.kind === "conflict") {
           return localResult(409, publicError("idempotency_conflict"));
         }
-        if (lookup.kind === "expired_indeterminate") {
+        if (lookup.kind === "recovery_required") {
           return localResult(409, publicError("service_temporarily_unavailable"));
         }
         if (lookup.kind !== "miss") {
@@ -348,6 +346,24 @@ export function createRfqIntakeRuntime(
       } catch {
         throw new RfqIntakeError("dependency_failed");
       }
+      const sourceBasket = (body.basket as JsonRecord).sourceBasket;
+      const lineCount = ((body.basket as JsonRecord).items as readonly unknown[]).length;
+      let processingReceipt: ValidatedRfqDocument<"public_receipt">;
+      try {
+        processingReceipt = validatePublicRfqReceipt({
+          contractVersion: "2.0.0",
+          publicReference,
+          status: "processing",
+          receivedAt: now,
+          lineCount,
+          messageKey: "rfq.processing",
+          submittedBasketSnapshot: sourceBasket,
+          submittedBasketToken: basketSnapshotToken,
+          retryAfterSeconds: 30,
+        });
+      } catch {
+        throw new RfqIntakeError("dependency_failed");
+      }
       const reservation = freezeRecord({
         keyFingerprint,
         payloadDigest,
@@ -357,14 +373,40 @@ export function createRfqIntakeRuntime(
         publicReference,
         createdAt: now,
         expiresAt,
+        document: processingReceipt,
       });
       try {
-        const reserved = await dependencies.repository.reserve(reservation);
-        if (localDependencies && reserved === false) {
-          return localResult(409, publicError("service_temporarily_unavailable"));
+        const rawReservation = await dependencies.repository.reserve(reservation);
+        if (localDependencies) {
+          const reserved = readRfqRepositoryReservationResult(rawReservation);
+          if (!reserved) throw new RfqIntakeError("dependency_failed");
+          if (reserved.kind === "replay") {
+            return localResult(reserved.httpStatus, reserved.document);
+          }
+          if (reserved.kind === "conflict") {
+            return localResult(409, publicError("idempotency_conflict"));
+          }
+          if (reserved.kind === "recovery_required") {
+            return localResult(409, publicError("service_temporarily_unavailable"));
+          }
         }
       } catch {
         throw new RfqIntakeError("reservation_failed");
+      }
+
+      let rowVersion = 1;
+      if (localDependencies) {
+        const resolvingTransition = await persistLocalResult({
+          keyFingerprint,
+          expectedState: "idempotency_reserved",
+          expectedRowVersion: rowVersion,
+          state: "resolving_lines",
+          lastTransitionAt: now,
+          authoritativeDocument: null,
+          httpStatus: 202,
+          document: processingReceipt,
+        });
+        rowVersion = resolvingTransition.rowVersion;
       }
 
       const resolvingContext = {
@@ -400,7 +442,11 @@ export function createRfqIntakeRuntime(
         ]);
         await persistLocalResult({
           keyFingerprint,
-          state: "rejected",
+          expectedState: "resolving_lines",
+          expectedRowVersion: rowVersion,
+          state: "rejected_before_delivery",
+          lastTransitionAt: now,
+          authoritativeDocument: null,
           httpStatus: 409,
           document: error,
         });
@@ -421,6 +467,18 @@ export function createRfqIntakeRuntime(
         },
       }, payloadDigest);
 
+      const pendingTransition = await persistLocalResult({
+        keyFingerprint,
+        expectedState: "resolving_lines",
+        expectedRowVersion: rowVersion,
+        state: "delivery_pending",
+        lastTransitionAt: now,
+        authoritativeDocument: pending,
+        httpStatus: 202,
+        document: processingReceipt,
+      });
+      rowVersion = pendingTransition.rowVersion;
+
       let outcome: "accepted" | "indeterminate" | "rejected_before_delivery";
       try {
         outcome = (await localDependencies.sink.deliver(pending)).kind;
@@ -428,8 +486,6 @@ export function createRfqIntakeRuntime(
         outcome = "indeterminate";
       }
 
-      const sourceBasket = (body.basket as JsonRecord).sourceBasket;
-      const lineCount = ((body.basket as JsonRecord).items as readonly unknown[]).length;
       if (outcome === "accepted" || outcome === "indeterminate") {
         const processing = outcome === "indeterminate";
         const receipt = validatePublicRfqReceipt({
@@ -443,9 +499,26 @@ export function createRfqIntakeRuntime(
           submittedBasketToken: basketSnapshotToken,
           ...(processing ? { retryAfterSeconds: 30 } : {}),
         });
+        const pendingBody = getValidatedRfqBody(
+          pending,
+          "authoritative_document",
+        ) as JsonRecord;
+        const authoritativeDocument = validateAuthoritativeRfqDocument({
+          ...pendingBody,
+          status: processing ? "delivery_indeterminate" : "accepted",
+          delivery: {
+            state: processing ? "indeterminate" : "accepted",
+            attemptCount: 1,
+            lastTransitionAt: now,
+          },
+        }, payloadDigest);
         await persistLocalResult({
           keyFingerprint,
+          expectedState: "delivery_pending",
+          expectedRowVersion: rowVersion,
           state: processing ? "delivery_indeterminate" : "accepted",
+          lastTransitionAt: now,
+          authoritativeDocument,
           httpStatus: processing ? 202 : 201,
           document: receipt,
         });
@@ -455,7 +528,19 @@ export function createRfqIntakeRuntime(
       const error = publicError("service_temporarily_unavailable");
       await persistLocalResult({
         keyFingerprint,
-        state: "rejected",
+        expectedState: "delivery_pending",
+        expectedRowVersion: rowVersion,
+        state: "rejected_before_delivery",
+        lastTransitionAt: now,
+        authoritativeDocument: validateAuthoritativeRfqDocument({
+          ...(getValidatedRfqBody(pending, "authoritative_document") as JsonRecord),
+          status: "rejected_before_delivery",
+          delivery: {
+            state: "rejected",
+            attemptCount: 0,
+            lastTransitionAt: now,
+          },
+        }, payloadDigest),
         httpStatus: 409,
         document: error,
       });

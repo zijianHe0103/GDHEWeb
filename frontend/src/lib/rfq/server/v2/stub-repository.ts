@@ -2,143 +2,126 @@ import "server-only";
 
 import {
   getValidatedRfqBody,
-  type ValidatedRfqDocument,
 } from "./contract";
-import type { RfqReservationInput } from "./intake";
-
-type PublicDocument =
-  | ValidatedRfqDocument<"public_receipt">
-  | ValidatedRfqDocument<"public_error">;
-
-type StoredStatus =
-  | "reserved"
-  | "accepted"
-  | "processing"
-  | "rejected"
-  | "delivery_indeterminate";
+import {
+  createRfqRepositoryLookupResult,
+  createRfqRepositoryReservationResult,
+  createRfqRepositoryTransitionResult,
+  type RfqRepository,
+  type RfqRepositoryLookupInput,
+  type RfqRepositoryLookupResult,
+  type RfqRepositoryPublicDocument,
+  type RfqRepositoryReservationResult,
+  type RfqRepositoryState,
+  type RfqRepositoryTransitionInput,
+  type RfqRepositoryTransitionResult,
+  type RfqReservationInput,
+} from "./repository";
 
 type StoredRecord = {
   readonly payloadDigest: string;
   readonly comparisonToken: string;
   readonly createdAt: string;
   readonly expiresAt: string;
-  status: StoredStatus;
-  document?: PublicDocument;
-  httpStatus?: 201 | 202 | 409;
+  state: RfqRepositoryState;
+  rowVersion: number;
+  document: RfqRepositoryPublicDocument;
+  httpStatus: 201 | 202 | 409;
 };
 
-export type StubRfqLookupInput = Readonly<{
-  keyFingerprint: string;
-  payloadDigest: string;
-  comparisonToken: string;
-  now: string;
-}>;
-
-export type StubRfqLookupResult =
-  | Readonly<{ kind: "miss" }>
-  | Readonly<{
-      kind: "replay";
-      httpStatus: 200 | 202 | 409;
-      document: PublicDocument;
-    }>
-  | Readonly<{ kind: "conflict" }>
-  | Readonly<{ kind: "expired_indeterminate" }>;
-
-export type StubRfqTransitionInput = Readonly<{
-  keyFingerprint: string;
-  state: Exclude<StoredStatus, "reserved">;
-  httpStatus: 201 | 202 | 409;
-  document: PublicDocument;
-}>;
-
-const authenticLookupResults = new WeakSet<object>();
+export type StubRfqLookupInput = RfqRepositoryLookupInput;
+export type StubRfqLookupResult = RfqRepositoryLookupResult;
+export type StubRfqTransitionInput = RfqRepositoryTransitionInput;
 
 function freeze<T extends object>(value: T): Readonly<T> {
   return Object.freeze(value);
 }
 
-function lookupResult<T extends StubRfqLookupResult>(value: T): T {
-  const result = Object.freeze(value);
-  authenticLookupResults.add(result);
-  return result;
-}
-
-export function readStubRfqLookupResult(input: unknown): StubRfqLookupResult | undefined {
-  return typeof input === "object" && input !== null && authenticLookupResults.has(input)
-    ? input as StubRfqLookupResult
-    : undefined;
-}
-
-export class StubRfqRepository {
+export class StubRfqRepository implements RfqRepository {
   readonly #records = new Map<string, StoredRecord>();
 
   async lookup(input: StubRfqLookupInput): Promise<StubRfqLookupResult> {
     const record = this.#records.get(input.keyFingerprint);
-    if (!record) return lookupResult({ kind: "miss" });
-    if (Date.parse(input.now) >= Date.parse(record.expiresAt)) {
-      if (record.status === "delivery_indeterminate") {
-        return lookupResult({ kind: "expired_indeterminate" });
-      }
-      this.#records.delete(input.keyFingerprint);
-      return lookupResult({ kind: "miss" });
-    }
+    if (!record) return createRfqRepositoryLookupResult({ kind: "miss" });
     if (
       record.payloadDigest !== input.payloadDigest ||
       record.comparisonToken !== input.comparisonToken
     ) {
-      return lookupResult({ kind: "conflict" });
+      return createRfqRepositoryLookupResult({ kind: "conflict" });
     }
-    if (!record.document || record.httpStatus === undefined) {
-      return lookupResult({ kind: "expired_indeterminate" });
+    if (
+      Date.parse(input.now) >= Date.parse(record.expiresAt) &&
+      record.state !== "accepted" && record.state !== "rejected_before_delivery"
+    ) {
+      return createRfqRepositoryLookupResult({ kind: "recovery_required" });
     }
     const httpStatus: 200 | 202 | 409 = record.httpStatus === 201
       ? 200
       : record.httpStatus;
-    return lookupResult({
+    return createRfqRepositoryLookupResult({
       kind: "replay",
       httpStatus,
       document: record.document,
     });
   }
 
-  async reserve(input: RfqReservationInput): Promise<boolean> {
-    if (this.#records.has(input.keyFingerprint)) return false;
+  async reserve(input: RfqReservationInput): Promise<RfqRepositoryReservationResult> {
+    const existing = this.#records.get(input.keyFingerprint);
+    if (existing) {
+      return existing.payloadDigest === input.payloadDigest.value &&
+          existing.comparisonToken === input.comparisonToken
+        ? createRfqRepositoryLookupResult({
+            kind: "replay",
+            httpStatus: existing.httpStatus === 201 ? 200 : existing.httpStatus,
+            document: existing.document,
+          }) as Exclude<RfqRepositoryReservationResult, { kind: "reserved" }>
+        : createRfqRepositoryLookupResult({ kind: "conflict" }) as
+          Exclude<RfqRepositoryReservationResult, { kind: "reserved" }>;
+    }
+    getValidatedRfqBody(input.document, "public_receipt");
     this.#records.set(input.keyFingerprint, {
       payloadDigest: input.payloadDigest.value,
       comparisonToken: input.comparisonToken,
       createdAt: input.createdAt,
       expiresAt: input.expiresAt,
-      status: "reserved",
+      state: "idempotency_reserved",
+      rowVersion: 1,
+      document: input.document,
+      httpStatus: 202,
     });
-    return true;
+    return createRfqRepositoryReservationResult();
   }
 
-  async transition(input: StubRfqTransitionInput): Promise<void> {
+  async transition(input: RfqRepositoryTransitionInput): Promise<RfqRepositoryTransitionResult> {
     const record = this.#records.get(input.keyFingerprint);
-    if (!record || record.status !== "reserved") throw new Error("invalid transition");
+    if (
+      !record ||
+      record.state !== input.expectedState ||
+      record.rowVersion !== input.expectedRowVersion
+    ) throw new Error("stale transition");
     getValidatedRfqBody(
       input.document,
-      input.state === "accepted" ||
-        input.state === "processing" ||
-        input.state === "delivery_indeterminate"
-        ? "public_receipt"
-        : "public_error",
+      input.state === "rejected_before_delivery"
+        ? "public_error"
+        : "public_receipt",
     );
-    record.status = input.state;
+    record.state = input.state;
+    record.rowVersion += 1;
     record.document = input.document;
     record.httpStatus = input.httpStatus;
+    return createRfqRepositoryTransitionResult(input.state, record.rowVersion);
   }
 
   inspect(): readonly Readonly<{
     keyFingerprint: string;
-    status: StoredStatus;
+    status: RfqRepositoryState;
     createdAt: string;
     expiresAt: string;
   }>[] {
     return Object.freeze([...this.#records.entries()].map(([keyFingerprint, record]) =>
       freeze({
         keyFingerprint,
-        status: record.status,
+        status: record.state,
         createdAt: record.createdAt,
         expiresAt: record.expiresAt,
       })));

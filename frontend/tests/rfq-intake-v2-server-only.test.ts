@@ -32,6 +32,23 @@ async function stripMarkers(directory: string): Promise<void> {
   }
 }
 
+async function replaceMySqlForPositiveControl(directory: string): Promise<void> {
+  await writeFile(
+    join(directory, "src", "lib", "rfq", "server", "v2", "mysql-repository.ts"),
+    [
+      'import type { RfqRepository, RfqRepositoryLookupInput, RfqRepositoryLookupResult, RfqRepositoryReservationResult, RfqRepositoryTransitionInput, RfqRepositoryTransitionResult, RfqReservationInput } from "./repository";',
+      "export function createMySqlRfqConnectionFactory(_config: Readonly<{ host: string; port: number; user: string; password: string; database: \"gdhe_rfq\" }>): () => Promise<never> { return async () => { throw new Error(\"positive control only\"); }; }",
+      "export class MySqlRfqRepository implements RfqRepository {",
+      "  constructor(_input: Readonly<{ connect: () => Promise<never> }>) {}",
+      "  async lookup(_input: RfqRepositoryLookupInput): Promise<RfqRepositoryLookupResult> { throw new Error(\"positive control only\"); }",
+      "  async reserve(_input: RfqReservationInput): Promise<RfqRepositoryReservationResult> { throw new Error(\"positive control only\"); }",
+      "  async transition(_input: RfqRepositoryTransitionInput): Promise<RfqRepositoryTransitionResult> { throw new Error(\"positive control only\"); }",
+      "}",
+      "",
+    ].join("\n"),
+  );
+}
+
 async function buildClientImport(
   modulePath: string,
   stripServerOnlyMarkers: boolean,
@@ -89,6 +106,7 @@ async function buildClientImport(
     );
     if (stripServerOnlyMarkers) {
       await stripMarkers(join(temporaryRoot, "src", "lib"));
+      await replaceMySqlForPositiveControl(temporaryRoot);
     }
     await writeFile(
       join(temporaryRoot, "package.json"),
@@ -132,8 +150,10 @@ describe("TASK-027 RFQ Intake v2 server-only boundary", () => {
     ["deep canonical module", "../src/lib/rfq/server/v2/canonical"],
     ["deep authority module", "../src/lib/rfq/server/v2/authority"],
     ["deep intake module", "../src/lib/rfq/server/v2/intake"],
+    ["deep common Repository module", "../src/lib/rfq/server/v2/repository"],
     ["deep Stub Repository module", "../src/lib/rfq/server/v2/stub-repository"],
     ["deep Stub Sink module", "../src/lib/rfq/server/v2/stub-sink"],
+    ["deep MySQL Repository module", "../src/lib/rfq/server/v2/mysql-repository"],
     ["deep configuration module", "../src/lib/rfq/server/v2/config"],
     ["deep intent issuer and verifier", "../src/lib/rfq/server/v2/intent"],
     ["Route Handler module", "../src/app/api/rfq/intake/route"],

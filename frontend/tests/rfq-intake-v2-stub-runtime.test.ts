@@ -134,7 +134,8 @@ describe("TASK-027 complete process-local RFQ intake", () => {
       expect(publicBody).not.toContain(forbidden);
     }
     expect(harness.events).toEqual([
-      "lookup", "pre_gate", "reserve", "mixed:3", "sink", "transition", "lookup",
+      "lookup", "pre_gate", "reserve", "transition", "mixed:3", "transition",
+      "sink", "transition", "lookup",
     ]);
     expect(harness.sink.callCount).toBe(1);
     expect(harness.repository.inspect()[0]).toMatchObject({
@@ -159,7 +160,8 @@ describe("TASK-027 complete process-local RFQ intake", () => {
       expect(replay.httpStatus).toBe(status);
       expect(replay.document).toBe(first.document);
       expect(harness.events).toEqual([
-        "lookup", "pre_gate", "reserve", "mixed:3", "sink", "transition", "lookup",
+        "lookup", "pre_gate", "reserve", "transition", "mixed:3", "transition",
+        "sink", "transition", "lookup",
       ]);
       expect(harness.sink.callCount).toBe(1);
       if (receiptStatus) {
@@ -200,7 +202,7 @@ describe("TASK-027 complete process-local RFQ intake", () => {
       },
     });
     expect(harness.events).toEqual([
-      "lookup", "pre_gate", "reserve", "mixed:3", "transition", "lookup",
+      "lookup", "pre_gate", "reserve", "transition", "mixed:3", "transition", "lookup",
     ]);
     expect(harness.sink.callCount).toBe(0);
     expect(harness.requestReferenceCount()).toBe(1);
@@ -223,7 +225,8 @@ describe("TASK-027 complete process-local RFQ intake", () => {
     });
     expect(accepted.repository.inspect()).toEqual(before);
     expect(accepted.events).toEqual([
-      "lookup", "pre_gate", "reserve", "mixed:3", "sink", "transition", "lookup",
+      "lookup", "pre_gate", "reserve", "transition", "mixed:3", "transition",
+      "sink", "transition", "lookup",
     ]);
     expect(accepted.sink.callCount).toBe(1);
 
@@ -329,7 +332,8 @@ describe("TASK-027 complete process-local RFQ intake", () => {
     });
     expect(expired.repository.inspect()).toEqual(before);
     expect(expired.events).toEqual([
-      "lookup", "pre_gate", "reserve", "mixed:3", "sink", "transition", "lookup",
+      "lookup", "pre_gate", "reserve", "transition", "mixed:3", "transition",
+      "sink", "transition", "lookup",
     ]);
     expect(expired.sink.callCount).toBe(1);
 
@@ -338,7 +342,7 @@ describe("TASK-027 complete process-local RFQ intake", () => {
       concurrent.runtime.resolve(submission),
       concurrent.runtime.resolve(submission),
     ]);
-    expect(results.map((result) => result.httpStatus).sort()).toEqual([201, 409]);
+    expect(results.map((result) => result.httpStatus).sort()).toEqual([201, 202]);
     expect(concurrent.events.filter((event) => event.startsWith("mixed"))).toHaveLength(1);
     expect(concurrent.sink.callCount).toBe(1);
     expect(concurrent.repository.inspect()).toHaveLength(1);

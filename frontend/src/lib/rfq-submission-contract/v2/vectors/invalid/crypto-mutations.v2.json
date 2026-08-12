@@ -1,0 +1,23 @@
+{
+  "base": "vectors/expected.v2.json",
+  "cases": [
+    {
+      "id": "bad_v2_hmac",
+      "pointer": "/payloadDigestHmacSha256Hex",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expectedError": "hmac_mismatch"
+    },
+    {
+      "id": "bad_comparison_token",
+      "pointer": "/comparisonTokenSha256Hex",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expectedError": "comparison_token_mismatch"
+    },
+    {
+      "id": "wrong_replay_effect",
+      "pointer": "/replayCases/3/expected/durableBusinessState",
+      "value": "mutated",
+      "expectedError": "replay_effect_mismatch"
+    }
+  ]
+}

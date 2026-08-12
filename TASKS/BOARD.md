@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-026
+current_task: TASK-027
 
 ## 活动任务
 
-- `TASK-026` 建立基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-027` 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -29,7 +29,7 @@ current_task: TASK-026
 
 ## 等待推送
 
-- `TASK-026` — 正式验收已通过；等待提交、推送任务分支、合并并推送 `main`
+- `TASK-027` — 用户正式验收已通过；等待 formal commit、任务分支推送、`main` 快进和推送。
 
 ## 已暂停
 
@@ -146,3 +146,7 @@ current_task: TASK-026
 ## Accepted
 
 - TASK-026: ACCEPTED at 2026-08-12T03:52:49Z
+
+## Accepted
+
+- TASK-027: ACCEPTED at 2026-08-12T07:18:50Z

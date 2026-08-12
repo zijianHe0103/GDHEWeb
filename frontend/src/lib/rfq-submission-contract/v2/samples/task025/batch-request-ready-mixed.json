@@ -1,0 +1,32 @@
+{
+  "apiVersion": "1",
+  "schemaVersion": "1.0.0",
+  "locale": "en",
+  "lines": [
+    {
+      "entryId": "26000000-0000-4000-8000-000000000101",
+      "lineKind": "configured_product",
+      "canonicalPath": "/products/fgd-x15-pvc/",
+      "selection": { "type": "article_number", "articleNumber": "GDHEPRD000172", "lengthMeters": 6, "color": { "code": "ivory-white", "label": "Ivory White" }, "resolution": "standard_ready" },
+      "packaging": { "basePackaging": "standard", "logoPrinting": false, "protectionArrangement": null },
+      "quantityUnit": "piece",
+      "quantity": 2
+    },
+    {
+      "entryId": "26000000-0000-4000-8000-000000000102",
+      "lineKind": "configured_product",
+      "canonicalPath": "/products/fgd-x15-pvc/",
+      "selection": { "type": "custom_length", "articleNumber": null, "lengthMeters": 6.5, "color": { "code": "ivory-white", "label": "Ivory White" }, "resolution": "sales_follow_up" },
+      "packaging": { "basePackaging": "carton", "logoPrinting": true, "protectionArrangement": "single_bag" },
+      "quantityUnit": "piece",
+      "quantity": 1
+    },
+    {
+      "entryId": "26000000-0000-4000-8000-000000000103",
+      "lineKind": "catalog_accessory",
+      "articleNumber": "GDHEPRD000901",
+      "quantityUnit": "piece",
+      "quantity": 3
+    }
+  ]
+}

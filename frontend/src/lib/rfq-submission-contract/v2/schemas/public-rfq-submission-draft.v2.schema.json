@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "public-rfq-submission-draft.v2.schema.json",
+  "title": "GDHE PublicRfqSubmissionDraft 2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "submissionIntent", "idempotencyKey", "basket", "customer", "privacyNotice", "antiAbuse"],
+  "properties": {
+    "contractVersion": { "const": "2.0.0" },
+    "submissionIntent": { "type": "string", "minLength": 32, "maxLength": 8192, "pattern": "^[A-Za-z0-9._~-]+$" },
+    "idempotencyKey": { "$ref": "common.v2.schema.json#/$defs/uuidV4" },
+    "basket": { "$ref": "common.v2.schema.json#/$defs/publicBasketSubmission" },
+    "customer": { "$ref": "common.v2.schema.json#/$defs/publicCustomer" },
+    "privacyNotice": { "$ref": "common.v2.schema.json#/$defs/privacyNotice" },
+    "antiAbuse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["honeypot"],
+      "properties": {
+        "honeypot": { "const": "" },
+        "challengeToken": { "type": "string", "minLength": 1, "maxLength": 16384, "pattern": "^[A-Za-z0-9._~-]+$" }
+      }
+    }
+  }
+}

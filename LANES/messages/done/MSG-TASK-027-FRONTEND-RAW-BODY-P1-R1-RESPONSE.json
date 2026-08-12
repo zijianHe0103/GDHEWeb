@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-027",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-12T06:14:58Z",
+  "requires_response_to": "MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-027 A5 raw-body P1 R1 is PASS_FOR_PLANNER_RECHECK. The exported POST seam now classifies body reads only through internal ok/invalid/too_large results; hostile unknown reader rejection returns authentic 400 with zero traps/private diagnostic, while internal declared/stream overflow remains 413. Direct one-parse proof and real HTTP Origin/media/declared/stream/UTF-8 gates are complete. Current bytes: Route 1/5, A1-A5 11/70, TASK-025/Basket v3 15/35, full 77/649, ten verifiers, lint/typecheck/build/smoke/protected/cleanup/DPG PASS. Please perform the narrow Planner recheck; A6 remains blocked.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A5_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A5_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A5_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A5_DIFF_SUMMARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-027/A5_PLANNER_CHECKPOINT.md"
+  ],
+  "notes": "Bounded P1 closure only; original A5 and Planner FAIL history preserved. No A6, review, Git or deployment.",
+  "dispatched_at": "2026-08-12T06:15:19Z",
+  "delivery_key": "MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "external_codex_thread_bridge",
+  "done_at": "2026-08-12T06:15:22Z",
+  "updated_at": "2026-08-12T06:15:22Z"
+}

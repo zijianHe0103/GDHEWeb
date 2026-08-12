@@ -1,0 +1,27 @@
+{
+  "base": "../positive/public-mixed.json",
+  "execution": "verify-machine-contract.cjs generates a fresh deep clone for every case",
+  "cases": [
+    { "id": "missing_standard_article_number", "expectedGate": "schema" },
+    { "id": "missing_accessory_article_number", "expectedGate": "schema" },
+    { "id": "fabricated_custom_article_number", "expectedGate": "schema" },
+    { "id": "unknown_public_state_field", "expectedGate": "schema" },
+    { "id": "zero_lines", "expectedGate": "schema" },
+    { "id": "fifty_one_lines", "expectedGate": "schema" },
+    { "id": "zero_quantity", "expectedGate": "schema" },
+    { "id": "unsafe_quantity", "expectedGate": "schema" },
+    { "id": "display_field_leakage", "expectedGate": "schema" },
+    { "id": "internal_field_leakage", "expectedGate": "schema" },
+    { "id": "unknown_top_level_key", "expectedGate": "schema" },
+    { "id": "no_contact_method", "expectedGate": "schema" },
+    { "id": "duplicate_entry_id", "expectedGate": "semantic" },
+    { "id": "duplicate_merge_identity", "expectedGate": "semantic" },
+    { "id": "invalid_authoritative_state", "expectedGate": "schema" },
+    { "id": "cross_domain_field_error", "expectedGate": "semantic" },
+    { "id": "newer_basket_mutation", "expectedGate": "snapshot" },
+    { "id": "processing_receipt", "expectedGate": "snapshot" },
+    { "id": "bad_snapshot_token", "expectedGate": "snapshot" },
+    { "id": "bad_v2_hmac", "expectedGate": "crypto" },
+    { "id": "bad_comparison_token", "expectedGate": "crypto" }
+  ]
+}

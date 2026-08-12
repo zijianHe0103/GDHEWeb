@@ -1,0 +1,18 @@
+{
+  "contractVersion": "2.0.0",
+  "publicReference": "RFQ-23456789ABCD",
+  "status": "processing",
+  "receivedAt": "2026-08-12T03:02:00.000Z",
+  "lineCount": 3,
+  "messageKey": "rfq.processing",
+  "submittedBasketSnapshot": {
+    "schemaVersion": "3.0.0",
+    "revision": 7,
+    "writerId": "26000000-0000-4000-8000-000000000002",
+    "mutationId": "26000000-0000-4000-8000-000000000003",
+    "updatedAt": "2026-08-12T03:00:00.000Z",
+    "expiresAt": "2026-09-11T03:00:00.000Z"
+  },
+  "submittedBasketToken": "622441dee2464f41bad2130388dd31021a42328b45965450ab04ab406dc5b4eb",
+  "retryAfterSeconds": 30
+}

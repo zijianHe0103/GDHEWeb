@@ -1234,3 +1234,37 @@ Each execution records:
 - boundaries: no product/runtime/test/docs/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external-system change; this compatibility correction is not a new review, acceptance or Git authorization
 - message_status: compatibility request ACKed/done; one linked controlled response is pending creation and delivery
 - next: send and dispatch the single linked format-correction response, validate governed messages and stop
+
+### 2026-08-12T06:45:34Z - TASK-027 unique complete adversarial review
+
+- task: TASK-027
+- message: MSG-TASK-027-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, ACKed the corrected canonical delivery key before substantive work, preserved A3/A5 initial FAIL and narrow-revision history, then independently reviewed the active task, requirements/design/TDD seams, A1-A6 checkpoints and evidence, frozen RFQ v2 authority, server runtime/crypto, TASK-025 mixed binding, Stub Repository/Sink, local Route, docs and protected scope without modifying business deliverables
+- p1_request_reference: `requestReference()` protects only the dependency call, then coerces its return through `RegExp.test` outside the catch; a hostile null-prototype Proxy invoked `Symbol.toPrimitive` and leaked `PRIVATE_REQUEST_REFERENCE_DIAGNOSTIC` from the real runtime instead of the stable `intake/dependency_failed` boundary
+- p2_document_evidence: consolidated validation says only frontend README changed and consolidated diff says root README/architecture were not edited, while A6 Planner evidence and the current 43/43 non-document checksum run truthfully show all three authorized docs differ
+- p2_board: current authority is UNDER_REVIEW but Board keeps TASK-027 under 进行中 and says 审查中 is empty
+- independent_evidence: supported Node 24.18/npm 11.16; RFQ verifier PASS 20 JSON/5 Schema/63 local refs/94 of 94; critical focused runtime PASS 6 files/53 tests; broader 11-file focused command exit 0; 43/43 protected non-document hashes PASS
+- cross_lane_evidence: inspected Planner resource-safe 77 files/649 tests, lint/typecheck/build and five production smoke results as cross-lane regression evidence without claiming an independent listener/build rerun
+- cleanup: the single reviewer-only hostile-return probe passed 1 file/1 test, was removed after exact capture and left no product/test/cache/listener/external artifact
+- passing_boundaries: A3/A5 historical findings remain closed; frozen Schema/wrapper/crypto/mixed binding, Repository/Sink state, Route safety, server-only/leakage, local-only non-durable docs and protected product/CMS/dependency scope remain intact
+- result: FAIL; P0 none; P1 one; P2 two; Planner final validation not allowed
+- boundaries: no product/test/docs/README/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; only a same-reviewer bounded finding closure may follow and the complete review must not be repeated
+- message_status: the corrected review request and the single linked FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner owns governed recovery, the three bounded revisions, fresh validation and any same-reviewer finding closure; the unique complete review must not be repeated
+
+### 2026-08-12T07:06:02Z - TASK-027 three-finding bounded adversarial closure
+
+- task: TASK-027
+- message: MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE
+- action: restored the registered reviewer lane, ACKed the exact canonical closure request before substantive work, preserved the unique complete-review FAIL 0/1/2 as immutable history, and checked only P1-1, P2-1 and P2-2 against current bytes
+- p1_1_code: `requestReference()` now keeps the dependency return as unknown inside one protected block; only a primitive string reaches the fixed pattern and every other result normalizes to the existing dependency_failed error
+- p1_1_attack: reviewer-only production-path probe passed 1 file/2 tests; hostile null-prototype and revoked Proxy results returned stable dependency_failed, all get/descriptor/prototype/has/ownKeys counters stayed zero and no private marker serialized; valid primitive reference retained the exact customer-safe 409
+- p1_1_regression: current Stub runtime, intake and Route passed 3 files/20 tests, preserving accepted exact replay, indeterminate/rejected no-resend replay, conflict/pre-gate 409, hostile dependency and Route behavior
+- p2_1: consolidated validation and diff now consistently distinguish frontend README from Planner's later root README and architecture deltas; independent protected check passed 43/43 non-Markdown rows plus exact ADR-006
+- p2_2: Board current classification count is in-progress 0, needs-revision 0 and under-review 1; active task and Project State match UNDER_REVIEW NOT_ACCEPTED DIRTY
+- cleanup: reviewer probe was removed after exact capture; no frontend generated output, TypeScript cache or port-3000 listener remains
+- preserved_history: canonical complete-review FAIL P0=0/P1=1/P2=2 remains complete and distinct; this is not a second complete review
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after the linked closure response is acknowledged
+- boundaries: no product/test/docs/README/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; PASS is not acceptance or Git authorization
+- message_status: exact closure request and the single linked PASS closure response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
+- next: Planner owns fresh final validation and checked acceptance preparation; no further reviewer work is authorized by this closure PASS

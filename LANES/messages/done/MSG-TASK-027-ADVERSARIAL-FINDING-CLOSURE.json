@@ -1,0 +1,36 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-027",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T07:03:06Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "这不是第二次完整审核。仅对 TASK-027 唯一完整审核 FAIL 中 P1-1、P2-1、P2-2 做一次 bounded read-only finding closure。读取 immutable ADVERSARIAL_REVIEW_REPORT.md、FRONTEND_ADVERSARIAL_P1_R1.md、ADVERSARIAL_FINDINGS_PLANNER_CHECKPOINT.md 与精确 changed files。P1-1：独立确认 requestReference 依赖返回值在一个保护块内作为 unknown，仅 primitive string 才进入固定 pattern；hostile/revoked non-string 零 reflection/coercion、零 private diagnostic，只返回既有 dependency_failed；普通 reference、customer-safe 409/replay 不变。P2-1：确认 consolidated validation/diff 如实区分 frontend lane 与 Planner 后续三份授权文档差异，43/43 non-document 不变。P2-2：确认 Board 当前 UNDER_REVIEW 行只在审查中分区，进行中/需要修订无 TASK-027。仅在 canonical report 追加 bounded closure，返回一个 linked PASS/FAIL/P0/P1/P2 response；不重审通过范围、不修复产品/Planner 文件、不提交/推送/部署。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-027/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_ADVERSARIAL_P1_R1.md",
+    "TASKS/ARTIFACTS/TASK-027/ADVERSARIAL_FINDINGS_PLANNER_CHECKPOINT.md",
+    "frontend/src/lib/rfq/server/v2/intake.ts",
+    "frontend/tests/rfq-intake-v2-stub-runtime.test.ts",
+    "TASKS/ARTIFACTS/TASK-027/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-027/DIFF_OR_OUTPUT_SUMMARY.md",
+    "TASKS/BOARD.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-027/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Bounded closure only. Preserve historical complete review FAIL; no second complete review.",
+  "dispatched_at": "2026-08-12T07:03:22Z",
+  "delivery_key": "MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T07:03:57Z",
+  "updated_at": "2026-08-12T07:03:57Z"
+}

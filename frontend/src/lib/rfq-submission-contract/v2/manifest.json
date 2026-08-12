@@ -1,0 +1,110 @@
+{
+  "manifestVersion": "1",
+  "authority": {
+    "taskId": "TASK-026",
+    "verifierPath": "TASKS/ARTIFACTS/TASK-026/verify-machine-contract.cjs",
+    "verifierSha256": "66dba4f62a82e392e952717390753ba141e1d317522febc6a1567926679ac7c1"
+  },
+  "files": [
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/basket-v3/ready-mixed.json",
+      "snapshotPath": "samples/basket-v3/ready-mixed.json",
+      "sha256": "0bdcf375459c49dccf65ec383c5d35cc0538f242c698850dc8166b1c65ae38b9"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/basket-v3/requires-readd.json",
+      "snapshotPath": "samples/basket-v3/requires-readd.json",
+      "sha256": "001c0be91aa037d34996e16f008ff8e31aaca7e803119fd847fb16ac3b3a519f"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/basket-v3/requires-validation.json",
+      "snapshotPath": "samples/basket-v3/requires-validation.json",
+      "sha256": "24651818c7199855f7d119a7db89f0ad4fb619db964670b7ef6007ef280dfcad"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/matrix.json",
+      "snapshotPath": "samples/matrix.json",
+      "sha256": "9a35c27e333c9aa54c3ba37087f516ce6631b313a3822e2866768da337b83f7f"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/negative/manifest.json",
+      "snapshotPath": "samples/negative/manifest.json",
+      "sha256": "8ae59216ecba4b066551b04911bc503c3e21cc758bca7c119b832d926bfb2054"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/negative/semantic-mutations.json",
+      "snapshotPath": "samples/negative/semantic-mutations.json",
+      "sha256": "2ca3adc23ee8e73e4cf543aa63c40027d728467a75526bc6c59cf8db7711eb08"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/positive/accepted-receipt.json",
+      "snapshotPath": "samples/positive/accepted-receipt.json",
+      "sha256": "bc3b1e38edbdc5a835e03ca4f05ffdd2b34efb2c9eea051df2893c873cde1d1b"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/positive/authoritative-mixed.json",
+      "snapshotPath": "samples/positive/authoritative-mixed.json",
+      "sha256": "814fba85be34c5873fd7dc7ba8c87afd81800bcbc8b2bfd15b82887ec4a93a6e"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/positive/processing-receipt.json",
+      "snapshotPath": "samples/positive/processing-receipt.json",
+      "sha256": "7a595daf9ba7d46e563f9ed706f040654dd11bf6851d0cb56162216833a21590"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/positive/public-error.json",
+      "snapshotPath": "samples/positive/public-error.json",
+      "sha256": "8a6c5dab8fa1bcb73ead7577857ae5909258ccdc518d35334041b01492a95fab"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/positive/public-mixed.json",
+      "snapshotPath": "samples/positive/public-mixed.json",
+      "sha256": "ac309c2d8ef16d10f6d8c863398662f2434cd311ccf4fdc0ad22885a29d3f380"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/task025/batch-request-ready-mixed.json",
+      "snapshotPath": "samples/task025/batch-request-ready-mixed.json",
+      "sha256": "f54ca3e8a59fd4dd1b234cd98e1850cea513ec33f2ef75d4e80d73d28bd3ef67"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/samples/task025/batch-response-ready-mixed.json",
+      "snapshotPath": "samples/task025/batch-response-ready-mixed.json",
+      "sha256": "40e26faae74009d3e7178967f04d94bff62373734573b243f073bc916f589c6b"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/schemas/authoritative-rfq-document.v2.schema.json",
+      "snapshotPath": "schemas/authoritative-rfq-document.v2.schema.json",
+      "sha256": "6335baa0bcaf4f7f9dec8692d47d0116b5676f90f8a3afdd40872bc8aced3de3"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/schemas/common.v2.schema.json",
+      "snapshotPath": "schemas/common.v2.schema.json",
+      "sha256": "5d9804907603bb4ca10bf543374a4992e2899ebdf8f0f7c22ab8d4cc2b19cf82"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/schemas/public-rfq-error.v2.schema.json",
+      "snapshotPath": "schemas/public-rfq-error.v2.schema.json",
+      "sha256": "bb9fe3ff8fcdd32e67daf4c9f2edfea0c0c945b129917bdc057e9070b9a10f99"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/schemas/public-rfq-receipt.v2.schema.json",
+      "snapshotPath": "schemas/public-rfq-receipt.v2.schema.json",
+      "sha256": "c88d563a8c0cc4ee989851b1de1c868b5c20a33ab3a6449a45a22195bd947f34"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/schemas/public-rfq-submission-draft.v2.schema.json",
+      "snapshotPath": "schemas/public-rfq-submission-draft.v2.schema.json",
+      "sha256": "9bed07807c3a6fe8152fed5e144ab746b88a1329d7e228d317ad575d8d6c1e4e"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/vectors/expected.v2.json",
+      "snapshotPath": "vectors/expected.v2.json",
+      "sha256": "cc09d2a9661065af299805d0be4ebde76b48a5363d4be9ae762f9b5529d972fc"
+    },
+    {
+      "sourcePath": "TASKS/ARTIFACTS/TASK-026/vectors/invalid/crypto-mutations.v2.json",
+      "snapshotPath": "vectors/invalid/crypto-mutations.v2.json",
+      "sha256": "500f1d97e0da0d34160e5f23827cf058971c1c292cd24c8c8075d24d33e5cc50"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-027",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-12T05:19:08Z",
+  "requires_response_to": "MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "TASK-027 A3 Planner P1 narrow revision is PASS_FOR_PLANNER_RECHECK. Exact RED reproduced raw Date overflow RangeError and hostile Proxy getPrototypeOf diagnostic leakage; minimum GREEN now validates fixed expiry before lookup/pre-gate/reserve/mixed and never observes unknown repository-thrown values. Current bytes: intake 1 file/6 tests, RFQ A1-A3 6/49, TASK-025 plus all Quote Basket v3 15/35, ten verifiers, lint, typecheck, protected hashes, cleanup, diff and DPG gates PASS. A4 remains blocked.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A3_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A3_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A3_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A3_DIFF_SUMMARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-027/A3_PLANNER_CHECKPOINT.md"
+  ],
+  "notes": "One bounded checkpoint response only. Do not infer A3 Planner PASS or A4 authorization from lane evidence.",
+  "dispatched_at": "2026-08-12T05:19:34Z",
+  "delivery_key": "MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "external_codex_thread_bridge",
+  "done_at": "2026-08-12T05:19:37Z",
+  "updated_at": "2026-08-12T05:19:37Z"
+}

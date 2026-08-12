@@ -2,14 +2,170 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-026
+current_task: TASK-027
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-12T03:52:49Z
+last_updated: 2026-08-12T07:18:50Z
 
 ## 当前焦点
 
-`TASK-026` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已通过；当前只允许正式提交、推送任务分支、合并并推送 `main`。客户表单、Route Handler、持久化、飞书与部署继续阻塞。
+`TASK-027` 已通过用户正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。下一步是只暂存 TASK-027 授权变更、生成中文正式提交、推送任务分支，再快进并推送 `main`。不执行部署。
+
+## TASK-027 Formal Delivery Authorization 2026-08-12T07:18:50Z
+
+- authorization: 用户精确输入 `确认 TASK-027 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均 PASS，任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- task: 交付 Next.js server-only RFQ Submission v2 运行时、一次 TASK-025 mixed-batch 权威绑定、进程内 Stub Repository/Sink 与仅本地可用的 intake Route。
+- validation: RFQ `11 files / 71 tests`、十 verifier、lint/typecheck/build、五 production smoke、protected/diff/DPG 全 PASS；bounded closure `PASS / P0=0 / P1=0 / P2=0`。
+- docs: 根 README、frontend README 与架构契约已如实记录 local-only、process-local/non-durable、production 404 和未实现生产持久化/飞书。
+- exclusions: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～026 post-delivery closure edits 和历史 resume packets 不进入提交。
+- unique_next: formal commit -> push task branch -> fast-forward local `main` -> push `main` -> verify all refs；不部署。
+
+## TASK-027 Bounded Closure and Final Validation PASS 2026-08-12T07:11:58Z
+
+- review: linked closure response 已 validate、ACK/done；当前 closure `PASS / P0=0 / P1=0 / P2=0`，不是第二次完整审核。
+- validation: RFQ `11 files / 71 tests`、十 verifier、lint/typecheck/build 和五个 production smoke 均 PASS。
+- integrity: `44` 份 protected exact、`3` 份授权文档差异、`0` blocking；next-env 已恢复，generated/listener/diff/DPG 门全 PASS。
+- preparation_history: 首次 checked preparation 已于 `2026-08-12T07:13:13Z` PASS；`2026-08-12T07:14:24Z` 受控 reopen 仅用于同步 Board/当前叙述。
+- unique_next: 立即重跑 checked `prepare-awaiting-user`；通过后等待用户精确口令 `确认 TASK-027 完成并提交到远端`。
+
+## TASK-027 Adversarial Findings Planner Checkpoint PASS 2026-08-12T07:02:16Z
+
+- P1: frontend linked response 已 ACK/done；独立 Stub runtime/intake/Route `3 files / 20 tests` PASS，hostile/revoked request-reference 零反射/零强制转换/零诊断并稳定 `dependency_failed`，正常 reference/409/replay 不变。
+- P2: consolidated evidence 已记录全部三份授权文档差异，Board 已按当前门移动到“审查中”。
+- gates: lane RFQ `11/71`、TASK-025/Basket `15/35`，Planner 十 verifier、lint/typecheck、protected/generated/listener/diff/DPG PASS。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；唯一完整 FAIL 历史保留。
+- unique_next: 只请求同一 reviewer bounded closure P1-1/P2-1/P2-2，不重复完整审核。
+
+## TASK-027 Unique Review FAIL Recovery 2026-08-12T06:48:30Z
+
+- response: `MSG-TASK-027-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK/done；唯一完整审核历史固定为 `FAIL / P0=0 / P1=1 / P2=2`。
+- transition: checked `task_transition.py reopen` 已运行，但 helper 只允许从 `AWAITING_USER` reopen，因当前为 `UNDER_REVIEW` 安全拒绝且零 mutation；Planner 记录等价受控恢复并将当前语义设为 `NEEDS_REVISION`。
+- P2 closure: consolidated validation/diff 已如实记录 frontend lane + Planner 三份授权文档差异，Board 已移至“需要修订”。
+- unique_next: 只派发 Frontend requestReference P1 修订与直接回归；fresh Planner validation 后请求同 reviewer bounded closure，不重复完整审核。
+
+## TASK-027 Unique Complete Review Dispatched 2026-08-12T06:38:00Z
+
+- request: `MSG-TASK-027-ADVERSARIAL-REVIEW-R1` 已通过真实 reviewer thread bridge 投递、dispatch-once 并 ACK/done。
+- policy: 本任务只允许这一轮完整审核；如 FAIL，只授权同一 reviewer 对原 findings 做 bounded closure，不再做完整审核。
+- unique_next: 等待一个 linked PASS/FAIL verdict；验收、Git、部署和外部集成继续阻塞。
+
+## TASK-027 Frontend A6 Planner Checkpoint PASS 2026-08-12T06:35:38Z
+
+- response: `MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6-RESPONSE` 已 validate、ACK/done。
+- docs: frontend README、根 README 与架构契约均如实记录 local-only、process-local/non-durable、production 404 与未接入表单/持久化/安全门/飞书；`document_impact: RESOLVED`、`readme_impact: UPDATED`。
+- validation: 独立 RFQ `11/70`、十 verifier、lint/typecheck/build、五 production smoke、next-env/protected/generated/listener cleanup、diff/DPG PASS；lane 完整资源安全清单 `77/649` PASS。
+- unique_next: 只派发一次完整独立只读 adversarial review；如失败只做同 reviewer bounded finding closure，不重复完整审核。
+
+## TASK-027 Frontend A5 Planner Recheck PASS 2026-08-12T06:15:32Z
+
+- response: `MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE` 已 validate、ACK/done。
+- closure: Route 只依赖内部 `ok | invalid | too_large` 结果；unknown body-reader Proxy 返回 authentic `400 invalid_request`，Planner attack 零 trap/零 private diagnostic，内部 declared/stream overflow 仍为 `413`。
+- validation: direct `1/5`、lane A1-A5 `11/70`、TASK-025/Basket v3 `15/35`、full `77/649`、十 verifier、lint/typecheck/build/extended smoke/protected/cleanup/diff/DPG PASS。
+- unique_next: 只派发 A6 frontend documentation/full consolidation；完整独立审核、验收、Git 和部署继续阻塞。
+
+## TASK-027 Frontend A5 Planner Checkpoint FAIL Recovery 2026-08-12T06:03:55Z
+
+- response: `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5-RESPONSE` 已 validate、ACK/done；普通 A5 聚焦 `11/68` PASS。
+- independent_red: hostile null-prototype Proxy body rejection 在 Route `instanceof RangeError` 分类时触发 `getPrototypeOf` 1 次，私有诊断逃出，未返回安全 `400 invalid_request`。
+- transition: checked `task_transition.py reopen` 已按要求运行，但因任务当前已是 `IN_PROGRESS` 安全拒绝，零状态 mutation；等价受控恢复记录于 active task/state。
+- unique_next: 只派发 raw-body trap-safe 分类、zero-trap 回归与 real-HTTP raw-gate 补证；A6、完整审核、验收、Git 和部署继续阻塞。
+
+## TASK-027 Frontend A5 Dispatched 2026-08-12T05:43:00Z
+
+- message: `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5` 已 validate、真实 thread bridge 投递、dispatch-once 并由 frontend 在 mutation 前 ACK/done。
+- scope: 仅 local-only `/api/rfq/intake/`、精确配置/raw transport 门、authentic public serialization、真实 HTTP 与 production/unset/disabled fail-closed。
+- preserved: A6 文档/全量收敛、UI、CMS、外部系统、完整 review、Git 和部署继续阻塞。
+- unique_next: 等待一个 linked A5 response 并独立复验；不得提前 A6。
+
+## TASK-027 Frontend A4 Planner Checkpoint PASS 2026-08-12T05:40:42Z
+
+- response: `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4-RESPONSE` 已 validate、ACK/done。
+- state: process-local Repository/Sink、五个 replay decisions、accepted/processing/rejected customer-safe result、并发至多一次与 hostile dependency normalization 均独立复验通过。
+- validation: direct `3/11`、A1-A4 `9/62`、TASK-025/Quote Basket v3 `15/35`、十个 verifier、lint/typecheck、protected/cleanup/diff/DPG PASS。
+- boundary: 没有 Route Handler、HTTP/config、UI、CMS、依赖、外部系统、review、Git 或部署。
+- unique_next: 只派发 A5 local Route Handler 与真实 HTTP/production fail-closed；A6 与完整审核继续阻塞。
+
+## TASK-027 Frontend A4 Dispatched 2026-08-12T05:24:30Z
+
+- message: `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4` 已 validate、真实 thread bridge 投递、dispatch-once 并由 frontend 在 mutation 前 ACK/done。
+- scope: 仅 process-local Stub Repository/Sink、五 replay tuples、authentic customer-safe receipt/error 与并发单次 reservation/delivery 证明。
+- preserved: Route Handler/HTTP/config、UI、CMS、依赖、外部系统、Git 和部署继续阻塞。
+- unique_next: 等待一个 linked A4 response 并独立复验；不得提前 A5。
+
+## TASK-027 Frontend A3 Planner Recheck PASS 2026-08-12T05:21:18Z
+
+- response: `MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE` 已 validate、ACK/done。
+- closure: exact Date-range overflow 和 hostile repository Proxy 两条 RED 均被最小关闭；普通 expiry、A3 authority/batch/order 行为不变。
+- validation: independent intake `6/6`、A1–A3 `49/49`、TASK-025/Quote Basket focused、RFQ/Article verifiers、lint/typecheck、protected/cleanup/diff/DPG PASS。
+- boundary: 无具体 Repository/Sink、Route Handler、HTTP、UI、CMS、依赖或外部副作用。
+- unique_next: 只派发 A4 process-local Stub state/delivery；A5 继续阻塞。
+
+## TASK-027 Frontend A3 Planner Checkpoint FAIL Recovery 2026-08-12T05:11:11Z
+
+- response: `MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3-RESPONSE` 已 validate、ACK/done；主体的一次 mixed-batch、全字段绑定、authentic authoritative wrapper 和注入式顺序存在。
+- independent_red_1: exact extended ISO 时钟加固定 30 天超出 JS Date range，泄漏 raw `RangeError`，未归一化为 `dependency_failed`。
+- independent_red_2: repository 抛出的 Proxy 通过 catch 中 `instanceof` 触发 `getPrototypeOf` trap，私有诊断泄漏且 trap 非零。
+- cleanup: 两测试 Planner probe 已删除且无 generated residue。
+- transition: 按要求尝试 checked `task_transition.py reopen`；因当前任务本就 `IN_PROGRESS` 而安全拒绝，未改变状态。等价恢复记录于当前 task/state。
+- unique_next: 只派发两个错误边界的窄 RED/GREEN 修订并 fresh recheck；A4、review、Git、部署继续阻塞。
+
+## TASK-027 Frontend A3 Dispatched 2026-08-12T04:54:15Z
+
+- message: `MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3` 已 validate、真实 thread bridge 投递、dispatch-once 并由 frontend 在 mutation 前 ACK/done。
+- scope: 仅 authentic public projection、一次完整 TASK-025 mixed request、全字段有序绑定、authentic Authoritative RFQ Document 与到 reservation/resolution 为止的依赖注入编排。
+- preserved: 具体 Stub Repository/Sink、Route Handler/HTTP、UI、CMS、依赖、外部系统、Git 和部署继续阻塞。
+- unique_next: 等待一个 linked A3 response，随后 Planner 独立复验；不得提前 A4。
+
+## TASK-027 Frontend A2 Planner Checkpoint PASS 2026-08-12T04:51:38Z
+
+- response: `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2-RESPONSE` 已 validate、ACK 并进入 done。
+- runtime: 独立复现 focused `3 files / 18 tests`、A1 `1/5`、五 Schema/63 refs/94/94、九个既有 verifier、lint/typecheck、server-only build negatives 和保护哈希 PASS。
+- contract: authentic WeakMap wrapper、caller-isolated deep-freeze、closed semantics、RFC 8785、HMAC/comparison/Basket tokens 与 hostile input fail-closed 均核验通过。
+- preserved: 没有 mixed request、idempotency/Repository/Sink、Route Handler、UI、CMS、依赖、外部系统、Git 或部署工作。
+- unique_next: 只派发 A3 authoritative batch binding；A3 Planner checkpoint 前不得开始具体 Stub 或 HTTP。
+
+## TASK-027 Frontend A2 Dispatched 2026-08-12T04:32:05Z
+
+- message: `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2` 已 validate、真实 thread bridge 投递并由 frontend 在 mutation 前 ACK/done。
+- scope: 仅 strict five-Schema runtime contract、authentic immutable wrapper、RFC 8785/HMAC/comparison/snapshot token 与 public/deep server-only build negatives。
+- preserved: mixed-batch orchestration、idempotency、Repository/Sink、Route Handler、UI、CMS、依赖、外部系统、Git 和部署继续阻塞。
+- unique_next: 等待一个 linked A2 response，随后 Planner 独立复验；不得提前 A3。
+
+## TASK-027 Frontend A1 Planner Checkpoint PASS 2026-08-12T04:30:38Z
+
+- response: `MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE` 已 validate、ACK 并进入 done。
+- snapshot: 独立展开 manifest 并确认 TASK-026 source/frontend snapshot `20/20` SHA-256 与 byte parity；inventory 恰为 20 JSON + 1 manifest。
+- verifier: Node 24.18.0 独立复现 `5 Schema / 63 refs / 94/94`；focused mutation `1 file / 5 tests`、lint 和 typecheck PASS。
+- integrity: 46/46 非文档 A0 protected hashes PASS；`frontend/README.md` 是 A1 明确授权的真实使用说明；无 generated residue，diff/message gates PASS。
+- boundary: 没有 Runtime Validator、crypto、mixed orchestration、Repository/Sink、Route Handler、CMS、依赖、Git 或部署工作。
+- unique_next: 只派发 frontend A2 runtime contract/canonical crypto；A2 Planner checkpoint 前不得开始 A3。
+
+## TASK-027 A0 PASS 2026-08-12T04:15:15Z
+
+- contract: exact local route `/api/rfq/intake/`、server-only runtime seams、process-local Stub Repository/Sink、local mode and production fail-closed behavior are frozen.
+- baseline: `47/47` protected SHA-256 PASS; TASK-026 `5 Schema / 63 refs / 94 checks` and exact 20 JSON closure PASS.
+- scope: A0 created only TASK-027 governance artifacts; product/runtime diff is empty and generated output is absent.
+- tdd: five sequential frontend checkpoints are frozen; implementation consolidation receives only one complete independent review.
+- transition: `READY -> IN_PROGRESS`; acceptance remains `NOT_ACCEPTED`, Git remains `DIRTY`.
+- unique_next: dispatch only frontend A1 snapshot/verifier and wait for one linked response before A2.
+
+## TASK-027 Requirements Confirmed 2026-08-12T04:15:15Z
+
+- authorization: 用户精确输入 `确认 TASK-027 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；验收仍为 `NOT_ACCEPTED`，Git 仍为 `DIRTY`。
+- released_scope: 仅 Planner A0 的实际路径、快照闭包、运行模式、依赖注入 seam、Stub 状态机、保护基线和严格 TDD 顺序。
+- preserved_exclusions: 客户可见表单、生产持久化、飞书/邮件、CMS 修改、Git 交付和部署仍未授权。
+- unique_next: 完成并独立验证 Planner A0；PASS 后才可派发 frontend 实施。
+
+## TASK-027 Intake 2026-08-12T04:12:13Z
+
+- request: 创建本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片。
+- scope: Next.js server-only v2 runtime、本地模式 Route Handler、一次 TASK-025 mixed-batch、进程内 Stub Repository/Sink、受控 receipt/error 与测试证据。
+- non_goals: 不创建客户可见表单，不选择生产持久化，不连接飞书/邮件，不修改 WordPress/CMS，不部署。
+- branch: `codex/TASK-027-local-rfq-intake-stub-sink` at `ae59adcbcc3d61996ec7727d0746026b04af9d61`。
+- review_policy: 实现全部收敛后只做一次完整独立审核；FAIL 修复后只做原 finding closure。
+- unique_next: 等待用户精确输入 `确认 TASK-027 需求并开始执行`；确认前不修改产品代码或派发实施 lane。
 
 ## TASK-026 Formal Delivery Authorized 2026-08-12T03:52:49Z
 

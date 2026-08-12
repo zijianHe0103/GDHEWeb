@@ -1,0 +1,42 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-027-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-027",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T06:37:04Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "对 TASK-027 做唯一一次完整独立只读 adversarial review。完整读取 active task、REQUIREMENTS、A0_DESIGN、TDD_SEAMS、A1-A6 Planner checkpoints、consolidated EXECUTION_REPORT/TEST_OR_VALIDATION_LOG/DIFF_OR_OUTPUT_SUMMARY、A3/A5 初次 FAIL 与窄修订历史、frontend 本地 RFQ Submission v2 snapshot/verifier、server-only runtime/crypto、一次完整 TASK-025 mixed batch、Stub Repository/Sink、local-only Route Handler/HTTP smoke、frontend/root README 与架构契约。独立挑战：closed Schema/semantic wrapper、RFC8785/HMAC/tokens、1..50 全字段有序原子绑定、Article Number public-but-untrusted、custom null/sales_follow_up、replay/conflict/expiry/concurrency、hostile Proxy/Unicode/raw-body、customer-safe public receipt/error、one mixed POST/zero legacy、exact local config/Origin/bytes/production 404、server-only/leakage/protected scope、process-local non-durable truth和文档一致性。输出唯一 ADVERSARIAL_REVIEW_REPORT.md 和 linked PASS/FAIL/P0/P1/P2 response。只读业务交付物，不修复、不改 Planner 状态、不提交/推送/部署。若 FAIL，Planner 只授权同一 reviewer bounded finding closure，不再重复完整审核。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-027-local-rfq-intake-stub-sink.md",
+    "TASKS/ARTIFACTS/TASK-027/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-027/A0_DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-027/TDD_SEAMS.md",
+    "TASKS/ARTIFACTS/TASK-027/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-027/TEST_OR_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-027/DIFF_OR_OUTPUT_SUMMARY.md",
+    "TASKS/ARTIFACTS/TASK-027/A6_PLANNER_CHECKPOINT.md",
+    "frontend/README.md",
+    "README.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-027/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Exactly one complete review. PASS is not acceptance or Git authorization; FAIL permits only same-reviewer bounded finding closure, not a second full review.",
+  "dispatched_at": "2026-08-12T06:37:31Z",
+  "delivery_key": "MSG-TASK-027-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "received_delivery_key": "MSG-TASK-027-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "received_by_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "received_at": "2026-08-12T06:37:51Z",
+  "done_at": "2026-08-12T06:38:00Z",
+  "updated_at": "2026-08-12T06:38:00Z"
+}

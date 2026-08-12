@@ -11804,3 +11804,571 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-026
 - summary: TASK-026 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+### 2026-08-12T04:12:13Z - task_intake
+- type: task_intake
+- lane: planner
+- task: TASK-027
+- summary: Created a governed local-only RFQ Intake Runtime Core and isolated Stub Sink task from delivered main; implementation waits for explicit requirement confirmation.
+
+### 2026-08-12T04:15:15Z - task_requirements_confirmed
+- type: task_requirements_confirmed
+- lane: planner
+- task: TASK-027
+- summary: Exact user confirmation moved TASK-027 from AWAITING_REQUIREMENT_CONFIRMATION to READY; only Planner A0 is released before frontend implementation.
+
+### 2026-08-12T04:15:15Z - planner_checkpoint_pass
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-027
+- summary: A0 froze the local-only RFQ route/runtime/stub seams and 47-file protected baseline; TASK-027 entered IN_PROGRESS and only frontend A1 was released.
+
+### 2026-08-12T04:20:57Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T04:21:12Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1 dispatched to frontend
+
+### 2026-08-12T04:21:42Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1 moved to done
+
+### 2026-08-12T04:28:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T04:29:18Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE dispatched to planner
+
+### 2026-08-12T04:30:07Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE moved to done
+
+### 2026-08-12T04:30:38Z - planner_checkpoint_pass
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-027
+- summary: Frontend A1 exact 20-file RFQ Submission v2 snapshot and offline verifier passed independent byte, mutation, lint, typecheck and protected-scope validation; only A2 is released.
+
+### 2026-08-12T04:32:05Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: Frontend A2 closed runtime contract, canonical crypto and server-only build boundary request was dispatched and ACKed before mutation; A3 remains blocked.
+
+### 2026-08-12T04:31:59Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T04:32:11Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2 dispatched to frontend
+
+### 2026-08-12T04:32:30Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2 moved to done
+
+### 2026-08-12T04:48:19Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T04:48:42Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2-RESPONSE dispatched to planner
+
+### 2026-08-12T04:49:22Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2-RESPONSE moved to done
+
+### 2026-08-12T04:51:38Z - planner_checkpoint_pass
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-027
+- summary: Frontend A2 closed runtime contract, authentic wrapper, canonical crypto and public/deep server-only boundaries passed independent focused, verifier, lint, typecheck, protected-scope and governance validation; only A3 authoritative mixed-batch binding is released.
+
+### 2026-08-12T04:54:15Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: Frontend A3 authentic projection, one complete TASK-025 mixed batch, full authoritative binding and injected reservation/resolution request was dispatched and ACKed before mutation; A4 remains blocked.
+
+### 2026-08-12T05:11:11Z - planner_checkpoint_failed
+- type: planner_checkpoint_failed
+- lane: planner
+- task: TASK-027
+- summary: A removable independent two-test probe reproduced raw Date-range RangeError and repository-thrown Proxy reflection/diagnostic leakage in A3 intake; only those two bounded normalization repairs are released and A4 remains blocked.
+
+### 2026-08-12T05:21:18Z - planner_checkpoint_pass
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-027
+- summary: A3 narrow revision independently closed Date-range overflow and hostile Proxy reflection while preserving the one-batch authoritative flow; A1-A3, verifier, lint, typecheck, protected and governance gates pass and only A4 Stub state/delivery is released.
+
+### 2026-08-12T05:24:30Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: Frontend A4 process-local Stub Repository/Sink, exact replay tuples and customer-safe public result request was dispatched and ACKed before mutation; A5 remains blocked.
+
+### 2026-08-12T04:53:15Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T04:53:35Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3 dispatched to frontend
+
+### 2026-08-12T04:54:07Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3 moved to done
+
+### 2026-08-12T05:09:09Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T05:09:30Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3-RESPONSE dispatched to planner
+
+### 2026-08-12T05:11:11Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3-RESPONSE moved to done
+
+### 2026-08-12T05:12:17Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T05:12:44Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1 dispatched to frontend
+
+### 2026-08-12T05:13:38Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1 moved to done
+
+### 2026-08-12T05:19:08Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T05:19:34Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T05:19:37Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE moved to done
+
+### 2026-08-12T05:22:33Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T05:22:47Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4 dispatched to frontend
+
+### 2026-08-12T05:23:13Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4 moved to done
+
+### 2026-08-12T05:37:20Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T05:37:30Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4-RESPONSE dispatched to planner
+
+### 2026-08-12T05:37:55Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4-RESPONSE moved to done
+# 2026-08-12T05:40:42Z TASK-027 Frontend A4 Planner Checkpoint PASS
+
+- ACKed the linked A4 response and independently reproduced the process-local Repository/Sink state matrix.
+- Current-byte gates PASS: direct `3/11`, A1-A4 `9/62`, TASK-025/Quote Basket v3 `15/35`, ten verifiers, lint/typecheck, protected hashes, generated cleanup, diff and DPG.
+- A5 is the only released next checkpoint; no complete review, acceptance, Git, deployment, CMS or external integration is authorized.
+
+# 2026-08-12T05:43:00Z TASK-027 Frontend A5 Dispatched
+
+- `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5` was delivered to and ACKed by the registered frontend lane.
+- Only local Route/config/raw HTTP gates and production fail-closed evidence are released; A6, review, UI, external systems, Git and deployment remain blocked.
+
+### 2026-08-12T05:42:48Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T05:43:10Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5 dispatched to frontend
+
+### 2026-08-12T05:43:14Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5 moved to done
+
+### 2026-08-12T06:03:55Z - planner_checkpoint_failed
+- type: planner_checkpoint_failed
+- lane: planner
+- task: TASK-027
+- summary: A5 ordinary focused gates passed, but an independent hostile body-reader Proxy escaped through RangeError instanceof classification with one reflection trap and private diagnostic; only the bounded trap-safe repair and raw-gate evidence are released.
+
+### 2026-08-12T06:15:32Z - planner_checkpoint_pass
+- type: planner_checkpoint_pass
+- lane: planner
+- task: TASK-027
+- summary: A5 bounded repair independently returns authentic 400 with zero hostile traps/diagnostic while preserving 413 and completing real HTTP raw gates; A1-A5 and full 649-test evidence pass and only A6 documentation/full consolidation is released.
+
+### 2026-08-12T06:00:30Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T06:01:01Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5-RESPONSE dispatched to planner
+
+### 2026-08-12T06:01:07Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5-RESPONSE moved to done
+
+### 2026-08-12T06:05:23Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T06:05:43Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1 dispatched to frontend
+
+### 2026-08-12T06:06:21Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1 moved to done
+
+### 2026-08-12T06:14:58Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T06:15:19Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T06:15:22Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE moved to done
+
+### 2026-08-12T06:17:40Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T06:18:02Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6 dispatched to frontend
+
+### 2026-08-12T06:18:19Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6 moved to done
+
+### 2026-08-12T06:29:24Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T06:29:48Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6-RESPONSE dispatched to planner
+
+### 2026-08-12T06:29:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6-RESPONSE moved to done
+## 2026-08-12T06:35:38Z — TASK-027 Frontend A6 Planner Checkpoint PASS
+
+- Validated and ACKed/done the linked A6 response, applied the exact scoped
+  Planner-owned root README and architecture deltas, and resolved documentation
+  impact without claiming production capabilities.
+- Independently reproduced RFQ 11/70, ten verifiers, lint/typecheck/build and
+  five production smokes; restored protected next-env and recoverably cleaned
+  generated output with no port 3000 listener.
+- A3/A5 initial FAIL histories remain preserved; current A1-A6 and resource-safe
+  77-file/649-test evidence pass.
+- Unique next: dispatch exactly one complete independent review; any repair uses
+  only the same reviewer's bounded finding closure.
+
+### 2026-08-12T06:37:04Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T06:37:31Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-12T06:37:51Z - message_received
+- type: message_received
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: delivery receipt recorded for MSG-TASK-027-ADVERSARIAL-REVIEW-R1
+
+### 2026-08-12T06:38:00Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-REVIEW-R1 moved to done
+## 2026-08-12T06:38:00Z — TASK-027 Unique Complete Review Dispatched
+
+- Delivered the only complete read-only adversarial review request to the
+  registered reviewer thread; dispatch-once and reviewer ACK/done are recorded.
+- TASK-027 is now UNDER_REVIEW. If findings occur, only bounded closure by the
+  same reviewer is allowed; no second complete review will be run.
+- Unique next: wait for the linked verdict; acceptance, Git, deployment and
+  external integration remain blocked.
+
+### 2026-08-12T06:47:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T06:47:51Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T06:48:09Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+## 2026-08-12T06:48:30Z — TASK-027 Unique Review FAIL Recovery
+
+- ACKed/done the only complete review verdict: `FAIL / P0=0 / P1=1 / P2=2`.
+- Checked reopen was attempted and safely rejected because the helper only
+  reopens AWAITING_USER; equivalent governed recovery is recorded as
+  NEEDS_REVISION.
+- Corrected the two Planner-owned P2 narratives. Only the frontend
+  requestReference returned-value boundary remains released for repair.
+- Unique next: narrow frontend P1 revision, fresh Planner validation and one
+  same-reviewer bounded finding closure; no second complete review.
+
+### 2026-08-12T06:50:23Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-027
+- summary: message queued for frontend
+
+### 2026-08-12T06:50:36Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1 dispatched to frontend
+
+### 2026-08-12T06:51:08Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1 moved to done
+
+### 2026-08-12T07:00:51Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T07:01:20Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T07:02:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE moved to done
+## 2026-08-12T07:02:16Z — TASK-027 Adversarial Findings Planner Checkpoint PASS
+
+- Validated and ACKed the frontend P1 response; independently reproduced the
+  closed request-reference boundary and all required contract/static gates.
+- Confirmed consolidated evidence and Board classification close the two P2
+  findings.
+- TASK-027 returns to UNDER_REVIEW only for the same-reviewer bounded finding
+  closure. The sole complete review FAIL history remains unchanged.
+
+### 2026-08-12T07:03:06Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T07:03:22Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE dispatched to adversarial_reviewer
+
+### 2026-08-12T07:03:57Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE moved to done
+
+### 2026-08-12T07:06:54Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-027
+- summary: message queued for planner
+
+### 2026-08-12T07:07:11Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE-RESPONSE dispatched to planner
+
+### 2026-08-12T07:08:21Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-027
+- summary: message MSG-TASK-027-ADVERSARIAL-FINDING-CLOSURE-RESPONSE moved to done
+
+## 2026-08-12T07:11:58Z — TASK-027 Bounded Closure and Final Validation PASS
+
+- ACKed/done the same-reviewer bounded closure response at `PASS / P0=0 / P1=0 / P2=0`; no second complete review was run.
+- Freshly reproduced RFQ `11/71`, all ten verifiers, lint, typecheck, build and five production smokes.
+- Protected baseline, next-env restoration, generated/listener cleanup, diff and all DPG gates pass.
+- Unique next: checked `prepare-awaiting-user`; no acceptance, Git delivery or deployment yet.
+
+## 2026-08-12T07:14:24Z — TASK-027 Checked Preparation Narration Sync
+
+- The first checked preparation passed at `2026-08-12T07:13:13Z`.
+- Controlled reopen was used only to synchronize Board/current narration with
+  the checked transition; no product, test, review or evidence scope changed.
+- Unique next: immediately rerun checked preparation, then wait for the exact
+  user acceptance phrase.
+
+## 2026-08-12T07:18:50Z — TASK-027 Formal Delivery Authorized
+
+- User supplied exact `确认 TASK-027 完成并提交到远端`; acceptance check and atomic accept both PASS.
+- TASK-027 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; the delivery will
+  include only the authorized task scope and exclude pre-existing dirty work.
+- Unique next: formal Chinese commit, push task branch, fast-forward/push
+  `main`, verify refs; no deployment.
+
+### 2026-08-12T07:13:13Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-027
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-12T07:14:24Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-027
+- summary: Synchronize post-prepare Board and current narration after the checked transition; no product or evidence change.
+
+### 2026-08-12T07:15:17Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-027
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-12T07:18:50Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-027
+- summary: TASK-027 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.

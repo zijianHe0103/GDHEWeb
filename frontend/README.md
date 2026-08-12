@@ -309,6 +309,75 @@ public but untrusted order identity. A3 adds no Client Component or UI and does
 not display it. It also adds no Quote Basket `3.0.0`, migration, RFQ intake,
 customer form, persistence, Feishu call or deployment behavior.
 
+## RFQ Submission v2 contract snapshot
+
+TASK-027 A1 adds an independent frontend-local copy of all 20 normative
+TASK-026 RFQ Submission `2.0.0` JSON files. Its Node-built-in offline verifier
+binds every source and snapshot path, byte hash, the five-Schema/63-reference
+closure and the exact TASK-026 `94/94` machine-contract truth boundary:
+
+```sh
+node scripts/verify-rfq-submission-v2-contract.mjs
+npm test -- tests/rfq-submission-v2-contract-snapshot.test.ts
+```
+
+This command reads TASK-026 only for explicit offline authority verification.
+The snapshot itself does not execute the runtime described below.
+
+## Local-only RFQ intake runtime
+
+TASK-027 connects the frozen RFQ Submission `2.0.0` contract to a server-only,
+local-development-only `POST /api/rfq/intake/` Route Handler. It validates the
+raw request and public submission, performs exactly one complete TASK-025 mixed
+line validation for a new intent, and uses a process-local Stub Repository and
+isolated Stub Sink. It is not a production RFQ service.
+
+The route is enabled only when every value below is present and valid. This
+example key is an obvious non-production placeholder with the exact required
+64-lowercase-hex shape; never use it outside local testing.
+
+```sh
+WORDPRESS_API_URL=http://127.0.0.1:8080/wp-json \
+GDHE_RFQ_INTAKE_MODE=stub \
+GDHE_RFQ_INTAKE_ORIGIN=http://127.0.0.1:3000 \
+GDHE_RFQ_HMAC_KEY_VERSION=local-placeholder-v1 \
+GDHE_RFQ_HMAC_KEY_HEX=0000000000000000000000000000000000000000000000000000000000000000 \
+GDHE_RFQ_STUB_SINK_OUTCOME=accepted \
+npm run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+`GDHE_RFQ_STUB_SINK_OUTCOME` accepts exactly `accepted`, `indeterminate` or
+`rejected_before_delivery`. A first accepted intent returns `201`; its exact
+same-key/same-payload replay returns the stored receipt as `200`. An
+indeterminate intent and replay return `202` without resending. A conflicting
+digest or pre-delivery rejection returns a customer-safe `409`. Raw request and
+unexpected local dependency failures use only the closed public error contract.
+All enabled responses are `no-store` and provide no CORS opt-in.
+
+The Stub Repository and Stub Sink are process-local and non-durable. Restarting
+Next.js loses their state. Missing, malformed, disabled, preview/CMS-like or
+production configuration fails closed; production always returns a final empty
+`404` before reading the request or calling WordPress, the Repository or Sink.
+
+Run the contract, focused runtime and real HTTP gates with Node.js 24.18.0:
+
+```sh
+node scripts/verify-rfq-submission-v2-contract.mjs
+npm test -- tests/rfq-submission-v2-contract-snapshot.test.ts tests/rfq-intake-v2-*.test.ts
+node tests/rfq-intake-production-smoke.mjs
+```
+
+The smoke starts only short-lived loopback Next.js and mock WordPress listeners.
+It covers raw Origin/media/declared-size/stream-size/fatal-UTF-8 gates,
+accepted/replay/conflict, processing, pre-delivery rejection and local/
+production fail-closed behavior. It cleans its listeners; a production build
+must exist before the smoke's `next start` control.
+
+TASK-027 does not add a customer-visible RFQ form, Basket clearing, production
+persistence, durable idempotency, rate limiter or challenge, trusted-proxy
+policy, production secret provisioning, Feishu, email, queue, CMS mutation,
+external delivery or deployment. Those remain separate gated work.
+
 ## Local-only FGD X15+PVC Product Detail slice
 
 `/products/fgd-x15-pvc/` is a controlled English Product Detail slice for the

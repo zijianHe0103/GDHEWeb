@@ -1,0 +1,34 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "frontend",
+  "task_id": "TASK-027",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T06:50:23Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "执行 TASK-027 唯一完整审核 P1-1 的窄修订。完整读取 FRONTEND_ADVERSARIAL_P1_R1_DISPATCH.md 与 canonical ADVERSARIAL_REVIEW_REPORT.md。严格 RED/GREEN：复现 ids.nextRequestReference 返回 hostile/revoked 非字符串值在 pattern 校验时发生 coercion/诊断逃逸；最小修复必须在一个保护块内把返回值当 unknown，仅 primitive string 才做固定 pattern 校验，非字符串零 coercion/零 reflection，并统一返回既有 dependency_failed。证明普通有效 reference、customer-safe local rejection/replay、Route 与全部既有合同不变。只改 frontend owner scope 与直接 TASK-027 evidence/worklog；不改 Planner P2 文档、Board/State/task、review report、CMS、Schema/snapshot、依赖、UI、外部系统、Git或部署。返回一个 linked response 后停止。",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_ADVERSARIAL_P1_R1_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-027/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A3_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_A5_TDD_RED_EVIDENCE.md",
+    "frontend/src/lib/rfq/server/v2/intake.ts",
+    "frontend/tests/rfq-intake-v2-intake.test.ts"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-027/FRONTEND_ADVERSARIAL_P1_R1.md"
+  ],
+  "notes": "Bounded repair only. Preserve sole complete review FAIL; later reviewer action is same-reviewer finding closure, not another full review.",
+  "dispatched_at": "2026-08-12T06:50:36Z",
+  "delivery_key": "MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1:019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "target_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_id": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T06:51:08Z",
+  "updated_at": "2026-08-12T06:51:08Z"
+}

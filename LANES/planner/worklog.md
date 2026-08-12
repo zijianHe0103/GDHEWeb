@@ -4660,3 +4660,190 @@ Each execution records:
 - TASK-026 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; all review, closure, final-validation, documentation and checked-preparation evidence remains valid.
 - Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-025 closure edits and historical resume packets.
 - Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.
+## 2026-08-12T04:12:13Z TASK-027 Intake
+
+- Created TASK-027 for the smallest local Next.js RFQ Intake Runtime Core and isolated Stub Sink vertical slice.
+- Froze the boundary to a server-only v2 snapshot/runtime, one complete TASK-025 mixed-batch call, process-local Stub Repository/Sink and a local-mode-only Route Handler.
+- Explicitly excluded the visible customer form, production persistence, Feishu/email, CMS changes, deployment and any claim that the Stub is durable production infrastructure.
+- Created branch `codex/TASK-027-local-rfq-intake-stub-sink` from delivered `main@ae59adc` while preserving existing dirty files.
+- Unique next: wait for exact `确认 TASK-027 需求并开始执行`; no product code or implementation dispatch before confirmation.
+
+## 2026-08-12T04:15:15Z TASK-027 Requirements Confirmed
+
+- User supplied the exact requirement-confirmation phrase; TASK-027 moved from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY / NOT_ACCEPTED / DIRTY`.
+- Released only Planner A0 for exact paths, closed snapshot graph, local runtime mode, dependency-injection seams, Stub state machine, protected baseline and vertical TDD order.
+- Customer UI, production persistence, Feishu/email, CMS mutation, Git delivery and deployment remain excluded.
+- Unique next: complete and independently validate A0 before any frontend dispatch or product-code mutation.
+
+## 2026-08-12T04:15:15Z TASK-027 A0 PASS
+
+- Froze the exact `/api/rfq/intake/` local-only route, server-only runtime seams, process-local Repository/Sink state machine, raw transport order and five vertical TDD checkpoints.
+- Reproduced TASK-026 `5 Schema / 63 refs / 94 checks`, exact `20` JSON files and `47/47` protected hashes.
+- Confirmed zero TASK-027 product/runtime diff, zero generated residue, correct branch/base and all DPG/diff gates PASS.
+- Moved TASK-027 from `READY` to `IN_PROGRESS`; only frontend A1 snapshot/verifier is released.
+- Unique next: queue and dispatch A1, then wait for one linked response before A2.
+
+## 2026-08-12T04:30:38Z — TASK-027 frontend A1 Planner checkpoint PASS
+
+- ACKed/done `MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE` and read all four linked A1 evidence files.
+- Independently reproduced `20/20` source/snapshot bytes, exact 21-file inventory, verifier `5 Schema / 63 refs / 94/94`, focused `1 file / 5 tests`, lint and typecheck on Node 24.18.0.
+- Confirmed `46/46` non-document protected hashes; the only baseline document difference is the authorized truthful `frontend/README.md` A1 command section.
+- Confirmed no `.next`, TypeScript cache, listener or temporary root and `git diff --check`/message validation PASS.
+- Created `A1_PLANNER_CHECKPOINT.md` and the exact A2 dispatch; A3 remains blocked.
+- Unique next: controlled frontend A2 dispatch and one linked response before mixed orchestration.
+
+## 2026-08-12T04:32:05Z — TASK-027 frontend A2 dispatched and ACKed
+
+- Queued, validated and delivered `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2` through the registered frontend thread bridge and recorded dispatch-once.
+- Frontend ACKed before mutation and moved the controlled request to done.
+- A2 is limited to closed runtime validation, canonical crypto and server-only build boundaries; A3 and later work remain blocked.
+- Unique next: wait for one linked A2 response and perform an independent Planner checkpoint.
+
+## 2026-08-12T04:51:38Z — TASK-027 frontend A2 Planner checkpoint PASS
+
+- Validated and ACKed/done `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2-RESPONSE`, then read all four linked A2 evidence files and every scoped production/test file.
+- Independently reproduced focused `3 files / 18 tests`, A1 `1/5`, verifier `5 Schema / 63 refs / 94/94`, all nine existing verifiers, lint, typecheck, real public/deep server-only negatives and protected hashes on Node 24.18.0.
+- Confirmed authentic wrappers, caller-isolated deep-frozen values, exact canonical/HMAC/comparison/snapshot vectors and zero embedded secret or forbidden runtime imports.
+- Confirmed no mixed orchestration, Repository/Sink, Route Handler, CMS, external system or generated residue; `git diff --check` and DPG gates PASS.
+- Created `A2_PLANNER_CHECKPOINT.md` and the exact A3 dispatch. Unique next: controlled frontend A3 dispatch; A4 remains blocked.
+
+## 2026-08-12T04:54:15Z — TASK-027 frontend A3 dispatched and ACKed
+
+- Queued, validated and delivered `MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3` through the registered frontend thread bridge and recorded dispatch-once.
+- Frontend ACKed before mutation and moved the request to done.
+- A3 is limited to authentic projection, exactly one complete TASK-025 mixed batch, complete ordered binding, authentic authoritative document and injected orchestration through reservation/resolution.
+- Unique next: wait for one linked A3 response and independently validate it; concrete Repository/Sink, Route Handler, HTTP, review, Git and deployment remain blocked.
+
+## 2026-08-12T05:11:11Z — TASK-027 frontend A3 Planner checkpoint FAIL recovery
+
+- Validated and ACKed/done the linked A3 response, read all four artifacts and inspected the full A3 production/tests.
+- Confirmed the main one-batch/ordered-binding/authentic-authority scope, then ran one removable Planner probe with exactly two attacks.
+- Both attacks failed: Date-range expiry leaked raw RangeError, and a repository-thrown Proxy reached `instanceof`, invoked `getPrototypeOf` and leaked its private error.
+- Deleted the probe immediately; no generated residue remains. Checked reopen was attempted as required and safely rejected because TASK-027 is already IN_PROGRESS, so current recovery is recorded without a semantic state change.
+- Unique next: dispatch only the two A3 intake normalization fixes and recheck; A4 and the one final complete review remain blocked.
+
+## 2026-08-12T05:21:18Z — TASK-027 frontend A3 Planner recheck PASS
+
+- Validated and ACKed/done the linked two-finding response; inspected the exact intake/test diff and refreshed A3 evidence.
+- Independently reproduced intake `1 file / 6 tests`, A1–A3 `6/49`, TASK-025/Quote Basket focused regressions, RFQ and Article Number verifiers, lint and typecheck.
+- Confirmed fixed expiry remains exact, overflow stops before all business calls, hostile repository Proxy remains entirely unobserved, and no generated residue or forbidden scope exists.
+- A3 initial FAIL history remains in `A3_PLANNER_CHECKPOINT.md`; current result is PASS_AFTER_NARROW_REVISION.
+- Unique next: dispatch only A4 process-local Stub Repository/Sink and replay/public result; A5 remains blocked.
+
+## 2026-08-12T05:24:30Z — TASK-027 frontend A4 dispatched and ACKed
+
+- Queued, validated and delivered `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4` through the registered frontend thread bridge and recorded dispatch-once.
+- Frontend ACKed before mutation and moved the request to done.
+- A4 is limited to process-local Stub Repository/Sink, five replay tuples, authentic public receipt/error state and concurrency/retention proof.
+- Unique next: wait for one linked A4 response and independently validate it; A5 Route Handler/HTTP remains blocked.
+# 2026-08-12 TASK-027 Frontend A4 Planner Checkpoint PASS
+
+- Validated and ACKed `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4-RESPONSE`; the controlled response is done.
+- Independently reproduced process-local Repository/Sink behavior, exact replay/conflict/expiry/no-resend semantics, customer-safe authentic results, same-key concurrent at-most-one mixed/Sink attempt and hostile thrown-value normalization.
+- Fresh Node 24.18.0 evidence: direct `3/11`, A1-A4 `9/62`, TASK-025 plus Quote Basket v3 `15/35`, all ten verifiers, lint and typecheck PASS.
+- Protected non-document bytes remain exact; only the A1-authorized frontend README differs. Planner typecheck residue was moved recoverably to system Trash; next-env, no-listener, diff and DPG gates PASS.
+- Verdict: `PASS / P0=0 / P1=0 / P2=0` for the implementation checkpoint only; this is not the complete independent review.
+- Unique next: dispatch only A5 local Route Handler and real HTTP/production fail-closed proof; A6, review, acceptance, Git and deployment remain blocked.
+
+# 2026-08-12 TASK-027 Frontend A5 Dispatched
+
+- Created `FRONTEND_A5_DISPATCH.md` with the exact local config, Origin/media/raw-byte/fatal-UTF-8/one-parse gates, authentic public serialization, one TASK-025 POST and real local/production smoke boundaries.
+- Queued, validated, dry-ran and delivered `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5` through the registered frontend thread, then recorded dispatch-once.
+- Frontend ACKed before mutation and the controlled request is done.
+- Unique next: wait for one linked A5 response and independently reproduce the Route/HTTP/protected-boundary evidence; A6 and review remain blocked.
+
+# 2026-08-12 TASK-027 Frontend A5 Planner Checkpoint FAIL Recovery
+
+- Validated and ACKed/done `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5-RESPONSE`; read all four A5 artifacts and scoped production/tests.
+- Independently reproduced A1-A5 `11 files / 68 tests` PASS, then used a no-file Vite SSR attack against the real `POST` Route.
+- The body reader rejected with a hostile null-prototype Proxy; `error instanceof RangeError` invoked `getPrototypeOf` once and allowed `PRIVATE_RAW_BODY_DIAGNOSTIC` to escape instead of returning `400 invalid_request`.
+- Checked reopen was attempted and safely refused because TASK-027 is already `IN_PROGRESS`; current recovery is recorded without semantic state change.
+- Unique next: dispatch only the trap-safe raw-body classification, direct zero-trap regression and required real-HTTP raw-gate proof; A6 and complete review remain blocked.
+
+# 2026-08-12 TASK-027 Frontend A5 Planner Recheck PASS
+
+- Validated and ACKed/done `MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE`; inspected the minimal closed-result Route diff, direct hostile/parse tests and extended HTTP smoke.
+- Independently reproduced Route `1/5` and the same no-file Vite SSR attack: authentic `400 invalid_request`, no private diagnostic, and all reflection counters zero.
+- Lane current-byte evidence is A1-A5 `11/70`, TASK-025/Basket v3 `15/35`, full `77/649`, ten verifiers, lint/typecheck/build/extended real HTTP smoke, protected hashes, cleanup and DPG PASS.
+- Original A5 `FAIL / P1=1` remains in `A5_PLANNER_CHECKPOINT.md`; current result is `PASS_AFTER_NARROW_REVISION`.
+- Unique next: dispatch only A6 frontend documentation/full regression and collect exact Planner-owned root README/architecture deltas; complete review remains blocked.
+# TASK-027 frontend A6 Planner checkpoint PASS 2026-08-12
+
+- ACKed/done the linked A6 response and read the consolidated execution,
+  validation, diff and exact Planner documentation-delta artifacts.
+- Applied and inspected the scoped root README and architecture-contract truth;
+  document impact is RESOLVED and README impact is UPDATED.
+- Independently reproduced RFQ 11 files/70 tests, all ten contract verifiers,
+  lint, typecheck, Next 16.2.11 build and all five production smokes.
+- Restored protected next-env, moved generated `.next` and TypeScript cache
+  recoverably to system Trash, and verified port 3000 clear.
+- DPG project/registry/messages/strict lane and diff checks PASS.
+- Unique next: exactly one complete read-only adversarial review; any FAIL gets
+  only same-reviewer bounded finding closure, never a second complete review.
+# TASK-027 unique complete review dispatched 2026-08-12
+
+- Queued, validated and delivered exactly one complete read-only review request
+  to the registered adversarial reviewer thread and recorded dispatch-once.
+- The reviewer ACKed the canonical target-session delivery key and the request
+  is done; TASK-027 is UNDER_REVIEW while the linked verdict is pending.
+- If the review fails, only same-reviewer bounded finding closure is permitted;
+  a second complete review is explicitly forbidden.
+- Unique next: wait for one linked PASS/FAIL response; no acceptance, Git,
+  deployment or external integration action.
+# TASK-027 unique review FAIL recovery 2026-08-12
+
+- Validated and ACKed/done the sole complete review response: FAIL with P0=0,
+  P1=1 and P2=2. No second complete review is permitted.
+- Ran checked reopen as required; the helper safely rejected because it only
+  accepts AWAITING_USER while TASK-027 was UNDER_REVIEW, with zero mutation.
+  Recorded the equivalent controlled recovery as NEEDS_REVISION.
+- Closed P2-1 by correcting consolidated evidence to disclose all three
+  authorized document differences, and P2-2 by moving TASK-027 to the Board's
+  revision section.
+- Unique next: dispatch only the requestReference returned-value P1 to frontend,
+  then fresh Planner validation and same-reviewer bounded finding closure.
+# TASK-027 adversarial findings Planner checkpoint PASS 2026-08-12
+
+- ACKed/done the frontend P1 response and independently reproduced Stub
+  runtime/intake/Route 3 files/20 tests, all ten verifiers, lint and typecheck.
+- Confirmed hostile/revoked request-reference values produce zero reflection or
+  coercion and only stable dependency_failed; normal reference/409/replay is
+  unchanged.
+- Confirmed both P2 narratives now disclose all three authorized document
+  differences and Board classification matches the current closure gate.
+- Cleaned the generated TypeScript cache recoverably; protected next-env,
+  no-listener, diff and all DPG gates PASS.
+- Unique next: same-reviewer bounded closure for only P1-1/P2-1/P2-2; do not
+  repeat the complete review.
+
+# TASK-027 bounded closure and final validation PASS 2026-08-12
+
+- ACKed/done the same-reviewer bounded closure response. Current closure is
+  `PASS / P0=0 / P1=0 / P2=0`; the sole complete-review FAIL history remains.
+- Fresh current-byte validation reproduced RFQ `11 files / 71 tests`, all ten
+  verifiers, lint, typecheck, production build and five production smokes.
+- Protected baseline is `44 exact + 3 authorized docs + 0 blocking`; restored
+  next-env and recoverably moved generated output to system Trash. No listener
+  remains, and diff plus all DPG gates pass.
+- Unique next: checked `prepare-awaiting-user`, then wait for the exact user
+  acceptance phrase. No Git delivery or deployment before that phrase.
+
+# TASK-027 checked preparation narration sync 2026-08-12
+
+- The first checked preparation passed at `2026-08-12T07:13:13Z`.
+- Used controlled reopen at `2026-08-12T07:14:24Z` only to align Board and
+  current narration with that transition; no product, test, review or evidence
+  byte was changed by the reopen.
+- Unique next: immediately rerun checked preparation, then wait for exact
+  `确认 TASK-027 完成并提交到远端`.
+
+# TASK-027 formal delivery authorized 2026-08-12
+
+- User supplied the exact formal-delivery phrase; `task_accept.py check` and
+  `accept` both passed at `2026-08-12T07:18:50Z`.
+- Current state is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; all review,
+  validation and documentation gates remain valid.
+- Exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`,
+  TASK-021–026 closure edits and historical resume packets from staging.
+- Unique next: formal Chinese commit, push task branch, fast-forward and push
+  `main`, then verify all four refs. No deployment.

@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "id": "authoritative_article_number_mismatch",
+      "base": "samples/positive/authoritative-mixed.json",
+      "pointer": "/lines/0/articleNumber",
+      "value": "GDHEPRD000999",
+      "schema": "authoritative-rfq-document.v2.schema.json",
+      "expectedError": "authoritative_article_number_mismatch"
+    },
+    {
+      "id": "authoritative_altered_digest",
+      "base": "samples/positive/authoritative-mixed.json",
+      "pointer": "/payloadDigest/value",
+      "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "schema": "authoritative-rfq-document.v2.schema.json",
+      "expectedError": "authoritative_payload_digest_mismatch"
+    },
+    {
+      "id": "public_lone_surrogate",
+      "base": "samples/positive/public-mixed.json",
+      "pointer": "/customer/message",
+      "valueUtf16CodeUnits": [55296],
+      "schema": "public-rfq-submission-draft.v2.schema.json",
+      "expectedError": "invalid_unicode"
+    }
+  ]
+}

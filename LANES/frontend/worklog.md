@@ -1355,3 +1355,154 @@ Each execution records:
 - outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Round 2 review PASS, final validation, acceptance, Git delivery or deployment
 - message_result: `MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-025-FRONTEND-ADVERSARIAL-P1-R1`; post-send strict audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice
 - unique_next_step: stop for independent Planner revision checkpoint; do not resend or start Round 2
+
+# TASK-027 frontend contract snapshot A1 2026-08-12
+
+- message: restored the registered frontend lane, read the A0/task authority and ACKed `MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1` before mutation
+- scope: executed A1 only; A2 Validator/crypto, mixed orchestration, Repository/Sink, Route Handler, UI, CMS, external systems, Git and deployment remain blocked
+- red: focused Node 24.18.0 test exited `1` with `MODULE_NOT_FOUND` for the absent RFQ Submission v2 verifier; no production snapshot/verifier byte existed
+- snapshot: exact `20/20` TASK-026 JSON bytes copied under `frontend/src/lib/rfq-submission-contract/v2/`; one closed manifest binds every canonical source/snapshot path and SHA-256
+- verifier: Node-built-ins only; five Schema/63 local refs closed; exact hash-bound TASK-026 machine boundary reproduced as `47 positive + 47 negative = 94/94`
+- attacks: removable temporary repositories reject missing/extra/tamper, symlink/non-regular/non-canonical objects, traversal, remote/unknown refs, authority substitution and source/verifier drift
+- focused: final `1 file / 5 tests PASS`; new verifier `20 JSON / 5 Schema / 63 refs / 94/94 PASS`
+- regressions: all nine existing contract verifiers, lint and typecheck PASS; no production build was run because A1 dispatch did not require one
+- protected: `20/20` byte parity and `46/46` non-document A0 hashes PASS; frontend README is the sole allowed protected documentation delta; package/lock/tsconfig/next-env exact
+- cleanup: generated `tsconfig.tsbuildinfo` moved recoverably to Trash; `.next`, temporary roots and listeners absent
+- artifacts: `FRONTEND_A1_EXECUTION_REPORT.md`, `FRONTEND_A1_TDD_RED_EVIDENCE.md`, `FRONTEND_A1_VALIDATION_LOG.md`, `FRONTEND_A1_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A2 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1`; post-send strict audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice
+- unique_next_step: stop for independent Planner A1 validation; do not resend or start A2
+
+# TASK-027 frontend runtime contract and canonical crypto A2 2026-08-12
+
+- message: read the exact A2 dispatch and A1 Planner PASS checkpoint, then ACKed `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2` before product mutation
+- scope: executed A2 only; mixed resolution/orchestration, replay/idempotency state, Repository/Sink, Route Handler, listener, UI, CMS, external systems, Git and deployment remain blocked
+- tdd: recorded three real vertical REDs — missing runtime module, missing canonical export, and both public/deep Client Component imports incorrectly building before server-only markers
+- contract: exact five local Schemas under strict Ajv 2020-12; four document roots, frozen semantic matrix, duplicate identities, Article Number placement, TTL/digest/error pairings, caller-isolated deep freeze and authentic opaque wrapper
+- hostile_input: Proxy/revoked Proxy/accessor/symbol/non-enumerable/cycle/unsupported/non-finite/lone-surrogate inputs fail through stable sanitized errors without attacker trap calls, raw payload or Ajv diagnostics
+- crypto: exact RFC 8785 business canonicalization, versioned HMAC-SHA-256 and comparison/Basket SHA-256 vectors reproduced; only an explicit 32-byte server-owned key is accepted and no test secret is embedded in production
+- server_only: all `4/4` production modules start with `import "server-only";`; marker-stripped public/deep Next controls build and guarded Client Component imports fail; temporary roots clean
+- focused: A2 `3 files / 18 tests PASS`; A1 snapshot `1/5 PASS`; A1 verifier `20/5/63/94`; relevant Validator/server-only regressions `3/52 PASS`; all nine existing verifiers PASS
+- validation: lint/typecheck PASS; source/snapshot `20/20`; A0 protected non-document `43/43`; complete A0 stream `46` exact with only the A1-authorized frontend README difference; forbidden import/secret scan PASS
+- production_build: intentionally not run beyond the focused real server-only Next builds, as required by the A2 dispatch
+- artifacts: `FRONTEND_A2_EXECUTION_REPORT.md`, `FRONTEND_A2_TDD_RED_EVIDENCE.md`, `FRONTEND_A2_VALIDATION_LOG.md`, `FRONTEND_A2_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A3 authorization, review, acceptance, Git delivery or deployment
+- final_governance: generated residue absent and next-env production hash exact; Markdown/trailing-whitespace and `git diff --check` PASS; DPG project/message/strict-lane gates PASS with zero issues before response creation
+- message_result: `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2`
+- post_response_governance: project and message validation remain PASS; strict lane audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice for this delivered response awaiting Planner acknowledgement
+- unique_next_step: stop for independent Planner A2 validation; do not resend or start A3
+
+# TASK-027 frontend authoritative mixed batch A3 2026-08-12
+
+- message: read the full A3 dispatch, task/design/seams, A2 Planner PASS checkpoint and required A2/TASK-025 source/sample authority, then ACKed `MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3` before product mutation
+- scope: executed A3 only; concrete Repository/Sink, replay/public results, Route Handler/HTTP, environment mode, UI, CMS, external effects, review, Git and deployment remain blocked
+- tdd: recorded five direct behavior RED/GREEN closures for missing authority seam, missing complete response binding, missing authentic authoritative output, missing intake runtime and invalid injected identity reaching post-reservation effects
+- projection: authentic A2 submission only; closed frozen standard/custom/accessory TASK-025 array, exact order, duplicate/unsupported recheck and no customer/display/internal Basket identity leakage
+- binding: one complete `1..50` mixed call; twelve frozen TASK-026 mismatch cells reject atomically; response owns model/path/configuration/Article Number; custom remains null/sales_follow_up with only custom_length reason
+- authoritative: frozen public/mixed/authoritative mapping passes existing strict Validator and returns only the authentic opaque deep-frozen wrapper; forged wrappers, response mutation and nested hostile Proxy reject without leakage
+- intake: exact digest/comparison/snapshot evidence, one lookup, pre-gate, one reservation and one mixed resolution in order; existing/expired-indeterminate and pre-gate rejection have zero later effects; invalid injected identity/security fails before reservation
+- server_only: all `6/6` RFQ runtime modules carry first-line markers; public plus canonical/authority/intake deep guarded Client builds fail while marker-stripped controls pass
+- focused: RFQ A1-A3 `6 files / 48 tests PASS`; direct A3 `3/27 PASS`; TASK-025 consumer plus Quote Basket v3 `8/24 PASS`; all ten verifiers PASS
+- validation: lint/typecheck PASS; snapshot `20/20`; protected non-document `43/43`; complete A0 stream `46` exact plus only the A1-authorized frontend README difference; forbidden-call/secret scan PASS
+- production_build: intentionally not run beyond scoped real server-only builds, as required by the A3 dispatch
+- artifacts: `FRONTEND_A3_EXECUTION_REPORT.md`, `FRONTEND_A3_TDD_RED_EVIDENCE.md`, `FRONTEND_A3_VALIDATION_LOG.md`, `FRONTEND_A3_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A4 authorization, review, acceptance, Git delivery or deployment
+- final_governance: generated residue absent and next-env production hash exact; Markdown/trailing-whitespace and `git diff --check` PASS; DPG project/message/strict-lane gates PASS with zero issues before response creation
+- message_result: `MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-AUTHORITATIVE-BATCH-A3`
+- post_response_governance: project/message/diff/residue checks remain PASS; strict lane audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice for this delivered response awaiting Planner acknowledgement
+- unique_next_step: stop for independent Planner A3 validation; do not resend or start A4
+
+# TASK-027 frontend A3 Planner P1 narrow revision 2026-08-12
+
+- message: read the exact revision dispatch and Planner FAIL checkpoint, ACKed `MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1`, and ran checked reopen; reopen correctly made no state change because TASK-027 is already `IN_PROGRESS`
+- scope: closed only Date-range expiry overflow and hostile repository-thrown Proxy reflection; A4, concrete Repository/Sink, Route Handler/HTTP, UI, CMS, dependencies, external work, review and Git remain blocked
+- red: direct intake `1 file / 6 tests` exited `1`; prior `4` passed and exact new `2` failed with raw `RangeError: Invalid time value` and leaked `PRIVATE_TASK027_PROXY_DIAGNOSTIC`
+- green: fixed expiry is representability-checked before business side effects; repository await catch ignores the unknown value and successful lookup-result validation remains separately sanitized
+- trap_proof: null-prototype Proxy `get`, `getPrototypeOf`, `ownKeys`, descriptor, `has` and coercion counters are all zero; stable error surfaces contain no private diagnostic
+- regressions: direct intake `1/6`, RFQ A1-A3 `6/49`, TASK-025 plus all Quote Basket v3 `15/35`, ten verifiers, lint and typecheck PASS
+- protection: non-document A0 hashes `43/43`; complete stream `46 exact / only authorized frontend README differs`; server-only `6/6`; forbidden-call/reflection scans, next-env hash and cleanup PASS
+- artifacts: appended bounded revision evidence to the four existing `FRONTEND_A3_*` files
+- outcome: `PASS_FOR_PLANNER_RECHECK`; not A3 Planner PASS, A4 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-A3-HOSTILE-DEPENDENCY-P1-R1`
+- unique_next_step: stop for independent Planner recheck; do not resend or start A4
+
+# TASK-027 frontend process-local Stub state and delivery A4 2026-08-12
+
+- message: read the exact A4 dispatch and A3 `PASS_AFTER_NARROW_REVISION` checkpoint, then ACKed `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4` before mutation
+- scope: executed A4 only; Route Handler/HTTP/config/listener, UI, CMS, dependencies, external systems, review, Git and deployment remain blocked
+- tdd: recorded real missing-constructor REDs for `StubRfqRepository` and `StubRfqSink`, a completed-runtime replay RED against the A3-only lookup shape, and a hostile transition normalization RED
+- repository: private process-local fingerprint Map; exact live replay/conflict/fresh/pre-gate/expired-indeterminate decisions, atomic reservation, fixed 30-day anchor and customer-safe retained state only
+- sink: authentic pending document only, closed accepted/indeterminate/rejected outcome, call count only and zero document retention
+- outcomes: accepted `201 -> 200`, indeterminate `202 -> 202` retry 30, rejected `409 -> 409`, mixed failure stored `409`, conflict/pre-gate/expired reconciliation safe and no automatic resend
+- concurrency: same-key fresh pair produces one reservation record and at most one mixed/Sink attempt
+- safety: authentic public wrappers only; no customer/Article Number/internal UUID/token/secret/diagnostic leakage; hostile Sink/repository thrown values are not reflected or coerced
+- validation: RFQ A1-A4 `9/62`, TASK-025 plus Quote Basket v3 `15/35`, ten verifiers, lint, typecheck, protected hashes, server-only `8/8`, cleanup PASS
+- artifacts: `FRONTEND_A4_EXECUTION_REPORT.md`, `FRONTEND_A4_TDD_RED_EVIDENCE.md`, `FRONTEND_A4_VALIDATION_LOG.md`, `FRONTEND_A4_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A5 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-STUB-STATE-DELIVERY-A4`
+- unique_next_step: stop for independent Planner A4 validation; do not resend or start A5
+
+# TASK-027 frontend local-only HTTP A5 2026-08-12
+
+- message: read the exact A5 dispatch and A4 Planner PASS checkpoint, then ACKed `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5` before mutation
+- scope: executed A5 only; A6 documentation consolidation, UI, CMS, external systems, review, Git and deployment remain blocked
+- tdd: recorded missing config module, missing Route Handler and malformed-contract `503` versus required `400` product REDs; also corrected copied-project and canonical-redirect smoke harness REDs without widening production behavior
+- config: non-production exact `stub`, exact loopback HTTP origin with explicit port, bounded key selector, exact lowercase 64-hex secret and closed Sink outcome; every malformed/unset/production value disables before body/business access
+- transport: exact Origin/media, declared and streamed `262144` byte limits, fatal UTF-8, one JSON parse, authentic public validation, one A4 runtime call, `no-store`, no CORS and sanitized closed status mapping
+- wiring: one process-local Repository/Sink runtime per active config; one TASK-025 mixed POST per new intent and zero `/resolve` or other legacy consumer calls
+- real_http: PASS for accepted `201 -> 200`, changed-digest `409`, indeterminate `202 -> 202`, rejected `409 -> 409`, safe mixed/transport failures, and unset/disabled/production final empty `404`
+- validation: direct `3/12`, RFQ A1-A5 `11/68`, TASK-025 plus Quote Basket v3 `15/35`, full `77/647`, ten verifiers, lint, typecheck and production build PASS
+- protection: A0 non-document `43/43`; package/lock/tsconfig protected hashes exact; leakage/CORS/listener/residue/diff gates PASS; generated output moved recoverably to Trash and next-env restored to `7b550dda...e712651`
+- artifacts: `FRONTEND_A5_EXECUTION_REPORT.md`, `FRONTEND_A5_TDD_RED_EVIDENCE.md`, `FRONTEND_A5_VALIDATION_LOG.md`, `FRONTEND_A5_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A6 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-LOCAL-HTTP-A5`
+- unique_next_step: stop for independent Planner A5 validation; do not resend or start A6
+
+# TASK-027 frontend A5 raw-body P1 narrow revision R1 2026-08-12
+
+- message: read the A5 FAIL checkpoint and exact narrow dispatch; checked reopen safely refused because TASK-027 is already `IN_PROGRESS`; ACKed `MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1` before mutation
+- scope: closed only hostile raw-body error classification and completed the originally frozen real HTTP raw-gate proof; A6, complete review, acceptance, Git and deployment remain blocked
+- red: Route focused exited `1`; prior `3` passed, hostile reader test leaked `PRIVATE_RAW_BODY_DIAGNOSTIC` through `instanceof RangeError`, and `getPrototypeOf` ran once
+- green: `readRawBody` returns only internal `ok | invalid | too_large`; unknown rejection uses binding-free catch and authentic `400`, internal declared/stream overflow retains authentic `413`
+- trap_proof: hostile null-prototype Proxy has zero `get/getPrototypeOf/getOwnPropertyDescriptor/has/ownKeys/set` calls; public body has no diagnostic, is `no-store` and has no CORS
+- parse_proof: direct public Route seam observes exactly one `JSON.parse` for one raw `{}` body before contract rejection, with no production test hook
+- real_http: wrong Origin `403`, parameterized media `415`, declared/stream oversize `413`, fatal UTF-8 `400`, zero WordPress raw-gate calls; all original replay/failure/production behaviors remain PASS
+- validation: Route `1/5`, A1-A5 `11/70`, TASK-025/Basket v3 `15/35`, full `77/649`, ten verifiers, lint/typecheck/build/smoke/protected/leakage/cleanup/diff PASS
+- artifacts: appended R1 history and current-byte evidence to the four existing `FRONTEND_A5_*` files only
+- outcome: `PASS_FOR_PLANNER_RECHECK`; not A6 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-RAW-BODY-P1-R1`
+- unique_next_step: stop for independent Planner A5 recheck; do not resend or start A6
+
+# TASK-027 frontend documentation and regression consolidation A6 2026-08-12
+
+- message: read the exact A6 dispatch and A5 historical FAIL plus `PASS_AFTER_NARROW_REVISION`; ACKed `MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6` before documentation mutation
+- scope: updated only frontend-owned documentation, created exact unapplied Planner-owned root/architecture deltas, consolidated task execution/validation/diff truth and ran complete regression; no product behavior changed
+- docs: frontend README now documents exact local config, placeholder key, `/api/rfq/intake/`, outcome/replay semantics, process-local loss, production 404, commands and explicit absent production/external capabilities
+- planner_docs: root README and architecture were not edited; exact minimal replacements/addition are in `FRONTEND_A6_PLANNER_DOC_DELTAS.md`; project document impact remains pending Planner apply
+- history: A3 Date/hostile-dependency FAIL and A5 hostile raw-body `FAIL / P1=1` remain in canonical checkpoints and are explicitly preserved in consolidated evidence
+- focused: RFQ A1-A5 `11/70`; TASK-025 mixed plus Quote Basket v3 `15/35`
+- resource_safe_full: four disjoint groups cover all `77 files / 649 tests` as `20/224 + 20/185 + 20/114 + 17/126`
+- monolithic_note: initial all-at-once run had one listener timing miss (`76/77 files`, `648/649 tests`); the exact file immediately passed `1/4` and again in group 1 `20/224`, with no source/test edit
+- validation: ten verifiers, lint, typecheck, production build and all five production smokes PASS; RFQ smoke includes all raw gates and local/production outcomes
+- integrity: protected non-document `43/43`, package/lock/tsconfig/next-env exact, 21 JSON inventory, server-only `9/9`, forbidden imports/secret/diagnostic/CORS scans, diff and cleanup PASS
+- artifacts: `FRONTEND_A6_PLANNER_DOC_DELTAS.md`, `EXECUTION_REPORT.md`, `TEST_OR_VALIDATION_LOG.md`, `DIFF_OR_OUTPUT_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not complete review, acceptance, Git delivery, deployment or external integration
+- final_governance: Markdown fences/whitespace, local link, JSON, `git diff --check`, DPG project/messages/strict-lane all PASS with zero issues
+- message_result: `MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-DOCS-REGRESSION-A6`
+- unique_next_step: stop for independent Planner A6 validation and Planner-owned documentation application; do not resend or start review
+
+# TASK-027 frontend Adversarial P1-1 narrow revision R1 2026-08-12
+
+- message: read the narrow dispatch and canonical `FAIL / P0=0 / P1=1 / P2=2` review, verified TASK-027 is already `NEEDS_REVISION`, and ACKed `MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1` before mutation
+- scope: closed only `P1-1` request-reference hostile return handling; canonical review, Planner P2 corrections, task/Board/State, contracts, CMS, dependencies, UI, external systems and Git remain unchanged
+- red: direct Stub runtime exited `1`; prior `8` tests passed and the new ninth test received raw `PRIVATE_REQUEST_REFERENCE_GET` after the pattern check coerced a hostile Proxy
+- green: dependency result is held as `unknown` inside one protected block; only a primitive string reaches the fixed request-reference regex and every invalid/hostile result becomes the existing stable `dependency_failed`
+- trap_proof: hostile and revoked non-string values produce zero `get/getOwnPropertyDescriptor/getPrototypeOf/has/ownKeys` trap calls, zero private diagnostic and no retained state; valid reference still yields the existing customer-safe `409 request_not_allowed`
+- regressions: direct `1/9`, RFQ A1-A5 `11/71`, TASK-025 plus Quote Basket v3 `15/35`, all ten verifiers, lint with zero warnings and typecheck PASS
+- protection: A0 non-document `43/43`, package/lock/tsconfig/next-env exact; no production diagnostic marker, generated output or listener; `git diff --check` PASS
+- artifact: `FRONTEND_ADVERSARIAL_P1_R1.md`
+- outcome: `PASS_FOR_PLANNER_RECHECK`; not review closure, acceptance, Git delivery or deployment
+- final_governance: Markdown/trailing-whitespace, `git diff --check`, DPG project/messages/strict-lane all PASS with zero issues before response creation
+- message_result: `MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1`
+- post_response_governance: project/message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+- unique_next_step: stop for Planner validation plus same-reviewer bounded P1 closure; do not resend or repeat the complete review

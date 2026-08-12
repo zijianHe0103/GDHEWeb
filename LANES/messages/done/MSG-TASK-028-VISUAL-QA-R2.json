@@ -1,0 +1,33 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-028-VISUAL-QA-R2",
+  "type": "revision_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-028",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-12T10:54:31Z",
+  "requires_response_to": "MSG-TASK-028-VISUAL-QA-R1-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Execute only TASK-028 Visual QA Round 2 exactly as frozen in TASKS/ARTIFACTS/TASK-028/VISUAL_QA_R2_DISPATCH.md. Preserve Round 1 FAIL/evidence. On the Planner-owned accepted runtime, close S1/O1/O2 and the accepted-first state matrix with real browser evidence; then request one controlled Planner restart to indeterminate and continue the same Round 2 for processing/explicit retry. Recheck five widths, keyboard/focus, aria, reduced motion, network/request counts and protected-field leakage. Write only visual artifacts/QA/worklog, return one linked verdict and stop. Do not edit product, run review, Git, deployment or external integration.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-028/VISUAL_QA_R2_DISPATCH.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_VISUAL_R1_REVISION_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-028/VISUAL_QA_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-028/VISUAL_QA_R2_REPORT.md",
+    "QA/TASK-028/VISUAL_QA_R2_REPORT.md",
+    "QA/TASK-028/EVIDENCE_R2_INVENTORY.sha256"
+  ],
+  "notes": "One narrow Round 2 only. Ask Planner for the single accepted-to-indeterminate runtime restart after accepted evidence. Unique complete review remains blocked.",
+  "dispatched_at": "2026-08-12T10:54:44Z",
+  "delivery_key": "MSG-TASK-028-VISUAL-QA-R2:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "target_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_id": "MSG-TASK-028-VISUAL-QA-R2:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_channel": "external_codex_thread_bridge",
+  "done_at": "2026-08-12T10:54:53Z",
+  "updated_at": "2026-08-12T10:54:53Z"
+}

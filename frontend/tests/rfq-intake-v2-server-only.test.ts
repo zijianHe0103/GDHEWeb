@@ -47,9 +47,13 @@ async function buildClientImport(
     await mkdir(join(temporaryRoot, "src", "app", "api", "rfq", "intake"), {
       recursive: true,
     });
+    await mkdir(join(temporaryRoot, "src", "app", "api", "rfq", "intent"), {
+      recursive: true,
+    });
+    await mkdir(join(temporaryRoot, "src", "lib", "rfq"), { recursive: true });
     await cp(
-      join(projectRoot, "src", "lib", "rfq"),
-      join(temporaryRoot, "src", "lib", "rfq"),
+      join(projectRoot, "src", "lib", "rfq", "server"),
+      join(temporaryRoot, "src", "lib", "rfq", "server"),
       { recursive: true },
     );
     await cp(
@@ -78,6 +82,10 @@ async function buildClientImport(
     await cp(
       join(projectRoot, "src", "app", "api", "rfq", "intake", "route.ts"),
       join(temporaryRoot, "src", "app", "api", "rfq", "intake", "route.ts"),
+    );
+    await cp(
+      join(projectRoot, "src", "app", "api", "rfq", "intent", "route.ts"),
+      join(temporaryRoot, "src", "app", "api", "rfq", "intent", "route.ts"),
     );
     if (stripServerOnlyMarkers) {
       await stripMarkers(join(temporaryRoot, "src", "lib"));
@@ -127,7 +135,9 @@ describe("TASK-027 RFQ Intake v2 server-only boundary", () => {
     ["deep Stub Repository module", "../src/lib/rfq/server/v2/stub-repository"],
     ["deep Stub Sink module", "../src/lib/rfq/server/v2/stub-sink"],
     ["deep configuration module", "../src/lib/rfq/server/v2/config"],
+    ["deep intent issuer and verifier", "../src/lib/rfq/server/v2/intent"],
     ["Route Handler module", "../src/app/api/rfq/intake/route"],
+    ["intent Route Handler module", "../src/app/api/rfq/intent/route"],
   ])("rejects Client Component import of the %s", async (_name, modulePath) => {
     const positive = await buildClientImport(modulePath, true);
     const guarded = await buildClientImport(modulePath, false);

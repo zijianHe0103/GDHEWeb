@@ -7,6 +7,7 @@ import type {
   ReadyConfiguredDraftV3,
 } from "../../types/quote-basket-v3";
 import {
+  QUOTE_BASKET_STORAGE_KEY,
   type QuoteBasketStorage,
 } from "./storage";
 import {
@@ -14,10 +15,13 @@ import {
   addConfiguredProductV3,
   createEmptyQuoteBasketV3,
   loadQuoteBasketV3,
+  parseQuoteBasketV3,
   persistQuoteBasketV3,
   removeQuoteBasketV3Item,
   setQuoteBasketV3ItemQuantity,
 } from "./v3";
+import { matchesValidatedAcceptedRfqReceipt } from "../rfq/submission/public-response";
+import { computeRfqBasketSnapshotTokenBrowser } from "../rfq/submission/snapshot-token";
 
 export type QuoteBasketMutation = "added" | "merged";
 
@@ -32,6 +36,7 @@ export type BrowserQuoteBasketAdapter = Readonly<{
   ): Readonly<{ basket: QuoteBasketDocumentV3; mutation: QuoteBasketMutation }>;
   setQuantity(entryId: string, quantity: number): QuoteBasketDocumentV3;
   remove(entryId: string): QuoteBasketDocumentV3;
+  clearAcceptedReceipt(receipt: unknown, submittedSnapshot: unknown): Promise<boolean>;
 }>;
 
 export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
@@ -109,7 +114,38 @@ export function createBrowserQuoteBasketAdapter(dependencies: Readonly<{
         ),
       );
     },
+    clearAcceptedReceipt: async (receipt, submittedSnapshot) => {
+      try {
+        const token = await computeRfqBasketSnapshotTokenBrowser(submittedSnapshot);
+        if (!matchesValidatedAcceptedRfqReceipt(receipt, submittedSnapshot, token)) {
+          return false;
+        }
+        const raw = dependencies.storage.getItem(QUOTE_BASKET_STORAGE_KEY);
+        if (raw === null) return false;
+        const current = parseQuoteBasketV3(raw, now());
+        if (!matchesValidatedAcceptedRfqReceipt(
+          receipt,
+          sourceSnapshot(current),
+          token,
+        )) return false;
+        dependencies.storage.removeItem(QUOTE_BASKET_STORAGE_KEY);
+        return true;
+      } catch {
+        return false;
+      }
+    },
   });
+}
+
+function sourceSnapshot(basket: QuoteBasketDocumentV3) {
+  return {
+    schemaVersion: basket.schemaVersion,
+    revision: basket.revision,
+    writerId: basket.writerId,
+    mutationId: basket.mutationId,
+    updatedAt: basket.updatedAt,
+    expiresAt: basket.expiresAt,
+  };
 }
 
 function requireBasket(

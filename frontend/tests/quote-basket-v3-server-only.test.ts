@@ -49,6 +49,20 @@ async function buildClientImport(
       join(temporaryRoot, "src", "lib", "quote-basket"),
       { recursive: true },
     );
+    await mkdir(join(temporaryRoot, "src", "lib", "rfq", "submission"), {
+      recursive: true,
+    });
+    for (const file of ["public-response.ts", "snapshot-token.ts"]) {
+      await cp(
+        join(projectRoot, "src", "lib", "rfq", "submission", file),
+        join(temporaryRoot, "src", "lib", "rfq", "submission", file),
+      );
+    }
+    await cp(
+      join(projectRoot, "src", "lib", "rfq-submission-contract"),
+      join(temporaryRoot, "src", "lib", "rfq-submission-contract"),
+      { recursive: true },
+    );
     await cp(
       join(projectRoot, "src", "types"),
       join(temporaryRoot, "src", "types"),

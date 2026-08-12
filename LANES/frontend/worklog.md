@@ -1373,6 +1373,25 @@ Each execution records:
 - message_result: `MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-CONTRACT-SNAPSHOT-A1`; post-send strict audit reports only the expected `DISPATCHED_MESSAGES_PENDING` notice
 - unique_next_step: stop for independent Planner A1 validation; do not resend or start A2
 
+# TASK-028 frontend local intent and submission projection A2 2026-08-12
+
+- message: restored the registered frontend lane, read A1 Planner PASS and the complete A2 authority, and ACKed `MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2` before mutation
+- scope: executed A2 only; visible form/state, receipt UI, Basket clear/retry, Visual QA, CRM/Feishu, production persistence, review, Git and deployment remain blocked
+- tdd_red_1: intent suite exited `1` because `server/v2/intent` was missing; server-owned HMAC issuer/verifier then passed direct crypto/context/timing/hostile tests
+- tdd_red_2: intent Route suite exited `1` because `/api/rfq/intent/route` was missing; exact local 404/Origin/media/8192-byte/UTF-8/parse/no-store gates then passed
+- tdd_red_3: projection suite exited `1` because `rfq/submission` was missing; exact ready standard/custom/accessory, `1..50`, order, blocked/identity/size/no-network projection then passed
+- tdd_red_4: prior nine A2 tests stayed green while three builder/integration tests failed on missing `validateLocalRfqIntentResponse`; minimum complete builder and intake pre-reservation binding closed them
+- behavior: token binds contract/origin/key/six source fields/v2 snapshot token/key version/issued/expiry with exact 30 minutes and constant-time comparison; replay lookup remains before unseen-key intent verification
+- integration: valid unseen request uses one unchanged TASK-025 mixed batch; expired same-key replay remains `200` without resend; unseen tamper returns closed `403 invalid_submission_intent` before reservation/mixed/Sink
+- validation: A2 direct `5/18`; A1+A2/TASK-027 `9/42`; server-only copied builds `1/10`; full `82/669`; ten verifiers, lint, typecheck, build and real RFQ production smoke PASS
+- protection: A0 `49/49`, both A1 hashes, package/lock/tsconfig and next-env production hash exact; no private/secret/diagnostic/network leakage, generated residue or listener; `git diff --check` PASS
+- artifacts: `FRONTEND_A2_TDD_RED_EVIDENCE.md`, `FRONTEND_A2_EXECUTION_REPORT.md`, `FRONTEND_A2_VALIDATION_LOG.md`, `FRONTEND_A2_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A3 authorization, complete review, acceptance, Git delivery or deployment
+- final_governance: Markdown/trailing-whitespace, DPG project/messages/strict lane all PASS with zero issues before response creation
+- unique_next_step: send one linked execution response and stop for independent Planner A2 validation; do not start A3
+- message_result: `MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2`
+- post_response_governance: project/message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+
 # TASK-027 frontend runtime contract and canonical crypto A2 2026-08-12
 
 - message: read the exact A2 dispatch and A1 Planner PASS checkpoint, then ACKed `MSG-TASK-027-FRONTEND-RUNTIME-CONTRACT-CRYPTO-A2` before product mutation
@@ -1506,3 +1525,127 @@ Each execution records:
 - message_result: `MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-027-FRONTEND-ADVERSARIAL-P1-R1`
 - post_response_governance: project/message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
 - unique_next_step: stop for Planner validation plus same-reviewer bounded P1 closure; do not resend or repeat the complete review
+
+# TASK-028 frontend customer public domain A1 2026-08-12
+
+- message: restored the registered frontend lane, read the complete A0/task/dispatch authority and ACKed `MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1` before mutation
+- scope: executed A1 only; intent/HMAC, Basket projection, intake integration, form/UI, receipt, clearing, Visual QA, review, CRM/Feishu, Git and deployment remain blocked
+- tdd_red_1: focused run exited `1` with missing `../src/lib/rfq/customer`; minimum happy normalization then passed `1/1`
+- tdd_red_2: prior happy test passed while two new contract-error tests failed on generic `contactMethods/invalid`; exact closed errors, Unicode scalar and website semantics then passed `3/3`
+- tdd_red_3: prior three tests passed while hostile accessor escaped as `PRIVATE_CUSTOMER_ACCESSOR`; descriptor snapshot and Proxy rejection plus exact non-string precedence then passed `4/4`
+- implementation: client-safe exact ten-field normalizer; JavaScript trim, optional-empty omission, immutable output, frozen v2 publicCustomer Ajv validation, exact code-point/email/HTTP(S) bounds and no website fetch
+- hostile_boundary: unknown/accessor/symbol/non-enumerable/non-data/custom-prototype/array/primitive/transparent/throwing/revoked Proxy inputs fail closed; getter and coercion counters remain zero and no diagnostic escapes
+- validation: direct `1/4`; customer plus relevant RFQ v2 `3/15`; verifier `20/5/63/94`; lint, typecheck and A0 protected `49/49` PASS
+- artifacts: `FRONTEND_A1_TDD_RED_EVIDENCE.md`, `FRONTEND_A1_EXECUTION_REPORT.md`, `FRONTEND_A1_VALIDATION_LOG.md`, `FRONTEND_A1_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A2 authorization, review, acceptance, Git delivery or deployment
+- final_governance: generated TypeScript cache removed; no `.next`, listener or temporary root; source network/internal scan, Markdown/whitespace, `git diff --check`, DPG project/messages/strict-lane PASS with zero issues before response creation
+- message_result: `MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1`
+- post_response_governance: project/message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+- unique_next_step: stop for independent Planner A1 validation; do not resend or start A2
+
+# TASK-028 frontend visible form and one submission A3 2026-08-12
+
+- message: restored the registered frontend lane, read A2 Planner PASS plus the complete A3 dispatch and ACKed `MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3` before mutation
+- scope: executed A3 only; A4 accepted-snapshot clearing/retry, A5, Visual QA, complete review, acceptance, Git, deployment, CMS/CRM/Feishu and external integration remain blocked
+- tdd: four direct REDs captured missing form presentation, missing one-operation client seam, missing closed public-response parser and the real Quote Basket legacy placeholder before each minimum GREEN
+- form: exact ten fields/order, native labels, stable IDs, four required controls, frozen autocomplete/inputmode/maxima, contact guidance, linked field errors, focusable summary and one result live region
+- gating: ready non-empty Basket plus server-derived enabled boolean exposes the form; empty/storage/disabled/requires-validation/requires-readd states expose no submit; local non-production Stub truth remains explicit
+- operation: one fixed same-origin intent POST then one fixed intake POST, bare JSON, no-store, redirect refusal, zero retry/polling/external calls; pending duplicates suppressed and Basket/form controls disabled
+- response: exact receipt/error Schemas, semantic pairings, accepted 200/201, processing 202 and all sixteen public error HTTP cells; malformed/extra/unknown/status/media/oversize/hostile input fails through stable sanitized error
+- retention: accepted-local, processing and every failure retain the complete Basket; visible accepted copy says clearing has not occurred in this checkpoint; no clear/remove-storage or partial delete seam exists
+- leakage: UI/DTO output omits intent, key, snapshot token, request reference, Article Number, internal identities, raw bodies and diagnostics; page crosses only one enabled boolean from server config
+- validation: A3 `5/25`, A1-A3 direct `8/34`, all RFQ/TASK-027 `19/107`, full `85/687`, ten verifiers, lint/typecheck/build and both relevant production smokes PASS
+- protection: A0 `49/49`, A1 source/test, package/lock/tsconfig/next-env exact; generated `.next` removed after final build and no task-owned listener/residue remains
+- artifacts: `FRONTEND_A3_TDD_RED_EVIDENCE.md`, `FRONTEND_A3_EXECUTION_REPORT.md`, `FRONTEND_A3_VALIDATION_LOG.md`, `FRONTEND_A3_DIFF_SUMMARY.md`
+- docs: root/frontend README and architecture remain deliberately pending for frozen A5; A3 does not claim documentation impact resolved
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A4 authorization, review, acceptance, Git delivery or deployment
+- final_governance: four named artifacts, Markdown/trailing whitespace, `git diff --check`, DPG project/messages/strict-lane PASS with zero issues before response creation
+- message_result: `MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3`
+- unique_next_step: stop for independent Planner A3 validation; do not start A4 or resend
+
+# TASK-028 frontend accepted clear and recovery A4 2026-08-12
+
+- message: restored the registered frontend lane, read the A3 Planner PASS plus complete A4 dispatch and ACKed `MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4` before mutation
+- scope: executed A4 only; A5, Visual QA, complete review, acceptance, Git, deployment, CMS/CRM/Feishu and external integration remain blocked
+- tdd: direct REDs captured the missing authenticated receipt material, missing browser token module, missing adapter clear, stale accepted UI mapping and absent live-attempt reuse; a transparent Proxy token regression was also observed RED before closure
+- receipt: existing customer-safe DTO stays exact; hidden frozen snapshot/token material is bound only to the parser-produced object through a private `WeakMap`, and plain/cloned lookalikes fail
+- token: Web Crypto reproduces the frozen v2 prefix/canonical vector and fails closed for precision, canonical date/TTL, UUID, symbol, accessor and hostile/transparent Proxy drift without diagnostic output
+- clear: final raw storage read plus exact six-field receipt/submitted/current match removes only the Quote Basket key; malformed/expired/changed/throwing storage and processing/error/authenticity/token mismatch preserve every current byte
+- concurrent_change: real intake-pending storage mutation returns `accepted_basket_changed`, retains the complete newer Basket and performs zero partial deletion
+- retry: one live normalized customer/snapshot/intent/key/draft/body is closure-only; unchanged explicit retry is `0 intent + 1 intake` with byte-identical body, while customer/Basket/expiry/security/conflict/accepted invalidate and processing/rate/temporary may retain
+- validation: direct A4 `5/31`, RFQ plus Quote Basket `36/188`, full Vitest `87/700`, ten verifiers, lint/typecheck/build and both relevant production smokes PASS
+- protection: 47 immutable A0 paths exact plus two A0-authorized Browser adapter/hook edits; A1 hashes and package/lock/tsconfig/next-env exact; frozen contracts unchanged
+- cleanup: final `.next` removed, next-env restored to production hash, TypeScript cache/copied roots/listener absent; source leakage scan and `git diff --check` PASS
+- artifacts: `FRONTEND_A4_TDD_RED_EVIDENCE.md`, `FRONTEND_A4_EXECUTION_REPORT.md`, `FRONTEND_A4_VALIDATION_LOG.md`, `FRONTEND_A4_DIFF_SUMMARY.md`
+- docs: A5-owned frontend/root/architecture consolidation remains pending; A4 updates only direct evidence
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not A5 authorization, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4`
+- unique_next_step: stop for independent Planner A4 validation; do not resend or start A5
+
+# TASK-028 frontend HTTP/docs consolidation A5 2026-08-12
+
+- message: restored the registered frontend lane, read the complete A0 authority, A1-A4 Planner checkpoints and A5 dispatch, then ACKed `MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5` before mutation
+- scope: executed A5 HTTP/production fail-closed/security/regression/frontend-doc consolidation only; Visual QA, complete review, acceptance, Git, deployment, CMS/CRM/Feishu and external integration remain blocked
+- tdd_red: `quote-basket-route.test.ts` exited `1`; `5/6` prior tests passed and the new unset/disabled preview gate received a rendered page with `submissionEnabled=false` instead of Next.js 404
+- minimum_green: `/request-a-quote/` now requires both an allowed local Product Detail mode and a complete enabled RFQ Stub config; no A0-A4 customer, intent, response, clear or retry semantics changed; direct gate passed `1/6`
+- regression_history: first full run preserved `86/87 files` and `701/702 tests`; the sole stale TASK-023 preview test expected the old no-RFQ-config page `200`; only its process env was completed, then preview/route passed `2/18` and final full passed `87/702`
+- real_http: configured local page/noindex/non-production disclosure; accepted/replay, processing/replay, conflict, customer-field and Basket refresh failures; one intent plus one intake for a new attempt; byte-identical replay; zero legacy endpoint; unset/disabled/production page+intent+intake final 404 with zero WordPress calls
+- security: public/deep server-only matrix and receipt export surface passed `3/21`; real HTML/Flight and public responses contain no Article Number, UUID, WordPress/Feishu identity, HMAC/secret, key, intent, source snapshot/token, raw body or diagnostics; no new session/cookie/URL/analytics/log/polling/retry persistence seam
+- validation: RFQ plus Quote Basket `36/191`; full `87/702`; ten verifiers; lint, `tsc --noEmit --incremental false`, Next.js production build and all five production smokes PASS
+- protection: immutable A0 `47/47` exact plus two authorized A4 Browser differences; A1 source/test, package/lock/pre-existing tsconfig and production next-env exact; final generated output, copied roots and port 3000 listener absent
+- docs: `frontend/README.md` now records exact local config/start/test flow, ten fields, accepted clear/change and explicit manual retry limits; root README/architecture were not edited, and exact Planner-owned replacements are in `FRONTEND_A5_PLANNER_DOC_DELTAS.md`
+- artifacts: `FRONTEND_A5_TDD_OR_BOUNDARY_EVIDENCE.md`, `FRONTEND_A5_EXECUTION_REPORT.md`, `FRONTEND_A5_VALIDATION_LOG.md`, `FRONTEND_A5_DIFF_SUMMARY.md`, `FRONTEND_A5_PLANNER_DOC_DELTAS.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; not Visual QA, complete review, acceptance, Git delivery, deployment or external integration
+- final_governance: Markdown/trailing whitespace, protected/source/residue/listener scans, `git diff --check`, DPG project/messages/strict-lane PASS before response creation
+- message_result: `MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5`
+- post_response_governance: message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+- unique_next_step: stop for independent Planner A5 validation; do not resend or start Visual QA/review
+
+# TASK-028 frontend Visual R1 narrow revision 2026-08-12
+
+- message: restored the registered frontend lane, read the frozen Visual R1 `FAIL 1/2/0`, dispatch and current production/tests, then ACKed `MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION` before mutation
+- transition_preflight: `task_transition.py reopen` was attempted as required and safely rejected because the matching task is already `IN_PROGRESS`; no Planner-owned state was mutated
+- scope: closed only S1/O1/O2; Visual Round 1 history remains FAIL and Visual Round 2, complete review, acceptance, Git, deployment, CMS/CRM/Feishu and external integration remain blocked
+- s1_tdd: focused current-client RED received `/api/rfq/intent/` and `/api/rfq/intake/`; minimum GREEN removes only the two trailing slashes and preserves `redirect: "error"`, same-origin POST, one intent/one intake, pending suppression and explicit replay
+- o1_tdd: customer and rendered-form REDs received only the contact-group error; minimum GREEN adds only Ajv `allErrors: true`, producing deterministic `fullName`, `companyName`, `countryRegion`, `city`, `contactMethods` errors with stable summary/field accessibility and no diagnostics
+- o2_tdd: focused markup RED proved the Privacy Policy link absent; minimum GREEN adds one same-page focusable target before Submit and truthful local Stub/non-durable/no Feishu-CRM-email copy with no external href, route, CSS or legal-production claim
+- validation: combined direct `3/29`, RFQ plus Quote Basket `36/194`, full Vitest `87/705`, ten verifiers, lint, non-incremental typecheck, production build and five production smokes PASS
+- protection: A0 `47 exact + 2 previously authorized A4 Browser differences + 0 blocking`; package/lock/tsconfig and restored production next-env exact; changed production/test surface is limited to six authorized files
+- cleanup: build-generated `.next` removed, next-env restored to production hash, TypeScript cache/copied roots/task listeners/task temp roots absent; source leakage scan and `git diff --check` PASS
+- artifacts: `FRONTEND_VISUAL_R1_REVISION_TDD_RED.md`, `FRONTEND_VISUAL_R1_REVISION_REPORT.md`, `FRONTEND_VISUAL_R1_REVISION_VALIDATION_LOG.md`, `FRONTEND_VISUAL_R1_REVISION_DIFF_SUMMARY.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; this is not Visual QA PASS, review, acceptance, Git delivery or deployment
+- message_result: `MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION`
+- post_response_governance: message validation and `git diff --check` remain PASS; strict lane reports only the expected `DISPATCHED_MESSAGES_PENDING` notice while Planner acknowledgement is pending
+- unique_next_step: stop for independent Planner checkpoint; do not start Visual Round 2 or resend
+
+# TASK-028 frontend Visual R2 overflow narrow revision 2026-08-12
+
+- message: restored the registered frontend lane, read the preserved Visual R1 `FAIL 1/2/0`, Visual R2 `FAIL 0/1/0` and exact overflow dispatch, then ACKed `MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION` before mutation
+- transition_preflight: `task_transition.py reopen` was attempted as required and safely rejected because TASK-028 is already `IN_PROGRESS`; no Planner-owned state was mutated
+- scope: closed only the nested `#rfq-privacy-policy` box-model source cause; all prior passing behavior remains unchanged and no Visual QA, complete review, Git, deployment or external integration ran
+- red: the direct production CSS/source regression exited `1`, with the new test failing because the local stylesheet lacked a nested policy rule containing both `box-sizing: border-box` and `min-width: 0`
+- green: added only `.panel form > section` with those two declarations; the focused test passed `1/1` and the complete presentation file passed `1/8`
+- validation: RFQ plus Quote Basket `36/195`, lint and non-incremental typecheck PASS; the dispatch did not require wider regression because all local and focused gates passed
+- protection: A0 `47 exact + 2 previously authorized A4 Browser differences + 0 new blocking`; package/lock/tsconfig and restored production next-env hash exact
+- cleanup: Planner-owned runtimes stopped and generated `.next` moved recoverably; `.next`/TypeScript cache/listeners on 3000 and 18080 are absent
+- artifact: `FRONTEND_VISUAL_R2_OVERFLOW_REVISION_REPORT.md`
+- outcome: `PASS_FOR_PLANNER_CHECKPOINT`; Visual R1 remains `FAIL 1/2/0` and Visual R2 remains `FAIL 0/1/0`, not Visual PASS, review, acceptance, Git delivery or deployment
+- final_governance: Markdown fences/trailing whitespace, `git diff --check`, DPG project/messages/strict-lane PASS with zero issues before response creation
+- message_result: `MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue, was ACKed/done by Planner and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION`
+- unique_next_step: stop for Planner verification and separately authorized bounded Visual closure retest at 390/320 only; do not resend or widen the matrix
+
+# TASK-028 frontend adversarial Unicode P1-1 narrow revision R1 2026-08-12
+
+- message: restored the registered frontend lane, read the exact dispatch and canonical unique complete review `FAIL / P0=0 / P1=1 / P2=1`, then ACKed `MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1` before mutation
+- transition_preflight: `task_transition.py reopen` was attempted as required and safely rejected because TASK-028 is already `NEEDS_REVISION`; no Planner-owned state was mutated
+- scope: closed only P1-1 native Unicode `maxlength` narrowing; Planner-owned P2 consolidated evidence, review, Git, deployment and external systems remain untouched
+- red: the new direct production-presentation test exited `1`; the actual Full Name input rendered `maxLength="120"` even though the exact 120-code-point non-BMP value has 240 UTF-16 units
+- green: removed the `TextField` maximum parameter and native `maxlength` from all ten customer controls; no replacement ceiling, truncation, coercion or normalizer change
+- boundary_proof: exact-limit 120 non-BMP code points reach `normalizeRfqCustomer` unchanged and pass; 121 returns only stable `fullName/too_long`
+- validation: focused `1/1`, direct presentation/customer `2/14`, all RFQ `21/127`, lint and non-incremental typecheck PASS
+- protection: A0 `47 exact + 2 previously authorized A4 Browser differences + 0 new blocking`; package/lock/tsconfig/production next-env hashes exact; generated output/cache/listeners absent
+- artifacts: `FRONTEND_ADVERSARIAL_UNICODE_P1_R1_REPORT.md`, `FRONTEND_ADVERSARIAL_UNICODE_P1_R1_VALIDATION_LOG.md`
+- outcome: `PASS_FOR_PLANNER_RECHECK`; the complete-review FAIL history remains and no bounded closure PASS is claimed
+- final_governance: source/native-attribute scan, Markdown fences/trailing whitespace, `git diff --check`, generated cleanup and DPG project/messages/strict-lane PASS with zero issues before response creation
+- message_result: `MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1-RESPONSE` was delivered exactly once through the real Planner Codex thread bridge, recorded by `dispatch-once --execute`, left queue, was ACKed/done by Planner and remains linked with `requires_response_to=MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1`
+- unique_next_step: stop for independent Planner validation and Planner-owned P2 closure, then only the same-reviewer bounded finding closure; do not resend or repeat complete review

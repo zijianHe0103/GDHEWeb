@@ -12,6 +12,7 @@ import {
   type RfqLocalIntakeResult,
 } from "../../../../lib/rfq/server/v2";
 import { readRfqIntakeConfig } from "../../../../lib/rfq/server/v2/config";
+import { verifyLocalRfqIntent } from "../../../../lib/rfq/server/v2/intent";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,6 +47,7 @@ function emptyNotFound(): Response {
 function publicError(
   code:
     | "request_not_allowed"
+    | "invalid_submission_intent"
     | "unsupported_media_type"
     | "payload_too_large"
     | "invalid_request"
@@ -82,7 +84,7 @@ function configuredRuntime(config: Extract<RfqIntakeConfig, { enabled: true }>) 
       outcomeCode: "new_intent",
     },
     repository,
-    preReservationGate: async () => undefined,
+    preReservationGate: async (submission) => verifyLocalRfqIntent(submission),
     validateMixedQuoteLines,
     sink,
   });
@@ -162,6 +164,19 @@ export async function POST(request: Request): Promise<Response> {
       result.document,
       kind === "public_receipt" ? "public_receipt" : "public_error",
     );
+    if (
+      result.httpStatus === 409 &&
+      kind === "public_error" &&
+      typeof body === "object" &&
+      body !== null &&
+      "error" in body &&
+      typeof body.error === "object" &&
+      body.error !== null &&
+      "code" in body.error &&
+      body.error.code === "request_not_allowed"
+    ) {
+      return publicError("invalid_submission_intent", 403);
+    }
     return response(body, result.httpStatus);
   } catch {
     return publicError("service_temporarily_unavailable", 503);

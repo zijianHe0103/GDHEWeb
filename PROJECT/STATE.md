@@ -2,14 +2,171 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-027
+current_task: TASK-028
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-12T07:18:50Z
+last_updated: 2026-08-12T12:29:13Z
 
 ## 当前焦点
 
-`TASK-027` 已通过用户正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。下一步是只暂存 TASK-027 授权变更、生成中文正式提交、推送任务分支，再快进并推送 `main`。不执行部署。
+`TASK-028` 已通过用户正式验收，当前为 `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。唯一完整 review `FAIL 0/1/1` 历史保留，同一 reviewer bounded closure `PASS 0/0/0`；fresh final validation `87/707`、十 verifier、lint/typecheck/build、五 smoke、visual/protected/cleanup/DPG PASS。下一步只暂存 TASK-028 授权变更、生成中文正式提交、推送任务分支，再合并并推送 `main`。不部署。
+
+## TASK-028 Formal Delivery Authorization 2026-08-12T12:29:13Z
+
+- authorization: 用户精确输入 `确认 TASK-028 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均 PASS，任务进入 `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- task: 交付客户可见十字段 RFQ 表单、30 分钟 server-owned intent、一次 intent 加一次 intake、本地 Stub 回执、精确 Basket 清除/保留和显式重试闭环。
+- validation: full `87 files / 707 tests`、十 verifier、lint/typecheck、Next build、五 production smoke、visual/protected/cleanup/diff/DPG PASS。
+- boundary: 生产持久化、Feishu/CRM/email、生产安全供应商、部署和公开发布仍未实现且未授权。
+- unique_next: 只暂存 TASK-028 授权文件，正式中文提交，推送任务分支，合并并推送 `main`，核验四个引用。
+
+## TASK-028 Bounded Closure and Final Validation PASS 2026-08-12T12:16:00Z
+
+- review: `MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE-RESPONSE` 已 ACK/done；bounded closure `PASS / P0=0 / P1=0 / P2=0`，不是第二次完整审核。
+- validation: full `87 files / 707 tests`、十 verifier、lint/typecheck、Next build 与五 production smoke PASS。
+- integrity: Visual R1/R2 FAIL 与 bounded PASS 历史、`47 exact + 2 authorized`、production next-env、generated/listener/diff/DPG PASS。
+- boundary: production persistence、Feishu/CRM/email、security supplier、deployment 和 Git delivery 未授权且未执行。
+- unique_next: checked `prepare-awaiting-user`，然后等待用户精确验收口令。
+
+## TASK-028 Adversarial Findings Planner Checkpoint PASS 2026-08-12T12:06:00Z
+
+- P1: 十个 native `maxlength` 已移除，direct `2/14`、有效 RFQ `21/127`、lint/typecheck PASS；120 emoji 原样通过，第 121 个稳定 `too_long`。
+- P2: `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md` 已建立并如实区分历史、cross-lane 与当前 Planner evidence。
+- regression: 十 verifier、`47 exact + 2 authorized`、production next-env、generated/listener/diff/DPG PASS。
+- transition: `NEEDS_REVISION -> UNDER_REVIEW`；唯一完整 FAIL 历史不变。
+- unique_next: 只派发同一 reviewer bounded P1/P2 closure。
+
+## TASK-028 Unique Complete Review FAIL Recovery 2026-08-12T11:54:56Z
+
+- review: `MSG-TASK-028-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 validate、ACK 并进入 done；历史 verdict 固定为 `FAIL / P0=0 / P1=1 / P2=1`。
+- P1: visible form 的原生 `maxlength` 使用 code-point 上限，但浏览器按 UTF-16 code unit 执行，合法 non-BMP 字符被提前阻止。
+- P2: dispatch 声明的 `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md` 不存在。
+- transition: checked `task_transition.py reopen` 已运行，但 helper 只接受 `AWAITING_USER`，对当前 `UNDER_REVIEW` 安全拒绝且零 mutation；等价恢复状态为 `NEEDS_REVISION`。
+- unique_next: frontend 只修 P1；Planner 只补 P2；fresh validation 后同一 reviewer bounded closure。
+
+## TASK-028 Overflow Closure and Pre-review PASS 2026-08-12T11:46:00Z
+
+- visual: bounded closure `PASS / severe 0 / obvious 0 / detail 0`；390/320 精确无 overflow，Privacy-before-Submit 与同页 target focus 通过。
+- evidence: R1 `20/20`、R2 `42/42`、closure `5/5` 哈希通过；closure 五张均为 956x768 JPEG/JFIF bytes under `.png` names。
+- validation: presentation `1/8`、有效 focused `36/195`、lint/typecheck、`47 exact + 2 authorized`、production next-env、generated/listener/diff/DPG PASS。
+- transition: `IN_PROGRESS -> UNDER_REVIEW`；唯一 complete review policy 已写入 dispatch。
+- unique_next: 等待一个 linked complete-review verdict；FAIL 后只做 same-reviewer bounded closure。
+
+## TASK-028 Visual R2 Overflow Revision Planner Checkpoint PASS 2026-08-12T11:36:00Z
+
+- response: `MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION-RESPONSE` 已 validate、ACK 并进入 done。
+- change: 仅在 RFQ form-local CSS 的 `.panel form > section` 添加 `box-sizing: border-box` 与 `min-width: 0`；DOM、copy、提交语义和合同不变。
+- validation: presentation `1/8`；有效完整 focused `36/195`（隔离 server-only `1/10` + 其余 `35/185`）；lint/typecheck、`47 exact + 2 authorized`、production next-env、generated/listener/diff/DPG PASS。
+- history: 首个并行 focused 运行的两条旧 server-only 临时目录时序失败保留为非 PASS 历史，不指向本次 CSS。
+- unique_next: 启动一个 Planner preview，只派发 390/320 bounded Visual closure；完整 review 继续阻塞。
+
+## TASK-028 Visual QA Round 2 FAIL Recovery 2026-08-12T11:24:00Z
+
+- response: `MSG-TASK-028-VISUAL-QA-R2-RESPONSE` 已 validate、ACK 并进入 done；历史结果固定为 `FAIL / severe 0 / obvious 1 / detail 0`，Round 1 `FAIL 1/2/0` 不变。
+- passing: S1/O1/O2、accepted unchanged clear、pending second-tab changed Basket retain、processing retain、no automatic retry、explicit replay、keyboard/ARIA/reduced motion/privacy/network 全 PASS。
+- finding: `#rfq-privacy-policy` 继承全局 content-box section 宽度与 padding，造成 390 `client/scroll=390/427`、320 `320/361` 的真实横向溢出。
+- transition: checked `task_transition.py reopen` 已按要求运行，但任务本来为 `IN_PROGRESS`，helper 安全拒绝且零 mutation；等价受控恢复记录于 active task/state。
+- unique_next: 只派发嵌套 policy 的 border-box/min-width 局部 CSS 修订与直接回归；Planner checkpoint 后只做 390/320 bounded Visual closure。
+
+## TASK-028 Visual R1 Frontend Revision Planner Checkpoint PASS 2026-08-12T10:50:15Z
+
+- response: `MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION-RESPONSE` 已 validate、ACK 并进入 done。
+- closure: 客户端现使用精确无尾斜杠 intent/intake URL；空表单固定返回四个必填字段加联系方式组错误；提交前存在唯一同页 Privacy Policy 链接和真实本地目标。
+- validation: direct `3/29`；串行完整清单 `87/705`；十 verifier、lint/typecheck/build、五 production smoke 全 PASS。首次并发全量的唯一旧超时计数假失败已通过隔离 `1/4` 与串行完整清单复现为 PASS。
+- integrity: `47 exact + 2 authorized + 0 blocking`；production next-env、package/lock/tsconfig、generated/listener/diff/DPG 均 PASS。
+- unique_next: 启动 Planner-owned accepted-sink 和延迟 mixed fixture，只派发 Visual QA Round 2；完整 adversarial review 继续阻塞。
+
+## TASK-028 Visual QA Round 1 FAIL Recovery 2026-08-12T10:26:54Z
+
+- response: `MSG-TASK-028-VISUAL-QA-R1-RESPONSE` 已 validate、ACK 并进入 done；完整视觉历史固定为 `FAIL / severe 1 / obvious 2 / detail 0`。
+- S1: 客户端请求 `/api/rfq/intent/` 和 `/api/rfq/intake/`，Next 返回 308 到无尾斜杠路径，`redirect: "error"` 因此在 intake 前安全失败。
+- O1/O2: 空提交只显示联系方式组错误，四个必填字段未给出修复指引；提交前没有可聚焦的真实 Privacy Policy 目标。
+- passing: 1440/1024/768/390/320 回流、Basket/表单层级、键盘基础、reduced motion、保护字段不泄漏和零外部请求保持 PASS。
+- cleanup: Planner 已停止仅用于 Visual QA 的 Next 和 mock 服务，可恢复移走 `.next`，恢复 production `next-env.d.ts` 哈希 `7b550dda...12651`，端口 3000/18080 已清空。
+- unique_next: 只派发 S1/O1/O2 frontend 窄修订；Planner 独立复验 PASS 后重启 accepted-sink 运行时并请求 Visual QA Round 2。
+
+## TASK-028 Frontend A5 Planner Checkpoint PASS 2026-08-12T10:06:29Z
+
+- response: `MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5-RESPONSE` 已 validate、ACK 并进入 done。
+- runtime: 页面、intent 与 intake 共用完整本地 Stub gate；配置 local 可见且 noindex，unset/disabled/production 均 final 404 且零下游业务调用。
+- validation: focused `3/23`、full `87/702`、十 verifier、lint/typecheck、Next production build 与真实 RFQ HTTP smoke PASS。
+- integrity: `47 exact + 2 authorized + 0 blocking`，production next-env 恢复，generated/listener/diff/DPG PASS。
+- docs: root/frontend README 与架构契约已同步；`document_impact: RESOLVED`、`readme_impact: UPDATED`。
+- unique_next: 只派发一次独立 Visual QA；PASS 前不得开始唯一完整 review。
+
+## TASK-028 Frontend A4 Planner Checkpoint PASS 2026-08-12T09:42:06Z
+
+- response: `MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4-RESPONSE` 已 validate、ACK 并进入 done。
+- clear: 只有 authentic accepted、submitted/receipt/current 六字段和冻结 token 全匹配时删除唯一 Basket key；变化、过期、无效或异常均整篮保留。
+- retry: 仅用户再次显式提交且客户/快照未变、attempt 未过期时复用同一 draft/key；无自动重试、轮询、后台发送或持久化。
+- validation: current A4 `5/31`、RFQ + Basket `36/189`、full `87/700`、十 verifier、lint/typecheck、`47 exact + 2 authorized` protected、generated/listener/diff/DPG PASS。
+- boundary: A5、Visual QA、完整审核、CMS/CRM/Feishu、Git 和部署均未开始。
+- unique_next: 只派发 frontend A5 HTTP/production 404/security/regression/docs consolidation；Visual QA 继续阻塞。
+
+## TASK-028 Frontend A3 Planner Checkpoint PASS 2026-08-12T09:07:13Z
+
+- response: `MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3-RESPONSE` 已 validate、ACK 并进入 done。
+- form: exact ten fields/order、required/contact guidance、ready/non-ready/config gate、field summary/focus 与单一 live result 通过。
+- operation: one same-origin intent POST then one intake POST、pending duplicate suppression、closed receipt/error matrix 与零外部调用通过。
+- retention: accepted-local、processing 与全部失败仍保留完整 Basket；A3 不含 clear/remove-storage、retry persistence 或 partial delete。
+- validation: independent current RFQ + Basket route `20 files / 113 tests`、RFQ v2 `20/5/63/94`、lint/typecheck、49/49 protected、generated/diff/DPG PASS；lane full `85/687`、build/smoke 证据一致。
+- boundary: CMS/CRM/Feishu、依赖、A5、Visual QA、review、Git 和部署均未开始。
+- unique_next: 只派发 frontend A4 exact accepted compare-and-clear + one live in-memory retry/replay seam；A5 继续阻塞。
+
+## TASK-028 Frontend A2 Planner Checkpoint PASS 2026-08-12T08:39:21Z
+
+- response: `MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE` 已 validate、ACK 并进入 done。
+- intent: exact 30-minute HMAC、contract/origin/key/source-snapshot/token 绑定、本地 no-store issuer Route 和 server-only 边界通过。
+- projection: only-ready `1..50` ordered standard/custom/accessory lines、闭合 Public Draft 2.0、`163840/262144` byte 门通过。
+- intake: replay lookup 保持在 intent gate 前；unseen invalid intent 在 reservation/mixed/Sink 前闭合为 `403 invalid_submission_intent`。
+- validation: independent `5 files / 18 tests`、server-only `1/10`、RFQ v2 `20/5/63/94`、lint/typecheck、49/49 protected、generated/listener/diff/DPG PASS。
+- boundary: 没有可见表单、Basket 清除/retry、CMS/CRM/Feishu、依赖、Git 或部署。
+- unique_next: 只派发 frontend A3 可见表单、一次 intent + 一次 intake 与闭合公开结果；A4 继续阻塞。
+
+## TASK-028 Frontend A1 Planner Checkpoint PASS 2026-08-12T08:08:58Z
+
+- response: `MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1-RESPONSE` 已 validate、ACK 并进入 done。
+- domain: exact ten-field client-safe normalization、optional-empty omission、required/contact、Unicode/code-point、Email 与 absolute HTTP(S) Website 闭合规则通过。
+- hostile: unknown/accessor/symbol/non-enumerable/non-data/custom-prototype/array/primitive/Proxy 输入 fail closed；field getter/coercion 零调用、无诊断泄漏。
+- validation: independent `3 files / 15 tests`、RFQ v2 `20 JSON / 5 Schema / 63 refs / 94/94`、lint/typecheck、49/49 protected、generated/listener/diff/DPG PASS。
+- boundary: 没有 UI、intent/HMAC、Basket projection、intake integration、clearing、CMS/CRM/Feishu、依赖、Git 或部署。
+- unique_next: 只派发 frontend A2；A2 checkpoint 前不开始可见表单或 Basket 清除。
+
+## TASK-028 A0 PASS 2026-08-12T07:50:55Z
+
+- design: 冻结 `/request-a-quote/` 客户字段、本地 `/api/rfq/intent/`、既有 `/api/rfq/intake/`、30 分钟 intent 与精确 Origin/key/snapshot 绑定。
+- clear_rule: 遵循 TASK-026；只有 accepted + 当前完整六项 snapshot + token 精确匹配才清空，提交期间 Basket 变化则整个保留。
+- validation: 49/49 protected、RFQ v2 `20 JSON / 5 Schema / 63 refs / 94/94`、既有 `2/10`、lint/typecheck、generated/listener/diff/DPG PASS。
+- product_diff: TASK-028 前端产品代码零变化；仅治理/设计证据。
+- transition: `READY -> IN_PROGRESS`；`NOT_ACCEPTED / DIRTY` 不变。
+- unique_next: 只派发 frontend A1 customer public domain；A1 checkpoint 前不开始 A2。
+
+## TASK-028 Requirements Confirmed 2026-08-12T07:46:24Z
+
+- authorization: 用户精确输入 `确认 TASK-028 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；`NOT_ACCEPTED / DIRTY` 不变。
+- released_scope: 仅 Planner A0；未授权直接编写完整表单、连接飞书、Git 交付或部署。
+- unique_next: 完成并验证 A0 后才能派发一个前端小切片。
+
+## TASK-028 Intake 2026-08-12T07:37:26Z
+
+- request: 建立客户可见 RFQ 表单与本地提交闭环。
+- field_authority: 以 RFQ Submission `2.0.0` 合同为准；Full Name、Company Name、Country/Region、City 必填，WhatsApp/WeChat/Business Email/Phone 至少一种，Company Website 与 Additional Requirements 选填。
+- crm_boundary: 真实 CRM “线索”结构只读核对；客户等级保持空白，由业务员人工判断。本任务不修改飞书字段、选项、记录或 Workflow。
+- runtime_boundary: 只连接现有 Quote Basket `3.0.0` 与 TASK-027 local-only Stub intake；production 保持 final 404。
+- branch: `codex/TASK-028-customer-rfq-form` at `8891df61759f377cc9e2f110ecb41aabb7cd15fb`。
+- review_policy: 实施全部收敛后只做一次完整审核；FAIL 后只做同 reviewer bounded finding closure。
+- unique_next: 等待用户精确输入 `确认 TASK-028 需求并开始执行`；确认前不修改产品代码或派发实施 Lane。
+
+## TASK-027 Formal Delivery Completed 2026-08-12T07:26:44Z
+
+- commit: `8891df61759f377cc9e2f110ecb41aabb7cd15fb`（中文正式提交，128 files changed）。
+- task_branch: `codex/TASK-027-local-rfq-intake-stub-sink` 已推送至 `origin`。
+- main: 本地 `main` 从 `ae59adcbcc3d61996ec7727d0746026b04af9d61` 原子快进到正式提交并已推送。
+- verification: 本地任务分支、本地 `main`、远端任务分支、远端 `main` 均精确指向 `8891df61759f377cc9e2f110ecb41aabb7cd15fb`。
+- exclusions: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～026 post-delivery closure edits 和历史 resume packets 仍保留且未进入提交。
+- deployment: 未执行。
+- unique_next: 等待用户决定下一任务；不自动开始生产 RFQ、飞书或部署。
 
 ## TASK-027 Formal Delivery Authorization 2026-08-12T07:18:50Z
 
@@ -167,6 +324,15 @@ last_updated: 2026-08-12T07:18:50Z
 - review_policy: 实现全部收敛后只做一次完整独立审核；FAIL 修复后只做原 finding closure。
 - unique_next: 等待用户精确输入 `确认 TASK-027 需求并开始执行`；确认前不修改产品代码或派发实施 lane。
 
+## TASK-026 Formal Delivery Completed 2026-08-12T04:00:42Z
+
+- commit: `ae59adcbcc3d61996ec7727d0746026b04af9d61`（`TASK-026：冻结 RFQ Submission 2.0 合同`）。
+- task_branch: `origin/codex/TASK-026-rfq-submission-v2-contract` 已推送并指向正式提交。
+- main: 本地 `main` 与远端 `main` 已从 `c642166c20b57735fe500608176de109163caf9a` 快进至同一提交并核验一致。
+- exclusions: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～025 收口改动和历史 resume packets 未进入正式提交。
+- deployment: 未执行部署；Next.js intake、持久幂等、隔离 stub sink、可见客户表单和飞书连接仍属后续独立任务。
+- unique_next: 等待用户创建下一项小任务。
+
 ## TASK-026 Formal Delivery Authorized 2026-08-12T03:52:49Z
 
 - authorization: 用户精确输入 `确认 TASK-026 完成并提交到远端`。
@@ -271,6 +437,14 @@ last_updated: 2026-08-12T07:18:50Z
 - non_goals: 不实现客户表单、Next.js intake、持久化、飞书、部署或 Git 交付。
 - branch: `codex/TASK-026-rfq-submission-v2-contract` at `c642166c20b57735fe500608176de109163caf9a`.
 - unique_next: 等待用户精确输入 `确认 TASK-026 需求并开始执行`。
+
+## TASK-025 Formal Delivery Completed 2026-08-11T14:49:34Z
+
+- commit: `c642166c20b57735fe500608176de109163caf9a` (`TASK-025：建立 Article Number 混合询价批量校验`)。
+- task_branch: `origin/codex/TASK-025-article-number-batch-validation` 已推送并指向该提交。
+- main: 远端 `main` 已从 `a048a96` 快进到 `c642166`，本地 `main` 与两个远端引用均一致。
+- exclusions: `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～024 收口改动与历史 resume packets 未进入正式提交。
+- deployment: 未执行部署。
 
 ## TASK-025 Formal Delivery Authorization 2026-08-11T13:51:29Z
 
@@ -384,6 +558,16 @@ last_updated: 2026-08-12T07:18:50Z
 - delivery_shape: 历史 TASK-022/024 冻结字节保持不变；后续只以明确的新版本合同、CMS handoff、frontend server-only consumer 与确定性迁移扩展。
 - branch: `codex/TASK-025-article-number-batch-validation`，基线 `a048a96b2d5af321234b9e51be9adf991510f85a`。
 - unique_next: 等待用户精确输入 `确认 TASK-025 需求并开始执行`；确认前不派发实施 lane，不修改 WordPress/frontend 产品文件。
+
+## TASK-024 Formal Delivery Completed 2026-08-11T05:08:48Z
+
+- commit: `a048a96b2d5af321234b9e51be9adf991510f85a`（`TASK-024：冻结最终 RFQ 提交合同与安全边界`）。
+- task_branch: `origin/codex/TASK-024-rfq-submission-contract` 已推送并指向正式提交。
+- main: 本地 `main` fast-forward 合并后已推送 `origin/main`；本地/远端 `main` 与远端任务分支三者一致。
+- verification: 机器合同 Schema `5`、refs `61`、positive `12`、negative `6`、crypto `2`、failures `0`；DPG project/registry/messages/strict lane 和 staged diff 门均 PASS。
+- exclusions: `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～023 closure edits 和历史 resume packet 保持未提交。
+- transition: `ACCEPTED / FORMAL_COMMIT_PENDING` 收口为 `CLOSED / MERGED`；未部署。
+- unique_next: 等待用户创建下一项小任务；不自动开始 RFQ runtime、飞书连接或部署。
 
 ## TASK-024 Formal Delivery Authorization 2026-08-11T04:46:02Z
 

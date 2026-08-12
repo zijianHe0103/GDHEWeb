@@ -378,6 +378,65 @@ persistence, durable idempotency, rate limiter or challenge, trusted-proxy
 policy, production secret provisioning, Feishu, email, queue, CMS mutation,
 external delivery or deployment. Those remain separate gated work.
 
+## Local-only customer RFQ form and submission loop
+
+TASK-028 connects the browser-local Quote Basket `3.0.0` to the TASK-027
+process-local Stub only for controlled local testing. The page, intent Route
+and intake Route are available together only when Product Detail preview/CMS
+mode and the complete RFQ Stub configuration are enabled. Use the exact same
+loopback origin for the browser and `GDHE_RFQ_INTAKE_ORIGIN`:
+
+```sh
+WORDPRESS_API_URL=http://127.0.0.1:8080/wp-json \
+GDHE_PRODUCT_DETAIL_MODE=preview \
+GDHE_RFQ_INTAKE_MODE=stub \
+GDHE_RFQ_INTAKE_ORIGIN=http://127.0.0.1:3000 \
+GDHE_RFQ_HMAC_KEY_VERSION=local-placeholder-v1 \
+GDHE_RFQ_HMAC_KEY_HEX=0000000000000000000000000000000000000000000000000000000000000000 \
+GDHE_RFQ_STUB_SINK_OUTCOME=accepted \
+npm run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+Open `http://127.0.0.1:3000/request-a-quote/`. A hydrated non-empty Basket
+whose lines are all ready exposes the ten closed customer fields in this
+order: Full Name, Company Name, Country/Region, City, WhatsApp, WeChat,
+Business Email, Phone, Company Website and Additional Requirements. The first
+four are required; at least one of the four contact methods is required.
+Company Website is data only and is never fetched.
+
+One new explicit submit performs one same-origin intent POST followed by one
+same-origin intake POST. Pending duplicate actions are suppressed. An accepted
+receipt clears only when its private validated material, the submitted
+six-field Basket snapshot, the recomputed snapshot token and a final raw read
+of the stored Basket all match. If the Basket changed, it is retained in full.
+Processing and every error also retain the Basket. An uncertain or bounded
+retryable result may keep one attempt in memory; only another explicit submit
+with the unchanged customer and Basket reuses the byte-identical draft and
+key. There is no automatic retry or polling.
+
+Only the Quote Basket remains in `localStorage`. Customer data, submission
+intent, idempotency key and live attempt are not written to local/session
+storage, cookies, URLs, analytics or logs. Customer-visible output excludes
+Article Number, UUIDs, source snapshots, comparison tokens, request references,
+raw bodies and diagnostics. Unset, disabled and production modes return final
+404 for `/request-a-quote/`, `/api/rfq/intent/` and `/api/rfq/intake/` before
+business calls.
+
+Run the focused and real HTTP gates with Node.js 24.18.0 after a production
+build:
+
+```sh
+npm test -- tests/rfq-customer-domain.test.ts tests/rfq-intent-v2.test.ts tests/rfq-intent-v2-route.test.ts tests/rfq-submission-v2-projection.test.ts tests/rfq-submission-v2-builder.test.ts tests/rfq-form-presentation.test.ts tests/rfq-public-response.test.ts tests/rfq-submission-client.test.ts tests/rfq-accepted-clear.test.ts tests/rfq-basket-snapshot-token.test.ts tests/quote-basket-route.test.ts
+npm test -- tests/rfq-intake-v2-*.test.ts
+node tests/rfq-intake-production-smoke.mjs
+```
+
+This remains a `noindex,nofollow`, non-production acceptance slice. The Stub
+Repository and Sink are process-local and lose state on restart. There is no
+durable storage, distributed idempotency, production secret provisioning,
+rate-limit store, challenge supplier, trusted-proxy policy, CRM/Feishu/email,
+queue, worker, deployment or production release.
+
 ## Local-only FGD X15+PVC Product Detail slice
 
 `/products/fgd-x15-pvc/` is a controlled English Product Detail slice for the
@@ -441,9 +500,10 @@ and merge-identity checks, so historical uppercase UUIDs remain batch-valid
 while case-fold collisions fail closed. A server-only batch
 seam can validate one ordered group of up to 50 eligible lines with one mixed
 validation POST and atomically upgrade migrated standard lines; the browser
-does not call WordPress directly. Final Request a Quote intake and Basket
-clearing remain unimplemented. The `You May Also Need` module appears after
-the configurator.
+does not call WordPress directly. TASK-028 adds only the local customer form,
+process-local Stub submission and exact accepted-snapshot clearing described
+above; durable production intake and external delivery remain unimplemented.
+The `You May Also Need` module appears after the configurator.
 Preview starts with three protected local candidates and reveals at most three
 more per button activation without another request. Detail products use `View
 Product`; catalog accessories use the same card skeleton and `Add to Quote`
@@ -461,11 +521,12 @@ mode, CMS mode and every production build remain final 404.
 CMS mode with no safely renderable eligible media omits the module entirely.
 The local `/request-a-quote/` page shows protected public rows,
 supports quantity and Remove, and remains `noindex,nofollow` plus production
-404. Its disabled final action makes clear that no RFQ is submitted and no
-external system is contacted. When configuration is unavailable, `Request a
-Quote` remains ordinary navigation to that local Basket workspace. This slice
-is not a production product page, formal SEO implementation, final copy, visual
-acceptance, CMS import or deployment authorization.
+404. With the exact local Stub configuration it exposes the TASK-028 customer
+form; no external CRM, Feishu or email system is contacted. When configuration
+is unavailable, `Request a Quote` remains ordinary navigation to that local
+Basket workspace. This slice is not a production product page, formal SEO
+implementation, final copy, visual acceptance, CMS import or deployment
+authorization.
 
 Run the TASK-021 frontend focused gates with Node.js 24.18.0:
 

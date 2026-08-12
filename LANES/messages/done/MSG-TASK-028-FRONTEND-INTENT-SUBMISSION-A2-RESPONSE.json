@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE",
+  "type": "execution_response",
+  "from_lane": "frontend",
+  "to_lane": "planner",
+  "task_id": "TASK-028",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-12T08:33:28Z",
+  "requires_response_to": "MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "TASK-028 frontend A2 PASS_FOR_PLANNER_CHECKPOINT. Delivered server-only 30-minute HMAC intent issuance/verification, local no-store intent Route, exact Basket 3.0 to RFQ 2.0 projection, closed complete submission builder, and intake pre-reservation intent binding with replay precedence preserved. Direct A2 plus intake 5 files/18 tests, A1+A2+TASK-027 9/42, server-only 1/10, full 82/669, ten verifiers, lint, typecheck, build, real RFQ smoke, 49/49 protected and cleanup/DPG gates PASS. A3-A5 remain blocked.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_DIFF_SUMMARY.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_TDD_RED_EVIDENCE.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_VALIDATION_LOG.md",
+    "TASKS/ARTIFACTS/TASK-028/FRONTEND_A2_DIFF_SUMMARY.md"
+  ],
+  "notes": "A2 checkpoint only. No visible form, Basket clear, Visual QA, review, Git delivery or deployment. Stop for independent Planner validation.",
+  "dispatched_at": "2026-08-12T08:34:11Z",
+  "delivery_key": "MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "target_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_id": "MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE:019f857b-3e04-73d2-9335-edcff61b30ed",
+  "delivery_channel": "external_codex_thread_bridge",
+  "done_at": "2026-08-12T08:34:13Z",
+  "updated_at": "2026-08-12T08:34:13Z"
+}

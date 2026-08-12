@@ -1,0 +1,120 @@
+.panel,
+.unavailable {
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 0.25rem solid #9a5a12;
+  background: #fff4de;
+  color: #5e3507;
+}
+
+.panel h2,
+.panel h3,
+.panel p {
+  margin-block: 0;
+}
+
+.panel form,
+.panel fieldset {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel form > section {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.panel fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 1.25rem 0 0;
+  border: 0;
+  border-top: 1px solid #d8d8d2;
+}
+
+.panel legend,
+.panel label {
+  font-weight: 800;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.field input,
+.field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #77776f;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  color: #171717;
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.panel button {
+  justify-self: start;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.15rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: #171717;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.panel button:disabled,
+.panel fieldset:disabled {
+  opacity: 0.65;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.panel button:focus-visible,
+.summary a:focus-visible,
+.summary:focus-visible {
+  outline: 0.2rem solid #171717;
+  outline-offset: 0.2rem;
+}
+
+.error,
+.summary {
+  color: #8b1b12;
+}
+
+.summary {
+  padding: 1rem;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+}
+
+.summary a {
+  color: inherit;
+}
+
+.live {
+  min-height: 1.5rem;
+}

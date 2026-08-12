@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-027
+current_task: TASK-028
 
 ## 活动任务
 
-- `TASK-027` 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-028` 建立客户可见 RFQ 表单与本地提交闭环 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -29,7 +29,7 @@ current_task: TASK-027
 
 ## 等待推送
 
-- `TASK-027` — 用户正式验收已通过；等待 formal commit、任务分支推送、`main` 快进和推送。
+- `TASK-028` — 用户正式验收已通过；等待 formal commit、任务分支推送、`main` 合并和推送。
 
 ## 已暂停
 
@@ -37,6 +37,10 @@ current_task: TASK-027
 
 ## 最近关闭
 
+- `TASK-027` 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片 — `CLOSED` / `MERGED`
+- `TASK-026` 建立基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同 — `CLOSED` / `MERGED`
+- `TASK-025` 允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验 — `CLOSED` / `MERGED`
+- `TASK-024` 冻结最终 RFQ Submission Contract、客户信息字段与服务端安全边界 — `CLOSED` / `MERGED`
 - `TASK-023` 建立 FGD X15+PVC 型号级 You May Also Need 渐进式相关产品推荐纵向切片 — `CLOSED` / `MERGED`
 - `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `CLOSED` / `MERGED`
 - `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `CLOSED` / `MERGED`
@@ -150,3 +154,7 @@ current_task: TASK-027
 ## Accepted
 
 - TASK-027: ACCEPTED at 2026-08-12T07:18:50Z
+
+## Accepted
+
+- TASK-028: ACCEPTED at 2026-08-12T12:29:13Z

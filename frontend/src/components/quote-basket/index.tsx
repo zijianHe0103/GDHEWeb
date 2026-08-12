@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
+import { RfqCustomerForm } from "../rfq-form";
 import { useQuoteBasket } from "../../lib/quote-basket/use-quote-basket";
 import type { QuoteBasketDocument } from "../../types/quote-basket";
 import type { QuoteBasketDocumentV2 } from "../../types/quote-basket-v2";
@@ -12,9 +14,10 @@ type RowsProps = Readonly<{
   basket: QuoteBasketDocument | QuoteBasketDocumentV2 | QuoteBasketDocumentV3;
   onQuantity(entryId: string, quantity: number): void;
   onRemove(entryId: string): void;
+  disabled?: boolean;
 }>;
 
-export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
+export function QuoteBasketRows({ basket, onQuantity, onRemove, disabled = false }: RowsProps) {
   return (
     <>
       <ul className={styles.rows}>
@@ -56,6 +59,7 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
                   min="1"
                   step="1"
                   value={item.quantity}
+                  disabled={disabled}
                   onChange={(event) => {
                     const quantity = Number(event.target.value);
                     if (Number.isSafeInteger(quantity) && quantity > 0) {
@@ -63,7 +67,7 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
                     }
                   }}
                 />
-                <button type="button" onClick={() => onRemove(item.entryId)}>
+                <button type="button" disabled={disabled} onClick={() => onRemove(item.entryId)}>
                   Remove
                 </button>
               </div>
@@ -71,11 +75,6 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
           </li>
         ))}
       </ul>
-      <section className={styles.nextStep} aria-labelledby="quote-next-step">
-        <h2 id="quote-next-step">Ready for the next step?</h2>
-        <p>Final quote submission is not available yet. Your items remain only in this browser.</p>
-        <button type="button" disabled>Request a Quote</button>
-      </section>
     </>
   );
 }
@@ -83,9 +82,17 @@ export function QuoteBasketRows({ basket, onQuantity, onRemove }: RowsProps) {
 type QuoteBasketContentState = Pick<
   ReturnType<typeof useQuoteBasket>,
   "hydrated" | "basket" | "error" | "announcement" | "setQuantity" | "remove"
-> & Partial<Pick<ReturnType<typeof useQuoteBasket>, "add" | "addAccessory">>;
+> & Partial<Pick<
+  ReturnType<typeof useQuoteBasket>,
+  "add" | "addAccessory" | "clearAcceptedReceipt"
+>>;
 
-export function QuoteBasketContent(state: QuoteBasketContentState) {
+type QuoteBasketContentProps = QuoteBasketContentState & Readonly<{
+  submissionEnabled?: boolean;
+}>;
+
+export function QuoteBasketContent({ submissionEnabled = false, ...state }: QuoteBasketContentProps) {
+  const [submissionPending, setSubmissionPending] = useState(false);
   let content;
   if (!state.hydrated) {
     content = <p className={styles.status}>Loading your saved quote items…</p>;
@@ -107,6 +114,14 @@ export function QuoteBasketContent(state: QuoteBasketContentState) {
           basket={state.basket}
           onQuantity={state.setQuantity}
           onRemove={state.remove}
+          disabled={submissionPending}
+        />
+        <RfqCustomerForm
+          basket={state.basket}
+          enabled={submissionEnabled}
+          storageError={state.error !== null}
+          onPendingChange={setSubmissionPending}
+          onAcceptedReceipt={state.clearAcceptedReceipt}
         />
       </>
     );
@@ -120,6 +135,6 @@ export function QuoteBasketContent(state: QuoteBasketContentState) {
   );
 }
 
-export function QuoteBasketView() {
-  return <QuoteBasketContent {...useQuoteBasket()} />;
+export function QuoteBasketView({ submissionEnabled = false }: Readonly<{ submissionEnabled?: boolean }>) {
+  return <QuoteBasketContent {...useQuoteBasket()} submissionEnabled={submissionEnabled} />;
 }

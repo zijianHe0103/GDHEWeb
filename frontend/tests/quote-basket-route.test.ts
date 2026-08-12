@@ -14,12 +14,34 @@ import {
   createEmptyQuoteBasket,
 } from "../src/lib/quote-basket";
 
-const originalMode = process.env.GDHE_PRODUCT_DETAIL_MODE;
+const rfqEnvironmentKeys = [
+  "GDHE_PRODUCT_DETAIL_MODE",
+  "GDHE_RFQ_INTAKE_MODE",
+  "GDHE_RFQ_INTAKE_ORIGIN",
+  "GDHE_RFQ_HMAC_KEY_VERSION",
+  "GDHE_RFQ_HMAC_KEY_HEX",
+  "GDHE_RFQ_STUB_SINK_OUTCOME",
+] as const;
+const originalEnvironment = Object.fromEntries(
+  rfqEnvironmentKeys.map((key) => [key, process.env[key]]),
+);
 
 afterEach(() => {
-  if (originalMode === undefined) delete process.env.GDHE_PRODUCT_DETAIL_MODE;
-  else process.env.GDHE_PRODUCT_DETAIL_MODE = originalMode;
+  for (const key of rfqEnvironmentKeys) {
+    const value = originalEnvironment[key];
+    if (value === undefined) delete process.env[key];
+    else process.env[key] = value;
+  }
 });
+
+function enableLocalRfq(mode: "preview" | "cms"): void {
+  process.env.GDHE_PRODUCT_DETAIL_MODE = mode;
+  process.env.GDHE_RFQ_INTAKE_MODE = "stub";
+  process.env.GDHE_RFQ_INTAKE_ORIGIN = "http://127.0.0.1:3000";
+  process.env.GDHE_RFQ_HMAC_KEY_VERSION = "local-task028";
+  process.env.GDHE_RFQ_HMAC_KEY_HEX = "20".repeat(32);
+  process.env.GDHE_RFQ_STUB_SINK_OUTCOME = "accepted";
+}
 
 const ids = {
   writerId: "11111111-1111-4111-8111-111111111111",
@@ -90,10 +112,23 @@ describe("local Quote Basket route", () => {
     });
   });
 
+  it("fails the page closed when local product preview is on but RFQ intake is unset or disabled", async () => {
+    process.env.GDHE_PRODUCT_DETAIL_MODE = "preview";
+    delete process.env.GDHE_RFQ_INTAKE_MODE;
+    await expect(QuoteBasketPage()).rejects.toMatchObject({
+      digest: expect.stringContaining("404"),
+    });
+
+    process.env.GDHE_RFQ_INTAKE_MODE = "off";
+    await expect(QuoteBasketPage()).rejects.toMatchObject({
+      digest: expect.stringContaining("404"),
+    });
+  });
+
   it.each(["preview", "cms"])(
     "renders a hydration-safe local loading state in %s mode",
     async (mode) => {
-      process.env.GDHE_PRODUCT_DETAIL_MODE = mode;
+      enableLocalRfq(mode as "preview" | "cms");
       const html = renderToStaticMarkup(await QuoteBasketPage());
 
       expect(html).toContain("Quote Basket");
@@ -102,7 +137,7 @@ describe("local Quote Basket route", () => {
     },
   );
 
-  it("renders one protected row with exact public controls and no submission", () => {
+  it("renders one protected row with exact public controls and no embedded submission placeholder", () => {
     const html = renderToStaticMarkup(
       createElement(QuoteBasketComponents.QuoteBasketRows, {
         basket,
@@ -121,8 +156,8 @@ describe("local Quote Basket route", () => {
     expect(html).toContain("None");
     expect(html).toContain('type="number"');
     expect(html).toContain("Remove");
-    expect(html).toContain("Final quote submission is not available yet");
-    expect(html).toContain("disabled");
+    expect(html).not.toContain("Final quote submission is not available yet");
+    expect(html).not.toContain('type="submit"');
     expect(html).not.toMatch(
       /price|currency|save for later|delivery|checkout|payment|order status|wp-content|GDHEPRD/i,
     );

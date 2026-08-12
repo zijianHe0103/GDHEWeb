@@ -1268,3 +1268,38 @@ Each execution records:
 - boundaries: no product/test/docs/README/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; PASS is not acceptance or Git authorization
 - message_status: exact closure request and the single linked PASS closure response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
 - next: Planner owns fresh final validation and checked acceptance preparation; no further reviewer work is authorized by this closure PASS
+
+### 2026-08-12T11:51:43Z - TASK-028 unique complete adversarial review
+
+- task: TASK-028
+- message: MSG-TASK-028-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, verified the canonical reviewer delivery key, ACKed the exact request before substantive work, preserved both Visual FAIL rounds and the bounded overflow PASS, then independently reviewed the active task, A0-A5 and narrow revisions, current implementation/tests/docs, visual evidence, protected scope, Git diff and governance without modifying business deliverables
+- p1_unicode_ui: the RFQ domain correctly accepts exact Unicode code-point maxima, including 120 emoji for Full Name, but the visible form writes the same numeric maxima into native HTML maxlength controls; that legal 120-code-point value is 240 UTF-16 code units and is stopped by maxlength 120 before the exact validator can receive it
+- p2_canonical_evidence: the controlled request declares canonical EXECUTION_REPORT, TEST_OR_VALIDATION_LOG and DIFF_OR_OUTPUT_SUMMARY context files, but all three are absent; stage-specific A1-A5 and pre-review evidence permitted review completion but the dispatched evidence package is not self-consistent
+- independent_evidence: supported Node 24.18/npm 11.16 focused rerun PASS 11 files/58 tests; RFQ verifier PASS 20 JSON/5 Schema/63 refs/94 of 94; Article Number verifier PASS 11/5/5; Quote Basket 3 verifier PASS 1/1/6; lint and non-incremental typecheck PASS
+- visual_evidence: Round 1 FAIL 1/2/0, Round 2 FAIL 0/1/0 and bounded overflow closure PASS 0/0/0 remain preserved; all 67 hashes pass and all 67 png-named captures are truthful JPEG/JFIF bytes
+- protected_scope: baseline check reports 47 exact and only the two authorized Basket browser/hook differences; package, lock, RFQ authority/runtime core, TASK-025 batch, Quote Basket v3 core and production next-env remain protected
+- cleanup_governance: no next build output, TypeScript cache, temporary root or listeners on 3000/18080; project, messages, strict lane, whitespace and Git diff gates pass; task/project/board are consistently UNDER_REVIEW NOT_ACCEPTED DIRTY
+- passing_boundaries: field required/contact/unknown/hostile checks except the visible code-unit ceiling, ready-only Basket and Article Number boundary, 30-minute intent, one intent plus one intake, replay/processing/clear, closed public DTOs, server-only/local-production gates, accessibility and docs/non-implementation scope remain intact
+- result: FAIL; P0 none; P1 one; P2 one; Planner final validation not allowed
+- boundaries: no product/test/docs/README/task-authority/Planner-state/visual/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; only a same-reviewer bounded closure of these original findings may follow and the complete TASK-028 review must not be repeated
+- message_status: exact request and the single linked FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session `019f857b-3e04-73d2-9335-edcff61b30ed`, was delivered through the Codex thread bridge and recorded dispatch-once with the real thread receipt
+- next: send the one linked FAIL response; Planner owns governed recovery, the bounded Unicode form and canonical evidence-view corrections, fresh validation and any same-reviewer finding closure
+
+### 2026-08-12T12:10:16Z - TASK-028 two-finding bounded adversarial closure
+
+- task: TASK-028
+- message: MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE
+- action: restored the registered reviewer lane, read and ACKed the exact same-reviewer bounded closure request before substantive work, preserved the unique complete-review FAIL 0/1/1 as immutable history, and checked only P1-1 and P2-1 against current bytes
+- p1_1_ui_boundary: rendered output contains exactly ten named customer controls and zero native maxlength; source inspection found no replacement truncation, input-event guard or length ceiling, while FormData still enters the existing submission operation and authoritative customer normalizer
+- p1_1_unicode: Node 24.18/npm 11.16 direct presentation plus customer-domain evidence passed 2 files/14 tests; 120 non-BMP code points remain unchanged and valid while 121 returns only fullName/too_long
+- p1_1_regression: broader direct affected inventory passed 11 files/59 tests and the complete RFQ glob exited 0; field order, required/contact rules, ARIA, CSS, submission, intent/intake, public response, accepted clear, snapshot token, Basket projection and client behavior remain green; lint and non-incremental typecheck pass
+- p2_1_paths: EXECUTION_REPORT.md, TEST_OR_VALIDATION_LOG.md and DIFF_OR_OUTPUT_SUMMARY.md are current regular non-symlink files at the exact declared artifact paths
+- p2_1_truth: A1-A5 counts, Visual FAIL/closure history, Unicode revision, protected/current validation and scoped diff claims trace to their source artifacts; Planner/lane/Visual/historical evidence is explicitly attributed and is not relabeled as reviewer execution
+- protected_scope: A0 independently returns 47 exact plus only the two previously authorized A4 Basket browser/hook differences; package, lock, frozen RFQ authority, server core, tsconfig and production next-env remain exact
+- cleanup: frontend .next and tsconfig.tsbuildinfo are absent, ports 3000/18080 are clear and git diff check passes before report append
+- preserved_history: canonical complete-review FAIL P0=0/P1=1/P2=1 remains complete and distinct above the appended bounded closure; this is not a second complete review
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after the linked closure response is acknowledged
+- boundaries: no product/test/docs/task-authority/Planner-state/Visual/CMS/database/dependency/Feishu/Git/deployment/external-system repair or mutation; PASS is not acceptance or Git authorization
+- message_status: exact closure request and the single linked PASS closure response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real thread receipt
+- next: Planner owns fresh final validation and checked acceptance preparation; no further reviewer work is authorized by this bounded closure PASS

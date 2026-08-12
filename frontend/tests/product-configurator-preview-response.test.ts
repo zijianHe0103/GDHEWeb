@@ -49,6 +49,11 @@ beforeAll(async () => {
       env: {
         ...process.env,
         GDHE_PRODUCT_DETAIL_MODE: "preview",
+        GDHE_RFQ_INTAKE_MODE: "stub",
+        GDHE_RFQ_INTAKE_ORIGIN: origin,
+        GDHE_RFQ_HMAC_KEY_VERSION: "local-task028-preview",
+        GDHE_RFQ_HMAC_KEY_HEX: "20".repeat(32),
+        GDHE_RFQ_STUB_SINK_OUTCOME: "accepted",
       },
       stdio: "ignore",
     },
@@ -85,7 +90,7 @@ describe("ProductConfigurator real preview response", () => {
     }
   });
 
-  it("serves the local Basket route without internal identity or an active submission", async () => {
+  it("serves the configured local Basket route without internal identity before hydration", async () => {
     const response = await fetch(`${origin}/request-a-quote/`);
     const browserBytes = await response.text();
 

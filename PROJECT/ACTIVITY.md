@@ -29,6 +29,15 @@ schema_version: DPG-LANES-1.0.0
 - task: TASK-025
 - summary: Created the governed TASK-025 intake and branch to supersede the opaque-key route with browser-allowed but non-displayed Article Number identity, plus a bounded read-only 1..50 mixed-line authority validation plan; implementation remains blocked pending exact user confirmation.
 
+## 2026-08-11T05:08:48Z
+
+### task_formal_delivery_completed
+
+- type: task_delivery
+- lane: planner
+- task: TASK-024
+- summary: Formal commit a048a96 was pushed to the TASK-024 branch, fast-forward merged to main and pushed to origin/main; TASK-024 is CLOSED/MERGED with runtime implementation and deployment still excluded.
+
 ## 2026-08-11T04:46:02Z
 
 ### task_formal_delivery_authorized
@@ -11181,6 +11190,7 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-024
 - summary: TASK-024 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
 ### 2026-08-11T07:02:37Z - message_done
 - type: message_done
 - lane: wordpress_cms
@@ -11535,6 +11545,12 @@ schema_version: DPG-LANES-1.0.0
 - task: TASK-025
 - summary: TASK-025 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
 
+### 2026-08-11T14:49:34Z - task_formal_delivery_completed
+- type: task_formal_delivery_completed
+- lane: planner
+- task: TASK-025
+- summary: Formal commit c642166c20b57735fe500608176de109163caf9a pushed to the task branch and fast-forwarded to remote main; task closed as MERGED without deployment.
+
 ### 2026-08-12T02:37:16Z - task_intake
 - type: task_intake
 - lane: planner
@@ -11804,6 +11820,13 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-026
 - summary: TASK-026 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-08-12T04:00:42Z - task_formal_delivery_completed
+- type: task_formal_delivery_completed
+- lane: planner
+- task: TASK-026
+- summary: Formal commit ae59adcbcc3d61996ec7727d0746026b04af9d61 was pushed to the task branch and fast-forwarded to remote main; TASK-026 closed as MERGED without deployment.
+
 ### 2026-08-12T04:12:13Z - task_intake
 - type: task_intake
 - lane: planner
@@ -12372,3 +12395,616 @@ schema_version: DPG-LANES-1.0.0
 - lane:
 - task: TASK-027
 - summary: TASK-027 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-08-12T07:26:44Z - formal_delivery_completed
+- type: formal_delivery_completed
+- lane: planner
+- task: TASK-027
+- summary: Formal commit 8891df61759f377cc9e2f110ecb41aabb7cd15fb was pushed to the task branch and fast-forwarded into remote main; four refs verified equal and no deployment occurred.
+
+### 2026-08-12T07:37:26Z - task_intake
+- type: task_intake
+- lane: planner
+- task: TASK-028
+- summary: Created the governed customer-visible local RFQ form task with contract-first fields, manual customer-grade decision, local Stub intake boundary and no Feishu/production/deployment authorization.
+## 2026-08-12T07:46:24Z — TASK-028 Requirements Confirmed
+
+- User supplied the exact requirement-confirmation phrase; TASK-028 moved from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY / NOT_ACCEPTED / DIRTY`.
+- Released only Planner A0 for customer fields, local intent/key, Basket projection, exact clear rule, route modes, protected baseline and TDD sequence.
+- Product implementation, Feishu, review, Git delivery and deployment remained blocked.
+
+## 2026-08-12T07:50:55Z — TASK-028 A0 PASS
+
+- Froze the local customer RFQ architecture, exact TASK-026 full-snapshot clear rule, 30-minute local intent boundary and five implementation checkpoints.
+- Reproduced 49/49 protected hashes, RFQ v2 `20 JSON / 5 Schema / 63 refs / 94 checks`, existing `2 files / 10 tests`, lint, typecheck and DPG gates.
+- Confirmed zero TASK-028 frontend product diff and zero generated/listener residue.
+- TASK-028 moved from `READY` to `IN_PROGRESS`; only frontend A1 is released.
+
+## 2026-08-12T08:08:58Z — TASK-028 Frontend A1 Planner Checkpoint PASS
+
+- ACKed the linked A1 execution response and independently validated the current shared bytes.
+- Reproduced `3 files / 15 tests`, RFQ Submission v2 `20/5/63/94`, lint/typecheck, 49/49 protected, cleanup, diff and DPG PASS.
+- A1 changed only the client-safe customer domain and direct tests; visible UI and submission behavior remain absent.
+- Released only frontend A2 intent and submission projection; A3-A5 remain blocked.
+
+### 2026-08-12T07:54:08Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T07:54:20Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1 dispatched to frontend
+
+### 2026-08-12T07:55:09Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1 moved to done
+
+### 2026-08-12T08:06:46Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T08:07:00Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1-RESPONSE dispatched to planner
+
+### 2026-08-12T08:07:17Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1-RESPONSE moved to done
+
+### 2026-08-12T08:11:21Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T08:11:44Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2 dispatched to frontend
+
+### 2026-08-12T08:12:33Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2 moved to done
+
+### 2026-08-12T08:33:28Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T08:34:11Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE dispatched to planner
+
+### 2026-08-12T08:34:13Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE moved to done
+
+### 2026-08-12T08:41:42Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T08:42:09Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3 dispatched to frontend
+
+### 2026-08-12T08:42:51Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3 moved to done
+
+### 2026-08-12T09:03:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T09:04:14Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3-RESPONSE dispatched to planner
+
+### 2026-08-12T09:04:43Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISIBLE-FORM-SUBMISSION-A3-RESPONSE moved to done
+
+### 2026-08-12T09:10:54Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T09:10:54Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4 dispatched to frontend
+
+### 2026-08-12T09:12:33Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4 moved to done
+
+### 2026-08-12T09:36:01Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T09:36:33Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4-RESPONSE dispatched to planner
+
+### 2026-08-12T09:36:49Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ACCEPTED-CLEAR-RECOVERY-A4-RESPONSE moved to done
+
+### 2026-08-12T09:43:29Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T09:43:53Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5 dispatched to frontend
+
+### 2026-08-12T09:44:48Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5 moved to done
+
+### 2026-08-12T09:59:14Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T09:59:33Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5-RESPONSE dispatched to planner
+
+### 2026-08-12T09:59:39Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-HTTP-DOCS-CONSOLIDATION-A5-RESPONSE moved to done
+
+### 2026-08-12T10:06:29Z - planner_checkpoint
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-028
+- summary: frontend A5 independent validation and root documentation consolidation PASS; Visual QA is the sole next gate
+
+### 2026-08-12T10:09:33Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-028
+- summary: message queued for visual_qa
+
+### 2026-08-12T10:10:03Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R1 dispatched to visual_qa
+
+### 2026-08-12T10:10:22Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R1 moved to done
+
+### 2026-08-12T10:23:50Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T10:23:50Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T10:24:41Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R1-RESPONSE moved to done
+
+### 2026-08-12T10:26:54Z - visual_qa_recovery
+- type: visual_qa_recovery
+- lane: planner
+- task: TASK-028
+- summary: Visual QA Round 1 FAIL 1/2/0 recorded; only trailing-slash POST, complete required errors and local Privacy Policy target revision released
+
+### 2026-08-12T10:29:49Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T10:29:59Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION dispatched to frontend
+
+### 2026-08-12T10:31:49Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION moved to done
+
+### 2026-08-12T10:42:39Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T10:43:00Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION-RESPONSE dispatched to planner
+
+### 2026-08-12T10:43:37Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R1-REVISION-RESPONSE moved to done
+
+### 2026-08-12T10:50:15Z - planner_checkpoint
+- type: planner_checkpoint
+- lane: planner
+- task: TASK-028
+- summary: Visual R1 S1/O1/O2 narrow frontend revision independently PASS; only Visual QA Round 2 released
+
+### 2026-08-12T10:54:31Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-028
+- summary: message queued for visual_qa
+
+### 2026-08-12T10:54:44Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2 dispatched to visual_qa
+
+### 2026-08-12T10:54:53Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2 moved to done
+
+### 2026-08-12T11:10:01Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T11:10:20Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-PROCESSING-SWITCH dispatched to planner
+
+### 2026-08-12T11:11:11Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-PROCESSING-SWITCH moved to done
+
+### 2026-08-12T11:11:19Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-028
+- summary: message queued for visual_qa
+
+### 2026-08-12T11:11:55Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-PROCESSING-SWITCH-RESPONSE dispatched to visual_qa
+
+### 2026-08-12T11:12:04Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-PROCESSING-SWITCH-RESPONSE moved to done
+
+### 2026-08-12T11:19:45Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T11:20:06Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-RESPONSE dispatched to planner
+
+### 2026-08-12T11:20:16Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-R2-RESPONSE moved to done
+
+## 2026-08-12T11:24:00Z — TASK-028 Visual QA Round 2 FAIL Recovery
+
+- lane: planner
+- task: TASK-028
+- summary: Visual QA Round 2 preserved as FAIL 0/1/0; all RFQ state/security gates passed and only the 390/320 nested Privacy Policy overflow entered bounded frontend revision
+- artifact: `TASKS/ARTIFACTS/TASK-028/FRONTEND_VISUAL_R2_OVERFLOW_REVISION_DISPATCH.md`
+- next: local CSS fix, Planner checkpoint, then bounded 390/320 visual closure
+
+## 2026-08-12T11:36:00Z — TASK-028 Visual R2 Overflow Revision Planner PASS
+
+- lane: planner
+- task: TASK-028
+- summary: two-declaration local policy box-model revision passed independent presentation, isolated full focused, static, protected and governance gates
+- artifact: `TASKS/ARTIFACTS/TASK-028/FRONTEND_VISUAL_R2_OVERFLOW_REVISION_PLANNER_CHECKPOINT.md`
+- next: one bounded 390/320 visual closure only
+
+## 2026-08-12T11:46:00Z — TASK-028 Overflow Closure and Pre-review PASS
+
+- lane: planner
+- task: TASK-028
+- summary: bounded Visual closure PASS 0/0/0 and final pre-review gates pass; task enters UNDER_REVIEW for its sole complete adversarial review
+- artifact: `TASKS/ARTIFACTS/TASK-028/PRE_REVIEW_VALIDATION.md`
+- next: exactly one linked complete-review verdict; any repair receives bounded closure only
+
+## 2026-08-12T11:54:56Z — TASK-028 Unique Complete Review FAIL Recovery
+
+- lane: planner
+- task: TASK-028
+- summary: unique complete review preserved as FAIL 0/1/1; only Unicode maxlength P1 and missing consolidated evidence P2 entered bounded revision
+- artifact: `TASKS/ARTIFACTS/TASK-028/FRONTEND_ADVERSARIAL_UNICODE_P1_R1_DISPATCH.md`
+- next: frontend P1 correction, Planner P2 evidence, fresh validation, same-reviewer bounded closure only
+
+## 2026-08-12T12:06:00Z — TASK-028 Adversarial Findings Planner Checkpoint PASS
+
+- lane: planner
+- task: TASK-028
+- summary: Unicode P1 and consolidated-evidence P2 pass fresh Planner validation; task returns to UNDER_REVIEW for same-reviewer bounded closure only
+- artifact: `TASKS/ARTIFACTS/TASK-028/ADVERSARIAL_FINDINGS_PLANNER_CHECKPOINT.md`
+- next: one bounded P1/P2 closure; no second complete review
+
+## 2026-08-12T12:16:00Z — TASK-028 Bounded Closure and Final Validation PASS
+
+- lane: planner
+- task: TASK-028
+- summary: same-reviewer bounded closure PASS 0/0/0 and fresh full 87/707 plus build/smoke/governance validation PASS
+- artifact: `TASKS/ARTIFACTS/TASK-028/FINAL_VALIDATION.md`
+- next: checked prepare-awaiting-user, then wait for exact user acceptance phrase
+
+### 2026-08-12T11:22:02Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T11:22:19Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION dispatched to frontend
+
+### 2026-08-12T11:23:13Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION moved to done
+
+### 2026-08-12T11:27:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T11:28:02Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-VISUAL-R2-OVERFLOW-REVISION-RESPONSE moved to done
+
+### 2026-08-12T11:33:07Z - message_queued
+- type: message_queued
+- lane: visual_qa
+- task: TASK-028
+- summary: message queued for visual_qa
+
+### 2026-08-12T11:33:23Z - message_dispatched
+- type: message_dispatched
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-OVERFLOW-CLOSURE dispatched to visual_qa
+
+### 2026-08-12T11:34:05Z - message_done
+- type: message_done
+- lane: visual_qa
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-OVERFLOW-CLOSURE moved to done
+
+### 2026-08-12T11:40:38Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T11:41:01Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-OVERFLOW-CLOSURE-RESPONSE dispatched to planner
+
+### 2026-08-12T11:41:24Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-VISUAL-QA-OVERFLOW-CLOSURE-RESPONSE moved to done
+
+### 2026-08-12T11:44:39Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T11:44:54Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-12T11:45:15Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-12T11:53:44Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T11:54:10Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T11:54:28Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+### 2026-08-12T11:56:03Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-028
+- summary: message queued for frontend
+
+### 2026-08-12T11:56:18Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1 dispatched to frontend
+
+### 2026-08-12T11:56:59Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1 moved to done
+
+### 2026-08-12T11:59:57Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T12:00:18Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T12:00:22Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-FRONTEND-ADVERSARIAL-UNICODE-P1-R1-RESPONSE moved to done
+
+### 2026-08-12T12:05:48Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T12:06:07Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE dispatched to adversarial_reviewer
+
+### 2026-08-12T12:07:10Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE moved to done
+
+### 2026-08-12T12:11:16Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-028
+- summary: message queued for planner
+
+### 2026-08-12T12:11:38Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE-RESPONSE dispatched to planner
+
+### 2026-08-12T12:11:46Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-028
+- summary: message MSG-TASK-028-ADVERSARIAL-FINDING-CLOSURE-RESPONSE moved to done
+
+### 2026-08-12T12:16:25Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-028
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-12T12:29:13Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-028
+- summary: TASK-028 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+### 2026-08-12T12:29:13Z - formal_delivery_authorized
+- type: formal_delivery_authorized
+- lane: planner
+- task: TASK-028
+- summary: Exact user acceptance recorded; only TASK-028 scoped formal commit, task-branch push, main integration and main push are authorized. Deployment remains excluded.

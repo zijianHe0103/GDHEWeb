@@ -4446,6 +4446,14 @@ Each execution records:
 - 只暂存 TASK-024 受控交付物；排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～023 closure edits 和历史 resume packet。
 - 唯一下一步：正式提交并推送任务分支，fast-forward 合并并推送 `main`；不部署、不开始 TASK-025 或 runtime 实现。
 
+## 2026-08-11T05:08:48Z TASK-024 formal delivery completed
+
+- 正式提交 `a048a96b2d5af321234b9e51be9adf991510f85a` 已推送至 `origin/codex/TASK-024-rfq-submission-contract`。
+- 本地 `main` 已 fast-forward 至同一提交并成功推送 `origin/main`；远端任务分支和远端 `main` 均核验一致。
+- 当前任务收口为 `CLOSED / ACCEPTED / MERGED`；本次未部署，也未开始 RFQ runtime、飞书连接或下一任务。
+- 用户自有 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～023 closure edits 与历史 resume packet 保持未提交。
+- 唯一下一步：等待用户创建下一项小任务。
+
 ## 2026-08-11T06:38:09Z TASK-025 intake
 
 - 用户创建 `TASK-025：允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验`。
@@ -4561,6 +4569,13 @@ Each execution records:
 - Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-024 closure edits and historical resume packets.
 - Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.
 
+## 2026-08-11T14:49:34Z TASK-025 Formal Delivery Completed
+
+- Created formal commit `c642166c20b57735fe500608176de109163caf9a` with the required Chinese task/change/validation/documentation record.
+- Pushed `codex/TASK-025-article-number-batch-validation`, fast-forwarded local and remote `main` from `a048a96` to `c642166`, and verified all four refs are identical.
+- Preserved `.codex/config.toml`, `frontend/tsconfig.json`, TASK-021 through TASK-024 closure edits and historical resume packets outside the task commit.
+- TASK-025 is `CLOSED / ACCEPTED / MERGED`; no deployment, final RFQ or Feishu integration was performed.
+
 ## 2026-08-12T02:37:16Z TASK-026 Intake
 
 - Created `TASK-026` for the additive RFQ Submission `2.0.0` machine contract based on Quote Basket `3.0.0` and public-but-untrusted Article Number.
@@ -4660,6 +4675,14 @@ Each execution records:
 - TASK-026 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; all review, closure, final-validation, documentation and checked-preparation evidence remains valid.
 - Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-025 closure edits and historical resume packets.
 - Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.
+
+## 2026-08-12T04:00:42Z TASK-026 Formal Delivery Completed
+
+- Created formal commit `ae59adcbcc3d61996ec7727d0746026b04af9d61` with the required Chinese task/change/validation/documentation record.
+- Pushed `codex/TASK-026-rfq-submission-v2-contract`, fast-forwarded local and remote `main` from `c642166` to `ae59adc`, and verified all four refs are identical.
+- Preserved `.codex/config.toml`, `frontend/tsconfig.json`, TASK-021 through TASK-025 closure edits and historical resume packets outside the task commit.
+- TASK-026 is `CLOSED / ACCEPTED / MERGED`; no deployment, Next.js intake, persistence or Feishu integration was performed.
+
 ## 2026-08-12T04:12:13Z TASK-027 Intake
 
 - Created TASK-027 for the smallest local Next.js RFQ Intake Runtime Core and isolated Stub Sink vertical slice.
@@ -4847,3 +4870,139 @@ Each execution records:
   TASK-021–026 closure edits and historical resume packets from staging.
 - Unique next: formal Chinese commit, push task branch, fast-forward and push
   `main`, then verify all four refs. No deployment.
+
+## 2026-08-12T07:26:44Z TASK-027 Formal Delivery Completed
+
+- Created formal Chinese commit `8891df61759f377cc9e2f110ecb41aabb7cd15fb` from only the authorized TASK-027 scope.
+- Pushed `codex/TASK-027-local-rfq-intake-stub-sink`, atomically fast-forwarded local `main`, and pushed `main`.
+- Verified local task branch, local `main`, remote task branch and remote `main` all point to the exact commit.
+- Preserved `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021–026 post-delivery closure edits and historical resume packets outside the formal commit.
+- No deployment or external-system integration was performed. Unique next: wait for the user's next task.
+
+## 2026-08-12T07:37:26Z TASK-028 Intake
+
+- Created `TASKS/ACTIVE/TASK-028-customer-rfq-form.md` on `codex/TASK-028-customer-rfq-form` from main commit `8891df61759f377cc9e2f110ecb41aabb7cd15fb`.
+- Froze contract-first customer fields: Full Name, Company Name, Country/Region and City required; WhatsApp, WeChat, Business Email and Phone individually optional with at least one; Company Website and Additional Requirements optional.
+- Recorded the live CRM lead mapping as read-only future integration evidence. `初步客户等级` remains blank for manual sales judgment; no Feishu mutation is authorized.
+- Scope is local visible form -> Public Draft 2.0 -> TASK-027 Stub intake -> validated receipt/error -> exact accepted-snapshot Basket clear. Production persistence, Feishu, security providers and deployment remain excluded.
+- Preserved all pre-existing dirty files and historical resume packets. Unique next: wait for exact `确认 TASK-028 需求并开始执行`.
+## 2026-08-12T07:46:24Z TASK-028 Requirements Confirmed
+
+- 用户精确输入 `确认 TASK-028 需求并开始执行`；任务从 `AWAITING_REQUIREMENT_CONFIRMATION` 进入 `READY / NOT_ACCEPTED / DIRTY`。
+- 仅释放 Planner A0：客户字段、intent、Basket 投影、精确清除、模式矩阵、保护基线和 TDD 顺序。
+- 完整表单、frontend 实施、视觉 QA、review、Git、飞书和部署在 A0 PASS 前保持阻塞。
+
+## 2026-08-12T07:50:55Z TASK-028 A0 PASS
+
+- 建立 REQUIREMENTS、A0_DESIGN、TDD_SEAMS、IMPLEMENTATION_PLAN、49-file protected baseline、validation log 和 checkpoint。
+- 按 TASK-026 纠正清除语义：Basket 在提交期间发生变化时保留整个当前 Basket，不做部分行清除。
+- 独立复现 49/49 protected、RFQ v2 `20/5/63/94`、既有 `2 files / 10 tests`、lint/typecheck、generated/listener/diff/DPG PASS。
+- TASK-028 产品代码 diff 为零；任务进入 `IN_PROGRESS`。
+- unique_next: 只派发 frontend A1 customer public domain，收到 linked response 后再做 Planner checkpoint。
+
+## 2026-08-12T08:08:58Z TASK-028 Frontend A1 Planner Checkpoint PASS
+
+- ACKed/done `MSG-TASK-028-FRONTEND-CUSTOMER-DOMAIN-A1-RESPONSE` and inspected the exact A1 source, tests and four linked evidence files.
+- Independently reproduced `3 files / 15 tests`, RFQ v2 `20/5/63/94`, lint/typecheck, 49/49 protected, zero generated/listener residue, diff and DPG PASS.
+- Confirmed only the client-safe customer domain was added; no UI, intent, Basket projection, intake, clearing, CMS/CRM/Feishu, dependency or external action.
+- Unique next: release only frontend A2 and stop again for a linked response plus independent Planner checkpoint.
+
+## 2026-08-12T08:39:21Z TASK-028 Frontend A2 Planner Checkpoint PASS
+
+- ACKed/done `MSG-TASK-028-FRONTEND-INTENT-SUBMISSION-A2-RESPONSE` and inspected the complete A2 product/evidence diff.
+- Independently reproduced intent/Route/projection/builder/intake `5 files / 18 tests`, server-only `1/10`, RFQ v2 `20/5/63/94`, lint/typecheck and 49/49 protected hashes.
+- Confirmed exact 30-minute HMAC intent, ordered ready-only Basket projection, replay-before-intent and invalid-intent-before-reservation/mixed/Sink boundaries.
+- Generated output, caches and port 3000 listener are absent; next-env, diff and all DPG gates pass.
+- Unique next: release only frontend A3 visible customer form, one intent request, one intake request and closed public result; A4 clearing/retry remains blocked.
+
+## 2026-08-12T09:07:13Z TASK-028 Frontend A3 Planner Checkpoint PASS
+
+- ACKed/done the linked A3 response and inspected all four execution artifacts plus the current product diff.
+- Independently reproduced current RFQ plus Quote Basket route `20 files / 113 tests`, RFQ v2 verifier `20/5/63/94`, lint, typecheck and A0 protected `49/49`.
+- Confirmed the exact visible ten-field form, one intent then one intake, pending suppression, closed public receipt/error mapping and complete Basket retention on every A3 outcome.
+- Confirmed no clear/remove-storage, retry persistence, partial deletion, external call, A5, Visual QA or review behavior entered A3.
+- Cleaned only the Planner-generated TypeScript cache recoverably; next-env remains the protected production byte and no generated/listener residue remains.
+- Unique next: release only frontend A4 exact accepted compare-and-clear plus one live in-memory retry/replay seam, then stop for another independent Planner checkpoint.
+# 2026-08-12 TASK-028 Frontend A4 Planner Checkpoint PASS
+
+- ACKed/done the linked A4 response and read the four execution artifacts plus all scoped production files.
+- Independently reproduced direct A4 `5/31`, RFQ plus Quote Basket `36/189`, full Vitest `87/700`, ten verifiers, lint and typecheck.
+- Confirmed authentic accepted-only clear, exact six-field/token final-storage equality, full changed-Basket retention and explicit unchanged live-attempt replay with no automatic retry or persistence.
+- Restored production next-env with `apply_patch`, moved Planner-generated `.next` recoverably to `/tmp/gdhe-task028-planner.dZksMS/.next`, and confirmed `47 exact + 2 authorized`, no generated residue/listener, diff and all DPG gates PASS.
+- Unique next: dispatch only A5 real local HTTP, production fail-closed, security/regression and documentation consolidation; Visual QA and the single complete review remain blocked.
+
+# 2026-08-12 TASK-028 Frontend A5 Planner Checkpoint PASS
+
+- ACKed/done the linked A5 response and inspected all five execution artifacts plus the current product/document diff.
+- Independently reproduced focused `3 files / 23 tests`, full `87 files / 702 tests`, all ten verifiers, lint, typecheck, Next production build and the real RFQ HTTP smoke.
+- Confirmed one fail-closed gate for page/intent/intake, configured local noindex visibility, accepted/processing/conflict/customer/Basket outcomes, exact new-attempt call count, replay and unset/disabled/production final 404.
+- Applied the truthful Planner-owned root README and architecture updates; document impact is resolved without claiming persistence, production security, Feishu/CRM/email or deployment.
+- Restored production next-env and moved generated `.next` recoverably to `/tmp/gdhe-task028-planner.hF88Li/.next`; protected baseline is `47 exact + 2 authorized`, no cache/listener residue, diff and all DPG gates PASS.
+- Unique next: dispatch only one independent Visual QA pass; the single complete adversarial review remains blocked until visual PASS.
+
+# 2026-08-12 TASK-028 Visual QA Round 1 FAIL Recovery
+
+- ACKed/done the linked Visual QA response and preserved `FAIL / severe 1 / obvious 2 / detail 0` as immutable Round 1 history.
+- Confirmed three bounded causes: trailing-slash intent/intake fetches encounter Next 308 under `redirect:error`; empty submission lacks four required-field errors; no focusable real local Privacy Policy target precedes submit.
+- Preserved PASS evidence for five acceptance widths, no horizontal overflow, base keyboard/focus, reduced motion, protected-field isolation and zero external requests.
+- Stopped the Planner-owned Next/mock listeners, recoverably moved only generated `.next` to `/tmp/gdhe-task028-visual-r1-cleanup.DgZNxc/.next`, restored production next-env hash `7b550dda...12651`, and confirmed ports 3000/18080 plus TypeScript cache are clear.
+- Unique next: dispatch only S1/O1/O2 frontend revision, independently validate, then run one narrow Visual QA Round 2; the unique complete review remains blocked.
+
+# 2026-08-12 TASK-028 Visual R1 Frontend Revision Planner Checkpoint PASS
+
+- ACKed/done the linked narrow revision response and inspected all three production seams, direct tests and four artifacts.
+- Independently reproduced direct `3/29`; the first monolithic full run had one unrelated listener timing miss at `704/705`, the unchanged file passed `1/4` in isolation, and the serial complete inventory passed `87/705`.
+- All ten verifiers, lint, non-incremental typecheck, production build and five production smokes pass; RFQ smoke retains one intent/one intake, replay, zero legacy and production/unset/disabled final 404.
+- Protected matrix is `47 exact + 2 previously authorized + 0 blocking`; Planner moved generated `.next` recoverably to `/tmp/gdhe-task028-visual-r1-planner.pvurgz/.next`, restored production next-env and confirmed no listener/cache residue.
+- Unique next: start the Planner accepted-sink and delayed mixed fixture, then dispatch one narrow Visual QA Round 2. The unique complete review remains blocked.
+
+# 2026-08-12 TASK-028 Visual QA Round 2 FAIL Recovery
+
+- ACKed/done `MSG-TASK-028-VISUAL-QA-R2-RESPONSE`; preserved Round 1 `FAIL 1/2/0` and Round 2 `FAIL 0/1/0` with all visual evidence.
+- Real Chrome Guest passed slashless one-intent/one-intake, pending duplicate suppression, accepted unchanged clear, second-tab changed-Basket retain, exact five errors/ARIA, Privacy target, processing retain, no automatic retry and explicit replay ending at `1 intent / 2 intake`.
+- Sole finding is local: nested `#rfq-privacy-policy` inherits global content-box section width/padding and overflows at 390 (`390/427`) and 320 (`320/361`).
+- Ran checked `task_transition.py reopen`; helper safely rejected because the task is already `IN_PROGRESS`, with zero mutation. Recorded equivalent same-task recovery.
+- Unique next: dispatch only the local border-box/min-width CSS correction and direct regression, then one bounded 390/320 Visual closure. Complete adversarial review remains blocked.
+
+# 2026-08-12 TASK-028 Visual R2 Overflow Revision Planner Checkpoint PASS
+
+- ACKed/done the linked frontend response and inspected the exact two-declaration local CSS change, one direct test and lane evidence.
+- Independently passed presentation `1/8`; the first combined focused run retained two old server-only temporary-root timing failures with all other `193/193` passing, then isolated server-only `1/10` and remaining `35/185` both passed.
+- Lint, non-incremental typecheck, A0 `47 exact + 2 authorized`, production next-env, generated/listener cleanup, diff and DPG gates pass.
+- Unique next: start one local preview and dispatch only a 390/320 bounded Visual closure. No complete review until that closure passes.
+
+# 2026-08-12 TASK-028 Overflow Closure and Pre-review PASS
+
+- ACKed/done the linked bounded Visual response; independently reproduced R1 `20/20`, R2 `42/42` and closure `5/5` hashes plus five 956x768 JPEG/JFIF encodings.
+- Closure proves exact `390/390/390` and `320/320/320`, matching policy/form bounds, native Privacy-before-Submit and same-page target focus, with zero submission/external/CMS/Feishu/analytics request.
+- Stopped Planner preview PID 64211, recoverably moved generated `.next`, restored production next-env hash and confirmed ports/caches clear.
+- Pre-review validation, diff and DPG gates pass; task moved to UNDER_REVIEW.
+- Unique next: dispatch exactly one complete adversarial review. Any FAIL permits only same-reviewer bounded finding closure.
+
+# 2026-08-12 TASK-028 Unique Complete Review FAIL Recovery
+
+- ACKed/done the single complete review response and preserved `FAIL / P0=0 / P1=1 / P2=1` as immutable history.
+- P1 is limited to native UTF-16 `maxlength` narrowing the frozen Unicode code-point contract; P2 is limited to three declared consolidated evidence paths being absent.
+- Ran checked `task_transition.py reopen`; it safely rejected because the helper only accepts `AWAITING_USER`, leaving zero mutation. Recorded equivalent `NEEDS_REVISION` recovery.
+- Unique next: frontend repairs only P1; Planner creates only the three truthful consolidated evidence views; then fresh validation and same-reviewer bounded closure.
+
+# 2026-08-12 TASK-028 Adversarial Findings Planner Checkpoint PASS
+
+- ACKed/done the linked frontend P1 response and independently inspected the minimum source/test diff.
+- Direct `2/14`, effective current RFQ `21/127`, lint/typecheck, ten verifiers, `47 exact + 2 authorized`, next-env, cleanup, diff and DPG gates PASS.
+- Created the exact three missing canonical consolidated evidence views with truthful stage/current attribution; no historical report was rewritten.
+- Task returns to UNDER_REVIEW. Unique next: same-reviewer bounded P1/P2 closure only; no second complete review.
+
+# 2026-08-12 TASK-028 Bounded Closure and Final Validation PASS
+
+- ACKed/done the same-reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0`; preserved the unique complete review `FAIL 0/1/1` above it.
+- Fresh current-byte full Vitest is `87 files / 707 tests PASS`; ten verifiers, lint/typecheck, Next build and all five production smokes PASS.
+- Restored production next-env with apply_patch and moved generated `.next` recoverably to `/tmp/gdhe-task028-final-cleanup.r4U8sa/.next`; no generated/listener residue remains.
+- Final validation and Planner summary are complete. Unique next: checked prepare-awaiting-user, then wait for exact formal-delivery phrase.
+
+# 2026-08-12 TASK-028 Formal Delivery Authorized
+
+- User supplied the exact formal-delivery phrase; `task_accept.py check` and `accept` both passed at `2026-08-12T12:29:13Z`.
+- Current state is `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`; all review, validation and documentation gates remain valid.
+- Exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021–027 closure edits and historical resume packets from staging.
+- Unique next: formal Chinese commit, push task branch, merge into and push `main`, then verify all four refs. No deployment.

@@ -372,3 +372,65 @@ Each execution records:
 - validation: R4 31/31 hashes and JPEG/JFIF magic, canonical historical 50/50 hashes, Markdown diff, project, registry, controlled-message and strict lane gates PASS before response
 - response: one `MSG-TASK-023-VISUAL-QA-UNIFIED-CARDS-R4-RESPONSE` review response sent and linked to the original unified-card request through the real Codex thread bridge
 - next: Planner owns ACK, cleanup and checkpoint; visual_qa returns to wait state
+
+## 2026-08-12
+
+### TASK-028 visual QA Round 1
+
+- task: `TASK-028`
+- message: `MSG-TASK-028-VISUAL-QA-R1`
+- ack: exact chat ACK sent and controlled ACK recorded before execution
+- runtime: reused Planner-owned accepted-sink Next PID 46538 and delayed fixture PID 46560; neither listener was started, stopped or reconfigured
+- seed: exact frozen `ready-mixed.json`, SHA-256 `0bdcf375459c49dccf65ec383c5d35cc0538f242c698850dc8166b1c65ae38b9`
+- responsive: exact 1440/1024/768/390/320 each had `innerWidth == clientWidth == scrollWidth`, zero viewport offender and no clipping/overlap
+- native_keyboard: clean Chrome Guest reached Basket quantity/Remove, every customer field and Submit; quantity Arrow Up/Down restored `2`; visible focus passed where present
+- severe_finding: valid browser submission calls trailing-slash `/api/rfq/intent/` with `redirect:error`; current runtime returns 308 to slashless canonical URL, producing `net::ERR_FAILED`, zero intake and stable temporary error
+- obvious_finding_1: empty submit focuses the summary but exposes only contact-method error; Full Name, Company Name, Country/Region and City lack required errors/associations
+- obvious_finding_2: native order jumps Additional Requirements -> Submit Request; browser scan and source confirm zero Privacy Policy link
+- reduced_motion: exact 320 emulation returned true, 320/320, zero moving element; restored afterward
+- privacy_network: visible/AX/HTML excluded Article Number, UUID, secret/HMAC, intent/key/snapshot/token, WordPress/Feishu and raw diagnostic; resources were same-origin, one failed intent, zero intake/polling/external request
+- state_gate: accepted prerequisite failed before intake; no processing-switch request was sent and accepted-cleared/changed/processing/retry were not inferred
+- evidence: 20 screenshots, all actual JPEG/JFIF under `.png` names; exact magic, dimensions and SHA-256 recorded; timing diagnostic explicitly not claimed as pending
+- result: `FAIL / severe 1 / obvious 2 / detail 0`
+- protected_scope: no product/docs/task-authority/CMS/dependency/Git/deployment/review/external-system mutation
+- validation: 20/20 evidence hashes and JPEG/JFIF magic, report parity, Markdown/diff, project, registry, controlled-message and strict lane audit PASS before response
+- response: one `MSG-TASK-028-VISUAL-QA-R1-RESPONSE` execution response sent and linked to the original Round 1 request through the real Codex thread bridge
+- next: Planner owns ACK, correction and any narrow retest; visual_qa returns to wait state
+
+### TASK-028 visual QA Round 2
+
+- task: `TASK-028`
+- message: `MSG-TASK-028-VISUAL-QA-R2`
+- ack: exact chat ACK and controlled ACK completed before execution
+- preservation: Round 1 remains `FAIL / severe 1 / obvious 2 / detail 0`; all 20 Round 1 hashes revalidated unchanged
+- accepted_runtime: reused Planner-owned Next PID `54945` and delayed fixture PID `54901`; exact frozen seed hash `0bdcf375459c49dccf65ec383c5d35cc0538f242c698850dc8166b1c65ae38b9`
+- s1: slashless intent then intake, authentic pending suppression, accepted unchanged clear and accepted second-tab changed-Basket full retain all PASS
+- o1: exact ordered five-error summary, four field ARIA associations and contact guidance/error association PASS
+- o2: native Privacy Policy focus before Submit, same-page target focus and zero external policy request PASS
+- controlled_switch: one request `MSG-TASK-028-VISUAL-QA-R2-PROCESSING-SWITCH`; Planner response confirmed old PID `54945` exited before sole replacement PID `57285` started in indeterminate mode; fixture PID `54901` unchanged
+- processing: initial `intent 200 + intake 202`, Basket retained, no automatic/background request after 2.2 seconds; explicit native replay produced final `intent 1 / intake 2`, statuses `200/202/202`, same public reference and retained Basket
+- new_obvious_finding: nested `#rfq-privacy-policy` inherits global content-box section width/padding; 390 measured client/scroll `390/427`, 320 measured `320/361`, with sole offender and visible right clipping; 1440/1024/768 exact equality
+- reduced_motion: explicit 320 reduce true, zero running animation, restored; overflow remained
+- privacy_network: zero protected identity/private intent in visible/AX/HTML, zero external/WordPress/Feishu/analytics request; truthful policy copy says data is not sent to Feishu
+- evidence: 42 new files under `QA/TASK-028/r2`, all JPEG/JFIF bytes under `.png`, magic/dimensions/hashes disclosed; non-authoritative diagnostics preserved and labelled
+- result: `FAIL / severe 0 / obvious 1 / detail 0`
+- smallest_correction: local border-box/min-width override for the nested policy section, then bounded 390/320 visual retest
+- protected_scope: no frontend/CSS/tests/docs/task authority/CMS/dependency/Git/deployment/external mutation; browser closed; Planner listeners left running
+- validation: Round 1 `20/20` and Round 2 `42/42` hashes PASS; Round 2 JPEG/JFIF magic `42/42`, dimensions `33 x 956x768 + 9 x 640x640`, canonical report parity, scoped diff, messages, project schema and strict lane audit PASS; project audit disclosed only the existing dirty/multiple-active and known temp-candidate conditions
+- next: send one linked Round 2 execution response and stop for Planner checkpoint/correction
+
+### TASK-028 overflow bounded visual closure
+
+- task: `TASK-028`
+- message: `MSG-TASK-028-VISUAL-QA-OVERFLOW-CLOSURE`
+- ack: exact chat ACK and controlled ACK completed before execution
+- preservation: Round 1 remains `FAIL / severe 1 / obvious 2 / detail 0`; Round 2 remains `FAIL / severe 0 / obvious 1 / detail 0`; all prior `20/20 + 42/42` hashes revalidated unchanged
+- runtime: reused only Planner-owned Next PID `64211`; no server start, stop, switch or reconfiguration
+- seed: same frozen ready-mixed Basket hash `0bdcf375459c49dccf65ec383c5d35cc0538f242c698850dc8166b1c65ae38b9`; no form submission
+- closure_geometry: 390 exact `390/390/390`, form/policy `44.5..345.5` width `301`; 320 exact `320/320/320`, form/policy `41..279` width `238`; contained true, clipped false, overlap false, zero offender at both widths
+- native_keyboard: 23 Tabs reached Privacy, next Tab reached Submit, Shift+Tab returned and Enter moved same-page focus to `#rfq-privacy-policy` with visible outline
+- browser_boundary: unchanged local non-production policy copy; final 24 resources all same-origin; zero WordPress/Feishu/analytics/external and zero intent/intake request
+- evidence: five new screenshots under `QA/TASK-028/overflow-closure`, all actual JPEG/JFIF under `.png`, `956x768`, exact magic and hashes recorded
+- result: `PASS / severe 0 / obvious 0 / detail 0` for the sole Round 2 overflow finding
+- protected_scope: no product/CSS/tests/docs/task authority/CMS/dependencies/Git/deployment/external mutation; browser closed; PID `64211` left listening
+- next: send one linked bounded closure response and stop; Planner owns ACK, independent checkpoint and any adversarial-review dispatch

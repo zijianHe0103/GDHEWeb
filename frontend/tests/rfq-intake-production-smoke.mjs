@@ -19,6 +19,8 @@ const mixedResponse = await readFile(new URL(
 ), "utf8");
 let mixedCalls = 0;
 let legacyCalls = 0;
+let intentPosts = 0;
+let intakePosts = 0;
 let wordpressMode = "success";
 const wordpress = createServer((request, response) => {
   if (request.url === "/wp-json/gdhe/v1/quote-line-validations") mixedCalls += 1;
@@ -50,6 +52,8 @@ try {
 
   await verifyEnabled("rejected_before_delivery", [409, 409]);
   assert.equal(mixedCalls, 3, "Rejected-before-delivery replay resent the mixed POST.");
+  await verifyCustomerFieldFailure();
+  assert.equal(mixedCalls, 3, "A customer-field failure contacted WordPress.");
   for (const mode of ["mixed", "transport"]) await verifyWordPressFailure(mode);
   assert.equal(mixedCalls, 5, "A validation failure retried its mixed POST.");
   assert.equal(legacyCalls, 0, "A failure path called a legacy CMS endpoint.");
@@ -64,7 +68,7 @@ try {
     "A disabled or production route contacted WordPress.",
   );
   process.stdout.write(
-    "RFQ intake production smoke PASS: raw Origin/media/declared/stream/UTF-8 gates; local accepted/indeterminate/rejected replay; safe mixed/transport failures; one mixed POST per new intent; zero legacy; disabled/production 404.\n",
+    "RFQ intake production smoke PASS: visible local page/noindex disclosure; accepted/processing/conflict/customer/Basket failures; one intent plus one intake per new attempt; exact replay; zero legacy; unset/disabled/production page+Route 404.\n",
   );
 } finally {
   wordpress.closeAllConnections();
@@ -76,6 +80,7 @@ async function verifyWordPressFailure(mode) {
   const port = await availablePort();
   const origin = `http://127.0.0.1:${port}`;
   const child = startNext("dev", port, {
+    GDHE_PRODUCT_DETAIL_MODE: "preview",
     GDHE_RFQ_INTAKE_MODE: "stub",
     GDHE_RFQ_INTAKE_ORIGIN: origin,
     GDHE_RFQ_HMAC_KEY_VERSION: `smoke-${mode}`,
@@ -84,10 +89,17 @@ async function verifyWordPressFailure(mode) {
   });
   try {
     await waitForStatus(`${origin}/`, 200, child);
-    const result = await post(origin, submission);
+    await verifyLocalPage(origin);
+    const postsBefore = { intent: intentPosts, intake: intakePosts };
+    const result = await post(origin, await submissionWithIntent(origin));
     assert.equal(result.status, 409);
     assert.equal(result.body.error.code, "basket_refresh_required");
     assertPublicResponse(result);
+    assert.deepEqual(
+      { intent: intentPosts - postsBefore.intent, intake: intakePosts - postsBefore.intake },
+      { intent: 1, intake: 1 },
+      "A Basket failure did not use one intent POST and one intake POST.",
+    );
   } finally {
     await stopNext(child);
     wordpressMode = "success";
@@ -98,6 +110,7 @@ async function verifyEnabled(sinkOutcome, expectedStatuses) {
   const port = await availablePort();
   const origin = `http://127.0.0.1:${port}`;
   const child = startNext("dev", port, {
+    GDHE_PRODUCT_DETAIL_MODE: "preview",
     GDHE_RFQ_INTAKE_MODE: "stub",
     GDHE_RFQ_INTAKE_ORIGIN: origin,
     GDHE_RFQ_HMAC_KEY_VERSION: `smoke-${sinkOutcome}`,
@@ -106,10 +119,13 @@ async function verifyEnabled(sinkOutcome, expectedStatuses) {
   });
   try {
     await waitForStatus(`${origin}/`, 200, child);
+    await verifyLocalPage(origin);
     if (expectedStatuses.length === 3) await verifyRawGates(origin);
-    const requests = [submission, submission];
+    const postsBefore = { intent: intentPosts, intake: intakePosts };
+    const boundSubmission = await submissionWithIntent(origin);
+    const requests = [boundSubmission, boundSubmission];
     if (expectedStatuses.length === 3) {
-      const changed = structuredClone(submission);
+      const changed = structuredClone(boundSubmission);
       changed.customer.message = "A distinct smoke-test request.";
       requests.push(changed);
     }
@@ -117,7 +133,48 @@ async function verifyEnabled(sinkOutcome, expectedStatuses) {
     for (const body of requests) responses.push(await post(origin, body));
     assert.deepEqual(responses.map(({ status }) => status), expectedStatuses);
     assert.deepEqual(responses[0].body, responses[1].body, "Replay body changed.");
+    assert.equal(
+      JSON.stringify(requests[0]),
+      JSON.stringify(requests[1]),
+      "Replay did not reuse the byte-identical draft and idempotency key.",
+    );
+    assert.deepEqual(
+      { intent: intentPosts - postsBefore.intent, intake: intakePosts - postsBefore.intake },
+      { intent: 1, intake: requests.length },
+      "A new attempt or its replays used the wrong HTTP call counts.",
+    );
     for (const result of responses) assertPublicResponse(result);
+  } finally {
+    await stopNext(child);
+  }
+}
+
+async function verifyCustomerFieldFailure() {
+  const port = await availablePort();
+  const origin = `http://127.0.0.1:${port}`;
+  const child = startNext("dev", port, {
+    GDHE_PRODUCT_DETAIL_MODE: "preview",
+    GDHE_RFQ_INTAKE_MODE: "stub",
+    GDHE_RFQ_INTAKE_ORIGIN: origin,
+    GDHE_RFQ_HMAC_KEY_VERSION: "smoke-customer-fields",
+    GDHE_RFQ_HMAC_KEY_HEX: "20".repeat(32),
+    GDHE_RFQ_STUB_SINK_OUTCOME: "accepted",
+  });
+  try {
+    await waitForStatus(`${origin}/`, 200, child);
+    await verifyLocalPage(origin);
+    const postsBefore = { intent: intentPosts, intake: intakePosts };
+    const invalid = await submissionWithIntent(origin);
+    invalid.customer.fullName = "";
+    const result = await post(origin, invalid);
+    assert.equal(result.status, 400);
+    assert.equal(result.body.error.code, "invalid_request");
+    assertPublicResponse(result);
+    assert.deepEqual(
+      { intent: intentPosts - postsBefore.intent, intake: intakePosts - postsBefore.intake },
+      { intent: 1, intake: 1 },
+      "A customer-field failure did not use one intent POST and one intake POST.",
+    );
   } finally {
     await stopNext(child);
   }
@@ -165,10 +222,14 @@ async function verifyDisabled(mode) {
   const origin = `http://127.0.0.1:${port}`;
   const command = mode === "production" ? "start" : "dev";
   const environment = mode === "unset"
-    ? {}
+    ? { GDHE_PRODUCT_DETAIL_MODE: "preview" }
     : mode === "disabled"
-      ? { GDHE_RFQ_INTAKE_MODE: "off" }
+      ? {
+          GDHE_PRODUCT_DETAIL_MODE: "preview",
+          GDHE_RFQ_INTAKE_MODE: "off",
+        }
       : {
+          GDHE_PRODUCT_DETAIL_MODE: "preview",
           GDHE_RFQ_INTAKE_MODE: "stub",
           GDHE_RFQ_INTAKE_ORIGIN: origin,
           GDHE_RFQ_HMAC_KEY_VERSION: "smoke-production",
@@ -178,13 +239,30 @@ async function verifyDisabled(mode) {
   const child = startNext(command, port, environment);
   try {
     await waitForStatus(`${origin}/`, 200, child);
+    const page = await fetch(`${origin}/request-a-quote/`);
+    assert.equal(page.status, 404, `${mode} page was not fail-closed.`);
+    assertNoProtectedBytes(await page.text(), `${mode} page`);
     const result = await post(origin, submission);
     assert.equal(result.status, 404, `${mode} route was not fail-closed.`);
     assert.equal(result.text, "", `${mode} 404 exposed a body.`);
     assert.equal(result.headers.get("cache-control"), "no-store");
+    const intent = await postIntent(origin);
+    assert.equal(intent.status, 404, `${mode} intent route was not fail-closed.`);
+    assert.equal(intent.text, "", `${mode} intent 404 exposed a body.`);
+    assert.equal(intent.headers.get("cache-control"), "no-store");
   } finally {
     await stopNext(child);
   }
+}
+
+async function verifyLocalPage(origin) {
+  const response = await fetch(`${origin}/request-a-quote/`);
+  assert.equal(response.status, 200, "The configured local RFQ page was unavailable.");
+  const html = await response.text();
+  assert.match(html, /<meta name="robots" content="noindex, nofollow"/i);
+  assert.match(html, /Local RFQ collection/);
+  assert.match(html, /non-production Stub is enabled/);
+  assertNoProtectedBytes(html, "local RFQ page");
 }
 
 function startNext(command, port, environment) {
@@ -209,10 +287,40 @@ function startNext(command, port, environment) {
 }
 
 async function post(origin, body) {
+  intakePosts += 1;
   const response = await fetch(`${origin}/api/rfq/intake/`, {
     method: "POST",
     headers: { origin, "content-type": "application/json" },
     body: JSON.stringify(body),
+  });
+  const text = await response.text();
+  return {
+    status: response.status,
+    headers: response.headers,
+    text,
+    body: text === "" ? undefined : JSON.parse(text),
+  };
+}
+
+async function submissionWithIntent(origin) {
+  const issued = await postIntent(origin, submission.basket.sourceBasket);
+  assert.equal(issued.status, 200, "Local intent issuance failed.");
+  assert.equal(issued.headers.get("cache-control"), "no-store");
+  assert.equal(issued.headers.get("access-control-allow-origin"), null);
+  return {
+    ...structuredClone(submission),
+    submissionIntent: issued.body.submissionIntent,
+    idempotencyKey: issued.body.idempotencyKey,
+    privacyNotice: issued.body.privacyNotice,
+  };
+}
+
+async function postIntent(origin, sourceBasket = submission.basket.sourceBasket) {
+  intentPosts += 1;
+  const response = await fetch(`${origin}/api/rfq/intent/`, {
+    method: "POST",
+    headers: { origin, "content-type": "application/json" },
+    body: JSON.stringify(sourceBasket),
   });
   const text = await response.text();
   return {
@@ -277,6 +385,22 @@ function assertPublicResponse(result) {
     "2025550100",
     "20".repeat(32),
   ]) assert.equal(result.text.includes(forbidden), false, `Response leaked ${forbidden}.`);
+}
+
+function assertNoProtectedBytes(text, name) {
+  for (const forbidden of [
+    "GDHEPRD",
+    "26000000-0000-4000-8000-000000000201",
+    "wp-content",
+    "wp-json",
+    "WORDPRESS_API_URL",
+    "submissionIntent",
+    "idempotencyKey",
+    "submittedBasketSnapshot",
+    "submittedBasketToken",
+    "requestReference",
+    "20".repeat(32),
+  ]) assert.equal(text.includes(forbidden), false, `${name} leaked ${forbidden}.`);
 }
 
 async function availablePort() {

@@ -32,6 +32,7 @@ export type QuoteBasketClientState = Readonly<{
   addAccessory(draft: ReadyCatalogAccessoryDraftV3): QuoteBasketMutation | null;
   setQuantity(entryId: string, quantity: number): boolean;
   remove(entryId: string): boolean;
+  clearAcceptedReceipt(receipt: unknown, submittedSnapshot: unknown): Promise<boolean>;
 }>;
 
 const storageError = "Your Quote Basket is unavailable in this browser.";
@@ -151,6 +152,19 @@ export function useQuoteBasket(): QuoteBasketClientState {
     }
   }, [adapter]);
 
+  const clearAcceptedReceipt = useCallback(async (
+    receipt: unknown,
+    submittedSnapshot: unknown,
+  ) => {
+    if (!adapter) return false;
+    const cleared = await adapter.clearAcceptedReceipt(receipt, submittedSnapshot);
+    if (!cleared) return false;
+    setBasket(null);
+    setError(null);
+    setAnnouncement("Local test request accepted. Your Quote Basket was cleared.");
+    return true;
+  }, [adapter]);
+
   return Object.freeze({
     hydrated,
     basket,
@@ -160,5 +174,6 @@ export function useQuoteBasket(): QuoteBasketClientState {
     addAccessory,
     setQuantity,
     remove,
+    clearAcceptedReceipt,
   });
 }

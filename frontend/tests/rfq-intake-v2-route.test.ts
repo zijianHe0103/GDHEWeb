@@ -6,6 +6,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import expectedResponse from "../src/lib/rfq-submission-contract/v2/samples/task025/batch-response-ready-mixed.json";
 import publicSubmission from "../src/lib/rfq-submission-contract/v2/samples/positive/public-mixed.json";
 import { POST } from "../src/app/api/rfq/intake/route";
+import { issueLocalRfqIntent } from "../src/lib/rfq/server/v2/intent";
 
 const enabled = {
   NODE_ENV: "development",
@@ -210,13 +211,20 @@ describe("TASK-027 local RFQ POST transport gates", () => {
         ...enabled,
         WORDPRESS_API_URL: `http://127.0.0.1:${address.port}/wp-json`,
       });
+      const issued = issueLocalRfqIntent(publicSubmission.basket.sourceBasket);
+      const boundSubmission = {
+        ...structuredClone(publicSubmission),
+        submissionIntent: issued.submissionIntent,
+        idempotencyKey: issued.idempotencyKey,
+        privacyNotice: issued.privacyNotice,
+      };
       const request = () => new Request("http://localhost/api/rfq/intake/", {
         method: "POST",
         headers: {
           origin: enabled.GDHE_RFQ_INTAKE_ORIGIN,
           "content-type": "application/json",
         },
-        body: JSON.stringify(publicSubmission),
+        body: JSON.stringify(boundSubmission),
       });
 
       const first = await POST(request());

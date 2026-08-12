@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-028-VISUAL-QA-R1",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "visual_qa",
+  "task_id": "TASK-028",
+  "issue_id": null,
+  "priority": "high",
+  "created_at": "2026-08-12T10:09:33Z",
+  "requires_response_to": "",
+  "max_rounds": 2,
+  "status": "done",
+  "prompt": "ACK this exact request before execution. Perform only TASKS/ARTIFACTS/TASK-028/VISUAL_QA_DISPATCH.md against the Planner-owned accepted-sink runtime at http://127.0.0.1:3000/request-a-quote/ and delayed loopback validation fixture. Seed only the frozen ready-mixed Basket. Capture 1440/1024/768/390/320, empty/ready/field-error/pending/accepted-cleared/accepted-changed/processing/error, keyboard/focus/aria-live/reduced-motion/reflow/network/privacy boundaries. Finish accepted evidence first; request one controlled Planner runtime switch before processing evidence, and never start a concurrent Next server. Return PASS only with severe=0, obvious=0, detail=0; otherwise truthful FAIL/BLOCKED with exact reproduction. Write only QA/TASK-028/**, canonical TASKS/ARTIFACTS/TASK-028/VISUAL_QA_REPORT.md and visual_qa lane records. Do not edit product/docs/task authority/CMS/dependencies/Git/deployment or start complete review. Return one linked response.",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-028-customer-rfq-form.md",
+    "TASKS/ARTIFACTS/TASK-028/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-028/A0_DESIGN.md",
+    "TASKS/ARTIFACTS/TASK-028/A5_PLANNER_CHECKPOINT.md",
+    "TASKS/ARTIFACTS/TASK-028/VISUAL_QA_DISPATCH.md"
+  ],
+  "expected_artifacts": [
+    "QA/TASK-028/VISUAL_QA_REPORT.md",
+    "QA/TASK-028/EVIDENCE_INVENTORY.sha256",
+    "TASKS/ARTIFACTS/TASK-028/VISUAL_QA_REPORT.md"
+  ],
+  "notes": "",
+  "dispatched_at": "2026-08-12T10:10:03Z",
+  "delivery_key": "MSG-TASK-028-VISUAL-QA-R1:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "target_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_id": "MSG-TASK-028-VISUAL-QA-R1:019f88d0-0f9c-7940-af93-f9eef03f92c8",
+  "delivery_channel": "external_codex_thread_bridge",
+  "done_at": "2026-08-12T10:10:22Z",
+  "updated_at": "2026-08-12T10:10:22Z"
+}

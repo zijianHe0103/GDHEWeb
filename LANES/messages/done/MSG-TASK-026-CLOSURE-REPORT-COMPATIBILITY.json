@@ -1,0 +1,29 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-026-CLOSURE-REPORT-COMPATIBILITY",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-026",
+  "issue_id": null,
+  "priority": "P2",
+  "created_at": "2026-08-12T03:46:57Z",
+  "requires_response_to": "MSG-TASK-026-ADVERSARIAL-FINDING-CLOSURE-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "Governance-format correction only; do not perform any review or rerun findings. The checked prepare gate requires an exact line matching verdict: PASS in ADVERSARIAL_REVIEW_REPORT.md, while your truthful narrow closure section currently uses current_closure_verdict: PASS. Add exactly one machine-compatible line `- verdict: PASS` inside the existing Narrow Finding Closure metadata block, preserving the historical top-level Round 1 `- verdict: FAIL`, every finding/evidence byte and all other product/task state. Update only the review report and your worklog/message records, return one linked response, and stop. Do not modify product/runtime/Planner state, commit, push or deploy.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Pure machine-readable report compatibility; not a second review and not a finding closure rerun.",
+  "dispatched_at": "2026-08-12T03:47:13Z",
+  "delivery_key": "MSG-TASK-026-CLOSURE-REPORT-COMPATIBILITY:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T03:48:31Z",
+  "updated_at": "2026-08-12T03:48:31Z"
+}

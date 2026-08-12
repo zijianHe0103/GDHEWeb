@@ -1,0 +1,11 @@
+{
+  "contractVersion": "2.0.0",
+  "error": {
+    "code": "invalid_quantity",
+    "requestReference": "REQ-23456789ABCD",
+    "messageKey": "rfq.error.invalid_quantity",
+    "fieldErrors": [
+      { "field": "quantity", "code": "invalid", "entryId": "26000000-0000-4000-8000-000000000101" }
+    ]
+  }
+}

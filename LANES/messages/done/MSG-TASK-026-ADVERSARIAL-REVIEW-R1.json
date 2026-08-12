@@ -1,0 +1,35 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-026-ADVERSARIAL-REVIEW-R1",
+  "type": "review_request",
+  "from_lane": "planner",
+  "to_lane": "adversarial_reviewer",
+  "task_id": "TASK-026",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T03:10:08Z",
+  "requires_response_to": "",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "对 TASK-026 做唯一一次完整独立只读 adversarial review。完整读取 active task、REQUIREMENTS、A0_DESIGN、RFQ_SUBMISSION_V2_CONTRACT、BASKET_V3_TO_SUBMISSION_V2_MAPPING、SECURITY_AND_IDEMPOTENCY_INHERITANCE、五个 Schema、全部 samples/vectors、verify-machine-contract.cjs、四份执行证据、TASK-024/025 冻结权威、架构契约与 ADR-006。独立复现：additive v2 与 v1 冻结、Quote Basket 3.0 ready 行资格、standard/accessory Article Number public-but-untrusted、custom null/sales_follow_up、一次完整 TASK-025 mixed batch 权威来源、1..50/order/identity/quantity、closed Schema/local refs、客户/安全/幂等/回执/错误/保留继承、RFC 8785/HMAC/comparison/snapshot 固定向量、精确 Basket clear、公开错误隐私、文档真值、保护范围与非实施边界。特别挑战跨字段/跨行语义、canonicalizer 是否足以支撑声明、负向样本是否真实有效，以及 future runtime 是否存在多解。输出唯一 ADVERSARIAL_REVIEW_REPORT.md 和 linked PASS/FAIL/P0/P1/P2 response。只读业务交付物，不修复、不改 Planner 状态、不提交/推送/部署。若 FAIL，Planner 只授权 bounded finding closure，不再重复完整审核。",
+  "context_files": [
+    "TASKS/ACTIVE/TASK-026-rfq-submission-v2-contract.md",
+    "TASKS/ARTIFACTS/TASK-026/REQUIREMENTS.md",
+    "TASKS/ARTIFACTS/TASK-026/RFQ_SUBMISSION_V2_CONTRACT.md",
+    "TASKS/ARTIFACTS/TASK-026/EXECUTION_REPORT.md",
+    "TASKS/ARTIFACTS/TASK-026/TEST_OR_VALIDATION_LOG.md",
+    "docs/architecture/headless-wordpress-nextjs-contract.md",
+    "MEMORY/DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_REVIEW_REPORT.md"
+  ],
+  "notes": "Exactly one complete review. PASS is not acceptance or Git authorization; FAIL permits only bounded closure, not a second full review.",
+  "dispatched_at": "2026-08-12T03:11:15Z",
+  "delivery_key": "MSG-TASK-026-ADVERSARIAL-REVIEW-R1:019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "target_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_id": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T03:11:38Z",
+  "updated_at": "2026-08-12T03:11:38Z"
+}

@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-025
+current_task: TASK-026
 
 ## 活动任务
 
-- `TASK-025` 允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- `TASK-026` 建立基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同 — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
 
 ## 等待需求确认
 
@@ -29,7 +29,7 @@ current_task: TASK-025
 
 ## 等待推送
 
-- `TASK-025` — 已正式验收；等待任务分支提交/推送、合并 `main` 并推送 `main`
+- `TASK-026` — 正式验收已通过；等待提交、推送任务分支、合并并推送 `main`
 
 ## 已暂停
 
@@ -142,3 +142,7 @@ current_task: TASK-025
 ## Accepted
 
 - TASK-025: ACCEPTED at 2026-08-11T13:51:29Z
+
+## Accepted
+
+- TASK-026: ACCEPTED at 2026-08-12T03:52:49Z

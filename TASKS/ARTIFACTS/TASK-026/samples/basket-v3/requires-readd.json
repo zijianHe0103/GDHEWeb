@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "3.0.0",
+  "revision": 7,
+  "writerId": "26000000-0000-4000-8000-000000000002",
+  "mutationId": "26000000-0000-4000-8000-000000000005",
+  "updatedAt": "2026-08-12T03:00:00.000Z",
+  "expiresAt": "2026-09-11T03:00:00.000Z",
+  "items": [
+    {
+      "lineKind": "catalog_accessory",
+      "state": "requires_readd",
+      "entryId": "26000000-0000-4000-8000-000000000105",
+      "createdAt": "2026-08-12T03:00:00.000Z",
+      "product": {
+        "model": "TASK-025 ACCESSORY",
+        "name": "TASK-025 Synthetic Accessory",
+        "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Protected test candidate" }
+      },
+      "catalogPath": "/products/accessories/test-candidates/",
+      "articleNumber": null,
+      "quantityUnit": "piece",
+      "quantity": 1
+    }
+  ]
+}

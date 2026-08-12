@@ -1,0 +1,31 @@
+{
+  "schema": "DPG-LANES-MESSAGE-1.0.0",
+  "id": "MSG-TASK-026-ADVERSARIAL-P1-R1-REVISION",
+  "type": "execution_request",
+  "from_lane": "planner",
+  "to_lane": "executor",
+  "task_id": "TASK-026",
+  "issue_id": null,
+  "priority": "P1",
+  "created_at": "2026-08-12T03:24:54Z",
+  "requires_response_to": "MSG-TASK-026-ADVERSARIAL-REVIEW-R1-RESPONSE",
+  "max_rounds": 1,
+  "status": "done",
+  "prompt": "ACK this bounded revision request before mutation. Read the active TASK-026, TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_REVIEW_REPORT.md and the current TASK-026 contract/schemas/samples/vectors/verifier. Close exactly the two Round 1 P1 findings under strict RED then minimum GREEN, changing only TASKS/ARTIFACTS/TASK-026/** and LANES/executor/**. P1-1: add real Quote Basket 3.0 source-projection fixtures proving every ready configured standard/custom and catalog accessory cell is accepted while requires_validation/requires_readd reject before projection; bind the full TASK-025 batch response to authoritative lines across count, order, entryId, kind, unit, quantity, canonical product path, complete selection and packaging, resolution, current model, and every Article Number location; require configured-standard root/nested Article Number equality and preserve a rejecting mismatch vector. P1-2: make RFC 8785 evidence fail closed for lone surrogates across the complete Schema-valid domain; bind the authoritative positive payloadDigest to the fixed v2 HMAC; exercise altered-digest, bad HMAC and bad comparison-token rejection through the real semantic verifier rather than labels; encode and verify all five replay tuples and their exact state/effect semantics, including zero pre-reservation state, first-reservation 2592000000 ms anchor, no replay extension and no resend after expiry. Preserve TASK-024/025 frozen bytes, all 67 protected paths, current five-Schema public field decisions, ordinary valid vectors, architecture/ADR/README, runtime/UI/CMS/dependencies/real data/external systems. Update execution/TDD/validation/diff evidence with an explicit bounded-revision report, return one linked execution_response and stop for Planner checkpoint. Do not review, commit, push or deploy.",
+  "context_files": [
+    "TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_REVIEW_REPORT.md",
+    "TASKS/ACTIVE/TASK-026-rfq-submission-v2-contract.md",
+    "TASKS/ARTIFACTS/TASK-026/verify-machine-contract.cjs"
+  ],
+  "expected_artifacts": [
+    "TASKS/ARTIFACTS/TASK-026/ADVERSARIAL_P1_R1_REVISION_REPORT.md"
+  ],
+  "notes": "This is finding repair only. Preserve the unique complete review FAIL history; after Planner validation the same reviewer will perform one narrow finding-closure confirmation, not another full review.",
+  "dispatched_at": "2026-08-12T03:25:19Z",
+  "delivery_key": "MSG-TASK-026-ADVERSARIAL-P1-R1-REVISION:019f88cf-fd7d-7dc1-95f5-98684d793dfb",
+  "target_session": "019f88cf-fd7d-7dc1-95f5-98684d793dfb",
+  "delivery_id": "019f88cf-fd7d-7dc1-95f5-98684d793dfb",
+  "delivery_channel": "codex-app",
+  "done_at": "2026-08-12T03:25:33Z",
+  "updated_at": "2026-08-12T03:25:33Z"
+}

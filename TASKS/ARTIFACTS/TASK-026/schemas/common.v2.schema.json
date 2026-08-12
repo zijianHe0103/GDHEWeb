@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.v2.schema.json",
+  "title": "GDHE RFQ 2.0.0 common definitions",
+  "$defs": {
+    "uuidV4": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "utcTimestamp": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "positiveSafeInteger": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "hexSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "articleNumber": { "type": "string", "pattern": "^GDHEPRD[0-9]{6}$" },
+    "publicPath": { "type": "string", "minLength": 3, "maxLength": 2048, "pattern": "^/[a-z0-9]+(?:[/-][a-z0-9]+)*/$" },
+    "publicReference": { "type": "string", "pattern": "^RFQ-[A-Z2-9]{12}$" },
+    "requestReference": { "type": "string", "pattern": "^REQ-[A-Z2-9]{12}$" },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "label"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1, "maxLength": 80, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 120 }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "articleNumber", "lengthMeters", "color", "resolution"],
+      "properties": {
+        "type": { "enum": ["article_number", "custom_length"] },
+        "articleNumber": { "type": ["string", "null"], "pattern": "^GDHEPRD[0-9]{6}$" },
+        "lengthMeters": { "type": "number", "exclusiveMinimum": 0, "multipleOf": 0.1 },
+        "color": { "$ref": "#/$defs/color" },
+        "resolution": { "enum": ["standard_ready", "sales_follow_up"] }
+      },
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": { "const": "article_number" },
+            "articleNumber": { "$ref": "#/$defs/articleNumber" },
+            "resolution": { "const": "standard_ready" }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": { "const": "custom_length" },
+            "articleNumber": { "type": "null" },
+            "resolution": { "const": "sales_follow_up" }
+          }
+        }
+      ]
+    },
+    "packaging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basePackaging", "logoPrinting", "protectionArrangement"],
+      "properties": {
+        "basePackaging": { "enum": ["standard", "carton", "large_shrink_wrap"] },
+        "logoPrinting": { "type": "boolean" },
+        "protectionArrangement": { "type": ["string", "null"], "enum": ["single_bag", "paired", null] }
+      }
+    },
+    "configuredPublicLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entryId", "lineKind", "canonicalPath", "selection", "packaging", "quantityUnit", "quantity"],
+      "properties": {
+        "entryId": { "$ref": "#/$defs/uuidV4" },
+        "lineKind": { "const": "configured_product" },
+        "canonicalPath": { "$ref": "#/$defs/publicPath" },
+        "selection": { "$ref": "#/$defs/selection" },
+        "packaging": { "$ref": "#/$defs/packaging" },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "accessoryPublicLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entryId", "lineKind", "articleNumber", "quantityUnit", "quantity"],
+      "properties": {
+        "entryId": { "$ref": "#/$defs/uuidV4" },
+        "lineKind": { "const": "catalog_accessory" },
+        "articleNumber": { "$ref": "#/$defs/articleNumber" },
+        "quantityUnit": { "const": "piece" },
+        "quantity": { "$ref": "#/$defs/positiveSafeInteger" }
+      }
+    },
+    "sourceBasketSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "revision", "writerId", "mutationId", "updatedAt", "expiresAt"],
+      "properties": {
+        "schemaVersion": { "const": "3.0.0" },
+        "revision": { "$ref": "#/$defs/positiveSafeInteger" },
+        "writerId": { "$ref": "#/$defs/uuidV4" },
+        "mutationId": { "$ref": "#/$defs/uuidV4" },
+        "updatedAt": { "$ref": "#/$defs/utcTimestamp" },
+        "expiresAt": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    },
+    "publicBasketSubmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contractVersion", "sourceBasket", "items"],
+      "properties": {
+        "contractVersion": { "const": "2.0.0" },
+        "sourceBasket": { "$ref": "#/$defs/sourceBasketSnapshot" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": { "oneOf": [{ "$ref": "#/$defs/configuredPublicLine" }, { "$ref": "#/$defs/accessoryPublicLine" }] }
+        }
+      }
+    },
+    "publicCustomer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fullName", "companyName", "countryRegion", "city"],
+      "properties": {
+        "fullName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "companyName": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "whatsApp": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "weChat": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "businessEmail": { "type": "string", "minLength": 3, "maxLength": 254, "format": "email" },
+        "phone": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "countryRegion": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "city": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "companyWebsite": { "type": "string", "minLength": 8, "maxLength": 2048, "format": "uri", "pattern": "^https?://" },
+        "message": { "type": "string", "minLength": 1, "maxLength": 2000 }
+      },
+      "anyOf": [
+        { "properties": { "whatsApp": true }, "required": ["whatsApp"] },
+        { "properties": { "weChat": true }, "required": ["weChat"] },
+        { "properties": { "businessEmail": true }, "required": ["businessEmail"] },
+        { "properties": { "phone": true }, "required": ["phone"] }
+      ]
+    },
+    "privacyNotice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "presentedAt"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "presentedAt": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    }
+  }
+}

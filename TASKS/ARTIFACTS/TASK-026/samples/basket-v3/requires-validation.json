@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "3.0.0",
+  "revision": 7,
+  "writerId": "26000000-0000-4000-8000-000000000002",
+  "mutationId": "26000000-0000-4000-8000-000000000004",
+  "updatedAt": "2026-08-12T03:00:00.000Z",
+  "expiresAt": "2026-09-11T03:00:00.000Z",
+  "items": [
+    {
+      "lineKind": "configured_product",
+      "state": "requires_validation",
+      "entryId": "26000000-0000-4000-8000-000000000104",
+      "createdAt": "2026-08-12T03:00:00.000Z",
+      "product": {
+        "model": "FGD X15+PVC",
+        "name": "FGD X15+PVC Track",
+        "publicPath": "/products/fgd-x15-pvc/",
+        "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Protected test candidate" }
+      },
+      "selection": { "type": "standard", "lengthMeters": 6, "color": { "code": "ivory-white", "label": "Ivory White" } },
+      "packaging": {
+        "basePackaging": { "key": "standard", "label": "Standard Packaging" },
+        "logoPrinting": false,
+        "protectionArrangement": null
+      },
+      "articleNumber": null,
+      "resolution": "refresh_from_selection",
+      "quantityUnit": "piece",
+      "quantity": 2
+    }
+  ]
+}

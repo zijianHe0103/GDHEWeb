@@ -1,0 +1,131 @@
+{
+  "algorithm": {
+    "canonicalization": "RFC8785-JCS",
+    "businessPayloadMembers": ["basket", "customer", "privacyNotice"],
+    "macInputPrefixUtf8": "GDHE-RFQ-DIGEST-V2\n2.0.0\n",
+    "comparisonInputPrefixUtf8": "GDHE-RFQ-COMPARISON-V2\n2.0.0\n",
+    "snapshotInputPrefixUtf8": "GDHE-RFQ-BASKET-SNAPSHOT-V2\n",
+    "hmac": "HMAC-SHA-256",
+    "testKeyVersion": "test-rfq-hmac-v2",
+    "testSecretKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+  },
+  "requestFile": "samples/positive/public-mixed.json",
+  "canonicalBusinessPayload": "{\"basket\":{\"contractVersion\":\"2.0.0\",\"items\":[{\"canonicalPath\":\"/products/fgd-x15-pvc/\",\"entryId\":\"26000000-0000-4000-8000-000000000101\",\"lineKind\":\"configured_product\",\"packaging\":{\"basePackaging\":\"standard\",\"logoPrinting\":false,\"protectionArrangement\":null},\"quantity\":2,\"quantityUnit\":\"piece\",\"selection\":{\"articleNumber\":\"GDHEPRD000172\",\"color\":{\"code\":\"ivory-white\",\"label\":\"Ivory White\"},\"lengthMeters\":6,\"resolution\":\"standard_ready\",\"type\":\"article_number\"}},{\"canonicalPath\":\"/products/fgd-x15-pvc/\",\"entryId\":\"26000000-0000-4000-8000-000000000102\",\"lineKind\":\"configured_product\",\"packaging\":{\"basePackaging\":\"carton\",\"logoPrinting\":true,\"protectionArrangement\":\"single_bag\"},\"quantity\":1,\"quantityUnit\":\"piece\",\"selection\":{\"articleNumber\":null,\"color\":{\"code\":\"ivory-white\",\"label\":\"Ivory White\"},\"lengthMeters\":6.5,\"resolution\":\"sales_follow_up\",\"type\":\"custom_length\"}},{\"articleNumber\":\"GDHEPRD000901\",\"entryId\":\"26000000-0000-4000-8000-000000000103\",\"lineKind\":\"catalog_accessory\",\"quantity\":3,\"quantityUnit\":\"piece\"}],\"sourceBasket\":{\"expiresAt\":\"2026-09-11T03:00:00.000Z\",\"mutationId\":\"26000000-0000-4000-8000-000000000003\",\"revision\":7,\"schemaVersion\":\"3.0.0\",\"updatedAt\":\"2026-08-12T03:00:00.000Z\",\"writerId\":\"26000000-0000-4000-8000-000000000002\"}},\"customer\":{\"city\":\"Seattle\",\"companyName\":\"Example Contracting Ltd\",\"countryRegion\":\"United States\",\"fullName\":\"Ada Buyer\",\"message\":\"Please quote for one project.\",\"whatsApp\":\"+1 202 555 0100\"},\"privacyNotice\":{\"presentedAt\":\"2026-08-12T03:01:00.000Z\",\"version\":\"rfq-privacy-en-2026-08\"}}",
+  "payloadDigestHmacSha256Hex": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+  "comparisonTokenSha256Hex": "4af00151dd4ebeb95543c5e2be55c6cdbcf0bea5dcc1e1e84e8822c7ea11c387",
+  "sourceBasketCanonical": "{\"expiresAt\":\"2026-09-11T03:00:00.000Z\",\"mutationId\":\"26000000-0000-4000-8000-000000000003\",\"revision\":7,\"schemaVersion\":\"3.0.0\",\"updatedAt\":\"2026-08-12T03:00:00.000Z\",\"writerId\":\"26000000-0000-4000-8000-000000000002\"}",
+  "submittedBasketTokenSha256Hex": "622441dee2464f41bad2130388dd31021a42328b45965450ab04ab406dc5b4eb",
+  "retentionMs": 2592000000,
+  "replayCases": [
+    {
+      "id": "unexpired_same_digest",
+      "input": {
+        "record": {
+          "status": "accepted",
+          "digest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+          "createdAt": "2026-08-12T03:02:00.000Z",
+          "expiresAt": "2026-09-11T03:02:00.000Z"
+        },
+        "submittedDigest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+        "now": "2026-08-13T03:02:00.000Z",
+        "preReservationGate": "not_evaluated"
+      },
+      "expected": {
+        "decision": "return_stored_public_state",
+        "effectOrder": ["source_traffic_telemetry", "transport_and_closed_contract_gates", "canonical_digest", "bounded_idempotency_lookup", "return_stored_public_state"],
+        "durableBusinessState": "unchanged",
+        "createdAt": "2026-08-12T03:02:00.000Z",
+        "expiresAt": "2026-09-11T03:02:00.000Z",
+        "downstreamDispatches": 0,
+        "replayExtendsExpiry": false,
+        "automaticResend": false
+      }
+    },
+    {
+      "id": "unexpired_different_digest",
+      "input": {
+        "record": {
+          "status": "accepted",
+          "digest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+          "createdAt": "2026-08-12T03:02:00.000Z",
+          "expiresAt": "2026-09-11T03:02:00.000Z"
+        },
+        "submittedDigest": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "now": "2026-08-13T03:02:00.000Z",
+        "preReservationGate": "not_evaluated"
+      },
+      "expected": {
+        "decision": "idempotency_conflict",
+        "effectOrder": ["source_traffic_telemetry", "transport_and_closed_contract_gates", "canonical_digest", "bounded_idempotency_lookup", "return_idempotency_conflict"],
+        "durableBusinessState": "unchanged",
+        "createdAt": "2026-08-12T03:02:00.000Z",
+        "expiresAt": "2026-09-11T03:02:00.000Z",
+        "downstreamDispatches": 0,
+        "replayExtendsExpiry": false,
+        "automaticResend": false
+      }
+    },
+    {
+      "id": "unseen_fresh_valid",
+      "input": {
+        "record": null,
+        "submittedDigest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+        "now": "2026-08-12T03:02:00.000Z",
+        "preReservationGate": "pass"
+      },
+      "expected": {
+        "decision": "new_business_attempt",
+        "effectOrder": ["source_traffic_telemetry", "transport_and_closed_contract_gates", "canonical_digest", "bounded_idempotency_lookup", "pre_reservation_gates", "durable_reservation", "authoritative_resolution_eligible"],
+        "durableBusinessState": "new_reservation",
+        "createdAt": "2026-08-12T03:02:00.000Z",
+        "expiresAt": "2026-09-11T03:02:00.000Z",
+        "downstreamDispatches": 0,
+        "replayExtendsExpiry": false,
+        "automaticResend": false
+      }
+    },
+    {
+      "id": "pre_reservation_rejected",
+      "input": {
+        "record": null,
+        "submittedDigest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+        "now": "2026-08-12T03:02:00.000Z",
+        "preReservationGate": "reject"
+      },
+      "expected": {
+        "decision": "pre_reservation_rejection",
+        "effectOrder": ["source_traffic_telemetry", "transport_and_closed_contract_gates", "canonical_digest", "bounded_idempotency_lookup", "pre_reservation_gates", "return_rejection"],
+        "durableBusinessState": "none",
+        "createdAt": null,
+        "expiresAt": null,
+        "downstreamDispatches": 0,
+        "replayExtendsExpiry": false,
+        "automaticResend": false
+      }
+    },
+    {
+      "id": "expired_indeterminate",
+      "input": {
+        "record": {
+          "status": "delivery_indeterminate",
+          "digest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+          "createdAt": "2026-07-01T03:02:00.000Z",
+          "expiresAt": "2026-07-31T03:02:00.000Z"
+        },
+        "submittedDigest": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d",
+        "now": "2026-08-12T03:02:00.000Z",
+        "preReservationGate": "not_evaluated"
+      },
+      "expected": {
+        "decision": "controlled_reconciliation_required",
+        "effectOrder": ["source_traffic_telemetry", "transport_and_closed_contract_gates", "canonical_digest", "bounded_idempotency_lookup", "recognize_expired_indeterminate", "require_controlled_reconciliation"],
+        "durableBusinessState": "unchanged",
+        "createdAt": "2026-07-01T03:02:00.000Z",
+        "expiresAt": "2026-07-31T03:02:00.000Z",
+        "downstreamDispatches": 0,
+        "replayExtendsExpiry": false,
+        "automaticResend": false
+      }
+    }
+  ]
+}

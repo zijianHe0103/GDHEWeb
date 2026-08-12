@@ -1,0 +1,48 @@
+{
+  "positiveFiles": [
+    ["public-rfq-submission-draft.v2.schema.json", "samples/positive/public-mixed.json"],
+    ["authoritative-rfq-document.v2.schema.json", "samples/positive/authoritative-mixed.json"],
+    ["public-rfq-receipt.v2.schema.json", "samples/positive/accepted-receipt.json"],
+    ["public-rfq-receipt.v2.schema.json", "samples/positive/processing-receipt.json"],
+    ["public-rfq-error.v2.schema.json", "samples/positive/public-error.json"]
+  ],
+  "generatedPositiveProbes": [
+    "ready_basket_v3_standard_projection",
+    "ready_basket_v3_custom_projection",
+    "ready_basket_v3_accessory_projection",
+    "one_line",
+    "fifty_lines",
+    "six_authoritative_state_cells",
+    "complete_task025_authoritative_binding",
+    "five_exact_replay_tuples"
+  ],
+  "generatedNegativeProbes": [
+    "missing_standard_article_number",
+    "missing_accessory_article_number",
+    "fabricated_custom_article_number",
+    "unknown_public_state_field",
+    "duplicate_entry_id",
+    "duplicate_merge_identity",
+    "zero_lines",
+    "fifty_one_lines",
+    "zero_quantity",
+    "unsafe_quantity",
+    "display_field_leakage",
+    "internal_field_leakage",
+    "unknown_top_level_key",
+    "no_contact_method",
+    "cross_domain_field_error",
+    "invalid_authoritative_state",
+    "bad_snapshot_token",
+    "bad_v2_hmac",
+    "bad_comparison_token",
+    "newer_basket_mutation",
+    "processing_receipt"
+  ],
+  "sourceProjectionNegativeFiles": [
+    "samples/basket-v3/requires-validation.json",
+    "samples/basket-v3/requires-readd.json"
+  ],
+  "semanticMutationFile": "samples/negative/semantic-mutations.json",
+  "cryptoMutationFile": "vectors/invalid/crypto-mutations.v2.json"
+}

@@ -2,14 +2,119 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-025
+current_task: TASK-026
 task_state: ACCEPTED
 git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-11T13:51:29Z
+last_updated: 2026-08-12T03:52:49Z
 
 ## 当前焦点
 
-`TASK-025` 已收到精确正式交付口令，`task_accept.py check/accept` 均 PASS；当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。历史完整审核 `FAIL / 0/2/0`、定向 finding closure `PASS / 0/0/0`、Planner final validation 与 checked preparation 保持有效。唯一下一步是只暂存 TASK-025 受控交付物，正式提交并立即推送任务分支，再合并并推送 `main`；不部署、不开始 final RFQ 或飞书。
+`TASK-026` 当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户精确正式交付口令已通过；当前只允许正式提交、推送任务分支、合并并推送 `main`。客户表单、Route Handler、持久化、飞书与部署继续阻塞。
+
+## TASK-026 Formal Delivery Authorized 2026-08-12T03:52:49Z
+
+- authorization: 用户精确输入 `确认 TASK-026 完成并提交到远端`。
+- acceptance: `task_accept.py check` 与 `accept` 均 PASS；任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- evidence: unique full-review FAIL history、same-reviewer closure PASS、Planner final validation、documentation 和 checked preparation 均保持有效。
+- exclusions: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～025 closure edits 与历史 resume packets 不进入提交。
+- unique_next: 创建正式中文提交，推送任务分支，合并并推送 `main`；不部署。
+
+## TASK-026 Checked Preparation Narrative Sync 2026-08-12T03:50:46Z
+
+- first_prepare: `2026-08-12T03:49:58Z` checked preparation 成功。
+- reopen: 仅同步 Active Task、Project State、Board、Planner worklog 和 Activity 当前叙述；不改合同、review、validation、documentation 或 acceptance state。
+- compatibility: closure report 仅新增机器可读 `verdict: PASS`，历史 Round 1 `FAIL` 和全部 evidence 保持；compatibility response 已 ACK/done。
+- unique_next: fresh governance validation 后再次 checked `prepare-awaiting-user`，随后等待精确验收口令。
+
+## TASK-026 Finding Closure and Final Validation PASS 2026-08-12T03:46:00Z
+
+- closure: `MSG-TASK-026-ADVERSARIAL-FINDING-CLOSURE-RESPONSE` 已 validate、ACK/done；`PASS / P0=0 / P1=0 / P2=0`，独立攻击矩阵 `67/67`。
+- history: 唯一完整审核 `FAIL / 0/2/0` 原样保留，没有第二次完整审核。
+- final_validation: normative `94/94`、五 Schema/63 refs、20 JSON、五 Schema 历史哈希、67/67 protected、独立 HMAC/replay、零 generated residue/listener、DPG/diff 全 PASS。
+- documentation: `document_impact=RESOLVED`，`readme_impact=NOT_APPLICABLE`。
+- unique_next: 首次 checked preparation 已成功；当前叙述同步后重跑 checked preparation，再等待精确验收口令。
+
+## TASK-026 Finding Closure Dispatched 2026-08-12T03:38:10Z
+
+- message: `MSG-TASK-026-ADVERSARIAL-FINDING-CLOSURE` 已 validate、dry-run、真实注册 reviewer thread bridge 与 dispatch-once。
+- scope: 仅复核原 P1-1 与 P1-2 是否关闭；不得重新审查已通过范围或修改业务交付物。
+- unique_next: 等待一个 linked closure verdict；不提前 final validation、验收、Git 或部署。
+
+## TASK-026 Bounded P1 Planner Checkpoint PASS 2026-08-12T03:38:00Z
+
+- response: `MSG-TASK-026-ADVERSARIAL-P1-R1-REVISION-RESPONSE` 已 validate、ACK/done。
+- validation: verifier `94/94`、五 Schema/63 refs、20 JSON、37 artifacts、67/67 protected hashes、独立 HMAC/authoritative binding、五 replay/30-day/zero-state/no-resend 和 DPG/diff 均 PASS。
+- review_policy: 保留唯一完整 review FAIL 历史；当前只派发同一 reviewer 两项原 finding 的 closure confirmation。
+- unique_next: 同一 reviewer narrow closure；不进行第二次完整审核或提前验收、Git、部署。
+
+## TASK-026 Bounded P1 Revision Dispatched 2026-08-12T03:25:22Z
+
+- message: `MSG-TASK-026-ADVERSARIAL-P1-R1-REVISION` 已 validate、dry-run、真实注册 executor thread bridge 与 dispatch-once。
+- scope: 只关闭 real Basket 3.0/TASK-025 authoritative binding 与 RFC 8785/HMAC/comparison/replay machine evidence 两项 P1；67 个保护路径和全部 runtime/CMS/frontend/外部范围保持不变。
+- review_policy: 修订后仅由同一 reviewer 做原 finding closure，不重复完整审核。
+- unique_next: 等待 executor ACK 和一个 linked response，随后 fresh Planner validation；不提前 review、验收、Git 或部署。
+
+## TASK-026 Adversarial Review FAIL Recovery 2026-08-12T03:22:22Z
+
+- response: `MSG-TASK-026-ADVERSARIAL-REVIEW-R1-RESPONSE` 已 ACK/done；唯一完整审核 verdict `FAIL / P0=0 / P1=2 / P2=0`。
+- P1_1: real Basket 3.0 ready/non-ready projection 与完整 TASK-025 response-to-authoritative binding 未机器封闭；configured standard 两处 Article Number 可不一致。
+- P1_2: authoritative digest 不绑定固定 HMAC，bad HMAC/comparison 与 replay 只是标签/非零检查，lone surrogate 未按 RFC 8785 fail closed。
+- checked_reopen: `task_transition.py reopen` 已运行但因真实状态不是 `AWAITING_USER` 而安全拒绝、零 mutation；当前以等价受控 recovery 进入 `NEEDS_REVISION`。
+- unique_next: 只派发两项 artifact-only TDD 修订、fresh Planner validation 和同一 reviewer bounded finding closure；不重复完整审核。
+
+## TASK-026 Adversarial Review Dispatched 2026-08-12T03:12:27Z
+
+- message: `MSG-TASK-026-ADVERSARIAL-REVIEW-R1` 已完成 validate、dry-run、真实注册 reviewer thread bridge、dispatch-once 与 pre-review ACK/done。
+- review_policy: 仅此一次完整审核；若 FAIL，修复后只做原 finding 的窄关闭确认。
+- unique_next: 等待 linked PASS/FAIL/P0/P1/P2 verdict；不提前修复、final validation、验收、Git 或部署。
+
+## TASK-026 Adversarial Review Queued 2026-08-12T03:10:15Z
+
+- message: `MSG-TASK-026-ADVERSARIAL-REVIEW-R1` 已 queue，`max_rounds=1`。
+- scope: 一次完整只读审查 additive v2、Article Number 信任边界、TASK-025 compatibility、Schema/语义/向量、文档、保护范围和非实施边界。
+- policy: 若 FAIL，只对原 finding 做 bounded closure，不重复完整审核。
+- unique_next: dry-run、真实注册 reviewer thread 投递与 dispatch-once，然后等待 linked verdict。
+
+## TASK-026 Planner Implementation Checkpoint PASS 2026-08-12T03:08:12Z
+
+- response: `MSG-TASK-026-RFQ-SUBMISSION-V2-CONTRACT-IMPLEMENTATION-RESPONSE` 已 validate、ACK 并移入 done。
+- machine_contract: 五份 strict Draft 2020-12 Schema、63 个闭合 local refs；verifier `50/50`（29 positive / 21 negative）PASS。
+- compatibility: TASK-025 request/response、count/order/entry binding 和 response-owned Article Number PASS；v2 RFC 8785/HMAC/comparison/snapshot/replay vectors PASS。
+- integrity: 13 JSON、67/67 protected hashes、零 protected diff、git diff、project/registry/messages/strict lane PASS。
+- documentation: architecture、ADR-006 与 decisions index 已窄同步；`document_impact=RESOLVED`，README `NOT_APPLICABLE`。
+- unique_next: 只派发一次完整独立 adversarial review；若有 finding，只做窄关闭确认，不重复完整审核。
+
+## TASK-026 Executor Dispatched 2026-08-12T02:51:32Z
+
+- message: `MSG-TASK-026-RFQ-SUBMISSION-V2-CONTRACT-IMPLEMENTATION` 已 queue、validate、dry-run、真实注册线程投递并 dispatch-once。
+- request_state: executor 在 mutation 前 ACK 并把请求移入 done。
+- scope: 只写 TASK-026 artifacts 与 executor worklog；五 Schema、样本、v2 crypto/snapshot vectors、离线 verifier 和执行证据。
+- unique_next: 等待 linked execution response 并做 Planner checkpoint；不提前 review 或实施 runtime/UI/Feishu。
+
+## TASK-026 A0 PASS 2026-08-12T02:48:09Z
+
+- baseline: 67/67 TASK-024/025、Quote Basket 3.0、mixed batch、frontend/CMS 与依赖保护哈希通过；受保护路径零 diff。
+- contract: 仅 ready Basket 3.0 行可投影；standard/accessory 提交 Article Number，custom 为 `null / sales_follow_up`；浏览器值必须经一次 TASK-025 mixed batch 重新验证。
+- bundle: 五个闭合 Draft 2020-12 Schema、正负样本、v2 RFC 8785/HMAC/comparison/snapshot 固定向量和离线 verifier。
+- transition: `READY -> IN_PROGRESS`；验收仍为 `NOT_ACCEPTED`。
+- unique_next: 受控派发 executor 并等待 linked response；不开始 UI/runtime/Feishu/Git/deploy。
+
+## TASK-026 Requirements Confirmed 2026-08-12T02:41:20Z
+
+- authorization: 用户精确输入 `确认 TASK-026 需求并开始执行`。
+- transition: `AWAITING_REQUIREMENT_CONFIRMATION -> READY`；验收仍为 `NOT_ACCEPTED`，Git 仍为 `DIRTY`。
+- released_scope: 仅 Planner A0 requirements/design/protected baseline 和执行顺序。
+- preserved_exclusions: 表单、Next.js runtime、持久化、飞书、Git 交付和部署仍未授权。
+- unique_next: 完成并独立验证 Planner A0；PASS 后才可派发 executor。
+
+## TASK-026 Intake 2026-08-12T02:37:16Z
+
+- request: 创建基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同。
+- scope: 只新增闭合 Schema、Basket v3 投影、客户字段继承、canonical/HMAC/幂等/快照固定向量和文档。
+- preserved: TASK-024 `1.0.0` 和 TASK-025 合同/运行时字节不改；Article Number 可公开但必须在服务端通过一次 mixed batch 重新校验。
+- non_goals: 不实现客户表单、Next.js intake、持久化、飞书、部署或 Git 交付。
+- branch: `codex/TASK-026-rfq-submission-v2-contract` at `c642166c20b57735fe500608176de109163caf9a`.
+- unique_next: 等待用户精确输入 `确认 TASK-026 需求并开始执行`。
 
 ## TASK-025 Formal Delivery Authorization 2026-08-11T13:51:29Z
 

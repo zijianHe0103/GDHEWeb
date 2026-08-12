@@ -1187,3 +1187,50 @@ Each execution records:
 - boundaries: no product, test, docs/README, task authority, Planner state, CMS/database, dependency, Git, deployment, Feishu or external-system mutation; PASS is not acceptance or Git authorization
 - message_status: the exact closure request and single linked PASS review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with that real receipt
 - next: Planner owns fresh final validation and any checked acceptance preparation; no further reviewer work is authorized by this closure PASS
+
+### 2026-08-12T03:21:39Z - TASK-026 unique complete adversarial review
+
+- task: TASK-026
+- message: MSG-TASK-026-ADVERSARIAL-REVIEW-R1
+- action: restored the registered reviewer lane, read and ACKed the exact request before substantive work, then independently reviewed the active task, all TASK-026 prose/Schema/sample/vector/verifier/evidence artifacts, frozen TASK-024/TASK-025 authority, architecture and ADR-006 without modifying business deliverables
+- p1_authority_binding: the configured-standard authoritative root and nested Article Numbers may differ while both Schema and the delivered authoritative semantic gate pass; the compatibility probe reduces the frozen consumer's full response binding to count/order/entry plus one static Article Number, and the claimed non-ready negative merely injects an unknown state field after projection rather than testing a real requires_validation/requires_readd Basket source
+- p1_crypto_replay: the authoritative positive sample stores aaaa while the frozen HMAC is 0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d and arbitrary 64-hex values still pass; bad HMAC/comparison labels never submit bad values to validation; replay proves only five distinct labels; Schema and the local canonicalizer accept a lone surrogate that RFC 8785 must reject
+- reviewer_probe: current-byte Node probe reproduced mismatched authority acceptance, arbitrary digest acceptance, non-ready additionalProperties-only behavior, replay count-only acceptance and lone-surrogate acceptance; independently recomputed HMAC matched the published happy path and all six Basket snapshot mutations retained the Basket
+- machine_evidence: bundled Node 24.14 reran TASK-026 as 5 Schema, 63 local references, 29 positive, 21 reported negative, 50/50 harness checks; TASK-024 passed 5/61/12/6/2, TASK-025 Article Number and Basket 3 verifiers passed, and frozen TASK-025 handoff passed 52/52 at manifest 9bfb794e6dace0e4a15aef5f2d5a755b333482d297d1a071f74bbbb1277bce5f and checksum stream 512b27a4b6d42b94cc73f45943b11a4b20ce4d08bd7305382f556e9a0c41e25a
+- protected_scope: all 67 unique protected checksums pass; restricted frontend source/test/package/lock and CMS status/diff are empty; 13 JSON parse, zero symlink/empty artifact, zero generated frontend residue and no port-3000 listener pass
+- cleanup: the isolated reviewer probe was removed after its exact output was captured in the canonical report; it generated no product, test, cache, listener or external residue
+- passing_boundaries: additive v2 versus frozen v1, public-but-untrusted standard/accessory Article Number, null/sales_follow_up custom lines, receipt/error privacy, customer/security/retention inheritance, non-implementation truth and no runtime/external/Git delivery remain intact
+- governance: project, registry, controlled-message and strict lane validation plus whitespace checks pass before response creation; task/project/board are UNDER_REVIEW NOT_ACCEPTED DIRTY and preserve the unique full-review/bounded-closure policy
+- result: FAIL; P0 none; P1 two; P2 none; Planner final validation not allowed
+- boundaries: no product, test, docs/README, task authority, Planner state, CMS/database, dependency, Feishu, Git, deployment or external-system repair/mutation; only a bounded artifact revision and narrow same-reviewer closure may follow
+- message_status: the request and single linked FAIL review_response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real thread receipt
+- next: Planner owns governed recovery, the two bounded artifact-only corrections, fresh validation and a narrowly authorized finding closure; the complete review must not be repeated
+
+### 2026-08-12T03:43:32Z - TASK-026 two-finding adversarial closure
+
+- task: TASK-026
+- message: MSG-TASK-026-ADVERSARIAL-FINDING-CLOSURE
+- action: restored the registered reviewer lane, read and ACKed the exact same-reviewer closure request before substantive work, preserved the unique Round 1 FAIL 0/2/0 as immutable history, and reviewed only P1-1/P1-2 against the bounded revision/current bytes
+- p1_1_source: frozen Basket 3 Schema accepts the real ready standard/custom/accessory and valid requires_validation/requires_readd fixtures; ready projects exactly to the public v2 Basket while both non-ready states reject before projection as basket_line_not_ready
+- p1_1_binding: an isolated current-gate probe attacked response and authoritative sides for count, order, entry, kind, unit, quantity, path, selection, packaging, resolution, model and every standard/custom/accessory Article Number position; every mutation rejects, exact baseline binds, and a Schema-valid standard root/nested Article Number mismatch rejects through authoritative semantics
+- p1_2_unicode_crypto: a Schema-valid in-memory lone surrogate rejects invalid_unicode; independent Node crypto reproduces HMAC 0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d, the positive authoritative sample binds it, and altered authoritative digest plus bad HMAC/comparison vectors reject through real semantic gates
+- p1_2_replay: all five ordered replay tuples/effects match; independently inverting one effect in each tuple rejects; the fresh anchor is exactly 2592000000 ms, a one-millisecond bad anchor rejects, pre-reservation rejection has zero durable state, replay does not extend expiry and expired indeterminate does not resend or dispatch
+- reviewer_probe: 67/67 independent closure checks PASS with zero failures; the isolated probe was removed after its exact evidence was recorded and left no generated product/cache/listener residue
+- schema_bytes: five current Schema SHA-256 values exactly match reconstructed pre-revision captures from the initial complete-review transcript; normative supported-Node verifier passes 5 Schema, 63 local refs and 94/94 checks
+- protected_scope: all 67 unique protected checksums pass; frontend source/tests/package/lock, CMS, TASK-024 and TASK-025 restricted status/diff are empty; 20 JSON parse, zero symlink/empty artifact, zero generated frontend residue and no port-3000 listener pass
+- governance: project, registry, controlled-message, strict lane and whitespace checks pass; task/project/board remain UNDER_REVIEW NOT_ACCEPTED DIRTY and preserve the complete-review/bounded-closure distinction
+- result: PASS; P0 none; P1 none; P2 none; Planner final validation allowed only after the linked closure response is acknowledged
+- boundaries: no second complete review, finding repair, product/test/docs/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external mutation; PASS is not acceptance or Git authorization
+- message_status: closure request and the single linked PASS finding-closure response are ACKed/done; the response validated, dry-run resolved exactly to registered Planner session 019f857b-3e04-73d2-9335-edcff61b30ed, was delivered through the Codex thread bridge and recorded dispatch-once with the real thread receipt
+- next: Planner owns fresh final validation and checked acceptance preparation; no additional reviewer work is authorized by this closure PASS
+
+### 2026-08-12T03:48:50Z - TASK-026 closure report compatibility correction
+
+- task: TASK-026
+- message: MSG-TASK-026-CLOSURE-REPORT-COMPATIBILITY
+- action: read and ACKed the exact governance-format request, performed no review and reran no findings, then added exactly one machine-compatible plain verdict line inside the existing Narrow Finding Closure metadata block
+- preservation: historical top-level Round 1 `verdict: FAIL`, the existing `current_closure_verdict: PASS`, all findings/evidence and every other report byte remain unchanged
+- verification: the canonical report contains exactly one historical backticked FAIL verdict and exactly one plain `verdict: PASS` after the Narrow Finding Closure heading
+- boundaries: no product/runtime/test/docs/task-authority/Planner-state/CMS/database/dependency/Feishu/Git/deployment/external-system change; this compatibility correction is not a new review, acceptance or Git authorization
+- message_status: compatibility request ACKed/done; one linked controlled response is pending creation and delivery
+- next: send and dispatch the single linked format-correction response, validate governed messages and stop

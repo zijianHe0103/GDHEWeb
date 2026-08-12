@@ -1,0 +1,69 @@
+{
+  "contractVersion": "2.0.0",
+  "rfqId": "26000000-0000-4000-8000-000000000201",
+  "publicReference": "RFQ-23456789ABCD",
+  "receivedAt": "2026-08-12T03:02:00.000Z",
+  "status": "accepted",
+  "customer": {
+    "fullName": "Ada Buyer",
+    "companyName": "Example Contracting Ltd",
+    "whatsApp": "+1 202 555 0100",
+    "countryRegion": "United States",
+    "city": "Seattle",
+    "message": "Please quote for one project."
+  },
+  "privacyNotice": {
+    "version": "rfq-privacy-en-2026-08",
+    "presentedAt": "2026-08-12T03:01:00.000Z",
+    "receivedAt": "2026-08-12T03:02:00.000Z"
+  },
+  "lines": [
+    {
+      "entryId": "26000000-0000-4000-8000-000000000101",
+      "lineKind": "configured_product",
+      "resolution": "resolved_article_number",
+      "model": "FGD X15+PVC",
+      "publicPath": "/products/fgd-x15-pvc/",
+      "articleNumber": "GDHEPRD000172",
+      "selection": { "type": "article_number", "articleNumber": "GDHEPRD000172", "lengthMeters": 6, "color": { "code": "ivory-white", "label": "Ivory White" } },
+      "packaging": { "basePackaging": "standard", "logoPrinting": false, "protectionArrangement": null },
+      "quantityUnit": "piece",
+      "quantity": 2
+    },
+    {
+      "entryId": "26000000-0000-4000-8000-000000000102",
+      "lineKind": "configured_product",
+      "resolution": "sales_follow_up",
+      "model": "FGD X15+PVC",
+      "publicPath": "/products/fgd-x15-pvc/",
+      "articleNumber": null,
+      "selection": { "type": "custom_length", "articleNumber": null, "lengthMeters": 6.5, "color": { "code": "ivory-white", "label": "Ivory White" } },
+      "packaging": { "basePackaging": "carton", "logoPrinting": true, "protectionArrangement": "single_bag" },
+      "quantityUnit": "piece",
+      "quantity": 1,
+      "followUpReason": "custom_length"
+    },
+    {
+      "entryId": "26000000-0000-4000-8000-000000000103",
+      "lineKind": "catalog_accessory",
+      "resolution": "resolved_article_number",
+      "model": "TASK-025 ACCESSORY",
+      "publicPath": null,
+      "articleNumber": "GDHEPRD000901",
+      "quantityUnit": "piece",
+      "quantity": 3
+    }
+  ],
+  "payloadDigest": { "keyVersion": "test-rfq-hmac-v2", "value": "0510704e9ab00f2297ee7a4525e37714229f2fb6076457735b79eae2c060c84d" },
+  "idempotency": {
+    "keyFingerprint": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "createdAt": "2026-08-12T03:02:00.000Z",
+    "expiresAt": "2026-09-11T03:02:00.000Z"
+  },
+  "sourceSecurity": {
+    "sourceFingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "contactFingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "outcomeCode": "new_intent"
+  },
+  "delivery": { "state": "accepted", "attemptCount": 1, "lastTransitionAt": "2026-08-12T03:02:01.000Z" }
+}

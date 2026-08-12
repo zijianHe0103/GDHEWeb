@@ -4445,6 +4445,7 @@ Each execution records:
 - Closure review `PASS / P0=0 / P1=0 / P2=0`、机器合同与治理门保持 PASS；文档影响 RESOLVED，README 不适用。
 - 只暂存 TASK-024 受控交付物；排除 `.codex/config.toml`、`frontend/tsconfig.json`、TASK-021～023 closure edits 和历史 resume packet。
 - 唯一下一步：正式提交并推送任务分支，fast-forward 合并并推送 `main`；不部署、不开始 TASK-025 或 runtime 实现。
+
 ## 2026-08-11T06:38:09Z TASK-025 intake
 
 - 用户创建 `TASK-025：允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验`。
@@ -4558,4 +4559,104 @@ Each execution records:
 - User entered the exact phrase `确认 TASK-025 完成并提交到远端`; `task_accept.py check` and `accept` both passed.
 - TASK-025 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; review, final validation, documentation and checked preparation evidence remain valid.
 - Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-024 closure edits and historical resume packets.
+- Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.
+
+## 2026-08-12T02:37:16Z TASK-026 Intake
+
+- Created `TASK-026` for the additive RFQ Submission `2.0.0` machine contract based on Quote Basket `3.0.0` and public-but-untrusted Article Number.
+- Reused TASK-024 confirmed customer/security/idempotency/receipt decisions and preserved TASK-024 `1.0.0` plus TASK-025 frozen/runtime bytes.
+- Limited the task to contracts, mapping, deterministic vectors and architecture decisions; no form, Route Handler, persistence, Feishu, deployment or product runtime is authorized.
+- Created branch `codex/TASK-026-rfq-submission-v2-contract` from delivered `origin/main@c642166` while preserving pre-existing dirty files.
+- Unique next: wait for exact `确认 TASK-026 需求并开始执行`.
+
+## 2026-08-12T02:41:20Z TASK-026 Requirements Confirmed
+
+- User entered exact `确认 TASK-026 需求并开始执行`; transitioned the task to `READY / NOT_ACCEPTED / DIRTY`.
+- Released only Planner A0 requirements/design/protected baseline work; executor remains blocked until A0 independently passes.
+- Runtime/UI, persistence, Feishu, Git delivery and deployment remain excluded.
+- Unique next: complete and validate A0, then dispatch one executor implementation request.
+
+## 2026-08-12T02:48:09Z TASK-026 A0 PASS
+
+- Froze 67 unique regular non-symlink TASK-024/025, Quote Basket 3.0, mixed-batch, frontend/CMS and dependency files; checksums reproduce 67/67 and protected diff is zero.
+- Frozen the smallest v2 projection: ready standard/accessory lines carry public-but-untrusted Article Number; ready custom uses null/sales_follow_up; non-ready states cannot submit.
+- Frozen five closed Schemas, TASK-025 batch compatibility, v2 canonical/HMAC/comparison/snapshot vectors, strict TDD order and artifact-only rollback.
+- `git diff --check`, project, registry, messages and strict lane audit all PASS; task moved READY -> IN_PROGRESS.
+- Unique next: controlled executor dispatch and one Planner checkpoint before documentation/review; runtime/UI, persistence, Feishu, Git and deployment remain blocked.
+
+## 2026-08-12T02:51:32Z TASK-026 Executor Dispatched
+
+- Queued and validated `MSG-TASK-026-RFQ-SUBMISSION-V2-CONTRACT-IMPLEMENTATION`; dry-run resolved the registered executor session.
+- Sent the exact envelope through the real Codex thread bridge and recorded dispatch-once.
+- Executor ACKed before mutation and moved the request to done.
+- Unique next: wait for one linked execution response and independently validate before documentation or the single complete review.
+
+## 2026-08-12T03:08:12Z TASK-026 Planner Implementation Checkpoint PASS
+
+- ACKed/done `MSG-TASK-026-RFQ-SUBMISSION-V2-CONTRACT-IMPLEMENTATION-RESPONSE` after the executor completed the artifact-only bundle.
+- Independently reproduced verifier `50/50`, five strict Schemas with 63 closed local refs, TASK-025 request/response/order/authority compatibility, v2 crypto/snapshot vectors, 13 JSON files and 67/67 protected hashes.
+- Applied only the authorized architecture, ADR-006 and decisions-index truth sync; README remains not applicable and no runtime/CMS/external scope changed.
+- `git diff --check` and DPG project/registry/messages/strict lane gates PASS.
+- Unique next: dispatch exactly one complete independent adversarial review; if it finds a real issue, use only bounded finding closure rather than a second full review.
+
+## 2026-08-12T03:10:15Z TASK-026 Adversarial Review Queued
+
+- Queued `MSG-TASK-026-ADVERSARIAL-REVIEW-R1` with `max_rounds=1` for the one complete independent read-only review authorized by the task.
+- Task moved to `UNDER_REVIEW / NOT_ACCEPTED / DIRTY`; no verdict exists yet.
+- Unique next: validate, dry-run, send the exact envelope to the registered reviewer thread and record dispatch-once, then wait for one linked verdict.
+
+## 2026-08-12T03:12:27Z TASK-026 Adversarial Review Dispatched
+
+- Delivered the exact `MSG-TASK-026-ADVERSARIAL-REVIEW-R1` envelope to registered reviewer session `019f88d0-018d-75e2-8e28-54a904a6bf8c` and recorded dispatch-once.
+- Reviewer ACKed/done before substantive review; no verdict exists yet.
+- Unique next: wait for one linked PASS/FAIL/P0/P1/P2 response; do not start repair, final validation, acceptance, Git or deployment early.
+
+## 2026-08-12T03:22:22Z TASK-026 Adversarial Review FAIL Recovery
+
+- Validated and ACKed `MSG-TASK-026-ADVERSARIAL-REVIEW-R1-RESPONSE`; the one complete review returned `FAIL / P0=0 / P1=2 / P2=0`.
+- Independently reproduced both findings: Basket 3.0 ready-state and TASK-025 response binding were incomplete, and the RFC 8785/HMAC/comparison/replay evidence did not exercise the claimed failure paths.
+- Ran the checked `task_transition.py reopen`; it safely rejected because this helper only reopens matching `AWAITING_USER` tasks. Recorded the equivalent controlled recovery as `NEEDS_REVISION` without changing product/runtime scope.
+- Preserved the complete review history and the user's one-review policy. Only the two bounded artifact-only RED/GREEN closures and one same-reviewer finding-closure confirmation are permitted.
+- Unique next: dispatch the exact two-finding revision to executor, independently validate the result, then ask the same reviewer only to close those findings; no second complete review, runtime, Git or deployment.
+
+## 2026-08-12T03:25:22Z TASK-026 Bounded P1 Revision Dispatched
+
+- Queued, validated, dry-ran and delivered `MSG-TASK-026-ADVERSARIAL-P1-R1-REVISION` to the registered executor thread, then recorded dispatch-once.
+- Released only real Basket 3.0/TASK-025 authoritative binding and RFC 8785/HMAC/comparison/replay machine-evidence closure under strict RED/GREEN.
+- Task returned to `IN_PROGRESS / NOT_ACCEPTED / DIRTY`; all 67 protected files, runtime, CMS, frontend, dependencies, external systems, Git and deployment remain blocked.
+- Unique next: wait for executor ACK and one linked execution response, perform fresh Planner validation, then request only same-reviewer finding closure.
+
+## 2026-08-12T03:38:00Z TASK-026 Bounded P1 Planner Checkpoint PASS
+
+- Validated and ACKed the linked revision response; executor stopped after the exact two-finding artifact repair.
+- Independently reproduced `94/94`, five Schemas/63 refs, 20 JSON, 37 artifacts, 67/67 protected hashes, independent HMAC/authoritative binding, five replay tuples and governance/diff gates.
+- Task moved to `UNDER_REVIEW / NOT_ACCEPTED / DIRTY` while preserving the sole complete review's historical `FAIL / 0/2/0`.
+- Unique next: send one same-reviewer finding-closure request limited to P1-1 and P1-2; no second complete review, runtime, Git or deployment.
+
+## 2026-08-12T03:38:10Z TASK-026 Finding Closure Dispatched
+
+- Queued, validated, dry-ran and delivered `MSG-TASK-026-ADVERSARIAL-FINDING-CLOSURE` to the same registered reviewer thread, then recorded dispatch-once.
+- The request is limited to the original P1-1/P1-2 closure evidence and explicitly forbids a second full review.
+- Unique next: wait for one linked closure verdict; do not start final validation, acceptance, Git or deployment.
+
+## 2026-08-12T03:46:00Z TASK-026 Finding Closure and Final Validation PASS
+
+- Validated and ACKed the same-reviewer closure response: `PASS / P0=0 / P1=0 / P2=0`; independent closure matrix `67/67`.
+- Preserved the sole full review's historical `FAIL / 0/2/0`; no second complete review occurred.
+- Fresh Planner final gate passed normative `94/94`, five Schemas/63 refs, 20 JSON, pre-revision Schema hashes, 67/67 protected paths, independent HMAC/replay, zero generated residue/listener and all DPG/diff gates.
+- Documentation remains RESOLVED and README not applicable; no runtime, CMS, Feishu or deployment work occurred.
+- Unique next: checked `prepare-awaiting-user`, then wait for the exact formal delivery phrase.
+
+## 2026-08-12T03:50:46Z TASK-026 Checked Preparation Narrative Sync
+
+- The reviewer added only the exact machine-readable closure `verdict: PASS`; no review or finding rerun occurred, and its linked response is ACKed/done.
+- First checked `prepare-awaiting-user` passed at `03:49:58Z`; the task was then checked-reopened only because human-readable task/project/board narration still described the pre-transition state.
+- Product bytes, closure PASS, final-validation PASS, documentation and `NOT_ACCEPTED` remain unchanged.
+- Unique next: rerun governance gates and checked preparation, then wait for exact `确认 TASK-026 完成并提交到远端`.
+
+## 2026-08-12T03:52:49Z TASK-026 Formal Delivery Authorized
+
+- User entered exact `确认 TASK-026 完成并提交到远端`; `task_accept.py check` and `accept` both passed.
+- TASK-026 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`; all review, closure, final-validation, documentation and checked-preparation evidence remains valid.
+- Commit scope must exclude `.codex/config.toml`, pre-existing `frontend/tsconfig.json`, TASK-021 through TASK-025 closure edits and historical resume packets.
 - Unique next: create the formal Chinese commit, push the task branch, merge to main and push main; do not deploy.

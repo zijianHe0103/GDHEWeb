@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "3.0.0",
+  "revision": 7,
+  "writerId": "26000000-0000-4000-8000-000000000002",
+  "mutationId": "26000000-0000-4000-8000-000000000003",
+  "updatedAt": "2026-08-12T03:00:00.000Z",
+  "expiresAt": "2026-09-11T03:00:00.000Z",
+  "items": [
+    {
+      "lineKind": "configured_product",
+      "state": "ready",
+      "entryId": "26000000-0000-4000-8000-000000000101",
+      "createdAt": "2026-08-12T03:00:00.000Z",
+      "product": {
+        "model": "FGD X15+PVC",
+        "name": "FGD X15+PVC Track",
+        "publicPath": "/products/fgd-x15-pvc/",
+        "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Protected test candidate" }
+      },
+      "selection": { "type": "standard", "lengthMeters": 6, "color": { "code": "ivory-white", "label": "Ivory White" } },
+      "packaging": {
+        "basePackaging": { "key": "standard", "label": "Standard Packaging" },
+        "logoPrinting": false,
+        "protectionArrangement": null
+      },
+      "articleNumber": "GDHEPRD000172",
+      "resolution": "standard_ready",
+      "quantityUnit": "piece",
+      "quantity": 2
+    },
+    {
+      "lineKind": "configured_product",
+      "state": "ready",
+      "entryId": "26000000-0000-4000-8000-000000000102",
+      "createdAt": "2026-08-12T03:00:00.000Z",
+      "product": {
+        "model": "FGD X15+PVC",
+        "name": "FGD X15+PVC Track",
+        "publicPath": "/products/fgd-x15-pvc/",
+        "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Protected test candidate" }
+      },
+      "selection": { "type": "custom", "lengthMeters": 6.5, "color": { "code": "ivory-white", "label": "Ivory White" } },
+      "packaging": {
+        "basePackaging": { "key": "carton", "label": "Carton Packaging" },
+        "logoPrinting": true,
+        "protectionArrangement": { "key": "single_bag", "label": "Single-piece Bagging" }
+      },
+      "articleNumber": null,
+      "resolution": "sales_follow_up",
+      "quantityUnit": "piece",
+      "quantity": 1
+    },
+    {
+      "lineKind": "catalog_accessory",
+      "state": "ready",
+      "entryId": "26000000-0000-4000-8000-000000000103",
+      "createdAt": "2026-08-12T03:00:00.000Z",
+      "product": {
+        "model": "TASK-025 ACCESSORY",
+        "name": "TASK-025 Synthetic Accessory",
+        "image": { "url": "/test-candidates/fgd-x15-protected.png", "width": 800, "height": 800, "alt": "Protected test candidate" }
+      },
+      "catalogPath": "/products/accessories/test-candidates/",
+      "articleNumber": "GDHEPRD000901",
+      "quantityUnit": "piece",
+      "quantity": 3
+    }
+  ]
+}

@@ -2,7 +2,12 @@
 accepted_at: 2026-08-11T04:46:02Z
 
 task_id: TASK-024
-status: AWAITING_USER
+legacy_closed_at_source: project_state_delivery_record
+legacy_task_branch: codex/TASK-024-rfq-submission-contract
+legacy_delivery_commit: a048a96b2d5af321234b9e51be9adf991510f85a
+delivery_profile: REMOTE_LEGACY
+closed_at: 2026-08-11T05:08:48Z
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, wordpress_cms]
 review_lane: adversarial_reviewer
@@ -10,7 +15,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-024
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-11T03:49:04Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: NOT_APPLICABLE
 project_type: software
@@ -133,7 +138,7 @@ project_type: software
 
 ## 当前状态
 
-`AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令，`task_accept.py check/accept` 均 PASS；额外 independent closure review 为 `PASS / P0=0 / P1=0 / P2=0`，Fresh Planner final validation 与 checked acceptance preparation 保持 PASS。Adversarial Round 1 `FAIL / P0=0 / P1=2 / P2=1` 与 Round 2 `FAIL / P0=0 / P1=1 / P2=1` 历史完整保留。当前唯一下一步是正式提交、推送任务分支、fast-forward 合并并推送 `main`；不部署。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `a048a96b2d5af321234b9e51be9adf991510f85a` 已推送至 `origin/codex/TASK-024-rfq-submission-contract`，并 fast-forward 合并及推送至 `origin/main`；三者指向同一提交。额外 independent closure review 为 `PASS / P0=0 / P1=0 / P2=0`，Fresh Planner final validation 与 checked acceptance preparation 保持 PASS；Round 1/2 FAIL 历史完整保留。未部署，也未开始任何运行时实现。
 
 ## 恢复入口
 
@@ -141,7 +146,7 @@ project_type: software
 
 ## 下一步
 
-正式提交 TASK-024，推送任务分支，fast-forward 合并至 `main` 并推送远端 `main`；不部署，不开始 TASK-025 或任何运行时实现。
+等待用户创建下一项小任务；不自动开始 TASK-025、RFQ runtime、飞书连接或部署。
 
 ## Lane Plan
 

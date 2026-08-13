@@ -13008,3 +13008,439 @@ schema_version: DPG-LANES-1.0.0
 - lane: planner
 - task: TASK-028
 - summary: Exact user acceptance recorded; only TASK-028 scoped formal commit, task-branch push, main integration and main push are authorized. Deployment remains excluded.
+
+### 2026-08-12T12:34:29Z - formal_delivery_completed
+- type: formal_delivery_completed
+- lane: planner
+- task: TASK-028
+- summary: Commit fc2a5395da10520683133bfd947085a6dbc75486 was pushed to the task branch and main; all four refs match, preserved shared changes remain outside delivery, and no deployment occurred.
+## 2026-08-12T13:53:55Z — TASK-029 Intake
+
+- Created `TASKS/ACTIVE/TASK-029-rfq-mysql-idempotency.md` for an independent `gdhe_rfq` MySQL Schema, persistent RFQ idempotency Repository and cross-restart recovery slice with the isolated Stub Sink.
+- Froze the business distinction: same key plus same canonical payload is a technical replay; same key plus changed payload is a conflict; a new key is a new legal RFQ even for the same customer or identical Basket.
+- Limited scope to persistent state, atomic reservation/transition, local `persistent_stub`, restart/two-instance/concurrency/failure-window proof and least-privilege MySQL access. Full rate limiting/challenge, Feishu/CRM/email, production exposure and deployment remain excluded.
+- No branch, MySQL object, dependency or product-code change was created. Unique next: wait for exact `确认 TASK-029 需求并开始执行`.
+
+## 2026-08-12T13:59:00Z — TASK-029 Requirements Confirmed
+
+- User supplied the exact requirement-confirmation phrase; TASK-029 moved from `AWAITING_REQUIREMENT_CONFIRMATION` to `READY`.
+- Released only Planner A0: create the task branch, re-check MySQL read-only, and freeze schema/state/permission/migration/failure-test design.
+- Database writes, dependency installation, product code and frontend A1 remain blocked until A0 independently passes.
+- One complete independent review remains the final policy; any findings get only same-reviewer bounded closure.
+
+## 2026-08-12T14:01:32Z — TASK-029 A0 PASS
+
+- Read-only checks passed for MySQL 8.4.10/3307, InnoDB, absent `gdhe_rfq`, protected WordPress 12-table database, Core, SCF and DB integrity.
+- Froze the two-table v1 field whitelist, exact six-state transition matrix, stable processing receipt, atomic insert/CAS rules, fixed 30-day anchor, minimum runtime grants, explicit migration/rollback and crash tests.
+- Ten current contract verifiers, 19/19 protected hashes, project/messages/strict-lane and diff gates passed.
+- No database write, account/grant change, dependency or product-code change occurred. TASK-029 moved to `IN_PROGRESS`; only frontend A1 is released.
+
+### 2026-08-12T14:10:53Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T14:11:14Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1 dispatched to frontend
+
+### 2026-08-12T14:11:45Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1 moved to done
+
+### 2026-08-12T14:37:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T14:37:54Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1-RESPONSE dispatched to planner
+
+### 2026-08-12T14:38:32Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-REPOSITORY-MIGRATION-A1-RESPONSE moved to done
+
+## 2026-08-12T14:44:41Z — TASK-029 A1 Planner Checkpoint PASS
+
+- ACKed/done the linked frontend A1 response and inspected all four execution artifacts and current source.
+- Independently reproduced focused `4 files / 16 tests`, migration `2/2`, ten contract verifiers, lint, non-incremental typecheck, WordPress Core/SCF/12-table DB and DPG/diff gates.
+- Direct MySQL inspection confirms exact `gdhe_rfq` two-table/zero-row state, migration checksum, and `gdhe_rfq_app` three-DML-only grants; no usable credential is retained.
+- A0 protected matrix is `15 exact + 4 A1-authorized`; no Route/UI/persistent mode, external integration, review, Git or deployment occurred.
+- Unique next: dispatch only frontend A2 MySQL Repository implementation and stop again for Planner checkpoint before A3.
+
+### 2026-08-12T14:47:44Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T14:48:06Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2 dispatched to frontend
+
+### 2026-08-12T14:48:48Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2 moved to done
+
+### 2026-08-12T15:22:37Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T15:23:07Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-MYSQL-REPOSITORY-A2-RESPONSE moved to done
+
+## 2026-08-12T15:28:42Z — TASK-029 A2 Planner Checkpoint PASS
+
+- ACKed/done the linked frontend A2 response and inspected all four execution artifacts and current source.
+- Independently reproduced focused `4 files / 20 tests`, full serial `90 files / 719 tests`, ten contract verifiers, lint, non-incremental typecheck and the Next.js 16.2.11 production build.
+- Direct MySQL inspection confirms 8.4.10, exact two-table `gdhe_rfq`, zero business rows and only SELECT/INSERT/UPDATE grants for `gdhe_rfq_app`; no usable credential remains.
+- WordPress Core 7.0.2, SCF 6.9.2, GDHE Site 0.7.0, all 12 WordPress tables, protected hashes, generated cleanup, diff and DPG gates pass.
+- Unique next: dispatch only frontend A3 local `persistent_stub` Intake wiring and stop again for Planner checkpoint before A4.
+
+### 2026-08-12T15:30:14Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T15:30:36Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3 dispatched to frontend
+
+### 2026-08-12T15:32:04Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3 moved to done
+
+### 2026-08-12T15:52:31Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T15:52:57Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3-RESPONSE dispatched to planner
+
+### 2026-08-12T15:53:14Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-PERSISTENT-STUB-A3-RESPONSE moved to done
+
+## 2026-08-12T15:56:52Z TASK-029 A3 Planner Checkpoint PASS
+
+- ACKed/done the linked A3 response and inspected its four execution artifacts and current product diff.
+- Independently reproduced focused `5 files / 29 tests`, all ten verifiers, lint, non-incremental typecheck and the Next 16.2.11 production build; lane complete serial evidence is `91 files / 725 tests PASS`.
+- Direct MySQL inspection confirms 8.4.10, exact two-table `gdhe_rfq`, zero business rows and only SELECT/INSERT/UPDATE grants for `gdhe_rfq_app`; migration verify and DPG/diff gates pass.
+- Generated `.next` was moved recoverably to Trash; protected next-env/package/lock/tsconfig hashes remain exact and no usable credential remains.
+- Unique next: dispatch only frontend A4 two-instance/two-process/twenty-request/restart/crash-window proof; A5 and review remain blocked.
+
+### 2026-08-12T15:59:42Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T15:59:56Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4 dispatched to frontend
+
+### 2026-08-12T16:00:27Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4 moved to done
+
+### 2026-08-12T16:18:15Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T16:18:37Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE dispatched to planner
+
+### 2026-08-12T16:19:00Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-RESTART-CONCURRENCY-CRASH-A4-RESPONSE moved to done
+
+## 2026-08-12T16:21:05Z TASK-029 A4 Planner Checkpoint PASS
+
+- ACKed/done the linked A4 response and inspected all four A4 artifacts and the current test-only diff.
+- Independently reproduced the real-MySQL A4 matrix `13/13` and the two-Next/twenty-request/restart HTTP proof with one row/reference/mixed batch/attempt and exact replay.
+- Ten verifiers, lint, non-incremental typecheck, migration verify, MySQL two-table/zero-row/three-DML grants, WordPress Core/SCF/GDHE Site/12 tables, protected hashes, cleanup, diff and DPG gates pass.
+- Frontend complete serial evidence is `92 files / 738 tests PASS`; Planner did not duplicate that full run after the narrower current-byte proof.
+- Unique next: dispatch only frontend A5 consolidation and require another Planner checkpoint before the single complete review.
+
+## 2026-08-12T16:22:55Z TASK-029 Frontend A5 Dispatched
+
+- Created and validated `MSG-TASK-029-FRONTEND-CONSOLIDATION-A5` with the exact A5 consolidation authority.
+- Delivered it to the registered frontend thread through the Codex task bridge and recorded the exact turn with `dispatch-once`.
+- Scope is limited to full regressions, security/leakage/permission/residue, frontend docs, consolidated evidence and exact unapplied Planner-owned document deltas.
+- Unique next: wait for one linked A5 response and run the final implementation Planner checkpoint before the single complete review.
+
+### 2026-08-12T16:22:28Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T16:22:51Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-CONSOLIDATION-A5 dispatched to frontend
+
+### 2026-08-12T16:23:11Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-CONSOLIDATION-A5 moved to done
+
+### 2026-08-12T16:39:06Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T16:39:25Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-CONSOLIDATION-A5-RESPONSE dispatched to planner
+
+### 2026-08-12T16:39:26Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-CONSOLIDATION-A5-RESPONSE moved to done
+
+## 2026-08-12T16:40:43Z TASK-029 A5 Planner Checkpoint PASS
+
+- ACKed/done the linked A5 response, inspected all seven A5/consolidated artifacts and applied the exact root README and architecture deltas.
+- Frontend current-byte evidence is focused `47/245`, full `92/738`, ten verifiers, lint/typecheck/build, five production smokes and A3/A4 persistent HTTP PASS.
+- Planner independently reproduced focused `5/29`, key contract/type gates, MySQL 8.4.10/two tables/zero rows/three DML grants, docs, protected cleanup, diff and DPG.
+- Documentation impact is resolved without claiming production database, real Sink, external integration or deployment.
+- Task moved to UNDER_REVIEW. Unique next: exactly one complete independent review; any FAIL receives same-reviewer bounded closure only.
+
+## 2026-08-12T16:43:52Z TASK-029 Unique Complete Review Dispatched
+
+- Created and validated `MSG-TASK-029-ADVERSARIAL-REVIEW-R1` against the final A0-A5 evidence package.
+- Delivered it to the registered adversarial reviewer thread and recorded exact turn `019ff6db-a0ae-7ba0-a8de-45c0df47e401` with `dispatch-once`.
+- This is the single complete review. A FAIL may only receive bounded owner-lane repair and same-reviewer finding closure.
+- Unique next: wait for one linked verdict; no second complete review, acceptance, Git, deployment or external integration.
+
+### 2026-08-12T16:43:22Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T16:43:47Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-REVIEW-R1 dispatched to adversarial_reviewer
+
+### 2026-08-12T16:44:12Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-REVIEW-R1 moved to done
+
+### 2026-08-12T16:57:11Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T16:57:33Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-REVIEW-R1-RESPONSE dispatched to planner
+
+### 2026-08-12T16:57:51Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-REVIEW-R1-RESPONSE moved to done
+
+## 2026-08-12T16:58:06Z TASK-029 Unique Complete Review FAIL Recovery
+
+- ACKed/done the unique complete review response; verdict is preserved as `FAIL / P0=0 / P1=2 / P2=2`.
+- Recorded controlled `NEEDS_REVISION` recovery after checked `task_transition.py reopen` safely refused truthful `UNDER_REVIEW` with zero mutation.
+- Only four original findings may be corrected; after fresh Planner validation, the same reviewer may perform one bounded finding closure. No second complete review is allowed.
+
+## 2026-08-12T16:59:34Z TASK-029 Bounded Findings Revision Dispatched
+
+- Created and validated `MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1` and delivered it to the registered frontend thread.
+- Dispatch is limited to state/row-version binding, non-transactional DDL half-state recovery and the two stale narratives.
+- Unique next: linked response, fresh Planner validation and same-reviewer bounded finding closure only.
+
+## 2026-08-12T17:19:20Z TASK-029 Bounded Revision Planner Recheck PASS
+
+- ACKed/done the frontend bounded-repair response and inspected current bytes and evidence.
+- Planner independently reproduced Repository `9/9`, migration/recovery `3/3`, migration verify, lint/typecheck, MySQL/WordPress/protected/generated/diff/DPG gates.
+- Task returned to UNDER_REVIEW. Only same-reviewer bounded closure is allowed; the unique complete-review FAIL remains immutable history.
+
+## 2026-08-12T17:21:42Z TASK-029 Same-Reviewer Bounded Closure Dispatched
+
+- Created/validated and delivered `MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE` to the original reviewer thread.
+- This is a bounded closure of four original findings, not a second complete review.
+- Unique next: one linked bounded verdict; acceptance, Git and deployment remain blocked.
+
+### 2026-08-12T16:59:23Z - message_queued
+- type: message_queued
+- lane: frontend
+- task: TASK-029
+- summary: message queued for frontend
+
+### 2026-08-12T17:00:02Z - message_dispatched
+- type: message_dispatched
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1 dispatched to frontend
+
+### 2026-08-12T17:00:12Z - message_done
+- type: message_done
+- lane: frontend
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1 moved to done
+
+### 2026-08-12T17:17:23Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T17:17:42Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-FRONTEND-ADVERSARIAL-FINDINGS-R1-RESPONSE moved to done
+
+### 2026-08-12T17:21:22Z - message_queued
+- type: message_queued
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message queued for adversarial_reviewer
+
+### 2026-08-12T17:21:37Z - message_dispatched
+- type: message_dispatched
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE dispatched to adversarial_reviewer
+
+### 2026-08-12T17:22:45Z - message_done
+- type: message_done
+- lane: adversarial_reviewer
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE moved to done
+
+### 2026-08-12T17:28:56Z - message_queued
+- type: message_queued
+- lane: planner
+- task: TASK-029
+- summary: message queued for planner
+
+### 2026-08-12T17:29:25Z - message_dispatched
+- type: message_dispatched
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE-RESPONSE dispatched to planner
+
+### 2026-08-12T17:29:31Z - message_done
+- type: message_done
+- lane: planner
+- task: TASK-029
+- summary: message MSG-TASK-029-ADVERSARIAL-FINDING-CLOSURE-RESPONSE moved to done
+
+### 2026-08-12T17:33:26Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-029
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+## 2026-08-12T17:34:32Z TASK-029 Acceptance Preparation View Sync
+
+- Same-reviewer bounded closure is `PASS / P0=0 / P1=0 / P2=0`; the unique complete-review FAIL remains preserved as history.
+- Added only machine-compatible plain verdict/status fields required by the checked transition parser; no product, test or review conclusion changed.
+- First checked `prepare-awaiting-user` passed. Because the AWAITING_USER write guard blocked stale Board/current-narration synchronization, checked `reopen` temporarily restored `NEEDS_REVISION` only for view sync.
+- Next: rerun governance checks and checked prepare, then wait for the exact formal delivery phrase; no Git, deployment or external-system action is authorized.
+
+### 2026-08-12T17:34:32Z - task_reopened
+- type: task_reopened
+- lane:
+- task: TASK-029
+- summary: Checked acceptance preparation succeeded, but the AWAITING_USER write guard blocked synchronization of stale human-readable Board and current-state narration.
+
+## 2026-08-12T17:35:28Z TASK-029 Awaiting User
+
+- Human-readable Board/current narration were synchronized after the controlled view-only reopen.
+- Final checked `prepare-awaiting-user` returns TASK-029 to `AWAITING_USER / NOT_ACCEPTED / DIRTY` with product, tests and review unchanged.
+- Next: wait for the exact formal delivery phrase; no Git, deployment or external-system action is authorized.
+
+### 2026-08-12T17:35:58Z - task_prepared_for_acceptance
+- type: task_prepared_for_acceptance
+- lane:
+- task: TASK-029
+- summary: Acceptance artifacts verified before AWAITING_USER.
+
+### 2026-08-12T17:38:09Z - task_accepted
+- type: task_accepted
+- lane:
+- task: TASK-029
+- summary: TASK-029 accepted by exact user phrase. Create the formal local commit, immediately push the current task branch to GitHub, merge it into main, and push main.
+
+## 2026-08-12T17:38:09Z TASK-029 Formal Delivery Authorized
+
+- Exact user acceptance and checked task acceptance passed; TASK-029 is `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`.
+- Formal scope is limited to TASK-029 implementation, migration, tests, documentation and governed evidence; known unrelated dirty files remain excluded.
+- Next: formal Chinese commit, task-branch push, merge to `main` and main push. No deployment or external-system integration is authorized.
+
+## 2026-08-12T17:45:51Z TASK-029 Formal Delivery Complete
+
+- Formal commit `bce7ead517b96bdeaa78d73638bae40fca62d8aa` was pushed to the task branch and fast-forwarded into remote `main`.
+- Local task branch, remote task branch, local `main` and remote `main` were independently resolved to the same commit.
+- TASK-029 is `CLOSED / ACCEPTED / MERGED`; no deployment, production enablement, real Sink or Feishu/CRM/email integration occurred.
+
+## 2026-08-13T09:10:36Z Gate C Legacy Lifecycle Migration
+
+- event_id: `legacy_lifecycle_migrated:TASK-020:TASK-029:gate-c-legacy-020-029-20260813`
+- migration_id: `gate-c-legacy-020-029-20260813`
+- task_ids: `TASK-020, TASK-021, TASK-022, TASK-023, TASK-024, TASK-025, TASK-026, TASK-027, TASK-028, TASK-029`
+- result: legacy CLOSED tasks moved from ACTIVE to ARCHIVE; original delivery commits and review history remain unchanged.

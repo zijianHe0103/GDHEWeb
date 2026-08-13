@@ -2,14 +2,23 @@
 
 schema_version: DPG-LANES-1.0.0
 project_type: software
-current_task: TASK-029
-task_state: ACCEPTED
-git_state: FORMAL_COMMIT_PENDING
-last_updated: 2026-08-12T17:38:09Z
+current_task: NONE
+task_state: CLOSED
+git_state: MERGED
+last_updated: 2026-08-12T17:45:51Z
 
 ## 当前焦点
 
-`TASK-029` 已由用户使用精确口令正式验收，当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。唯一完整审核 `FAIL / P0=0 / P1=2 / P2=2` 与同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0` 历史均保留；fresh Planner final validation 与 checked acceptance preparation PASS。下一步只允许创建 TASK-029 正式提交、推送任务分支、合并并推送 `main`；部署和飞书仍阻塞。
+`TASK-029` 已正式交付并收口为 `CLOSED / ACCEPTED / MERGED`。正式提交 `bce7ead517b96bdeaa78d73638bae40fca62d8aa` 已推送任务分支并快进进入远端 `main`，四个引用一致。唯一完整审核 FAIL 与同 reviewer bounded closure PASS 历史均保留；未部署，也未连接飞书、CRM、邮件或真实 Sink。下一步等待用户决定。
+
+## TASK-029 Formal Delivery Completed 2026-08-12T17:45:51Z
+
+- commit: `bce7ead517b96bdeaa78d73638bae40fca62d8aa`；中文正式提交包含任务内容、主要变更、验证结果和文档更新。
+- remote: `codex/TASK-029-rfq-mysql-idempotency` 与 `main` 均已推送至 GitHub；本地/远端任务分支与本地/远端 `main` 四个引用一致。
+- validation: 提交前暂存快照治理校验、串行聚焦 `23/23`、typecheck、lint PASS；完整 `92 files / 740 tests`、十 verifier、build、smoke、真实 MySQL/WordPress 证据保留。
+- transition: `ACCEPTED / FORMAL_COMMIT_PENDING` 收口为 `CLOSED / MERGED`；未部署。
+- preserved: `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～028 closure edits 和历史 resume packets 未进入 TASK-029 提交。
+- unique_next: 等待用户决定下一任务；不自动开始生产数据库、真实 Sink、飞书/CRM/邮件、完整反滥用或部署。
 
 ## TASK-029 Formal Delivery Authorized 2026-08-12T17:38:09Z
 
@@ -4913,3 +4922,10 @@ last_updated: 2026-08-12T17:38:09Z
 - 受控 reopen 只同步 active task、project、board、handoff narrative 和 helper 行尾空格；交付物、closure PASS 与 final validation 未改变。
 - 未执行用户验收、commit、push、merge 或产品/runtime 修改。
 - 唯一下一步是 final checked prepare，成功后等待 `确认 TASK-006 完成并提交到远端`。
+
+## Gate C Legacy Lifecycle Migration 2026-08-13T09:10:36Z
+
+- migration_id: `gate-c-legacy-020-029-20260813`
+- scope: `TASK-020` through `TASK-029` moved from legacy ACTIVE closure state to ARCHIVE.
+- truth: original product commits and remote refs are preserved; no legacy task is represented as a native Gate A single-commit closure.
+- current_task: `NONE`.

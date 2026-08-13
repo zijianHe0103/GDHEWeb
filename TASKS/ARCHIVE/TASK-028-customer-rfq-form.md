@@ -1,15 +1,20 @@
 # TASK-028 建立客户可见 RFQ 表单与本地提交闭环
 accepted_at: 2026-08-12T12:29:13Z
+closed_at: 2026-08-12T12:34:29Z
 
 task_id: TASK-028
-status: AWAITING_USER
+legacy_closed_at_source: legacy_task_state
+legacy_task_branch: codex/TASK-028-customer-rfq-form
+legacy_delivery_commit: fc2a5395da10520683133bfd947085a6dbc75486
+delivery_profile: REMOTE_LEGACY
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-028
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -130,14 +135,15 @@ TASK-022 已交付浏览器本地 Quote Basket，TASK-025 已交付 Quote Basket
 - `2026-08-12T12:06:00Z`：frontend P1 linked response 已 ACK/done；Planner 独立复现直接 `2/14`、有效 RFQ `21/127`、lint/typecheck、十 verifier、`47 exact + 2 authorized`、generated/listener/diff/DPG PASS。十个 native `maxlength` 已移除，120 个 emoji 原样通过而第 121 个稳定 `too_long`。三份 canonical consolidated evidence 已由 Planner 建立，P2 路径现均存在且不改写历史。
 - `2026-08-12T12:16:00Z`：same-reviewer bounded closure linked response 已 ACK/done，结果 `PASS / P0=0 / P1=0 / P2=0`；唯一完整 review `FAIL 0/1/1` 历史保持不变。fresh final current-byte validation 为 full `87/707`、十 verifier、lint/typecheck/build、五 smoke、protected/visual/cleanup/diff/DPG PASS。
 - `2026-08-12T12:29:13Z`：用户精确输入 `确认 TASK-028 完成并提交到远端`；`task_accept.py check` 与 `accept` 均 PASS。任务进入 `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`，只允许正式提交、任务分支推送、`main` 集成与远端引用核验。
+- `2026-08-12T12:34:29Z`：正式提交 `fc2a5395da10520683133bfd947085a6dbc75486` 已推送任务分支；本地和远端 `main` 均快进至同一提交并核验四个引用一致。任务收口为 `CLOSED / ACCEPTED / MERGED`，未部署。
 
 ## 当前状态
 
-`AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。唯一完整 review 历史仍为 `FAIL 0/1/1`，同一 reviewer bounded closure 已 `PASS 0/0/0`；fresh final validation 已 PASS。用户正式验收已通过，当前只允许正式 Git 交付。CMS、真实 CRM、数据库、依赖和外部系统保持不变。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `fc2a5395da10520683133bfd947085a6dbc75486` 已推送任务分支并快进进入远端 `main`；本地任务分支、本地 `main`、远端任务分支和远端 `main` 四个引用一致。唯一完整 review FAIL 与 bounded closure PASS 历史均保留，未部署。
 
 ## 下一步
 
-仅暂存 TASK-028 授权文件并生成正式中文提交；随后立即推送任务分支，合并到 `main` 并推送 `main`。不部署。
+等待用户决定下一项任务；不自动开始生产持久化、飞书/CRM/邮件接入、生产安全供应商或部署。
 
 ## Lane Plan
 
@@ -145,7 +151,7 @@ TASK-022 已交付浏览器本地 Quote Basket，TASK-025 已交付 Quote Basket
 2. `frontend`：P1 Unicode 窄修订完成；返回等待态。
 3. `visual_qa`：bounded closure `PASS 0/0/0`；返回等待态。
 4. `adversarial_reviewer`：bounded closure `PASS 0/0/0`；返回等待态。
-5. `planner`：生成正式提交、推送任务分支、合并并推送 `main`，然后核验四个引用。
+5. `planner`：用户正式验收、任务分支提交/推送、`main` 快进/推送与四引用核验均已完成。
 
 ## Adversarial Review
 

@@ -2,7 +2,12 @@
 accepted_at: 2026-08-05T02:16:33Z
 
 task_id: TASK-022
-status: AWAITING_USER
+legacy_closed_at_source: project_state_delivery_record
+legacy_task_branch: codex/TASK-022-quote-basket-foundation
+legacy_delivery_commit: 6c5b7644c8bbabf8771223eb7baadb2964498e6b
+delivery_profile: REMOTE_LEGACY
+closed_at: 2026-08-05T02:25:25Z
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]
 review_lane: adversarial_reviewer
@@ -10,7 +15,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-022
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-04T22:23:06Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -175,7 +180,7 @@ project_type: software
 
 ## 当前状态
 
-`AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令，`task_accept.py check/accept` 均成功。Adversarial Round 2、Fresh Planner final validation 与文档门保持 PASS。唯一下一步是创建正式提交、推送任务分支、fast-forward 合并到 `main` 并推送 `main`；TASK-023、最终提交 API、飞书和部署仍阻塞。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `6c5b7644c8bbabf8771223eb7baadb2964498e6b` 已创建；远端任务分支、本地 `main` 与远端 `main` 均已核对指向该提交。未部署，TASK-023、最终提交 API 和飞书均未开始。
 
 ## 恢复入口
 
@@ -183,7 +188,7 @@ project_type: software
 
 ## 下一步
 
-只暂存 TASK-022 受控交付物并创建正式中文提交；随后立即推送任务分支、fast-forward 合并到 `main` 并推送 `main`。不得部署或启动 TASK-023 与外部集成。
+等待用户创建下一项小任务；不自动启动 TASK-023、最终提交 API、飞书或部署。
 
 审查和验证完成后，使用 `task_transition.py prepare-awaiting-user` 进入验收等待；需要修订时使用 `task_transition.py reopen`。
 
@@ -223,6 +228,7 @@ A1/A2、A3-A5、Visual QA、Adversarial Round 1、frontend narrow revision 与 A
 - 2026-08-04T22:16:05Z：Fresh Planner final validation 完成：direct 4/40、full 44/463、五 verifier、lint/typecheck/build、四 smoke、15/15 visual、13/13 不可变保护哈希、CMS/diff/cleanup/DPG 全部 PASS；只放行 checked prepare-awaiting-user。
 - 2026-08-04T22:22:34Z：首次 checked prepare 成功；因人类可读 State/Board 仍显示旧审查状态，受控 reopen 只同步渲染视图，产品、证据和 PASS 结论均未改变；本轮同步后立即再次 checked prepare。
 - 2026-08-05T02:16:33Z：用户输入精确口令 `确认 TASK-022 完成并提交到远端`；`task_accept.py check/accept` 均成功，任务进入 `AWAITING_USER / ACCEPTED / FORMAL_COMMIT_PENDING`，只放行正式 Git 交付，不授权部署。
+- 2026-08-05T02:25:25Z：创建正式提交 `6c5b7644c8bbabf8771223eb7baadb2964498e6b`；远端任务分支推送成功，本地 `main` fast-forward 合并后已推送，三方提交一致。首次任务分支传输 HTTP 400 且远端无 ref，命令级 HTTP/1.1/缓冲重试成功，未留下持久 Git 配置。
 - 本轮未修改 CMS、数据库或外部系统。
 
 ## Execution Artifacts
@@ -239,11 +245,11 @@ Final evidence：Planner 当前字节独立重跑 direct 4/40、full 44/463、�
 
 ## Planner Final Summary
 
-见 `TASKS/ARTIFACTS/TASK-022/PLANNER_SUMMARY.md`。Quote Basket 多行、30 天、合并/分行、数量/Remove、苹果式公开条目与生产 404 边界已完成；最终 RFQ API、飞书、TASK-023、部署和 Git 均未开始。
+见 `TASKS/ARTIFACTS/TASK-022/PLANNER_SUMMARY.md`。Quote Basket 多行、30 天、合并/分行、数量/Remove、苹果式公开条目与生产 404 边界已完成并交付至远端 `main`；最终 RFQ API、飞书、TASK-023 和部署均未开始。
 
 ## User Acceptance
 
-`ACCEPTED`。用户于 `2026-08-05T02:16:33Z` 使用精确口令完成正式验收；当前等待提交、推送任务分支、合并并推送 `main`。
+`ACCEPTED`。用户于 `2026-08-05T02:16:33Z` 使用精确口令完成正式验收；Git 正式交付于 `2026-08-05T02:25:25Z` 完成。
 
 ## Recovery Entry 2026-08-04T22:23:06Z
 

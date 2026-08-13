@@ -2,7 +2,11 @@
 accepted_at: 2026-08-12T03:52:49Z
 
 task_id: TASK-026
-status: AWAITING_USER
+legacy_closed_at_source: legacy_task_state
+legacy_task_branch: codex/TASK-026-rfq-submission-v2-contract
+legacy_delivery_commit: ae59adcbcc3d61996ec7727d0746026b04af9d61
+delivery_profile: REMOTE_LEGACY
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [executor]
 review_lane: adversarial_reviewer
@@ -10,7 +14,8 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-026
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-12T03:50:46Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
+closed_at: 2026-08-12T04:00:42Z
 document_impact: RESOLVED
 readme_impact: NOT_APPLICABLE
 project_type: software
@@ -126,7 +131,7 @@ project_type: software
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已输入精确正式交付口令；review、finding closure、fresh final validation、文档影响和 checked preparation 均保持 PASS。当前授权只覆盖 TASK-026 正式提交、任务分支推送、合并 `main` 和推送 `main`；部署仍未授权。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `ae59adcbcc3d61996ec7727d0746026b04af9d61` 已推送至任务分支并快进合并、推送到远端 `main`；review、finding closure、fresh final validation 和文档影响均保持 PASS。未执行部署。
 
 ## 恢复入口
 
@@ -134,7 +139,7 @@ project_type: software
 
 ## 下一步
 
-当前唯一下一步：只暂存 TASK-026 与共享文件中的 TASK-026 增量，完成正式中文提交，推送任务分支，合并并推送 `main`；不部署。
+TASK-026 已完成正式交付。下一步由用户决定是否创建独立的 Next.js RFQ intake、持久幂等与隔离 stub sink 实施任务；不得自动开始。
 
 需求确认口令已于 `2026-08-12T02:41:20Z` 收到并完成状态转换：
 
@@ -189,6 +194,7 @@ project_type: software
 - `2026-08-12T03:49:58Z`：closure report 机器字段兼容修正 response 已 ACK/done；首次 checked `prepare-awaiting-user` PASS。
 - `2026-08-12T03:50:46Z`：只因人类可读任务/项目/看板叙述仍停留在 pre-transition 状态，使用 checked `reopen` 做治理叙述同步；产品、合同、review、validation 与授权边界均未改变。
 - `2026-08-12T03:52:49Z`：用户精确输入正式交付口令；`task_accept.py check` 与 `accept` 均 PASS，任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
+- `2026-08-12T04:00:42Z`：正式提交 `ae59adcbcc3d61996ec7727d0746026b04af9d61` 已推送任务分支；本地和远端 `main` 均快进至同一提交并核验一致。任务收口为 `CLOSED / ACCEPTED / MERGED`，未部署。
 
 ## Execution Artifacts
 
@@ -227,6 +233,8 @@ TASK-026 只建立了 additive RFQ Submission `2.0.0` 机器合同、Quote Baske
 ```text
 确认 TASK-026 完成并提交到远端
 ```
+
+正式提交 `ae59adcbcc3d61996ec7727d0746026b04af9d61` 已推送至 `origin/codex/TASK-026-rfq-submission-v2-contract` 和远端 `main`；任务现为 `CLOSED / MERGED`。未执行部署。
 
 ## Recovery Entry 2026-08-12T03:50:46Z
 

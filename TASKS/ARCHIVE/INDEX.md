@@ -92,3 +92,56 @@ schema_version: DPG-LANES-1.0.0
   - Commit：`7c140448cb723acbe2c3debed844fc5ea4ffb267`
   - Remote branch：`origin/codex/TASK-019-product-configuration-contract`
   - Main：`origin/main` at `7c140448cb723acbe2c3debed844fc5ea4ffb267`
+
+## Gate C legacy migration `gate-c-legacy-020-029-20260813`
+
+- `TASK-020` 建立 FGD X15+PVC 可见配置器与单条 QuoteLine Add to Quote 纵向切片 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md`
+  - Commit: `0dd33907b11e2c5413dd6e15868487c819d60186`
+  - Remote branch: `origin/codex/TASK-020-visible-product-configurator`
+  - Legacy closure: `2026-08-01T15:51:20Z` (delivery_commit_timestamp)
+- `TASK-021` 重构 FGD X15+PVC 长度与颜色配置并移除安装选择 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-021-track-length-color-configuration.md`
+  - Commit: `8ebaba40ddb47de0f55594591e628d7a8a3a0253`
+  - Remote branch: `origin/codex/TASK-021-track-length-color-config`
+  - Legacy closure: `2026-08-04T18:48:00Z` (project_state_delivery_record)
+- `TASK-022` 建立 Quote Basket 基础与苹果式询价条目纵向切片 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-022-quote-basket-foundation.md`
+  - Commit: `6c5b7644c8bbabf8771223eb7baadb2964498e6b`
+  - Remote branch: `origin/codex/TASK-022-quote-basket-foundation`
+  - Legacy closure: `2026-08-05T02:25:25Z` (project_state_delivery_record)
+- `TASK-023` 建立 FGD X15+PVC 型号级 You May Also Need 渐进式相关产品推荐纵向切片 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-023-related-products-progressive-slice.md`
+  - Commit: `89da6ca2b948a881cd3d1ecfc4454d568363aa08`
+  - Remote branch: `origin/codex/TASK-023-related-products-progressive`
+  - Legacy closure: `2026-08-08T16:32:36Z` (project_state_delivery_record)
+- `TASK-024` 冻结最终 RFQ Submission Contract、客户信息字段与服务端安全边界 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-024-rfq-submission-contract.md`
+  - Commit: `a048a96b2d5af321234b9e51be9adf991510f85a`
+  - Remote branch: `origin/codex/TASK-024-rfq-submission-contract`
+  - Legacy closure: `2026-08-11T05:08:48Z` (project_state_delivery_record)
+- `TASK-025` 允许 Article Number 进入浏览器询价数据，并建立混合询价行批量校验 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-025-article-number-batch-validation.md`
+  - Commit: `c642166c20b57735fe500608176de109163caf9a`
+  - Remote branch: `origin/codex/TASK-025-article-number-batch-validation`
+  - Legacy closure: `2026-08-11T14:49:34Z` (legacy_task_state)
+- `TASK-026` 建立基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-026-rfq-submission-v2-contract.md`
+  - Commit: `ae59adcbcc3d61996ec7727d0746026b04af9d61`
+  - Remote branch: `origin/codex/TASK-026-rfq-submission-v2-contract`
+  - Legacy closure: `2026-08-12T04:00:42Z` (legacy_task_state)
+- `TASK-027` 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-027-local-rfq-intake-stub-sink.md`
+  - Commit: `8891df61759f377cc9e2f110ecb41aabb7cd15fb`
+  - Remote branch: `origin/codex/TASK-027-local-rfq-intake-stub-sink`
+  - Legacy closure: `2026-08-12T07:26:44Z` (legacy_task_state)
+- `TASK-028` 建立客户可见 RFQ 表单与本地提交闭环 — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-028-customer-rfq-form.md`
+  - Commit: `fc2a5395da10520683133bfd947085a6dbc75486`
+  - Remote branch: `origin/codex/TASK-028-customer-rfq-form`
+  - Legacy closure: `2026-08-12T12:34:29Z` (legacy_task_state)
+- `TASK-029` 建立基于独立 MySQL Schema 的 RFQ 持久幂等 Repository 与跨重启恢复最小纵向切片，继续使用隔离 Stub Sink — `CLOSED` / `MERGED`
+  - Task file: `TASKS/ARCHIVE/TASK-029-rfq-mysql-idempotency.md`
+  - Commit: `bce7ead517b96bdeaa78d73638bae40fca62d8aa`
+  - Remote branch: `origin/codex/TASK-029-rfq-mysql-idempotency`
+  - Legacy closure: `2026-08-12T17:45:51Z` (legacy_task_state)

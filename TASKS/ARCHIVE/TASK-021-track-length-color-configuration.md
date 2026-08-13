@@ -2,7 +2,12 @@
 accepted_at: 2026-08-04T18:39:41Z
 
 task_id: TASK-021
-status: AWAITING_USER
+legacy_closed_at_source: project_state_delivery_record
+legacy_task_branch: codex/TASK-021-track-length-color-config
+legacy_delivery_commit: 8ebaba40ddb47de0f55594591e628d7a8a3a0253
+delivery_profile: REMOTE_LEGACY
+closed_at: 2026-08-04T18:48:00Z
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend, visual_qa]
 review_lane: adversarial_reviewer
@@ -10,7 +15,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-021
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-04T18:32:19Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -153,7 +158,7 @@ project_type: software
 
 ## 当前状态
 
-用户已于 `2026-08-04T18:39:41Z` 输入精确正式交付口令，`task_accept.py check/accept` 均成功。当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`；活动任务的 `status` 按 formal-commit Hook 契约保持 `AWAITING_USER`。Adversarial Round 2 final 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation PASS，Visual 与历史 FAIL 记录完整保留。尚未 commit、push、merge 或 deploy。
+用户已于 `2026-08-04T18:39:41Z` 输入精确正式交付口令，`task_accept.py check/accept` 均成功。正式提交 `8ebaba40ddb47de0f55594591e628d7a8a3a0253` 已推送任务分支，fast-forward 合并到 `main` 并推送 `origin/main`；本地/远端 `main` 与远端任务分支已核对一致。任务现为 `CLOSED / ACCEPTED / MERGED`，未部署。Adversarial Round 2 final 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation PASS，Visual 与历史 FAIL 记录完整保留。
 
 ## 恢复入口
 
@@ -161,7 +166,7 @@ project_type: software
 
 ## 下一步
 
-只暂存 TASK-021 受控交付物，使用中文完整正式提交，立即推送当前任务分支，随后 fast-forward 合并到 `main` 并推送远端 `main`；不部署，不开始相关产品、Basket、提交 API 或飞书集成。
+TASK-021 已完成正式 Git 交付。相关产品滑动推荐、Basket、30 天持久化、提交 API 与飞书集成仍属于后续独立任务；不在本任务历史中继续修改。
 
 正式交付只接受：
 

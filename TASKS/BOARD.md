@@ -1,11 +1,11 @@
 # 任务看板
 
 schema_version: DPG-LANES-1.0.0
-current_task: TASK-029
+current_task: NONE
 
 ## 活动任务
 
-- `TASK-029` 建立基于独立 MySQL Schema 的 RFQ 持久幂等 Repository 与跨重启恢复最小纵向切片，继续使用隔离 Stub Sink — `ACCEPTED` / `ACCEPTED` / `FORMAL_COMMIT_PENDING`
+- 暂无。
 
 ## 等待需求确认
 
@@ -29,7 +29,7 @@ current_task: TASK-029
 
 ## 等待推送
 
-- `TASK-029` — 用户正式验收已通过；等待 formal commit、任务分支推送、`main` 合并和推送。
+- 暂无。
 
 ## 已暂停
 
@@ -37,6 +37,7 @@ current_task: TASK-029
 
 ## 最近关闭
 
+- `TASK-029` 建立基于独立 MySQL Schema 的 RFQ 持久幂等 Repository 与跨重启恢复最小纵向切片，继续使用隔离 Stub Sink — `CLOSED` / `MERGED`
 - `TASK-028` 建立客户可见 RFQ 表单与本地提交闭环 — `CLOSED` / `MERGED`
 - `TASK-027` 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片 — `CLOSED` / `MERGED`
 - `TASK-026` 建立基于 Quote Basket 3.0 与 Article Number 的 RFQ Submission 2.0 合同 — `CLOSED` / `MERGED`

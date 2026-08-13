@@ -1,8 +1,13 @@
 # TASK-029 建立基于独立 MySQL Schema 的 RFQ 持久幂等 Repository 与跨重启恢复最小纵向切片，继续使用隔离 Stub Sink
 accepted_at: 2026-08-12T17:38:09Z
+closed_at: 2026-08-12T17:45:51Z
 
 task_id: TASK-029
-status: AWAITING_USER
+legacy_closed_at_source: legacy_task_state
+legacy_task_branch: codex/TASK-029-rfq-mysql-idempotency
+legacy_delivery_commit: bce7ead517b96bdeaa78d73638bae40fca62d8aa
+delivery_profile: REMOTE_LEGACY
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +15,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-029
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-12T17:34:32Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -177,12 +182,12 @@ Planner A0 必须先冻结实际表结构和字段白名单。最低需要支持
 
 - 计划分支：`codex/TASK-029-rfq-mysql-idempotency`
 - 基线：`main` / `origin/main` at `fc2a5395da10520683133bfd947085a6dbc75486`
-- 当前分支：`codex/TASK-029-rfq-mysql-idempotency`，从 `main` / `origin/main` 的 `fc2a5395da10520683133bfd947085a6dbc75486` 创建；共享 dirty 内容原样保留。
+- 正式提交：`bce7ead517b96bdeaa78d73638bae40fca62d8aa`；任务分支、本地 `main`、远端任务分支和远端 `main` 四个引用一致。
 - Worktree：共享当前工作区；保留并排除 `.codex/config.toml`、pre-existing `frontend/tsconfig.json`、TASK-021～028 post-delivery closure edits 和历史 resume packets。
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已使用精确口令正式验收；唯一完整审核历史 `FAIL / P0=0 / P1=2 / P2=2` 与同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0` 均保留。Fresh Planner final validation 与 checked acceptance preparation 已 PASS；只允许正式提交、任务分支推送、`main` 合并和推送，部署及外部系统仍未开始。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `bce7ead517b96bdeaa78d73638bae40fca62d8aa` 已推送任务分支并快进进入远端 `main`；唯一完整审核历史 `FAIL / P0=0 / P1=2 / P2=2` 与同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0` 均保留。未部署，也未连接飞书、CRM、邮件或真实 Sink。
 
 ## 恢复入口
 
@@ -190,13 +195,13 @@ Planner A0 必须先冻结实际表结构和字段白名单。最低需要支持
 
 ## 下一步
 
-只暂存 TASK-029 授权范围，生成中文正式提交，立即推送任务分支，合并到 `main` 并推送 `main`；不部署。
+等待用户决定下一项任务；不自动开始生产数据库、真实 Sink、飞书/CRM/邮件、完整反滥用或部署。
 
 ## Lane Plan
 
 | lane | responsibility | write_scope | expected_artifacts | status |
 |---|---|---|---|---|
-| planner | A0、需求/状态、MySQL 目标与保护基线、逐阶段 checkpoint、最终汇报 | `PROJECT/**`, `TASKS/**`, `MEMORY/**`, `LANES/**`, assigned docs | A0 design/checkpoints/final validation | formal_delivery |
+| planner | A0、需求/状态、MySQL 目标与保护基线、逐阶段 checkpoint、最终汇报 | `PROJECT/**`, `TASKS/**`, `MEMORY/**`, `LANES/**`, assigned docs | A0 design/checkpoints/final validation | delivery_complete |
 | frontend | Repository 合同、migration、MySQL Adapter、persistent_stub 接线、测试和 frontend docs | `frontend/**`, `docs/frontend/**`, assigned TASK-029 artifacts | RED/GREEN reports, code, migrations, tests, validation | complete_waiting_user |
 | adversarial_reviewer | 收敛后唯一完整只读审核；FAIL 后只做同 reviewer bounded finding closure | canonical review report and reviewer lane records only | one complete review, optional bounded closure | closure_complete |
 

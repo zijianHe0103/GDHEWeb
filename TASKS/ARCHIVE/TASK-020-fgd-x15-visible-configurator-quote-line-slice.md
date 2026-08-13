@@ -2,6 +2,11 @@
 accepted_at: 2026-08-01T15:26:27Z
 
 task_id: TASK-020
+legacy_closed_at_source: delivery_commit_timestamp
+legacy_task_branch: codex/TASK-020-visible-product-configurator
+legacy_delivery_commit: 0dd33907b11e2c5413dd6e15868487c819d60186
+delivery_profile: REMOTE_LEGACY
+closed_at: 2026-08-01T15:51:20Z
 status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend, visual_qa]

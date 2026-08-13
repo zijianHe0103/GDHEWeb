@@ -2,7 +2,11 @@
 accepted_at: 2026-08-11T13:51:29Z
 
 task_id: TASK-025
-status: AWAITING_USER
+legacy_closed_at_source: legacy_task_state
+legacy_task_branch: codex/TASK-025-article-number-batch-validation
+legacy_delivery_commit: c642166c20b57735fe500608176de109163caf9a
+delivery_profile: REMOTE_LEGACY
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend]
 review_lane: adversarial_reviewer
@@ -10,7 +14,8 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-025
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-11T13:49:01Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
+closed_at: 2026-08-11T14:49:34Z
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -240,7 +245,9 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 
 ## User Acceptance
 
-- `ACCEPTED` at `2026-08-11T13:51:29Z`，正式提交/推送/合并进行中。
+- `ACCEPTED` at `2026-08-11T13:51:29Z`。
+- 正式提交 `c642166c20b57735fe500608176de109163caf9a` 已推送到任务分支和远端 `main`；任务现为 `CLOSED / MERGED`。
+- 未执行部署，final RFQ 与飞书集成仍属后续任务。
 
 ## Recovery Entry 2026-08-11T13:49:01Z
 

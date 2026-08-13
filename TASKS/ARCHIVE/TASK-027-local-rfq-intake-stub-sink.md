@@ -1,16 +1,21 @@
 # TASK-027 建立本地 RFQ Intake Runtime Core 与隔离 Stub Sink 最小纵向切片
 accepted_at: 2026-08-12T07:18:50Z
+closed_at: 2026-08-12T07:26:44Z
 recovery_recorded_at: 2026-08-12T07:14:24Z
 
 task_id: TASK-027
-status: AWAITING_USER
+legacy_closed_at_source: legacy_task_state
+legacy_task_branch: codex/TASK-027-local-rfq-intake-stub-sink
+legacy_delivery_commit: 8891df61759f377cc9e2f110ecb41aabb7cd15fb
+delivery_profile: REMOTE_LEGACY
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [frontend]
 review_lane: adversarial_reviewer
 linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-027
 acceptance_state: ACCEPTED
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -95,11 +100,11 @@ TASK-024 已冻结客户字段、安全、幂等、回执和失败语义；TASK-
 
 ## 当前状态
 
-`ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。用户已于 `2026-08-12T07:18:50Z` 输入精确口令并通过 `task_accept.py check/accept`；同 reviewer bounded closure、Planner 最终验证、文档影响和 checked preparation 仍保持 PASS。未执行部署或外部系统集成。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `8891df61759f377cc9e2f110ecb41aabb7cd15fb` 已推送至任务分支并快进进入远端 `main`；本地任务分支、本地 `main`、远端任务分支和远端 `main` 四个引用一致。未执行部署或外部系统集成。
 
 ## 下一步
 
-仅暂存 TASK-027 授权文件并生成正式中文提交；随后立即推送任务分支，快进 `main` 并推送 `main`。不部署。
+等待用户决定下一项任务；不自动开始客户表单、生产持久化、飞书接入或部署。
 
 ## Lane Plan
 
@@ -107,7 +112,7 @@ TASK-024 已冻结客户字段、安全、幂等、回执和失败语义；TASK-
 2. `frontend`：A1-A6 已 PASS（A3/A5 初次 FAIL 历史保留）；实现、文档与全量回归已收敛，不自行开始审核。
 3. `planner`：A6 独立 checkpoint 与最终 current-byte validation 均已 PASS。
 4. `adversarial_reviewer`：唯一完整审核 FAIL 历史保留；同 reviewer bounded closure 已 `PASS / P0=0 / P1=0 / P2=0`，未重复完整审核。
-5. `planner`：用户正式验收已通过；执行任务分支提交/推送、`main` 快进/推送与远端引用核验。
+5. `planner`：用户正式验收、任务分支提交/推送、`main` 快进/推送与四引用核验均已完成。
 
 ## Execution Artifacts
 

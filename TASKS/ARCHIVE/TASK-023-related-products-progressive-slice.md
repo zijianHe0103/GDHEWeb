@@ -2,7 +2,12 @@
 accepted_at: 2026-08-08T16:26:33Z
 
 task_id: TASK-023
-status: AWAITING_USER
+legacy_closed_at_source: project_state_delivery_record
+legacy_task_branch: codex/TASK-023-related-products-progressive
+legacy_delivery_commit: 89da6ca2b948a881cd3d1ecfc4454d568363aa08
+delivery_profile: REMOTE_LEGACY
+closed_at: 2026-08-08T16:32:36Z
+status: CLOSED
 owner_lane: planner
 assigned_lanes: [wordpress_cms, frontend, visual_qa]
 review_lane: adversarial_reviewer
@@ -10,7 +15,7 @@ linked_issues: []
 artifacts_dir: TASKS/ARTIFACTS/TASK-023
 acceptance_state: ACCEPTED
 recovery_recorded_at: 2026-08-08T00:44:32Z
-git_status: FORMAL_COMMIT_PENDING
+git_status: MERGED
 document_impact: RESOLVED
 readme_impact: UPDATED
 project_type: software
@@ -144,7 +149,7 @@ project_type: software
 
 ## 当前状态
 
-用户已于 `2026-08-08T16:26:33Z` 输入精确正式交付口令，`task_accept.py check/accept` 均成功。当前为 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`；活动任务的 `status` 按 formal-commit Hook 契约保持 `AWAITING_USER`。Return-state closure Round 4、fresh Planner final validation 和文档门保持 PASS。尚未 commit、push、merge 或 deploy。
+`CLOSED / ACCEPTED / MERGED`。正式提交 `89da6ca2b948a881cd3d1ecfc4454d568363aa08` 已推送任务分支，fast-forward 合并到 `main` 并推送 `origin/main`；本地/远端 `main` 与远端任务分支已核对一致。Return-state closure Round 4、fresh Planner final validation 和文档门保持 PASS，未部署。
 
 ## 恢复入口
 
@@ -152,7 +157,7 @@ project_type: software
 
 ## 下一步
 
-只暂存 TASK-023 受控交付物，使用中文完整正式提交，立即推送当前任务分支，随后 fast-forward 合并并推送 `main`；不部署，不开始最终 RFQ、飞书或下一任务。
+TASK-023 已完成正式 Git 交付。等待用户创建下一项小任务；不自动开始最终 RFQ、飞书写入或部署。
 
 ## Lane Plan
 
@@ -356,11 +361,11 @@ Evidence: PASS
 
 ## Planner Final Summary
 
-原始 TASK-023 与用户后续确认的统一卡片、配件 quantity `1` 入 Basket、Basket 集中改数量/删除、canonical `View Product` 和浏览器 Back 恢复已完成新的闭环。Frontend、Planner checkpoint、Unified Visual Round 4、Return-state Closure Round 4 和 fresh Planner final validation 全部 PASS；历史 FAIL/PASS 保留不改写。当前只剩用户验收；production、飞书真实同步、最终 RFQ、Git 与部署仍继续关闭。
+原始 TASK-023 与用户后续确认的统一卡片、配件 quantity `1` 入 Basket、Basket 集中改数量/删除、canonical `View Product` 和浏览器 Back 恢复已完成新的闭环并交付至远端 `main`。Frontend、Planner checkpoint、Unified Visual Round 4、Return-state Closure Round 4 和合并后 fresh validation 全部 PASS；历史 FAIL/PASS 保留不改写。production、飞书真实同步、最终 RFQ 与部署仍继续关闭。
 
 ## User Acceptance
 
-`ACCEPTED`。用户于 `2026-08-08T16:26:33Z` 使用精确口令完成正式验收；当前等待提交、推送任务分支、合并并推送 `main`，未部署。
+`ACCEPTED`。用户于 `2026-08-08T16:26:33Z` 使用精确口令完成正式验收；Git 正式交付于 `2026-08-08T16:32:36Z` 完成，未部署。
 
 ## Recovery Entry 2026-08-06T08:34:41Z
 

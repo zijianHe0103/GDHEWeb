@@ -1,4 +1,4 @@
-# TASK-007 英语版 API / DTO / Fixture 实施
+# TASK-007 英语版 API / DTO / Fixture 实施与 Forest 产品模型修订
 accepted_at: 2026-07-24T15:16:22Z
 
 task_id: TASK-007

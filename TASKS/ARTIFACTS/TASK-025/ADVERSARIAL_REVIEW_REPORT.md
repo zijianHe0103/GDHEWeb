@@ -59,7 +59,7 @@ line variants
 (`mixed-quote-line-validation-response.v1.schema.json:5-13,21-29,36-43`).
 
 The reviewer-only probe
-`LANES/adversarial_reviewer/workspace/task025-incomplete-response-probe.test.ts:15-59`
+`TASKS/ARCHIVE/TASK-025/EVIDENCE/task025-incomplete-response-probe.test.ts:15-59`
 passed an object containing only `lines`; its configured line omitted
 `model`. The object is invalid against the frozen response Schema, yet
 `applyQuoteBasketV3Validation` returned a new valid Basket whose migrated
@@ -337,7 +337,7 @@ semantic-binding path remains mandatory.
   (`quote-basket-v3-adversarial-r1.test.ts` and
   `quote-basket-v3-batch.test.ts`).
 - Reviewer closure probe: PASS, `1 file / 4 tests` at
-  `LANES/adversarial_reviewer/workspace/task025-finding-closure-probe.test.ts`.
+  `frontend/tests/quote-basket-v3-adversarial-r1.test.ts`.
 - Article Number contract verifier: PASS, `11` Schemas, `5` success and `5`
   error samples. Quote Basket 3.0 verifier: PASS, `1` Schema, `1` success and
   `6` invalid samples. Immutable TASK-025 handoff: PASS `52/52`, manifest

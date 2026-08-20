@@ -48,7 +48,7 @@ redirect itself as route exposure.
 
 ## Protected hashes
 
-All values match `BASELINE_VALIDATION.md`:
+These are the retained protected baseline values:
 
 | File | SHA-256 |
 |---|---|

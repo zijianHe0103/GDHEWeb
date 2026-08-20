@@ -63,8 +63,7 @@ as a temporary artifact. This lane did not modify or mask those facts.
 
 No new route, Client Component, server-only module or import boundary exists in
 A1/A2, so a production build was not necessary under the controlled dispatch.
-The pre-implementation production build remains PASS in
-`BASELINE_VALIDATION.md`.
+The pre-implementation production build was PASS.
 
 ## Planner P1 R1 Fresh Validation
 

@@ -51,8 +51,8 @@ snapshot wins.
 Production build was intentionally not run for A1/A2. This checkpoint adds only
 public TypeScript library/test/documentation files and no server-only/Client
 import boundary, route, component or product integration. The dispatch requires
-build only if that boundary makes it necessary. The frozen pre-task build is
-recorded in `BASELINE_VALIDATION.md`.
+build only if that boundary makes it necessary. The pre-implementation
+production build was PASS.
 
 ## Generated-file cleanup
 

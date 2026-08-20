@@ -296,7 +296,6 @@ TASK-019 已归档。后续可见配置器与 Add to Quote 工作进入独立 TA
 
 - `REQUIREMENTS.md`
 - `DESIGN.md`
-- `BASELINE_VALIDATION.md`
 - `PROTECTED_BASELINE.md`
 
 ## Adversarial Review

@@ -184,7 +184,7 @@ project_type: software
 
 ## 恢复入口
 
-先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、TASK-019 `PLANNER_SUMMARY.md`、TASK-021 `PUBLIC_QUOTE_DRAFT_AUTHORITY_DECISION.md`、ADR-006 和前端询价合同。
+先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、`TASKS/ARCHIVE/TASK-019-product-configuration-quote-line-contract.md`、TASK-021 `PUBLIC_QUOTE_DRAFT_AUTHORITY_DECISION.md`、ADR-006 和前端询价合同。
 
 ## 下一步
 
@@ -242,10 +242,6 @@ Round 1 历史 verdict：`FAIL / P0=0 / P1=2 / P2=2`。Round 2 最终 verdict：
 ## Validation Evidence
 
 Final evidence：Planner 当前字节独立重跑 direct 4/40、full 44/463、五 verifier、lint/typecheck/build、四 production smoke、15/15 visual hash/magic/dimensions、13/13 不可变保护哈希、CMS 零 diff、runtime forbidden scan、next-env、cleanup、diff 和 DPG gates 全部 PASS。
-
-## Planner Final Summary
-
-见 `TASKS/ARTIFACTS/TASK-022/PLANNER_SUMMARY.md`。Quote Basket 多行、30 天、合并/分行、数量/Remove、苹果式公开条目与生产 404 边界已完成并交付至远端 `main`；最终 RFQ API、飞书、TASK-023 和部署均未开始。
 
 ## User Acceptance
 

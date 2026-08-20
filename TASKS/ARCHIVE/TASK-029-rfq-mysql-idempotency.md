@@ -309,13 +309,6 @@ Planner A0 必须先冻结实际表结构和字段白名单。最低需要支持
 - A5 `PASS_FOR_PLANNER_CHECKPOINT`：Frontend current-byte focused `47/245`、full `92/738`、十 verifier、lint/typecheck/build、五 production smoke、A3/A4 HTTP、MySQL/WordPress/泄漏/残留通过；Planner 独立复现 `5/29`、关键合同/typecheck、MySQL 两表/零行/三项 DML、文档/diff/DPG。Root/frontend README 与架构契约已同步，未开始审核或 Git。
 - 唯一完整审核历史 `FAIL / P0=0 / P1=2 / P2=2` 已由同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0` 收口；fresh Planner final validation 与首次 checked acceptance preparation 均 PASS。
 
-## Planner Final Summary
-
-- 已完成：独立 `gdhe_rfq`、最小权限 MySQL Repository、本地 `persistent_stub`、跨实例/并发/重启/故障恢复、显式 migration/rollback、安全边界和文档均已落地。
-- 验证：完整串行 `92 files / 740 tests`、十 verifier、lint/typecheck/build、七 smoke、MySQL/WordPress/protected/cleanup/DPG PASS。
-- 审核：唯一完整审核历史 `FAIL / P0=0 / P1=2 / P2=2`；同 reviewer bounded closure `PASS / P0=0 / P1=0 / P2=0`。
-- 边界：仍是本地隔离 Stub Sink；未完成生产数据库、真实 Sink、飞书/CRM/email、完整反滥用、部署或公开发布。
-
 ## User Acceptance
 
 - `ACCEPTED` at `2026-08-12T17:38:09Z`。用户精确口令已授权 Git 正式交付；仍不授权部署、生产开放或外部系统接入。

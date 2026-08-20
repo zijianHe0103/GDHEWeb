@@ -240,7 +240,7 @@ project_type: software
 
 ## 恢复入口
 
-先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、ADR-006、TASK-019 `PLANNER_SUMMARY.md`、Product Configuration 与 QuoteLine 合同。
+先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、ADR-006、`TASKS/ARCHIVE/TASK-019-product-configuration-quote-line-contract.md`、Product Configuration 与 QuoteLine 合同。
 
 ## 下一步
 
@@ -330,7 +330,7 @@ Frontend A1～A6 execution artifacts complete；Planner Round 1 checkpoint 新�
 - `TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R1_DISPATCH.md`。
 - `TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R2_DISPATCH.md`。
 
-Frontend、visual、review 与 Planner artifacts complete。Canonical `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md`、`ADVERSARIAL_REVIEW_REPORT.md`、`PLANNER_FINAL_VALIDATION.md` 与 `PLANNER_SUMMARY.md` 均已完成；visual BLOCKED/FAIL/PASS 和 review FAIL/PASS 历史完整保留。
+Frontend、visual、review 与 Planner artifacts complete。Canonical `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md`、`ADVERSARIAL_REVIEW_REPORT.md` 与 `PLANNER_FINAL_VALIDATION.md` 均已完成；visual BLOCKED/FAIL/PASS 和 review FAIL/PASS 历史完整保留。
 
 ## Adversarial Review
 
@@ -352,10 +352,6 @@ Planner A1 design and baseline validation PASS：
 - `.codex/config.toml` 与历史 resume packet 是进入本任务前已存在的用户文件，未修改、未暂存、未删除。
 
 All Planner, visual and Round 1 review histories remain preserved. Current Round 2 is PASS 0/0/0. Fresh final validation passes builder 13/13, full 406/406, three verifiers, lint/typecheck/build/smokes, Core/SCF/DB, 17/17, 20/20 visual hashes, protected scope and DPG gates.
-
-## Planner Final Summary
-
-Complete in `TASKS/ARTIFACTS/TASK-020/PLANNER_FINAL_VALIDATION.md` and `PLANNER_SUMMARY.md`. Checked prepare and exact user acceptance passed; Git delivery is pending.
 
 ## User Acceptance
 

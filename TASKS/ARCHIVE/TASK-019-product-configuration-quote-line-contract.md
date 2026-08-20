@@ -318,12 +318,6 @@ Evidence: PASS
 
 A1、WordPress Round 2、Frontend checkpoint、Round 1 窄修订 checkpoint 与 fresh Planner final validation 均 PASS。最终复现结果为 Product Configuration `25/25`、QuoteLine `23/23`、联合 `48/48`、full `26 files / 353 tests`、三套 verifier、lint/typecheck/build、17/17 authority、精确 Schema/Golden 字节、Core/SCF/12-table DB 和零残留 PASS。详见 `PLANNER_FINAL_VALIDATION.md`。
 
-## Planner Final Summary
-
-Evidence: PASS
-
-详见 `PLANNER_SUMMARY.md`。本任务完成合同地基，不新增可见页面；配置器、Quote Basket、30 天持久化、询价提交和飞书写入继续属于后续独立任务。
-
 ## User Acceptance
 
 `ACCEPTED` at `2026-07-31T13:42:04Z`。

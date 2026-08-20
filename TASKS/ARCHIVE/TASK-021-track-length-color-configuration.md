@@ -162,7 +162,7 @@ project_type: software
 
 ## 恢复入口
 
-先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、TASK-012 `REAL_PRODUCT_VALIDATION_GATE.md`、TASK-019 `PLANNER_SUMMARY.md` 和 TASK-020 `PLANNER_SUMMARY.md`。
+先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、TASK-012 `REAL_PRODUCT_VALIDATION_GATE.md`、`TASKS/ARCHIVE/TASK-019-product-configuration-quote-line-contract.md` 和 `TASKS/ARCHIVE/TASK-020-fgd-x15-visible-configurator-quote-line-slice.md`。
 
 ## 下一步
 
@@ -228,7 +228,6 @@ Adversarial Round 1 历史为 `FAIL / 0 / 2 / 1`；Round 2 final 为 `PASS / 0 /
 - `TEST_OR_VALIDATION_LOG.md`
 - `DIFF_OR_OUTPUT_SUMMARY.md`
 - `PLANNER_FINAL_VALIDATION.md`
-- `PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -237,10 +236,6 @@ Round 1 历史为 `FAIL / P0=0 / P1=2 / P2=1`；Round 2 final 为 `PASS / P0=0 /
 ## Validation Evidence
 
 设计/基线、WordPress、frontend、Visual Round 2 与 Adversarial Round 2 均 PASS。Planner 当前字节独立复现 focused `4/14`、full `40/422`、CMS/Python exact-decimal full-root、final handoff literal `20/20`、v1 `17/17`；五套 verifier、lint、typecheck、最终 build、三项 smoke、23/23 视觉证据、Core/SCF/DB、v1/package/lock/protected-image/CSS/next-env、零 listener/temp/generated residue、project/messages/strict lane/diff PASS。
-
-## Planner Final Summary
-
-见 `PLANNER_SUMMARY.md`。当前技术、审查、文档与 checked prepare 门已通过，等待用户正式验收。
 
 ## User Acceptance
 

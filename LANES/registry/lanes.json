@@ -19,7 +19,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/planner/worklog.md",
       "workspace": "LANES/planner/workspace",
       "inbox": "LANES/planner/inbox",
       "outbox": "LANES/planner/outbox",

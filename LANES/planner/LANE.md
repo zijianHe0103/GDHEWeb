@@ -39,10 +39,6 @@ planner
 
 `LANES/planner/outbox`
 
-## Worklog
-
-`LANES/planner/worklog.md`
-
 ## Workspace
 
 `LANES/planner/workspace`

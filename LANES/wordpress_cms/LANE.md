@@ -45,10 +45,6 @@ specialist
 
 `LANES/wordpress_cms/outbox`
 
-## Worklog
-
-`LANES/wordpress_cms/worklog.md`
-
 ## Workspace
 
 `LANES/wordpress_cms/workspace`

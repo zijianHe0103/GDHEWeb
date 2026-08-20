@@ -151,7 +151,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/wordpress_cms/worklog.md",
       "workspace": "LANES/wordpress_cms/workspace",
       "inbox": "LANES/wordpress_cms/inbox",
       "outbox": "LANES/wordpress_cms/outbox",

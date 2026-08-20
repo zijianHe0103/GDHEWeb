@@ -186,10 +186,9 @@ project_type: software
 - 2026-07-23T07:24:41Z：用户明确授权一次额外 closure review；fresh correction 保持不变，任务转为 `UNDER_REVIEW` 并派发唯一 closure request。
 - 2026-07-23T07:29:30Z：closure response 与 stop-recovery 已确认；canonical PASS，P0/P1/P2 均为 0。Planner Final Summary 已生成，进入 final validation。
 
-## Execution Artifacts
+## Validation Artifact
 
-- `TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md`
-- `TASKS/ARTIFACTS/TASK-006/TEST_OR_VALIDATION_LOG.md`
+- `TASKS/ARTIFACTS/TASK-006/ADVERSARIAL_REVIEW_REPORT.md`
 
 ## Adversarial Review
 

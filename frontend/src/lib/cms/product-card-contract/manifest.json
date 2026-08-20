@@ -3,10 +3,10 @@
   "sourceAuthority": {
     "task": "TASK-014",
     "handoff": "TASK-014-PRODUCT-CARD-1",
-    "manifestPath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_MANIFEST.json",
-    "manifestSha256": "aa7cd391c78ffb7038d8ef233101ceb3ee75e619b1246d1da280cc8c4ba42ccb",
-    "checksumsPath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
-    "checksumsSha256": "c363f293c44ffee6b9c3cebbb03ac0e2dab73e9a7910f18b0975a65404962883"
+    "manifestPath": "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "manifestSha256": "3f5e215a8a21f0b8ae6083fae54b8af5e2a7529bb8c8aa74a3346785c0da84d9",
+    "checksumsPath": "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "d5a7661f8e10409475b6833ab0d316acc236251df161e275d4750f4fced54151"
   },
   "restApiVersion": "1",
   "contentSchemaVersion": "3.0.0",
@@ -61,25 +61,25 @@
     "success": [
       {
         "name": "all",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/all.json",
+        "sourcePath": "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/all.json",
         "snapshotPath": "samples/success/all.json",
         "sha256": "72378b235ac4c9d596eca98fcfd24de309858a810565b5331236b835a315e9ba"
       },
       {
         "name": "empty",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/filtered-empty.json",
+        "sourcePath": "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/filtered-empty.json",
         "snapshotPath": "samples/success/filtered-empty.json",
         "sha256": "cd10e1d1b1f56428f6ee7e15f6b7a7cbc981af281940e74a25faf277ab9f7ca7"
       },
       {
         "name": "one",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-014/golden-product-card/one-item.json",
+        "sourcePath": "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/one-item.json",
         "snapshotPath": "samples/success/one-item.json",
         "sha256": "748a65137c021aaafc91a0667023ed24874a9713455abded462d6482de80ce07"
       }
     ],
     "errors": {
-      "sourcePath": "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_ERROR_FIXTURES.json",
+      "sourcePath": "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_ERROR_FIXTURES.json",
       "sourceSha256": "c1c65c21daef313f31b0d0f8a6a0640b6507be7c534e04af864bfc9f0ffae0e9",
       "snapshotPath": "samples/errors/product-card-errors.json",
       "selectors": [

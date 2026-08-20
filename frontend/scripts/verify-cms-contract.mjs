@@ -137,14 +137,14 @@ function validateManifest(manifest) {
           name: "page",
           type: "page",
           sourcePath:
-            "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-home.json",
+            "frontend/src/lib/cms/contracts/fixtures/golden-a3/resolve-home.json",
           snapshotPath: "samples/success/resolve-home.json",
         },
         {
           name: "product",
           type: "product",
           sourcePath:
-            "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-product-alpha.json",
+            "frontend/src/lib/cms/contracts/fixtures/golden-a3/resolve-product-alpha.json",
           snapshotPath: "samples/success/resolve-product-alpha.json",
         },
       ]),
@@ -157,7 +157,7 @@ function validateManifest(manifest) {
   assertSha256(errors.sourceSha256, "samples.errors.sourceSha256");
   invariant(
     errors.sourcePath ===
-      "TASKS/ARTIFACTS/TASK-007/ERROR_CONTRACT_FIXTURES.json",
+      "frontend/src/lib/cms/contracts/fixtures/ERROR_CONTRACT_FIXTURES.json",
     "error sourcePath must match frozen authority",
   );
   invariant(
@@ -273,7 +273,7 @@ export async function verifyCmsContract(options = {}) {
     ...manifest.samples.success.map((entry) => entry.snapshotPath),
     manifest.samples.errors.snapshotPath,
   ].sort();
-  const actualFiles = await inventoryFiles(contractRoot);
+  const actualFiles = (await inventoryFiles(contractRoot)).filter((file) => !file.startsWith("fixtures/"));
   const missing = expectedFiles.filter((file) => !actualFiles.includes(file));
   const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
   invariant(missing.length === 0, `missing snapshot files: ${missing.join(", ")}`);

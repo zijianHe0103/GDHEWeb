@@ -1,0 +1,113 @@
+{
+  "closed_at": "2026-08-12T12:29:13Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_PROTECTED_BASELINE.md",
+      "sha256": "953e0065c880773aa62be82fff1ccc1d32af1c547ddbd45ece8a24b78abf6ced"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_VALIDATION_LOG.md",
+      "sha256": "210577c94981091617b5285c1f3b649d4c9543a0aa7c684f0717a24d8a7e5d30"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/ADVERSARIAL_REVIEW_HISTORY.md",
+      "sha256": "1b7513b607e2dbdfd4ecafbf7ef1ce862dbdd5ae28f5132a5394afa31da97fad"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A1_VALIDATION_LOG.md",
+      "sha256": "beed49a131775f1495ce3fc591eaf5d266b1f99aa4a3b866f800f6508cd1d1fe"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A2_VALIDATION_LOG.md",
+      "sha256": "3f24cbea622c17b2f0558d1e1998ca6ffd72c1c935ce8282efa2c3cf2e851ed2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A3_VALIDATION_LOG.md",
+      "sha256": "43fd6971e4ee841821af2dbb55989d4cd375b08121d21fcf0f690f09fbb28ddd"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A4_VALIDATION_LOG.md",
+      "sha256": "172c794c353c87c3a9f040784b0820ea05ca613ca27a35c771ca48c4c28d75e1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A5_VALIDATION_LOG.md",
+      "sha256": "e92d5066f97c6ba21b7aec902688b96834b9d0ce37b9c6c26c3d5c16ea2aa558"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_ADVERSARIAL_UNICODE_P1_R1_VALIDATION_LOG.md",
+      "sha256": "b7dd51d9dfe69f81fb28c0baf6f1d2ed1944be5cf3959d4923ba2376eb3941c2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_VISUAL_R1_REVISION_VALIDATION_LOG.md",
+      "sha256": "7423007208a607220c59edea1ddf9653cf878f061044f2d461349875644ea07d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRE_REVIEW_VALIDATION.md",
+      "sha256": "400d0202e9465aac243e7d92de00facfe891987199578bfa785b07d077b5a33d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "f189262d627ed73f9655cc4cc83774a7a16487b301f1813bc48fdbdff59bf12d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_QA_REPORT.md",
+      "sha256": "b7bc82c63567a4d85936f9d61cfd9ca498994874ecedecf9b86285d3c008ec03"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/A0_PROTECTED_CHECKSUMS.sha256",
+      "sha256": "39cc23c84329302f46505848f4803d88baba6d5bc7477d2a88307f73a56b14c5"
+    },
+    {
+      "mode": "100644",
+      "path": "EXECUTION_REPORT.md",
+      "sha256": "fecdee18e5cd6a7e69a7be799ac85cbb8c0c3af4011ad461a976f42d1f388563"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/A0_DESIGN.md",
+      "sha256": "a9a71cb04ef722746145d1e48b153f93bc3971a277fd73a1b071046cae95a04c"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FRONTEND_A5_TDD_OR_BOUNDARY_EVIDENCE.md",
+      "sha256": "56866b6b6271d5df7b52a3a466090bbf669e880f44e63f961fd3f726d9e576fd"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "8bc4c6488aa1f486e00404bcbbb352212bb8777e197b5a337f9a80bd5ef804f7"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/TDD_SEAMS.md",
+      "sha256": "1c3e60cba91cffd268d92abb7f9182ff448f31db30e3e96cfe505f1673b50419"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "bbb0439093971d8d43c4b14975dd01242e4e20932cb2ec39afc1b247b0c1f4e7"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "286e79f9dd2df3b977a62ddecd9060225ddcb649b88a685dbb7a695c913ca584"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-028"
+}

@@ -6,11 +6,11 @@ import { fileURLToPath } from "node:url";
 
 const CONTRACT_ROOT = "frontend/src/lib/rfq-submission-contract/v2";
 const MANIFEST_PATH = `${CONTRACT_ROOT}/manifest.json`;
-const SOURCE_ROOT = "TASKS/ARTIFACTS/TASK-026";
+const SOURCE_ROOT = "frontend/src/lib/rfq-submission-contract/v2/fixtures";
 const AUTHORITY = Object.freeze({
   taskId: "TASK-026",
   verifierPath: `${SOURCE_ROOT}/verify-machine-contract.cjs`,
-  verifierSha256: "66dba4f62a82e392e952717390753ba141e1d317522febc6a1567926679ac7c1",
+  verifierSha256: "1ae7bf75fc11b59b4919f5a4636025be696f98577e79d9a8c1ba0b6515ec8fd6",
 });
 const FILE_HASHES = Object.freeze({
   "samples/basket-v3/ready-mixed.json": "0bdcf375459c49dccf65ec383c5d35cc0538f242c698850dc8166b1c65ae38b9",
@@ -214,7 +214,7 @@ export async function verifyRfqSubmissionV2Contract(options = {}) {
   validateManifest(manifest);
 
   const expectedFiles = ["manifest.json", ...SNAPSHOT_PATHS].sort();
-  const actualFiles = await inventory(contractRoot);
+  const actualFiles = (await inventory(contractRoot)).filter((file) => !file.startsWith("fixtures/"));
   const missing = expectedFiles.filter((file) => !actualFiles.includes(file));
   const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
   invariant(missing.length === 0, `missing snapshot files: ${missing.join(", ")}`);

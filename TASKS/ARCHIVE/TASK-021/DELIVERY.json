@@ -1,0 +1,83 @@
+{
+  "closed_at": "2026-08-04T18:39:41Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/BASELINE.md",
+      "sha256": "65b7e5272ec5e96f528e1bd644a24ed9dd95aaec90191ce09d14095f4906981c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_VALIDATION_LOG.md",
+      "sha256": "2271e704b4736b83058b8e1200d84054d5fd74b25e9277cefa09c3fcdf702020"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_V2_DETERMINISM.json",
+      "sha256": "c4e88b48d4e02d79bf1e5d5abdb55f2c564d5757305d03f806ad96032b39b7f5"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_V2_RUNTIME_VALIDATION.json",
+      "sha256": "12a0aaeb08643e54cc8f2e9b2403bd446e3d4dc416bfa58dc0b6955a31a9c1e9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_V2_SCHEMA_VALIDATION.json",
+      "sha256": "be7bb37dbbdd97ffb597e3295320a715bdb0c2a0a63083803a752d0c47487b31"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_QA_REPORT.md",
+      "sha256": "d8631b0ab5a36da927e60a4b7d8496ff8bedc2146f5a8cb97a88d299840ffce5"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_CMS_RED_GREEN_EVIDENCE.md",
+      "sha256": "49fb0a9e82cffc545a6fdd0be50d60eaee9ab7c6d79115d1a9359923d9dca1a8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_CMS_VALIDATION_LOG.md",
+      "sha256": "a636209b01774393b7d17f6809ca660fd4d056762fa2ab76ab0aa3379b1f4f91"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "253411813615d7abad2726f03333cdde31bab31fe257d4d71685d220e8749543"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "c1fbaa2b0ea709409b46e0aee22665a17ba97f725291dfcafe2dc4a42b09d47f"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PRODUCT_CONFIGURATION_V2_HANDOFF.md",
+      "sha256": "bf4bda9125ca061641d911fe37f6305d3e578261b8449a479bde52e945559c31"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PUBLIC_QUOTE_DRAFT_AUTHORITY_DECISION.md",
+      "sha256": "fed7a7932023b5eeb264a13b571f8a9668f03023befb1fa87d19e33907b79356"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "78ca6009f34ef3354c54482f10bdf3a306e8f0f9b4797bf6a85823755e029eb4"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "c83b57a0aca290686500a46e3d4823e1639c552320779c41d07e70ba534375f1"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "78471f75dd4669c5dba64d6fa8dba7ea5025188eba88fac306f384032575c347"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-021"
+}

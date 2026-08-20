@@ -1,0 +1,128 @@
+{
+  "closed_at": "2026-08-11T13:51:29Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_VALIDATION_LOG.md",
+      "sha256": "3d4d5482a98ef53ed9f35225bd6e652d53ace10a7adfe3b7d275d82900da34b9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A3_VALIDATION_LOG.md",
+      "sha256": "3834015f2fc41e1c5afe15d48866971cbda226451b6d9a7dcbc2ddee062d992d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A4_VALIDATION_LOG.md",
+      "sha256": "31beb82f8e51cc487d12625f6c45ee7a7b4d438cf1e0ff2d158fb2020cfd5d97"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_ADVERSARIAL_P1_R1_VALIDATION.md",
+      "sha256": "0c78d55ebd5cdff8e49ecca61f37ac7e830e851bce09d3a99becc69615ed3a34"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_PLANNER_VALIDATION_R2.md",
+      "sha256": "e184610e543f9c5da17ef0e4c7ad7954341a9dcb1c1d7564bcd2905dc403a66b"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/DESIGN.md",
+      "sha256": "8192c066f28d514ca314c1f36c8de6e129c27a501a6080a8f74955986117dec7"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/PROTECTED_BASELINE.md",
+      "sha256": "ac600d77d34d669bbf1ac0d82fef9085d64ae21acac2ee66e7b103e51758821e"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/REQUIREMENTS.md",
+      "sha256": "48f3816e5a6f272024fe64be394a0a7b353f00c5120a53fb6a0d479adba0df67"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/TDD_SEAMS.md",
+      "sha256": "a4f286bd608c53a4799105ad92be7f49f8beaa7c810cf898cbeaa089a6c8e691"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_DETERMINISM_AND_CLEANUP.json",
+      "sha256": "bca7e6738e19770240f67141221b5a9ef72535df23b478cb5ca54184c76bb058"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_DIFF_SUMMARY.md",
+      "sha256": "10af9a153be346d932cc98fcdfb46351b3471ccb5dda24542ba03b980abf355c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_EXECUTION_REPORT.md",
+      "sha256": "ff531ab2292285b5afa02e833b9d9d1f81e0ac502d44d2bcc83452239f806132"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_REAL_HTTP_EVIDENCE.json",
+      "sha256": "68de16b97306f1a2c484ad518b6ea96ef77d7c470e7a33aba084ccc382180da7"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_RUNTIME_VALIDATION.json",
+      "sha256": "64ad89ca4ef086a429495497fe4ce54217fba366dea454e332a5445e140276b4"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_SCHEMA_VALIDATION.json",
+      "sha256": "63a2947f5d050a0ab57fb2556103f0fbf4db06fff38d61633b70d4e6716d856c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_TDD_RED_EVIDENCE.md",
+      "sha256": "81e962cfb48634d6f0ef288922effcc2f257da21079f6f48098807b8b2f04a05"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/WORDPRESS_VALIDATION_LOG.md",
+      "sha256": "ff3d93c0dfa53a98ab59f310ec4368979198c96d0d0bd3f0d6241d936c35fc6f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-wordpress/mixed-fifty-line.json",
+      "sha256": "3dc61694d9a2ce0b99daa9f16fdaa81f78973ea34ac1830f647383667a2f8775"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-wordpress/related-product-card-v1.json",
+      "sha256": "0f284929321c9a84fd9f4e1981f80bdbc72f6bbdfdf294c2588e9f5487d03293"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/task025-incomplete-response-probe.test.ts",
+      "sha256": "54c1eb083963c5e9dde24f74af7197641258dc57e6094cd5a07b67d89f882a90"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "0d4ead99a69c2f22877f6e9d28c76e6847843b8a94ff3cc307a33f3281bf3151"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/WORDPRESS_CMS_HANDOFF.md",
+      "sha256": "8ad18f73517e461b592fcb4153a1c2bc71bed92f52c04b843262ad08d149dc06"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "0c092f24f4b2f139c7273a37bc1df1ee9f5fc9a8b24c585e44946cab3714077e"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "a027b2fdec9dea3256f5d2421fd5575e2195022b1455aa0f5d22f49edb693b2b"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-025"
+}

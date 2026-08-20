@@ -113,7 +113,7 @@ function gdhe_a3_run_migration_runtime_test(): array
 }
 
 $a3_migration_result = gdhe_a3_run_migration_runtime_test();
-$a3_migration_path = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-007/A3_MIGRATION_RUNTIME_VALIDATION.json';
+$a3_migration_path = dirname(ABSPATH) . '/TASKS/ARCHIVE/TASK-007/EVIDENCE/integration/A3_MIGRATION_RUNTIME_VALIDATION.json';
 $a3_migration_json = wp_json_encode($a3_migration_result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 if (!is_string($a3_migration_json) || file_put_contents($a3_migration_path, $a3_migration_json . PHP_EOL) === false) {
     throw new RuntimeException('Could not write A3 migration runtime evidence.');

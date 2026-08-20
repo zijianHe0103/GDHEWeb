@@ -1,0 +1,88 @@
+{
+  "closed_at": "2026-07-29T15:52:30Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_READONLY_AUDIT.md",
+      "sha256": "f467fab63bcb243e2fe7f4868f6f915a2dd58cfa3c785bb02e3755b0757e2c07"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/GAP_REPORT.md",
+      "sha256": "b06eef3d3ab0e539db30de92dfa9c40dbe093c08019000c0ecf6fd5ba170a625"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/LOCALIZATION_SEO_READONLY_AUDIT.md",
+      "sha256": "06481e9ae2d99f9bf61415ebf0d30b33c261b7dcfb123985f587a40d1c90ed76"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PLANNER_BASELINE_TRACEABILITY.md",
+      "sha256": "14fcd9ebc9189b4b906c72e67e726de6e3689ab5d2f1b6398444f8c79b3ffc19"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_CMS_READONLY_AUDIT.md",
+      "sha256": "8f4d21751e16e315cadd86576aebf765f01c7f4ca9e65ef19b70f75c64d25ce5"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "0e995c080e635bf5c41c2d172143a561ce0a95816031a413b23b57c75d141ea7"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/CTA_CONTRACT.md",
+      "sha256": "b307cdba549a5199301691026525df772c3aba57791c86703f6fbeea4f237597"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "db7ad40b1640d45e5af06acbba2e7a5b3170a994b1b9e89e79e05be08658fecd"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/IA_AND_PAGE_TYPE_MAP.md",
+      "sha256": "4b29e244c1ab8a4e6ae7d17b772079a4fec6500844d6696adbfe9343dcf9e395"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/OPEN_DECISIONS.md",
+      "sha256": "e9813981154225ded49af7c668c789745574800c30829240c00507176d5af1a1"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PRODUCT_CARD_PROJECTION.md",
+      "sha256": "59ebd6caec0b1fe27b5fba2925f14bcb35c0454642231249992f5aa0764f365a"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/SEO_MINIMUM_CONTRACT.md",
+      "sha256": "07696e86cb0b1b908e6c8a71dfbc4c8089da14de9dcdfcd5c55119b3430afd7d"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/URL_AND_CANONICAL_CONTRACT.md",
+      "sha256": "ebdb4f9da54a72bc3182425be293c810008c99140a9fc269907193ca5c3792a7"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/VERTICAL_SLICE_CANDIDATES.md",
+      "sha256": "cd1c7e72796272abacc52e17550652a0ec5cfd88f064fffd68345d4e8a4d0ed6"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "6c56dd367fb687ba31e383a2dd4e17c231f0d86bc17e79957da31f6033f71cd8"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "8a049e1af03a70d52c23193ec89b10c48490320ffbd21640d1de6ec81f970d29"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-013"
+}

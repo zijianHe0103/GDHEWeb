@@ -2,57 +2,25 @@
 
 ## Purpose
 
-Own the independent TypeScript frontend, reusable UI, routing, CMS data access, frontend tests, and frontend documentation.
+Own the independent-site frontend source, tests, and frontend documentation.
 
-## Lane Type
+## Requires
 
-specialist
+- `task_contract`
 
-## Responsibilities
+## Produces
 
-- Implement only confirmed frontend tasks under `frontend/**`.
-- Maintain reusable components, routes, rendering/data-access boundaries, tests, and `docs/frontend/**`.
-- Consume the CMS and localization contracts without silently changing them.
-- Maintain lane-specific context, validation evidence, and task artifacts.
-
-## Non-Responsibilities
-
-- Do not bypass planner coordination.
-- Do not mark user acceptance, formal commits, pushes, or merges complete.
-- Do not write outside the lane write scope without planner approval.
-- Do not modify WordPress core, CMS content models, live content, or localization contracts by convenience.
-
-## Write Scope
-
-- `LANES/frontend/**`
-- `frontend/**`
-- `docs/frontend/**`
-- `TASKS/ARTIFACTS/**`
+- `frontend_revision`
 
 ## Read Scope
 
 - `**`
 
-## Inbox
+## Write Scope
 
-`LANES/frontend/inbox`
+- `frontend/**`
+- `docs/frontend/**`
 
-## Outbox
+## Completion
 
-`LANES/frontend/outbox`
-
-## Workspace
-
-`LANES/frontend/workspace`
-
-## Session Registration
-
-Register with `lane-register frontend <session-id>` before assuming this lane identity.
-
-## Resume Protocol
-
-New sessions read this file, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
-
-## Handoff Protocol
-
-Session replacement writes `LANES/frontend/workspace/<date>-session-handoff.md`.
+The declared authority or task-package artifact is complete.

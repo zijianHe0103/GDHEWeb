@@ -1,0 +1,48 @@
+{
+  "closed_at": "2026-08-01T15:26:27Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PROTECTED_BASELINE.md",
+      "sha256": "968cbb27bc49a0f8ad0aeb8629619e0623dc99686194941396e089b08d5f5d5f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_QA_REPORT.md",
+      "sha256": "441cbe03f8a5cd0efc66c8b0c8577827479bb806e046fa19fc32653df8fe77a9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+      "sha256": "883760ed0c64b60322441ec80b3f956476d6389ff0f5371c35ceed9fc1ce3296"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "484df122f68f6272a4ed9290d612de5b75cb007544ee03d037722d54c711e7d9"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "d9c8ecff7b2065e07e620937a88af1ef9f7c8e7ec67e01026d3aa2e8d7e73891"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "1a5dd1f30dcc12d0306147dd15f3419120cd6f443e2701fd839776bdecdd4aba"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "ac0ef45c5f1690a8f851565dc892ff16b165b14230d1d19478bb10c147cea910"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "4c20e61872c7d0c0c0f8385775fefa9effc82e35c6f7cb9446f03350d91a7af9"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-020"
+}

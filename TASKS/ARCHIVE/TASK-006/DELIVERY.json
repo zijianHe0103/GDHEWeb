@@ -1,0 +1,18 @@
+{
+  "closed_at": "2026-07-23T07:40:00Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "936aaa8aec07287e51f2bf1cdabdfb1f988edf355d879efaaa908513507fd22a"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "7339e61d236ea0fffb01ad7e3bfaca1fed4ad8a5bce53f51bbd7e1985bc93632"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-006"
+}

@@ -14,10 +14,10 @@ const INVENTORY = Object.freeze([
   "schemas/uuid-v4.schema.json",
 ]);
 const AUTHORITY = Object.freeze({
-  manifestPath: "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_HANDOFF_MANIFEST.json",
-  manifestSha256: "11f3db81c1b962c387f731d9c171d2f370ba60bdc3391cc10ec991247120ac09",
-  checksumsPath: "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_HANDOFF_CHECKSUMS.sha256",
-  checksumsSha256: "fe611983112944edcf214d88a9aefac6cc4fa4b9258f07670870414a919204ca",
+  manifestPath: "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/PRODUCT_CONFIGURATION_V2_HANDOFF_MANIFEST.json",
+  manifestSha256: "3a19148a7ede56556048ec5e048a0973781c12df7081403779b13fd73a0f4aed",
+  checksumsPath: "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/PRODUCT_CONFIGURATION_V2_HANDOFF_CHECKSUMS.sha256",
+  checksumsSha256: "1b8510803a22395183fd05741854e3934085423f04b91af72fd47a52d27fac11",
 });
 const SCHEMA_SOURCES = Object.freeze([
   "cms/wp-content/plugins/gdhe-site/config/schemas/article-number-option.v1.schema.json",
@@ -84,7 +84,7 @@ function collectRefs(value, result = []) {
 export default async function verifyProductConfigurationV2Contract(options = {}) {
   const repositoryRoot = options.repositoryRoot ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
   const contractRoot = path.join(repositoryRoot, ROOT);
-  invariant(JSON.stringify(await inventory(contractRoot)) === JSON.stringify(INVENTORY), "v2 snapshot inventory mismatch");
+  invariant(JSON.stringify((await inventory(contractRoot)).filter((file) => !file.startsWith("fixtures/"))) === JSON.stringify(INVENTORY), "v2 snapshot inventory mismatch");
   const manifestBytes = await canonicalBytes(repositoryRoot, `${ROOT}/manifest.json`, "v2 manifest");
   const manifest = JSON.parse(manifestBytes.toString("utf8"));
   invariant(JSON.stringify(manifest.sourceAuthority) === JSON.stringify(AUTHORITY), "v2 authority identity mismatch");
@@ -95,8 +95,8 @@ export default async function verifyProductConfigurationV2Contract(options = {})
   invariant(JSON.stringify(manifest.query) === JSON.stringify({locale:"en",schema:"2.0.0",path:"required canonical public path",additionalParameters:false}), "v2 query mismatch");
   invariant(Array.isArray(manifest.schemas) && manifest.schemas.length === 4, "v2 Schema closure mismatch");
   invariant(JSON.stringify(manifest.schemas.map((entry) => entry.sourcePath)) === JSON.stringify(SCHEMA_SOURCES), "v2 Schema authority substitution");
-  invariant(manifest.samples.success[0].sourcePath === "TASKS/ARTIFACTS/TASK-021/golden-product-configuration-v2/fgd-x15-pvc.json", "v2 success authority substitution");
-  invariant(manifest.samples.errors.sourcePath === "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_ERROR_FIXTURES.json", "v2 error authority substitution");
+  invariant(manifest.samples.success[0].sourcePath === "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/golden-product-configuration-v2/fgd-x15-pvc.json", "v2 success authority substitution");
+  invariant(manifest.samples.errors.sourcePath === "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/PRODUCT_CONFIGURATION_V2_ERROR_FIXTURES.json", "v2 error authority substitution");
   const schemaNames = new Set(manifest.schemas.map((entry) => path.posix.basename(entry.snapshotPath)));
   for (const entry of [...manifest.schemas, ...manifest.samples.success]) {
     const source = await canonicalBytes(repositoryRoot, entry.sourcePath, "v2 source authority");

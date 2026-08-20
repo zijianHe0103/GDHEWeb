@@ -25,7 +25,7 @@ The code-owned sources are `config/content-model.json`, `config/schema.v3.json`,
 - [REST contract](REST_CONTRACT.md)
 - [Operations and rollback](OPERATIONS_AND_ROLLBACK.md)
 
-The A3 model is aligned to the hierarchy and information responsibilities frozen in `TASKS/ARTIFACTS/TASK-007/FOREST_PRODUCT_MODEL_REVISION.md`. Forest names, models, copy and images are not GDHE content and were not copied. Verification uses removable synthetic GDHE-domain fixtures only.
+The A3 model is aligned to the hierarchy and information responsibilities frozen in `TASKS/ARCHIVE/TASK-007/OUTPUTS/FOREST_PRODUCT_MODEL_REVISION.md`. Forest names, models, copy and images are not GDHE content and were not copied. Verification uses removable synthetic GDHE-domain fixtures only.
 
 ProductCard test candidates use a private versioned source document only in the local, removable Fixture lifecycle. This is not a long-term SCF editing surface and does not authorize production import or infer real GDHE product values.
 

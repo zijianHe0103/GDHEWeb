@@ -123,7 +123,7 @@ foreach (array('postid', 'databaseid', 'postmeta', 'purchaseprice', 'supplier', 
     gdhe_task021_test_assert(!str_contains($encoded, $private), 'Private field leaked: ' . $private);
 }
 
-$artifact_dir = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-021';
+$artifact_dir = dirname(ABSPATH) . '/frontend/src/lib/cms/product-configuration-v2-contract/fixtures';
 $golden_dir = $artifact_dir . '/golden-product-configuration-v2';
 if (!is_dir($golden_dir) && !mkdir($golden_dir, 0775, true) && !is_dir($golden_dir)) {
     throw new RuntimeException('Could not create TASK-021 Golden directory.');

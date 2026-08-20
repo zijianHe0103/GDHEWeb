@@ -84,7 +84,7 @@ function gdhe_a2_run_contract_test(): array
         }
     }
 
-    $artifact_dir = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-007';
+    $artifact_dir = dirname(ABSPATH) . '/frontend/src/lib/cms/contracts/fixtures';
     $golden_dir = $artifact_dir . '/golden';
     if (!is_dir($golden_dir) && !mkdir($golden_dir, 0775, true) && !is_dir($golden_dir)) {
         throw new RuntimeException('Could not create golden output directory.');

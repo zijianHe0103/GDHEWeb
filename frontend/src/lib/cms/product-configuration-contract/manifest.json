@@ -3,10 +3,10 @@
   "sourceAuthority": {
     "task": "TASK-019",
     "handoff": "TASK-019-PRODUCT-CONFIGURATION-1",
-    "manifestPath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
-    "manifestSha256": "b219e7178104769cf410a430fbfb00cbbf351a8f58365490ad0bd0dbddfa06af",
-    "checksumsPath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
-    "checksumsSha256": "641dfaaa193bca490243fcadbd8b94e4c8fbbc90ecb59dab6ab476ba7c63dae8"
+    "manifestPath": "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
+    "manifestSha256": "3f3133697598f53f52d327316422dad845b859dac4f3bb1da40e0b58086ed4cd",
+    "checksumsPath": "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "b6894406436b0bf8bcd6518a49d058ccc659c3efcdaa909827cdcb39ca2e1f37"
   },
   "restApiVersion": "1",
   "contentSchemaVersion": "3.0.0",
@@ -47,13 +47,13 @@
     "success": [
       {
         "name": "fgd-x15-pvc",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-019/golden-product-configuration/fgd-x15-pvc.json",
+        "sourcePath": "frontend/src/lib/cms/product-configuration-contract/fixtures/golden-product-configuration/fgd-x15-pvc.json",
         "snapshotPath": "samples/success/fgd-x15-pvc.json",
         "sha256": "3dba921d26bbab9e586bd8bb8479ab11be9420fc134bac03de255c08fc910fdf"
       }
     ],
     "errors": {
-      "sourcePath": "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json",
+      "sourcePath": "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json",
       "sourceSha256": "01a60b64f5e899b4cd34c03fa0e4fc599aa915ac8422a4c8162402dbb4ee88e6",
       "snapshotPath": "samples/errors/product-configuration-errors.json",
       "selectors": [

@@ -1,0 +1,203 @@
+{
+  "closed_at": "2026-08-11T04:46:02Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/BASELINE.md",
+      "sha256": "f5e4a8487cd5000da8edc121eb3c78232641b48b129d1f34967f5fa9f771c6e2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_READONLY_FEASIBILITY_AUDIT.md",
+      "sha256": "9be6ac3e9d05531d0ed8bb1a41a5bb25643017971bf1acf25f86e967e2e55f90"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_READONLY_FEASIBILITY_AUDIT_R2.md",
+      "sha256": "aeef4bbfaeadbcaa899969a081e71c46af540cd2145dd36e73f99018ea21647f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PLANNER_R1_REVISION_VALIDATION.md",
+      "sha256": "9248752ffa3ad41bd0288faf7efcb228cbfa1dd850c11ab9404fa613d5a300a1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PLANNER_R2_REPAIR_VALIDATION.md",
+      "sha256": "062db7099a54a623c663716a6a43bfcec0c1764991f020b0074fab765631fd7c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_CMS_READONLY_FEASIBILITY_AUDIT.md",
+      "sha256": "3fe93545bfd376e6c04f7bdf2c72145536c27d468ad9df2014395267f3533083"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_CMS_READONLY_FEASIBILITY_AUDIT_R2.md",
+      "sha256": "0d29c8b5e8490107ab1a4558367082e1ec492627e4f62b824e4df567a353060f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/BASELINE_CHECKSUMS.sha256",
+      "sha256": "654cded75b3b1127f009091e9b060c9ab4ad9cc60a615f44d2bd4f295720e655"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/schemas/authoritative-rfq-document.v1.schema.json",
+      "sha256": "38f18571ab0d4c69e406688085b733037025f08e158d33cbdc3f8b3819e6f7c2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/schemas/common.v1.schema.json",
+      "sha256": "efa7303b1869a84314ac6bbe4aefd9f25d3f6100bf2a31339afce5fe33e8638a"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/schemas/public-rfq-error.v1.schema.json",
+      "sha256": "ff3cbe55451e3ed1cfc96fe6871428e2ad6672d9a65cb580a6a8d2e08c6b93ea"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/schemas/public-rfq-receipt.v1.schema.json",
+      "sha256": "fe166378dda6c3738b30c8b6d505706ef9f1d30b079b46ddd90b51e8fcf3fcc0"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/schemas/public-rfq-submission-draft.v1.schema.json",
+      "sha256": "51aed1a7c53cbd3dbec9c41291bd65452af6350aa6904b7acc1dc05813a178bc"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/expected.json",
+      "sha256": "047215fa8c56eca4d4a4e21d5de30d2f7dfa7e3d09d7b20ddefdb6c7c78bc094"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/accepted-not-started.authoritative.json",
+      "sha256": "b672e760ca0edce2ca47b8b4adc5c55c00db80713fd5d926adf28b882f36bde8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/cross-domain-customer-line-error.json",
+      "sha256": "d14f73cb1a93b9d205951f7a3d2e3ac730adc53523c0e8f8319746715d0dc319"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/cross-domain-field-error.json",
+      "sha256": "32d9563825946b90c08f16bd00e0b02bcfd2163056d4996acbcb3eb8759a0875"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/duplicate-entry-id.public-request.json",
+      "sha256": "e6d31555a3044668f409c970f981c4aedf9b893860b0b956bd378b049501209a"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/duplicate-line-identity.public-request.json",
+      "sha256": "bcfe07e888404ee06644d94cdb8ba88c2f0c4f5726542b3ba07ccc2b60fcbfd6"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/invalid/pre-reservation-outcome.authoritative.json",
+      "sha256": "759de99f921ece3afb3e22b656cb2442e7d3e92b91e13951809e6d6add63f1d8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-1.accepted-receipt.json",
+      "sha256": "641d434bb33fbc8f4d85339dbfabc3a385c457dd89f57d2018c90bff7c269fa8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-1.authoritative.json",
+      "sha256": "1c0da4f414bf88e5823a220b33a46a3acfb8765c286ef12df3e19d24c4533b0d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-1.error.json",
+      "sha256": "987c4cd768c82532293bd5386dd665a0f0d3b3e80fcbb55efd0adb7da2e8bc50"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-1.processing-receipt.json",
+      "sha256": "8d684e621bbdbebbd257ff71b282a30d3ac0b2065504e3ba7cc25244c514fcf9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-1.public-request.json",
+      "sha256": "7f7ff6df63334a7f0348684589f74b9fe52c9b683b1374acfe14b135e34c6301"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/vectors/vector-2.public-request.json",
+      "sha256": "76bc0c7da915580f4290b688b751ce06ae9e9fc28b962c049dcfaf12362ecab3"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/verify-machine-contract.cjs",
+      "sha256": "54be783745d18dcea2b814c03059930286dc4ee79d38c705cbb24e622e3cb4a1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "3422ee7c51c74fa13a5e37d769886c856e8adead9825e483aa67030218e9e24c"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/CUSTOMER_CONTACT_FIELD_MATRIX.md",
+      "sha256": "4b1a6db0878c08d625c857ca4e019b8265ca21054b35e8199c3f93543efe82d6"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DECISION_LOG.md",
+      "sha256": "0639e8e2bda79d95a7d840d00d66184c992e26afa714b5aa9a62011929403128"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FAILURE_AND_IDEMPOTENCY_MATRIX.md",
+      "sha256": "67e15cba8cfe7195c82cd2f05204c2206bd1d9720c185807a9c0a0e852606c71"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/IMPLEMENTATION_SEQUENCE.md",
+      "sha256": "90413acdbf02e75b61a497e9a9125cad647ac70f61c9b9059f501c84fc2e51d7"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/MACHINE_CONTRACT.md",
+      "sha256": "67a165dfb1447642cf86a47668cd033b80c325cf8eb25a07cad121b608f7a535"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PLANNER_CONTRACT_VALIDATION.md",
+      "sha256": "330fad33021ead55bbafaeb668833e9bc3512987b6668f312d5b1561c8877794"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "782be8275172dd64de5c41d0c665f93ac8433044d01d816531daaafaaeb994d0"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/RFQ_SUBMISSION_CONTRACT.md",
+      "sha256": "349cfbc1635120bd0f14fd93e6bb01deb5ad8ab74767cfdcf9cf90a114e529f8"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/SERVER_SECURITY_BOUNDARY.md",
+      "sha256": "84020618bfc8eda037334c4bccf98cd7deb6c23bb548f72c52964ec06deb057f"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "1ddc6b6b49a559796fb7b88da86fe25d04f83b50085b9d144ebf31fbce720247"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "bf3a604b764dd5cacf45292a3dc6e6408f22ebc77aa0e85f3453de76195284df"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-024"
+}

@@ -1,0 +1,28 @@
+{
+  "closed_at": "2026-07-25T19:08:41Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/ADVERSARIAL_REVIEW_HISTORY.md",
+      "sha256": "08e6d9adbf9ac6dc64b5482aad8cc390ee69bca9c6d085754ee63f998a40b7ae"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "841ea890d68f01225c872d0fe595437b55befd5ff332c3d853893d3c1c55a188"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "94a92617a5024637f366c236f1db707109169b3a11c2648b0d09f1b6daaef4e6"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "e25ce8c1b1c2a3a6f064d1163799805f237b0ff5e4490b3af74cd1bbe0d4dd40"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-010"
+}

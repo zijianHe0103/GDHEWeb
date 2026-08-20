@@ -1,0 +1,68 @@
+{
+  "closed_at": "2026-08-12T03:52:49Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_PROTECTED_BASELINE.md",
+      "sha256": "03a0d7ea091875e0d54ae753ffde28706709d64ea53387ad6a4fe82b6617eb8b"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_VALIDATION_LOG.md",
+      "sha256": "d4ed7e865beab2ccc5ff46a6e8d2e936aa6447d2f93ed93715cebdcf26c59d02"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/ADVERSARIAL_REVIEW_HISTORY.md",
+      "sha256": "085282c1a8853a982ecd9bab5a784dd8a8036ca97110e4d2e258ccadd7bc15a9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/A0_PROTECTED_CHECKSUMS.sha256",
+      "sha256": "66ed4be5d9dac7e693e71c6552582594757b76e57ddb833de75a63b6553d487f"
+    },
+    {
+      "mode": "100644",
+      "path": "EXECUTION_REPORT.md",
+      "sha256": "63dbb7d476665767561dcb63444fda3214e79c337f3509399cd6feee27185d02"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/A0_DESIGN.md",
+      "sha256": "1ffa375c230e270711cb6e33b3d8a0ef1e04f72e13ca91c6060a801b865a9bbe"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/BASKET_V3_TO_SUBMISSION_V2_MAPPING.md",
+      "sha256": "4d316df7be09fbedc701f45f2ca08633fdd85e9755e2cbdcf6e0836084231555"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "2888d8de4f69ba08350ce494b6fe517301a0c2666fcc225fc2b2dd9e4890af2f"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/RFQ_SUBMISSION_V2_CONTRACT.md",
+      "sha256": "c5e64edbb77fc8572274b0c4f4f9d06a9aa90ce8d717360e4069979e5695c3d9"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/SECURITY_AND_IDEMPOTENCY_INHERITANCE.md",
+      "sha256": "84c73c559b6249658433e22a986499051f90918e8996531f609ccb3b2404b4a5"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "4dd026ab98db7186dc9795ac807b1bd85f4f715f0e073012fe7ad9e263db55c7"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "327f825cd98a86b0511c9614675ee23b8a5e1fb642f2532e9439e66663af508c"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-026"
+}

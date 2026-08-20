@@ -230,7 +230,7 @@ describe("Product Configuration contract snapshot verifier", () => {
     ["intermediate authority segment", async (root: string) => {
       await replaceDirectoryWithSymlink(
         root,
-        "TASKS/ARTIFACTS/TASK-019/golden-product-configuration",
+        "frontend/src/lib/cms/product-configuration-contract/fixtures/golden-product-configuration",
       );
     }],
   ])("rejects byte-identical symlink substitution for %s", async (

@@ -1,0 +1,33 @@
+{
+  "closed_at": "2026-07-23T05:47:23Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/API_DTO_FIXTURE_BOUNDARY.md",
+      "sha256": "68d3c398a38991972457713157df1a5a54da8c299aff02f0103faf73d97ade8e"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FRONTEND_INTEGRATION_BOUNDARY.md",
+      "sha256": "006e7779397254698b0807650220d1b239b28ba8debf63fa7f2330997f2515b2"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/ROADMAP_AND_BOUNDARY_SYNTHESIS.md",
+      "sha256": "8cf6a115cb22a0764574914787c49a38cecad37633f7778b533ddc1f10c653b7"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "df8c55411b3670aa971f11eba8520b119110aebfefb1e9c748fe17e8768cde5b"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "3b48b7eb7278c441ee23a6c971ae018833903423cdebb3c35b589f2066229b9a"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-005"
+}

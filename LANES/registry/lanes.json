@@ -1,205 +1,147 @@
 {
-  "schema": "DPG-LANES-1.0.0",
-  "project": "独立站",
-  "created_at": "2026-07-22T03:58:17Z",
-  "updated_at": "2026-07-23T14:36:25Z",
+  "acceptance": {
+    "required_roles": [],
+    "verdict_role": "validation_report"
+  },
+  "artifact_roles": {
+    "cms_revision": {
+      "authority": "wordpress_source",
+      "kind": "product",
+      "storage": "business_authority"
+    },
+    "frontend_revision": {
+      "authority": "frontend_source",
+      "kind": "product",
+      "storage": "business_authority"
+    },
+    "localization_seo_revision": {
+      "authority": "localization_source",
+      "kind": "product",
+      "storage": "business_authority"
+    },
+    "task_contract": {
+      "kind": "contract",
+      "path": "TASKS/{bucket}/{task_id}/TASK.md",
+      "storage": "task_package"
+    },
+    "validation_report": {
+      "kind": "validation",
+      "path": "TASKS/{bucket}/{task_id}/VALIDATION_REPORT.md",
+      "storage": "task_package"
+    },
+    "visual_evidence": {
+      "kind": "evidence",
+      "path": "TASKS/{bucket}/{task_id}/EVIDENCE/VISUAL_QA_REPORT.md",
+      "storage": "task_package"
+    }
+  },
   "lanes": {
-    "planner": {
-      "purpose": "Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.",
-      "lane_type": "planner",
-      "current_session": "019f857b-3e04-73d2-9335-edcff61b30ed",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "PROJECT/**",
-        "TASKS/**",
-        "MEMORY/**",
-        "LANES/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/planner/workspace",
-      "inbox": "LANES/planner/inbox",
-      "outbox": "LANES/planner/outbox",
-      "sessions_dir": "LANES/planner/sessions",
-      "requires_adversarial_review": false,
-      "last_seen": "2026-07-22T03:58:55Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T03:58:55Z"
-    },
-    "governance_maintainer": {
-      "purpose": "Synchronize project-managed governance templates with the verified active plugin while preserving user content and producing TASK-006 delivery evidence.",
-      "lane_type": "specialist",
-      "current_session": "019f8da9-8538-7532-ae96-5cdc13d4dbe6",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "LANES/governance_maintainer/**",
-        "TASKS/ARTIFACTS/TASK-006/**",
-        "TASKS/ACTIVE/TASK_TEMPLATE.md",
-        "AGENTS.md",
-        "README.md",
-        ".codex/rules/GIT_GOVERNANCE.rules",
-        ".codex/config.toml",
-        ".codex/agents/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/governance_maintainer/workspace",
-      "inbox": "LANES/governance_maintainer/inbox",
-      "outbox": "LANES/governance_maintainer/outbox",
-      "sessions_dir": "LANES/governance_maintainer/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-23T06:29:33Z",
-      "created_at": "2026-07-23T06:28:58Z",
-      "updated_at": "2026-07-23T06:29:33Z"
-    },
-    "executor": {
-      "purpose": "Execute assigned work, produce deliverables, write execution reports, and request adversarial review.",
-      "lane_type": "executor",
-      "current_session": "019f88cf-fd7d-7dc1-95f5-98684d793dfb",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "TASKS/ARTIFACTS/**",
-        "LANES/executor/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/executor/workspace",
-      "inbox": "LANES/executor/inbox",
-      "outbox": "LANES/executor/outbox",
-      "sessions_dir": "LANES/executor/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-22T07:53:15Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-26T05:05:48Z"
-    },
-    "adversarial_reviewer": {
-      "purpose": "Challenge assumptions, inspect omissions and risk, verify evidence, and return PASS/FAIL/P0/P1/P2 findings.",
-      "lane_type": "adversarial_reviewer",
-      "current_session": "019f88d0-018d-75e2-8e28-54a904a6bf8c",
-      "previous_sessions": [
-        "/root/task001_adversarial_review",
-        "task001_adversarial_review"
-      ],
-      "status": "registered",
-      "write_scope": [
-        "TASKS/ARTIFACTS/*/ADVERSARIAL_REVIEW_REPORT.md",
-        "LANES/adversarial_reviewer/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/adversarial_reviewer/workspace",
-      "inbox": "LANES/adversarial_reviewer/inbox",
-      "outbox": "LANES/adversarial_reviewer/outbox",
-      "sessions_dir": "LANES/adversarial_reviewer/sessions",
-      "requires_adversarial_review": false,
-      "last_seen": "2026-07-22T07:53:15Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:15Z"
-    },
     "frontend": {
-      "purpose": "Own the independent TypeScript frontend, reusable UI, routing, CMS data access, frontend tests, and frontend documentation.",
-      "lane_type": "specialist",
-      "current_session": "019f88cf-f8d2-7953-bdb4-9fbbe9876445",
-      "previous_sessions": [],
-      "status": "registered",
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "frontend_revision"
+      ],
+      "purpose": "Own the independent-site frontend source, tests, and frontend documentation.",
+      "read_scope": [
+        "**"
+      ],
+      "requires": [
+        "task_contract"
+      ],
+      "sandbox_mode": "workspace-write",
       "write_scope": [
-        "LANES/frontend/**",
         "frontend/**",
-        "docs/frontend/**",
-        "TASKS/ARTIFACTS/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/frontend/workspace",
-      "inbox": "LANES/frontend/inbox",
-      "outbox": "LANES/frontend/outbox",
-      "sessions_dir": "LANES/frontend/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-22T07:53:16Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:16Z"
-    },
-    "wordpress_cms": {
-      "purpose": "Own GDHE WordPress content models, custom CMS extensions, controlled APIs, permissions, and CMS documentation without editing WordPress core.",
-      "lane_type": "specialist",
-      "current_session": "019f88d0-05f9-7213-abad-e8b1ada660b5",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "LANES/wordpress_cms/**",
-        "cms/wp-content/plugins/gdhe-site/**",
-        "cms/wp-content/plugins/secure-custom-fields/**",
-        "cms/wp-content/mu-plugins/gdhe-*.php",
-        "docs/cms/**",
-        "TASKS/ARTIFACTS/**",
-        ".local/backups/TASK-004/**",
-        ".local/backups/TASK-007/**"
-      ],
-      "read_scope": [
-        "**"
-      ],
-      "workspace": "LANES/wordpress_cms/workspace",
-      "inbox": "LANES/wordpress_cms/inbox",
-      "outbox": "LANES/wordpress_cms/outbox",
-      "sessions_dir": "LANES/wordpress_cms/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-22T07:53:16Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-23T08:37:24Z"
+        "docs/frontend/**"
+      ]
     },
     "localization_seo": {
-      "purpose": "Own multilingual routing and publication contracts, translation linkage, hreflang, RTL, metadata, Schema, and localization/SEO validation artifacts.",
-      "lane_type": "specialist",
-      "current_session": "019f88d0-0a8a-7f03-955e-2ac64fee87d5",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "LANES/localization_seo/**",
-        "docs/i18n-seo/**",
-        "TASKS/ARTIFACTS/**"
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "localization_seo_revision"
       ],
+      "purpose": "Own localization, routing, metadata, and SEO contracts.",
       "read_scope": [
         "**"
       ],
-      "workspace": "LANES/localization_seo/workspace",
-      "inbox": "LANES/localization_seo/inbox",
-      "outbox": "LANES/localization_seo/outbox",
-      "sessions_dir": "LANES/localization_seo/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-22T07:53:16Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:16Z"
+      "requires": [
+        "task_contract"
+      ],
+      "sandbox_mode": "workspace-write",
+      "write_scope": [
+        "docs/i18n-seo/**"
+      ]
+    },
+    "planner": {
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "task_contract"
+      ],
+      "purpose": "Define the task contract, coordinate only required lanes, and report to the user.",
+      "read_scope": [
+        "**"
+      ],
+      "requires": [],
+      "sandbox_mode": "workspace-write",
+      "write_scope": [
+        "TASKS/**",
+        "PROJECT/STATE.md",
+        "MEMORY/DECISIONS/**"
+      ]
+    },
+    "validation": {
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "validation_report"
+      ],
+      "purpose": "Perform the one final independent validation required by the assigned task risk.",
+      "read_scope": [
+        "**"
+      ],
+      "requires": [
+        "task_contract"
+      ],
+      "sandbox_mode": "workspace-write",
+      "write_scope": [
+        "TASKS/**/VALIDATION_REPORT.md"
+      ]
     },
     "visual_qa": {
-      "purpose": "Own reference-site comparison evidence, four-viewport screenshots, accessibility, interaction, performance, and graded visual-difference reports.",
-      "lane_type": "specialist",
-      "current_session": "019f88d0-0f9c-7940-af93-f9eef03f92c8",
-      "previous_sessions": [],
-      "status": "registered",
-      "write_scope": [
-        "LANES/visual_qa/**",
-        "QA/**",
-        "TASKS/ARTIFACTS/**"
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "visual_evidence"
       ],
+      "purpose": "Record structured visual, accessibility, and interaction evidence when assigned.",
       "read_scope": [
         "**"
       ],
-      "workspace": "LANES/visual_qa/workspace",
-      "inbox": "LANES/visual_qa/inbox",
-      "outbox": "LANES/visual_qa/outbox",
-      "sessions_dir": "LANES/visual_qa/sessions",
-      "requires_adversarial_review": true,
-      "last_seen": "2026-07-22T07:53:16Z",
-      "created_at": "2026-07-22T03:58:17Z",
-      "updated_at": "2026-07-22T07:53:16Z"
+      "requires": [
+        "frontend_revision"
+      ],
+      "sandbox_mode": "workspace-write",
+      "write_scope": [
+        "TASKS/**/EVIDENCE/VISUAL_QA_REPORT.md",
+        "QA/**"
+      ]
+    },
+    "wordpress_cms": {
+      "completion": "The declared authority or task-package artifact is complete.",
+      "produces": [
+        "cms_revision"
+      ],
+      "purpose": "Own GDHE WordPress extensions, controlled APIs, CMS tests, and CMS documentation.",
+      "read_scope": [
+        "**"
+      ],
+      "requires": [
+        "task_contract"
+      ],
+      "sandbox_mode": "workspace-write",
+      "write_scope": [
+        "cms/wp-content/**",
+        "docs/cms/**"
+      ]
     }
-  }
+  },
+  "project": "independent-site",
+  "schema": "DPG-LANES-2"
 }

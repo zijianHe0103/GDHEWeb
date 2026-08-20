@@ -90,7 +90,7 @@ function gdhe_task023_run_contract_test(): array
         (int) $manifest['posts']['detail_gamma'],
         (int) $manifest['posts']['accessory_delta'],
     );
-    $artifact_dir = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-023';
+    $artifact_dir = dirname(ABSPATH) . '/frontend/src/lib/cms/related-product-card-contract/fixtures';
     $golden_dir = $artifact_dir . '/golden-related-product-card';
     if (!is_dir($golden_dir) && !mkdir($golden_dir, 0775, true) && !is_dir($golden_dir)) {
         throw new RuntimeException('Could not create TASK-023 Golden directory.');

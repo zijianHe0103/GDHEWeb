@@ -92,7 +92,7 @@ ADR-003 的小批次验收仍有效，但其历史阶段描述可能被解释为
 
 本 ADR 不授权采购、安装、真实产品导入、飞书连接或修改、CMS/Schema 修改、页面或 SEO 实现、Preview/cache/Webhook、Staging/生产部署、询盘/分析、多语言、提交、推送、合并、验收或关闭。所有候选阶段仍需独立任务和明确确认。
 
-本 ADR 也不把产品类别清单、当前测试记录、同业参考或 Fixture 当作最终生产产品数据。测试记录只能证明经过用户确认的业务合同和预期行为；生产数据验收门详见 `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`。
+本 ADR 也不把产品类别清单、当前测试记录、同业参考或 Fixture 当作最终生产产品数据。测试记录只能证明经过用户确认的业务合同和预期行为；生产数据验收门详见 `TASKS/ARCHIVE/TASK-012/OUTPUTS/REAL_PRODUCT_VALIDATION_GATE.md`。
 
 ## 状态门
 

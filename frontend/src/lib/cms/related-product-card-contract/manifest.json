@@ -3,10 +3,10 @@
   "sourceAuthority": {
     "task": "TASK-023",
     "contract": "RelatedProductCardCollection",
-    "manifestPath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_MANIFEST.json",
-    "manifestSha256": "809fe879374e604553311217e6085f5f2b605c4a78bcb00258b8c6b2965cf51e",
-    "checksumsPath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
-    "checksumsSha256": "fc3552dc84c8e6eacb954654b4d858a326eab03261eda02da440aa48bddfde90"
+    "manifestPath": "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "manifestSha256": "bd2aa6fa3fde2585f52d26d0c45b4786ce7027c314a65d1cfc9c48bf49f44db8",
+    "checksumsPath": "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+    "checksumsSha256": "3a81f3738faa2a89c56dc08891239862712d00c8a2ac0ebf1d2691542b760757"
   },
   "restApiVersion": "1",
   "productCardSchemaVersion": "1.0.0",
@@ -66,31 +66,31 @@
     "success": [
       {
         "name": "four-plus",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/four-plus.json",
+        "sourcePath": "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/four-plus.json",
         "snapshotPath": "samples/success/four-plus.json",
         "sha256": "5359939897c49200644497fde7a0e145a0e8e3656e8425450ef1db5a447472e1"
       },
       {
         "name": "one",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/one.json",
+        "sourcePath": "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/one.json",
         "snapshotPath": "samples/success/one.json",
         "sha256": "1c337364157486db1c09cf56d99152db0cdc4ce3f4f3c50a4792caf42e203b2b"
       },
       {
         "name": "three",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/three.json",
+        "sourcePath": "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/three.json",
         "snapshotPath": "samples/success/three.json",
         "sha256": "e260f2c66b21fe709e834519bf8ae3f128d1a9cf54dc3ab79aa98e35ad6ce780"
       },
       {
         "name": "zero",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/zero.json",
+        "sourcePath": "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/zero.json",
         "snapshotPath": "samples/success/zero.json",
         "sha256": "10c511e8e8bdf7c2ee294c9f2562fbeadf4d0002eb549ff9b60b7c9574d0b805"
       }
     ],
     "errors": {
-      "sourcePath": "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_ERROR_FIXTURES.json",
+      "sourcePath": "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_ERROR_FIXTURES.json",
       "snapshotPath": "samples/errors/related-product-errors.json",
       "sha256": "e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c",
       "selectors": [

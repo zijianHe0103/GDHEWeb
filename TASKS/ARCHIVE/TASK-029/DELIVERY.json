@@ -1,0 +1,98 @@
+{
+  "closed_at": "2026-08-12T17:38:09Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_PROTECTED_BASELINE.sha256",
+      "sha256": "6c3120415f9f56f5c3eff58862da83a44e7b0fece81c50291c58cac6399d51d5"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_VALIDATION_LOG.md",
+      "sha256": "e5c45e11551303ada11802ebfc0b23047c959d18f88e812dffd5406fa4e838bb"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/ADVERSARIAL_REVIEW_HISTORY.md",
+      "sha256": "553cb693a4c4dd07e9ed5f5c31c734eb5a1cf0d532ec0ab4a3e17194862aa4dd"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A1_VALIDATION_LOG.md",
+      "sha256": "905fd914276c920316f6c531a8f9dac438097aed9b0f5af1e4f227a628eeab79"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A2_VALIDATION_LOG.md",
+      "sha256": "30d4088c94041916418544b843396fce6695c49053e445dba709de1881c577cc"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A3_VALIDATION_LOG.md",
+      "sha256": "3b5745f6c8a31158eb5f71a22398e8119ced42108e2a4f297a0b88b3513401fe"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A4_VALIDATION_LOG.md",
+      "sha256": "95441a47c00baae0e15c0ef1cab9bf4e0cc62e1e278b2f8cdc3e0d3115a9a26c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A5_VALIDATION_LOG.md",
+      "sha256": "ff81b692638ed049661a3be4f755e98a5545391a55aafb5f23ea45165b7874a8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_ADVERSARIAL_FINDINGS_R1_VALIDATION_LOG.md",
+      "sha256": "e7aa35c7260e45a614c5e5bd183b0fef4d967b7194766a80c54d14d431f9b5b7"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "49c1598d831d4eedf32f6c3c11261272f4373ee9717245fc1dbc5c8c966027ae"
+    },
+    {
+      "mode": "100644",
+      "path": "EXECUTION_REPORT.md",
+      "sha256": "3d1c603d0e7508bafcb3027ebf0d6f71eae952c1cfdd0d2abf68c456cace5c71"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/A0_DESIGN.md",
+      "sha256": "94d8887a5e76a22f0a538424080d4d38a871e42aeacc3e2d98d4da5084c618e1"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/MYSQL_MIGRATION_AND_ROLLBACK_PLAN.md",
+      "sha256": "a67c77bc57e48a570c30ac247629aa0e316f548880256bd22b724124e2f72c92"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "2604c13b057c5f70361fb39c979acb6a398d4980eaf30000d59afbcb7220b74f"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/STATE_MACHINE.md",
+      "sha256": "11f703cbdafe7a2aa6d5b2a5676b447924060c7d3b03844890ac4d7eb64dffea"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/TDD_SEAMS.md",
+      "sha256": "8c93dfcecf9173a76783874794c87af2fbacc832b6d5836b641e00c38a0fa9c6"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "1beb4981311eb20be85d5bc2fae2f28b93516a6617b9c0dfae03e019bc776f0f"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "d6e52a9ae4da2895e4a05308cfcb9b02388532d36d50eb8a4c11f41d89fb98f7"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-029"
+}

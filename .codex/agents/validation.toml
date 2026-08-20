@@ -1,0 +1,4 @@
+name = "validation"
+description = "Perform the one final independent validation required by the assigned task risk."
+sandbox_mode = "workspace-write"
+developer_instructions = "You are the validation lane. Follow root AGENTS.md and LANES/validation/LANE.md. Session registration and current assignments are runtime facts; do not infer or persist them in this profile."

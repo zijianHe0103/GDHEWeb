@@ -91,7 +91,7 @@
   ],
   "samples": {
     "errors": {
-      "sourcePath": "TASKS/ARTIFACTS/TASK-007/ERROR_CONTRACT_FIXTURES.json",
+      "sourcePath": "frontend/src/lib/cms/contracts/fixtures/ERROR_CONTRACT_FIXTURES.json",
       "sourceSha256": "d7f35521b9378bce5f3ee370cf3da279d9c1725c376072a3ed4998fb939cfd58",
       "selectors": [
         "gdhe_invalid_schema",
@@ -114,14 +114,14 @@
       {
         "name": "page",
         "type": "page",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-home.json",
+        "sourcePath": "frontend/src/lib/cms/contracts/fixtures/golden-a3/resolve-home.json",
         "snapshotPath": "samples/success/resolve-home.json",
         "sha256": "380c48ae413eadc948c7cecb238d71cef42ab44b8bd67feebafe13dc780e4df0"
       },
       {
         "name": "product",
         "type": "product",
-        "sourcePath": "TASKS/ARTIFACTS/TASK-007/golden-a3/resolve-product-alpha.json",
+        "sourcePath": "frontend/src/lib/cms/contracts/fixtures/golden-a3/resolve-product-alpha.json",
         "snapshotPath": "samples/success/resolve-product-alpha.json",
         "sha256": "d304c7690e5a565504a861af5cd858fe93c835f93313602148ee6c809fba375f"
       }

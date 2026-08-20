@@ -2,55 +2,26 @@
 
 ## Purpose
 
-Top-level planning, requirement clarification, task decomposition, lane dispatch, and final user reporting.
+Define the task contract, coordinate only required lanes, and report to the user.
 
-## Lane Type
+## Requires
 
-planner
+- None
 
-## Responsibilities
+## Produces
 
-- Maintain lane-specific context and worklog.
-- Process messages assigned to this lane.
-- Produce the artifacts required by assigned tasks or issues.
-
-## Non-Responsibilities
-
-- Do not bypass planner coordination.
-- Do not mark user acceptance, formal commits, pushes, or merges complete.
-- Do not write outside the lane write scope without planner approval.
-
-## Write Scope
-
-- `PROJECT/**`
-- `TASKS/**`
-- `MEMORY/**`
-- `LANES/**`
+- `task_contract`
 
 ## Read Scope
 
 - `**`
 
-## Inbox
+## Write Scope
 
-`LANES/planner/inbox`
+- `TASKS/**`
+- `PROJECT/STATE.md`
+- `MEMORY/DECISIONS/**`
 
-## Outbox
+## Completion
 
-`LANES/planner/outbox`
-
-## Workspace
-
-`LANES/planner/workspace`
-
-## Session Registration
-
-Register with `lane-register planner <session-id>` before assuming this lane identity.
-
-## Resume Protocol
-
-New sessions read this file, recent lane worklog, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
-
-## Handoff Protocol
-
-Session replacement writes `LANES/planner/workspace/<date>-session-handoff.md`.
+The declared authority or task-package artifact is complete.

@@ -1,0 +1,88 @@
+{
+  "closed_at": "2026-08-12T07:18:50Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_PROTECTED_BASELINE.md",
+      "sha256": "64e8e2003ca45da9767b1a72a6d7bc0bce8060f17008ac6d4c7ef2871b2f09a1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A0_VALIDATION_LOG.md",
+      "sha256": "d2e1a8b7f8484a77ed58cf72b5c7da309346864da6751bd6f58efb22ffb44844"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/ADVERSARIAL_REVIEW_HISTORY.md",
+      "sha256": "cdfcb13972a2dd832c6ab15559805453340e35ac8716d071412e36822c4f23d2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A1_VALIDATION_LOG.md",
+      "sha256": "b20bddb84f537ab41368c61a3af5f84a71052727a83b1e7eae31a58a2320209f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A2_VALIDATION_LOG.md",
+      "sha256": "689a40adb01285976ecbaa2df4337f78aad377911960bceae394ef285d1d6ec5"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A3_VALIDATION_LOG.md",
+      "sha256": "ffd8ecef35ef7a20b80eaaa142ae13346be8b27b89ea78e5a422d51dde8a50e8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A4_VALIDATION_LOG.md",
+      "sha256": "ecb92b63661b5a6ced55d31beb6291b70fbf46765769907ed12b8d899543eafb"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_A5_VALIDATION_LOG.md",
+      "sha256": "7e314af2707a9316854e831c693d1738b25fd064156ee98e28a266b59d5bd988"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "8c33733c504cb6fd74d2646dbf2246a926202e2ca7fdfd20f681873157287bcd"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/A0_PROTECTED_CHECKSUMS.sha256",
+      "sha256": "7f84920eb3a6baf32aa30061c55c8ac33b26d8308c6c6b06c828ead4ded9f070"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/A0_DESIGN.md",
+      "sha256": "7b6b15bc7441f1c694f5332511ec032e5035a9defe90071cf3b3560ef4a5740b"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FRONTEND_A6_PLANNER_DOC_DELTAS.md",
+      "sha256": "49abd877fd66af4c2b3b35c89efcf904b2397795d6e47e2c877a8739ba9d8858"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "750480d9d4096fe0eea67feb6475a7979cfc61da88aa87f6e906ea167044d2e4"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/TDD_SEAMS.md",
+      "sha256": "97202efc1d5924a51d2b6dea77a9bbf9f39833cd178d6a7122f5ba2018b4b4bf"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "4030d5e16b2ee01ae5f29f7cd3a422b60e23370dfdbf55c10fcff16a0a1a2379"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "709fdc5b4f5b49e7b9beeddbb550cd8ad6f152349e2e083748f27f0a5a3a3817"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-027"
+}

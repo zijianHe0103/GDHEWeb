@@ -1,0 +1,28 @@
+{
+  "closed_at": "2026-07-24T17:58:37Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "6b217d8857f345c35e761c929cc2c2805aeaa8496b7082973c486ba5ae960ffb"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "68d0d1ad14e52be5a6438a85340664d70a1a6ef916ee7d81b6fbd8b84666f3c2"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "dca21febeb2b75c7c10dccdd5804d5ba26611c09a4c4e7b7fb237590078160b7"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "8b401aba8dec9ee1e96f704ea1ee7c4c17dca80dbd408f4c4d0e1545eb5b42ed"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-008"
+}

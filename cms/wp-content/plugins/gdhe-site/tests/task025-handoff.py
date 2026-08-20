@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[5]
-ARTIFACT = ROOT / "TASKS/ARTIFACTS/TASK-025"
+ARTIFACT = ROOT / "frontend/src/lib/cms/article-number-batch-contract/fixtures"
 
 
 def sha256(path):
@@ -15,10 +15,10 @@ def sha256(path):
 
 def main():
     files = [
-        "TASKS/ARTIFACTS/TASK-025/REQUIREMENTS.md",
-        "TASKS/ARTIFACTS/TASK-025/DESIGN.md",
-        "TASKS/ARTIFACTS/TASK-025/TDD_SEAMS.md",
-        "TASKS/ARTIFACTS/TASK-025/PROTECTED_BASELINE.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/REQUIREMENTS.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/DESIGN.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/TDD_SEAMS.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/PROTECTED_BASELINE.md",
         "cms/wp-content/mu-plugins/gdhe-task025-article-number-batch.php",
         "cms/wp-content/plugins/gdhe-site/gdhe-site.php",
         "cms/wp-content/plugins/gdhe-site/config/schemas/article-number-option.v1.schema.json",
@@ -51,15 +51,15 @@ def main():
         "docs/cms/CONTENT_MODEL.md",
         "docs/cms/REST_CONTRACT.md",
         "docs/cms/OPERATIONS_AND_ROLLBACK.md",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_TDD_RED_EVIDENCE.md",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_RUNTIME_VALIDATION.json",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_SCHEMA_VALIDATION.json",
-        "TASKS/ARTIFACTS/TASK-025/QUOTE_LINE_ERROR_EVIDENCE.json",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_DETERMINISM_AND_CLEANUP.json",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_REAL_HTTP_EVIDENCE.json",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_EXECUTION_REPORT.md",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_VALIDATION_LOG.md",
-        "TASKS/ARTIFACTS/TASK-025/WORDPRESS_DIFF_SUMMARY.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_TDD_RED_EVIDENCE.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_RUNTIME_VALIDATION.json",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_SCHEMA_VALIDATION.json",
+        "frontend/src/lib/cms/article-number-batch-contract/fixtures/QUOTE_LINE_ERROR_EVIDENCE.json",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_DETERMINISM_AND_CLEANUP.json",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_REAL_HTTP_EVIDENCE.json",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_EXECUTION_REPORT.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_VALIDATION_LOG.md",
+        "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_DIFF_SUMMARY.md",
     ]
     files += [
         path.relative_to(ROOT).as_posix()

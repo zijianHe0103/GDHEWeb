@@ -1,0 +1,63 @@
+{
+  "closed_at": "2026-07-31T13:42:04Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_DETERMINISM.json",
+      "sha256": "4afc57904def5c9450ee7d9d8d7aca4e7cd757690c7e7acd831dc0805a642a20"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_RUNTIME_VALIDATION.json",
+      "sha256": "4fa38e28c9351d5c169d25cdea5c6edc994fde36b91cfaef87a670add0c35613"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CONFIGURATION_SCHEMA_VALIDATION.json",
+      "sha256": "2989efd5b4fcea18a88c14da925681e4e5c16cef7446bfdd89e46f7ef1ea16e2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PROTECTED_BASELINE.md",
+      "sha256": "9941898772ea5b5440b19e96f89cb35034991c1d0908857154f626548aef61f1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/FRONTEND_TEST_OR_VALIDATION_LOG.md",
+      "sha256": "a3c72fbedd8548d7defebb04918097e6872d0751a90684870dbb714f1ff521f9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "daf4c5180e4b3d6ad2f1d963b31e682da2a151c15573c0d3a0aa719010604df0"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "31fdb46bea627d08aef1e540670bd7422c887ea37abd15daffc60df0fea9d9b2"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PRODUCT_CONFIGURATION_HANDOFF.md",
+      "sha256": "19f4653de62b85b2b67acc7f29d90baebcbe507e4eb2e03263b50b080413e460"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "cb4f7f502f51ccf1ebd548ff7b882a30d515c4931ce07435be18cad2278fad15"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "a6d8a06183519985e6473edbd3836642086ce95d3bcdd018efad441a26cdf808"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "a8bda06d767e2b5ac89e3de28f0ec8d447791829d0ebd83eb0dbb918d4410af4"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-019"
+}

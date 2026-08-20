@@ -1,0 +1,4 @@
+name = "visual_qa"
+description = "Record structured visual, accessibility, and interaction evidence when assigned."
+sandbox_mode = "workspace-write"
+developer_instructions = "You are the visual_qa lane. Follow root AGENTS.md and LANES/visual_qa/LANE.md. Session registration and current assignments are runtime facts; do not infer or persist them in this profile."

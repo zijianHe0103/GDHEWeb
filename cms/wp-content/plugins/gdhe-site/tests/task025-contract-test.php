@@ -107,7 +107,7 @@ function gdhe_task025_run_contract_test(): array
     $configured_id = (int) $manifest['posts']['configured'];
     $source_id = (int) $manifest['posts']['source'];
     $accessory_id = (int) $manifest['posts']['accessory'];
-    $artifact_dir = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-025';
+    $artifact_dir = dirname(ABSPATH) . '/frontend/src/lib/cms/article-number-batch-contract/fixtures';
     $golden_dir = $artifact_dir . '/golden-wordpress';
     if (!is_dir($golden_dir) && !mkdir($golden_dir, 0775, true) && !is_dir($golden_dir)) {
         throw new RuntimeException('Could not create TASK-025 Golden directory.');

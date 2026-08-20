@@ -1,0 +1,63 @@
+{
+  "closed_at": "2026-07-26T01:17:57Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A3_DESKTOP_1440.png",
+      "sha256": "53b15cefeab7d2e3688828b3a75317d2ee735e30405de429fa5e887c48dd11e4"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A3_LIVE_E2E_REPORT.md",
+      "sha256": "4858faf7a8fc22dbff71384e712d27927a86cdf5006c66df658b6046ea49cc5b"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A3_MOBILE_390.png",
+      "sha256": "4a6a8a96d45cf38577d8d4f180accdc4120d4a7da73a5bae1e75e9e72010b2a2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A3_NETWORK_EVIDENCE.md",
+      "sha256": "3dc4175190dc43033487e94eabb3abd4b1427db94fcd10e4bd63c07ab282e3d2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/A4_CLEANUP_REPORT.md",
+      "sha256": "6aca95028a42ac753852190e3c5a9593fecd0d39410ecd628085b4b5a18e9ab9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/A2_FIXTURE_WINDOW_REPORT.md",
+      "sha256": "7ff458d7f8dfd5924ca8904c8c9656e2e9cdca803bcfd39ab42497968d06643f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/A1_TEST_OR_VALIDATION_LOG.md",
+      "sha256": "d3a1eab2ac2359677a6287453ed6dff70045e206231df63b900d0eec5558e427"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "98b5f67b70044bb4aac588f7daf62f2cb8212a23b46b5bdb59e2b7b4cffe633a"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "71f52d430581f7b13175d5585727d2c898fbd5954b00adf9d7a33bf8baa7cb9e"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "5cbe3d0125938e1c83f2688890b7e385250071f406e00adfea86c1c75f3c91ce"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "56d53fd093ad282ebfa687d36c7883de1a12e8d52dc128be4804b932606ebd25"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-011"
+}

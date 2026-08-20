@@ -11,13 +11,13 @@ const AUTHORITY = Object.freeze({
   task: "TASK-014",
   handoff: "TASK-014-PRODUCT-CARD-1",
   manifestPath:
-    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_MANIFEST.json",
+    "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_HANDOFF_MANIFEST.json",
   manifestSha256:
-    "aa7cd391c78ffb7038d8ef233101ceb3ee75e619b1246d1da280cc8c4ba42ccb",
+    "3f5e215a8a21f0b8ae6083fae54b8af5e2a7529bb8c8aa74a3346785c0da84d9",
   checksumsPath:
-    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+    "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
   checksumsSha256:
-    "c363f293c44ffee6b9c3cebbb03ac0e2dab73e9a7910f18b0975a65404962883",
+    "d5a7661f8e10409475b6833ab0d316acc236251df161e275d4750f4fced54151",
 });
 
 const SCHEMA_NAMES = Object.freeze([
@@ -35,26 +35,26 @@ const SUCCESS_IDENTITIES = Object.freeze([
   {
     name: "all",
     sourcePath:
-      "TASKS/ARTIFACTS/TASK-014/golden-product-card/all.json",
+      "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/all.json",
     snapshotPath: "samples/success/all.json",
   },
   {
     name: "empty",
     sourcePath:
-      "TASKS/ARTIFACTS/TASK-014/golden-product-card/filtered-empty.json",
+      "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/filtered-empty.json",
     snapshotPath: "samples/success/filtered-empty.json",
   },
   {
     name: "one",
     sourcePath:
-      "TASKS/ARTIFACTS/TASK-014/golden-product-card/one-item.json",
+      "frontend/src/lib/cms/product-card-contract/fixtures/golden-product-card/one-item.json",
     snapshotPath: "samples/success/one-item.json",
   },
 ]);
 
 const ERROR_IDENTITY = Object.freeze({
   sourcePath:
-    "TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_ERROR_FIXTURES.json",
+    "frontend/src/lib/cms/product-card-contract/fixtures/PRODUCT_CARD_ERROR_FIXTURES.json",
   sourceSha256:
     "c1c65c21daef313f31b0d0f8a6a0640b6507be7c534e04af864bfc9f0ffae0e9",
   snapshotPath: "samples/errors/product-card-errors.json",
@@ -646,7 +646,7 @@ export async function verifyProductCardContract(options = {}) {
     ...manifest.samples.success.map((entry) => entry.snapshotPath),
     manifest.samples.errors.snapshotPath,
   ].sort();
-  const actualFiles = await inventoryFiles(contractRoot);
+  const actualFiles = (await inventoryFiles(contractRoot)).filter((file) => !file.startsWith("fixtures/"));
   const missing = expectedFiles.filter((file) => !actualFiles.includes(file));
   const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
   invariant(

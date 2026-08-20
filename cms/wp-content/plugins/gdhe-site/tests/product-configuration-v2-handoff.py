@@ -66,9 +66,9 @@ def main():
             for name in SCHEMAS
         ],
         "goldenFiles": [
-            "TASKS/ARTIFACTS/TASK-021/golden-product-configuration-v2/fgd-x15-pvc.json"
+            "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/golden-product-configuration-v2/fgd-x15-pvc.json"
         ],
-        "errorFixtureFile": "TASKS/ARTIFACTS/TASK-021/PRODUCT_CONFIGURATION_V2_ERROR_FIXTURES.json",
+        "errorFixtureFile": "frontend/src/lib/cms/product-configuration-v2-contract/fixtures/PRODUCT_CONFIGURATION_V2_ERROR_FIXTURES.json",
         "invariants": {
             "anonymousReadOnly": True,
             "productConfigurationV1BytesUnchanged": True,

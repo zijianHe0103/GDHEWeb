@@ -1,0 +1,78 @@
+{
+  "closed_at": "2026-07-30T05:28:54Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CARD_DETERMINISM.json",
+      "sha256": "845054f1a9a06d2d24b7e455fdde15512fd35d3d48e9bac00ee8b0296d0988e1"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CARD_RUNTIME_VALIDATION.json",
+      "sha256": "aab6ecb7d3220b66171ed24d7b845986b7c323691509e658ca348ddcf0dd8499"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PRODUCT_CARD_SCHEMA_VALIDATION.json",
+      "sha256": "3e3f060d08c2933b78ccecbe83b589938d26e293324782d4deb2a8cda173fb82"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-product-card/filtered.json",
+      "sha256": "fc30acb5d3492625de2bdf0311e5473ee5e411dba05343acda3877e8cc4222c6"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-product-card/page-1.json",
+      "sha256": "c7424a9767c098d28b2b72a4d876b040004654976c7ce4a1bea611949754c415"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-product-card/page-2.json",
+      "sha256": "c2478988deee2eb2619c2c180672251b7420211b40d288bd1f8f5cbf0acb8844"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-product-card/page-3-empty.json",
+      "sha256": "e7fb2a923250cb1ac7d881b338bfcb4b9d97d3e2558d5339a7bdc310cdd4d1ec"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/golden-product-card/title-asc.json",
+      "sha256": "8c7fe10c086419ce2132cd3a7182454df7991e5cb4b0381ab9c87f6570f6eb5b"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "963afbbed7fc7daab231ac590547c848028bc5444938c8a0a05f08d3ad9e8134"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "69c788386675c8a240f9ebdfd7e8dcadaadb2a4dc51dd70fafb7af003292c9f1"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FRONTEND_HANDOFF_READONLY_AUDIT.md",
+      "sha256": "0fc4a761bb5ddef99f86a371af53f190fb3436582ffc32ac8cf7c673c9d8e49b"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/PRODUCT_CARD_HANDOFF.md",
+      "sha256": "ebeb695963ea22d9e185f30c21fbf03cb352afabd2e0ea46a840c4d429c81ffb"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "c1c0b5016c89e65a8c2873f352d25f66332617554efeba493465f66ed489c4dc"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "daff21d8988c27a943017fef89007729b3cacc227a2c36c311eb457c7b01272d"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-014"
+}

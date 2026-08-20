@@ -78,7 +78,7 @@ def main():
         "fiftyLines": fifty,
         "valid": True,
     }
-    output = ROOT / "TASKS/ARTIFACTS/TASK-025/WORDPRESS_REAL_HTTP_EVIDENCE.json"
+    output = ROOT / "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_REAL_HTTP_EVIDENCE.json"
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
 

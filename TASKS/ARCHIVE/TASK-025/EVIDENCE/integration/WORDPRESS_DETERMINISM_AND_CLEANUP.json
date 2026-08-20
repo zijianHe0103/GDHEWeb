@@ -1,0 +1,47 @@
+{
+  "fixtureVersion": "TASK-025-ARTICLE-NUMBER-BATCH-1",
+  "lifecycleCount": 2,
+  "differentWordPressIds": true,
+  "firstWordPressIds": [
+    3685,
+    3686,
+    3687,
+    3688
+  ],
+  "secondWordPressIds": [
+    3691,
+    3692,
+    3693,
+    3694
+  ],
+  "hashesEqual": true,
+  "frozenSha256": {
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/custom-sales-follow-up.json": "155fafb8c8e02e253fcddfd33446168144bfd705e8be33d9e34669a8c0badbbd",
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/migrated-standard-refresh.json": "89f922edadf27bd56943c30e4986b942eb48cef33f88473eb42f152a3029f84e",
+    "TASKS/ARCHIVE/TASK-025/EVIDENCE/machine/golden-wordpress/mixed-fifty-line.json": "3dc61694d9a2ce0b99daa9f16fdaa81f78973ea34ac1830f647383667a2f8775",
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/mixed-two-line.json": "9d783c93590e01f00abd969b98d88d7ca58743748d5c195b5b3e350c2de20342",
+    "TASKS/ARCHIVE/TASK-025/EVIDENCE/machine/golden-wordpress/related-product-card-v1.json": "0f284929321c9a84fd9f4e1981f80bdbc72f6bbdfdf294c2588e9f5487d03293",
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/related-product-card-v2.json": "5c2a5a6838899b6e7e9408243e271fb291bc9b6f97c1ef2ab4de47f09a4d7ce0",
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/standard-ready.json": "3de07075dd719a0a3cf6490c8cfd6820d5fca8c50338a5d31537372543141675",
+    "frontend/src/lib/cms/article-number-batch-contract/fixtures/QUOTE_LINE_ERROR_EVIDENCE.json": "8749e1962f5de1f939a6d32447d5f8e43feaed28ca554a222b99192b51dda814",
+    "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_RUNTIME_VALIDATION.json": "64ad89ca4ef086a429495497fe4ce54217fba366dea454e332a5445e140276b4",
+    "TASKS/ARCHIVE/TASK-025/EVIDENCE/integration/WORDPRESS_SCHEMA_VALIDATION.json": "63a2947f5d050a0ab57fb2556103f0fbf4db06fff38d61633b70d4e6716d856c"
+  },
+  "firstCleanup": {
+    "posts": 4,
+    "terms": 3,
+    "options": 1
+  },
+  "secondCleanup": {
+    "posts": 4,
+    "terms": 3,
+    "options": 1
+  },
+  "finalResidue": {
+    "posts": 0,
+    "options": 0,
+    "terms": 0,
+    "privateMeta": 0
+  },
+  "valid": true
+}

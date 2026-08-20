@@ -23,13 +23,13 @@ const AUTHORITY = Object.freeze({
   task: "TASK-019",
   handoff: "TASK-019-PRODUCT-CONFIGURATION-1",
   manifestPath:
-    "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
+    "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_HANDOFF_MANIFEST.json",
   manifestSha256:
-    "b219e7178104769cf410a430fbfb00cbbf351a8f58365490ad0bd0dbddfa06af",
+    "3f3133697598f53f52d327316422dad845b859dac4f3bb1da40e0b58086ed4cd",
   checksumsPath:
-    "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
+    "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_HANDOFF_CHECKSUMS.sha256",
   checksumsSha256:
-    "641dfaaa193bca490243fcadbd8b94e4c8fbbc90ecb59dab6ab476ba7c63dae8",
+    "b6894406436b0bf8bcd6518a49d058ccc659c3efcdaa909827cdcb39ca2e1f37",
 });
 const EXPECTED_QUERY = Object.freeze({
   locale: "en",
@@ -208,12 +208,12 @@ function validateManifest(manifest) {
   const success = manifest.samples.success[0];
   exactKeys(success, ["name", "sourcePath", "snapshotPath", "sha256"], "success sample");
   invariant(success.name === "fgd-x15-pvc", "success sample name mismatch");
-  invariant(success.sourcePath === "TASKS/ARTIFACTS/TASK-019/golden-product-configuration/fgd-x15-pvc.json", "success source authority mismatch");
+  invariant(success.sourcePath === "frontend/src/lib/cms/product-configuration-contract/fixtures/golden-product-configuration/fgd-x15-pvc.json", "success source authority mismatch");
   invariant(success.snapshotPath === "samples/success/fgd-x15-pvc.json", "success snapshot identity mismatch");
   invariant(SHA256_PATTERN.test(success.sha256), "success SHA-256 invalid");
   const errors = manifest.samples.errors;
   exactKeys(errors, ["sourcePath", "sourceSha256", "snapshotPath", "selectors", "sha256"], "error samples");
-  invariant(errors.sourcePath === "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json", "error source authority mismatch");
+  invariant(errors.sourcePath === "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json", "error source authority mismatch");
   invariant(errors.sourceSha256 === "01a60b64f5e899b4cd34c03fa0e4fc599aa915ac8422a4c8162402dbb4ee88e6", "error source SHA-256 mismatch");
   invariant(errors.snapshotPath === "samples/errors/product-configuration-errors.json", "error snapshot identity mismatch");
   invariant(JSON.stringify(errors.selectors) === JSON.stringify(ERROR_SELECTORS), "error selectors mismatch");
@@ -335,7 +335,7 @@ export default async function verifyProductConfigurationContract(options = {}) {
   const manifestRecord = await json(within(repositoryRoot, MANIFEST_PATH, "manifest path"), "snapshot manifest");
   const manifest = manifestRecord.value;
   validateManifest(manifest);
-  const actualInventory = (await inventory(contractRoot)).sort();
+  const actualInventory = (await inventory(contractRoot)).filter((file) => !file.startsWith("fixtures/")).sort();
   invariant(JSON.stringify(actualInventory) === JSON.stringify(EXPECTED_INVENTORY), "snapshot inventory has missing or extra files");
 
   const authorityManifestBytes = await authorityBytes(repositoryRoot, AUTHORITY.manifestPath, "authority manifest");

@@ -246,7 +246,7 @@ ADR-005 以已验证的 WordPress.org **Secure Custom Fields（SCF）** 替代 A
 | 缓存与发布事件映射 | 资源/路径语义直接 | 需维护查询与实体依赖映射 |
 | 当前项目复杂度 | 足够且依赖更少 | 现阶段收益不足以抵消插件链 |
 
-frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用途”的有力备选，理由是深层关系、字段选择和类型生成；localization_seo Lane 则指出它会把多语言方案推向 WPML GraphQL，并增加 ACF、多语言与 SEO 扩展的兼容链。本契约没有忽略该分歧，完整裁决见 `TASKS/ARTIFACTS/TASK-002/EVIDENCE_SYNTHESIS.md`。
+frontend 与 wordpress_cms Lane 均提出了“WPGraphQL 主读取 + REST 窄用途”的有力备选，理由是深层关系、字段选择和类型生成；localization_seo Lane 则指出它会把多语言方案推向 WPML GraphQL，并增加 ACF、多语言与 SEO 扩展的兼容链。本契约没有忽略该分歧，完整裁决见 `TASKS/ARCHIVE/TASK-002/OUTPUTS/EVIDENCE_SYNTHESIS.md`。
 
 **决定：**首期采用 WordPress REST，不安装 WPGraphQL。TASK-004 已实测 Core REST、GDHE allowlisted 字段投影和 `/gdhe/v1/schema`；WPML/ACFML、Yoast 与完整 DTO 尚未安装或实现。数据访问层保留 adapter 边界；只有在真实页面查询出现无法通过批量 REST、`_fields`、`_embed` 或有限 `/gdhe/v1` 合理解决的可测瓶颈，或未来业务明确需要 WPML GraphQL 工作流时，才用新 ADR 重新评估 WPGraphQL。不得在组件中临时混入第二套数据协议。
 
@@ -639,7 +639,7 @@ TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Sche
 ### 14.4 权威候选阶段
 
 1. **英语站信息架构、真实目录与转化基线**
-   - TASK-012 使用当前测试产品记录验证产品归组、规格、询价、媒体和关联同步等业务合同；这些记录不是最终生产目录，也不满足 10～20 个最终生产产品数据验收门。已确认的规则和未决生产数据门记录在 `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`。TASK-007 Schema 3 只能称为技术版本基线，不能称为真实产品业务模型已冻结。
+   - TASK-012 使用当前测试产品记录验证产品归组、规格、询价、媒体和关联同步等业务合同；这些记录不是最终生产目录，也不满足 10～20 个最终生产产品数据验收门。已确认的规则和未决生产数据门记录在 `TASKS/ARCHIVE/TASK-012/OUTPUTS/REAL_PRODUCT_VALIDATION_GATE.md`。TASK-007 Schema 3 只能称为技术版本基线，不能称为真实产品业务模型已冻结。
    - 在正式批量导入、产品模板业务冻结和 Schema 业务冻结前，由用户或业务责任人提供并确认 10～20 个合法、可使用且来源可追溯的最终生产 GDHE 产品，覆盖普通手动轨道、电动轨道、医用轨道、S-fold/Ripplefold、罗马杆或特殊系统、顶装/墙装、多长度/颜色/表面处理、主产品/配件/备件/套装、电机/遥控/控制协议/兼容关系、多份安装说明/型录/技术图纸，以及停产/替代/升级型号。先做映射和压力验证，不直接批量导入。该门是后续阶段的强制进入条件，不是 TASK-012 路线图文档收口必须提前伪造的生产数据。
    - 已确认网站的主转化语义是 B2B quotation request：访客完成型号、规格、配件等选项后索取报价，不在线下单或支付。阶段内继续冻结一级/二级 IA、分类/系列、URL Map、slug/参数规则、页面类型、访客类型、精确 CTA 英文标签和辅助 CTA、公开 canonical origin、SEO 字段责任、内容责任和素材缺口。
    - 已确认飞书多维表格持续作为型号、Article Number、规格和可用状态的结构化产品主数据权威；WordPress 持续作为营销文案、SEO、公开媒体和页面编排的内容权威。产品主数据只允许从飞书单向流向网站侧，不采用默认双向同步；quotation request 写入飞书，由业务员在飞书报价。
@@ -664,7 +664,7 @@ TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Sche
 
    **TASK-013 英语 IA、URL、CTA、Card 与 SEO 最小合同冻结：**
 
-   - 英语一级导航冻结为 `Products`、`Applications`、`Resources`、`About GDHE`、`Contact`，另设独立主按钮 `Request a Quote`。Products Mega Menu 分为 `Curtain Track Systems` 与 `Accessories`；具体已确认子类记录在 `TASKS/ARTIFACTS/TASK-013/IA_AND_PAGE_TYPE_MAP.md`。当前不渲染语言切换入口。
+   - 英语一级导航冻结为 `Products`、`Applications`、`Resources`、`About GDHE`、`Contact`，另设独立主按钮 `Request a Quote`。Products Mega Menu 分为 `Curtain Track Systems` 与 `Accessories`；具体已确认子类记录在 `TASKS/ARCHIVE/TASK-013/OUTPUTS/IA_AND_PAGE_TYPE_MAP.md`。当前不渲染语言切换入口。
    - 产品 canonical 采用 `/products/{product-slug}/`，公开型号是 slug 主要来源，Article Number 不进入 URL。分类、系列和应用只提供发现入口；一个产品无论属于多少系列或应用，始终保留一个身份和一个 canonical。产品详情 Breadcrumb 固定使用显式保存的主分类，不根据访问入口或关系顺序猜测。
    - 正常多产品询价统一使用 `/request-a-quote/`；通用联系和停产替代咨询使用 `/contact/`。有详情页的复杂产品先进入详情完成已知选择，小配件若无独立详情页可以在目录/关联模块满足选择与数量要求后直接加入询价。网站不建立购物车、结账或支付。
    - 发布保护与询价资格分离：首次同步仍创建 WordPress 草稿并由编辑人员手动发布；缺少公开保护图和基本公开身份时不得公开。产品公开不等于该行已具备 Submission `2.0.0` 提交资格：ready 标准配置产品和目录配件必须具有 Article Number 并通过一次 TASK-025 mixed batch；只有明确的自定义长度可以 `articleNumber:null / sales_follow_up`。缺失或不能唯一解析的标准配置/配件行保持阻塞或要求重新添加，不得猜测 Article Number，也不得作为一般 sales fallback 提交。
@@ -672,7 +672,7 @@ TASK-014 当前在独立任务分支新增 `/product-cards` 与 ProductCard Sche
    - normalized ProductCard collection 与 typed lifecycle/action 已通过 TASK-014 实现为新增 `/product-cards` 和独立 Schema `1.0.0`；既有通用 `collection.v3` item 仍只有 `id/type/title/publicPath`，没有被静默扩张。当前仍缺 frontend ProductCard snapshot/Validator/Transport/Adapter 与 `SeoDocument`/page-state 合同，因此不得用逐卡 `/resolve`、前端 heuristic 或原始 WordPress/SCF 数据绕过这些缺口。
    - TASK-013 为 TASK-014 选择的业务测试候选是 `FGD X15+PVC / GDHEPRD000172`、`SSD-01 / GDHEPRD000692 + GDHEPRD000695`、`PJ-D16 / GDHEPRD000640`；TASK-014 实际合同测试使用隔离的合成 Fixture，没有导入或发布上述业务记录。两者都不构成生产目录、正式发布授权、最终 Article Number 冻结或 10～20 产品门通过。
    - 生产 canonical origin 暂未确定，作为正式部署前必须关闭的 `DEPLOYMENT_GAP`；未来由受控 `PUBLIC_SITE_ORIGIN` 提供。WordPress、Local、Preview 和 Staging origin 不得成为生产 canonical。
-   - TASK-013 权威交付物为 `TASKS/ARTIFACTS/TASK-013/IA_AND_PAGE_TYPE_MAP.md`、`URL_AND_CANONICAL_CONTRACT.md`、`CTA_CONTRACT.md`、`PRODUCT_CARD_PROJECTION.md`、`SEO_MINIMUM_CONTRACT.md`、`VERTICAL_SLICE_CANDIDATES.md` 和 `GAP_REPORT.md`。
+   - TASK-013 权威交付物为 `TASKS/ARCHIVE/TASK-013/OUTPUTS/IA_AND_PAGE_TYPE_MAP.md`、`URL_AND_CANONICAL_CONTRACT.md`、`CTA_CONTRACT.md`、`PRODUCT_CARD_PROJECTION.md`、`SEO_MINIMUM_CONTRACT.md`、`VERTICAL_SLICE_CANDIDATES.md` 和 `GAP_REPORT.md`。
 
 2. **视觉基线与真实产品纵向切片**
    - 从阶段 1 选择 2～3 个代表产品，贯通真实分类/系列入口、产品卡片、详情 Hero、特性/参数、Article Number/finish/兼容性、公开下载和产品询盘 CTA。

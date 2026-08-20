@@ -83,7 +83,7 @@ wp --path=cms eval-file cms/wp-content/plugins/gdhe-site/tests/a3-contract-test.
 python3 cms/wp-content/plugins/gdhe-site/tests/a3-schema-validate.py
 python3 cms/wp-content/plugins/gdhe-site/tests/a3-benchmark.py \
   http://127.0.0.1:8080 \
-  TASKS/ARTIFACTS/TASK-007/A3_BENCHMARK.json
+  TASKS/ARCHIVE/TASK-007/EVIDENCE/A3_BENCHMARK.json
 wp --path=cms gdhe a3-fixtures cleanup
 ```
 

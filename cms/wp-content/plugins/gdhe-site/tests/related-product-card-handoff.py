@@ -33,14 +33,14 @@ def main():
         "cms/wp-content/plugins/gdhe-site/tests/related-product-card-handoff.py",
         "cms/wp-content/plugins/gdhe-site/tests/related-product-card-runtime-test.php",
         "cms/wp-content/plugins/gdhe-site/tests/related-product-card-schema-test.py",
-        "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_DETERMINISM.json",
-        "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_ERROR_FIXTURES.json",
-        "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_RUNTIME_VALIDATION.json",
-        "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_SCHEMA_VALIDATION.json",
-        "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/four-plus.json",
-        "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/one.json",
-        "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/three.json",
-        "TASKS/ARTIFACTS/TASK-023/golden-related-product-card/zero.json",
+        "TASKS/ARCHIVE/TASK-023/EVIDENCE/integration/RELATED_PRODUCT_DETERMINISM.json",
+        "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_ERROR_FIXTURES.json",
+        "TASKS/ARCHIVE/TASK-023/EVIDENCE/integration/RELATED_PRODUCT_RUNTIME_VALIDATION.json",
+        "TASKS/ARCHIVE/TASK-023/EVIDENCE/integration/RELATED_PRODUCT_SCHEMA_VALIDATION.json",
+        "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/four-plus.json",
+        "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/one.json",
+        "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/three.json",
+        "frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/zero.json",
     ]
     missing = [relative for relative in files if not repository.joinpath(relative).is_file()]
     if missing:

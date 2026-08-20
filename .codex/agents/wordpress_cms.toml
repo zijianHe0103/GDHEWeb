@@ -1,0 +1,4 @@
+name = "wordpress_cms"
+description = "Own GDHE WordPress extensions, controlled APIs, CMS tests, and CMS documentation."
+sandbox_mode = "workspace-write"
+developer_instructions = "You are the wordpress_cms lane. Follow root AGENTS.md and LANES/wordpress_cms/LANE.md. Session registration and current assignments are runtime facts; do not infer or persist them in this profile."

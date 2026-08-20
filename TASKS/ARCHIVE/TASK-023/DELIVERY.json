@@ -1,0 +1,148 @@
+{
+  "closed_at": "2026-08-08T16:26:33Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_FINAL_AUTHORITY_CONVERGENCE_R1.md",
+      "sha256": "3a8ddd71f8cdacd31809fe9012a30062bdf4c7cab7bd5625d0584e600cad063a"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_RETURN_STATE_P1_R3.md",
+      "sha256": "d8682ccdcb6ee361b2a4351cc574ca7b0c5439660b96db5105263da3b1f6cfc4"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_RETURN_STATE_P1_R3_VALIDATION_LOG.md",
+      "sha256": "82ea0226f3f35dede2360f71dbcacb7c46edaa90e162e0e5ae08755e9ca7ce0b"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_UNIFIED_CARDS_R1_VALIDATION_LOG.md",
+      "sha256": "41ca396a8500f106c490c2a5d6f6c584b93ab14f444807e0a74d1635757e901f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_VALIDATION_LOG.md",
+      "sha256": "a2861699a56b78ac208caee1711559e9e65b42db9542baed4433a33d5f19c5b2"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_VISUAL_O1_VALIDATION_LOG.md",
+      "sha256": "95df348083c5da585c14574ade38756ad65b1e42bd8717a381302b19a84598b0"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/FRONTEND_VISUAL_O2_VALIDATION_LOG.md",
+      "sha256": "f149ae9f392e4d2992606bd985337c77db93da8da452cef1cd2eb0613dfb379d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PLANNER_ADVERSARIAL_R1_REVISION_VALIDATION.md",
+      "sha256": "555d6fd04b153246a96dd018cf809e33d9417dc6b367949ecbe94cff963b504c"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/PROTECTED_BASELINE.md",
+      "sha256": "9a28de8d2d1ca8ef395a79eef5e5d35789dccc8ebbe857b83e678ce6bebb8d65"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_QA_REPORT.md",
+      "sha256": "76ec47e48560057c00b33ad4872d8c84fcdbc7b03420a3a733c4beebb46ba1c8"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_UNIFIED_CARD_R4_REPORT.md",
+      "sha256": "38a52eb18b1269a1e980e13cead73521d0ac1aa43c93fa2e85ef3e2eb4a1f5d0"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_ERROR_EVIDENCE_DETERMINISM_R1.md",
+      "sha256": "1f295d6e3953b91e8848c202b21b1df32281d2cd8cde704c3bc68a1be32aab7f"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/WORDPRESS_VALIDATION_LOG.md",
+      "sha256": "85f7f00b454033ceac1e3286423e9dbf4d146aaa1c550e2f03118abdd466f146"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/RELATED_PRODUCT_DETERMINISM.json",
+      "sha256": "4a73642a96b3ac7d2e5608a96e7ef71d9bcad707657f18988c929b502ac346f0"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/RELATED_PRODUCT_RUNTIME_VALIDATION.json",
+      "sha256": "ffe9d4befd46f24db3527c1a17ae61e4918b2de85a83c5ba2ca10186d747c695"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/integration/RELATED_PRODUCT_SCHEMA_VALIDATION.json",
+      "sha256": "c05d7131a2076c8030b24177b8240551736b6591df68f641e334099f242a9ac7"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/VISUAL_EVIDENCE_MANIFEST.sha256",
+      "sha256": "f024ed096d72e287053bbdb03e9b38d4bef403486de9aaa7527873f00069db1d"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/VISUAL_EVIDENCE_R2_MANIFEST.sha256",
+      "sha256": "f86e287d889d36bd39a6c8170739e2b60fb0ad99eadec8f6f8b1dd60f031f4ef"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/VISUAL_EVIDENCE_R3_MANIFEST.sha256",
+      "sha256": "fa0090362bd324df5a452028f734c86ad9d2c9cefc149eb8549faaacaca3cd70"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/machine/VISUAL_UNIFIED_CARD_R4_MANIFEST.sha256",
+      "sha256": "23170289283ecebde5e794d73d278ec01a60851536efd86681ee27a7a0871a1a"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/PLANNER_UNIFIED_CARD_FINAL_VALIDATION.md",
+      "sha256": "97129dcce131031e0d54c2fc6cd477e5fb3806117bd48b3add781131ae2acab9"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "594c9aca6eb20b7f623f5780a25f29ed3436ccf776f1031fc19a6d69972ba9ac"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "ebd4d76a6984921df3f1697fd36372daa7e8ec2aa8d62a56eebf9b1ded18b608"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/FRONTEND_UUID_HANDOFF_REBIND_R1.md",
+      "sha256": "0769384c8b45d69ff44ba7bbfff2aacb6df616c65951a4f9babaa2cc6702ba87"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/RELATED_PRODUCT_CARD_HANDOFF.md",
+      "sha256": "01811246c2e8f51614089b2b25b75fea87f67c7d5b5d7b32b1bd005fd0962217"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/REQUIREMENTS.md",
+      "sha256": "b86d4a14b794c0ef231cde1e9e61a15fd6232bd45997074e5e8a98d060d81e77"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "4037388c2f218f888ec018d39ddc433365088fbb93fe7c71bd8e59486c5fea38"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "313010ba3eaf35754484a343e7d7764875f4da21078c1d7214080db6e6b2e9a4"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-023"
+}

@@ -60,7 +60,7 @@ function gdhe_a3_run_contract_test(): array
     $manifest = get_option(GDHE_A3_FIXTURE_OPTION, array());
     gdhe_a3_test_assert(is_array($manifest) && isset($manifest['posts']['home']), 'A3 fixture manifest is missing.');
     gdhe_a3_test_assert(!is_user_logged_in(), 'A3 contract test must run anonymously.');
-    $artifact_dir = dirname(ABSPATH) . '/TASKS/ARTIFACTS/TASK-007';
+    $artifact_dir = dirname(ABSPATH) . '/frontend/src/lib/cms/contracts/fixtures';
     $golden_dir = $artifact_dir . '/golden-a3';
     if (!is_dir($golden_dir) && !mkdir($golden_dir, 0775, true) && !is_dir($golden_dir)) {
         throw new RuntimeException('Could not create the A3 Golden directory.');

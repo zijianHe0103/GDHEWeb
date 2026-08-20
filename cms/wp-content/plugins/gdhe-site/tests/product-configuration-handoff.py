@@ -71,7 +71,7 @@ def main():
             )
         ],
         "errorFixtureFile": (
-            "TASKS/ARTIFACTS/TASK-019/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json"
+            "frontend/src/lib/cms/product-configuration-contract/fixtures/PRODUCT_CONFIGURATION_ERROR_FIXTURES.json"
         ),
         "invariants": {
             "anonymousReadOnly": True,

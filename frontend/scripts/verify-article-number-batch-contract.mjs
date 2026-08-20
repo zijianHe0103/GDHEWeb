@@ -8,10 +8,10 @@ const MANIFEST_PATH = `${CONTRACT_ROOT}/manifest.json`;
 const SHA256_PATTERN = /^[0-9a-f]{64}$/;
 const AUTHORITY = Object.freeze({
   task: "TASK-025",
-  manifestPath: "TASKS/ARTIFACTS/TASK-025/WORDPRESS_HANDOFF_MANIFEST.json",
-  manifestSha256: "9bfb794e6dace0e4a15aef5f2d5a755b333482d297d1a071f74bbbb1277bce5f",
-  checksumsPath: "TASKS/ARTIFACTS/TASK-025/WORDPRESS_HANDOFF_CHECKSUMS.sha256",
-  checksumsSha256: "512b27a4b6d42b94cc73f45943b11a4b20ce4d08bd7305382f556e9a0c41e25a",
+  manifestPath: "frontend/src/lib/cms/article-number-batch-contract/fixtures/WORDPRESS_HANDOFF_MANIFEST.json",
+  manifestSha256: "f90d88dbc1ff00d77b3eaa9d1599ca0f3d6fd4110ea24e8c9abf9ac15cb96f8d",
+  checksumsPath: "frontend/src/lib/cms/article-number-batch-contract/fixtures/WORDPRESS_HANDOFF_CHECKSUMS.sha256",
+  checksumsSha256: "499e2bfe15b176001dc2e89f70073fef99143174fa5b717b6740a1022355ffe3",
 });
 const SCHEMA_NAMES = Object.freeze([
   "card-action.v1.schema.json",
@@ -151,13 +151,13 @@ function validateManifest(manifest) {
     exactKeys(entry, ["name", "sourcePath", "snapshotPath", "sha256"], `samples.success[${index}]`);
     const name = SUCCESS_NAMES[index];
     invariant(entry.name === name, `success sample ${index} name drift`);
-    invariant(entry.sourcePath === `TASKS/ARTIFACTS/TASK-025/golden-wordpress/${name}.json`, `success sample ${index} authority mismatch`);
+    invariant(entry.sourcePath === `frontend/src/lib/cms/article-number-batch-contract/fixtures/golden-wordpress/${name}.json`, `success sample ${index} authority mismatch`);
     invariant(entry.snapshotPath === `samples/success/${name}.json`, `success sample ${index} snapshot mismatch`);
     invariant(SHA256_PATTERN.test(entry.sha256), `success sample ${index} invalid SHA-256`);
   });
   const errors = manifest.samples.errors;
   exactKeys(errors, ["sourcePath", "snapshotPath", "sha256", "matrix"], "samples.errors");
-  invariant(errors.sourcePath === "TASKS/ARTIFACTS/TASK-025/QUOTE_LINE_ERROR_EVIDENCE.json", "error authority mismatch");
+  invariant(errors.sourcePath === "frontend/src/lib/cms/article-number-batch-contract/fixtures/QUOTE_LINE_ERROR_EVIDENCE.json", "error authority mismatch");
   invariant(errors.snapshotPath === "samples/errors/quote-line-errors.json", "error snapshot mismatch");
   invariant(errors.sha256 === "8749e1962f5de1f939a6d32447d5f8e43feaed28ca554a222b99192b51dda814", "error source hash drift");
   invariant(JSON.stringify(errors.matrix) === JSON.stringify(ERROR_MATRIX), "error matrix drift");
@@ -276,7 +276,7 @@ export async function verifyArticleNumberBatchContract(options = {}) {
     ...manifest.samples.success.map((entry) => entry.snapshotPath),
     manifest.samples.errors.snapshotPath,
   ].sort();
-  const actualFiles = await inventory(contractRoot);
+  const actualFiles = (await inventory(contractRoot)).filter((file) => !file.startsWith("fixtures/"));
   const missing = expectedFiles.filter((file) => !actualFiles.includes(file));
   const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
   invariant(missing.length === 0, `missing snapshot files: ${missing.join(", ")}`);

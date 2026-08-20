@@ -1,0 +1,33 @@
+{
+  "closed_at": "2026-07-30T19:34:02Z",
+  "delivery_profile": "REMOTE",
+  "package_manifest": [
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/VISUAL_QA_REPORT.md",
+      "sha256": "8d4fcb2d3d85b4e3b27e0c8e641acd759e542c571289b9eb198bce68649105f4"
+    },
+    {
+      "mode": "100644",
+      "path": "EVIDENCE/validation/TEST_OR_VALIDATION_LOG.md",
+      "sha256": "d513d40e82704ed69850ef49e0ee60d8ed2290f01ed844d4da6a81c61d5a95b9"
+    },
+    {
+      "mode": "100644",
+      "path": "OUTPUTS/DESIGN.md",
+      "sha256": "4ce32bad5be3af24ec7d94167211edc85fbd024a4a96565f39bc32f36c7f5200"
+    },
+    {
+      "mode": "100644",
+      "path": "TASK.md",
+      "sha256": "3ac3fc7ce83d8fa1ace785e81390e58bcac1e256984e88df3c11712748eefd87"
+    },
+    {
+      "mode": "100644",
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "cd6ec0eb3f09c49c308880cce95643c4067d00873bd707f2840f3eb047b0f51d"
+    }
+  ],
+  "schema": "DPG-TASK-DELIVERY-1",
+  "task_id": "TASK-017"
+}

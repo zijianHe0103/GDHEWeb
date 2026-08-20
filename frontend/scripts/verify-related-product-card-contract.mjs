@@ -9,10 +9,10 @@ const SHA256_PATTERN = /^[0-9a-f]{64}$/;
 const AUTHORITY = Object.freeze({
   task: "TASK-023",
   contract: "RelatedProductCardCollection",
-  manifestPath: "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_MANIFEST.json",
-  manifestSha256: "809fe879374e604553311217e6085f5f2b605c4a78bcb00258b8c6b2965cf51e",
-  checksumsPath: "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
-  checksumsSha256: "fc3552dc84c8e6eacb954654b4d858a326eab03261eda02da440aa48bddfde90",
+  manifestPath: "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_CARD_HANDOFF_MANIFEST.json",
+  manifestSha256: "bd2aa6fa3fde2585f52d26d0c45b4786ce7027c314a65d1cfc9c48bf49f44db8",
+  checksumsPath: "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_CARD_HANDOFF_CHECKSUMS.sha256",
+  checksumsSha256: "3a81f3738faa2a89c56dc08891239862712d00c8a2ac0ebf1d2691542b760757",
 });
 const SCHEMA_NAMES = Object.freeze([
   "card-action.v1.schema.json",
@@ -140,13 +140,13 @@ function validateManifest(manifest) {
     exactKeys(entry, ["name", "sourcePath", "snapshotPath", "sha256"], `samples.success[${index}]`);
     const name = SUCCESS_NAMES[index];
     invariant(entry.name === name, `success sample ${index} name drift`);
-    invariant(entry.sourcePath === `TASKS/ARTIFACTS/TASK-023/golden-related-product-card/${name}.json`, `success sample ${index} authority mismatch`);
+    invariant(entry.sourcePath === `frontend/src/lib/cms/related-product-card-contract/fixtures/golden-related-product-card/${name}.json`, `success sample ${index} authority mismatch`);
     invariant(entry.snapshotPath === `samples/success/${name}.json`, `success sample ${index} snapshot mismatch`);
     invariant(SHA256_PATTERN.test(entry.sha256), `success sample ${index} invalid SHA-256`);
   });
   const errors = manifest.samples.errors;
   exactKeys(errors, ["sourcePath", "snapshotPath", "sha256", "selectors"], "samples.errors");
-  invariant(errors.sourcePath === "TASKS/ARTIFACTS/TASK-023/RELATED_PRODUCT_ERROR_FIXTURES.json", "error authority mismatch");
+  invariant(errors.sourcePath === "frontend/src/lib/cms/related-product-card-contract/fixtures/RELATED_PRODUCT_ERROR_FIXTURES.json", "error authority mismatch");
   invariant(errors.snapshotPath === "samples/errors/related-product-errors.json", "error snapshot mismatch");
   invariant(errors.sha256 === "e431d02338ccc82f9f576044dc860501c7711856bb01d8a09a454b86ecc2c91c", "error source hash drift");
   invariant(JSON.stringify(errors.selectors) === JSON.stringify(ERROR_SELECTORS), "error selector identity drift");
@@ -250,7 +250,7 @@ export async function verifyRelatedProductCardContract(options = {}) {
     ...manifest.samples.success.map((entry) => entry.snapshotPath),
     manifest.samples.errors.snapshotPath,
   ].sort();
-  const actualFiles = await inventory(contractRoot);
+  const actualFiles = (await inventory(contractRoot)).filter((file) => !file.startsWith("fixtures/"));
   const missing = expectedFiles.filter((file) => !actualFiles.includes(file));
   const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
   invariant(missing.length === 0, `missing snapshot files: ${missing.join(", ")}`);

@@ -1,0 +1,52 @@
+{"created_at": "2026-07-22T04:27:09Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-001:2026-07-22T04:27:09Z", "schema": "DPG-EVENT-1", "task_id": "TASK-001"}
+{"created_at": "2026-07-22T04:55:39Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-001:2026-07-22T04:55:39Z", "schema": "DPG-EVENT-1", "task_id": "TASK-001"}
+{"created_at": "2026-07-22T07:48:30Z", "data": {}, "event": "task_closed", "event_id": "task-closed:TASK-001:2026-07-22T07:48:30Z", "schema": "DPG-EVENT-1", "task_id": "TASK-001"}
+{"created_at": "2026-07-22T07:48:30Z", "data": {}, "event": "task_switched", "event_id": "task-switched:TASK-002:2026-07-22T07:48:30Z", "schema": "DPG-EVENT-1", "task_id": "TASK-002"}
+{"created_at": "2026-07-22T07:48:30Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-002:2026-07-22T07:48:30Z", "schema": "DPG-EVENT-1", "task_id": "TASK-002"}
+{"created_at": "2026-07-22T09:07:14Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-002:2026-07-22T09:07:14Z", "schema": "DPG-EVENT-1", "task_id": "TASK-002"}
+{"created_at": "2026-07-22T09:51:19Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-003:2026-07-22T09:51:19Z", "schema": "DPG-EVENT-1", "task_id": "TASK-003"}
+{"created_at": "2026-07-22T14:18:19Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-003:2026-07-22T14:18:19Z", "schema": "DPG-EVENT-1", "task_id": "TASK-003"}
+{"created_at": "2026-07-23T00:47:12Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-004:2026-07-23T00:47:12Z", "schema": "DPG-EVENT-1", "task_id": "TASK-004"}
+{"created_at": "2026-07-23T03:26:54Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-004:2026-07-23T03:26:54Z", "schema": "DPG-EVENT-1", "task_id": "TASK-004"}
+{"created_at": "2026-07-23T05:47:23Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-005:2026-07-23T05:47:23Z", "schema": "DPG-EVENT-1", "task_id": "TASK-005"}
+{"created_at": "2026-07-23T07:40:00Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-006:2026-07-23T07:40:00Z", "schema": "DPG-EVENT-1", "task_id": "TASK-006"}
+{"created_at": "2026-07-24T15:16:22Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-007:2026-07-24T15:16:22Z", "schema": "DPG-EVENT-1", "task_id": "TASK-007"}
+{"created_at": "2026-07-24T17:58:37Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-008:2026-07-24T17:58:37Z", "schema": "DPG-EVENT-1", "task_id": "TASK-008"}
+{"created_at": "2026-07-25T15:48:23Z", "data": {}, "event": "task_resumed", "event_id": "task-resumed:TASK-009:2026-07-25T15:48:23Z", "schema": "DPG-EVENT-1", "task_id": "TASK-009"}
+{"created_at": "2026-07-25T17:16:01Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-009:2026-07-25T17:16:01Z", "schema": "DPG-EVENT-1", "task_id": "TASK-009"}
+{"created_at": "2026-07-25T19:08:41Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-010:2026-07-25T19:08:41Z", "schema": "DPG-EVENT-1", "task_id": "TASK-010"}
+{"created_at": "2026-07-26T01:17:57Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-011:2026-07-26T01:17:57Z", "schema": "DPG-EVENT-1", "task_id": "TASK-011"}
+{"created_at": "2026-07-26T04:06:13Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-012:2026-07-26T04:06:13Z", "schema": "DPG-EVENT-1", "task_id": "TASK-012"}
+{"created_at": "2026-07-29T06:52:10Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-012:2026-07-29T06:52:10Z", "schema": "DPG-EVENT-1", "task_id": "TASK-012"}
+{"created_at": "2026-07-29T15:52:30Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-013:2026-07-29T15:52:30Z", "schema": "DPG-EVENT-1", "task_id": "TASK-013"}
+{"created_at": "2026-07-30T05:28:54Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-014:2026-07-30T05:28:54Z", "schema": "DPG-EVENT-1", "task_id": "TASK-014"}
+{"created_at": "2026-07-30T10:25:34Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-015:2026-07-30T10:25:34Z", "schema": "DPG-EVENT-1", "task_id": "TASK-015"}
+{"created_at": "2026-07-30T10:49:44Z", "data": {}, "event": "task_closed", "event_id": "task-closed:TASK-015:2026-07-30T10:49:44Z", "schema": "DPG-EVENT-1", "task_id": "TASK-015"}
+{"created_at": "2026-07-30T10:49:44Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-016:2026-07-30T10:49:44Z", "schema": "DPG-EVENT-1", "task_id": "TASK-016"}
+{"created_at": "2026-07-30T15:28:57Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-016:2026-07-30T15:28:57Z", "schema": "DPG-EVENT-1", "task_id": "TASK-016"}
+{"created_at": "2026-07-30T19:34:02Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-017:2026-07-30T19:34:02Z", "schema": "DPG-EVENT-1", "task_id": "TASK-017"}
+{"created_at": "2026-07-30T19:44:31Z", "data": {}, "event": "task_closed", "event_id": "task-closed:TASK-017:2026-07-30T19:44:31Z", "schema": "DPG-EVENT-1", "task_id": "TASK-017"}
+{"created_at": "2026-07-30T19:44:31Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-018:2026-07-30T19:44:31Z", "schema": "DPG-EVENT-1", "task_id": "TASK-018"}
+{"created_at": "2026-07-31T08:32:34Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-018:2026-07-31T08:32:34Z", "schema": "DPG-EVENT-1", "task_id": "TASK-018"}
+{"created_at": "2026-07-31T08:48:43Z", "data": {}, "event": "task_closed", "event_id": "task-closed:TASK-018:2026-07-31T08:48:43Z", "schema": "DPG-EVENT-1", "task_id": "TASK-018"}
+{"created_at": "2026-07-31T08:48:43Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-019:2026-07-31T08:48:43Z", "schema": "DPG-EVENT-1", "task_id": "TASK-019"}
+{"created_at": "2026-07-31T13:42:04Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-019:2026-07-31T13:42:04Z", "schema": "DPG-EVENT-1", "task_id": "TASK-019"}
+{"created_at": "2026-07-31T23:19:58Z", "data": {}, "event": "task_closed", "event_id": "task-closed:TASK-019:2026-07-31T23:19:58Z", "schema": "DPG-EVENT-1", "task_id": "TASK-019"}
+{"created_at": "2026-07-31T23:19:58Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-020:2026-07-31T23:19:58Z", "schema": "DPG-EVENT-1", "task_id": "TASK-020"}
+{"created_at": "2026-08-01T15:26:27Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-020:2026-08-01T15:26:27Z", "schema": "DPG-EVENT-1", "task_id": "TASK-020"}
+{"created_at": "2026-08-04T18:39:41Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-021:2026-08-04T18:39:41Z", "schema": "DPG-EVENT-1", "task_id": "TASK-021"}
+{"created_at": "2026-08-04T19:06:53Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-022:2026-08-04T19:06:53Z", "schema": "DPG-EVENT-1", "task_id": "TASK-022"}
+{"created_at": "2026-08-05T02:16:33Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-022:2026-08-05T02:16:33Z", "schema": "DPG-EVENT-1", "task_id": "TASK-022"}
+{"created_at": "2026-08-06T02:36:32Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-023:2026-08-06T02:36:32Z", "schema": "DPG-EVENT-1", "task_id": "TASK-023"}
+{"created_at": "2026-08-08T16:26:33Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-023:2026-08-08T16:26:33Z", "schema": "DPG-EVENT-1", "task_id": "TASK-023"}
+{"created_at": "2026-08-10T02:20:52Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-024:2026-08-10T02:20:52Z", "schema": "DPG-EVENT-1", "task_id": "TASK-024"}
+{"created_at": "2026-08-11T04:46:02Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-024:2026-08-11T04:46:02Z", "schema": "DPG-EVENT-1", "task_id": "TASK-024"}
+{"created_at": "2026-08-11T06:38:09Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-025:2026-08-11T06:38:09Z", "schema": "DPG-EVENT-1", "task_id": "TASK-025"}
+{"created_at": "2026-08-11T13:51:29Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-025:2026-08-11T13:51:29Z", "schema": "DPG-EVENT-1", "task_id": "TASK-025"}
+{"created_at": "2026-08-12T02:37:16Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-026:2026-08-12T02:37:16Z", "schema": "DPG-EVENT-1", "task_id": "TASK-026"}
+{"created_at": "2026-08-12T03:52:49Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-026:2026-08-12T03:52:49Z", "schema": "DPG-EVENT-1", "task_id": "TASK-026"}
+{"created_at": "2026-08-12T04:12:13Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-027:2026-08-12T04:12:13Z", "schema": "DPG-EVENT-1", "task_id": "TASK-027"}
+{"created_at": "2026-08-12T07:18:50Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-027:2026-08-12T07:18:50Z", "schema": "DPG-EVENT-1", "task_id": "TASK-027"}
+{"created_at": "2026-08-12T07:37:26Z", "data": {}, "event": "task_created", "event_id": "task-created:TASK-028:2026-08-12T07:37:26Z", "schema": "DPG-EVENT-1", "task_id": "TASK-028"}
+{"created_at": "2026-08-12T12:29:13Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-028:2026-08-12T12:29:13Z", "schema": "DPG-EVENT-1", "task_id": "TASK-028"}
+{"created_at": "2026-08-12T17:38:09Z", "data": {"delivery_profile": "REMOTE"}, "event": "task_accepted", "event_id": "task-accepted:TASK-029:2026-08-12T17:38:09Z", "schema": "DPG-EVENT-1", "task_id": "TASK-029"}

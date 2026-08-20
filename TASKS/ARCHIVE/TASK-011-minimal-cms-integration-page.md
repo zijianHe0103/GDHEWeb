@@ -226,7 +226,6 @@ project_type: software
 - `ADVERSARIAL_REVIEW_REPORT.md`：Round 1 canonical FAIL，P1=1。
 - `ROUND1_RECOVERY.md`：P1、最窄候选修订、受保护范围确认门与 reviewer build residue cleanup。
 - `ROUND1_REVISION_PLAN.md`：用户授权后的 WeakSet 身份门、stable error、TDD、文件范围和 fresh gates。
-- `ROUND1_REVISION_REPORT.md`：frontend RED/GREEN、最小实现和 fresh execution evidence。
 ## Adversarial Review
 
 Round 1 历史为 `FAIL / P0=0 / P1=1 / P2=0`。最终 Round 2 为 `PASS / P0=0 / P1=0 / P2=0`，Planner final validation allowed。

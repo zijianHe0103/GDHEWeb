@@ -38,7 +38,7 @@ Round 1 returned `FAIL` with P0=0, P1=0 and P2=1. The technical roadmap and boun
 - ADR-004 and the decision index still describing ADR-005 as pending;
 - PROJECT/STATE and the active task retaining pre-execution narrative.
 
-The earlier stale-status `PASS` claim is withdrawn. The narrow revision synchronizes only already-established TASK-004 acceptance/commit/push metadata and current TASK-005 review state. The replacement scan must name its exact current-state file set and is recorded in `REVISION_ROUND1_REPORT.md`; historical review and activity records are intentionally not treated as current-state authorities.
+The earlier stale-status `PASS` claim is withdrawn. The narrow revision synchronizes only already-established TASK-004 acceptance/commit/push metadata and current TASK-005 review state. The replacement scan covered the authoritative current-state file set listed by this validation; historical review and activity records are intentionally not treated as current-state authorities.
 
 ## Round 1 revision fresh validation
 

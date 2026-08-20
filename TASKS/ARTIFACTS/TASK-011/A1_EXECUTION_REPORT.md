@@ -103,6 +103,6 @@ call. Raw payloads, ordinary structural objects and authentic error wrappers
 now converge on the existing stable, non-leaking
 `invalid_success_payload` contract error.
 
-The full revision record is
-`TASKS/ARTIFACTS/TASK-011/ROUND1_REVISION_REPORT.md`. Planner checkpoint and a
+The retained revision result is in
+`TASKS/ARTIFACTS/TASK-011/TEST_OR_VALIDATION_LOG.md`. Planner checkpoint and a
 narrow Round 2 review remain required.

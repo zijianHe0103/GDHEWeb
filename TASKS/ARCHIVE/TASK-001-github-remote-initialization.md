@@ -143,9 +143,8 @@ TASK-001 已验收、正式提交并推送到 `origin/codex/TASK-001-github-remo
 - 2026-07-22T04:57:03Z：因治理门禁要求正式提交位于任务匹配分支，创建本地分支 `codex/TASK-001-github-remote-initialization` 并准备正式初始提交。
 - 2026-07-22：正式提交 `a81ba288627eca71d38b27253f177899f4b3f121` 已推送到同名远程任务分支；开始 TASK-002 前将本任务置为 `CLOSED` 并归档。
 
-## Execution Artifacts
+## Validation Artifact
 
-- `TASKS/ARTIFACTS/TASK-001/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-001/TEST_OR_VALIDATION_LOG.md`
 
 ## Adversarial Review

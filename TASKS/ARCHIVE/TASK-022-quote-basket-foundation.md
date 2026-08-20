@@ -233,7 +233,7 @@ A1/A2、A3-A5、Visual QA、Adversarial Round 1、frontend narrow revision 与 A
 
 ## Execution Artifacts
 
-Planner 基线与 checkpoint：`REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`PROTECTED_BASELINE.md`、`BASELINE_VALIDATION.md`、`PLANNER_A3_A5_CHECKPOINT.md`。frontend A1/A2、R1 与 A3-A5 execution/TDD/validation/diff/doc-delta artifacts 已完成。
+Planner 基线：`REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`PROTECTED_BASELINE.md`、`BASELINE_VALIDATION.md`。frontend A1/A2、R1 与 A3-A5 execution/TDD/validation/diff/doc-delta artifacts 已完成。
 
 ## Adversarial Review
 

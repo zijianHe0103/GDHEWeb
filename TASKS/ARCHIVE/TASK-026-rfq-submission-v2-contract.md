@@ -203,7 +203,6 @@ TASK-026 已完成正式交付。下一步由用户决定是否创建独立的 N
 - `A0_PROTECTED_BASELINE.md`
 - `A0_PROTECTED_CHECKSUMS.sha256`
 - `A0_VALIDATION_LOG.md`
-- `A0_CHECKPOINT.md`
 
 ## Adversarial Review
 

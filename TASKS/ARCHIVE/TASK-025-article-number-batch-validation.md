@@ -207,15 +207,12 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 - `IMPLEMENTATION_PLAN.md`
 - `PROTECTED_BASELINE.md`
 - `A0_VALIDATION_LOG.md`
-- `A0_CHECKPOINT.md`
 - `FRONTEND_A3_EXECUTION_REPORT.md`
 - `FRONTEND_A3_TDD_RED_EVIDENCE.md`
 - `FRONTEND_A3_VALIDATION_LOG.md`
-- `FRONTEND_A3_PLANNER_CHECKPOINT.md`
 - `FRONTEND_A4_EXECUTION_REPORT.md`
 - `FRONTEND_A4_TDD_RED_EVIDENCE.md`
 - `FRONTEND_A4_VALIDATION_LOG.md`
-- `FRONTEND_A4_PLANNER_CHECKPOINT.md`
 
 ## Adversarial Review
 
@@ -226,12 +223,12 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 
 - Planner A0：26/26 保护哈希、零 TASK-025 产品代码变化、diff/project/registry/messages/strict-lane 全 PASS。
 - WordPress Round 1 execution passing evidence：52/52 handoff、10/10 两轮哈希、1/50 HTTP、旧 Product Configuration 2.0 与 RelatedProductCard 1.0 回归、Core/SCF/DB 与 DPG gates PASS。
-- Planner Round 1 checkpoint：FAIL / P0=0 / P1=2 / P2=1；详见 `WORDPRESS_PLANNER_CHECKPOINT_R1.md`。frontend 尚未放行。
+- Planner Round 1 checkpoint：FAIL / P0=0 / P1=2 / P2=1；frontend 尚未放行。
 - Planner WordPress Round 2 checkpoint：PASS / P0=0 / P1=0 / P2=0；详见 `WORDPRESS_PLANNER_VALIDATION_R2.md`。final review 尚未开始。
-- Planner frontend A3 checkpoint：PASS / P0=0 / P1=0 / P2=0；详见 `FRONTEND_A3_PLANNER_CHECKPOINT.md`。该历史 checkpoint 随后只放行 A4；A4 现已独立通过。
-- Planner frontend A4 checkpoint：PASS / P0=0 / P1=0 / P2=0；完整资源安全 inventory `65 files / 575 tests`、九个 verifiers、lint/typecheck/build、四个 smokes、保护哈希、清理与文档影响均 PASS；详见 `FRONTEND_A4_PLANNER_CHECKPOINT.md`。独立 review 尚未返回 verdict。
+- Planner frontend A3 checkpoint：PASS / P0=0 / P1=0 / P2=0；该历史 checkpoint 随后只放行 A4；A4 现已独立通过。
+- Planner frontend A4 checkpoint：PASS / P0=0 / P1=0 / P2=0；完整资源安全 inventory `65 files / 575 tests`、九个 verifiers、lint/typecheck/build、四个 smokes、保护哈希、清理与文档影响均 PASS；独立 review 尚未返回 verdict。
 - Adversarial Round 1：FAIL / P0=0 / P1=2 / P2=0；canonical report 与两个 reviewer-only probes 已复现，Planner final validation 不允许开始。
-- Frontend P1 revision Planner checkpoint：PASS / P0=0 / P1=0 / P2=0；详见 `FRONTEND_ADVERSARIAL_P1_R1_PLANNER_CHECKPOINT.md`。这不是独立 review PASS。
+- Frontend P1 revision Planner checkpoint：PASS / P0=0 / P1=0 / P2=0；这不是独立 review PASS。
 - Adversarial finding closure：PASS / P0=0 / P1=0 / P2=0；focused `2/6`、reviewer probe `1/4`、Article Number `11/5/5`、Basket v3 `1/1/6`、handoff `52/52` 与保护门 PASS。
 - Planner final validation：PASS；closure ACK 后 focused `2/6`、九 verifier、12/12 frozen bytes、保护图、生产 next-env、零生成物/listener、DPG 与 diff 均 PASS。
 

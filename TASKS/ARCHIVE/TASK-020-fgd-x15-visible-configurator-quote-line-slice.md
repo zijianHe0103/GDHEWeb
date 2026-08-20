@@ -298,7 +298,7 @@ TASK-020 已完成正式 Git 交付。后续需求必须进入新的活动任务
 - 2026-08-01T07:01:39Z：受控窄修订已送达 frontend turn `019fbc20-09be-7e21-b795-0ae60dc34f87` 并在修改前 ACK；只关闭 P1-1/P1-2，未解锁 visual QA、review、Git 或延期功能。
 - 2026-08-01T07:32:04Z：Planner ACK Round 1 窄修订回执，独立复跑为聚焦 `88/88`、full `403/403`、三套 verifier、lint、typecheck、build 与两项 production smoke PASS；摘要、错误和替换原因已关闭。
 - 2026-08-01T07:32:04Z：Fresh 代码复核发现表单仍显示 `standard/carton/single bag/paired` 等内部枚举式标签，与冻结客户文案不符。Checked `reopen` 仍因真实 `IN_PROGRESS` 而安全拒绝、零修改；最小 label P1 修订已在 frontend 修改前 ACK。
-- 2026-08-01T07:53:03Z：Planner ACK label 修订回执并独立复验当前字节；表单与摘要共用冻结客户标签，focused `88/88`、full `403/403`、三套 verifier、lint/typecheck/build、smokes、17/17、保护范围与 DPG 门 PASS。`FRONTEND_PLANNER_CHECKPOINT_PASS.md` 记录 `PASS_FOR_VISUAL_QA`。
+- 2026-08-01T07:53:03Z：Planner ACK label 修订回执并独立复验当前字节；表单与摘要共用冻结客户标签，focused `88/88`、full `403/403`、三套 verifier、lint/typecheck/build、smokes、17/17、保护范围与 DPG 门 PASS，并放行 Visual QA。
 - 2026-08-01T07:53:03Z：根 README、frontend README 与前端合同文档已同步。`MSG-TASK-020-VISUAL-QA-R1` 已由注册 visual_qa 会话在执行前 ACK；当前只采集五宽度、四交互状态、键盘/焦点/reduced-motion、reflow 与浏览器网络证据。
 - 2026-08-01T08:13:02Z：Visual R1 页面门全部通过、差异 0/0/0，但 in-app browser 未传递 native Tab/ArrowRight/Enter，结论为 `BLOCKED_NO_KEYBOARD_EXECUTION_EVIDENCE`。Response 已 ACK；checked reopen 因真实 IN_PROGRESS 安全拒绝、零修改。
 - 2026-08-01T08:13:02Z：仅键盘证据恢复已由 visual_qa ACK；使用 computer-use system-level keys 与独立 Chrome，不改前端、不重拍其他视觉证据、不触碰 server lifecycle 或延期功能。
@@ -325,7 +325,7 @@ Planner A1 artifacts complete：
 - `TASKS/ARTIFACTS/TASK-020/BASELINE_VALIDATION.md`；
 - `TASKS/ARTIFACTS/TASK-020/PROTECTED_BASELINE.md`。
 
-Frontend A1～A6 execution artifacts 与 Planner checkpoint complete；当前 authority 为 `FRONTEND_EXECUTION_REPORT.md`、`FRONTEND_TEST_OR_VALIDATION_LOG.md` 和 `FRONTEND_PLANNER_CHECKPOINT_PASS.md`。
+Frontend A1～A6 execution artifacts 与 Planner gate complete；当前 authority 为 `FRONTEND_EXECUTION_REPORT.md` 和 `FRONTEND_TEST_OR_VALIDATION_LOG.md`。
 
 Frontend、visual、review 与 Planner artifacts complete。`TEST_OR_VALIDATION_LOG.md`、`VISUAL_QA_REPORT.md` 与 `ADVERSARIAL_REVIEW_REPORT.md` 保存最终验证及 visual BLOCKED/FAIL/PASS、review FAIL/PASS 历史。
 

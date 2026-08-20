@@ -116,13 +116,13 @@ TASK-024 已冻结客户字段、安全、幂等、回执和失败语义；TASK-
 
 ## Execution Artifacts
 
-- A0：`REQUIREMENTS.md`、`A0_DESIGN.md`、`TDD_SEAMS.md`、`IMPLEMENTATION_PLAN.md`、`A0_PROTECTED_BASELINE.md`、`A0_PROTECTED_CHECKSUMS.sha256`、`A0_VALIDATION_LOG.md`、`A0_CHECKPOINT.md`。
-- A1：`FRONTEND_A1_EXECUTION_REPORT.md`、`FRONTEND_A1_TDD_RED_EVIDENCE.md`、`FRONTEND_A1_VALIDATION_LOG.md`、`A1_PLANNER_CHECKPOINT.md`。
-- A2：`FRONTEND_A2_EXECUTION_REPORT.md`、`FRONTEND_A2_TDD_RED_EVIDENCE.md`、`FRONTEND_A2_VALIDATION_LOG.md`、`A2_PLANNER_CHECKPOINT.md`。
-- A3：`FRONTEND_A3_EXECUTION_REPORT.md`、`FRONTEND_A3_TDD_RED_EVIDENCE.md`、`FRONTEND_A3_VALIDATION_LOG.md`、`A3_PLANNER_CHECKPOINT.md`（保留初次 FAIL，当前 PASS_AFTER_NARROW_REVISION）。
-- A4：`FRONTEND_A4_EXECUTION_REPORT.md`、`FRONTEND_A4_TDD_RED_EVIDENCE.md`、`FRONTEND_A4_VALIDATION_LOG.md`、`A4_PLANNER_CHECKPOINT.md`。
-- A5：`FRONTEND_A5_EXECUTION_REPORT.md`、`FRONTEND_A5_TDD_RED_EVIDENCE.md`、`FRONTEND_A5_VALIDATION_LOG.md`、`A5_PLANNER_CHECKPOINT.md`（保留初次 FAIL，当前 PASS_AFTER_NARROW_REVISION）。
-- A6：`TEST_OR_VALIDATION_LOG.md`、`FRONTEND_A6_PLANNER_DOC_DELTAS.md`、`A6_PLANNER_CHECKPOINT.md`。
+- A0：`REQUIREMENTS.md`、`A0_DESIGN.md`、`TDD_SEAMS.md`、`IMPLEMENTATION_PLAN.md`、`A0_PROTECTED_BASELINE.md`、`A0_PROTECTED_CHECKSUMS.sha256`、`A0_VALIDATION_LOG.md`。
+- A1：`FRONTEND_A1_EXECUTION_REPORT.md`、`FRONTEND_A1_TDD_RED_EVIDENCE.md`、`FRONTEND_A1_VALIDATION_LOG.md`。
+- A2：`FRONTEND_A2_EXECUTION_REPORT.md`、`FRONTEND_A2_TDD_RED_EVIDENCE.md`、`FRONTEND_A2_VALIDATION_LOG.md`。
+- A3：`FRONTEND_A3_EXECUTION_REPORT.md`、`FRONTEND_A3_TDD_RED_EVIDENCE.md`、`FRONTEND_A3_VALIDATION_LOG.md`（保留初次 FAIL，当前 PASS_AFTER_NARROW_REVISION）。
+- A4：`FRONTEND_A4_EXECUTION_REPORT.md`、`FRONTEND_A4_TDD_RED_EVIDENCE.md`、`FRONTEND_A4_VALIDATION_LOG.md`。
+- A5：`FRONTEND_A5_EXECUTION_REPORT.md`、`FRONTEND_A5_TDD_RED_EVIDENCE.md`、`FRONTEND_A5_VALIDATION_LOG.md`（保留初次 FAIL，当前 PASS_AFTER_NARROW_REVISION）。
+- A6：`TEST_OR_VALIDATION_LOG.md`、`FRONTEND_A6_PLANNER_DOC_DELTAS.md`。
 
 ## Adversarial Review
 
@@ -135,7 +135,7 @@ TASK-024 已冻结客户字段、安全、幂等、回执和失败语义；TASK-
 - A2：独立 focused `3 files / 18 tests`、A1 `5/5`、九个既有 verifier、lint/typecheck、server-only build negatives、精确 canonical/HMAC/comparison/snapshot vectors、保护哈希、generated cleanup、diff/DPG 全 PASS。没有 mixed orchestration、Repository/Sink、Route Handler 或外部副作用 PASS 声明。
 - A3：初次 Planner probe 两项失败历史保留；当前 direct intake `6/6`、A1–A3 `49/49`、TASK-025/Quote Basket、verifier、lint/typecheck、protected/cleanup/diff/DPG 均 PASS。Date-range 在所有业务副作用前拒绝，未知 Proxy 零 trap/零诊断泄漏。
 - A4：独立 direct `3/11`、A1–A4 `9/62`、TASK-025/Quote Basket v3 `15/35`、十个 verifier、lint/typecheck、protected/cleanup/diff/DPG 均 PASS；重放不延长 expiry、不重发，并发同键至多一次 mixed/Sink。
-- A5 初次 checkpoint：linked response 已 ACK/done，独立 focused `11/68` PASS；但 removable Vite SSR 攻击得到 `returned=false / leaked=true / traps=1`，证明 hostile body-reader rejection 未归一化。当前证据与恢复入口见 `A5_PLANNER_CHECKPOINT.md`。
+- A5 初次 checkpoint：linked response 已 ACK/done，独立 focused `11/68` PASS；但 removable Vite SSR 攻击得到 `returned=false / leaked=true / traps=1`，证明 hostile body-reader rejection 未归一化。
 - A5 窄复验：direct Route `5/5`；同一 hostile attack 返回 authentic `400 invalid_request`、零 trap/零诊断；lane current-byte A1-A5 `11/70`、full `77/649`、十 verifier、lint/typecheck/build/extended HTTP smoke/protected/cleanup/DPG PASS。当前结果 `PASS_AFTER_NARROW_REVISION`。
 - A6：Planner 独立复现 RFQ `11 files / 70 tests`、十 verifier、lint/typecheck/build、五个 production smoke、受保护 next-env、generated/listener cleanup、文档与 DPG/diff PASS；lane 资源安全完整清单 `77 files / 649 tests` PASS。文档影响 `RESOLVED`，README `UPDATED`。
 - Final：当前字节 RFQ `11 files / 71 tests`、十 verifier、lint/typecheck/build、五个 production smoke、保护基线 `44 exact + 3 authorized docs + 0 blocking`、generated/listener cleanup、diff 和 DPG 全 PASS；证据见 `FINAL_VALIDATION.md`。

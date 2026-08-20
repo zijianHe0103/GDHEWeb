@@ -237,7 +237,7 @@ project_type: software
 
 ## 恢复入口
 
-先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、ADR-006、A1 设计/基线 artifacts、`PLANNER_WORDPRESS_CHECKPOINT.md` 和 WordPress P1 修订消息。
+先读 `AGENTS.md`、`PROJECT/COORDINATION.md`、`PROJECT/AGENT_LANES.md`、`LANES/registry/lanes.json`、本任务文件，再读 `PROJECT/STATE.md`、`TASKS/BOARD.md`、ADR-006、A1 设计/基线 artifacts、`TEST_OR_VALIDATION_LOG.md`、`WORDPRESS_CMS_EXECUTION_REPORT.md` 和 WordPress P1 修订消息。
 
 ## 下一步
 

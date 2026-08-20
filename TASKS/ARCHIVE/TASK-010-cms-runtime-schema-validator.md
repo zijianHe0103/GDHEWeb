@@ -179,15 +179,12 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md`：已冻结纵向 TDD 小循环和最终验证门禁。
 - `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1`：已 validate、通过 Codex thread bridge 投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/TEST_OR_VALIDATION_LOG.md`：验证证据已生成并由 Planner 检查。
-- `TASKS/ARTIFACTS/TASK-010/PLANNER_CHECKPOINT.md`：独立 checkpoint PASS，允许 review。
 - `MSG-TASK-010-ADVERSARIAL-REVIEW-R1`：已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：Round 1 FAIL，P0=0、P1=1、P2=1。
 - `MSG-TASK-010-FRONTEND-WRAPPER-INTEGRITY-R2`：已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/REVISION_ROUND1_REPORT.md`：R2 窄修订完成。
-- `TASKS/ARTIFACTS/TASK-010/PLANNER_REVISION_CHECKPOINT.md`：fresh checkpoint PASS，允许 Round 2。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：保留 Round 1，并已恢复完整 Round 2 FAIL 记录。
 - `TASKS/ARTIFACTS/TASK-010/REVISION_ROUND2_REPORT.md`：R3 prototype integrity 窄修订完成。
-- `TASKS/ARTIFACTS/TASK-010/PLANNER_R3_CHECKPOINT.md`：independent PASS，等待额外 closure review 授权。
 - `MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3`：用户授权后已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：已追加 user-authorized closure `PASS / P0=0 / P1=0 / P2=0`。
 

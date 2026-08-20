@@ -213,7 +213,6 @@ TASK-005 已完成验收、正式提交和推送。等待用户创建下一任�
 - `TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md`
 - `TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md`
 - `TASKS/ARTIFACTS/TASK-005/ROADMAP_AND_BOUNDARY_SYNTHESIS.md`
-- `TASKS/ARTIFACTS/TASK-005/TEST_OR_VALIDATION_LOG.md`
 
 ## Adversarial Review
 
@@ -261,7 +260,7 @@ TASK-005 已完成验收、正式提交和推送。等待用户创建下一任�
 
 ## Final validation recovery 2026-07-23T05:41:42Z
 
-- Result: PASS；完整证据见 `TASKS/ARTIFACTS/TASK-005/TEST_OR_VALIDATION_LOG.md`。
+- Result: PASS；最终验证结论、stale-status finding 与 closure 由本任务记录和 canonical `ADVERSARIAL_REVIEW_REPORT.md` 保存。
 - Artifacts: execution、validation、diff、synthesis、两份 specialist boundary、revision history、canonical closure PASS review 与 Planner Summary 齐全。
 - Document impact: `RESOLVED`。
 - Boundary: 尚未用户验收、commit、push、merge、close，也未实施 Task A/B。

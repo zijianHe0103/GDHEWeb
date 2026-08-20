@@ -218,7 +218,7 @@ project_type: software
 
 - `TASKS/ARTIFACTS/TASK-011/DESIGN.md`：已冻结 DTO、Adapter、orchestration、配置门、route、错误与 live E2E/cleanup 设计。
 - `TASKS/ARTIFACTS/TASK-011/IMPLEMENTATION_PLAN.md`：已冻结 A1 frontend offline、A2 Fixture、A3 live E2E、A4 cleanup 和 review 门禁。
-- `TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md`、`A1_TEST_OR_VALIDATION_LOG.md`、`A1_DIFF_OR_OUTPUT_SUMMARY.md`：frontend A1 证据。
+- `TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md`、`A1_TEST_OR_VALIDATION_LOG.md`：frontend A1 证据。
 - `TASKS/ARTIFACTS/TASK-011/A1_PLANNER_CHECKPOINT.md`：Planner independent PASS，允许 A2。
 - `TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md`：真实 WordPress Fixture/匿名 `/resolve` 窗口证据。
 - `TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md`、`A3_NETWORK_EVIDENCE.md` 与两张截图：真实 production browser E2E 证据。

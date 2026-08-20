@@ -37,7 +37,6 @@ Owner: `frontend`
 
 - `TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md`;
 - `TASKS/ARTIFACTS/TASK-011/A1_TEST_OR_VALIDATION_LOG.md`;
-- `TASKS/ARTIFACTS/TASK-011/A1_DIFF_OR_OUTPUT_SUMMARY.md`;
 - frontend worklog;
 - linked execution response to Planner.
 

@@ -178,7 +178,7 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-010/DESIGN.md`：已冻结运行时 Schema registry、public seams、opaque wrapper 和 stable error 设计。
 - `TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md`：已冻结纵向 TDD 小循环和最终验证门禁。
 - `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1`：已 validate、通过 Codex thread bridge 投递并标记 dispatched。
-- `TASKS/ARTIFACTS/TASK-010/EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md`：已生成并由 Planner 检查。
+- `TASKS/ARTIFACTS/TASK-010/EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`：已生成并由 Planner 检查。
 - `TASKS/ARTIFACTS/TASK-010/PLANNER_CHECKPOINT.md`：独立 checkpoint PASS，允许 review。
 - `MSG-TASK-010-ADVERSARIAL-REVIEW-R1`：已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：Round 1 FAIL，P0=0、P1=1、P2=1。

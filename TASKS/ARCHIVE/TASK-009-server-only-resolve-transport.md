@@ -194,7 +194,6 @@ project_type: software
 - `IMPLEMENTATION_PLAN.md`
 - `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
-- `DIFF_OR_OUTPUT_SUMMARY.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
 - 七份设计、实施、执行、审查和最终汇总文件均存在；final evidence 为 focused 60/60、full 69/69 与完整门禁 PASS。
 

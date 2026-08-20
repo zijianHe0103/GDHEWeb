@@ -33,7 +33,7 @@ The bundle contains exactly five closed Schemas, deterministic positive/negative
 - protected files: `67/67` SHA-256 PASS after implementation;
 - JSON, symlink, whitespace/diff and DPG project/registry/messages/strict-lane checks PASS.
 
-Detailed evidence is in `TDD_RED_EVIDENCE.md`, `BOUNDED_REVISION_REPORT.md` and `TEST_OR_VALIDATION_LOG.md`.
+Detailed retained evidence is in `BOUNDED_REVISION_REPORT.md` and `TEST_OR_VALIDATION_LOG.md`.
 
 ## Round 1 bounded revision
 

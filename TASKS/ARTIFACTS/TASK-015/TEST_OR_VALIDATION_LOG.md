@@ -9,8 +9,8 @@ runtime: `Node.js v24.18.0 / npm 11.16.0`
 | --- | ---: | --- |
 | `npm test -- tests/product-card-contract-snapshot.test.ts` | 1 | Expected RED: 1 test failed because `verify-product-card-contract.mjs` did not exist |
 
-The verifier and Snapshot tree were absent at RED time. See
-`TDD_RED_EVIDENCE.md`.
+The verifier and Snapshot tree were absent at RED time; the table above is the
+retained RED result.
 
 ## ProductCard GREEN
 

@@ -19,7 +19,7 @@ Because the protected baseline freezes `gdhe-site.php` and `includes/public-api.
 - RED 3: A1 placeholder returned no valid relation collection, exit 1.
 - GREEN: exact nine-file Schema closure, registered GET route and full relation truth/eligibility projection.
 
-The literal failures and commands are frozen in `WORDPRESS_TDD_RED_EVIDENCE.md`.
+The retained failures, commands and final result are in `WORDPRESS_VALIDATION_LOG.md`.
 
 ## Runtime contract
 

@@ -27,7 +27,7 @@ The implementation followed the required test-first gate:
 7. Adversarial R1 route-role RED/GREEN: an otherwise valid application target was accepted as a primary category before the helper became field-aware.
 8. Adversarial R1 pagination RED/GREEN: extreme digit-only page input produced native `array_slice` `TypeError` before lossless integer and offset checks were added.
 
-Exact RED evidence is in [TDD_RED_EVIDENCE.md](TDD_RED_EVIDENCE.md).
+The retained RED/GREEN result is summarized in [TEST_OR_VALIDATION_LOG.md](TEST_OR_VALIDATION_LOG.md).
 
 ## Implemented contract
 

@@ -12,7 +12,7 @@ This revision closes only the two P1 evidence gaps frozen in `FRONTEND_HANDOFF_P
 2. After adding that request but before changing the Fixture, it failed with `Valid identity-bound series/applications references are missing.`
 3. The minimum Fixture/evidence change then made both assertions pass.
 
-Full command and interpretation evidence is recorded in `TDD_RED_EVIDENCE.md`.
+The retained command result and final interpretation are recorded in `TEST_OR_VALIDATION_LOG.md`.
 
 ## P1-1 real one-item response
 

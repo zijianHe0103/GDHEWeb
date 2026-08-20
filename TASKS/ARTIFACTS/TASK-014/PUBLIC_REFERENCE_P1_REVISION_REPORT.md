@@ -14,7 +14,7 @@ A regression passed another valid UUIDv4 with the existing unique, publicly reso
 Public reference accepted a UUID that differs from its resolved target.
 ```
 
-WordPress, database, Fixture, route and target envelope resolution were otherwise available. The full output and interpretation are appended to `TDD_RED_EVIDENCE.md`.
+WordPress, database, Fixture, route and target envelope resolution were otherwise available. The retained result and interpretation are summarized in `TEST_OR_VALIDATION_LOG.md`.
 
 ## Minimum fix
 

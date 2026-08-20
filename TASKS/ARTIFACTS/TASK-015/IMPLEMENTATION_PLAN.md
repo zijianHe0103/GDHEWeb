@@ -19,7 +19,7 @@ Exit：
 1. ACK 受控消息。
 2. 只新增 `frontend/tests/product-card-contract-snapshot.test.ts` 的首个 canonical test。
 3. 运行 focused test，确认因为 verifier/Snapshot 缺失而失败。
-4. 把命令、exit code 和关键错误写入 `TDD_RED_EVIDENCE.md`。
+4. 把命令、exit code 和关键错误写入 `TEST_OR_VALIDATION_LOG.md`。
 
 Exit：
 
@@ -67,7 +67,6 @@ Exit：
 
 Frontend lane 输出：
 
-- `TDD_RED_EVIDENCE.md`
 - `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `DIFF_OR_OUTPUT_SUMMARY.md`

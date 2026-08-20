@@ -112,7 +112,7 @@ No frontend, CMS, dependency, runtime, external system, task state, Git delivery
 - `TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_RUNTIME_VALIDATION.json`
 - `TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_DETERMINISM.json`
 - `TASKS/ARTIFACTS/TASK-014/PRODUCT_CARD_ERROR_FIXTURES.json`
-- `TASKS/ARTIFACTS/TASK-014/PLANNER_CMS_CHECKPOINT.md`
+- `TASKS/ARTIFACTS/TASK-014/TEST_OR_VALIDATION_LOG.md`
 - seven files under `TASKS/ARTIFACTS/TASK-014/golden-product-card/`
 
 ### Production and test boundaries

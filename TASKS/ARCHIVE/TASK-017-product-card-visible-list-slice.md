@@ -260,10 +260,6 @@ project_type: software
 - DPG project、registry、messages、strict lane 与 `git diff --check`: PASS。
 - Full governance audit: zero HIGH；`GIT_DIRTY` 为正式验收前预期状态，两个 LOW temp heuristic 不在任务交付范围且未触发删除。
 
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-017/PLANNER_SUMMARY.md` 已生成。
-
 ## Messages
 
 - `MSG-TASK-017-FRONTEND-VISIBLE-LIST-IMPLEMENTATION`：已 validate、dry-run、通过真实 Codex thread bridge 投递并记录 dispatched；frontend 必须先 ACK，随后严格执行四个 TDD 接缝。

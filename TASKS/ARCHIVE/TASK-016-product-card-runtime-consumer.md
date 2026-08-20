@@ -228,10 +228,6 @@ project_type: software
 - 产品运行时无 `cms/**`/`TASKS/**`/filesystem/React/`/resolve` 导入；根 README 与 frontend README 已同步。
 - project、registry、messages、strict lane audit 和 `git diff --check` 均 PASS。
 
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-016/PLANNER_SUMMARY.md` 已生成。
-
 ## User Acceptance
 
 - `ACCEPTED` at `2026-07-30T15:28:57Z` by exact phrase `确认 TASK-016 完成并提交到远端`。

@@ -208,7 +208,6 @@ project_type: software
 - `DIFF_OR_OUTPUT_SUMMARY.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
-- `PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -224,11 +223,7 @@ Round 1 历史结果为 `FAIL / P0=0 / P1=1 / P2=1`。其 ProductCard 确定性 
 
 `PASS`
 
-Evidence：`TASKS/ARTIFACTS/TASK-013/TEST_OR_VALIDATION_LOG.md` 第 8 节和 `PLANNER_SUMMARY.md` 的 Final validation。Planner final validation 已完成：CMS 19/15 Golden/6 negative、frontend 16/2/2、61-entry checksum、Markdown/private path、project/registry/messages/strict lane、protected scope 和 diff 均 PASS。
-
-## Planner Final Summary
-
-已生成：`TASKS/ARTIFACTS/TASK-013/PLANNER_SUMMARY.md`。
+Evidence：`TASKS/ARTIFACTS/TASK-013/TEST_OR_VALIDATION_LOG.md` 第 8 节。Planner final validation 已完成：CMS 19/15 Golden/6 negative、frontend 16/2/2、61-entry checksum、Markdown/private path、project/registry/messages/strict lane、protected scope 和 diff 均 PASS。
 
 ## User Acceptance
 

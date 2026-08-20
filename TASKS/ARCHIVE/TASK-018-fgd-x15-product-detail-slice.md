@@ -227,8 +227,6 @@ Evidence: PASS
 - project、registry、messages、strict lane、protected scope 和 diff gate PASS。
 - Final validation artifact:
   `TASKS/ARTIFACTS/TASK-018/PLANNER_FINAL_VALIDATION.md`。
-- Planner Summary:
-  `TASKS/ARTIFACTS/TASK-018/PLANNER_SUMMARY.md`。
 
 ## Adversarial Review
 

@@ -264,12 +264,6 @@ project_type: software
 - Cleanup/integrity：TASK-014/A3 六项数据库残留为 `0`；plugin tests 无 `.pyc`/`__pycache__`；GDHE Site PHP/JSON/Python、WordPress Core、SCF、12-table DB、project/registry/messages/strict lane 与 `git diff --check` 通过。
 - Post-review Planner final validation：25/25 checksum、active handoff 旧 namespace 0、plugin-test pyc/cache 0、project/registry/messages/strict lane 与 `git diff --check` fresh PASS。
 
-## Planner Final Summary
-
-- 已生成：`TASKS/ARTIFACTS/TASK-014/PLANNER_SUMMARY.md`。
-- TASK-014 仅交付 normalized ProductCard CMS/API/Schema 技术合同；没有可见前端页面、正式产品数据、SeoDocument、RFQ 写入、飞书同步或部署。
-- 所有验收标准均有 execution、Planner 和独立 review 证据；等待 checked transition 后由用户决定是否正式交付。
-
 ## User Acceptance
 
 `ACCEPTED` at 2026-07-30T05:28:54Z by exact phrase `确认 TASK-014 完成并提交到远端`。

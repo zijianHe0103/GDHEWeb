@@ -231,7 +231,7 @@ Round 1：`FAIL / P0=0 / P1=2 / P2=0`。Round 2：`PASS / P0=0 / P1=0 / P2=0`，
 
 ## Validation Evidence
 
-此前 Planner validation 证明 Schema `19/16`、A3/manifest hash 与 byte parity、端点源码/Preview absence、受保护范围和治理检查通过；它没有使用 GDHE 真实产品验证产品模型。当前修订版 fresh validation 已通过：Schema contract、受保护范围、Markdown 本地链接、绝对路径、`git diff --check`、project/registry/messages 和 strict lane audit 均 PASS；详见 `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`、`TEST_OR_VALIDATION_LOG.md` 与 `PLANNER_SUMMARY.md`。
+此前 Planner validation 证明 Schema `19/16`、A3/manifest hash 与 byte parity、端点源码/Preview absence、受保护范围和治理检查通过；它没有使用 GDHE 真实产品验证产品模型。当前修订版 fresh validation 已通过：Schema contract、受保护范围、Markdown 本地链接、绝对路径、`git diff --check`、project/registry/messages 和 strict lane audit 均 PASS；详见 `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md` 与 `TASKS/ARTIFACTS/TASK-012/TEST_OR_VALIDATION_LOG.md`。
 
 ## Recovery Entry 2026-07-26T05:20:17Z
 

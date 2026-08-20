@@ -190,7 +190,7 @@ project_type: software
 - `IMPLEMENTATION_PLAN.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `PLANNER_CHECKPOINT.md`
-- `README_SYNC_REPORT.md`
+- `README.md`
 
 ## Adversarial Review
 

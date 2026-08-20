@@ -197,10 +197,9 @@ project_type: software
 - 2026-07-30T14:22:35Z：`MSG-TASK-016-ADVERSARIAL-REVIEW-R2` 经 Codex thread turn `019fb367-989d-7980-a6d3-126b20f014bd` 真实投递并记录 dispatched；审查只覆盖 Round 1 P1/P2 closure 与直接回归。
 - 2026-07-30T14:29:23Z：ACK Final Round 2 PASS response。Planner 在冻结 Node 24.18.0 上 fresh 重跑 ProductCard `8/3/6`、旧 CMS `16/2/2`、focused `73/73`、full `244/244`、lint、typecheck、build，并复核 TASK-014 `25/25`、13/20 inventory、受保护哈希、范围、零残留、DPG 和 diff 全 PASS；`PLANNER_SUMMARY.md` 已生成。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `TDD_RED_EVIDENCE.md`：10 个行为纵切的真实 RED 与最小 GREEN 记录。
-- `EXECUTION_REPORT.md`：server-only ProductCard Transport、Validator、wrapper、Adapter 和 orchestration 实施报告。
 - `TEST_OR_VALIDATION_LOG.md`：Node 24 当前字节门禁、server-only 负例、受保护哈希和范围证据。
 
 ## Adversarial Review

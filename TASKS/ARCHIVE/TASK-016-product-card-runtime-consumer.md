@@ -202,7 +202,6 @@ project_type: software
 - `TDD_RED_EVIDENCE.md`：10 个行为纵切的真实 RED 与最小 GREEN 记录。
 - `EXECUTION_REPORT.md`：server-only ProductCard Transport、Validator、wrapper、Adapter 和 orchestration 实施报告。
 - `TEST_OR_VALIDATION_LOG.md`：Node 24 当前字节门禁、server-only 负例、受保护哈希和范围证据。
-- `DIFF_OR_OUTPUT_SUMMARY.md`：产品行为、修改文件、未改变权威和交付边界。
 
 ## Adversarial Review
 

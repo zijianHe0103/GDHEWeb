@@ -293,14 +293,13 @@ TASK-019 已归档。后续可见配置器与 Add to Quote 工作进入独立 TA
 - 2026-07-31T13:42:04Z：用户输入精确正式交付口令；`task_accept.py accept` 成功，任务进入 `ACCEPTED / ACCEPTED / FORMAL_COMMIT_PENDING`。
 - 2026-07-31T23:19:58Z：核验正式提交 `7c140448cb723acbe2c3debed844fc5ea4ffb267` 已同时存在于本地/远端任务分支和本地/远端 `main`；TASK-019 同步为 `CLOSED / ACCEPTED / MERGED` 并归档，未执行部署。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `REQUIREMENTS.md`
 - `DESIGN.md`
 - `IMPLEMENTATION_PLAN.md`
 - `BASELINE_VALIDATION.md`
 - `PROTECTED_BASELINE.md`
-- `EXECUTION_REPORT.md`
 
 ## Adversarial Review
 

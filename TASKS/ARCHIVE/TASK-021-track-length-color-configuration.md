@@ -200,7 +200,7 @@ TASK-021 已完成正式 Git 交付。相关产品滑动推荐、Basket、30 天
 
 Adversarial Round 1 历史为 `FAIL / 0 / 2 / 1`；Round 2 final 为 `PASS / 0 / 0 / 0`。CMS/frontend exact one-tenth、P2-1 final handoff 与 P1-2 PublicQuoteDraft 权威/生产命名均已独立关闭。Planner final validation 当前 PASS。Visual Round 1 FAIL、frontend 修订 PASS、Visual Round 2 PASS 与原验证历史均保留。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `FRONTEND_EXECUTION_REPORT.md`
 - `FRONTEND_VALIDATION_LOG.md`
@@ -220,7 +220,6 @@ Adversarial Round 1 历史为 `FAIL / 0 / 2 / 1`；Round 2 final 为 `PASS / 0 /
 - `WORDPRESS_ADVERSARIAL_EXACT_DECIMAL_P1_R1_CHECKPOINT.md`
 - `FRONTEND_ADVERSARIAL_P1_R1_REPORT.md`
 - `PLANNER_ADVERSARIAL_R1_REVISION_CHECKPOINT.md`
-- `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
 
 ## Adversarial Review

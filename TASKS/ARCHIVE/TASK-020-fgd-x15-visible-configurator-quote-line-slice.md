@@ -315,7 +315,7 @@ TASK-020 已完成正式 Git 交付。后续需求必须进入新的活动任务
 - 2026-08-01T12:28:36Z：窄 Round 2 已由 reviewer real turn `019fbd4b-4552-7950-b0c6-a126b0d0d74b` 在实质审查前 ACK。
 - 2026-08-01T12:43:56Z：Round 2 response 已 ACK；Planner fresh final validation、Core/SCF/DB、17/17、20/20、保护与文档门全部 PASS，完成 `PLANNER_FINAL_VALIDATION.md` 和 `PLANNER_SUMMARY.md`。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 Planner A1 artifacts complete：
 
@@ -327,7 +327,7 @@ Planner A1 artifacts complete：
 
 Frontend A1～A6 execution artifacts 与 Planner checkpoint complete；当前 authority 为 `FRONTEND_EXECUTION_REPORT.md`、`FRONTEND_TEST_OR_VALIDATION_LOG.md` 和 `FRONTEND_PLANNER_CHECKPOINT_PASS.md`。
 
-Frontend、visual、review 与 Planner artifacts complete。Canonical `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与 `ADVERSARIAL_REVIEW_REPORT.md` 均已完成；visual BLOCKED/FAIL/PASS 和 review FAIL/PASS 历史完整保留。
+Frontend、visual、review 与 Planner artifacts complete。`TEST_OR_VALIDATION_LOG.md`、`VISUAL_QA_REPORT.md` 与 `ADVERSARIAL_REVIEW_REPORT.md` 保存最终验证及 visual BLOCKED/FAIL/PASS、review FAIL/PASS 历史。
 
 ## Adversarial Review
 

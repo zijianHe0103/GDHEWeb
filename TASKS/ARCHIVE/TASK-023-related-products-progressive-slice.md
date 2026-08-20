@@ -240,7 +240,6 @@ TASK-023 已完成正式 Git 交付。等待用户创建下一项小任务；不
 - `FRONTEND_TDD_RED_EVIDENCE.md`
 - `FRONTEND_EXECUTION_REPORT.md`
 - `FRONTEND_VALIDATION_LOG.md`
-- `PLANNER_OWNED_DOCUMENT_DELTAS.md`
 
 ## Adversarial Review
 

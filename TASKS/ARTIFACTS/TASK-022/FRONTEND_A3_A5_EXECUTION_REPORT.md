@@ -44,8 +44,9 @@ Basket route is final 404 in both configured local modes with zero CMS request.
 `docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md` are updated.
 The dispatch also names root `README.md`, the architecture contract and
 ADR-006, but the registered frontend write scope does not include those files.
-No out-of-scope edit was made. Exact Planner-owned terminology deltas are in
-`FRONTEND_A3_A5_PLANNER_DOC_DELTAS.md`.
+No out-of-scope edit was made by the frontend lane. Planner subsequently
+applied and verified the scoped terminology updates; the current root README
+and architecture contract are the durable authorities.
 
 ## Stop boundary
 

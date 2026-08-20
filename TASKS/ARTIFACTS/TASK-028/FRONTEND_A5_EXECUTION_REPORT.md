@@ -53,8 +53,9 @@ complete regression and frontend-owned documentation are consolidated.
 - `frontend/README.md` now documents the exact Node/local environment and start
   command, ten customer fields, one-intent/one-intake flow, accepted clear,
   changed-Basket retention, explicit manual retry and all local-only limits.
-- Planner-owned root README and architecture files were not edited. Exact
-  unapplied deltas are in `FRONTEND_A5_PLANNER_DOC_DELTAS.md`.
+- Planner-owned root README and architecture files were not edited by this
+  lane. Planner subsequently applied and verified them; current documents are
+  authoritative.
 
 ## Preserved exclusions
 

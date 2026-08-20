@@ -46,7 +46,7 @@ Outcome: `PASS_FOR_PLANNER_CHECKPOINT`
 
 ## Documentation impact
 
-`frontend/README.md` is updated. Root README, architecture contract and ADR edits are outside this lane and are specified exactly in `PLANNER_OWNED_DOCUMENT_DELTAS.md`; none was edited.
+`frontend/README.md` was updated by the lane. Root README, architecture contract and ADR edits were outside this lane; Planner subsequently applied and verified them, and the current documents are authoritative.
 
 ## Boundaries preserved
 

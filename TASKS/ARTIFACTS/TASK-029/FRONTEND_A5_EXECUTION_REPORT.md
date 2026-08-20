@@ -70,10 +70,9 @@ a TASK-029 defect or perform an unauthorized dependency upgrade.
 ## Documentation impact
 
 - `frontend/README.md`: `RESOLVED` for the frontend-owned local workflow.
-- Root `README.md`: exact unapplied Planner-owned delta provided in
-  `FRONTEND_A5_PLANNER_DOC_DELTAS.md`.
-- Architecture contract: exact unapplied Planner-owned delta provided in the
-  same artifact.
+- Root `README.md` and the architecture contract were outside this lane's
+  write scope. Planner subsequently applied and verified the scoped deltas;
+  current documents are authoritative.
 
 The root and architecture changes remain unapplied by this lane. A5 does not
 claim final document-impact closure until Planner applies and verifies them.

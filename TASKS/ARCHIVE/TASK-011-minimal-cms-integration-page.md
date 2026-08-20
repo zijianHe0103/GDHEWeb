@@ -214,7 +214,7 @@ project_type: software
 - 2026-07-26T01:11:24Z：canonical report 顶部 Outcome 同步完成；Planner final fresh validation 再次通过 85/85、158/158、16/2/2、lint、typecheck、build、production smoke、dependency/audit、protected/leakage/cleanup/residue/governance/diff；`PLANNER_SUMMARY.md` 已生成。
 - 2026-07-26T01:12:45Z：checked `prepare-awaiting-user` 首次 PASS；随后 controlled reopen 只同步人类可读 current state/Board，产品、review、validation 和 `NOT_ACCEPTED / DIRTY` 不变；最终 prepare 待立即重跑。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-011/DESIGN.md`：已冻结 DTO、Adapter、orchestration、配置门、route、错误与 live E2E/cleanup 设计。
 - `TASKS/ARTIFACTS/TASK-011/IMPLEMENTATION_PLAN.md`：已冻结 A1 frontend offline、A2 Fixture、A3 live E2E、A4 cleanup 和 review 门禁。
@@ -223,7 +223,7 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md`：真实 WordPress Fixture/匿名 `/resolve` 窗口证据。
 - `TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md`、`A3_NETWORK_EVIDENCE.md` 与两张截图：真实 production browser E2E 证据。
 - `TASKS/ARTIFACTS/TASK-011/A4_CLEANUP_REPORT.md`：Fixture 与 WordPress runtime 零残留证据。
-- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与 `INTEGRATION_PLANNER_CHECKPOINT.md`：综合执行和 Planner checkpoint 证据。
+- `TASKS/ARTIFACTS/TASK-011/TEST_OR_VALIDATION_LOG.md` 与 `TASKS/ARTIFACTS/TASK-011/INTEGRATION_PLANNER_CHECKPOINT.md`：综合验证和 Planner checkpoint 证据。
 - `ADVERSARIAL_REVIEW_REPORT.md`：Round 1 canonical FAIL，P1=1。
 - `ROUND1_RECOVERY.md`：P1、最窄候选修订、受保护范围确认门与 reviewer build residue cleanup。
 - `ROUND1_REVISION_PLAN.md`：用户授权后的 WeakSet 身份门、stable error、TDD、文件范围和 fresh gates。

@@ -200,7 +200,7 @@ project_type: software
 - 2026-07-30T05:23:00Z：第一次 checked `prepare-awaiting-user` 通过；因 helper 未同步 Board 和当前人类可读段落，随后受控 reopen 只做显示一致性恢复。
 - 2026-07-30T05:24:10Z：状态显示已同步，并再次运行 checked `prepare-awaiting-user`；任务最终进入 `AWAITING_USER / NOT_ACCEPTED / DIRTY`。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-014/DESIGN.md`
 - `TASKS/ARTIFACTS/TASK-014/IMPLEMENTATION_PLAN.md`
@@ -212,7 +212,6 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_P1_REVISION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_P1_CHECKPOINT.md`
 - `TASKS/ARTIFACTS/TASK-014/FRONTEND_HANDOFF_R2_AUDIT_REQUEST.md`
-- `TASKS/ARTIFACTS/TASK-014/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-014/ADVERSARIAL_REVIEW_REQUEST.md`
 
 ## Adversarial Review

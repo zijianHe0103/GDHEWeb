@@ -95,7 +95,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/adversarial_reviewer/worklog.md",
       "workspace": "LANES/adversarial_reviewer/workspace",
       "inbox": "LANES/adversarial_reviewer/inbox",
       "outbox": "LANES/adversarial_reviewer/outbox",

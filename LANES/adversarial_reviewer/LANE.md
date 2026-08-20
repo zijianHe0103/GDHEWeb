@@ -37,10 +37,6 @@ adversarial_reviewer
 
 `LANES/adversarial_reviewer/outbox`
 
-## Worklog
-
-`LANES/adversarial_reviewer/worklog.md`
-
 ## Workspace
 
 `LANES/adversarial_reviewer/workspace`

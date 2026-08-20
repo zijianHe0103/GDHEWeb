@@ -306,7 +306,7 @@ Round 2 最终结论：`PASS / P0=0 / P1=0 / P2=0`。两项 frontend P1、叙述
 
 ## Review History
 
-Round 1：`FAIL / P0=0 / P1=2 / P2=1`。两个 P1 分别是 canonical authority symlink 替换未 fail closed，以及 QuoteLine 安全整数越界后静默错算。P2 是 review ACK/状态叙述过期，已由 Planner recovery 同步。详见 `ADVERSARIAL_REVIEW_REPORT.md` 与 `ADVERSARIAL_REVIEW_R1_RECOVERY.md`。
+Round 1：`FAIL / P0=0 / P1=2 / P2=1`。两个 P1 分别是 canonical authority symlink 替换未 fail closed，以及 QuoteLine 安全整数越界后静默错算。P2 是 review ACK/状态叙述过期，已由 Planner recovery 同步。完整 finding、修订与 Round 2 closure 见 `ADVERSARIAL_REVIEW_REPORT.md`。
 
 ## Validation Evidence
 

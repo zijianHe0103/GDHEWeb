@@ -91,7 +91,7 @@ The independent execution evidence records a completed pre-review validation:
 - `TASKS/ARTIFACTS/TASK-013/TEST_OR_VALIDATION_LOG.md:3-12`
 - `TASKS/ARTIFACTS/TASK-013/TEST_OR_VALIDATION_LOG.md:14-51`
 - `TASKS/ARTIFACTS/TASK-013/A3_CHECKPOINT.md`
-- `TASKS/ARTIFACTS/TASK-013/EXECUTION_REPORT.md`
+- `TASKS/ARTIFACTS/TASK-013/ROUND1_REVISION_REPORT.md`
 
 The active task's current `Validation Evidence` section still states that
 validation after intake is pending:

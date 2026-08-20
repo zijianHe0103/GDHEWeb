@@ -186,7 +186,7 @@ project_type: software
 
 用户已确认需求；A1/A2/A3 已完成，Decision 1–9 均已回答。A4 Round 1 已完成并窄修订，Round 2 最终结果为 `PASS / P0=0 / P1=0 / P2=0`；Planner final validation、Planner Summary 和 checked acceptance preparation 均已完成。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `DESIGN.md`
 - `IMPLEMENTATION_PLAN.md`
@@ -204,7 +204,6 @@ project_type: software
 - `SEO_MINIMUM_CONTRACT.md`
 - `VERTICAL_SLICE_CANDIDATES.md`
 - `GAP_REPORT.md`
-- `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
 

@@ -217,7 +217,7 @@ project_type: software
 ## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-011/DESIGN.md`：已冻结 DTO、Adapter、orchestration、配置门、route、错误与 live E2E/cleanup 设计。
-- `TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md`、`A1_TEST_OR_VALIDATION_LOG.md`：frontend A1 证据。
+- `TASKS/ARTIFACTS/TASK-011/A1_TEST_OR_VALIDATION_LOG.md`：frontend A1 验证证据。
 - `TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md`：真实 WordPress Fixture/匿名 `/resolve` 窗口证据。
 - `TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md`、`A3_NETWORK_EVIDENCE.md` 与两张截图：真实 production browser E2E 证据。
 - `TASKS/ARTIFACTS/TASK-011/A4_CLEANUP_REPORT.md`：Fixture 与 WordPress runtime 零残留证据。

@@ -184,11 +184,10 @@ project_type: software
 - 2026-07-24T17:58:37Z：用户精确输入 `确认 TASK-008 完成并提交到远端`；`task_accept.py accept` 成功，正式提交、任务分支推送、合并到 `main` 和推送 `main` 已授权。
 - 2026-07-25T04:49:22Z：创建 TASK-009 前重新核对正式交付；本地 `main`、`origin/main` 和远端 TASK-008 分支均为 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`，工作区干净，TASK-008 同步为 `CLOSED / MERGED` 并归档。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `DESIGN.md`
 - `IMPLEMENTATION_PLAN.md`
-- `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `PLANNER_CHECKPOINT.md`
 - `README_SYNC_REPORT.md`

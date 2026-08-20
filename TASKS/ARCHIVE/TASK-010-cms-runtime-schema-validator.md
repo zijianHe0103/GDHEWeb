@@ -173,12 +173,12 @@ project_type: software
 | frontend | 测试先行实现 Draft 2020-12 registry、runtime validator、validated wrapper、typed contract errors、测试和 docs | 本任务允许的 `frontend/**`、TASK-010 artifacts、lane records | implementation、execution report、validation evidence | R3 execution complete |
 | adversarial_reviewer | 只读挑战 Schema 闭包、strict/format、错误泄漏、server-only、依赖和范围 | TASK-010 review report、reviewer lane records | PASS/FAIL/P0/P1/P2 report | closure PASS; P0/P1/P2=0 |
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-010/DESIGN.md`：已冻结运行时 Schema registry、public seams、opaque wrapper 和 stable error 设计。
 - `TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md`：已冻结纵向 TDD 小循环和最终验证门禁。
 - `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1`：已 validate、通过 Codex thread bridge 投递并标记 dispatched。
-- `TASKS/ARTIFACTS/TASK-010/EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`：已生成并由 Planner 检查。
+- `TASKS/ARTIFACTS/TASK-010/TEST_OR_VALIDATION_LOG.md`：验证证据已生成并由 Planner 检查。
 - `TASKS/ARTIFACTS/TASK-010/PLANNER_CHECKPOINT.md`：独立 checkpoint PASS，允许 review。
 - `MSG-TASK-010-ADVERSARIAL-REVIEW-R1`：已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：Round 1 FAIL，P0=0、P1=1、P2=1。

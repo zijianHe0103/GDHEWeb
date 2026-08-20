@@ -111,7 +111,6 @@ Expected: parity PASS and empty lockfile diff.
 **Files:**
 
 - Modify if required by an in-scope defect only: TASK-008 frontend files
-- Create/update: `TASKS/ARTIFACTS/TASK-008/EXECUTION_REPORT.md`
 - Create/update: `TASKS/ARTIFACTS/TASK-008/TEST_OR_VALIDATION_LOG.md`
 - Create/update: `TASKS/ARTIFACTS/TASK-008/DIFF_OR_OUTPUT_SUMMARY.md`
 - Update: `LANES/frontend/worklog.md`

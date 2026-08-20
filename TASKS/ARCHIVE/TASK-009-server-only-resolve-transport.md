@@ -188,14 +188,13 @@ project_type: software
 - 2026-07-25T16:45:36Z：第一次 checked `prepare-awaiting-user` 验证 execution、final review PASS、validation 和文档影响后成功；随后只为同步 Board 和人类可读等待验收状态执行受控 reopen。
 - 2026-07-25T16:46:19Z：受控同步完成；产品交付物、final PASS、validation、`NOT_ACCEPTED` 与 `DIRTY` 边界未改变，fresh checked transition 为唯一剩余动作。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `DESIGN.md`
 - `IMPLEMENTATION_PLAN.md`
-- `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
-- 七份设计、实施、执行、审查和最终汇总文件均存在；final evidence 为 focused 60/60、full 69/69 与完整门禁 PASS。
+- 保留的设计、计划、验证、审查和最终汇总文件均存在；final evidence 为 focused 60/60、full 69/69 与完整门禁 PASS。
 
 ## Adversarial Review
 

@@ -325,10 +325,7 @@ Planner A1 artifacts complete：
 - `TASKS/ARTIFACTS/TASK-020/BASELINE_VALIDATION.md`；
 - `TASKS/ARTIFACTS/TASK-020/PROTECTED_BASELINE.md`。
 
-Frontend A1～A6 execution artifacts complete；Planner Round 1 checkpoint 新增：
-
-- `TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R1_DISPATCH.md`。
-- `TASKS/ARTIFACTS/TASK-020/FRONTEND_PLANNER_CHECKPOINT_P1_R2_DISPATCH.md`。
+Frontend A1～A6 execution artifacts 与 Planner checkpoint complete；当前 authority 为 `FRONTEND_EXECUTION_REPORT.md`、`FRONTEND_TEST_OR_VALIDATION_LOG.md` 和 `FRONTEND_PLANNER_CHECKPOINT_PASS.md`。
 
 Frontend、visual、review 与 Planner artifacts complete。Canonical `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与 `ADVERSARIAL_REVIEW_REPORT.md` 均已完成；visual BLOCKED/FAIL/PASS 和 review FAIL/PASS 历史完整保留。
 

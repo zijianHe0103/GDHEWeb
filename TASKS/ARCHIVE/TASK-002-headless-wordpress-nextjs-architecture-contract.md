@@ -187,7 +187,6 @@ CLOSED
 - `TASKS/ARTIFACTS/TASK-002/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-002/TEST_OR_VALIDATION_LOG.md`
 - `TASKS/ARTIFACTS/TASK-002/DIFF_OR_OUTPUT_SUMMARY.md`
-- `TASKS/ARTIFACTS/TASK-002/PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -206,12 +205,6 @@ CLOSED
 - 第一轮 reviewer 独立复核 governance、registry、messages、lane audit、禁止路径与 diff；报告记录了媒体模型 P1，不能进入用户验收。
 - Round 1 窄修订 fresh validation：PASS；定向术语、Webhook UUID 一致性、验收覆盖、治理、JSON、边界、WordPress checksum 与 diff 检查均通过。
 - Round 2 reviewer 独立验证：PASS；无新增业务阻断项，禁止范围保持完整。
-
-## Planner Final Summary
-
-- Artifact: `TASKS/ARTIFACTS/TASK-002/PLANNER_SUMMARY.md`。
-- Status: reviewed PASS；用户已正式验收。
-- Acceptance: `ACCEPTED` at `2026-07-22T09:07:14Z`；formal commit 已授权，push 未授权。
 
 ## User Acceptance
 

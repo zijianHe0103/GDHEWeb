@@ -164,10 +164,6 @@ TASK-001 已验收、正式提交并推送到 `origin/codex/TASK-001-github-remo
 - 本地 HEAD 仍为 unborn；未 commit、未 push。
 - WordPress 运行时、凭据和本地 SQL 备份仍被忽略，已知凭据在可跟踪文件中的匹配数为 0。
 
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-001/PLANNER_SUMMARY.md`
-
 ## User Acceptance
 
 - 状态：`ACCEPTED`，时间 `2026-07-22T04:55:39Z`。

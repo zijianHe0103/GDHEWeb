@@ -174,7 +174,6 @@ CLOSED
 - `TASKS/ARTIFACTS/TASK-003/TEST_OR_VALIDATION_LOG.md`
 - `TASKS/ARTIFACTS/TASK-003/DIFF_OR_OUTPUT_SUMMARY.md`
 - `TASKS/ARTIFACTS/TASK-003/ADVERSARIAL_REVIEW_REPORT.md`
-- `TASKS/ARTIFACTS/TASK-003/PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -195,13 +194,6 @@ CLOSED
 - Scope/secret/cleanup：CMS、`.local` 与根依赖文件变化为 0；frontend 只有一个 lockfile 和 `.env.example`；高置信凭据扫描无命中；optimizer 临时源文件及 image cache 均清理。
 - Final validation：Node.js 24.18.0/npm 11.16.0、clean `npm ci`、lint、clean typecheck、2 项 Vitest、production build、真实 optimizer、0 vulnerability audit、dependency tree、HTTP smoke、scope/secret/cleanup 均 PASS。
 - Governance、registry、messages、lane audit、`git diff --check`：PASS。Round 2 独立 adversarial review 已 `PASS`；首次受控 `prepare-awaiting-user` 已验证通过，治理叙述同步后执行最终同一转换。
-
-## Planner Final Summary
-
-- Artifact: `TASKS/ARTIFACTS/TASK-003/PLANNER_SUMMARY.md`。
-- Outcome: Next.js 16.2.11 App Router + TypeScript 最小基础工程完成；Node.js 24.18.0/npm 11.16.0、单 lockfile、两项测试、production build、真实 image optimizer、0 vulnerability audit 与 HTTP smoke 全部通过。
-- Review: Round 2 final `PASS`，P0=0、P1=0、P2=0；Round 1 四项问题均已关闭。
-- Boundary: 无正式官网页面、CMS、多语言、SEO 或部署；用户已验收并授权本地 formal commit，但尚未 push。
 
 ## Recovery Entry 2026-07-22T13:24:43Z
 

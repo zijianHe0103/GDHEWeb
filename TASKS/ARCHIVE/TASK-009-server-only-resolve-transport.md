@@ -196,7 +196,6 @@ project_type: software
 - `TEST_OR_VALIDATION_LOG.md`
 - `DIFF_OR_OUTPUT_SUMMARY.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
-- `PLANNER_SUMMARY.md`
 - 七份设计、实施、执行、审查和最终汇总文件均存在；final evidence 为 focused 60/60、full 69/69 与完整门禁 PASS。
 
 ## Adversarial Review
@@ -240,10 +239,6 @@ project_type: software
 - preserved_state: 原设计、计划、RED、四个部分文件和禁止范围零差异保持不变。
 - transition: `PAUSED` -> `IN_PROGRESS`。
 - unique_next_step: 派发关联 continuation 给同一 frontend session，从原 RED 继续并返回标准 execution response。
-
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-009/PLANNER_SUMMARY.md` 已生成，结果 `PASS`。
 
 ## User Acceptance
 

@@ -190,7 +190,6 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-010/PLANNER_R3_CHECKPOINT.md`：independent PASS，等待额外 closure review 授权。
 - `MSG-TASK-010-ADVERSARIAL-CLOSURE-REVIEW-R3`：用户授权后已 validate、投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/ADVERSARIAL_REVIEW_REPORT.md`：已追加 user-authorized closure `PASS / P0=0 / P1=0 / P2=0`。
-- `TASKS/ARTIFACTS/TASK-010/PLANNER_SUMMARY.md`：Planner final validation PASS。
 
 ## Adversarial Review
 
@@ -211,10 +210,6 @@ project_type: software
 - Round 1 前 Planner 独立门禁在 Node 24.18.0 / npm 11.16.0 下 focused 38/38、full 107/107 PASS；Round 1 后 fresh checkpoint 为 focused 44/44、full 113/113、parity、lint、typecheck、build、dependency tree、production audit、scope、server-only、residue、leakage、governance 和 diff PASS。
 - R3 Planner fresh checkpoint 为 focused 48/48、full 117/117、parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、governance 和 diff PASS。
 - closure PASS 后 Planner final fresh validation 再次得到 focused 48/48、full 117/117、parity、lint、typecheck、build、dependency tree、production audit、protected scope、server-only、leakage、residue、governance 和 diff PASS。
-
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-010/PLANNER_SUMMARY.md` 已生成；最终结论 PASS，但任务仍为 `NOT_ACCEPTED / DIRTY`。
 
 ## User Acceptance
 

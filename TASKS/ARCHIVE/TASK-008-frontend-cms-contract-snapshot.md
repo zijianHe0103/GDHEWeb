@@ -193,7 +193,6 @@ project_type: software
 - `DIFF_OR_OUTPUT_SUMMARY.md`
 - `PLANNER_CHECKPOINT.md`
 - `README_SYNC_REPORT.md`
-- `PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -208,10 +207,6 @@ Round 1 final：`PASS`，P0=0、P1=0、P2=0；Planner final validation allowed�
 - authority identity 利用在修订前意外 PASS、修订后明确拒绝；20-file inventory、lockfile SHA、禁改目录、secret/internal-ID、治理、messages、strict lane 和 diff check 均 PASS。
 - Final fresh validation：Node `24.18.0`、npm `11.16.0`、parity、lint、typecheck、9/9 tests、build、README、20-file inventory、lockfile/current-HEAD parity、禁改范围、secret/internal-ID、project/messages/strict lane/diff 全部 PASS。
 - 归档前交付复核：远端 `main` 与远端 TASK-008 分支均为正式提交 `ba8148623a7a3e4b4b9d50974f02ec6fe70b9e8d`；本地 `main` 同步且工作区干净。
-
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-008/PLANNER_SUMMARY.md`
 
 ## User Acceptance
 

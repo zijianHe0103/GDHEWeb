@@ -289,10 +289,6 @@ project_type: software
 - A3 independent review 已完成 Round 1；一个 P1 与两个 P2已修订，但 final validation 仍须等待 Round 2 `PASS`。
 - A3 Round 2 final 与 Planner final validation 均为 PASS；任务可进入 checked `AWAITING_USER` 准备，但尚未用户验收或 Git 交付。
 
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-007/PLANNER_SUMMARY.md` 已重写为 Forest-aligned Schema 3 最终摘要。
-
 ## User Acceptance
 
 `NOT_ACCEPTED`

@@ -229,7 +229,6 @@ project_type: software
 - `ROUND1_REVISION_PLAN.md`：用户授权后的 WeakSet 身份门、stable error、TDD、文件范围和 fresh gates。
 - `ROUND1_REVISION_REPORT.md`：frontend RED/GREEN、最小实现和 fresh execution evidence。
 - `ROUND1_PLANNER_CHECKPOINT.md`：Planner independent PASS，允许窄 Round 2。
-- `PLANNER_SUMMARY.md`：final review、final validation、真实 E2E、cleanup、范围与用户验收边界汇总。
 
 ## Adversarial Review
 
@@ -245,10 +244,6 @@ Round 1 历史为 `FAIL / P0=0 / P1=1 / P2=0`。最终 Round 2 为 `PASS / P0=0 
 - P1 revision Planner fresh：raw payload、ordinary object、authentic error wrapper 均稳定拒绝；85/85 focused、158/158 full、16/2/2 parity、lint、typecheck、build、production smoke、dependency/audit、protected/leakage/residue/governance PASS。
 - Round 2：proxy、authentic-wrapper proxy、visible symbol/descriptor imitation 和 accessor/export replacement attacks 均关闭；final counts 全零。
 - Planner final fresh：85/85 focused、158/158 full、16/2/2 parity、lint、typecheck、dynamic build、production smoke、dependency/audit、protected scope、zero Fixture/upload/listener/build residue、project/messages/strict lane/diff PASS。
-
-## Planner Final Summary
-
-`TASKS/ARTIFACTS/TASK-011/PLANNER_SUMMARY.md` 已生成。
 
 ## User Acceptance
 

@@ -276,10 +276,6 @@ TASK-005 已完成验收、正式提交和推送。等待用户创建下一任�
 - Boundary: 未用户验收，未实施 Task A/B，未 commit、push、merge 或 close。
 - Next step: final fresh validation 后再次运行 checked `prepare-awaiting-user`，然后停止等待正式验收口令。
 
-## Planner Final Summary
-
-- 见 `TASKS/ARTIFACTS/TASK-005/PLANNER_SUMMARY.md`；完成 fresh final validation 后进入 checked 用户验收等待。
-
 ## User Acceptance
 
 - 2026-07-23T05:47:23Z：用户使用精确口令 `确认 TASK-005 完成并生成正式提交` 正式验收，并仅授权本地正式提交；未授权 push、merge 或后续产品任务。

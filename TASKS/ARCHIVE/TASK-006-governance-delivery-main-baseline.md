@@ -191,7 +191,6 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-006/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-006/TEST_OR_VALIDATION_LOG.md`
 - `TASKS/ARTIFACTS/TASK-006/DIFF_OR_OUTPUT_SUMMARY.md`
-- `TASKS/ARTIFACTS/TASK-006/PLANNER_SUMMARY.md`
 
 ## Adversarial Review
 
@@ -274,11 +273,6 @@ project_type: software
 - Git state: local `main` and `origin/main` both resolve to `c9cbf1306d8a142eed43f5cfd24fcb7ec21d25a9`; no TASK-006 formal commit, remote task branch or merge exists.
 - Unique next step: wait for `授权 TASK-006 进行一次额外独立 closure review`.
 - Boundary: do not accept, commit, push, merge, modify GitHub state or implement product/runtime work before that authorization.
-
-## Planner Final Summary
-
-- `TASKS/ARTIFACTS/TASK-006/PLANNER_SUMMARY.md`
-- canonical closure PASS 与 planner final validation 已确认；checked acceptance preparation 已通过。
 
 ## Closure PASS Recovery Entry 2026-07-23T07:29:30Z
 

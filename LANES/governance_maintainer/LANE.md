@@ -46,10 +46,6 @@ specialist
 
 `LANES/governance_maintainer/outbox`
 
-## Worklog
-
-`LANES/governance_maintainer/worklog.md`
-
 ## Workspace
 
 `LANES/governance_maintainer/workspace`

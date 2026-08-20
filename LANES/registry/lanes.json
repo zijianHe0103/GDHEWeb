@@ -48,7 +48,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/governance_maintainer/worklog.md",
       "workspace": "LANES/governance_maintainer/workspace",
       "inbox": "LANES/governance_maintainer/inbox",
       "outbox": "LANES/governance_maintainer/outbox",
@@ -71,7 +70,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/executor/worklog.md",
       "workspace": "LANES/executor/workspace",
       "inbox": "LANES/executor/inbox",
       "outbox": "LANES/executor/outbox",
@@ -198,7 +196,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/visual_qa/worklog.md",
       "workspace": "LANES/visual_qa/workspace",
       "inbox": "LANES/visual_qa/inbox",
       "outbox": "LANES/visual_qa/outbox",

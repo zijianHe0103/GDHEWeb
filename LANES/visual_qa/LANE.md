@@ -40,10 +40,6 @@ specialist
 
 `LANES/visual_qa/outbox`
 
-## Worklog
-
-`LANES/visual_qa/worklog.md`
-
 ## Workspace
 
 `LANES/visual_qa/workspace`

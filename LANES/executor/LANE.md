@@ -37,10 +37,6 @@ executor
 
 `LANES/executor/outbox`
 
-## Worklog
-
-`LANES/executor/worklog.md`
-
 ## Workspace
 
 `LANES/executor/workspace`

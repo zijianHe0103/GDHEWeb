@@ -8,7 +8,7 @@ result: PASS
 - REQUIREMENTS.md: present, frozen Planner A0 authority.
 - DESIGN.md: present, versions/endpoint/query bounds/migration/rollback frozen.
 - TDD_SEAMS.md: present, user-confirmed public seams frozen.
-- IMPLEMENTATION_PLAN.md: present, sequential A1..A5 checkpoints frozen.
+- Archived task: sequential A1..A5 checkpoints retained.
 - PROTECTED_BASELINE.md: present.
 
 ## Protected baseline

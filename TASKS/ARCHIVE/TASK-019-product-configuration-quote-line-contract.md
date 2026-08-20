@@ -119,7 +119,6 @@ project_type: software
 
 - `TASKS/ARTIFACTS/TASK-019/REQUIREMENTS.md`：业务规则与合同边界。
 - `TASKS/ARTIFACTS/TASK-019/DESIGN.md`：根合同、版本、递归闭包、错误和缓存语义。
-- `TASKS/ARTIFACTS/TASK-019/IMPLEMENTATION_PLAN.md`：分接缝 TDD 实施顺序和回滚边界。
 - WordPress GDHE Site 自有插件中的独立 Product Configuration JSON Schema、REST route、Fixture/Golden、请求负例、候选排除和确定性测试。
 - FGD X15+PVC 的合法 6 m 标准规格、定制长度能力、安装与轨道包装测试合同。
 - 前端本地 Product Configuration Contract Snapshot、authority manifest、成功/错误样本和离线 verifier。
@@ -297,7 +296,6 @@ TASK-019 已归档。后续可见配置器与 Add to Quote 工作进入独立 TA
 
 - `REQUIREMENTS.md`
 - `DESIGN.md`
-- `IMPLEMENTATION_PLAN.md`
 - `BASELINE_VALIDATION.md`
 - `PROTECTED_BASELINE.md`
 

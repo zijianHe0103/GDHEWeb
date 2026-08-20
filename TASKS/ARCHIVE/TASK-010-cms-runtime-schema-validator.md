@@ -63,7 +63,6 @@ project_type: software
 - `frontend/README.md`：记录 Validator 的职责、调用边界、验证命令与明确非目标。
 - 根 `README.md`：仅在根文档治理规则要求新增最小入口时同步。
 - `TASKS/ARTIFACTS/TASK-010/DESIGN.md`。
-- `TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md`。
 - 标准 execution report、validation log、diff/output summary、adversarial review 和 Planner final summary。
 
 ## 验收标准
@@ -176,7 +175,6 @@ project_type: software
 ## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-010/DESIGN.md`：已冻结运行时 Schema registry、public seams、opaque wrapper 和 stable error 设计。
-- `TASKS/ARTIFACTS/TASK-010/IMPLEMENTATION_PLAN.md`：已冻结纵向 TDD 小循环和最终验证门禁。
 - `MSG-TASK-010-FRONTEND-RUNTIME-VALIDATOR-R1`：已 validate、通过 Codex thread bridge 投递并标记 dispatched。
 - `TASKS/ARTIFACTS/TASK-010/TEST_OR_VALIDATION_LOG.md`：验证证据已生成并由 Planner 检查。
 - `MSG-TASK-010-ADVERSARIAL-REVIEW-R1`：已 validate、投递并标记 dispatched。

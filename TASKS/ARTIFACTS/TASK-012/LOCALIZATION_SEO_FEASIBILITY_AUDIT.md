@@ -25,7 +25,7 @@ Lane：`localization_seo`
 
 - `TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md`
 - `TASKS/ARTIFACTS/TASK-012/DESIGN.md`
-- `TASKS/ARTIFACTS/TASK-012/IMPLEMENTATION_PLAN.md`
+- `TASKS/ARCHIVE/TASK-012-roadmap-reprioritization.md`
 - `docs/architecture/headless-wordpress-nextjs-contract.md` 第 6、7、14 节
 - `MEMORY/DECISIONS/ADR-002-multilingual-publishing.md`
 - `MEMORY/DECISIONS/ADR-004-headless-wordpress-nextjs-contract.md`

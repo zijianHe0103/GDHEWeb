@@ -126,7 +126,7 @@ restored to this production-build baseline before handoff.
 ## Explicit TASK-020 additive exceptions
 
 The frontend Lane may add only the implementation and direct evidence described
-by `DESIGN.md` and `IMPLEMENTATION_PLAN.md` under the active task's allowed
+by `DESIGN.md` and the archived task contract under the task's allowed
 paths:
 
 - independent Product Configuration server-only consumer files;

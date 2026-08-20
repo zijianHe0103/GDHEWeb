@@ -56,7 +56,7 @@ project_type: software
 
 ## 交付物
 
-- `TASKS/ARTIFACTS/TASK-023/REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md` 与保护基线。
+- `TASKS/ARTIFACTS/TASK-023/REQUIREMENTS.md`、`DESIGN.md` 与保护基线。
 - WordPress 型号级公开关联集合的最小闭合 Schema/API/Fixture/handoff，或基于现有能力经证据确认的最小兼容扩展。
 - 前端本地 contract snapshot/verifier、server-only Transport/Runtime Validator/DTO Adapter 和一次集合请求 orchestration。
 - FGD X15+PVC 产品详情中的 `You May Also Need` 渐进式推荐模块、0/1/3/4+ 状态和安全 unavailable 状态。

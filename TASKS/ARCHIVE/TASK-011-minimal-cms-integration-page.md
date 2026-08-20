@@ -198,7 +198,7 @@ project_type: software
 - 2026-07-25T19:14:26Z：TASK-010 同步为 `CLOSED / MERGED` 并归档；从同步 `main` 创建本任务分支。
 - 2026-07-25T19:14:26Z：创建 TASK-011 intake；只冻结最小 Adapter、server-only orchestration、显式开启技术页和真实本地 E2E 边界，等待用户需求确认。
 - 2026-07-25T19:17:25Z：收到精确口令 `确认 TASK-011 需求并开始执行`；任务从 `AWAITING_REQUIREMENT_CONFIRMATION` 推进为 `READY`。先冻结设计/计划并派发 frontend 第一阶段，真实 Fixture 保持阻塞。
-- 2026-07-25T19:20:11Z：`DESIGN.md` 与 `IMPLEMENTATION_PLAN.md` 通过 project/strict lane/diff 校验；frontend A1 已通过真实 Codex thread bridge 投递并标记 dispatched，任务推进为 `IN_PROGRESS`。wordpress_cms A2 仅排队。
+- 2026-07-25T19:20:11Z：设计与实施顺序通过 project/strict lane/diff 校验；frontend A1 已通过真实 Codex thread bridge 投递并标记 dispatched，任务推进为 `IN_PROGRESS`。wordpress_cms A2 仅排队。
 - 2026-07-25T19:38:17Z：A1 response 已 ACK；Planner 在 Node 24.18.0 下独立复跑 38/38 focused、155/155 full、parity、lint、typecheck、dynamic build、production smoke、依赖/审计、保护范围、泄漏、残留和治理校验 PASS。根 README 已同步，A1 checkpoint PASS。
 - 2026-07-25T19:39:29Z：wordpress_cms A2 已通过真实 Codex thread bridge 投递并标记 dispatched；只允许现有 A3 Fixture create/show 和匿名根路径 resolve 验证。
 - 2026-07-25T19:42:58Z：A2 response 已 ACK；WordPress A3 Fixture 根路径匿名 Schema 3 resolve 返回 HTTP 200，短时 Fixture cleanup 责任保持打开；frontend A3 随即派发。
@@ -217,7 +217,6 @@ project_type: software
 ## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-011/DESIGN.md`：已冻结 DTO、Adapter、orchestration、配置门、route、错误与 live E2E/cleanup 设计。
-- `TASKS/ARTIFACTS/TASK-011/IMPLEMENTATION_PLAN.md`：已冻结 A1 frontend offline、A2 Fixture、A3 live E2E、A4 cleanup 和 review 门禁。
 - `TASKS/ARTIFACTS/TASK-011/A1_EXECUTION_REPORT.md`、`A1_TEST_OR_VALIDATION_LOG.md`：frontend A1 证据。
 - `TASKS/ARTIFACTS/TASK-011/A2_FIXTURE_WINDOW_REPORT.md`：真实 WordPress Fixture/匿名 `/resolve` 窗口证据。
 - `TASKS/ARTIFACTS/TASK-011/A3_LIVE_E2E_REPORT.md`、`A3_NETWORK_EVIDENCE.md` 与两张截图：真实 production browser E2E 证据。

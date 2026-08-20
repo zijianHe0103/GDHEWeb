@@ -152,7 +152,7 @@ WCAG 2.2 AA 从阶段 2 进入完成定义：
 
 - `TASKS/ACTIVE/TASK-012-roadmap-reprioritization.md`：结构化理解、候选阶段、进入门与非目标。
 - `TASKS/ARTIFACTS/TASK-012/DESIGN.md`：替代矩阵、失败语义与唯一权威边界。
-- `TASKS/ARTIFACTS/TASK-012/IMPLEMENTATION_PLAN.md`：三 Lane 只读核查和后续文档修订门。
+- `TASKS/ARCHIVE/TASK-012-roadmap-reprioritization.md`：任务范围、三 Lane 只读核查和后续文档修订门。
 - `docs/architecture/headless-wordpress-nextjs-contract.md` 第 3、5、7、8、9、10、14 节：frontend、API/error、SEO、Preview、cache/Webhook、媒体和待替代旧顺序。
 - `TASKS/ARTIFACTS/TASK-007/A3_FRONTEND_CONSUMER_AUDIT.md` 与 `A3_FRONTEND_CONSUMER_REAUDIT_R2.md`：Schema 3、collection/navigation/route-manifest、benchmark 和消费边界。
 - `TASKS/ARTIFACTS/TASK-008/PLANNER_SUMMARY.md`：16-Schema Page/error snapshot 范围。

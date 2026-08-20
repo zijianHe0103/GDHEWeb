@@ -55,7 +55,6 @@ project_type: software
 - `frontend/README.md`：记录 `WORDPRESS_API_URL` 的 server-only 运行规则、Transport 当前能力、验证命令和明确非目标。
 - 根 `README.md`：仅在根文档治理规则要求新增运行/验证入口时做最小同步。
 - `TASKS/ARTIFACTS/TASK-009/DESIGN.md`。
-- `TASKS/ARTIFACTS/TASK-009/IMPLEMENTATION_PLAN.md`。
 - 标准 execution report、validation log、diff/output summary、adversarial review 和 planner final summary。
 
 ## 验收标准
@@ -191,7 +190,6 @@ project_type: software
 ## Durable Task Artifacts
 
 - `DESIGN.md`
-- `IMPLEMENTATION_PLAN.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `ADVERSARIAL_REVIEW_REPORT.md`
 - 保留的设计、计划、验证、审查和最终汇总文件均存在；final evidence 为 focused 60/60、full 69/69 与完整门禁 PASS。

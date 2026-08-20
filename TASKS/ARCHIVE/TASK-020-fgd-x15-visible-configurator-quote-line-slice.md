@@ -119,7 +119,6 @@ project_type: software
 
 - `TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md`：确认后的交互、字段、状态和边界。
 - `TASKS/ARTIFACTS/TASK-020/DESIGN.md`：server/client 数据流、DTO、QuoteLine 构造与失败状态设计。
-- `TASKS/ARTIFACTS/TASK-020/IMPLEMENTATION_PLAN.md`：按接缝拆分的 TDD RED/GREEN、验证和回滚顺序。
 - `frontend/src/lib/cms/server/**` 中独立 Product Configuration Transport、Runtime Validator、validated wrapper、DTO Adapter 与 server-only 保护。
 - `frontend/src/types/**` 与 `frontend/src/lib/product-configuration/**` 中只含公开字段的深度只读 DTO、preview 数据和页面加载编排。
 - `frontend/src/components/product-configurator/**` 中配置表单和单条本地 QuoteLine 摘要组件。
@@ -321,7 +320,6 @@ Planner A1 artifacts complete：
 
 - `TASKS/ARTIFACTS/TASK-020/REQUIREMENTS.md`；
 - `TASKS/ARTIFACTS/TASK-020/DESIGN.md`；
-- `TASKS/ARTIFACTS/TASK-020/IMPLEMENTATION_PLAN.md`；
 - `TASKS/ARTIFACTS/TASK-020/BASELINE_VALIDATION.md`；
 - `TASKS/ARTIFACTS/TASK-020/PROTECTED_BASELINE.md`。
 

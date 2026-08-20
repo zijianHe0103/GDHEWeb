@@ -75,7 +75,6 @@ project_type: software
 
 - `TASKS/ARTIFACTS/TASK-022/REQUIREMENTS.md`：Quote Basket 术语、公开数据、合并/分行、30 天过期、编辑/删除和错误规则。
 - `TASKS/ARTIFACTS/TASK-022/DESIGN.md`：存储合同、状态机、跨标签同步、客户端边界、路由和苹果式条目设计。
-- `TASKS/ARTIFACTS/TASK-022/IMPLEMENTATION_PLAN.md`：合同、store、持久化、页面、视觉和审查的小步 TDD 顺序。
 - 独立版本化 `QuoteBasketDocument` 前端合同、Schema/样本/校验器或等价闭合权威，以及纯函数 Basket 操作。
 - FGD X15+PVC `PublicQuoteDraft -> PublicQuoteBasketItem` 公开投影，不修改既有冻结 PublicQuoteDraft/QuoteLine 字节。
 - 浏览器存储适配器、30 天过期、损坏数据清理和同源标签页同步测试。
@@ -233,7 +232,7 @@ A1/A2、A3-A5、Visual QA、Adversarial Round 1、frontend narrow revision 与 A
 
 ## Execution Artifacts
 
-Planner 基线：`REQUIREMENTS.md`、`DESIGN.md`、`IMPLEMENTATION_PLAN.md`、`PROTECTED_BASELINE.md`、`BASELINE_VALIDATION.md`。frontend A1/A2、R1 与 A3-A5 execution/TDD/validation/diff/doc-delta artifacts 已完成。
+Planner 基线：`REQUIREMENTS.md`、`DESIGN.md`、`PROTECTED_BASELINE.md`、`BASELINE_VALIDATION.md`。frontend A1/A2、R1 与 A3-A5 execution/TDD/validation/diff/doc-delta artifacts 已完成。
 
 ## Adversarial Review
 

@@ -204,7 +204,6 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 - `REQUIREMENTS.md`
 - `DESIGN.md`
 - `TDD_SEAMS.md`
-- `IMPLEMENTATION_PLAN.md`
 - `PROTECTED_BASELINE.md`
 - `A0_VALIDATION_LOG.md`
 - `FRONTEND_A3_EXECUTION_REPORT.md`

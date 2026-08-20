@@ -63,7 +63,6 @@ project_type: software
 
 - `TASKS/ARTIFACTS/TASK-021/REQUIREMENTS.md`：长度、颜色、Article Number 解析和无安装字段 QuoteLine 规则。
 - `TASKS/ARTIFACTS/TASK-021/DESIGN.md`：版本化合同、WordPress 投影、server-only DTO 与 UI 状态设计。
-- `TASKS/ARTIFACTS/TASK-021/IMPLEMENTATION_PLAN.md`：按合同、CMS、frontend、visual 拆分的 TDD 顺序。
 - 新版本 Product Configuration 与 QuoteLine Schema、Fixture/Golden、handoff、frontend snapshot/verifier；既有 1.0.0 字节保持冻结。
 - WordPress GDHE REST API 的最小版本化输出与完整候选校验。
 - FGD X15+PVC 配置器、用户摘要和相关 tests 的最小修改。

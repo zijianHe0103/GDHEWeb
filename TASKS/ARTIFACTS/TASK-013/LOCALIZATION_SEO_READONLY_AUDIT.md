@@ -24,7 +24,7 @@ TASK-013 可以冻结足以进入 TASK-014 的最小英语 `SeoDocument` 和页�
 
 - `TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md`
 - `TASKS/ARTIFACTS/TASK-013/DESIGN.md`
-- `TASKS/ARTIFACTS/TASK-013/IMPLEMENTATION_PLAN.md`
+- `TASKS/ARCHIVE/TASK-013-english-ia-url-cta-card-seo-contract.md`
 - `MEMORY/DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md`
 - `docs/architecture/headless-wordpress-nextjs-contract.md` 第 7 节和第 14 节
 - `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`

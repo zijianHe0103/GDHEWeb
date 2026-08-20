@@ -55,7 +55,6 @@ project_type: software
 - `frontend/package.json`：仅增加 TASK-008 验证命令，不增加运行时依赖。
 - `frontend/README.md`：记录合同快照边界和本地验证方法。
 - `TASKS/ARTIFACTS/TASK-008/DESIGN.md`。
-- `TASKS/ARTIFACTS/TASK-008/IMPLEMENTATION_PLAN.md`。
 - 标准 execution、validation、diff summary、adversarial review 与 planner final summary。
 
 ## 验收标准
@@ -78,7 +77,6 @@ project_type: software
 - `frontend/README.md`
 - `README.md`
 - `TASKS/ARTIFACTS/TASK-008/DESIGN.md`
-- `TASKS/ARTIFACTS/TASK-008/IMPLEMENTATION_PLAN.md`
 - `TASKS/ACTIVE/TASK-008-frontend-cms-contract-snapshot.md`
 - `TASKS/ARTIFACTS/TASK-008/**`
 - `PROJECT/STATE.md`
@@ -175,7 +173,7 @@ project_type: software
 
 - 2026-07-24T16:52:29Z：用户要求停止连续设计后续任务，先完成已确认设计的 TASK-008；planner 完成切换检查、归档 TASK-007、创建独立分支和 intake，不修改产品交付物。
 - 2026-07-24T16:57:40Z：收到精确需求确认口令；TASK-008 从 `AWAITING_REQUIREMENT_CONFIRMATION` 转为 `READY`，范围和非目标不变，进入设计/计划冻结与受控 frontend execution 派发准备。
-- 2026-07-24T17:01:32Z：`DESIGN.md` 和 `IMPLEMENTATION_PLAN.md` 已冻结并通过治理/范围检查；frontend execution request 已受控派发，TASK-008 从 `READY` 转为 `IN_PROGRESS`。
+- 2026-07-24T17:01:32Z：设计与实施顺序已冻结并通过治理/范围检查；frontend execution request 已受控派发，TASK-008 从 `READY` 转为 `IN_PROGRESS`。
 - 2026-07-24T17:15:41Z：Planner 独立重跑 parity/lint/typecheck/8 tests/build 均 PASS，但用同字节 `error.schema.json.rogue` 替换 manifest `sourcePath` 后 verifier 意外 PASS；记录为 authority-binding P1，只派发该路径身份硬绑定与负例测试窄修订。
 - 2026-07-24T17:21:42Z：R1 response 已 ack；Planner 重跑 `.rogue` 利用被明确拒绝，parity/lint/typecheck/9 tests/build、lockfile、范围和治理全部 PASS；任务转为 `UNDER_REVIEW` 并派发独立 Round 1。
 - 2026-07-24T17:27:55Z：独立 Round 1 final `PASS`，P0=0、P1=0、P2=0；review response 和 stop-recovery 均已 ack。最终验证前只补根 README 的离线 parity 命令指针，以满足项目 README 治理门禁。
@@ -187,7 +185,6 @@ project_type: software
 ## Durable Task Artifacts
 
 - `DESIGN.md`
-- `IMPLEMENTATION_PLAN.md`
 - `TEST_OR_VALIDATION_LOG.md`
 - `README.md`
 

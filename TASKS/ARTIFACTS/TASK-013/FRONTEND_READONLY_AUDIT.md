@@ -27,7 +27,7 @@ TASK-014 therefore has no frontend-architecture P0, but it must not start produc
 
 - `TASKS/ACTIVE/TASK-013-english-ia-url-cta-card-seo-contract.md`
 - `TASKS/ARTIFACTS/TASK-013/DESIGN.md`
-- `TASKS/ARTIFACTS/TASK-013/IMPLEMENTATION_PLAN.md`
+- `TASKS/ARCHIVE/TASK-013-english-ia-url-cta-card-seo-contract.md`
 - `MEMORY/DECISIONS/ADR-006-product-first-roadmap-and-multilingual-maturity-gate.md`
 - `docs/architecture/headless-wordpress-nextjs-contract.md`, section 14
 - `TASKS/ARTIFACTS/TASK-012/REAL_PRODUCT_VALIDATION_GATE.md`

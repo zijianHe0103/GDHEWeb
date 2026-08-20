@@ -189,7 +189,6 @@ project_type: software
 ## Durable Task Artifacts
 
 - `DESIGN.md`
-- `IMPLEMENTATION_PLAN.md`
 - `PLANNER_BASELINE_TRACEABILITY.md`
 - `FRONTEND_READONLY_AUDIT.md`
 - `WORDPRESS_CMS_READONLY_AUDIT.md`

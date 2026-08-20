@@ -334,7 +334,6 @@ Planner final validation PASS：
 - WordPress Core、SCF、12-table DB、35 个 PHP lint 与 JSON parse PASS；
 - protected baseline `22` unchanged + `5` declared + `0` undeclared；Visual `50/50` + R3 `14/14` PASS；
 - `.next`、TypeScript cache 与临时 lint log 已可恢复移至 `/Users/arron/.Trash/gdhe-task023-planner-final-validation.Xo3Ymi`；port 3000 无 listener；
-- 证据：`PLANNER_FINAL_VALIDATION.md`。
 
 Unified-card 修订 fresh Planner final validation PASS：
 

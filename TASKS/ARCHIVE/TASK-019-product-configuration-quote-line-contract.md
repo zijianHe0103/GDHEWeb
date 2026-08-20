@@ -316,7 +316,7 @@ Round 1：`FAIL / P0=0 / P1=2 / P2=1`。两个 P1 分别是 canonical authority 
 
 Evidence: PASS
 
-A1、WordPress Round 2、Frontend checkpoint、Round 1 窄修订 checkpoint 与 fresh Planner final validation 均 PASS。最终复现结果为 Product Configuration `25/25`、QuoteLine `23/23`、联合 `48/48`、full `26 files / 353 tests`、三套 verifier、lint/typecheck/build、17/17 authority、精确 Schema/Golden 字节、Core/SCF/12-table DB 和零残留 PASS。详见 `PLANNER_FINAL_VALIDATION.md`。
+A1、WordPress Round 2、Frontend checkpoint、Round 1 窄修订 checkpoint 与 fresh Planner final validation 均 PASS。最终复现结果为 Product Configuration `25/25`、QuoteLine `23/23`、联合 `48/48`、full `26 files / 353 tests`、三套 verifier、lint/typecheck/build、17/17 authority、精确 Schema/Golden 字节、Core/SCF/12-table DB 和零残留 PASS。
 
 ## User Acceptance
 

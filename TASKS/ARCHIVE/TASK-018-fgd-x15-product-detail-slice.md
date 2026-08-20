@@ -225,8 +225,6 @@ Evidence: PASS
 - Visual Round 2 `PASS / severe 0 / obvious 0 / detail 0`，1440/1024/768/390/320 与 320 reflow、keyboard/focus/CTA/console/leakage evidence 齐全。
 - `next-env.d.ts` 已在 server stop + final build 后回到 production baseline；port 3000 已停止。
 - project、registry、messages、strict lane、protected scope 和 diff gate PASS。
-- Final validation artifact:
-  `TASKS/ARTIFACTS/TASK-018/PLANNER_FINAL_VALIDATION.md`。
 
 ## Adversarial Review
 

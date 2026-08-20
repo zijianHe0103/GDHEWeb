@@ -238,7 +238,6 @@ project_type: software
 - `verify-machine-contract.cjs`
 - `PLANNER_R1_REVISION_VALIDATION.md`
 - `PLANNER_R2_REPAIR_VALIDATION.md`
-- `PLANNER_FINAL_VALIDATION.md`
 
 ## Review History
 

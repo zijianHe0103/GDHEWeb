@@ -235,7 +235,7 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 - Adversarial Round 1：FAIL / P0=0 / P1=2 / P2=0；canonical report 与两个 reviewer-only probes 已复现，Planner final validation 不允许开始。
 - Frontend P1 revision Planner checkpoint：PASS / P0=0 / P1=0 / P2=0；详见 `FRONTEND_ADVERSARIAL_P1_R1_PLANNER_CHECKPOINT.md`。这不是独立 review PASS。
 - Adversarial finding closure：PASS / P0=0 / P1=0 / P2=0；focused `2/6`、reviewer probe `1/4`、Article Number `11/5/5`、Basket v3 `1/1/6`、handoff `52/52` 与保护门 PASS。
-- Planner final validation：PASS；closure ACK 后 focused `2/6`、九 verifier、12/12 frozen bytes、保护图、生产 next-env、零生成物/listener、DPG 与 diff 均 PASS；详见 `PLANNER_FINAL_VALIDATION.md`。
+- Planner final validation：PASS；closure ACK 后 focused `2/6`、九 verifier、12/12 frozen bytes、保护图、生产 next-env、零生成物/listener、DPG 与 diff 均 PASS。
 
 ## Planner Final Summary
 

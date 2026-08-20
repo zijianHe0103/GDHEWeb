@@ -191,9 +191,8 @@ Round 2 final adversarial review 已 `PASS`（P0=0、P1=0、P2=0），planner �
 - 2026-07-23T02:32:48Z：Round 2 final PASS 回执已确认，P0/P1/P2 均为 0。planner 记录 PASS recovery entry；任务仍为 `UNDER_REVIEW`，等待最终验证和 checked acceptance preparation，未发生用户验收或 Git 交付动作。
 - 2026-07-23T02:36:12Z：第一次 `prepare-awaiting-user` 已通过全部 acceptance artifact 门并成功进入 `AWAITING_USER`；随后用受控 `reopen` 仅为同步 Board、最终交接叙述与活动记录，未改变任何业务交付物或 review verdict。同步后将再次运行最终 checked transition。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
-- `TASKS/ARTIFACTS/TASK-004/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-004/TEST_OR_VALIDATION_LOG.md`
 - `TASKS/ARTIFACTS/TASK-004/PLANNER_SYNC_PROPOSAL.md`
 - `TASKS/ARTIFACTS/TASK-004/PLANNER_VALIDATION_SUMMARY.md`

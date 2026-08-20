@@ -208,12 +208,11 @@ TASK-005 已完成验收、正式提交和推送。等待用户创建下一任�
 - Boundary: 没有 WordPress、数据库、`cms/**`、`frontend/**` 产品代码或外部状态变更。
 - Next step: planner 完成路线图和边界综合、execution/validation artifacts，再派发独立 adversarial review。
 
-## Execution Artifacts
+## Durable Task Artifacts
 
 - `TASKS/ARTIFACTS/TASK-005/API_DTO_FIXTURE_BOUNDARY.md`
 - `TASKS/ARTIFACTS/TASK-005/FRONTEND_INTEGRATION_BOUNDARY.md`
 - `TASKS/ARTIFACTS/TASK-005/ROADMAP_AND_BOUNDARY_SYNTHESIS.md`
-- `TASKS/ARTIFACTS/TASK-005/EXECUTION_REPORT.md`
 - `TASKS/ARTIFACTS/TASK-005/TEST_OR_VALIDATION_LOG.md`
 
 ## Adversarial Review

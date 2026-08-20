@@ -226,7 +226,6 @@ Adversarial Round 1 历史为 `FAIL / 0 / 2 / 1`；Round 2 final 为 `PASS / 0 /
 - `ADVERSARIAL_REVIEW_R2_DISPATCH.md`
 - `EXECUTION_REPORT.md`
 - `TEST_OR_VALIDATION_LOG.md`
-- `DIFF_OR_OUTPUT_SUMMARY.md`
 - `PLANNER_FINAL_VALIDATION.md`
 
 ## Adversarial Review

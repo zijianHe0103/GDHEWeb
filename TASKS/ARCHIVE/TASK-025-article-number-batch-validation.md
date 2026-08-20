@@ -64,7 +64,7 @@ Article Number 仍属于不可信客户端输入。服务端不得因为浏览�
 - 新版本的 WordPress/GDHE Schema、REST 批量校验实现、Fixture、Golden、错误和确定性证据。
 - 新版本的前端合同快照、离线 verifier、Transport、Runtime Validator、DTO/Adapter 与 Quote Basket 迁移实现。
 - FGD X15+PVC 标准配置、自定义长度和目录配件的 0/1/N、1/50 行验证证据。
-- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md` 与独立 `ADVERSARIAL_REVIEW_REPORT.md`。
+- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与独立 `ADVERSARIAL_REVIEW_REPORT.md`。
 - 必要的架构契约、ADR-006、CMS/frontend README 与根 README 更新；TASK-024 artifacts 保持历史不变。
 
 ## 验收标准

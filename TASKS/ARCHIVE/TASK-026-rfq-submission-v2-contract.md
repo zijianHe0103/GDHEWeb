@@ -55,7 +55,7 @@ project_type: software
 - `TASKS/ARTIFACTS/TASK-026/SECURITY_AND_IDEMPOTENCY_INHERITANCE.md`：TASK-024 哪些规则原样继承，哪些因 Article Number 和 v2 canonical bytes/HMAC 必须新增固定向量。
 - `TASKS/ARTIFACTS/TASK-026/schemas/**`：闭合 Draft 2020-12 Schema，不依赖远程 ref。
 - `TASKS/ARTIFACTS/TASK-026/samples/**` 和 `vectors/**`：正向、负向、canonical serialization、HMAC/摘要、Basket 快照清除的确定性样本。
-- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md`、`DIFF_OR_OUTPUT_SUMMARY.md` 与一次完整独立 `ADVERSARIAL_REVIEW_REPORT.md`。
+- `EXECUTION_REPORT.md`、`TEST_OR_VALIDATION_LOG.md` 与一次完整独立 `ADVERSARIAL_REVIEW_REPORT.md`。
 - 必要的架构契约和 ADR/decision 更新；不改运行时 README 描述。
 
 ## 验收标准

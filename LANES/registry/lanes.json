@@ -118,7 +118,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/frontend/worklog.md",
       "workspace": "LANES/frontend/workspace",
       "inbox": "LANES/frontend/inbox",
       "outbox": "LANES/frontend/outbox",
@@ -170,7 +169,6 @@
       "read_scope": [
         "**"
       ],
-      "worklog": "LANES/localization_seo/worklog.md",
       "workspace": "LANES/localization_seo/workspace",
       "inbox": "LANES/localization_seo/inbox",
       "outbox": "LANES/localization_seo/outbox",

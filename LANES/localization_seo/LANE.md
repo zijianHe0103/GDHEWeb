@@ -13,7 +13,7 @@ specialist
 - Maintain the nine-language route, translation-state, canonical/hreflang, RTL, metadata, Schema, Sitemap, and indexing contracts.
 - Validate only published translation siblings and record evidence in the assigned task artifacts.
 - Hand implementation findings to the owning frontend or WordPress lane instead of editing their code.
-- Maintain lane-specific context, worklog, validation evidence, and task artifacts.
+- Maintain lane-specific context, validation evidence, and task artifacts.
 
 ## Non-Responsibilities
 
@@ -40,10 +40,6 @@ specialist
 
 `LANES/localization_seo/outbox`
 
-## Worklog
-
-`LANES/localization_seo/worklog.md`
-
 ## Workspace
 
 `LANES/localization_seo/workspace`
@@ -54,7 +50,7 @@ Register with `lane-register localization_seo <session-id>` before assuming this
 
 ## Resume Protocol
 
-New sessions read this file, recent lane worklog, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
+New sessions read this file, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
 
 ## Handoff Protocol
 

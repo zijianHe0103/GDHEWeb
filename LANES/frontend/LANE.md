@@ -13,7 +13,7 @@ specialist
 - Implement only confirmed frontend tasks under `frontend/**`.
 - Maintain reusable components, routes, rendering/data-access boundaries, tests, and `docs/frontend/**`.
 - Consume the CMS and localization contracts without silently changing them.
-- Maintain lane-specific context, worklog, validation evidence, and task artifacts.
+- Maintain lane-specific context, validation evidence, and task artifacts.
 
 ## Non-Responsibilities
 
@@ -41,10 +41,6 @@ specialist
 
 `LANES/frontend/outbox`
 
-## Worklog
-
-`LANES/frontend/worklog.md`
-
 ## Workspace
 
 `LANES/frontend/workspace`
@@ -55,7 +51,7 @@ Register with `lane-register frontend <session-id>` before assuming this lane id
 
 ## Resume Protocol
 
-New sessions read this file, recent lane worklog, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
+New sessions read this file, recent `PROJECT/ACTIVITY.md`, `TASKS/BOARD.md`, assigned active tasks, assigned issues, and recent relevant decisions.
 
 ## Handoff Protocol
 

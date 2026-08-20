@@ -58,7 +58,7 @@ project_type: software
 - `frontend/tests/product-card-adapter.test.ts`：0/1/N、四格 kind/lifecycle/action 组合、关系、分页和内部字段边界测试。
 - `frontend/tests/product-card-consumer.test.ts`：一次 collection 请求、零逐卡 `/resolve` 的最小编排证明；如实施设计能在前三个聚焦文件中清晰证明，可不额外拆文件。
 - `frontend/README.md` 与根 `README.md`：记录运行时 ProductCard consumer、验证命令、server-only/无 UI/无 cache 边界。
-- `TASKS/ARTIFACTS/TASK-016/`：DESIGN、IMPLEMENTATION_PLAN、TDD RED、execution report、validation log、diff summary、独立审查和 Planner Summary。
+- `TASKS/ARTIFACTS/TASK-016/`：DESIGN、IMPLEMENTATION_PLAN、execution report、validation log、diff summary、独立审查和 Planner Summary。
 
 ## 验收标准
 
@@ -199,7 +199,6 @@ project_type: software
 
 ## Durable Task Artifacts
 
-- `TDD_RED_EVIDENCE.md`：10 个行为纵切的真实 RED 与最小 GREEN 记录。
 - `TEST_OR_VALIDATION_LOG.md`：Node 24 当前字节门禁、server-only 负例、受保护哈希和范围证据。
 
 ## Adversarial Review

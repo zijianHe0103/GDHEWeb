@@ -97,7 +97,7 @@ project_type: software
 - 必要的聚焦测试：配置、Adapter、loader、展示语义、one-resolve、server-only、错误脱敏和生产禁用。
 - `QA/TASK-018/**` 四视口、320 reflow、键盘/焦点和差异分级证据。
 - 根 `README.md`、`frontend/README.md` 的本地查看方式和明确未完成功能。
-- `TASKS/ARTIFACTS/TASK-018/**` 中的设计、实施计划、TDD RED、执行报告、验证日志、视觉 QA、独立审查和 Planner Summary。
+- `TASKS/ARTIFACTS/TASK-018/**` 中的设计、实施计划、执行报告、验证日志、视觉 QA、独立审查和 Planner Summary。
 
 ## 验收标准
 

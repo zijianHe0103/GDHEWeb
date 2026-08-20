@@ -59,7 +59,7 @@ project_type: software
 - `frontend/tests/**`：ProductCard 组件、列表状态、动作链接、server-only consumer 编排和本地开关负例。
 - `QA/TASK-017/**`：1440、1024、768、390 截图、320 reflow 证据和严重/明显/细节差异记录。
 - `frontend/README.md` 与根 `README.md`：记录本地启动/预览方式、测试数据/noindex 边界和仍未实现的详情/RFQ/生产能力。
-- `TASKS/ARTIFACTS/TASK-017/**`：设计、实施计划、TDD RED、执行报告、验证日志、差异摘要、视觉 QA、独立审查和 Planner Summary。
+- `TASKS/ARTIFACTS/TASK-017/**`：设计、实施计划、执行报告、验证日志、差异摘要、视觉 QA、独立审查和 Planner Summary。
 
 ## 验收标准
 

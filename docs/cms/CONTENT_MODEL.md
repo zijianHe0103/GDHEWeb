@@ -29,6 +29,12 @@ Module Schema: `1.0.0`
 
 Markets remain editorial content rather than a product taxonomy.
 
+## GDHE product vocabulary
+
+- `钉子规格`：布带产品中客户可以选择的钉子类型。当前已验证样本 `SSD-01` 区分“薄不锈钢钉”和“厚不锈钢钉”；两者材质均为不锈钢，因此公开名称不能只写“不锈钢材质”，也不能沿用未经确认的“全不锈/半不锈”。
+- `配件目录`：集中展示并筛选安装码、封口、走珠等小配件的集合。目录配件可以形成独立询价行，也可以出现在主产品的相关配件模块，但不因此自动获得独立 SEO 产品详情页；规格复杂的布带、线珠等产品不属于该边界。
+- `测试产品数据`：仅用于验证页面归组、规格组合、询价和同步行为的非最终数据。它可以证明模型和流程行为，不能作为生产目录、最终兼容关系或公开发布事实。
+
 ## Common and structured fields
 
 Every public record uses the common Schema 3 fields:

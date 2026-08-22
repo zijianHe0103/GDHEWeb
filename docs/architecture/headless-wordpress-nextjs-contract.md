@@ -4,7 +4,7 @@ status: accepted-core-with-TASK-012-roadmap-revision-pending-acceptance
 date: 2026-07-26
 scope: accepted architecture contract plus implemented CMS foundation and proposed roadmap revision
 supersedes: `docs/reference-site-analysis.md` 中 WordPress + Elementor 的实施建议
-authority: `PROJECT/CONSTRAINTS.md`、ADR-001、ADR-002、ADR-003、ADR-004、已随 TASK-004 接受的 ADR-005、本契约与待 TASK-012 验收的 ADR-006
+authority: `project_contract`、ADR-001、ADR-002、ADR-003、ADR-004、已随 TASK-004 接受的 ADR-005、本契约与待 TASK-012 验收的 ADR-006
 
 ## 0. 决策摘要
 

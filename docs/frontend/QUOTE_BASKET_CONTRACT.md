@@ -1,10 +1,17 @@
 # Quote Basket Public Contract
 
 TASK-022 establishes the browser-local Quote Basket foundation and its first
-FGD X15+PVC visible slice. It is a
-non-payment RFQ collection, not a shopping cart, checkout, order or submitted
-inquiry. Product-page integration and the local Basket UI are implemented;
-final submission remains a separate, unimplemented checkpoint.
+FGD X15+PVC visible slice. Product-page integration and the local Basket UI are
+implemented; final submission remains a separate checkpoint.
+
+## RFQ vocabulary
+
+- `Quote Basket`：客户在同一浏览器中临时收集多个公开产品配置和配件的询价集合；它不是购物车、结账、付款或订单。
+- `Public RFQ Submission Draft`：客户提交给网站的公开询价草稿，包含从本地 Basket 派生的最小提交投影、联系信息和隐私告知记录，但不包含展示图片、Article Number 或任何内部系统身份；服务端始终把它视为不可信输入。
+- `Authoritative RFQ`：服务端重新验证全部客户输入和产品行后形成的一次完整业务询价；所有行共同接受或共同拒绝。它不是已确认订单或已付款订单。
+- `Public RFQ Receipt`：网站确认收到或正在处理 RFQ 的客户可见回执，不包含报价、价格、Article Number 或内部记录身份。
+- `Sales Follow-up Line`：稳定产品身份和客户选择仍然有效，但按已批准规则需要业务员后续解析 Article Number 或定制细节的询价行；它不是篡改、过期或模糊数据的自动兜底。
+- `Meaningful Business Interaction`：由业务人员或客户产生的回复、报价、谈判、样品跟进等真实业务事件；系统同步、轮询、重试和页面访问不属于该事件。
 
 ## Public authority
 

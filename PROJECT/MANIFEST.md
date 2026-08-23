@@ -6,6 +6,10 @@ This file is the only project location map. Resolve lower-level files only throu
 ```json
 {
   "business_authorities": {
+    "architectural_decisions": [
+      "MEMORY/DECISIONS.md",
+      "MEMORY/DECISIONS"
+    ],
     "architecture_contract": "docs/architecture/headless-wordpress-nextjs-contract.md",
     "cms_content_model": "docs/cms/CONTENT_MODEL.md",
     "cms_operations_rollback": "docs/cms/OPERATIONS_AND_ROLLBACK.md",
@@ -23,7 +27,6 @@ This file is the only project location map. Resolve lower-level files only throu
   "governance": {
     "active_tasks": "TASKS/ACTIVE",
     "current_state": "PROJECT/STATE.md",
-    "decisions": "MEMORY/DECISIONS",
     "event_log": "PROJECT/events.jsonl",
     "lane_registry": "LANES/registry/lanes.json",
     "project_contract": "PROJECT/CONTRACT.md",

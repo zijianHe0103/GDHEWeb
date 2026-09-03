@@ -1,6 +1,9 @@
 # GDHE Headless WordPress + Next.js 架构契约
 
-status: accepted-core-with-TASK-012-roadmap-revision-pending-acceptance
+status: SUPERSEDED / HISTORICAL
+superseded_by: `PROJECT/CONTRACT.md`、`docs/architecture/PRODUCT_MASTER_LOGICAL_MODEL.md`、`docs/architecture/PUBLIC_PRODUCT_FLOW_CONTRACT.md`
+authority_notice: 本文档仅保留旧 Headless WordPress 实现方向和迁移背景，不再是 Manifest 当前 `architecture_contract`，不得覆盖新的核心数据、Core Application、Publication 或公开 RFQ 长期边界。
+historical_status: accepted-core-with-TASK-012-roadmap-revision-pending-acceptance
 date: 2026-07-26
 scope: accepted architecture contract plus implemented CMS foundation and proposed roadmap revision
 supersedes: `docs/reference-site-analysis.md` 中 WordPress + Elementor 的实施建议

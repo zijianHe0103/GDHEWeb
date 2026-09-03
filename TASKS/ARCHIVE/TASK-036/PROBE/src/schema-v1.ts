@@ -1,0 +1,114 @@
+import { sql } from "drizzle-orm";
+import {
+  check,
+  integer,
+  jsonb,
+  pgSchema,
+  serial,
+  text,
+  unique,
+} from "drizzle-orm/pg-core";
+
+export const publication = pgSchema("publication");
+export const catalog = pgSchema("catalog");
+export const rfq = pgSchema("rfq");
+
+export const pages = publication.table("pages", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique("pages_slug_unique"),
+});
+
+export const pageVersions = publication.table(
+  "page_versions",
+  {
+    id: serial("id").primaryKey(),
+    pageId: integer("page_id")
+      .notNull()
+      .references(() => pages.id, { onDelete: "restrict" }),
+    versionNumber: integer("version_number").notNull(),
+    publishedDocument: jsonb("published_document").notNull(),
+  },
+  (table) => [
+    unique("page_versions_page_version_unique").on(
+      table.pageId,
+      table.versionNumber,
+    ),
+    unique("page_versions_page_id_id_unique").on(table.pageId, table.id),
+    check("page_versions_version_positive", sql`${table.versionNumber} > 0`),
+  ],
+);
+
+export const products = catalog.table("products", {
+  id: serial("id").primaryKey(),
+  productCode: text("product_code")
+    .notNull()
+    .unique("products_product_code_unique"),
+});
+
+export const productSpecs = catalog.table(
+  "product_specs",
+  {
+    id: serial("id").primaryKey(),
+    productId: integer("product_id")
+      .notNull()
+      .references(() => products.id, { onDelete: "restrict" }),
+    specCode: text("spec_code").notNull(),
+  },
+  (table) => [
+    unique("product_specs_product_spec_code_unique").on(
+      table.productId,
+      table.specCode,
+    ),
+    unique("product_specs_product_id_id_unique").on(table.productId, table.id),
+  ],
+);
+
+export const requests = rfq.table("requests", {
+  id: serial("id").primaryKey(),
+  publicReference: text("public_reference")
+    .notNull()
+    .unique("requests_public_reference_unique"),
+});
+
+export const requestLines = rfq.table(
+  "request_lines",
+  {
+    id: serial("id").primaryKey(),
+    requestId: integer("request_id")
+      .notNull()
+      .references(() => requests.id, { onDelete: "restrict" }),
+    lineNumber: integer("line_number").notNull(),
+    productId: integer("product_id")
+      .notNull()
+      .references(() => products.id, { onDelete: "restrict" }),
+    quantity: integer("quantity").notNull(),
+    lineSnapshot: jsonb("line_snapshot").notNull(),
+  },
+  (table) => [
+    unique("request_lines_request_line_unique").on(
+      table.requestId,
+      table.lineNumber,
+    ),
+    check("request_lines_quantity_positive", sql`${table.quantity} > 0`),
+  ],
+);
+
+export const idempotencyRecords = rfq.table(
+  "idempotency_records",
+  {
+    id: serial("id").primaryKey(),
+    scope: text("scope").notNull(),
+    idempotencyKey: text("idempotency_key").notNull(),
+    requestHash: text("request_hash").notNull(),
+    requestId: integer("request_id").references(() => requests.id, {
+      onDelete: "restrict",
+    }),
+    responseDocument: jsonb("response_document"),
+  },
+  (table) => [
+    unique("idempotency_records_scope_key_unique").on(
+      table.scope,
+      table.idempotencyKey,
+    ),
+  ],
+);

@@ -1,6 +1,6 @@
 # GDHE Database Foundation
 
-正式数据库包，当前只包含 Site 与 Manual Track Catalog 七表。它不运行 API，不替代 `frontend/`、`cms/` 或 MySQL RFQ。长期边界见 [Core Database Architecture](../docs/architecture/CORE_DATABASE_ARCHITECTURE.md)。
+正式数据库包，当前只包含 Site 与 Manual Track Catalog 七表。它不运行 API，不替代 `frontend/`、`cms/` 或 MySQL RFQ。TASK-038 的 [Core](../core/README.md) 通过本地包引用消费此处唯一的 Schema；长期边界见 [Core Database Architecture](../docs/architecture/CORE_DATABASE_ARCHITECTURE.md)。
 
 ## 文件与版本
 
@@ -9,6 +9,7 @@
 - [migrations/0001_manual_track_lengths.sql](migrations/0001_manual_track_lengths.sql)：Custom SQL，仅初始化五个已确认标准长度。
 - `migrations/meta/`：Drizzle Kit 原生声明快照和 Migration journal，必须与 SQL 一起保存；不是自建 Hash/Baseline/Gate。
 - [scripts/migrate.ts](scripts/migrate.ts)：显式执行已提交 Migration，不承担删除或自动恢复环境。
+- `npm run build`：输出 ESM 和类型声明；根导出 `@gdhe/database` 指向编译后的唯一 schema，`@gdhe/database/testing` 导出原 PostgreSQL 测试辅助。输出 dist 被忽略，不维护双格式发布或另一份 Schema。
 - [tests/database.test.ts](tests/database.test.ts)：真实数据库行为测试；[tests/postgres.ts](tests/postgres.ts) 只创建和销毁自身一次性容器。
 
 当前精确版本：Node.js 24.18.0、Drizzle ORM 0.45.2、Drizzle Kit 0.31.10、pg 8.23.0、TypeScript 5.9.3、tsx 4.23.13。集成测试镜像 `postgres:18.6-alpine`，服务端读回 18.6。其余开发类型依赖见 package.json；完整依赖图由 package-lock.json 锁定。

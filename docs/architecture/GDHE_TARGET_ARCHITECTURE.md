@@ -33,7 +33,9 @@ GDHE 公开官网 / 未来网站 / WordPress 内容运营 / 内部后台 / CRM /
 
 第一阶段数据库逻辑骨架已在 `core_database_architecture` 确认；Drizzle ORM / Drizzle Kit 已通过 TASK-036 验证并验收。TASK-037 的正式 Site / Manual Track Catalog 七表源码与 Migration 通过 Manifest 的 `core_database_source` 发现。
 
-七表之外的物理设计、API 形式与路径、身份认证、权限、WordPress 发布实现机制、飞书同步、CRM 工作流、消息队列、文件存储、部署和迁移顺序仍需专项确认。已确认的系统职责不表示具体机制已经实现；本文档不扩大任何实施授权。
+TASK-038 建立本地 NestJS Core 与 Catalog 受控读写，当前采用 REST + OpenAPI。正式入口和本次接口合同分别由 Manifest 的 `core_source`、`catalog_api_contract` 路由；CMS 读取身份与维护身份分离，但这不是完整平台 IAM 或生产启用。
+
+七表之外的物理设计、其他领域 API、完整身份认证/权限、WordPress 发布实现机制、飞书同步、CRM 工作流、消息队列、文件存储、部署和迁移顺序仍需专项确认。已确认的系统职责不表示具体机制已经实现；本文档不扩大任何实施授权。
 
 ## Historical Contract
 

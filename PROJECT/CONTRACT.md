@@ -64,7 +64,7 @@ GDHE 项目不再只被定义为一个 Headless WordPress 企业官网。
 - 审计；
 - 对外系统集成。
 
-核心应用服务的一级技术基线见第十节；具体接口形式、内部模块结构和实施细节仍未确定。
+核心应用服务的一级技术基线见第十节；TASK-038 的本地 Catalog 接口采用 REST + OpenAPI，具体字段与权限通过 Manifest 的 `catalog_api_contract` 发现；其他领域模块和接口仍需专项确定。
 
 ### 3. 系统允许存在多个独立前端
 
@@ -153,7 +153,7 @@ flowchart TB
 
 ### 技术选型
 
-- REST、GraphQL 或其他 API 形式及 API 路径；
+- TASK-038 Catalog 之外的 API 形式与路径（本地 Catalog 已采用 REST + OpenAPI）；
 - 身份认证方案；
 - 权限模型；
 - 后台任务、消息队列、Redis 和搜索方案；
@@ -341,8 +341,7 @@ WordPress 如何与核心应用服务交换、预览和发布内容，需要后�
 
 以下事项仍需专项确认；已经由 TASK-035/036/037 明确的数据库骨架、工具和七表范围不重复列为待定：
 
-- REST、GraphQL 或其他 API 形式；
-- API 路径；
+- TASK-038 Catalog 之外的 API 形式和路径；
 - 七表之外的数据库物理表和字段；
 - 身份认证；
 - 权限模型；

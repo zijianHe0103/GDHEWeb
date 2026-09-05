@@ -11,11 +11,13 @@ This file is the only project location map. Resolve lower-level files only throu
       "MEMORY/DECISIONS"
     ],
     "architecture_contract": "docs/architecture/GDHE_TARGET_ARCHITECTURE.md",
+    "catalog_api_contract": "docs/architecture/CATALOG_API_CONTRACT.md",
     "cms_content_model": "docs/cms/CONTENT_MODEL.md",
     "cms_operations_rollback": "docs/cms/OPERATIONS_AND_ROLLBACK.md",
     "cms_rest_contract": "docs/cms/REST_CONTRACT.md",
     "core_database_architecture": "docs/architecture/CORE_DATABASE_ARCHITECTURE.md",
     "core_database_source": "database",
+    "core_source": "core",
     "frontend_product_configuration_contract": "docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md",
     "frontend_source": "frontend/src",
     "image_generation_site": "external:independent-nested-project-live-main-only",

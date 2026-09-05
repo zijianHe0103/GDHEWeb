@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": { "types": "./dist/src/schema.d.ts", "import": "./dist/src/schema.js" },
+    "./testing": { "types": "./dist/tests/postgres.d.ts", "import": "./dist/tests/postgres.js" }
+  },
+  "files": ["dist", "migrations"],
   "engines": { "node": ">=24 <25" },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "generate": "drizzle-kit generate",
     "migrate": "tsx scripts/migrate.ts",
-    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test": "npm run build && tsx --test --test-concurrency=1 tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -15,6 +15,7 @@ This file is the only project location map. Resolve lower-level files only throu
     "cms_operations_rollback": "docs/cms/OPERATIONS_AND_ROLLBACK.md",
     "cms_rest_contract": "docs/cms/REST_CONTRACT.md",
     "core_database_architecture": "docs/architecture/CORE_DATABASE_ARCHITECTURE.md",
+    "core_database_source": "database",
     "frontend_product_configuration_contract": "docs/frontend/PRODUCT_CONFIGURATION_AND_QUOTE_LINE_CONTRACT.md",
     "frontend_source": "frontend/src",
     "image_generation_site": "external:independent-nested-project-live-main-only",

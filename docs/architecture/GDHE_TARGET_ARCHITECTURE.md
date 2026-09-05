@@ -31,7 +31,9 @@ GDHE 公开官网 / 未来网站 / WordPress 内容运营 / 内部后台 / CRM /
 
 ## Open Implementation Decisions
 
-ORM、API 形式与路径、物理数据表、身份认证、权限、WordPress 发布机制、飞书同步、CRM 工作流、消息队列、文件存储、部署和迁移顺序仍需专项确认。本文档不授权实施这些事项。
+第一阶段数据库逻辑骨架已在 `core_database_architecture` 确认；Drizzle ORM / Drizzle Kit 已通过 TASK-036 验证并验收。TASK-037 的正式 Site / Manual Track Catalog 七表源码与 Migration 通过 Manifest 的 `core_database_source` 发现。
+
+七表之外的物理设计、API 形式与路径、身份认证、权限、WordPress 发布实现机制、飞书同步、CRM 工作流、消息队列、文件存储、部署和迁移顺序仍需专项确认。已确认的系统职责不表示具体机制已经实现；本文档不扩大任何实施授权。
 
 ## Historical Contract
 

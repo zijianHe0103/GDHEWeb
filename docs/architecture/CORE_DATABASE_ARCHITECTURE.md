@@ -1,7 +1,7 @@
 # GDHE Core Database Architecture
 
 status: accepted
-implementation_status: not_implemented
+implementation_status: site_catalog_implemented
 authority_scope: TASK-035 phase-one database skeleton and database evolution baseline
 
 ## 1. 文档定位
@@ -59,7 +59,7 @@ rfq.request_lines
 rfq.idempotency_records
 ```
 
-本任务只记录这些目标表，不创建它们。
+TASK-035 只记录上述目标表。TASK-037 当前仅实施前七张 Site / Manual Track Catalog 表；Publication 和 RFQ 五表仍未实施。七表的当前物理选择见第 20 节；任务验收状态以当前 Task/State 为准。
 
 以下结构明确后置，而不是被否定：
 
@@ -81,7 +81,7 @@ erp.*
 
 ## 4. Site 业务域
 
-`site.sites` 表示平台中的稳定网站身份。第一阶段只有当前 GDHE 官网一条记录，至少需要表达稳定 Site ID、稳定 Site Key 和当前状态；具体字段名、主键类型、域名、品牌、多语言和部署配置尚未冻结。
+`site.sites` 表示平台中的稳定网站身份。第一阶段业务只使用当前 GDHE 官网，但不建立单记录限制。TASK-037 实施稳定 Site ID、Site Key、状态和时间列，不预置真实 Site 数据；域名、品牌、多语言和部署配置仍未冻结。
 
 `publication.pages.site_id` 和 `rfq.requests.site_id` 引用该实体。正式页面与 RFQ 必须明确所属网站，不能在多个表中重复硬编码 `gdhe`。
 
@@ -93,7 +93,7 @@ erp.*
 
 ### 5.2 products
 
-`catalog.products` 保存跨系统共用的产品款式身份和最小公共事实。逻辑上表达 Core Product ID、`family_code`、型号、中英文品名、Primary Category、状态和时间信息；具体字段类型、ID 方案、状态值和型号唯一性未冻结。
+`catalog.products` 保存跨系统共用的产品款式身份和最小公共事实。逻辑上表达 Core Product ID、`family_code`、型号、中英文品名、Primary Category、状态和时间信息；TASK-037 的最小字段类型、ID 与状态选择见第 20 节。当前不施加型号全局唯一约束，不以型号替代稳定身份。
 
 Core Product ID 是 WordPress、Next.js、Core Application 及未来 CRM/ERP 识别同一 Product 的稳定技术身份。型号、名称、Slug、WordPress Post ID 和 Article Number 均不能替代它。
 
@@ -219,7 +219,7 @@ line snapshot 必须由 NestJS 在 Catalog 校验后生成，不能直接保存�
 
 ## 10. 数据访问工具基线
 
-Drizzle ORM 是第一阶段条件性首选。数据库实施前必须通过一次最小 PostgreSQL 兼容性验证；通过后采用，不再泛化选型。只有多 Schema、复合外键、自定义 SQL Migration、事务或 Schema/Migration 一致性出现明确可复现失败，才能重新提交工具选择。
+TASK-036 已完成真实 PostgreSQL 最小兼容性验证，结论 PASS，任务 CLOSED / ACCEPTED；Drizzle ORM 与 Drizzle Kit 第一阶段正式采用，不再泛化选型。TASK-037 沿用已验证版本：Drizzle ORM 0.45.2、Drizzle Kit 0.31.10、node-postgres（pg）8.23.0，测试 PostgreSQL 18.6。只有多 Schema、复合外键、自定义 SQL Migration、事务或 Schema/Migration 一致性出现明确可复现失败，才能重新提交工具选择。
 
 PostgreSQL Driver 第一阶段优先 `node-postgres`，但不是不可替换的长期硬约束。一个事务内所有查询必须使用同一事务连接上下文。
 
@@ -227,7 +227,9 @@ PostgreSQL Driver 第一阶段优先 `node-postgres`，但不是不可替换的�
 
 ## 11. Drizzle 最小兼容性验证
 
-后续独立任务至少验证：多 PostgreSQL Schema；主键、唯一与复合唯一；复合外键；CHECK；JSONB；Page 当前版本属于同一 Page；多表事务回滚；并发 RFQ 幂等；Drizzle Kit 候选 SQL；自定义 SQL Migration；空库初始化；上一版本升级。
+TASK-036 已验证：多 PostgreSQL Schema；主键、唯一与复合唯一；复合外键；CHECK；JSONB；Page 当前版本属于同一 Page；多表事务回滚；并发 RFQ 幂等；Drizzle Kit 候选 SQL；自定义 SQL Migration；空库初始化；上一版本升级。该结论是工具能力证据，不是全部正式业务结构已实现的证据。
+
+Probe 延迟外键仅用于验证 Custom SQL，不能自动成为正式约束。TASK-037 七表使用即时外键；Custom SQL 仅写入已确认的五个标准长度字典值。
 
 若 Drizzle Kit 无法正确生成约束，应保留正确数据库模型并使用自定义 SQL Migration，不得删除约束、把核心规格改成 JSONB 或修改业务模型迁就 ORM。验证通过后不增加 Schema/Migration Hash、Baseline、Freeze Contract 或自定义 Migration Framework。
 
@@ -291,8 +293,8 @@ Database Row 不得直接作为 REST/OpenAPI DTO 返回，必须经过 `Database
 
 以下事项继续后置，不得据本文档自行补全：
 
-- UUID v4、UUID v7 或整数主键；
-- Product Model 是否全局唯一；
+- UUID 的具体生成方及 v4/v7 策略（当前七表接收调用方提供的 uuid，不在数据库生成）；
+- Product Model 将来是否需要特定范围的唯一性（当前不添加全局唯一约束）；
 - Category 是否最终多对多；
 - Product 全部技术字段；
 - Product Spec、Track Weight 与布带的实际 DDL；
@@ -302,11 +304,26 @@ Database Row 不得直接作为 REST/OpenAPI DTO 返回，必须经过 `Database
 - 媒体资产表与对象存储；
 - 旧 MySQL RFQ 迁移方式；
 - PostgreSQL 托管平台、连接池、备份恢复和保留周期；
-- 精确 Drizzle 版本与最终 PostgreSQL Driver；
+- 工具链未来升级策略（当前精确版本见第 10 节）；
 - NestJS 目录结构。
 
-推荐的下一候选任务是“PostgreSQL 与 Drizzle 最小兼容性验证”。它只是待讨论候选，不因本文档自动创建或获得实施授权。
+工具兼容性已由 TASK-036 验收，不再是待执行任务。七表之后的业务模块与其物理设计需分别授权，不因本文档自动创建或实施。
 
 ## 19. 当前迁移资产说明
 
 现有 Product Detail、Product Configuration、Quote Basket、RFQ 合同、WordPress 读取链路和本地 MySQL `persistent_stub` 继续作为字段需求、行为证据和迁移资产保留。MySQL 的外部 Stub Sink 交付状态机不是目标 PostgreSQL RFQ 模型。任何替换都必须经过专项设计、验证、验收和渐进迁移，在此之前不得删除现有有效实现。
+
+## 20. TASK-037 当前七表物理基础
+
+正式位置由 Manifest 的 `core_database_source` 指向 `database/`；入口为其 README，声明为 `src/schema.ts`，已审查结构 SQL 与字典 SQL 分别位于 `migrations/0000_site_manual_track.sql` 和 `migrations/0001_manual_track_lengths.sql`。这不是 NestJS 应用，也不接入旧站。
+
+- Site、Category、Product、Color 使用显式传入的 uuid 主键，无数据库 ID 生成默认值。Site key、Category code、Color code 为各自字典内唯一、区分大小写的稳定值；写入方负责规范化，数据库拒绝空串/纯空格。Product model 不唯一。
+- Product 仅有一个非空 Primary Category。Category 使用可空 parent 外键，拒绝直接自指；任意深度循环与层级编辑规则由未来业务写入任务处理，本任务不增加递归触发器。
+- 当前 Product family 只允许 `track`。轨道扩展以 `product_id` 同时作为主键和外键，最小字段仅包含显式的 `allows_custom_length` 与受约束的 `quantity_unit = piece`；截面等未确认技术事实不补写、不用 JSONB 占位。增加其他产品族必须同时演进 family 约束和其专属结构。
+- Product–Color 使用 `(product_id, color_id)` 复合主键，保存 `is_public`、领域状态与非负整数排序。停用通过更新状态/公开标记保留关系；没有 `is_orderable` 或组合预生成。
+- 各领域状态为 `active/inactive`，默认 inactive，不代表页面发布状态。公开可用性仍需未来服务组合 Product、Color 与关系状态判断，数据库不实现公开 API。
+- 标准长度以正整数 `length_mm` 为主键，排序为非负整数；Migration 初始化 4300、5800、6000、6300、6700 mm，排序 0..4，状态 active。字典不限制未来只能有这五个整数，但后续新增必须有真实业务依据。
+- 所有引用使用即时外键、`ON DELETE RESTRICT`、`ON UPDATE NO ACTION`。不级联、不使用 Probe 延迟约束。时间列为非空 `timestamptz`，创建默认 now；后续写入方显式维护 updated_at，不增加自动更新触发器。
+- 当前 Migration 不包含 Site、分类、产品或颜色业务记录，只包含已确认的标准长度。正式环境角色、凭据、备份和部署尚未实施；一次性测试容器中的专用测试账号不代表生产权限设计。
+
+验收分别保存真实数据库表/列/约束读回、负例拒绝和事务证据，以及再次 generate 的声明快照结果。generate 不检查运行数据库，不能替代前一份证据。测试清理只销毁本次创建的随机容器及其数据库，不接受外部连接串作为删除目标。

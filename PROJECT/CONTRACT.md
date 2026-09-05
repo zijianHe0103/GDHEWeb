@@ -94,7 +94,7 @@ WordPress 的长期定位是一个需要内部账号登录的内容运营和页�
 - 工作流最终状态的保存位置；
 - 所有系统必须依赖的统一前端。
 
-WordPress 如何与核心应用服务交换内容、如何处理草稿、预览和正式发布，尚未确定，必须单独设计。WordPress 自身需要的技术存储不构成核心业务数据的第二个权威来源。
+WordPress 草稿与正式发布数据的逻辑职责已由第十二节确认；交换、预览和发布的具体机制仍需单独设计。WordPress 自身需要的技术存储不构成核心业务数据的第二个权威来源。
 
 ### 5. CRM 是独立的内部业务入口
 
@@ -153,7 +153,6 @@ flowchart TB
 
 ### 技术选型
 
-- ORM 和数据库迁移工具；
 - REST、GraphQL 或其他 API 形式及 API 路径；
 - 身份认证方案；
 - 权限模型；
@@ -162,7 +161,7 @@ flowchart TB
 - 部署平台和运行拓扑；
 - 代码目录迁移。
 
-Prisma 或其他 ORM 仍只是候选，未经专项讨论不得直接进入实施。
+Drizzle ORM / Drizzle Kit 已经 TASK-036 真实 PostgreSQL 验证并验收，第一阶段采用；精确版本与正式数据库资产由 Manifest 的 `core_database_architecture`、`core_database_source` 路由记录，不再作为待选型项。
 
 ### WordPress 集成
 
@@ -180,8 +179,8 @@ Prisma 或其他 ORM 仍只是候选，未经专项讨论不得直接进入实�
 
 ### 核心业务系统
 
-- 数据表、字段和关系；
-- 产品主数据的物理数据模型、字段和约束；产品逻辑边界见第十一节；
+- 超出 TASK-037 Site / Manual Track Catalog 七表范围的数据表、字段和关系；
+- 产品主数据后续物理模型与约束；产品逻辑边界见第十一节，当前七表实现见 `core_database_architecture`；
 - CRM 范围；
 - 工作流状态；
 - 角色和权限；
@@ -203,7 +202,7 @@ Prisma 或其他 ORM 仍只是候选，未经专项讨论不得直接进入实�
 以下差异只用于确定后续讨论范围，不授权当前任务实施迁移：
 
 1. 历史 Headless WordPress 专项架构仍记录 WordPress 运行时数据源和飞书产品主数据权威的旧方向；该文档已标记为 `SUPERSEDED / HISTORICAL` 并撤出 Manifest 当前架构权威。现有运行代码仍需后续渐进迁移。
-2. 当前公开内容、产品 DTO 和多项只读 API 由 WordPress 与 `gdhe-site` 提供；长期如何保留页面编辑能力并让正式发布数据进入统一权威，尚未设计。
+2. 当前公开内容、产品 DTO 和多项只读 API 由 WordPress 与 `gdhe-site` 提供；长期内容编辑与正式发布职责已由 TASK-034/035 确认，但 WordPress Bridge、Publication 和 Core Public API 尚未实现。
 3. 当前 RFQ 已有独立本地 MySQL Schema 和 Next.js 本地 intake 纵向切片，但它仍是隔离的本地实现，不等同于已经确定的统一核心应用服务或核心数据库。
 4. 当前前端、WordPress、RFQ 合同、测试和本地验证能力继续有效；在替代方案验收前不得删除或宣称失效。
 5. 独立 CRM、统一内部管理后台以及核心系统与飞书之间的正式集成尚未建立。
@@ -317,7 +316,7 @@ NestJS 核心应用服务负责：
 
 产品、客户、询价、CRM、工作流、任务、审计、正式发布数据和外部系统映射等正式业务数据，以 PostgreSQL 为最终权威来源。
 
-具体数据库表、字段、Schema、索引、ORM 和迁移工具尚未确定。
+第一阶段逻辑骨架已由 TASK-035 确认，Drizzle 工具链已由 TASK-036 验证。TASK-037 只实施 Site / Manual Track Catalog 七表，其他表、业务接口和部署机制仍由后续专项任务确定。
 
 #### 6. WordPress 和 Gutenberg 继续保留
 
@@ -340,12 +339,11 @@ WordPress 如何与核心应用服务交换、预览和发布内容，需要后�
 
 ### 尚未确认的实施事项
 
-以下内容本轮不冻结，也不得据此自行实施：
+以下事项仍需专项确认；已经由 TASK-035/036/037 明确的数据库骨架、工具和七表范围不重复列为待定：
 
-- Prisma 或其他 ORM；
 - REST、GraphQL 或其他 API 形式；
 - API 路径；
-- 数据库表和字段；
+- 七表之外的数据库物理表和字段；
 - 身份认证；
 - 权限模型；
 - WordPress 发布机制；
@@ -399,7 +397,7 @@ WordPress 如何与核心应用服务交换、预览和发布内容，需要后�
 5. 原始 RFQ 与销售后续确认的重量、Product Spec、Article Number 和报价结果必须分别保存。RFQ 多行及服务端快照和可重放回执采用整张事务原子写入，不允许部分保存。
 6. JSONB 仅用于受控的正式页面文档、RFQ Line 历史快照和幂等公开响应；关系型产品身份、规格、颜色、长度、Article Number、报价、库存、生产和成本不得用 JSONB 代替。
 7. 正式数据库结构变更只能通过版本控制中的已审查 SQL Migration。共享开发、Staging 和 Production 不以 `drizzle-kit push` 代替 Migration，也不在普通应用启动时自动执行 Migration。
-8. Drizzle 是通过最小 PostgreSQL 兼容性验证后的条件性首选。ORM 或代码生成能力不足时，应以自定义 SQL 保留正确约束，不得为迁就工具削弱数据库模型。
+8. Drizzle 已通过 TASK-036 最小 PostgreSQL 兼容性验证并获验收，第一阶段采用。ORM 或代码生成能力不足时，应以自定义 SQL 保留正确约束，不得为迁就工具削弱数据库模型；Probe 的演示字段、唯一性、ID 生成和延迟外键不自动成为正式设计。
 9. Migration Role 与 Application Role 必须分离；Next.js、WordPress 和飞书不得持有 PostgreSQL 凭据。Database Row 必须经过 Domain Projection 或 Adapter 后才能形成公开 API DTO。
 10. 不引入通用 Repository/Base CRUD、全表通用 Soft Delete 或机械级联删除。约束、删除动作、状态和索引必须由真实业务生命周期与查询路径决定。
 11. 现有 MySQL RFQ、WordPress、Next.js、Product Configuration、Quote Basket 和 RFQ 合同继续作为迁移资产保留，在替代能力通过专项验证和验收前不得删除。

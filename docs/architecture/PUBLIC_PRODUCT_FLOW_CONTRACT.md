@@ -333,11 +333,10 @@ Original RFQ Line
 
 ## 8. 明确保留为后续设计的事项
 
-TASK-034 不冻结：
+TASK-034 本身不冻结下列实现。后续 TASK-035 已确认数据库骨架，TASK-036 已验证并采用 Drizzle 工具链，TASK-037 当前只实施 Site / Manual Track Catalog 七表；这些后续进展通过 Manifest 的 `core_database_architecture` 与 `core_database_source` 路由发现，不更改本文的业务逻辑合同。
 
 - 最终 API 形式、路径、Request/Response 字段和 OpenAPI Schema；
 - PostgreSQL 表、Schema、字段、类型、约束和索引；
-- ORM 与数据库迁移工具；
 - Catalog CMS 投影和 Core Public API 的物理实现；
 - WordPress 发布、预览、回滚、同步和失败恢复机制；
 - Gutenberg 区块 Schema 与页面模块 Schema；
@@ -347,4 +346,4 @@ TASK-034 不冻结：
 - Product Spec 解析、Article Number 分配、销售确认和 ERP 流程；
 - CRM 与飞书集成。
 
-后续 TASK-035 可以讨论核心数据库物理结构与数据访问方案，但必须重新确认具体范围后才能设计或实施。TASK-034 不构成 TASK-035 的自动实施授权。
+其余具体机制继续由后续任务分别确认；已接受的逻辑职责不表示接口、发布桥接或业务模块已经实现。本文不构成后续任务的自动实施授权。
